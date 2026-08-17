@@ -55,7 +55,13 @@ jobs:
           set -euo pipefail
           HOST="${ARUBA_FTP_HOST#ftp://}"
           HOST="${HOST#ftps://}"
-          REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          DOMAIN="${HOST#ftp.}"
+          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          if [[ "$RAW_REMOTE" == /www.* ]]; then
+            REMOTE="$RAW_REMOTE"
+          else
+            REMOTE="/www.$DOMAIN$RAW_REMOTE"
+          fi
 
           test -d nexus
 
@@ -113,7 +119,13 @@ jobs:
           set -euo pipefail
           HOST="${ARUBA_FTP_HOST#ftp://}"
           HOST="${HOST#ftps://}"
-          REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          DOMAIN="${HOST#ftp.}"
+          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          if [[ "$RAW_REMOTE" == /www.* ]]; then
+            REMOTE="$RAW_REMOTE"
+          else
+            REMOTE="/www.$DOMAIN$RAW_REMOTE"
+          fi
           COMMANDS=/tmp/deploy.lftp
 
           {
