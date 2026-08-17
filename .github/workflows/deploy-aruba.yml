@@ -64,6 +64,7 @@ jobs:
             set ftp:ssl-force true;
             set ftp:ssl-protect-data true;
             set ssl:verify-certificate yes;
+            set ssl:check-hostname no;
             set net:max-retries 2;
             open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
             mirror -R --verbose --parallel=4 --no-perms \
@@ -120,6 +121,7 @@ jobs:
             echo 'set ftp:ssl-force true'
             echo 'set ftp:ssl-protect-data true'
             echo 'set ssl:verify-certificate yes'
+            echo 'set ssl:check-hostname no'
             echo 'set net:max-retries 2'
             printf 'open -u "%s","%s" ftp://%s\n' "$ARUBA_FTP_USERNAME" "$ARUBA_FTP_PASSWORD" "$HOST"
 
