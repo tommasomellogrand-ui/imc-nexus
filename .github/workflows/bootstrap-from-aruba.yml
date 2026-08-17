@@ -2,6 +2,11 @@ name: Bootstrap Nexus from Aruba
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/bootstrap-trigger'
 
 permissions:
   contents: write
