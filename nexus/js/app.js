@@ -78,6 +78,7 @@
     competitionTab: "results",
     worldSection: "competitions",
     entityImcFilter: false,
+    competitionImcFilter: false,
     competitionFilter: "domestic",
     competitionSearchOpen: false,
     competitionNationOpen: false,
@@ -136,7 +137,7 @@
 
   // Build 8 · Client-side routing. One physical index.html, shareable logical URLs.
   const NEXUS_ROUTE_BASE = "/nexus";
-  const NEXUS_BUILD = "47";
+  const NEXUS_BUILD = "49";
   const NEXUS_BUILD_LABEL = "BUILD " + NEXUS_BUILD;
   if(window.location.pathname !== "/nexus/" && window.location.pathname !== "/nexus/index.html"){
     window.history.replaceState(null,"","/nexus/index.html");
@@ -9248,6 +9249,7 @@ function renderShell(fromRoute){
     const nationFilter=state.competitionNationFilter||"all";
     const search=normalizeText(state.competitionSearch||"");
     const isMulti=selectedWorldIsMultiLeague();
+    const imcManagersOnly=category==="domestic"&&isMulti&&Boolean(state.competitionImcFilter);
 
     const categoryCounts={
       domestic:all.filter(function(x){return x.category==="domestic";}).length,
@@ -9260,6 +9262,9 @@ function renderShell(fromRoute){
     let filtered=all.filter(function(item){return item.category===category;});
     if(category==="domestic"&&isMulti&&nationFilter!=="all"){
       filtered=filtered.filter(function(item){return item.nation===nationFilter;});
+    }
+    if(imcManagersOnly){
+      filtered=filtered.filter(function(item){return Boolean(item.hasImcManager);});
     }
     if(search){
       filtered=filtered.filter(function(item){
@@ -9292,6 +9297,10 @@ function renderShell(fromRoute){
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
           <input id="competitionSearchInput" type="search" placeholder="Cerca competizione" value="${esc(state.competitionSearch||"")}">
         </label>
+      </div>`:""}
+
+      ${category==="domestic"&&isMulti?`<div class="nx-competition-filter-panel">
+        <button type="button" id="competitionImcFilter" class="nx-imc-filter${imcManagersOnly?" is-active":""}" aria-pressed="${imcManagersOnly?"true":"false"}">IMC Managers</button>
       </div>`:""}
 
       ${category==="domestic"&&isMulti&&(state.competitionNationOpen||nationFilter!=="all")?`<div class="nx-competition-filter-panel">
@@ -9456,7 +9465,6 @@ function renderShell(fromRoute){
 
       divisions.forEach(function(div){
         const nationName=div.nation_setup_id?(nationMap.get(String(div.nation_setup_id))||""):"";
-        if(activeImcNationNames && nationName && !activeImcNationNames.has(normalizeParticipantKey(nationName)))return;
         const databaseName=nationName?nationName+" · Division "+div.division_number:"Division "+div.division_number;
         tiles.push({
           type:"division",
@@ -9476,7 +9484,6 @@ function renderShell(fromRoute){
         // (Division 2 Playoff, Division 3 Playoff, ...) arrivano da gw_competitions.
         if(!item||item.id==="COMP_DOM_001"||item.id==="COMP_DOM_005")return;
         const nationName=row.nation_setup_id?(nationMap.get(String(row.nation_setup_id))||""):"";
-        if(item.category==="domestic" && activeImcNationNames && nationName && !activeImcNationNames.has(normalizeParticipantKey(nationName)))return;
         const displayName=item.name;
         const databaseBaseName=item.dbName||displayName;
         const databaseName=nationName?nationName+" · "+databaseBaseName:databaseBaseName;
@@ -9508,7 +9515,6 @@ function renderShell(fromRoute){
           const separatorIndex=rawName.indexOf("·");
           if(separatorIndex>=0)nationName=rawName.slice(0,separatorIndex).trim();
         }
-        if(activeImcNationNames && nationName && !activeImcNationNames.has(normalizeParticipantKey(nationName)))return;
 
         const displayName="Division "+divisionNumber+" Playoff";
         tiles.push({
@@ -9524,6 +9530,9 @@ function renderShell(fromRoute){
         });
       });
 
+      tiles.forEach(function(tile){
+        tile.hasImcManager=Boolean(activeImcNationNames && tile.category==="domestic" && tile.nation && activeImcNationNames.has(normalizeParticipantKey(tile.nation)));
+      });
       state.worldCompetitions=tiles;
       state.worldCompetitionsSeason=season;
       if(!selectedWorldIsMultiLeague())state.competitionNationFilter="all";
@@ -9542,6 +9551,13 @@ function renderShell(fromRoute){
         renderWorldCompetitions();
         const input=document.getElementById("competitionSearchInput");
         if(input)input.focus();
+        return;
+      }
+
+      const imcToggle=event.target.closest("#competitionImcFilter");
+      if(imcToggle){
+        state.competitionImcFilter=!state.competitionImcFilter;
+        renderWorldCompetitions();
         return;
       }
 
