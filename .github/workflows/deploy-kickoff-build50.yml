@@ -1,0 +1,81 @@
+name: Deploy GW009 Kick Off Cup Build 50
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/deploy-kickoff-build50.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    if: ${{ github.event.head_commit.message == 'deploy-kickoff-build50' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install FTPS client
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy Build 50 files
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
+            if [ -z "${!name:-}" ]; then
+              echo "Missing required secret: $name"
+              exit 1
+            fi
+          done
+
+          test -f nexus/index.html
+          test -f nexus/js/app.js
+          test -f nexus/assets/trophies/kick-off-cup.webp
+          grep -F 'IMC Nexus · Build 50' nexus/index.html
+          grep -F 'const NEXUS_BUILD = "50";' nexus/js/app.js
+          grep -F 'GW009-KICK-OFF-CUP' nexus/js/app.js
+          grep -F 'kick-off-cup.webp' nexus/js/app.js
+
+          HOST="${ARUBA_FTP_HOST#ftp://}"
+          HOST="${HOST#ftps://}"
+          DOMAIN="${HOST#ftp.}"
+          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          if [[ "$RAW_REMOTE" == /www.* ]]; then
+            REMOTE="$RAW_REMOTE"
+          else
+            REMOTE="/www.$DOMAIN$RAW_REMOTE"
+          fi
+
+          lftp -c "
+            set cmd:fail-exit yes;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate yes;
+            set ssl:check-hostname no;
+            set net:max-retries 2;
+            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
+            put -O \"$REMOTE\" nexus/index.html;
+            put -O \"$REMOTE/js\" nexus/js/app.js;
+            put -O \"$REMOTE/assets/trophies\" nexus/assets/trophies/kick-off-cup.webp;
+            bye;
+          "
+
+      - name: Remove temporary workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/deploy-kickoff-build50.yml
+          git commit -m "chore: remove temporary Kick Off Cup deploy workflow"
+          git push origin HEAD:main
