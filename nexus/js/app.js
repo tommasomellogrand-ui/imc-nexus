@@ -137,7 +137,7 @@
 
   // Build 8 · Client-side routing. One physical index.html, shareable logical URLs.
   const NEXUS_ROUTE_BASE = "/nexus";
-  const NEXUS_BUILD = "49";
+  const NEXUS_BUILD = "50";
   const NEXUS_BUILD_LABEL = "BUILD " + NEXUS_BUILD;
   if(window.location.pathname !== "/nexus/" && window.location.pathname !== "/nexus/index.html"){
     window.history.replaceState(null,"","/nexus/index.html");
@@ -1915,6 +1915,7 @@ function renderShell(fromRoute){
     // Nuovi nomi visuali.
     if(normalizedRaw==="national cup")return "assets/trophies/national-cup.png";
     if(normalizedRaw==="league cup")return "assets/trophies/league-cup.png";
+    if(normalizedRaw==="kick off cup")return "assets/trophies/kick-off-cup.webp";
     if(normalizedRaw==="charity shield")return "assets/trophies/charity-shield.png";
 
     // Record DB legacy con prefisso nazione.
@@ -9355,7 +9356,10 @@ function renderShell(fromRoute){
         state.client.from("gw_competition_settings").select("competition_id,nation_setup_id,start_date").eq("game_world_id",state.selectedWorld).eq("season_id",season.season_id),
         state.client.from("gw_competitions").select("competition_id,competition_code,competition_name,competition_type,competition_category,country_id,division_id").eq("game_world_id",state.selectedWorld).eq("competition_type","promotion_playoff"),
         state.client.from("gw_divisions").select("division_id,division_code,division_level,country_id,area_id").eq("game_world_id",state.selectedWorld),
-        state.client.from("gw_league_countries").select("country_id,country_name,area_id,area_sm,area_alias").eq("game_world_id",state.selectedWorld)
+        state.client.from("gw_league_countries").select("country_id,country_name,area_id,area_sm,area_alias").eq("game_world_id",state.selectedWorld),
+        state.selectedWorld==="GW009"
+          ? state.client.from("gw_competitions").select("competition_id,competition_code,competition_name,competition_type,competition_category").eq("game_world_id","GW009").eq("competition_code","GW009-KICK-OFF-CUP").maybeSingle()
+          : Promise.resolve({data:null,error:null})
       ]);
       results.forEach(function(r){if(r.error)throw r.error;});
       let divisions=results[0].data||[];
@@ -9500,6 +9504,23 @@ function renderShell(fromRoute){
         });
       });
 
+      const kickOffCompetition=results[6]&&results[6].data?results[6].data:null;
+      if(kickOffCompetition){
+        const leagueCupIndex=GW_STANDARD_COMPETITIONS.findIndex(function(item){
+          return String(item.name||"").toLowerCase()==="league cup";
+        });
+        tiles.push({
+          type:"competition",
+          competitionType:kickOffCompetition.competition_type||"domestic_cup",
+          category:"domestic",
+          nation:"",
+          id:kickOffCompetition.competition_name,
+          name:"Kick Off Cup",
+          date:"",
+          sortOrder:50+(leagueCupIndex>=0?leagueCupIndex+0.5:2.5)
+        });
+      }
+
       playoffCompetitions.forEach(function(row){
         const rawName=String(row.competition_name||"").trim();
         const match=rawName.match(/(?:^|·\s*)Division\s+(\d+)\s+Playoff$/i);
@@ -9621,6 +9642,7 @@ function renderShell(fromRoute){
     if(/playoff/.test(normalized)) return {main:"#D96C1F",soft:"#FFF0E4"};
     if(/national cup/.test(normalized)) return {main:"#C89B2D",soft:"#FFF5D9"};
     if(/league cup|league shield/.test(normalized)) return {main:"#1E8A5B",soft:"#E7F7EF"};
+    if(/kick off cup/.test(normalized)) return {main:"#C89B2D",soft:"#FFF5D9"};
     if(/charity shield/.test(normalized)) return {main:"#7A8AA0",soft:"#EEF2F6"};
     if(/imc champions|smfa champions/.test(normalized)) return {main:"#0F2E78",soft:"#E8EEFF"};
     if(/imc shield|smfa shield/.test(normalized)) return {main:"#5B4EA1",soft:"#F0EDFF"};
@@ -9970,6 +9992,7 @@ function renderShell(fromRoute){
   }
 
   function competitionSupportsStandings(name){
+    if(normalizeText(name).toLowerCase()==="kick off cup")return true;
     const type=resolveCompetitionType(name);
     return type==="smfa_champions" ||
       type==="smfa_shield" ||
