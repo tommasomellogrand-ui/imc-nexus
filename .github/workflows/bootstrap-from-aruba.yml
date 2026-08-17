@@ -62,6 +62,8 @@ jobs:
             set ssl:check-hostname no;
             set net:max-retries 2;
             open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
+            echo 'FTP root entries:';
+            cls -1 /;
             mirror --verbose --parallel=4 \
               --exclude-glob .ftpquota \
               --exclude-glob .env \
