@@ -28,7 +28,9 @@ jobs:
           domain=host[4:] if host.startswith('ftp.') else host
           remote=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
 
-          ftp=FTP_TLS(context=ssl.create_default_context())
+          ctx=ssl.create_default_context()
+          ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx)
           ftp.connect(host,21,timeout=30)
           ftp.login(user,password)
           ftp.prot_p()
