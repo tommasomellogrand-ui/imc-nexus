@@ -1,0 +1,150 @@
+name: Nexus Build 49 All Nations
+
+on:
+  push:
+    paths:
+      - '.github/workflows/nexus-build49-all-nations.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Patch Build 49
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          app_path = Path('nexus/js/app.js')
+          index_path = Path('nexus/index.html')
+          s = app_path.read_text(encoding='utf-8')
+          h = index_path.read_text(encoding='utf-8')
+
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{label}: expected 1 occurrence, found {count}')
+              return text.replace(old, new, 1)
+
+          # Dedicated filter state. Existing entity filter remains untouched.
+          s = replace_once(
+              s,
+              '    entityImcFilter: false,\n    competitionFilter: "domestic",',
+              '    entityImcFilter: false,\n    competitionImcFilter: false,\n    competitionFilter: "domestic",',
+              'competition filter state'
+          )
+
+          # Build number.
+          s = replace_once(s, '  const NEXUS_BUILD = "47";', '  const NEXUS_BUILD = "49";', 'build number')
+
+          # Rendering: optional IMC-only filter, applied only to domestic Multi League tiles.
+          s = replace_once(
+              s,
+              '    const search=normalizeText(state.competitionSearch||"");\n    const isMulti=selectedWorldIsMultiLeague();',
+              '    const search=normalizeText(state.competitionSearch||"");\n    const isMulti=selectedWorldIsMultiLeague();\n    const imcManagersOnly=category==="domestic"&&isMulti&&Boolean(state.competitionImcFilter);',
+              'render filter state'
+          )
+
+          s = replace_once(
+              s,
+              '    if(category==="domestic"&&isMulti&&nationFilter!=="all"){\n      filtered=filtered.filter(function(item){return item.nation===nationFilter;});\n    }\n    if(search){',
+              '    if(category==="domestic"&&isMulti&&nationFilter!=="all"){\n      filtered=filtered.filter(function(item){return item.nation===nationFilter;});\n    }\n    if(imcManagersOnly){\n      filtered=filtered.filter(function(item){return Boolean(item.hasImcManager);});\n    }\n    if(search){',
+              'render tile filter'
+          )
+
+          # Reuse the existing IMC Managers visual style already used by Clubs/National Teams.
+          nation_panel = '      ${category==="domestic"&&isMulti&&(state.competitionNationOpen||nationFilter!=="all")?`<div class="nx-competition-filter-panel">\n'
+          imc_panel = '''      ${category==="domestic"&&isMulti?`<div class="nx-competition-filter-panel">\n        <button type="button" id="competitionImcFilter" class="nx-imc-filter${imcManagersOnly?" is-active":""}" aria-pressed="${imcManagersOnly?"true":"false"}">IMC Managers</button>\n      </div>`:""}\n\n'''
+          if s.count(nation_panel) != 1:
+              raise SystemExit(f'IMC panel anchor: expected 1, found {s.count(nation_panel)}')
+          s = s.replace(nation_panel, imc_panel + nation_panel, 1)
+
+          # IMPORTANT: stop deleting unmanaged nations. Build every configured tile.
+          legacy_div = '        if(activeImcNationNames && nationName && !activeImcNationNames.has(normalizeParticipantKey(nationName)))return;\n'
+          if s.count(legacy_div) != 2:
+              raise SystemExit(f'division/playoff legacy filters: expected 2, found {s.count(legacy_div)}')
+          s = s.replace(legacy_div, '')
+
+          legacy_comp = '        if(item.category==="domestic" && activeImcNationNames && nationName && !activeImcNationNames.has(normalizeParticipantKey(nationName)))return;\n'
+          if s.count(legacy_comp) != 1:
+              raise SystemExit(f'competition legacy filter: expected 1, found {s.count(legacy_comp)}')
+          s = s.replace(legacy_comp, '', 1)
+
+          # Mark tiles belonging to a nation with an active IMC manager.
+          s = replace_once(
+              s,
+              '      state.worldCompetitions=tiles;',
+              '      tiles.forEach(function(tile){\n        tile.hasImcManager=Boolean(activeImcNationNames && tile.category==="domestic" && tile.nation && activeImcNationNames.has(normalizeParticipantKey(tile.nation)));\n      });\n      state.worldCompetitions=tiles;',
+              'tile IMC flags'
+          )
+
+          # Button binding.
+          s = replace_once(
+              s,
+              '      const nationToggle=event.target.closest("#toggleCompetitionNation");',
+              '      const imcToggle=event.target.closest("#competitionImcFilter");\n      if(imcToggle){\n        state.competitionImcFilter=!state.competitionImcFilter;\n        renderWorldCompetitions();\n        return;\n      }\n\n      const nationToggle=event.target.closest("#toggleCompetitionNation");',
+              'IMC button binding'
+          )
+
+          # Index/cache bust. No CSS changes: nx-imc-filter already exists online.
+          h = replace_once(h, '<title>IMC Nexus · Build 47</title>', '<title>IMC Nexus · Build 49</title>', 'index title')
+          h = replace_once(h, 'js/app.js?v=47.0', 'js/app.js?v=49.0', 'app cache key')
+
+          app_path.write_text(s, encoding='utf-8')
+          index_path.write_text(h, encoding='utf-8')
+          PY
+
+          node --check nexus/js/app.js
+          git diff --check
+          git diff --stat
+
+      - name: Commit Build 49
+        shell: bash
+        run: |
+          git config user.name "IMC Nexus Builder"
+          git config user.email "actions@users.noreply.github.com"
+          git add nexus/js/app.js nexus/index.html
+          git commit -m "build 49: show all nations with IMC Managers filter"
+          git push origin HEAD:main
+
+      - name: Deploy only changed Nexus files to Aruba
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+
+          HOST="${ARUBA_FTP_HOST#ftp://}"
+          HOST="${HOST#ftps://}"
+          DOMAIN="${HOST#ftp.}"
+          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          if [[ "$RAW_REMOTE" == /www.* ]]; then
+            REMOTE="$RAW_REMOTE"
+          else
+            REMOTE="/www.$DOMAIN$RAW_REMOTE"
+          fi
+
+          lftp -c "
+            set cmd:fail-exit yes;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate yes;
+            set ssl:check-hostname no;
+            set net:max-retries 2;
+            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
+            put -O \"$REMOTE/js\" nexus/js/app.js;
+            put -O \"$REMOTE\" nexus/index.html;
+            bye;
+          "
