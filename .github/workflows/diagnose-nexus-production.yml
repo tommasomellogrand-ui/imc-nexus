@@ -69,3 +69,5 @@ jobs:
           echo '=== BYTE COMPARE ==='
           cmp -s nexus/index.html /tmp/nexus-prod/index.html && echo 'INDEX_MATCH=YES' || echo 'INDEX_MATCH=NO'
           cmp -s nexus/js/app.js /tmp/nexus-prod/js/app.js && echo 'APP_MATCH=YES' || echo 'APP_MATCH=NO'
+
+# diagnostic trigger 2026-08-17 build50
