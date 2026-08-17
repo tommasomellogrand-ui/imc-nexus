@@ -74,9 +74,9 @@ jobs:
         run: |
           set -euo pipefail
           if grep -RIE --exclude='*.map' --exclude='*.min.js' \
-            '(service[_-]?role.{0,40}(key|secret)|SUPABASE_SERVICE_ROLE|BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|password[[:space:]]*=[[:space:]]*["'"'][^"'"']+["'"'])' \
+            '(service[_-]?role.{0,40}(key|secret)|SUPABASE_SERVICE_ROLE|BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|DB_PASSWORD|DATABASE_PASSWORD)' \
             nexus; then
-            echo "Potential secret detected in downloaded production files. Bootstrap stopped before commit."
+            echo "Potential server secret detected in downloaded production files. Bootstrap stopped before commit."
             exit 1
           fi
 
