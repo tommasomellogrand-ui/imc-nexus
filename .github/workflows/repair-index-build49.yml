@@ -1,0 +1,116 @@
+name: Repair Nexus Build 49 Index
+
+on:
+  push:
+    paths:
+      - '.github/workflows/repair-index-build49.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify local Build 49 index
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "LOCAL_SIZE=$(wc -c < nexus/index.html)"
+          sha256sum nexus/index.html
+          grep -F '<title>IMC Nexus · Build 49</title>' nexus/index.html
+          grep -F 'js/app.js?v=49.0' nexus/index.html
+
+      - name: Upload only index.html with Python FTPS and verify byte-for-byte
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS
+
+          local_path = Path('nexus/index.html')
+          local_bytes = local_path.read_bytes()
+          local_sha = hashlib.sha256(local_bytes).hexdigest()
+
+          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user = os.environ['ARUBA_FTP_USERNAME']
+          password = os.environ['ARUBA_FTP_PASSWORD']
+          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain = host[4:] if host.startswith('ftp.') else host
+          remote = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+
+          ctx = ssl.create_default_context()
+          ctx.check_hostname = False
+
+          ftp = FTP_TLS(context=ctx)
+          ftp.connect(host, 21, timeout=30)
+          ftp.login(user, password)
+          ftp.prot_p()
+          ftp.cwd(remote)
+
+          with local_path.open('rb') as fh:
+              ftp.storbinary('STOR index.html', fh, blocksize=65536)
+
+          remote_size = ftp.size('index.html')
+          buf = io.BytesIO()
+          ftp.retrbinary('RETR index.html', buf.write, blocksize=65536)
+          ftp.quit()
+
+          remote_bytes = buf.getvalue()
+          remote_sha = hashlib.sha256(remote_bytes).hexdigest()
+
+          print(f'LOCAL_SIZE={len(local_bytes)}')
+          print(f'REMOTE_SIZE={remote_size}')
+          print(f'READBACK_SIZE={len(remote_bytes)}')
+          print(f'LOCAL_SHA256={local_sha}')
+          print(f'REMOTE_SHA256={remote_sha}')
+
+          if remote_size != len(local_bytes):
+              raise SystemExit(f'FTP size mismatch: {remote_size} != {len(local_bytes)}')
+          if remote_bytes != local_bytes:
+              raise SystemExit('FTP read-back differs byte-for-byte from repository index.html')
+
+          print('FTP_INDEX_MATCH=YES')
+          PY
+
+      - name: Verify public HTTP page
+        shell: bash
+        run: |
+          set -euo pipefail
+          LOCAL_SHA="$(sha256sum nexus/index.html | awk '{print $1}')"
+          OK=0
+          for attempt in 1 2 3 4 5 6; do
+            URL="https://www.italianmastersclub.it/nexus/index.html?build49_verify=$(date +%s)-$attempt"
+            echo "HTTP verification attempt $attempt"
+            if curl -fsSL --connect-timeout 15 --max-time 30 \
+              -H 'Cache-Control: no-cache, no-store, must-revalidate' \
+              -H 'Pragma: no-cache' \
+              "$URL" -o /tmp/http-index.html; then
+              HTTP_SIZE="$(wc -c < /tmp/http-index.html)"
+              HTTP_SHA="$(sha256sum /tmp/http-index.html | awk '{print $1}')"
+              echo "HTTP_SIZE=$HTTP_SIZE"
+              echo "HTTP_SHA256=$HTTP_SHA"
+              if [ "$HTTP_SHA" = "$LOCAL_SHA" ] && \
+                 grep -Fq '<title>IMC Nexus · Build 49</title>' /tmp/http-index.html && \
+                 grep -Fq 'js/app.js?v=49.0' /tmp/http-index.html; then
+                echo 'HTTP_INDEX_MATCH=YES'
+                OK=1
+                break
+              fi
+            fi
+            sleep 4
+          done
+
+          if [ "$OK" -ne 1 ]; then
+            echo 'Public HTTP index is still not identical to repository after FTP repair.'
+            exit 1
+          fi
