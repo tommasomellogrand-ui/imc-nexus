@@ -59,6 +59,7 @@ jobs:
             set ftp:ssl-force true;
             set ftp:ssl-protect-data true;
             set ssl:verify-certificate yes;
+            set ssl:check-hostname no;
             set net:max-retries 2;
             open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
             mirror --verbose --parallel=4 \
