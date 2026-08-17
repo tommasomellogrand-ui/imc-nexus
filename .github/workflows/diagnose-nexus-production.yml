@@ -1,0 +1,71 @@
+name: Diagnose Nexus Production
+
+on:
+  push:
+    paths:
+      - '.github/workflows/diagnose-nexus-production.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install FTPS client
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Read production files from Aruba
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          HOST="${ARUBA_FTP_HOST#ftp://}"
+          HOST="${HOST#ftps://}"
+          DOMAIN="${HOST#ftp.}"
+          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          if [[ "$RAW_REMOTE" == /www.* ]]; then
+            REMOTE="$RAW_REMOTE"
+          else
+            REMOTE="/www.$DOMAIN$RAW_REMOTE"
+          fi
+
+          mkdir -p /tmp/nexus-prod/js
+          lftp -c "
+            set cmd:fail-exit yes;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate yes;
+            set ssl:check-hostname no;
+            set net:max-retries 2;
+            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
+            get \"$REMOTE/index.html\" -o /tmp/nexus-prod/index.html;
+            get \"$REMOTE/js/app.js\" -o /tmp/nexus-prod/js/app.js;
+            bye;
+          "
+
+          echo '=== FILE SIZES ==='
+          wc -c nexus/index.html nexus/js/app.js /tmp/nexus-prod/index.html /tmp/nexus-prod/js/app.js
+
+          echo '=== SHA256 ==='
+          sha256sum nexus/index.html /tmp/nexus-prod/index.html
+          sha256sum nexus/js/app.js /tmp/nexus-prod/js/app.js
+
+          echo '=== PRODUCTION INDEX REFERENCES ==='
+          grep -E '<title>|js/app\.js\?v=' /tmp/nexus-prod/index.html || true
+
+          echo '=== PRODUCTION APP BUILD ==='
+          grep -m1 'const NEXUS_BUILD' /tmp/nexus-prod/js/app.js || true
+
+          echo '=== PRODUCTION APP SYNTAX ==='
+          node --check /tmp/nexus-prod/js/app.js
+
+          echo '=== BYTE COMPARE ==='
+          cmp -s nexus/index.html /tmp/nexus-prod/index.html && echo 'INDEX_MATCH=YES' || echo 'INDEX_MATCH=NO'
+          cmp -s nexus/js/app.js /tmp/nexus-prod/js/app.js && echo 'APP_MATCH=YES' || echo 'APP_MATCH=NO'
