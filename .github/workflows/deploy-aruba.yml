@@ -1,0 +1,152 @@
+name: Deploy Nexus to Aruba
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'nexus/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[bootstrap]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install FTPS client
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Validate Aruba secrets
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
+            if [ -z "${!name:-}" ]; then
+              echo "Missing required secret: $name"
+              exit 1
+            fi
+          done
+
+      - name: Deploy full Nexus snapshot
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          HOST="${ARUBA_FTP_HOST#ftp://}"
+          HOST="${HOST#ftps://}"
+          REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+
+          test -d nexus
+
+          lftp -c "
+            set cmd:fail-exit yes;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate yes;
+            set net:max-retries 2;
+            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
+            mirror -R --verbose --parallel=4 --no-perms \
+              --exclude-glob .gitkeep \
+              --exclude-glob .env \
+              --exclude-glob '.env.*' \
+              --exclude-glob '*.pem' \
+              --exclude-glob '*.key' \
+              nexus \"$REMOTE\";
+            bye;
+          "
+
+      - name: Build minimal changed-file upload list
+        if: ${{ github.event_name == 'push' }}
+        id: changes
+        run: |
+          set -euo pipefail
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            git ls-files nexus > /tmp/nexus-files.txt
+          else
+            git diff --diff-filter=AMCR --name-only "$BEFORE" "$AFTER" -- nexus/ > /tmp/nexus-files.txt
+          fi
+
+          grep -vE '(^|/)\.gitkeep$|(^|/)\.env($|\.)|\.pem$|\.key$|\.p12$|\.pfx$' /tmp/nexus-files.txt > /tmp/nexus-upload.txt || true
+
+          echo "Files selected for deployment:"
+          cat /tmp/nexus-upload.txt || true
+
+          if [ -s /tmp/nexus-upload.txt ]; then
+            echo "has_files=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_files=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy only changed files
+        if: ${{ github.event_name == 'push' && steps.changes.outputs.has_files == 'true' }}
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          HOST="${ARUBA_FTP_HOST#ftp://}"
+          HOST="${HOST#ftps://}"
+          REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          COMMANDS=/tmp/deploy.lftp
+
+          {
+            echo 'set cmd:fail-exit yes'
+            echo 'set ftp:ssl-force true'
+            echo 'set ftp:ssl-protect-data true'
+            echo 'set ssl:verify-certificate yes'
+            echo 'set net:max-retries 2'
+            printf 'open -u "%s","%s" ftp://%s\n' "$ARUBA_FTP_USERNAME" "$ARUBA_FTP_PASSWORD" "$HOST"
+
+            while IFS= read -r file; do
+              [ -f "$file" ] || continue
+              rel="${file#nexus/}"
+              dir="$(dirname "$rel")"
+
+              if [ "$dir" = "." ]; then
+                target="$REMOTE"
+              else
+                target="$REMOTE/$dir"
+                printf 'mkdir -p "%s"\n' "$target"
+              fi
+
+              printf 'put -O "%s" "%s"\n' "$target" "$file"
+            done < /tmp/nexus-upload.txt
+
+            echo 'bye'
+          } > "$COMMANDS"
+
+          lftp -f "$COMMANDS"
+
+      - name: Deployment summary
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Full Nexus snapshot deployed to Aruba."
+          else
+            echo "Minimal changed-file Nexus patch deployed to Aruba."
+          fi
