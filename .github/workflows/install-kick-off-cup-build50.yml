@@ -1,0 +1,125 @@
+name: Install GW009 Kick Off Cup Build 50
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/install-kick-off-cup-build50.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    if: github.event.head_commit.message == 'chore: install Kick Off Cup build workflow'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Patch Nexus Build 50
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          app = Path('nexus/js/app.js')
+          text = app.read_text(encoding='utf-8')
+
+          def replace_once(old, new, label):
+              global text
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{label}: expected 1 match, found {count}')
+              text = text.replace(old, new, 1)
+
+          replace_once(
+              'const NEXUS_BUILD = "49";',
+              'const NEXUS_BUILD = "50";',
+              'build number'
+          )
+
+          replace_once(
+              'if(normalizedRaw==="league cup")return "assets/trophies/league-cup.png";',
+              'if(normalizedRaw==="league cup")return "assets/trophies/league-cup.png";\n    if(normalizedRaw==="kick off cup")return "assets/trophies/kick-off-cup.webp";',
+              'Kick Off Cup trophy mapping'
+          )
+
+          replace_once(
+              'if(/league cup|league shield/.test(normalized)) return {main:"#1E8A5B",soft:"#E7F7EF"};',
+              'if(/league cup|league shield/.test(normalized)) return {main:"#1E8A5B",soft:"#E7F7EF"};\n    if(/kick off cup/.test(normalized)) return {main:"#C89B2D",soft:"#FFF5D9"};',
+              'Kick Off Cup theme'
+          )
+
+          replace_once(
+              'function competitionSupportsStandings(name){\n    const type=resolveCompetitionType(name);',
+              'function competitionSupportsStandings(name){\n    if(normalizeText(name).toLowerCase()==="kick off cup")return true;\n    const type=resolveCompetitionType(name);',
+              'Kick Off Cup standings support'
+          )
+
+          replace_once(
+              'state.client.from("gw_league_countries").select("country_id,country_name,area_id,area_sm,area_alias").eq("game_world_id",state.selectedWorld)\n      ]);',
+              'state.client.from("gw_league_countries").select("country_id,country_name,area_id,area_sm,area_alias").eq("game_world_id",state.selectedWorld),\n        state.selectedWorld==="GW009"\n          ? state.client.from("gw_competitions").select("competition_id,competition_code,competition_name,competition_type,competition_category").eq("game_world_id","GW009").eq("competition_code","GW009-KICK-OFF-CUP").maybeSingle()\n          : Promise.resolve({data:null,error:null})\n      ]);',
+              'GW009 custom competition query'
+          )
+
+          replace_once(
+              '      playoffCompetitions.forEach(function(row){',
+              '''      const kickOffCompetition=results[6]&&results[6].data?results[6].data:null;
+      if(kickOffCompetition){
+        const leagueCupIndex=GW_STANDARD_COMPETITIONS.findIndex(function(item){
+          return String(item.name||"").toLowerCase()==="league cup";
+        });
+        tiles.push({
+          type:"competition",
+          competitionType:kickOffCompetition.competition_type||"domestic_cup",
+          category:"domestic",
+          nation:"",
+          id:kickOffCompetition.competition_name,
+          name:"Kick Off Cup",
+          date:"",
+          sortOrder:50+(leagueCupIndex>=0?leagueCupIndex+0.5:2.5)
+        });
+      }
+
+      playoffCompetitions.forEach(function(row){''',
+              'GW009 Kick Off Cup tile'
+          )
+
+          app.write_text(text, encoding='utf-8')
+
+          index = Path('nexus/index.html')
+          html = index.read_text(encoding='utf-8')
+          title_old = '<title>IMC Nexus · Build 49</title>'
+          app_old = 'js/app.js?v=49.0'
+          if html.count(title_old) != 1:
+              raise SystemExit('Build 49 title marker not found exactly once')
+          if html.count(app_old) != 1:
+              raise SystemExit('Build 49 app cache marker not found exactly once')
+          html = html.replace(title_old, '<title>IMC Nexus · Build 50</title>', 1)
+          html = html.replace(app_old, 'js/app.js?v=50.0', 1)
+          index.write_text(html, encoding='utf-8')
+          PY
+
+          test -f nexus/assets/trophies/kick-off-cup.webp
+          grep -F 'const NEXUS_BUILD = "50";' nexus/js/app.js
+          grep -F 'assets/trophies/kick-off-cup.webp' nexus/js/app.js
+          grep -F 'GW009-KICK-OFF-CUP' nexus/js/app.js
+          grep -F 'name:"Kick Off Cup"' nexus/js/app.js
+          grep -F 'normalizeText(name).toLowerCase()==="kick off cup"' nexus/js/app.js
+          grep -F '<title>IMC Nexus · Build 50</title>' nexus/index.html
+          grep -F 'js/app.js?v=50.0' nexus/index.html
+
+      - name: Commit Nexus Build 50
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nexus/js/app.js nexus/index.html nexus/assets/trophies/kick-off-cup.webp
+          git rm .github/workflows/install-kick-off-cup-build50.yml
+          git commit -m "feat: add GW009 Kick Off Cup [build 50]"
+          git push origin HEAD:main
