@@ -10,4 +10,65 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo ready
+        with:
+          fetch-depth: 0
+      - name: Patch Nexus Build 48
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('nexus/js/app.js'); s=p.read_text(encoding='utf-8')
+          q=Path('nexus/index.html'); h=q.read_text(encoding='utf-8')
+
+          def one(old,new,label):
+            global s
+            n=s.count(old)
+            if n!=1: raise SystemExit(f'{label}: expected 1, found {n}')
+            s=s.replace(old,new,1)
+
+          one('    entityImcFilter: false,\n    competitionFilter: "domestic",','    entityImcFilter: false,\n    competitionImcFilter: false,\n    competitionFilter: "domestic",','state')
+          one('  const NEXUS_BUILD = "47";','  const NEXUS_BUILD = "48";','build')
+
+          pattern=re.compile(r'      // Build 8: nei Multi League le competizioni domestiche visibili sono\n.*?\n      const nationMap=',re.S)
+          block='''      // Build 48: tutte le nazioni Multi League restano visibili.\n      // Il set serve soltanto al filtro opzionale "IMC Managers".\n      let activeImcNationNames=new Set();\n      if(selectedWorldIsMultiLeague()){\n        const assignmentResult=await state.client.from("gw_manager_assignments")\n          .select("team_id,start_date,end_date")\n          .eq("game_world_id",state.selectedWorld)\n          .not("team_id","is",null);\n        if(assignmentResult.error)throw assignmentResult.error;\n        const today=localTodayDateKey();\n        const teamIds=Array.from(new Set((assignmentResult.data||[])\n          .filter(function(a){return (!a.start_date||a.start_date<=today)&&(!a.end_date||a.end_date>=today);})\n          .map(function(a){return Number(a.team_id);}).filter(Boolean)));\n        if(teamIds.length){\n          const setupResult=await state.client.from("gw_setup_team_divisions")\n            .select("team_id,nation_setup_id")\n            .eq("game_world_id",state.selectedWorld)\n            .eq("season_id",season.season_id)\n            .in("team_id",teamIds);\n          if(setupResult.error)throw setupResult.error;\n          const setupIds=new Set((setupResult.data||[]).map(function(r){return String(r.nation_setup_id||"");}).filter(Boolean));\n          if(setupIds.size){\n            activeImcNationNames=new Set(nations\n              .filter(function(n){return setupIds.has(String(n.nation_setup_id));})\n              .map(function(n){return normalizeParticipantKey(canonicalNationNameBySetupId.get(String(n.nation_setup_id))||n.nation_name);})\n              .filter(Boolean));\n          }else{\n            const seasonDiv=await state.client.from("gw_season_division_teams")\n              .select("team_id,division_id")\n              .eq("season_id",season.season_id)\n              .in("team_id",teamIds);\n            if(seasonDiv.error)throw seasonDiv.error;\n            const divisionIds=Array.from(new Set((seasonDiv.data||[]).map(function(r){return Number(r.division_id);}).filter(Boolean)));\n            if(divisionIds.length){\n              const leagueResult=await state.client.from("gw_competitions")\n                .select("division_id,competition_name")\n                .eq("game_world_id",state.selectedWorld)\n                .eq("competition_type","league")\n                .in("division_id",divisionIds);\n              if(leagueResult.error)throw leagueResult.error;\n              activeImcNationNames=new Set((leagueResult.data||[]).map(function(r){\n                const name=String(r.competition_name||""); const i=name.indexOf("·");\n                return normalizeParticipantKey(i>=0?name.slice(0,i).trim():"");\n              }).filter(Boolean));\n            }\n          }\n        }\n      }\n\n      const nationMap='''
+          s,n=pattern.subn(block,s,count=1)
+          if n!=1: raise SystemExit(f'active nation block: {n}')
+
+          legacy='        if(activeImcNationNames && nationName && !activeImcNationNames.has(normalizeParticipantKey(nationName)))return;\n'
+          if s.count(legacy)!=2: raise SystemExit(f'legacy division/playoff filters: {s.count(legacy)}')
+          s=s.replace(legacy,'')
+          legacy2='        if(item.category==="domestic" && activeImcNationNames && nationName && !activeImcNationNames.has(normalizeParticipantKey(nationName)))return;\n'
+          if s.count(legacy2)!=1: raise SystemExit(f'legacy settings filter: {s.count(legacy2)}')
+          s=s.replace(legacy2,'',1)
+
+          one('      state.worldCompetitions=tiles;','      tiles.forEach(function(tile){\n        tile.hasImcManager=Boolean(tile.category==="domestic"&&tile.nation&&activeImcNationNames.has(normalizeParticipantKey(tile.nation)));\n      });\n      state.worldCompetitions=tiles;','tile IMC flags')
+
+          one('    const search=normalizeText(state.competitionSearch||"");\n    const isMulti=selectedWorldIsMultiLeague();','    const search=normalizeText(state.competitionSearch||"");\n    const isMulti=selectedWorldIsMultiLeague();\n    const imcManagersOnly=category==="domestic"&&isMulti&&Boolean(state.competitionImcFilter);','render state')
+          one('    if(category==="domestic"&&isMulti&&nationFilter!=="all"){\n      filtered=filtered.filter(function(item){return item.nation===nationFilter;});\n    }\n    if(search){','    if(category==="domestic"&&isMulti&&nationFilter!=="all"){\n      filtered=filtered.filter(function(item){return item.nation===nationFilter;});\n    }\n    if(imcManagersOnly){\n      filtered=filtered.filter(function(item){return Boolean(item.hasImcManager);});\n    }\n    if(search){','render filter')
+
+          anchor='      ${category==="domestic"&&isMulti&&(state.competitionNationOpen||nationFilter!=="all")?`<div class="nx-competition-filter-panel">\n'
+          panel='''      ${category==="domestic"&&isMulti?`<div class="nx-competition-filter-panel">\n        <button type="button" id="competitionImcFilter" class="nx-imc-filter${imcManagersOnly?" is-active":""}" aria-pressed="${imcManagersOnly?"true":"false"}">IMC Managers</button>\n      </div>`:""}\n\n'''
+          if s.count(anchor)!=1: raise SystemExit(f'nation panel anchor: {s.count(anchor)}')
+          s=s.replace(anchor,panel+anchor,1)
+
+          one('      const nationToggle=event.target.closest("#toggleCompetitionNation");','      const imcToggle=event.target.closest("#competitionImcFilter");\n      if(imcToggle){\n        state.competitionImcFilter=!state.competitionImcFilter;\n        renderWorldCompetitions();\n        return;\n      }\n\n      const nationToggle=event.target.closest("#toggleCompetitionNation");','click binding')
+
+          if h.count('<title>IMC Nexus · Build 47</title>')!=1: raise SystemExit('index title 47 missing')
+          h=h.replace('<title>IMC Nexus · Build 47</title>','<title>IMC Nexus · Build 48</title>',1)
+          if h.count('js/app.js?v=47')!=1: raise SystemExit('app cache key 47 missing')
+          h=h.replace('js/app.js?v=47','js/app.js?v=48',1)
+
+          p.write_text(s,encoding='utf-8'); q.write_text(h,encoding='utf-8')
+          PY
+          git diff --check
+          git diff --stat
+      - name: Commit Build 48
+        shell: bash
+        run: |
+          git config user.name "IMC Nexus Builder"
+          git config user.email "actions@users.noreply.github.com"
+          git add nexus/js/app.js nexus/index.html
+          git commit -m "build 48: show all nations with IMC manager filter"
+          git push origin HEAD:main
