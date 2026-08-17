@@ -1,0 +1,96 @@
+name: Bootstrap Nexus from Aruba
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install FTPS client
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Validate Aruba secrets
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
+            if [ -z "${!name:-}" ]; then
+              echo "Missing required secret: $name"
+              exit 1
+            fi
+          done
+
+      - name: Download current production from Aruba
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          HOST="${ARUBA_FTP_HOST#ftp://}"
+          HOST="${HOST#ftps://}"
+          REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+
+          mkdir -p nexus
+          find nexus -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+
+          lftp -c "
+            set cmd:fail-exit yes;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate yes;
+            set net:max-retries 2;
+            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
+            mirror --verbose --parallel=4 \
+              --exclude-glob .ftpquota \
+              --exclude-glob .env \
+              --exclude-glob '.env.*' \
+              --exclude-glob .htpasswd \
+              --exclude-glob '*.pem' \
+              --exclude-glob '*.key' \
+              --exclude-glob '*.p12' \
+              --exclude-glob '*.pfx' \
+              --exclude-glob '*.log' \
+              \"$REMOTE\" nexus;
+            bye;
+          "
+
+      - name: Safety scan before committing
+        run: |
+          set -euo pipefail
+          if grep -RIE --exclude='*.map' --exclude='*.min.js' \
+            '(service[_-]?role.{0,40}(key|secret)|SUPABASE_SERVICE_ROLE|BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|password[[:space:]]*=[[:space:]]*["'"'][^"'"']+["'"'])' \
+            nexus; then
+            echo "Potential secret detected in downloaded production files. Bootstrap stopped before commit."
+            exit 1
+          fi
+
+      - name: Commit production snapshot
+        run: |
+          set -euo pipefail
+          git config user.name "IMC Nexus Deploy Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A nexus
+
+          if git diff --cached --quiet; then
+            echo "Production is already identical to the repository snapshot."
+            exit 0
+          fi
+
+          git commit -m "chore: bootstrap Nexus from Aruba [bootstrap]"
+          git push origin main
