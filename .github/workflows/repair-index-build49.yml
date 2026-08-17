@@ -1,4 +1,4 @@
-name: Repair Nexus Build 49 Index
+name: Repair Nexus Build 50 Index
 
 on:
   push:
@@ -14,14 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify local Build 49 index
+      - name: Verify local Build 50 index
         shell: bash
         run: |
           set -euo pipefail
           echo "LOCAL_SIZE=$(wc -c < nexus/index.html)"
           sha256sum nexus/index.html
-          grep -F '<title>IMC Nexus · Build 49</title>' nexus/index.html
-          grep -F 'js/app.js?v=49.0' nexus/index.html
+          grep -F '<title>IMC Nexus · Build 50</title>' nexus/index.html
+          grep -F 'js/app.js?v=50.0' nexus/index.html
 
       - name: Upload only index.html with Python FTPS and verify byte-for-byte
         shell: bash
@@ -89,7 +89,7 @@ jobs:
           LOCAL_SHA="$(sha256sum nexus/index.html | awk '{print $1}')"
           OK=0
           for attempt in 1 2 3 4 5 6; do
-            URL="https://www.italianmastersclub.it/nexus/index.html?build49_verify=$(date +%s)-$attempt"
+            URL="https://www.italianmastersclub.it/nexus/index.html?build50_verify=$(date +%s)-$attempt"
             echo "HTTP verification attempt $attempt"
             if curl -fsSL --connect-timeout 15 --max-time 30 \
               -H 'Cache-Control: no-cache, no-store, must-revalidate' \
@@ -100,8 +100,8 @@ jobs:
               echo "HTTP_SIZE=$HTTP_SIZE"
               echo "HTTP_SHA256=$HTTP_SHA"
               if [ "$HTTP_SHA" = "$LOCAL_SHA" ] && \
-                 grep -Fq '<title>IMC Nexus · Build 49</title>' /tmp/http-index.html && \
-                 grep -Fq 'js/app.js?v=49.0' /tmp/http-index.html; then
+                 grep -Fq '<title>IMC Nexus · Build 50</title>' /tmp/http-index.html && \
+                 grep -Fq 'js/app.js?v=50.0' /tmp/http-index.html; then
                 echo 'HTTP_INDEX_MATCH=YES'
                 OK=1
                 break
