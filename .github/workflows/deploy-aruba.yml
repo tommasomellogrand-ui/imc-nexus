@@ -44,6 +44,28 @@ jobs:
             fi
           done
 
+      - name: Preflight Nexus build
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s nexus/index.html
+          test -s nexus/js/app.js
+          grep -Fq '</html>' nexus/index.html
+          node --check nexus/js/app.js
+
+          BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\([^"]*\)";.*/\1/p' nexus/js/app.js | head -n1)"
+          if [ -z "$BUILD" ]; then
+            echo 'Unable to resolve NEXUS_BUILD from app.js'
+            exit 1
+          fi
+
+          grep -Fq "<title>IMC Nexus · Build $BUILD</title>" nexus/index.html
+          grep -Fq "js/app.js?v=$BUILD.0" nexus/index.html
+
+          echo "PREFLIGHT_BUILD=$BUILD"
+          echo "PREFLIGHT_INDEX_SIZE=$(wc -c < nexus/index.html)"
+          echo "PREFLIGHT_APP_SIZE=$(wc -c < nexus/js/app.js)"
+
       - name: Deploy full Nexus snapshot
         if: ${{ github.event_name == 'workflow_dispatch' }}
         env:
@@ -65,6 +87,8 @@ jobs:
 
           test -d nexus
 
+          # Critical runtime files are deliberately excluded here and uploaded
+          # later with Python FTP_TLS plus byte-for-byte read-back verification.
           lftp -c "
             set cmd:fail-exit yes;
             set ftp:ssl-force true;
@@ -79,6 +103,8 @@ jobs:
               --exclude-glob '.env.*' \
               --exclude-glob '*.pem' \
               --exclude-glob '*.key' \
+              --exclude-glob 'index.html' \
+              --exclude-glob 'js/app.js' \
               nexus \"$REMOTE\";
             bye;
           "
@@ -108,8 +134,9 @@ jobs:
             echo "has_files=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Deploy only changed files
+      - name: Deploy changed non-critical files with verified FTPS
         if: ${{ github.event_name == 'push' && steps.changes.outputs.has_files == 'true' }}
+        shell: bash
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
           ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
@@ -117,50 +144,188 @@ jobs:
           ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
         run: |
           set -euo pipefail
-          HOST="${ARUBA_FTP_HOST#ftp://}"
-          HOST="${HOST#ftps://}"
-          DOMAIN="${HOST#ftp.}"
-          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
-          if [[ "$RAW_REMOTE" == /www.* ]]; then
-            REMOTE="$RAW_REMOTE"
+          python3 - <<'PY'
+          import io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS, error_perm
+
+          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user = os.environ['ARUBA_FTP_USERNAME']
+          password = os.environ['ARUBA_FTP_PASSWORD']
+          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain = host[4:] if host.startswith('ftp.') else host
+          remote_root = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+
+          changed = []
+          upload_list = Path('/tmp/nexus-upload.txt')
+          if upload_list.exists():
+              for line in upload_list.read_text(encoding='utf-8').splitlines():
+                  path = line.strip()
+                  if not path or path in ('nexus/index.html', 'nexus/js/app.js'):
+                      continue
+                  local = Path(path)
+                  if local.is_file():
+                      changed.append(local)
+
+          if not changed:
+              print('NO_NON_CRITICAL_FILES=YES')
+              raise SystemExit(0)
+
+          ctx = ssl.create_default_context()
+          ctx.check_hostname = False
+          ftp = FTP_TLS(context=ctx)
+          ftp.connect(host, 21, timeout=30)
+          ftp.login(user, password)
+          ftp.prot_p()
+
+          def ensure_dir(relative_dir):
+              ftp.cwd(remote_root)
+              if not relative_dir:
+                  return
+              for part in relative_dir.split('/'):
+                  if not part:
+                      continue
+                  try:
+                      ftp.cwd(part)
+                  except error_perm:
+                      try:
+                          ftp.mkd(part)
+                      except error_perm as exc:
+                          if not str(exc).startswith('550'):
+                              raise
+                      ftp.cwd(part)
+
+          for local in changed:
+              rel = local.as_posix().removeprefix('nexus/')
+              parent = str(Path(rel).parent).replace('\\','/')
+              if parent == '.':
+                  parent = ''
+              ensure_dir(parent)
+              data = local.read_bytes()
+              with local.open('rb') as fh:
+                  ftp.storbinary(f'STOR {local.name}', fh, blocksize=65536)
+              buf = io.BytesIO()
+              ftp.retrbinary(f'RETR {local.name}', buf.write, blocksize=65536)
+              if buf.getvalue() != data:
+                  raise SystemExit(f'FTPS read-back mismatch for {rel}')
+              print(f'UPLOAD_MATCH=YES {rel} {len(data)} bytes')
+
+          ftp.quit()
+          PY
+
+      - name: Upload and verify critical runtime files
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS
+
+          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user = os.environ['ARUBA_FTP_USERNAME']
+          password = os.environ['ARUBA_FTP_PASSWORD']
+          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain = host[4:] if host.startswith('ftp.') else host
+          remote_root = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+
+          ctx = ssl.create_default_context()
+          ctx.check_hostname = False
+          ftp = FTP_TLS(context=ctx)
+          ftp.connect(host, 21, timeout=30)
+          ftp.login(user, password)
+          ftp.prot_p()
+
+          critical = [
+              (Path('nexus/js/app.js'), f'{remote_root}/js', 'app.js'),
+              (Path('nexus/index.html'), remote_root, 'index.html'),
+          ]
+
+          for local, remote_dir, remote_name in critical:
+              data = local.read_bytes()
+              ftp.cwd(remote_dir)
+              with local.open('rb') as fh:
+                  ftp.storbinary(f'STOR {remote_name}', fh, blocksize=65536)
+
+              remote_size = ftp.size(remote_name)
+              buf = io.BytesIO()
+              ftp.retrbinary(f'RETR {remote_name}', buf.write, blocksize=65536)
+              remote_bytes = buf.getvalue()
+
+              local_sha = hashlib.sha256(data).hexdigest()
+              remote_sha = hashlib.sha256(remote_bytes).hexdigest()
+              print(f'{remote_name}: LOCAL_SIZE={len(data)} REMOTE_SIZE={remote_size}')
+              print(f'{remote_name}: LOCAL_SHA256={local_sha}')
+              print(f'{remote_name}: REMOTE_SHA256={remote_sha}')
+
+              if remote_size != len(data) or remote_bytes != data:
+                  raise SystemExit(f'Critical FTPS read-back mismatch for {remote_name}')
+              print(f'CRITICAL_MATCH=YES {remote_name}')
+
+          ftp.quit()
+          PY
+
+      - name: Public production smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\([^"]*\)";.*/\1/p' nexus/js/app.js | head -n1)"
+          BASE_URL='https://www.italianmastersclub.it/nexus'
+          INDEX_URL="$BASE_URL/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
+
+          curl -fsSL --connect-timeout 15 --max-time 30 \
+            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
+            -H 'Pragma: no-cache' \
+            "$INDEX_URL" -o /tmp/nexus-public-index.html
+
+          LOCAL_INDEX_SHA="$(sha256sum nexus/index.html | awk '{print $1}')"
+          HTTP_INDEX_SHA="$(sha256sum /tmp/nexus-public-index.html | awk '{print $1}')"
+          echo "PUBLIC_INDEX_SIZE=$(wc -c < /tmp/nexus-public-index.html)"
+          echo "LOCAL_INDEX_SHA256=$LOCAL_INDEX_SHA"
+          echo "PUBLIC_INDEX_SHA256=$HTTP_INDEX_SHA"
+
+          test "$LOCAL_INDEX_SHA" = "$HTTP_INDEX_SHA"
+          grep -Fq "<title>IMC Nexus · Build $BUILD</title>" /tmp/nexus-public-index.html
+          grep -Fq "js/app.js?v=$BUILD.0" /tmp/nexus-public-index.html
+          grep -Fq '</html>' /tmp/nexus-public-index.html
+
+          APP_URL="$BASE_URL/js/app.js?v=$BUILD.0&deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL --connect-timeout 15 --max-time 30 \
+            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
+            -H 'Pragma: no-cache' \
+            "$APP_URL" -o /tmp/nexus-public-app.js
+
+          LOCAL_APP_SHA="$(sha256sum nexus/js/app.js | awk '{print $1}')"
+          HTTP_APP_SHA="$(sha256sum /tmp/nexus-public-app.js | awk '{print $1}')"
+          echo "PUBLIC_APP_SIZE=$(wc -c < /tmp/nexus-public-app.js)"
+          echo "LOCAL_APP_SHA256=$LOCAL_APP_SHA"
+          echo "PUBLIC_APP_SHA256=$HTTP_APP_SHA"
+
+          test "$LOCAL_APP_SHA" = "$HTTP_APP_SHA"
+          node --check /tmp/nexus-public-app.js
+
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || true)"
+          if [ -n "$CHROME" ]; then
+            "$CHROME" --headless=new --no-sandbox --disable-gpu \
+              --virtual-time-budget=7000 --dump-dom "$INDEX_URL" \
+              > /tmp/nexus-public-dom.html 2>/tmp/nexus-chrome.log
+            grep -Fq 'id="loginForm"' /tmp/nexus-public-dom.html
+            echo 'BROWSER_SMOKE=YES'
           else
-            REMOTE="/www.$DOMAIN$RAW_REMOTE"
+            echo 'BROWSER_SMOKE=SKIPPED_NO_CHROME'
           fi
-          COMMANDS=/tmp/deploy.lftp
 
-          {
-            echo 'set cmd:fail-exit yes'
-            echo 'set ftp:ssl-force true'
-            echo 'set ftp:ssl-protect-data true'
-            echo 'set ssl:verify-certificate yes'
-            echo 'set ssl:check-hostname no'
-            echo 'set net:max-retries 2'
-            printf 'open -u "%s","%s" ftp://%s\n' "$ARUBA_FTP_USERNAME" "$ARUBA_FTP_PASSWORD" "$HOST"
-
-            while IFS= read -r file; do
-              [ -f "$file" ] || continue
-              rel="${file#nexus/}"
-              dir="$(dirname "$rel")"
-
-              if [ "$dir" = "." ]; then
-                target="$REMOTE"
-              else
-                target="$REMOTE/$dir"
-                printf 'mkdir -p "%s"\n' "$target"
-              fi
-
-              printf 'put -O "%s" "%s"\n' "$target" "$file"
-            done < /tmp/nexus-upload.txt
-
-            echo 'bye'
-          } > "$COMMANDS"
-
-          lftp -f "$COMMANDS"
+          echo 'PUBLIC_INDEX_MATCH=YES'
+          echo 'PUBLIC_APP_MATCH=YES'
+          echo "NEXUS_RELEASE_VERIFIED=BUILD_$BUILD"
 
       - name: Deployment summary
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "Full Nexus snapshot deployed to Aruba."
-          else
-            echo "Minimal changed-file Nexus patch deployed to Aruba."
-          fi
+          BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\([^"]*\)";.*/\1/p' nexus/js/app.js | head -n1)"
+          echo "Nexus Build $BUILD deployed and verified on public production."
