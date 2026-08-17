@@ -1,0 +1,41 @@
+name: Deploy Restored Build 47 Once
+on:
+  push:
+    paths: ['.github/workflows/deploy-restore-build47-once.yml']
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install FTPS client
+        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Deploy restored Nexus snapshot
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
+            if [ -z "${!name:-}" ]; then echo "Missing required secret: $name"; exit 1; fi
+          done
+          HOST="${ARUBA_FTP_HOST#ftp://}"
+          HOST="${HOST#ftps://}"
+          DOMAIN="${HOST#ftp.}"
+          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          if [[ "$RAW_REMOTE" == /www.* ]]; then REMOTE="$RAW_REMOTE"; else REMOTE="/www.$DOMAIN$RAW_REMOTE"; fi
+          test -d nexus
+          lftp -c "
+            set cmd:fail-exit yes;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate yes;
+            set ssl:check-hostname no;
+            set net:max-retries 2;
+            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
+            mirror -R --verbose --parallel=4 --no-perms --exclude-glob .gitkeep --exclude-glob .env --exclude-glob '.env.*' --exclude-glob '*.pem' --exclude-glob '*.key' nexus \"$REMOTE\";
+            bye;
+          "
