@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+
+# Local/runtime secrets must never enter Git
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+
+# Local editor files
+.vscode/
+.idea/
