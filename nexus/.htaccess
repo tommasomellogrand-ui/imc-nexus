@@ -2,6 +2,16 @@ DirectoryIndex index.html
 
 Options -MultiViews
 
+RewriteEngine On
+
+# Club logos: one canonical source for every Game World.
+# Numeric filenames are the SoccerWiki sm_club_id stored in sm_clubs_master.image_filename.
+RewriteRule ^assets/clubs/([0-9]+)\.png$ https://cdn.soccerwiki.org/images/logos/clubs/$1.png [R=302,L,NE]
+
+# Disable every legacy/local club PNG so Nexus automatically advances
+# to the canonical numeric master filename above.
+RewriteRule ^assets/clubs/.*\.png$ - [R=404,L]
+
 <IfModule mod_headers.c>
   <FilesMatch "^index\.html$">
     Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
