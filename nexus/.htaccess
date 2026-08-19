@@ -5,12 +5,13 @@ Options -MultiViews
 RewriteEngine On
 
 # Club logos: one canonical source for every Game World.
-# Numeric filenames are the SoccerWiki sm_club_id stored in sm_clubs_master.image_filename.
-RewriteRule ^assets/clubs/([0-9]+)\.png$ https://cdn.soccerwiki.org/images/logos/clubs/$1.png [R=302,L,NE]
+# The filename is read from sm_clubs_master.image_filename and always starts
+# with the SoccerWiki sm_club_id (PNG/JPG variants are both supported).
+RewriteRule ^assets/clubs/([0-9][^/]*\.(png|jpg|jpeg|webp))$ https://cdn.soccerwiki.org/images/logos/clubs/$1 [R=302,L,NE,NC]
 
-# Disable every legacy/local club PNG so Nexus automatically advances
-# to the canonical numeric master filename above.
-RewriteRule ^assets/clubs/.*\.png$ - [R=404,L]
+# Disable every legacy/local club image so Nexus automatically advances
+# to the canonical master filename loaded from sm_clubs_master.
+RewriteRule ^assets/clubs/.*\.(png|jpg|jpeg|webp)$ - [R=404,L,NC]
 
 <IfModule mod_headers.c>
   <FilesMatch "^index\.html$">
