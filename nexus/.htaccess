@@ -13,6 +13,8 @@ RewriteRule ^assets/clubs/([0-9][^/]*\.(png|jpg|jpeg|webp))$ https://cdn.soccerw
 # to the canonical master filename loaded from sm_clubs_master.
 RewriteRule ^assets/clubs/.*\.(png|jpg|jpeg|webp)$ - [R=404,L,NC]
 
+# Runtime redeploy marker: no functional effect.
+
 <IfModule mod_headers.c>
   <FilesMatch "^index\.html$">
     Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
