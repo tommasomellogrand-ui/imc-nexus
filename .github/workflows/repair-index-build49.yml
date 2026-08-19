@@ -1,4 +1,4 @@
-name: Repair Nexus Build 50 Index
+name: Hotfix Nexus Runtime
 
 on:
   push:
@@ -6,25 +6,21 @@ on:
       - '.github/workflows/repair-index-build49.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  repair:
+  hotfix:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Verify local Build 50 index
-        shell: bash
+      - name: Validate runtime
         run: |
           set -euo pipefail
-          echo "LOCAL_SIZE=$(wc -c < nexus/index.html)"
-          sha256sum nexus/index.html
-          grep -F '<title>IMC Nexus · Build 50</title>' nexus/index.html
-          grep -F 'js/app.js?v=50.0' nexus/index.html
+          node --check nexus/js/app.js
+          grep -Fq 'const NEXUS_BUILD = "50";' nexus/js/app.js
 
-      - name: Upload only index.html with Python FTPS and verify byte-for-byte
-        shell: bash
+      - name: Upload app.js to Aruba and verify
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
           ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
@@ -37,10 +33,8 @@ jobs:
           from pathlib import Path
           from ftplib import FTP_TLS
 
-          local_path = Path('nexus/index.html')
-          local_bytes = local_path.read_bytes()
-          local_sha = hashlib.sha256(local_bytes).hexdigest()
-
+          local = Path('nexus/js/app.js').read_bytes()
+          local_sha = hashlib.sha256(local).hexdigest()
           host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
           user = os.environ['ARUBA_FTP_USERNAME']
           password = os.environ['ARUBA_FTP_PASSWORD']
@@ -48,69 +42,54 @@ jobs:
           domain = host[4:] if host.startswith('ftp.') else host
           remote = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
 
-          ctx = ssl.create_default_context()
-          ctx.check_hostname = False
-
+          ctx = ssl.create_default_context(); ctx.check_hostname = False
           ftp = FTP_TLS(context=ctx)
-          ftp.connect(host, 21, timeout=30)
-          ftp.login(user, password)
-          ftp.prot_p()
-          ftp.cwd(remote)
-
-          with local_path.open('rb') as fh:
-              ftp.storbinary('STOR index.html', fh, blocksize=65536)
-
-          remote_size = ftp.size('index.html')
-          buf = io.BytesIO()
-          ftp.retrbinary('RETR index.html', buf.write, blocksize=65536)
+          ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p(); ftp.cwd(remote)
+          with io.BytesIO(local) as fh:
+              ftp.storbinary('STOR js/app.js', fh, blocksize=65536)
+          buf = io.BytesIO(); ftp.retrbinary('RETR js/app.js', buf.write, blocksize=65536)
+          try: ftp.delete('js/app-core.js')
+          except Exception: pass
           ftp.quit()
-
           remote_bytes = buf.getvalue()
           remote_sha = hashlib.sha256(remote_bytes).hexdigest()
-
-          print(f'LOCAL_SIZE={len(local_bytes)}')
-          print(f'REMOTE_SIZE={remote_size}')
-          print(f'READBACK_SIZE={len(remote_bytes)}')
-          print(f'LOCAL_SHA256={local_sha}')
-          print(f'REMOTE_SHA256={remote_sha}')
-
-          if remote_size != len(local_bytes):
-              raise SystemExit(f'FTP size mismatch: {remote_size} != {len(local_bytes)}')
-          if remote_bytes != local_bytes:
-              raise SystemExit('FTP read-back differs byte-for-byte from repository index.html')
-
-          print('FTP_INDEX_MATCH=YES')
+          if remote_bytes != local:
+              raise SystemExit('FTP app.js read-back mismatch')
+          Path('nexus-hotfix-result.txt').write_text(
+              f'FTP_APP_MATCH=YES\nLOCAL_SIZE={len(local)}\nLOCAL_SHA256={local_sha}\nREMOTE_SHA256={remote_sha}\n',
+              encoding='utf-8')
           PY
 
-      - name: Verify public HTTP page
-        shell: bash
+      - name: Verify public runtime
         run: |
           set -euo pipefail
-          LOCAL_SHA="$(sha256sum nexus/index.html | awk '{print $1}')"
+          LOCAL_SHA="$(sha256sum nexus/js/app.js | awk '{print $1}')"
           OK=0
           for attempt in 1 2 3 4 5 6; do
-            URL="https://www.italianmastersclub.it/nexus/index.html?build50_verify=$(date +%s)-$attempt"
-            echo "HTTP verification attempt $attempt"
-            if curl -fsSL --connect-timeout 15 --max-time 30 \
-              -H 'Cache-Control: no-cache, no-store, must-revalidate' \
-              -H 'Pragma: no-cache' \
-              "$URL" -o /tmp/http-index.html; then
-              HTTP_SIZE="$(wc -c < /tmp/http-index.html)"
-              HTTP_SHA="$(sha256sum /tmp/http-index.html | awk '{print $1}')"
-              echo "HTTP_SIZE=$HTTP_SIZE"
-              echo "HTTP_SHA256=$HTTP_SHA"
-              if [ "$HTTP_SHA" = "$LOCAL_SHA" ] && \
-                 grep -Fq '<title>IMC Nexus · Build 50</title>' /tmp/http-index.html && \
-                 grep -Fq 'js/app.js?v=50.0' /tmp/http-index.html; then
-                echo 'HTTP_INDEX_MATCH=YES'
+            URL="https://www.italianmastersclub.it/nexus/js/app.js?hotfix=$(date +%s)-$attempt"
+            if curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache' "$URL" -o /tmp/app.js; then
+              HTTP_SHA="$(sha256sum /tmp/app.js | awk '{print $1}')"
+              if [ "$HTTP_SHA" = "$LOCAL_SHA" ]; then
+                printf 'HTTP_APP_MATCH=YES\n' >> nexus-hotfix-result.txt
                 OK=1
                 break
               fi
             fi
-            sleep 4
+            sleep 3
           done
-
           if [ "$OK" -ne 1 ]; then
-            echo 'Public HTTP index is still not identical to repository after FTP repair.'
+            printf 'HTTP_APP_MATCH=NO\n' >> nexus-hotfix-result.txt
             exit 1
           fi
+
+      - name: Record result
+        if: always()
+        run: |
+          set -euo pipefail
+          test -f nexus-hotfix-result.txt || printf 'HOTFIX_FAILED_BEFORE_REPORT=YES\n' > nexus-hotfix-result.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add nexus-hotfix-result.txt
+          git commit -m 'chore: record Nexus runtime hotfix result' || exit 0
+          git push
