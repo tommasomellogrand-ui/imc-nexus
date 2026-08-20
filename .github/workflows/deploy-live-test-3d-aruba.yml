@@ -1,0 +1,118 @@
+name: Deploy Live Test 3D to Aruba
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'live-test-3d/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-test-3d-production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Aruba secrets
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
+            if [ -z "${!name:-}" ]; then
+              echo "Missing required secret: $name"
+              exit 1
+            fi
+          done
+
+      - name: Deploy Live Test 3D with verified FTPS
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS, error_perm
+
+          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user = os.environ['ARUBA_FTP_USERNAME']
+          password = os.environ['ARUBA_FTP_PASSWORD']
+          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain = host[4:] if host.startswith('ftp.') else host
+
+          if raw.endswith('/nexus'):
+              target_raw = raw[:-len('/nexus')] + '/live-test-3d'
+          else:
+              raise SystemExit(f'ARUBA_FTP_REMOTE_DIR must end in /nexus, got: {raw}')
+
+          remote_root = target_raw if target_raw.startswith('/www.') else f'/www.{domain}{target_raw}'
+          local_root = Path('live-test-3d')
+          files = [p for p in local_root.rglob('*') if p.is_file()]
+          if not files:
+              raise SystemExit('No live-test-3d files to deploy')
+
+          ctx = ssl.create_default_context()
+          ctx.check_hostname = False
+          ftp = FTP_TLS(context=ctx)
+          ftp.connect(host, 21, timeout=30)
+          ftp.login(user, password)
+          ftp.prot_p()
+
+          def ensure_dir(path):
+              parts = [x for x in path.split('/') if x]
+              ftp.cwd('/')
+              current = ''
+              for part in parts:
+                  current += '/' + part
+                  try:
+                      ftp.cwd(current)
+                  except error_perm:
+                      ftp.mkd(current)
+                      ftp.cwd(current)
+
+          for local in files:
+              rel = local.relative_to(local_root).as_posix()
+              parent = str(Path(rel).parent).replace('\\','/')
+              remote_dir = remote_root if parent == '.' else remote_root + '/' + parent
+              ensure_dir(remote_dir)
+              data = local.read_bytes()
+              with local.open('rb') as fh:
+                  ftp.storbinary(f'STOR {local.name}', fh, blocksize=65536)
+              buf = io.BytesIO()
+              ftp.retrbinary(f'RETR {local.name}', buf.write, blocksize=65536)
+              if buf.getvalue() != data:
+                  raise SystemExit(f'FTPS read-back mismatch for {rel}')
+              print(f'UPLOAD_MATCH=YES {rel} {len(data)} bytes')
+
+          ftp.quit()
+          PY
+
+      - name: Public smoke test
+        run: |
+          set -euo pipefail
+          test -s live-test-3d/index.html
+          URL="https://www.italianmastersclub.it/live-test-3d/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL --connect-timeout 15 --max-time 30 \
+            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
+            -H 'Pragma: no-cache' \
+            "$URL" -o /tmp/live-test-3d-public.html
+          grep -Fq 'MATCHDAY 12' /tmp/live-test-3d-public.html
+          grep -Fq '20 AGOSTO 2026' /tmp/live-test-3d-public.html
+          echo 'LIVE_TEST_3D_PUBLIC_SMOKE=YES'
