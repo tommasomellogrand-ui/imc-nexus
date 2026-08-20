@@ -65,6 +65,16 @@
     selectedPlayer: null,
     playerCodexFilter: "all",
     playerCodexSearch: "",
+    playerCodexAdvancedOpen: false,
+    playerCodexSort: "rating_desc",
+    playerCodexClub: "all",
+    playerCodexPosition: "all",
+    playerCodexRatingMin: "",
+    playerCodexRatingMax: "",
+    playerCodexAgeMin: "",
+    playerCodexAgeMax: "",
+    playerCodexValueMin: "",
+    playerCodexValueMax: "",
     playerCodexReturn: null,
     transferDirectionFilter: "all",
     transferSearch: "",
@@ -137,7 +147,7 @@
 
   // Build 8 · Client-side routing. One physical index.html, shareable logical URLs.
   const NEXUS_ROUTE_BASE = "/nexus";
-  const NEXUS_BUILD = "50";
+  const NEXUS_BUILD = "51";
   const NEXUS_BUILD_LABEL = "BUILD " + NEXUS_BUILD;
   if(window.location.pathname !== "/nexus/" && window.location.pathname !== "/nexus/index.html"){
     window.history.replaceState(null,"","/nexus/index.html");
@@ -7995,18 +8005,51 @@ function renderShell(fromRoute){
 
   function playerCodexArchivePageB44(){
     setTimeout(function(){loadPlayerCodexArchiveB44();},0);
-    return `<section class="nx-card nx-player-codex-page-b44">
+    return `<style>
+      .nx-codex-tools-b51{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+      .nx-codex-tool-b51,.nx-codex-sort-b51{min-height:48px;border:1px solid #d9e1ed;border-radius:15px;background:#fff;color:#18325d;font:inherit;font-size:12px;font-weight:900;box-sizing:border-box}
+      .nx-codex-tool-b51{display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}.nx-codex-tool-b51.is-open{border-color:#6e99e8;background:#eef4ff;color:#245bb5}.nx-codex-tool-b51 b{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:#315fba;color:#fff;font-size:10px;box-sizing:border-box}
+      .nx-codex-sort-b51{width:100%;padding:0 12px}
+      .nx-codex-advanced-b51{margin-top:10px;border:1px solid #dce4ef;border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 8px 22px rgba(15,35,70,.05)}.nx-codex-advanced-b51[hidden]{display:none!important}
+      .nx-codex-advanced-head-b51{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 15px;border-bottom:1px solid #e9edf4}.nx-codex-advanced-head-b51 small{display:block;color:#7a879c;font-size:9px;font-weight:950;letter-spacing:.13em}.nx-codex-advanced-head-b51 strong{display:block;margin-top:3px;color:#0d244b;font-size:16px}.nx-codex-close-b51{border:0;background:transparent;color:#315fba;font:inherit;font-size:11px;font-weight:900;cursor:pointer}
+      .nx-codex-filter-grid-b51{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px}.nx-codex-filter-field-b51{display:flex;flex-direction:column;gap:6px;min-width:0}.nx-codex-filter-field-b51.is-wide{grid-column:1/-1}.nx-codex-filter-field-b51>span{color:#78859a;font-size:9px;font-weight:900}.nx-codex-filter-field-b51 select,.nx-codex-filter-field-b51 input{width:100%;min-height:42px;padding:0 10px;border:1px solid #dce3ed;border-radius:12px;background:#f8fafd;color:#152b51;font:inherit;font-size:11px;font-weight:800;box-sizing:border-box}.nx-codex-range-b51{display:grid;grid-template-columns:1fr auto 1fr;gap:7px;align-items:center}.nx-codex-range-b51>i{color:#8994a6;font-style:normal;font-size:10px;font-weight:900}
+      .nx-codex-filter-actions-b51{display:grid;grid-template-columns:1fr 1.4fr;gap:9px;padding:0 14px 14px}.nx-codex-filter-actions-b51 button{min-height:44px;border-radius:13px;font:inherit;font-size:11px;font-weight:950;cursor:pointer}.nx-codex-reset-b51{border:1px solid #cfd9e7;background:#fff;color:#315fba}.nx-codex-apply-b51{border:0;background:#0d2b5d;color:#fff}
+      @media(max-width:520px){.nx-codex-tools-b51{gap:8px}.nx-codex-tool-b51,.nx-codex-sort-b51{min-height:44px;border-radius:13px;font-size:10px}.nx-codex-filter-grid-b51{gap:8px;padding:12px}.nx-codex-filter-field-b51 select,.nx-codex-filter-field-b51 input{min-height:40px;font-size:10px}.nx-codex-filter-actions-b51{padding:0 12px 12px}.nx-codex-advanced-head-b51{padding:12px}.nx-codex-advanced-head-b51 strong{font-size:14px}}
+    </style><section class="nx-card nx-player-codex-page-b44">
       <div class="nx-codex-hero-b44">
         <div><small>IMC · PLAYER DATABASE</small><h1>Player Codex</h1><p>GW001 · Road To History</p></div>
         <span class="nx-codex-mark-b44">${nexusNavIcon("codex")}</span>
       </div>
       <div class="nx-codex-controls-b44">
         <div class="nx-codex-filter-b44" role="group" aria-label="Filtro Player Codex">
-          <button type="button" data-codex-filter="all" class="${state.playerCodexFilter==="all"?"is-active":""}">ALL <b id="codexCountAll">—</b></button>
-          <button type="button" data-codex-filter="active" class="${state.playerCodexFilter==="active"?"is-active":""}">ACTIVE IN RTH <b id="codexCountActive">—</b></button>
-          <button type="button" data-codex-filter="former" class="${state.playerCodexFilter==="former"?"is-active":""}">FORMER RTH <b id="codexCountFormer">—</b></button>
+<button type="button" data-codex-filter="all" class="${state.playerCodexFilter==="all"?"is-active":""}">ALL <b id="codexCountAll">—</b></button>
+<button type="button" data-codex-filter="active" class="${state.playerCodexFilter==="active"?"is-active":""}">ACTIVE IN RTH <b id="codexCountActive">—</b></button>
+<button type="button" data-codex-filter="former" class="${state.playerCodexFilter==="former"?"is-active":""}">FORMER RTH <b id="codexCountFormer">—</b></button>
         </div>
         <label class="nx-codex-search-b44"><span>⌕</span><input id="playerCodexSearch" type="search" value="${esc(state.playerCodexSearch)}" placeholder="Cerca giocatore…" autocomplete="off"></label>
+        <div class="nx-codex-tools-b51">
+<button type="button" id="playerCodexAdvancedToggleB51" class="nx-codex-tool-b51 ${state.playerCodexAdvancedOpen?"is-open":""}">☷ Filtri <b id="playerCodexAdvancedCountB51">0</b></button>
+<select id="playerCodexSortB51" class="nx-codex-sort-b51" aria-label="Ordina Player Codex">
+  <option value="rating_desc" ${state.playerCodexSort==="rating_desc"?"selected":""}>Rating ↓</option>
+  <option value="rating_asc" ${state.playerCodexSort==="rating_asc"?"selected":""}>Rating ↑</option>
+  <option value="value_desc" ${state.playerCodexSort==="value_desc"?"selected":""}>Valore ↓</option>
+  <option value="value_asc" ${state.playerCodexSort==="value_asc"?"selected":""}>Valore ↑</option>
+  <option value="age_asc" ${state.playerCodexSort==="age_asc"?"selected":""}>Età ↑</option>
+  <option value="age_desc" ${state.playerCodexSort==="age_desc"?"selected":""}>Età ↓</option>
+  <option value="name_asc" ${state.playerCodexSort==="name_asc"?"selected":""}>Nome A–Z</option>
+</select>
+        </div>
+        <div id="playerCodexAdvancedPanelB51" class="nx-codex-advanced-b51" ${state.playerCodexAdvancedOpen?"":"hidden"}>
+<div class="nx-codex-advanced-head-b51"><div><small>FILTRI PLAYER CODEX</small><strong>Ricerca avanzata</strong></div><button type="button" id="playerCodexAdvancedCloseB51" class="nx-codex-close-b51">Chiudi ↑</button></div>
+<div class="nx-codex-filter-grid-b51">
+  <label class="nx-codex-filter-field-b51"><span>Club RTH attuale</span><select id="playerCodexClubB51"><option value="all">Qualsiasi</option></select></label>
+  <label class="nx-codex-filter-field-b51"><span>Posizione</span><select id="playerCodexPositionB51"><option value="all">Qualsiasi</option><option value="PT">PT</option><option value="D">D</option><option value="CD">CD</option><option value="CC">CC</option><option value="CO">CO</option><option value="A">A</option></select></label>
+  <label class="nx-codex-filter-field-b51"><span>Rating compreso tra</span><span class="nx-codex-range-b51"><input id="playerCodexRatingMinB51" type="number" min="40" max="99" placeholder="Min" value="${esc(state.playerCodexRatingMin)}"><i>e</i><input id="playerCodexRatingMaxB51" type="number" min="40" max="99" placeholder="Max" value="${esc(state.playerCodexRatingMax)}"></span></label>
+  <label class="nx-codex-filter-field-b51"><span>Età compresa tra</span><span class="nx-codex-range-b51"><input id="playerCodexAgeMinB51" type="number" min="15" max="60" placeholder="Min" value="${esc(state.playerCodexAgeMin)}"><i>e</i><input id="playerCodexAgeMaxB51" type="number" min="15" max="60" placeholder="Max" value="${esc(state.playerCodexAgeMax)}"></span></label>
+  <label class="nx-codex-filter-field-b51 is-wide"><span>Valore (€M) compreso tra</span><span class="nx-codex-range-b51"><input id="playerCodexValueMinB51" type="number" min="0" step="0.1" placeholder="Min" value="${esc(state.playerCodexValueMin)}"><i>e</i><input id="playerCodexValueMaxB51" type="number" min="0" step="0.1" placeholder="Max" value="${esc(state.playerCodexValueMax)}"></span></label>
+</div>
+<div class="nx-codex-filter-actions-b51"><button type="button" id="playerCodexResetB51" class="nx-codex-reset-b51">Reset</button><button type="button" id="playerCodexApplyB51" class="nx-codex-apply-b51">Applica filtri</button></div>
+        </div>
       </div>
       <div id="playerCodexArchiveContent"><div class="nx-loading">Caricamento Player Codex…</div></div>
     </section>`;
@@ -8021,27 +8064,71 @@ function renderShell(fromRoute){
       });
     });
     const search=document.getElementById("playerCodexSearch");
-    if(search){
-      search.addEventListener("input",function(){
-        state.playerCodexSearch=search.value||"";
-        applyPlayerCodexFiltersB44();
-      });
-    }
+    if(search)search.addEventListener("input",function(){state.playerCodexSearch=search.value||"";applyPlayerCodexFiltersB44();});
+    const toggle=document.getElementById("playerCodexAdvancedToggleB51"),panel=document.getElementById("playerCodexAdvancedPanelB51"),close=document.getElementById("playerCodexAdvancedCloseB51");
+    function setOpen(open){state.playerCodexAdvancedOpen=!!open;if(panel)panel.hidden=!open;if(toggle)toggle.classList.toggle("is-open",!!open);}
+    if(toggle)toggle.addEventListener("click",function(){setOpen(!state.playerCodexAdvancedOpen);});
+    if(close)close.addEventListener("click",function(){setOpen(false);});
+    const sort=document.getElementById("playerCodexSortB51");
+    if(sort)sort.addEventListener("change",function(){state.playerCodexSort=sort.value||"rating_desc";applyPlayerCodexFiltersB44();});
+    const bindings=[
+      ["playerCodexClubB51","playerCodexClub"],["playerCodexPositionB51","playerCodexPosition"],
+      ["playerCodexRatingMinB51","playerCodexRatingMin"],["playerCodexRatingMaxB51","playerCodexRatingMax"],
+      ["playerCodexAgeMinB51","playerCodexAgeMin"],["playerCodexAgeMaxB51","playerCodexAgeMax"],
+      ["playerCodexValueMinB51","playerCodexValueMin"],["playerCodexValueMaxB51","playerCodexValueMax"]
+    ];
+    bindings.forEach(function(pair){const el=document.getElementById(pair[0]);if(el){el.value=state[pair[1]]||"";el.addEventListener(el.tagName==="SELECT"?"change":"input",function(){state[pair[1]]=el.value||"";applyPlayerCodexFiltersB44();});}});
+    const reset=document.getElementById("playerCodexResetB51");
+    if(reset)reset.addEventListener("click",function(){
+      state.playerCodexClub="all";state.playerCodexPosition="all";state.playerCodexRatingMin="";state.playerCodexRatingMax="";state.playerCodexAgeMin="";state.playerCodexAgeMax="";state.playerCodexValueMin="";state.playerCodexValueMax="";
+      bindings.forEach(function(pair){const el=document.getElementById(pair[0]);if(el)el.value=(pair[1]==="playerCodexClub"||pair[1]==="playerCodexPosition")?"all":"";});applyPlayerCodexFiltersB44();
+    });
+    const apply=document.getElementById("playerCodexApplyB51");if(apply)apply.addEventListener("click",function(){applyPlayerCodexFiltersB44();setOpen(false);});
+  }
+
+  function populatePlayerCodexAdvancedOptionsB51(){
+    const select=document.getElementById("playerCodexClubB51");if(!select)return;
+    const current=state.playerCodexClub||"all",clubs=new Set();
+    document.querySelectorAll(".nx-player-card-b44[data-codex-club]").forEach(function(card){const club=String(card.getAttribute("data-codex-club")||"").trim();if(club)clubs.add(club);});
+    select.innerHTML='<option value="all">Qualsiasi</option>'+Array.from(clubs).sort(function(a,b){return a.localeCompare(b,"it");}).map(function(club){return '<option value="'+esc(club)+'">'+esc(club)+'</option>';}).join("");
+    select.value=Array.from(select.options).some(function(o){return o.value===current;})?current:"all";state.playerCodexClub=select.value;
+    const position=document.getElementById("playerCodexPositionB51");if(position)position.value=state.playerCodexPosition||"all";
   }
 
   function applyPlayerCodexFiltersB44(){
-    const filter=state.playerCodexFilter||"all";
-    const query=String(state.playerCodexSearch||"").trim().toLowerCase();
+    const filter=state.playerCodexFilter||"all",query=String(state.playerCodexSearch||"").trim().toLowerCase();
+    const club=state.playerCodexClub||"all",position=state.playerCodexPosition||"all";
+    const ratingMin=state.playerCodexRatingMin===""?null:Number(state.playerCodexRatingMin),ratingMax=state.playerCodexRatingMax===""?null:Number(state.playerCodexRatingMax);
+    const ageMin=state.playerCodexAgeMin===""?null:Number(state.playerCodexAgeMin),ageMax=state.playerCodexAgeMax===""?null:Number(state.playerCodexAgeMax);
+    const valueMin=state.playerCodexValueMin===""?null:Number(state.playerCodexValueMin)*1000000,valueMax=state.playerCodexValueMax===""?null:Number(state.playerCodexValueMax)*1000000;
     let visible=0;
-    document.querySelectorAll(".nx-player-card-b44[data-codex-status]").forEach(function(card){
-      const status=card.getAttribute("data-codex-status");
-      const haystack=String(card.getAttribute("data-codex-search")||"").toLowerCase();
-      const show=(filter==="all"||filter===status)&&(!query||haystack.includes(query));
-      card.hidden=!show;
-      if(show)visible+=1;
+    const cards=Array.from(document.querySelectorAll(".nx-player-card-b44[data-codex-status]"));
+    cards.forEach(function(card){
+      const status=card.getAttribute("data-codex-status"),haystack=String(card.getAttribute("data-codex-search")||"").toLowerCase();
+      const cardClub=card.getAttribute("data-codex-club")||"",cardPos=card.getAttribute("data-codex-position")||"";
+      const rating=Number(card.getAttribute("data-codex-rating")),age=Number(card.getAttribute("data-codex-age")),value=Number(card.getAttribute("data-codex-value"));
+      const parts=cardPos.split(",").map(function(x){return x.trim();});
+      const posOk=position==="all"||parts.some(function(part){return part===position||part.indexOf(position+"(")===0;});
+      const show=(filter==="all"||filter===status)&&(!query||haystack.includes(query))&&(club==="all"||cardClub===club)&&posOk
+        &&(ratingMin===null||rating>=ratingMin)&&(ratingMax===null||rating<=ratingMax)
+        &&(ageMin===null||age>=ageMin)&&(ageMax===null||age<=ageMax)
+        &&(valueMin===null||value>=valueMin)&&(valueMax===null||value<=valueMax);
+      card.hidden=!show;if(show)visible+=1;
     });
-    const empty=document.getElementById("playerCodexFilteredEmpty");
-    if(empty)empty.hidden=visible!==0;
+    const grid=document.querySelector(".nx-player-grid-b44"),sort=state.playerCodexSort||"rating_desc";
+    function num(card,key){const n=Number(card.getAttribute(key));return Number.isFinite(n)?n:null;}
+    function name(card){return String(card.getAttribute("data-codex-name")||"");}
+    cards.sort(function(a,b){
+      let av,bv;if(sort.indexOf("rating_")===0){av=num(a,"data-codex-rating");bv=num(b,"data-codex-rating");}
+      else if(sort.indexOf("value_")===0){av=num(a,"data-codex-value");bv=num(b,"data-codex-value");}
+      else if(sort.indexOf("age_")===0){av=num(a,"data-codex-age");bv=num(b,"data-codex-age");}
+      else return name(a).localeCompare(name(b),"it");
+      if(av===null&&bv!==null)return 1;if(bv===null&&av!==null)return -1;if(av!==bv)return sort.endsWith("desc")?bv-av:av-bv;return name(a).localeCompare(name(b),"it");
+    });
+    if(grid)cards.forEach(function(card){grid.appendChild(card);});
+    const active=[club!=="all",position!=="all",state.playerCodexRatingMin!=="",state.playerCodexRatingMax!=="",state.playerCodexAgeMin!=="",state.playerCodexAgeMax!=="",state.playerCodexValueMin!=="",state.playerCodexValueMax!==""].filter(Boolean).length;
+    const count=document.getElementById("playerCodexAdvancedCountB51");if(count)count.textContent=String(active);
+    const empty=document.getElementById("playerCodexFilteredEmpty");if(empty)empty.hidden=visible!==0;
   }
 
   async function loadPlayerCodexArchiveB44(){
@@ -8063,7 +8150,13 @@ function renderShell(fromRoute){
         const id=String(rth.id),player=masters.get(id)||null,snapshot=snapshots.get(id)||null;
         const name=playerCodexFullNameB44(player,rth.id);
         return {id:rth.id,name:name,player:player,snapshot:snapshot,rth:rth,currentClub:rth.activeTeam?teamNameFromMapB44(rth.activeTeam.teamId,teams):""};
-      }).sort(function(a,b){return a.name.localeCompare(b.name,"it");});
+      }).sort(function(a,b){
+        const ra=Number(a.snapshot&&a.snapshot.rating),rb=Number(b.snapshot&&b.snapshot.rating);
+        if(Number.isFinite(ra)&&Number.isFinite(rb)&&ra!==rb)return rb-ra;
+        const va=Number(a.snapshot&&a.snapshot.market_value),vb=Number(b.snapshot&&b.snapshot.market_value);
+        if(Number.isFinite(va)&&Number.isFinite(vb)&&va!==vb)return vb-va;
+        return a.name.localeCompare(b.name,"it");
+      });
       const active=rows.filter(function(row){return row.rth.active;}).length;
       const former=rows.length-active;
       const allCount=document.getElementById("codexCountAll"),activeCount=document.getElementById("codexCountActive"),formerCount=document.getElementById("codexCountFormer");
@@ -8072,7 +8165,7 @@ function renderShell(fromRoute){
         const snap=row.snapshot||{};
         const status=row.rth.active?"active":"former";
         const statusLabel=row.rth.active?"ACTIVE IN RTH":"FORMER RTH";
-        return `<article class="nx-player-card-b44" data-codex-status="${status}" data-codex-search="${esc((row.name+" "+row.id+" "+row.currentClub+" "+(snap.position||"")).toLowerCase())}">
+        return `<article class="nx-player-card-b44" data-codex-status="${status}" data-codex-name="${esc(row.name)}" data-codex-club="${esc(row.currentClub||"")}" data-codex-position="${esc(snap.position||"")}" data-codex-rating="${esc(snap.rating==null?"":snap.rating)}" data-codex-age="${esc(snap.age==null?"":snap.age)}" data-codex-value="${esc(snap.market_value==null?"":snap.market_value)}" data-codex-search="${esc((row.name+" "+row.id+" "+row.currentClub+" "+(snap.position||"")).toLowerCase())}">
           <button type="button" class="nx-player-card-hit-b44" data-codex-player-id="${esc(row.id)}" data-codex-player-name="${esc(row.name)}">
             ${playerCodexImageB44(row.player,row.name,"is-card")}
             <span class="nx-player-card-copy-b44"><small>PLAYER CODEX ID · ${esc(row.id)}</small><strong>${esc(row.name)}</strong><em>${esc(snap.position||"Posizione n/d")}</em></span>
@@ -8089,6 +8182,7 @@ function renderShell(fromRoute){
           renderShell();
         });
       });
+      populatePlayerCodexAdvancedOptionsB51();
       applyPlayerCodexFiltersB44();
     }catch(error){
       target.innerHTML=`<div class="nx-empty-box"><strong>Errore Player Codex</strong><span>${esc(error.message||"Impossibile leggere il database.")}</span></div>`;
