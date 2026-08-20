@@ -1,6 +1,10 @@
 name: Run Codex Filter Build 51 Patch
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/codex-filter-build51-pr-trigger'
   push:
     branches: [main]
     paths:
@@ -16,6 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.head_ref || github.ref_name }}
       - name: Execute prepared patch workflow steps
         run: |
           set -euo pipefail
