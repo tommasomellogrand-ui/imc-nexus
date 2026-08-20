@@ -1,0 +1,37 @@
+name: Run Codex Filter Build 51 Patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/codex-filter-build51-trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  run-patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Execute prepared patch workflow steps
+        run: |
+          set -euo pipefail
+          python3 -m pip install --quiet pyyaml
+          python3 - <<'PY'
+          import subprocess, yaml
+          from pathlib import Path
+          path=Path('.github/workflows/patch-codex-filter-build51.yml')
+          if not path.exists():
+              raise SystemExit('Prepared patch workflow not found')
+          doc=yaml.safe_load(path.read_text(encoding='utf-8'))
+          steps=doc['jobs']['patch']['steps']
+          for step in steps:
+              script=step.get('run')
+              if not script:
+                  continue
+              print('RUN:', step.get('name','unnamed'))
+              subprocess.run(script, shell=True, executable='/bin/bash', check=True)
+          PY
