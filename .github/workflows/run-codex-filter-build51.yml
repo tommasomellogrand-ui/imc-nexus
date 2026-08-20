@@ -24,19 +24,24 @@ jobs:
       - name: Execute prepared patch workflow steps
         run: |
           set -euo pipefail
-          python3 -m pip install --quiet pyyaml
           python3 - <<'PY'
-          import subprocess, yaml
+          import re, subprocess
           from pathlib import Path
+
           path=Path('.github/workflows/patch-codex-filter-build51.yml')
           if not path.exists():
               raise SystemExit('Prepared patch workflow not found')
-          doc=yaml.safe_load(path.read_text(encoding='utf-8'))
-          steps=doc['jobs']['patch']['steps']
-          for step in steps:
-              script=step.get('run')
-              if not script:
-                  continue
-              print('RUN:', step.get('name','unnamed'))
-              subprocess.run(script, shell=True, executable='/bin/bash', check=True)
+
+          raw=path.read_text(encoding='utf-8')
+          matches=list(re.finditer(r'(?ms)^        run: \|\n(.*?)(?=^      - (?:name|uses):|\Z)',raw))
+          if not matches:
+              raise SystemExit('No run blocks found in prepared patch')
+
+          for index,match in enumerate(matches,1):
+              lines=[]
+              for line in match.group(1).splitlines():
+                  lines.append(line[10:] if line.startswith('          ') else line)
+              script='\n'.join(lines)+'\n'
+              print(f'RUN BLOCK {index}/{len(matches)}')
+              subprocess.run(script,shell=True,executable='/bin/bash',check=True)
           PY
