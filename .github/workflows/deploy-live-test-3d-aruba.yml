@@ -18,7 +18,6 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,38 +36,9 @@ jobs:
               exit 1
             fi
           done
-
-      - name: Bake Matchday data into live page
-        shell: bash
-        run: |
-          set -euo pipefail
           test -s live-test-3d/index.html
-          test -s live-test-3d/matchday-data.json
-          python3 - <<'PY'
-          import json, re
-          from pathlib import Path
-
-          index = Path('live-test-3d/index.html')
-          data_file = Path('live-test-3d/matchday-data.json')
-          html = index.read_text(encoding='utf-8')
-          incoming = json.loads(data_file.read_text(encoding='utf-8'))
-
-          m = re.search(r'const DATA=(\{.*?\});let div="PLATINUM";let goalQueue=', html, re.S)
-          if not m:
-              raise SystemExit('DATA block not found in live-test-3d/index.html')
-          current = json.loads(m.group(1))
-          for division, payload in incoming.items():
-              if division not in current:
-                  raise SystemExit(f'Unknown division in matchday-data.json: {division}')
-              current[division]['games'] = payload['games']
-
-          baked = json.dumps(current, ensure_ascii=False, separators=(',', ':'))
-          html = html[:m.start(1)] + baked + html[m.end(1):]
-          html = html.replace('MATCHDAY 12 · LIVE READY', 'MATCHDAY 12 · LIVE BETA')
-          html = html.replace('Tutte le partite partono da 0–0 in attesa dei risultati ufficiali.', 'BETA MD12: risultati, marcatori e minuti sono simulati in attesa dei dati ufficiali.')
-          index.write_text(html, encoding='utf-8')
-          print('MATCHDAY_DATA_BAKED=YES')
-          PY
+          grep -Fq 'MATCHDAY 12' live-test-3d/index.html
+          grep -Fq 'RISULTATI UFFICIALI' live-test-3d/index.html
 
       - name: Deploy Live Test 3D with verified FTPS
         env:
@@ -139,13 +109,12 @@ jobs:
       - name: Public smoke test
         run: |
           set -euo pipefail
-          test -s live-test-3d/index.html
           URL="https://www.italianmastersclub.it/live-test-3d/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
           curl -fsSL --connect-timeout 15 --max-time 30 \
             -H 'Cache-Control: no-cache, no-store, must-revalidate' \
             -H 'Pragma: no-cache' \
             "$URL" -o /tmp/live-test-3d-public.html
           grep -Fq 'MATCHDAY 12' /tmp/live-test-3d-public.html
-          grep -Fq '20 AGOSTO 2026' /tmp/live-test-3d-public.html
-          grep -Fq 'LIVE BETA' /tmp/live-test-3d-public.html
+          grep -Fq 'RISULTATI UFFICIALI' /tmp/live-test-3d-public.html
+          grep -Fq 'Güler' /tmp/live-test-3d-public.html
           echo 'LIVE_TEST_3D_PUBLIC_SMOKE=YES'
