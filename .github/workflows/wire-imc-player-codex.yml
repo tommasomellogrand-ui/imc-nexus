@@ -1,4 +1,4 @@
-name: Wire IMC Player Codex
+name: Wire IMC Player Codex Build 52
 
 on:
   workflow_run:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nexus-player-codex-wire
+  group: nexus-player-codex-build52-wire
   cancel-in-progress: false
 
 jobs:
@@ -26,14 +26,14 @@ jobs:
           ref: main
           fetch-depth: 2
 
-      - name: Validate Codex addon
+      - name: Validate Build 52 addon
         shell: bash
         run: |
           set -euo pipefail
           test -s nexus/js/imc-player-codex.js
           node --check nexus/js/imc-player-codex.js
 
-      - name: Wire addon into Nexus index
+      - name: Promote Nexus runtime to Build 52
         shell: bash
         run: |
           set -euo pipefail
@@ -41,34 +41,70 @@ jobs:
           import re
           from pathlib import Path
 
-          path = Path('nexus/index.html')
-          text = path.read_text(encoding='utf-8')
-          addon = '  <script src="js/imc-player-codex.js?v=1.0"></script>'
+          app = Path('nexus/js/app.js')
+          index = Path('nexus/index.html')
+          app_text = app.read_text(encoding='utf-8')
+          index_text = index.read_text(encoding='utf-8')
 
-          if addon not in text:
-              pattern = r'(^\s*<script\s+src="js/app\.js\?v=[^"]+"\s*></script>\s*$)'
-              match = re.search(pattern, text, flags=re.MULTILINE)
-              if not match:
-                  raise SystemExit('Unable to find Nexus app.js script tag')
-              text = text[:match.end()] + '\n' + addon + text[match.end():]
-              path.write_text(text, encoding='utf-8')
+          app_text, count = re.subn(
+              r'const NEXUS_BUILD = "[^"]+";',
+              'const NEXUS_BUILD = "52";',
+              app_text,
+              count=1,
+          )
+          if count != 1:
+              raise SystemExit('Unable to update NEXUS_BUILD in app.js')
+
+          index_text = re.sub(
+              r'<title>IMC Nexus · Build [^<]+</title>',
+              '<title>IMC Nexus · Build 52</title>',
+              index_text,
+              count=1,
+          )
+          index_text = re.sub(
+              r'<script\s+src="js/app\.js\?v=[^"]+"\s*></script>',
+              '<script src="js/app.js?v=52.0"></script>',
+              index_text,
+              count=1,
+          )
+
+          addon = '  <script src="js/imc-player-codex.js?v=2.0"></script>'
+          index_text = re.sub(
+              r'^\s*<script\s+src="js/imc-player-codex\.js\?v=[^"]+"\s*></script>\s*$',
+              '',
+              index_text,
+              flags=re.MULTILINE,
+          )
+          needle = '  <script src="js/app.js?v=52.0"></script>'
+          if needle not in index_text:
+              raise SystemExit('Unable to find Build 52 app.js script tag')
+          index_text = index_text.replace(needle, needle + '\n' + addon, 1)
+
+          app.write_text(app_text, encoding='utf-8')
+          index.write_text(index_text, encoding='utf-8')
           PY
 
-      - name: Persist wired index in repository
+          node --check nexus/js/app.js
+          node --check nexus/js/imc-player-codex.js
+          grep -Fq '<title>IMC Nexus · Build 52</title>' nexus/index.html
+          grep -Fq 'js/app.js?v=52.0' nexus/index.html
+          grep -Fq 'js/imc-player-codex.js?v=2.0' nexus/index.html
+
+      - name: Persist Build 52 runtime in repository
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- nexus/index.html; then
-            echo 'INDEX_ALREADY_WIRED=YES'
+          if git diff --quiet -- nexus/index.html nexus/js/app.js; then
+            echo 'BUILD52_ALREADY_WIRED=YES'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- nexus/index.html
-          git commit -m 'build: wire IMC Player Codex addon'
+          git add -- nexus/index.html nexus/js/app.js
+          git commit -m 'build: promote Nexus to Build 52'
           git push origin HEAD:main
 
-      - name: Upload wired Codex runtime to Aruba
+      - name: Upload and verify Build 52 runtime on Aruba
         shell: bash
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
@@ -107,6 +143,7 @@ jobs:
                       ftp.cwd(part)
 
           files = [
+              (Path('nexus/js/app.js'), f'{remote_root}/js', 'app.js'),
               (Path('nexus/js/imc-player-codex.js'), f'{remote_root}/js', 'imc-player-codex.js'),
               (Path('nexus/index.html'), remote_root, 'index.html'),
           ]
