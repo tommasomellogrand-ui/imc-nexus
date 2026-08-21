@@ -38,6 +38,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 - <<'PY'
+          import re
           from pathlib import Path
 
           path = Path('nexus/index.html')
@@ -45,10 +46,11 @@ jobs:
           addon = '  <script src="js/imc-player-codex.js?v=1.0"></script>'
 
           if addon not in text:
-              needle = '  <script src="js/app.js?v=51.0"></script>'
-              if needle not in text:
+              pattern = r'(^\s*<script\s+src="js/app\.js\?v=[^"]+"\s*></script>\s*$)'
+              match = re.search(pattern, text, flags=re.MULTILINE)
+              if not match:
                   raise SystemExit('Unable to find Nexus app.js script tag')
-              text = text.replace(needle, needle + '\n' + addon, 1)
+              text = text[:match.end()] + '\n' + addon + text[match.end():]
               path.write_text(text, encoding='utf-8')
           PY
 
