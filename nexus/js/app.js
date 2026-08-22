@@ -1,7 +1,7 @@
 (function(){
   "use strict";
   function writeScript(src){
-    document.write('<script src="'+src+'"><\\/script>');
+    document.write('<script src="'+src+'"></'+'script>');
   }
   if(document.readyState==="loading"){
     writeScript("js/app-core-53.js?v=53.0-core");
