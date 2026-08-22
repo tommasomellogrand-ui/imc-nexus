@@ -1,23 +1,24 @@
 name: Native Results Scorers Patch
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/native-results-scorers-trigger'
+  issues:
+    types: [opened]
+  workflow_dispatch:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   patch-and-deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.issue.title == 'RUN NATIVE RESULTS SCORERS PATCH' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Patch native Results renderer
         shell: bash
@@ -157,7 +158,7 @@ jobs:
             ${leagueResultParticipant(match,"away",currentMap,previousMap)}
           </div>`;}).join("")}
 '''
-              new_registry = '''          ${playedForDate.map(function(match){return `<div class="nx-league-result-row"${(match.home_scorers||match.away_scorers)?' data-imc-scorer-panel="1"':''}>
+              new_registry = '''          ${playedForDate.map(function(match){return `<div class="nx-league-result-row">
             ${leagueResultParticipant(match,"home",currentMap,previousMap)}
             ${balancedScoreMarkup(match,"played","nx-league-score-pill")}
             ${leagueResultParticipant(match,"away",currentMap,previousMap)}
@@ -176,7 +177,7 @@ jobs:
           }).join("")}
 '''
               new_legacy = '''          ${grouped[date].map(function(match){
-            return `<div class="nx-league-result-row"${(match.home_scorers||match.away_scorers)?' data-imc-scorer-panel="1"':''}>
+            return `<div class="nx-league-result-row">
               ${leagueResultParticipant(match,"home",currentMap,previousMap)}
               ${balancedScoreMarkup(match,"played","nx-league-score-pill")}
               ${leagueResultParticipant(match,"away",currentMap,previousMap)}
@@ -266,3 +267,10 @@ jobs:
           test "$(sha256sum nexus/js/app.js | awk '{print $1}')" = "$(sha256sum /tmp/app.js | awk '{print $1}')"
           test "$(sha256sum nexus/index.html | awk '{print $1}')" = "$(sha256sum /tmp/index.html | awk '{print $1}')"
           echo 'NATIVE_SCORERS_PRODUCTION_MATCH=YES'
+
+      - name: Close trigger issue
+        if: ${{ github.event_name == 'issues' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.update({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, state: 'closed'});
