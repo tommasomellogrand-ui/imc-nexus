@@ -75,7 +75,7 @@ jobs:
 
           codex = '  <script src="js/imc-player-codex.js?v=2.0"></script>'
           features = '  <script src="js/imc-world-features.js?v=1.1"></script>'
-          context = '  <script src="js/imc-world-context-fix.js?v=1.0"></script>'
+          context = '  <script src="js/imc-world-context-fix.js?v=1.1"></script>'
           for pattern in [
               r'^\s*<script\s+src="js/imc-player-codex\.js\?v=[^"]+"\s*></script>\s*$',
               r'^\s*<script\s+src="js/imc-world-features\.js\?v=[^"]+"\s*></script>\s*$',
@@ -100,7 +100,7 @@ jobs:
           grep -Fq 'js/app.js?v=53.0' nexus/index.html
           grep -Fq 'js/imc-player-codex.js?v=2.0' nexus/index.html
           grep -Fq 'js/imc-world-features.js?v=1.1' nexus/index.html
-          grep -Fq 'js/imc-world-context-fix.js?v=1.0' nexus/index.html
+          grep -Fq 'js/imc-world-context-fix.js?v=1.1' nexus/index.html
 
       - name: Persist Build 53 runtime in repository
         shell: bash
