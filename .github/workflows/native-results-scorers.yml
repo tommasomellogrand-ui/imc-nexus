@@ -1,0 +1,268 @@
+name: Native Results Scorers Patch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/native-results-scorers-trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  patch-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Patch native Results renderer
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          app_path = Path('nexus/js/app.js')
+          index_path = Path('nexus/index.html')
+          text = app_path.read_text(encoding='utf-8')
+
+          if 'function leagueScorersPanelMarkup(match)' not in text:
+              start = text.index('  async function loadDivisionData(){')
+              end = text.index('\n  function leagueClubLogo', start)
+              segment = text[start:end]
+
+              old_tail = '''        state.client
+          .from("gw_manager_assignments")
+          .select("game_world_id,manager_id,team_id,nation_id,start_date,end_date,imc_managers(full_name)")
+          .eq("game_world_id",worldId)
+      ]);
+
+      if(results[0].error)throw results[0].error;
+      if(results[1].error)throw results[1].error;
+
+      const matches=attachMatchManagers(results[0].data||[],results[1].data||[],worldId);
+'''
+
+              new_tail = '''        state.client
+          .from("gw_manager_assignments")
+          .select("game_world_id,manager_id,team_id,nation_id,start_date,end_date,imc_managers(full_name)")
+          .eq("game_world_id",worldId),
+        worldId==="GW001"
+          ? state.client
+              .from("gw_match_scorer_headers_public")
+              .select("match_id,side,scorer_header")
+              .eq("game_world_id",worldId)
+              .eq("competition_id",selectedDivisionCompetition.competition_id)
+          : Promise.resolve({data:[],error:null})
+      ]);
+
+      if(results[0].error)throw results[0].error;
+      if(results[1].error)throw results[1].error;
+      if(results[2].error)throw results[2].error;
+
+      const scorerByMatch=new Map();
+      (results[2].data||[]).forEach(function(row){
+        const matchKey=String(row&&row.match_id||"");
+        const side=String(row&&row.side||"");
+        if(!matchKey||(side!=="home"&&side!=="away"))return;
+        let scorers=scorerByMatch.get(matchKey);
+        if(!scorers){scorers={home:"",away:""};scorerByMatch.set(matchKey,scorers);}
+        scorers[side]=String(row.scorer_header||"");
+      });
+
+      const matches=attachMatchManagers(results[0].data||[],results[1].data||[],worldId).map(function(match){
+        const scorers=scorerByMatch.get(String(match&&match.match_id||""))||{home:"",away:""};
+        match.home_scorers=scorers.home||"";
+        match.away_scorers=scorers.away||"";
+        return match;
+      });
+'''
+
+              if segment.count(old_tail) != 1:
+                  raise SystemExit(f'Expected one native Results query tail, found {segment.count(old_tail)}')
+              segment = segment.replace(old_tail, new_tail, 1)
+              text = text[:start] + segment + text[end:]
+
+              participant_start = text.index('  function leagueResultParticipant(match,side,currentMap,previousMap){')
+              helper_pos = text.index('\n  function leagueMatchdaySnapshot', participant_start)
+              helpers = r'''
+
+  function leagueScorerEntries(raw){
+    let text=String(raw||"").replace(/\s+/g," ").trim();
+    if(!text)return [];
+    const firstNum=text.search(/\d/);
+    if(firstNum>=0){
+      const prefix=text.slice(0,firstNum).trim();
+      const rest=text.slice(firstNum).trim();
+      const tokens=prefix.split(/\s+/).filter(Boolean);
+      if(tokens.length>1&&tokens.length%2===0){
+        const half=tokens.length/2;
+        const left=tokens.slice(0,half).join(" ");
+        const right=tokens.slice(half).join(" ");
+        const normalize=function(value){return String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();};
+        if(normalize(left)===normalize(right))text=left+" "+rest;
+      }
+    }
+    const re=/([^\d,]+?)\s+(\d{1,3}(?:\s+\((?:rig|autorete)\))?(?:\s*,\s*\d{1,3}(?:\s+\((?:rig|autorete)\))?)*)/giu;
+    const rows=[];
+    let match;
+    while((match=re.exec(text))){
+      const name=String(match[1]||"").trim();
+      const times=String(match[2]||"").split(",").map(function(item){
+        const parsed=String(item||"").trim().match(/^(\d{1,3})(?:\s+\((rig|autorete)\))?$/i);
+        return parsed?{minute:Number(parsed[1]),kind:String(parsed[2]||"").toLowerCase()}:null;
+      }).filter(Boolean);
+      if(name&&times.length)rows.push({name:name,times:times});
+    }
+    return rows;
+  }
+
+  function leagueScorerSideMarkup(raw){
+    const rows=leagueScorerEntries(raw);
+    if(!rows.length)return `<span style="color:#8d98aa;font-weight:900">—</span>`;
+    return rows.map(function(row){
+      const times=row.times.map(function(time){
+        const suffix=time.kind==="rig"?" (rig.)":time.kind==="autorete"?" (aut.)":"";
+        return esc(time.minute+"'"+suffix);
+      }).join(", ");
+      return `<span><b style="color:#11213d;font-weight:950">${esc(row.name)}</b> ${times}</span>`;
+    }).join(", ");
+  }
+
+  function leagueScorersPanelMarkup(match){
+    if(!StatisticsEngine.isPlayed(match))return "";
+    const home=String(match&&match.home_scorers||"");
+    const away=String(match&&match.away_scorers||"");
+    const totalGoals=Number(match&&match.home_score||0)+Number(match&&match.away_score||0);
+    if(!home&&!away&&totalGoals>0)return "";
+    return `<div class="nx-native-scorers-panel" style="margin:0 4px 13px;padding:8px 12px 10px;border:1px solid #e0e6f0;border-radius:15px;background:#fbfcff;box-shadow:inset 0 1px 0 rgba(255,255,255,.8)">
+      <span style="display:block;margin:0 0 6px;color:var(--nx-league-accent,#163B8C);font-size:8px;line-height:1;font-weight:950;letter-spacing:.05em;text-align:center;text-transform:uppercase">SCORERS</span>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);gap:8px;align-items:center">
+        <div style="min-width:0;color:#1d2c47;font-size:8.5px;line-height:1.35;font-weight:800;text-align:center">${leagueScorerSideMarkup(home)}</div>
+        <span style="width:1px;align-self:stretch;background:#e3e8f1"></span>
+        <div style="min-width:0;color:#1d2c47;font-size:8.5px;line-height:1.35;font-weight:800;text-align:center">${leagueScorerSideMarkup(away)}</div>
+      </div>
+    </div>`;
+  }
+'''
+              text = text[:helper_pos] + helpers + text[helper_pos:]
+
+              old_registry = '''          ${playedForDate.map(function(match){return `<div class="nx-league-result-row">
+            ${leagueResultParticipant(match,"home",currentMap,previousMap)}
+            ${balancedScoreMarkup(match,"played","nx-league-score-pill")}
+            ${leagueResultParticipant(match,"away",currentMap,previousMap)}
+          </div>`;}).join("")}
+'''
+              new_registry = '''          ${playedForDate.map(function(match){return `<div class="nx-league-result-row"${(match.home_scorers||match.away_scorers)?' data-imc-scorer-panel="1"':''}>
+            ${leagueResultParticipant(match,"home",currentMap,previousMap)}
+            ${balancedScoreMarkup(match,"played","nx-league-score-pill")}
+            ${leagueResultParticipant(match,"away",currentMap,previousMap)}
+          </div>${leagueScorersPanelMarkup(match)}`;}).join("")}
+'''
+              if text.count(old_registry) != 1:
+                  raise SystemExit(f'Expected one registry result row renderer, found {text.count(old_registry)}')
+              text = text.replace(old_registry, new_registry, 1)
+
+              old_legacy = '''          ${grouped[date].map(function(match){
+            return `<div class="nx-league-result-row">
+              ${leagueResultParticipant(match,"home",currentMap,previousMap)}
+              ${balancedScoreMarkup(match,"played","nx-league-score-pill")}
+              ${leagueResultParticipant(match,"away",currentMap,previousMap)}
+            </div>`;
+          }).join("")}
+'''
+              new_legacy = '''          ${grouped[date].map(function(match){
+            return `<div class="nx-league-result-row"${(match.home_scorers||match.away_scorers)?' data-imc-scorer-panel="1"':''}>
+              ${leagueResultParticipant(match,"home",currentMap,previousMap)}
+              ${balancedScoreMarkup(match,"played","nx-league-score-pill")}
+              ${leagueResultParticipant(match,"away",currentMap,previousMap)}
+            </div>${leagueScorersPanelMarkup(match)}`;
+          }).join("")}
+'''
+              if text.count(old_legacy) != 1:
+                  raise SystemExit(f'Expected one legacy result row renderer, found {text.count(old_legacy)}')
+              text = text.replace(old_legacy, new_legacy, 1)
+
+          text = text.replace('const NEXUS_BUILD = "53";', 'const NEXUS_BUILD = "54";', 1)
+          app_path.write_text(text, encoding='utf-8')
+
+          index = index_path.read_text(encoding='utf-8')
+          index = index.replace('<title>IMC Nexus · Build 53</title>', '<title>IMC Nexus · Build 54</title>', 1)
+          index = index.replace('js/app.js?v=53.0', 'js/app.js?v=54.0', 1)
+          index_path.write_text(index, encoding='utf-8')
+          PY
+
+          node --check nexus/js/app.js
+          grep -Fq 'gw_match_scorer_headers_public' nexus/js/app.js
+          grep -Fq 'function leagueScorersPanelMarkup(match)' nexus/js/app.js
+          grep -Fq 'const NEXUS_BUILD = "54";' nexus/js/app.js
+          grep -Fq '<title>IMC Nexus · Build 54</title>' nexus/index.html
+          grep -Fq 'js/app.js?v=54.0' nexus/index.html
+
+      - name: Commit native renderer
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- nexus/js/app.js nexus/index.html; then
+            echo 'Native scorer renderer already present.'
+          else
+            git config user.name 'imc-nexus-bot'
+            git config user.email 'actions@users.noreply.github.com'
+            git add nexus/js/app.js nexus/index.html
+            git commit -m 'feat: render GW001 scorers natively in Results'
+            git push origin HEAD:main
+          fi
+
+      - name: Deploy native runtime directly to Aruba
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, io, os, ssl
+          from ftplib import FTP_TLS
+          from pathlib import Path
+
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user=os.environ['ARUBA_FTP_USERNAME']
+          password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
+          files=[(Path('nexus/js/app.js'),f'{root}/js','app.js'),(Path('nexus/index.html'),root,'index.html')]
+          for local,remote_dir,name in files:
+            data=local.read_bytes(); ftp.cwd(remote_dir)
+            with local.open('rb') as fh: ftp.storbinary(f'STOR {name}',fh,blocksize=65536)
+            buf=io.BytesIO(); ftp.retrbinary(f'RETR {name}',buf.write,blocksize=65536)
+            remote=buf.getvalue()
+            if remote!=data: raise SystemExit(f'Read-back mismatch for {name}')
+            print(f'{name}: {len(data)} bytes SHA256={hashlib.sha256(data).hexdigest()} VERIFIED')
+          ftp.quit()
+          PY
+
+      - name: Public production verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          stamp="$(date +%s)"
+          curl -fsSL -H 'Cache-Control: no-cache, no-store' "https://www.italianmastersclub.it/nexus/index.html?native_scorers=$stamp" -o /tmp/index.html
+          curl -fsSL -H 'Cache-Control: no-cache, no-store' "https://www.italianmastersclub.it/nexus/js/app.js?v=54.0&native_scorers=$stamp" -o /tmp/app.js
+          grep -Fq '<title>IMC Nexus · Build 54</title>' /tmp/index.html
+          grep -Fq 'js/app.js?v=54.0' /tmp/index.html
+          grep -Fq 'gw_match_scorer_headers_public' /tmp/app.js
+          grep -Fq 'function leagueScorersPanelMarkup(match)' /tmp/app.js
+          node --check /tmp/app.js
+          test "$(sha256sum nexus/js/app.js | awk '{print $1}')" = "$(sha256sum /tmp/app.js | awk '{print $1}')"
+          test "$(sha256sum nexus/index.html | awk '{print $1}')" = "$(sha256sum /tmp/index.html | awk '{print $1}')"
+          echo 'NATIVE_SCORERS_PRODUCTION_MATCH=YES'
