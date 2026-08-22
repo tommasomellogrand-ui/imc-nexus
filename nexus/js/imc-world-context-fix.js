@@ -1,6 +1,6 @@
 (function(){
 "use strict";
-const VERSION="1.1-build53-world-context";
+const VERSION="1.2-build53-world-context";
 const BLOCKED_WORLDS=new Set(["GW002","GW003","GW008","GW010"]);
 const ACTIVE_FALLBACK={
   "road to history":"GW001",
@@ -32,15 +32,28 @@ function currentWorld(){
   const m=String(root&&root.textContent||"").match(/\bGW\d{3}\b/);
   return m?m[0]:null;
 }
-function removeRestrictedButtons(){
-  document.querySelectorAll("[data-imc-transfers-world],[data-imc-codex-world]").forEach(b=>b.remove());
+function setRestrictedVisibility(blocked){
+  document.querySelectorAll("[data-imc-transfers-world],[data-imc-codex-world]").forEach(function(button){
+    if(blocked){
+      button.hidden=true;
+      button.dataset.imcBlockedWorld="1";
+      button.setAttribute("aria-hidden","true");
+      button.style.setProperty("display","none","important");
+    }else{
+      button.hidden=false;
+      delete button.dataset.imcBlockedWorld;
+      button.removeAttribute("aria-hidden");
+      button.style.removeProperty("display");
+    }
+  });
 }
 function sync(){
   const id=currentWorld();
   if(id&&BLOCKED_WORLDS.has(id)){
-    removeRestrictedButtons();
+    setRestrictedVisibility(true);
     return;
   }
+  setRestrictedVisibility(false);
   document.querySelectorAll("[data-imc-transfers-world]").forEach(b=>{if(id)b.dataset.imcTransfersWorld=id;});
   document.querySelectorAll("[data-imc-codex-world]").forEach(b=>{if(id)b.dataset.imcCodexWorld=id;});
 }
@@ -52,7 +65,7 @@ document.addEventListener("click",function(event){
   if(!id||BLOCKED_WORLDS.has(id)){
     event.preventDefault();
     event.stopImmediatePropagation();
-    removeRestrictedButtons();
+    setRestrictedVisibility(true);
     return;
   }
   if(transferButton){
