@@ -1,6 +1,6 @@
 (function(){
 "use strict";
-const VERSION="2.0-build53-world-isolation";
+const VERSION="2.1-build53-world-isolation";
 const BLOCKED_WORLDS=new Set(["GW002","GW003","GW008","GW010"]);
 const WORLD_BY_NAME={
   "road to history":"GW001",
