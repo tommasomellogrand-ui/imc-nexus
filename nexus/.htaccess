@@ -22,7 +22,11 @@ RewriteRule ^assets/clubs/.*\.(png|jpg|jpeg|webp)$ - [R=404,L,NC]
     Header always set Expires "0"
   </FilesMatch>
 
-  <FilesMatch "^app\.(js|css)$">
-    Header always set Cache-Control "no-cache, must-revalidate, max-age=0"
+  # All runtime JS/CSS must be revalidated. This avoids Safari/iPhone
+  # keeping an older Nexus module after a production patch.
+  <FilesMatch "\.(js|css)$">
+    Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
   </FilesMatch>
 </IfModule>
