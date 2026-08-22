@@ -72,7 +72,7 @@ jobs:
           )
 
           codex = '  <script src="js/imc-player-codex.js?v=2.0"></script>'
-          features = '  <script src="js/imc-world-features.js?v=1.0"></script>'
+          features = '  <script src="js/imc-world-features.js?v=1.1"></script>'
           index_text = re.sub(
               r'^\s*<script\s+src="js/imc-player-codex\.js\?v=[^"]+"\s*></script>\s*$',
               '',
@@ -100,7 +100,7 @@ jobs:
           grep -Fq '<title>IMC Nexus · Build 53</title>' nexus/index.html
           grep -Fq 'js/app.js?v=53.0' nexus/index.html
           grep -Fq 'js/imc-player-codex.js?v=2.0' nexus/index.html
-          grep -Fq 'js/imc-world-features.js?v=1.0' nexus/index.html
+          grep -Fq 'js/imc-world-features.js?v=1.1' nexus/index.html
 
       - name: Persist Build 53 runtime in repository
         shell: bash
