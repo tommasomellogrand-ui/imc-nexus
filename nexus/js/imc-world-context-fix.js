@@ -1,6 +1,7 @@
 (function(){
 "use strict";
-const VERSION="1.0-build53-world-context";
+const VERSION="1.1-build53-world-context";
+const BLOCKED_WORLDS=new Set(["GW002","GW003","GW008","GW010"]);
 const ACTIVE_FALLBACK={
   "road to history":"GW001",
   "world league":"GW004",
@@ -14,6 +15,14 @@ function currentWorld(){
   const header=document.querySelector("#openDrawerWorld strong,.nx-sport-world strong");
   const name=norm(header&&header.textContent);
   if(name&&ACTIVE_FALLBACK[name])return ACTIVE_FALLBACK[name];
+  if(name){
+    const drawerItems=[...document.querySelectorAll("[data-drawer-world]")];
+    const drawerMatch=drawerItems.find(el=>norm(el.textContent).includes(name));
+    if(drawerMatch){
+      const id=String(drawerMatch.getAttribute("data-drawer-world")||"");
+      if(/^GW\d{3}$/.test(id))return id;
+    }
+  }
   const worlds=(window.IMC_DATA&&Array.isArray(window.IMC_DATA.worlds))?window.IMC_DATA.worlds:[];
   if(name){
     const match=worlds.find(w=>norm(w&&w.name)===name);
@@ -23,25 +32,49 @@ function currentWorld(){
   const m=String(root&&root.textContent||"").match(/\bGW\d{3}\b/);
   return m?m[0]:null;
 }
+function removeRestrictedButtons(){
+  document.querySelectorAll("[data-imc-transfers-world],[data-imc-codex-world]").forEach(b=>b.remove());
+}
 function sync(){
   const id=currentWorld();
+  if(id&&BLOCKED_WORLDS.has(id)){
+    removeRestrictedButtons();
+    return;
+  }
   document.querySelectorAll("[data-imc-transfers-world]").forEach(b=>{if(id)b.dataset.imcTransfersWorld=id;});
   document.querySelectorAll("[data-imc-codex-world]").forEach(b=>{if(id)b.dataset.imcCodexWorld=id;});
 }
 document.addEventListener("click",function(event){
-  const button=event.target&&event.target.closest?event.target.closest("[data-imc-transfers-world]"):null;
-  if(!button)return;
+  const transferButton=event.target&&event.target.closest?event.target.closest("[data-imc-transfers-world]"):null;
+  const codexButton=event.target&&event.target.closest?event.target.closest("[data-imc-codex-world]"):null;
+  if(!transferButton&&!codexButton)return;
   const id=currentWorld();
-  if(!id||id==="GW010")return;
-  const api=window.IMC_WORLD_FEATURES_BUILD53;
-  if(!api||typeof api.openTransfers!=="function")return;
-  event.preventDefault();
-  event.stopImmediatePropagation();
-  button.dataset.imcTransfersWorld=id;
-  api.openTransfers(id);
+  if(!id||BLOCKED_WORLDS.has(id)){
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    removeRestrictedButtons();
+    return;
+  }
+  if(transferButton){
+    const api=window.IMC_WORLD_FEATURES_BUILD53;
+    if(!api||typeof api.openTransfers!=="function")return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    transferButton.dataset.imcTransfersWorld=id;
+    api.openTransfers(id);
+    return;
+  }
+  if(codexButton){
+    const api=window.IMC_PLAYER_CODEX_BUILD53||window.IMC_PLAYER_CODEX_BUILD52;
+    if(!api||typeof api.openWorld!=="function")return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    codexButton.dataset.imcCodexWorld=id;
+    api.openWorld(id);
+  }
 },true);
 let timer=null;
 new MutationObserver(function(){clearTimeout(timer);timer=setTimeout(sync,25);}).observe(document.documentElement,{childList:true,subtree:true});
 sync();
-window.IMC_WORLD_CONTEXT_FIX={version:VERSION,currentWorld};
+window.IMC_WORLD_CONTEXT_FIX={version:VERSION,currentWorld,blockedWorlds:BLOCKED_WORLDS};
 })();
