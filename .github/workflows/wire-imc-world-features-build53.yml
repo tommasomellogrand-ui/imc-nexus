@@ -32,9 +32,11 @@ jobs:
           set -euo pipefail
           test -s nexus/js/imc-player-codex.js
           test -s nexus/js/imc-world-features.js
+          test -s nexus/js/imc-world-context-fix.js
           node --check nexus/js/app.js
           node --check nexus/js/imc-player-codex.js
           node --check nexus/js/imc-world-features.js
+          node --check nexus/js/imc-world-context-fix.js
 
       - name: Promote Nexus runtime to Build 53
         shell: bash
@@ -73,22 +75,18 @@ jobs:
 
           codex = '  <script src="js/imc-player-codex.js?v=2.0"></script>'
           features = '  <script src="js/imc-world-features.js?v=1.1"></script>'
-          index_text = re.sub(
+          context = '  <script src="js/imc-world-context-fix.js?v=1.0"></script>'
+          for pattern in [
               r'^\s*<script\s+src="js/imc-player-codex\.js\?v=[^"]+"\s*></script>\s*$',
-              '',
-              index_text,
-              flags=re.MULTILINE,
-          )
-          index_text = re.sub(
               r'^\s*<script\s+src="js/imc-world-features\.js\?v=[^"]+"\s*></script>\s*$',
-              '',
-              index_text,
-              flags=re.MULTILINE,
-          )
+              r'^\s*<script\s+src="js/imc-world-context-fix\.js\?v=[^"]+"\s*></script>\s*$'
+          ]:
+              index_text = re.sub(pattern, '', index_text, flags=re.MULTILINE)
+
           needle = '  <script src="js/app.js?v=53.0"></script>'
           if needle not in index_text:
               raise SystemExit('Unable to find Build 53 app.js script tag')
-          index_text = index_text.replace(needle, needle + '\n' + codex + '\n' + features, 1)
+          index_text = index_text.replace(needle, needle + '\n' + codex + '\n' + features + '\n' + context, 1)
 
           app.write_text(app_text, encoding='utf-8')
           index.write_text(index_text, encoding='utf-8')
@@ -97,10 +95,12 @@ jobs:
           node --check nexus/js/app.js
           node --check nexus/js/imc-player-codex.js
           node --check nexus/js/imc-world-features.js
+          node --check nexus/js/imc-world-context-fix.js
           grep -Fq '<title>IMC Nexus · Build 53</title>' nexus/index.html
           grep -Fq 'js/app.js?v=53.0' nexus/index.html
           grep -Fq 'js/imc-player-codex.js?v=2.0' nexus/index.html
           grep -Fq 'js/imc-world-features.js?v=1.1' nexus/index.html
+          grep -Fq 'js/imc-world-context-fix.js?v=1.0' nexus/index.html
 
       - name: Persist Build 53 runtime in repository
         shell: bash
@@ -158,6 +158,7 @@ jobs:
               (Path('nexus/js/app.js'), f'{remote_root}/js', 'app.js'),
               (Path('nexus/js/imc-player-codex.js'), f'{remote_root}/js', 'imc-player-codex.js'),
               (Path('nexus/js/imc-world-features.js'), f'{remote_root}/js', 'imc-world-features.js'),
+              (Path('nexus/js/imc-world-context-fix.js'), f'{remote_root}/js', 'imc-world-context-fix.js'),
               (Path('nexus/index.html'), remote_root, 'index.html'),
           ]
 
