@@ -1,0 +1,177 @@
+name: Wire IMC World Features Build 53
+
+on:
+  workflow_run:
+    workflows:
+      - Deploy Nexus to Aruba
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nexus-world-features-build53-wire
+  cancel-in-progress: false
+
+jobs:
+  wire:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+
+      - name: Validate Build 53 addons
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s nexus/js/imc-player-codex.js
+          test -s nexus/js/imc-world-features.js
+          node --check nexus/js/app.js
+          node --check nexus/js/imc-player-codex.js
+          node --check nexus/js/imc-world-features.js
+
+      - name: Promote Nexus runtime to Build 53
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          app = Path('nexus/js/app.js')
+          index = Path('nexus/index.html')
+          app_text = app.read_text(encoding='utf-8')
+          index_text = index.read_text(encoding='utf-8')
+
+          app_text, count = re.subn(
+              r'const NEXUS_BUILD = "[^"]+";',
+              'const NEXUS_BUILD = "53";',
+              app_text,
+              count=1,
+          )
+          if count != 1:
+              raise SystemExit('Unable to update NEXUS_BUILD in app.js')
+
+          index_text = re.sub(
+              r'<title>IMC Nexus · Build [^<]+</title>',
+              '<title>IMC Nexus · Build 53</title>',
+              index_text,
+              count=1,
+          )
+          index_text = re.sub(
+              r'<script\s+src="js/app\.js\?v=[^"]+"\s*></script>',
+              '<script src="js/app.js?v=53.0"></script>',
+              index_text,
+              count=1,
+          )
+
+          codex = '  <script src="js/imc-player-codex.js?v=2.0"></script>'
+          features = '  <script src="js/imc-world-features.js?v=1.0"></script>'
+          index_text = re.sub(
+              r'^\s*<script\s+src="js/imc-player-codex\.js\?v=[^"]+"\s*></script>\s*$',
+              '',
+              index_text,
+              flags=re.MULTILINE,
+          )
+          index_text = re.sub(
+              r'^\s*<script\s+src="js/imc-world-features\.js\?v=[^"]+"\s*></script>\s*$',
+              '',
+              index_text,
+              flags=re.MULTILINE,
+          )
+          needle = '  <script src="js/app.js?v=53.0"></script>'
+          if needle not in index_text:
+              raise SystemExit('Unable to find Build 53 app.js script tag')
+          index_text = index_text.replace(needle, needle + '\n' + codex + '\n' + features, 1)
+
+          app.write_text(app_text, encoding='utf-8')
+          index.write_text(index_text, encoding='utf-8')
+          PY
+
+          node --check nexus/js/app.js
+          node --check nexus/js/imc-player-codex.js
+          node --check nexus/js/imc-world-features.js
+          grep -Fq '<title>IMC Nexus · Build 53</title>' nexus/index.html
+          grep -Fq 'js/app.js?v=53.0' nexus/index.html
+          grep -Fq 'js/imc-player-codex.js?v=2.0' nexus/index.html
+          grep -Fq 'js/imc-world-features.js?v=1.0' nexus/index.html
+
+      - name: Persist Build 53 runtime in repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- nexus/index.html nexus/js/app.js; then
+            echo 'BUILD53_ALREADY_WIRED=YES'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- nexus/index.html nexus/js/app.js
+          git commit -m 'build: promote Nexus to Build 53'
+          git push origin HEAD:main
+
+      - name: Upload and verify Build 53 runtime on Aruba
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS, error_perm
+
+          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user = os.environ['ARUBA_FTP_USERNAME']
+          password = os.environ['ARUBA_FTP_PASSWORD']
+          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain = host[4:] if host.startswith('ftp.') else host
+          remote_root = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+
+          ctx = ssl.create_default_context()
+          ctx.check_hostname = False
+          ftp = FTP_TLS(context=ctx)
+          ftp.connect(host, 21, timeout=30)
+          ftp.login(user, password)
+          ftp.prot_p()
+
+          def ensure_dir(path):
+              ftp.cwd(remote_root)
+              rel = path.removeprefix(remote_root).strip('/')
+              for part in rel.split('/') if rel else []:
+                  try:
+                      ftp.cwd(part)
+                  except error_perm:
+                      ftp.mkd(part)
+                      ftp.cwd(part)
+
+          files = [
+              (Path('nexus/js/app.js'), f'{remote_root}/js', 'app.js'),
+              (Path('nexus/js/imc-player-codex.js'), f'{remote_root}/js', 'imc-player-codex.js'),
+              (Path('nexus/js/imc-world-features.js'), f'{remote_root}/js', 'imc-world-features.js'),
+              (Path('nexus/index.html'), remote_root, 'index.html'),
+          ]
+
+          for local, remote_dir, remote_name in files:
+              data = local.read_bytes()
+              ensure_dir(remote_dir)
+              with local.open('rb') as fh:
+                  ftp.storbinary(f'STOR {remote_name}', fh, blocksize=65536)
+              buf = io.BytesIO()
+              ftp.retrbinary(f'RETR {remote_name}', buf.write, blocksize=65536)
+              remote = buf.getvalue()
+              if remote != data:
+                  raise SystemExit(f'FTPS read-back mismatch for {remote_name}')
+              print(f'UPLOAD_MATCH=YES {remote_name} {len(data)} bytes sha256={hashlib.sha256(data).hexdigest()}')
+
+          ftp.quit()
+          PY
