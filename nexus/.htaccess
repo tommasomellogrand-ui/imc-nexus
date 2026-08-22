@@ -4,6 +4,9 @@ Options -MultiViews
 
 RewriteEngine On
 
+# Runtime scorer loader: always serve the current scorer-aware world context module.
+RewriteRule ^js/imc-world-context-fix\.js$ js/imc-world-context-fix-v3.js [L]
+
 # Club logos: one canonical source for every Game World.
 # The filename is read from sm_clubs_master.image_filename and always starts
 # with the SoccerWiki sm_club_id (PNG/JPG variants are both supported).
