@@ -102,7 +102,7 @@ window.IMC_WORLD_CONTEXT_FIX={version:VERSION,currentWorld,blockedWorlds:BLOCKED
 
 (function(){
 "use strict";
-const VERSION="1.0-gw001-results-scorers";
+const VERSION="2.0-gw001-results-scorers-direct-key";
 const TARGET_WORLD="GW001";
 const URL="https://toanuzojdkfjgucztpze.supabase.co";
 const KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
@@ -113,26 +113,23 @@ try{cfg=JSON.parse(localStorage.getItem("imc_nexus_config")||"null");}catch(_){ 
 const db=window.supabase.createClient(cfg&&cfg.url?cfg.url:URL,cfg&&cfg.key?cfg.key:KEY);
 let scorerCachePromise=null;
 let scorerMap=new Map();
-const norm=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s+/g," ").trim();
-function currentWorld(){
-  const guard=window.IMC_WORLD_CONTEXT_FIX;
-  return guard&&typeof guard.currentWorld==="function"?guard.currentWorld():null;
-}
+
 function addCss(){
   if(document.getElementById(STYLE_ID))return;
   const style=document.createElement("style");
   style.id=STYLE_ID;
   style.textContent=`
-.nx-result-scorers{display:flex;flex-direction:column;gap:2px;margin-top:4px;max-width:100%;color:#65758a;font-size:7.5px;line-height:1.18;font-weight:800}
+.nx-result-scorers{display:flex!important;flex-direction:column;gap:2px;margin-top:5px;max-width:100%;color:#68758b;font-size:8px;line-height:1.2;font-weight:800}
 .nx-league-result-team.home .nx-result-scorers{align-items:flex-start;text-align:left}
 .nx-league-result-team.away .nx-result-scorers{align-items:flex-end;text-align:right}
 .nx-result-scorer{display:block;max-width:100%;white-space:normal}
-.nx-result-scorer b{color:#263b5d;font-size:7.5px;font-weight:950;letter-spacing:.01em}
+.nx-result-scorer b{color:#263b5d;font-size:8px;font-weight:950}
 .nx-result-scorer em{color:var(--nx-league-accent,#163B8C);font-style:normal;font-weight:950}
-@media(max-width:520px){.nx-result-scorers{font-size:7px;gap:1px;margin-top:3px}.nx-result-scorer b{font-size:7px}}
+@media(max-width:520px){.nx-result-scorers{font-size:7.5px;gap:1px;margin-top:4px}.nx-result-scorer b{font-size:7.5px}}
 `;
   document.head.appendChild(style);
 }
+
 function isoDate(value){
   const text=String(value||"").trim();
   if(/^\d{4}-\d{2}-\d{2}$/.test(text))return text;
@@ -140,9 +137,11 @@ function isoDate(value){
   if(!m)return "";
   return m[3]+"-"+String(m[2]).padStart(2,"0")+"-"+String(m[1]).padStart(2,"0");
 }
-function scorerKey(date,homeId,awayId,side){
+
+function key(date,homeId,awayId,side){
   return [String(date||""),String(homeId||""),String(awayId||""),String(side||"")].join("|");
 }
+
 async function loadScorers(){
   if(scorerCachePromise)return scorerCachePromise;
   scorerCachePromise=(async function(){
@@ -153,99 +152,102 @@ async function loadScorers(){
     if(result.error)throw result.error;
     const next=new Map();
     (result.data||[]).forEach(function(row){
-      const key=scorerKey(row.match_date,row.home_team_id,row.away_team_id,row.side);
-      if(row.scorer_header&&!next.has(key))next.set(key,row.scorer_header);
+      if(!row.scorer_header)return;
+      next.set(key(row.match_date,row.home_team_id,row.away_team_id,row.side),String(row.scorer_header));
     });
     scorerMap=next;
     return scorerMap;
   })().catch(function(error){
     scorerCachePromise=null;
-    console.error("IMC GW001 result scorers",error);
+    console.error("IMC GW001 scorer load failed",error);
     throw error;
   });
   return scorerCachePromise;
 }
-function parseScorerHeader(raw){
+
+function cleanHeader(raw){
   let text=String(raw||"").replace(/\s+/g," ").trim();
-  if(!text)return [];
+  if(!text)return "";
   const firstNum=text.search(/\d/);
-  if(firstNum<0)return [];
-  let prefix=text.slice(0,firstNum).trim();
+  if(firstNum<0)return text;
+  const prefix=text.slice(0,firstNum).trim();
   const rest=text.slice(firstNum).trim();
   const tokens=prefix.split(/\s+/).filter(Boolean);
   if(tokens.length>1&&tokens.length%2===0){
     const half=tokens.length/2;
     const left=tokens.slice(0,half).join(" ");
     const right=tokens.slice(half).join(" ");
-    if(norm(left)===norm(right))prefix=left;
+    const n=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
+    if(n(left)===n(right))text=left+" "+rest;
   }
-  text=(prefix+" "+rest).trim();
+  return text;
+}
+
+function parseHeader(raw){
+  const text=cleanHeader(raw);
+  if(!text)return [];
   const re=/([^\d,]+?)\s+(\d{1,3}(?:\s+\((?:rig|autorete)\))?(?:\s*,\s*\d{1,3}(?:\s+\((?:rig|autorete)\))?)*)/giu;
-  const scorers=[];
-  let match;
-  while((match=re.exec(text))){
-    const name=String(match[1]||"").trim();
-    const times=String(match[2]||"").split(",").map(function(item){
-      const m=String(item||"").trim().match(/^(\d{1,3})(?:\s+\((rig|autorete)\))?$/i);
-      return m?{minute:Number(m[1]),kind:String(m[2]||"").toLowerCase()}:null;
+  const out=[];
+  let m;
+  while((m=re.exec(text))){
+    const name=String(m[1]||"").trim();
+    const times=String(m[2]||"").split(",").map(function(item){
+      const t=String(item||"").trim().match(/^(\d{1,3})(?:\s+\((rig|autorete)\))?$/i);
+      return t?{minute:Number(t[1]),kind:String(t[2]||"").toLowerCase()}:null;
     }).filter(Boolean);
-    if(name&&times.length)scorers.push({name:name,times:times});
+    if(name&&times.length)out.push({name,times});
   }
-  return scorers;
+  return out;
 }
-function scorerBlock(header){
-  const scorers=parseScorerHeader(header);
-  if(!scorers.length)return null;
-  const block=document.createElement("div");
-  block.className="nx-result-scorers";
-  block.setAttribute("data-imc-scorers","1");
-  scorers.forEach(function(scorer){
-    const line=document.createElement("span");
-    line.className="nx-result-scorer";
-    const name=document.createElement("b");
-    name.textContent=scorer.name;
-    line.appendChild(name);
-    scorer.times.forEach(function(time,index){
-      line.appendChild(document.createTextNode((index===0?" ":", ")+time.minute+"'"));
-      if(time.kind){
-        const flag=document.createElement("em");
-        flag.textContent=time.kind==="rig"?" (rig.)":" (aut.)";
-        line.appendChild(flag);
-      }
-    });
-    block.appendChild(line);
+
+function scorerMarkup(header){
+  const parsed=parseHeader(header);
+  if(!parsed.length)return "";
+  return `<div class="nx-result-scorers" data-imc-scorers="1">${parsed.map(function(item){
+    const minutes=item.times.map(function(time){
+      return `${time.minute}'${time.kind==="rig"?' <em>(rig.)</em>':time.kind==="autorete"?' <em>(aut.)</em>':''}`;
+    }).join(", ");
+    return `<span class="nx-result-scorer"><b>${escapeHtml(item.name)}</b> ${minutes}</span>`;
+  }).join("")}</div>`;
+}
+
+function escapeHtml(value){
+  return String(value==null?"":value).replace(/[&<>"']/g,function(ch){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch];
   });
-  return block;
 }
+
 function decorateRow(row){
-  if(!row||row.getAttribute("data-imc-scorers-done")==="1")return;
+  if(!row)return false;
   const score=row.querySelector(".nx-league-score-pill strong:not(.is-vs)");
-  if(!score)return;
+  if(!score)return false;
   const card=row.closest(".nx-league-matchday-card");
-  const time=card&&card.querySelector(".nx-unified-matchday-head time");
+  const time=card&&card.querySelector(".nx-unified-matchday-head time,.nx-league-matchday-head time");
   const date=isoDate(time&&time.textContent);
-  const home=row.querySelector('.nx-league-result-team.home [data-match-entity-id]');
-  const away=row.querySelector('.nx-league-result-team.away [data-match-entity-id]');
-  if(!date||!home||!away)return;
-  const homeId=home.getAttribute("data-match-entity-id")||"";
-  const awayId=away.getAttribute("data-match-entity-id")||"";
-  [["home",home],["away",away]].forEach(function(pair){
+  const homeButton=row.querySelector('.nx-league-result-team.home [data-match-entity-id]');
+  const awayButton=row.querySelector('.nx-league-result-team.away [data-match-entity-id]');
+  if(!date||!homeButton||!awayButton)return false;
+  const homeId=homeButton.getAttribute("data-match-entity-id")||"";
+  const awayId=awayButton.getAttribute("data-match-entity-id")||"";
+  let inserted=false;
+  [["home",homeButton],["away",awayButton]].forEach(function(pair){
     const side=pair[0],button=pair[1];
-    const header=scorerMap.get(scorerKey(date,homeId,awayId,side));
+    const header=scorerMap.get(key(date,homeId,awayId,side));
     if(!header)return;
     const team=button.closest(".nx-league-result-team");
     const copy=team&&team.querySelector(".nx-league-result-copy");
     if(!copy||copy.querySelector('[data-imc-scorers="1"]'))return;
-    const block=scorerBlock(header);
-    if(block)copy.appendChild(block);
+    const html=scorerMarkup(header);
+    if(!html)return;
+    copy.insertAdjacentHTML("beforeend",html);
+    inserted=true;
   });
-  row.setAttribute("data-imc-scorers-done","1");
+  if(inserted)row.setAttribute("data-imc-scorers-done","1");
+  return inserted;
 }
+
 async function decorate(){
-  if(currentWorld()!==TARGET_WORLD)return;
-  const rows=[...document.querySelectorAll(".nx-league-result-row")].filter(function(row){
-    return Boolean(row.querySelector(".nx-league-score-pill strong:not(.is-vs)"));
-  });
+  const rows=[...document.querySelectorAll(".nx-league-result-row")];
   if(!rows.length)return;
   addCss();
   try{
@@ -253,11 +255,15 @@ async function decorate(){
     rows.forEach(decorateRow);
   }catch(_){ }
 }
+
 let timer=null;
 new MutationObserver(function(){
   clearTimeout(timer);
-  timer=setTimeout(decorate,100);
+  timer=setTimeout(decorate,80);
 }).observe(document.documentElement,{childList:true,subtree:true});
+
 setTimeout(decorate,0);
+setTimeout(decorate,750);
+setTimeout(decorate,2000);
 window.IMC_RESULTS_SCORERS_GW001={version:VERSION,refresh:function(){scorerCachePromise=null;scorerMap=new Map();return decorate();}};
 })();
