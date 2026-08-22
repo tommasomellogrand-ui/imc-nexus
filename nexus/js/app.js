@@ -147,7 +147,7 @@
 
   // Build 8 · Client-side routing. One physical index.html, shareable logical URLs.
   const NEXUS_ROUTE_BASE = "/nexus";
-  const NEXUS_BUILD = "52";
+  const NEXUS_BUILD = "53";
   const NEXUS_BUILD_LABEL = "BUILD " + NEXUS_BUILD;
   if(window.location.pathname !== "/nexus/" && window.location.pathname !== "/nexus/index.html"){
     window.history.replaceState(null,"","/nexus/index.html");
