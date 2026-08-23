@@ -24,20 +24,16 @@ Object.assign(RTH.T,{111:['Borussia Dortmund',26,24,9,'L W D W L',56.4,16.3,6.7,
   var obs=new MutationObserver(patchDataRoom); obs.observe(document.documentElement,{childList:true,subtree:true});
   window.addEventListener('hashchange',function(){setTimeout(patchDataRoom,0);}); setTimeout(patchDataRoom,0);
 
-  /* Global iPhone-safe navigation: every internal RTH button follows its href explicitly */
-  function follow(e){
-    var a=e.target.closest('a[href^="#"]'); if(!a) return;
-    var target=a.getAttribute('href'); if(!target) return;
-    e.preventDefault(); e.stopPropagation();
-    if(location.hash===target){ if(typeof render==='function') render(); }
-    else location.hash=target;
-  }
-  document.addEventListener('click',follow,true);
-  document.addEventListener('touchend',function(e){
-    var a=e.target.closest('a[href^="#"]'); if(!a) return;
-    e.preventDefault(); e.stopPropagation();
+  /* Hard navigation for Safari/iPhone: open the full index.html URL for every internal button */
+  function fullNavigate(e){
+    var a=e.target.closest && e.target.closest('a[href^="#"]');
+    if(!a) return;
     var target=a.getAttribute('href');
-    if(location.hash===target){ if(typeof render==='function') render(); }
-    else location.hash=target;
-  },{capture:true,passive:false});
+    if(!target) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    window.location.href='https://www.italianmastersclub.it/pre-match/23-agosto-2026/index.html'+target;
+  }
+  document.addEventListener('click',fullNavigate,true);
+  document.addEventListener('touchend',fullNavigate,{capture:true,passive:false});
 })();
