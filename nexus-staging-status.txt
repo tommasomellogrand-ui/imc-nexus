@@ -1,0 +1,5 @@
+NEXUS_STAGING_STATUS
+STATUS=failure
+URL=https://www.italianmastersclub.it/nexus-test/
+RUN_SHA=0d209ca636bcb440f09bb2b705afe2dcdaf3d644
+UPDATED_AT=2026-08-23T07:52:45Z
