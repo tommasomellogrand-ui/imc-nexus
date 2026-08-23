@@ -7,6 +7,7 @@
     writeScript("js/app-core-53.js?v=53.0-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-match-report-beta.js?v=1.0.0");
+    writeScript("js/imc-match-report-beta-ui.js?v=1.0.0");
     return;
   }
   var core=document.createElement("script");
@@ -17,6 +18,11 @@
     scorers.onload=function(){
       var matchReport=document.createElement("script");
       matchReport.src="js/imc-match-report-beta.js?v=1.0.0";
+      matchReport.onload=function(){
+        var matchReportUi=document.createElement("script");
+        matchReportUi.src="js/imc-match-report-beta-ui.js?v=1.0.0";
+        document.head.appendChild(matchReportUi);
+      };
       document.head.appendChild(matchReport);
     };
     document.head.appendChild(scorers);
