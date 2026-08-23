@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate Aruba secrets
+      - name: Validate Aruba secrets and page
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
           ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
@@ -37,8 +37,8 @@ jobs:
             fi
           done
           test -s live-test-3d/index.html
-          grep -Fq 'MATCHDAY 12' live-test-3d/index.html
-          grep -Fq 'RISULTATI UFFICIALI' live-test-3d/index.html
+          grep -Fq 'ROAD TO HISTORY' live-test-3d/index.html
+          grep -Fq 'MATCHDAY' live-test-3d/index.html
 
       - name: Deploy Live Test 3D with verified FTPS
         env:
@@ -114,7 +114,6 @@ jobs:
             -H 'Cache-Control: no-cache, no-store, must-revalidate' \
             -H 'Pragma: no-cache' \
             "$URL" -o /tmp/live-test-3d-public.html
-          grep -Fq 'MATCHDAY 12' /tmp/live-test-3d-public.html
-          grep -Fq 'RISULTATI UFFICIALI' /tmp/live-test-3d-public.html
-          grep -Fq 'Güler' /tmp/live-test-3d-public.html
+          grep -Fq 'ROAD TO HISTORY' /tmp/live-test-3d-public.html
+          grep -Fq 'MATCHDAY' /tmp/live-test-3d-public.html
           echo 'LIVE_TEST_3D_PUBLIC_SMOKE=YES'
