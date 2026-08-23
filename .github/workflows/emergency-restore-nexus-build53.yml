@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: nexus-emergency-restore
@@ -53,14 +53,14 @@ jobs:
           p=Path('nexus/index.html')
           s=p.read_text(encoding='utf-8')
           old='js/app.js?v=53.0'
-          new='js/app.js?v=53.0-recovery-20260823-0926'
+          new='js/app.js?v=53.0-recovery-20260823-0928'
           if old not in s and new not in s:
               raise SystemExit('app.js reference not found in index')
           s=s.replace(old,new)
           p.write_text(s,encoding='utf-8')
           print('CACHE_BUST_READY=YES')
           PY
-          grep -Fq 'js/app.js?v=53.0-recovery-20260823-0926' nexus/index.html
+          grep -Fq 'js/app.js?v=53.0-recovery-20260823-0928' nexus/index.html
 
       - name: Restore and verify production runtime on Aruba
         shell: bash
@@ -118,12 +118,23 @@ jobs:
           BASE='https://www.italianmastersclub.it/nexus'
           TOKEN="${GITHUB_SHA}-$(date +%s)"
           curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache' "$BASE/index.html?restore=$TOKEN" -o /tmp/prod-index.html
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache' "$BASE/js/app.js?v=53.0-recovery-20260823-0926&restore=$TOKEN" -o /tmp/prod-app.js
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache' "$BASE/js/app.js?v=53.0-recovery-20260823-0928&restore=$TOKEN" -o /tmp/prod-app.js
           curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache' "$BASE/js/app-core-53.js?v=53.0-core&restore=$TOKEN" -o /tmp/prod-core.js
-          grep -Fq 'js/app.js?v=53.0-recovery-20260823-0926' /tmp/prod-index.html
+          grep -Fq 'js/app.js?v=53.0-recovery-20260823-0928' /tmp/prod-index.html
           grep -Fq 'js/app-core-53.js?v=53.0-core' /tmp/prod-app.js
           grep -Fq 'js/imc-results-scorers.js?v=1.0.0' /tmp/prod-app.js
           if grep -Fq 'imc-match-report' /tmp/prod-app.js; then exit 1; fi
           node --check /tmp/prod-app.js
           node --check /tmp/prod-core.js
           echo 'PUBLIC_RUNTIME_RECOVERY=YES'
+
+      - name: Publish verified recovery marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf 'PRODUCTION_RECOVERED\nBUILD=53\nVERIFIED_SHA=%s\nVERIFIED_AT=%s\n' "$GITHUB_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > nexus-production-recovery-status.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nexus-production-recovery-status.txt
+          git commit -m '[bootstrap] Nexus production recovered and verified'
+          git push origin HEAD:main
