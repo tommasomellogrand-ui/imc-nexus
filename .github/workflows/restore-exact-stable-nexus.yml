@@ -1,0 +1,100 @@
+name: Restore Exact Stable Nexus
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/restore-exact-stable-nexus.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nexus-exact-stable-restore
+  cancel-in-progress: false
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate exact stable runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s nexus/index.html
+          test -s nexus/js/app.js
+          test -s nexus/js/app-core-53.js
+          test -s nexus/js/imc-results-scorers.js
+          node --check nexus/js/app.js
+          node --check nexus/js/app-core-53.js
+          node --check nexus/js/imc-results-scorers.js
+          grep -Fq 'js/app-core-53.js?v=53.0-core' nexus/js/app.js
+          grep -Fq 'js/imc-results-scorers.js?v=1.0.0' nexus/js/app.js
+          if grep -Fq 'imc-match-report' nexus/js/app.js; then exit 1; fi
+
+      - name: Upload exact stable runtime to Aruba and read back
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import io, os, ssl, hashlib
+          from pathlib import Path
+          from ftplib import FTP_TLS
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user=os.environ['ARUBA_FTP_USERNAME']
+          password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
+          files=[
+            (Path('nexus/js/app.js'), f'{root}/js', 'app.js'),
+            (Path('nexus/js/app-core-53.js'), f'{root}/js', 'app-core-53.js'),
+            (Path('nexus/js/imc-results-scorers.js'), f'{root}/js', 'imc-results-scorers.js'),
+            (Path('nexus/index.html'), root, 'index.html'),
+          ]
+          for local,remote_dir,name in files:
+              data=local.read_bytes(); ftp.cwd(remote_dir)
+              with local.open('rb') as fh: ftp.storbinary(f'STOR {name}',fh,blocksize=65536)
+              buf=io.BytesIO(); ftp.retrbinary(f'RETR {name}',buf.write,blocksize=65536)
+              if buf.getvalue()!=data: raise SystemExit(f'READBACK_MISMATCH {name}')
+              print(f'EXACT_MATCH {name} {hashlib.sha256(data).hexdigest()}')
+          ftp.quit()
+          PY
+
+      - name: Verify public production exact files
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://www.italianmastersclub.it/nexus'
+          T="${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL -H 'Cache-Control: no-cache' "$BASE/index.html?exact=$T" -o /tmp/p-index.html
+          curl -fsSL -H 'Cache-Control: no-cache' "$BASE/js/app.js?exact=$T" -o /tmp/p-app.js
+          curl -fsSL -H 'Cache-Control: no-cache' "$BASE/js/app-core-53.js?exact=$T" -o /tmp/p-core.js
+          curl -fsSL -H 'Cache-Control: no-cache' "$BASE/js/imc-results-scorers.js?exact=$T" -o /tmp/p-scorers.js
+          cmp -s nexus/index.html /tmp/p-index.html
+          cmp -s nexus/js/app.js /tmp/p-app.js
+          cmp -s nexus/js/app-core-53.js /tmp/p-core.js
+          cmp -s nexus/js/imc-results-scorers.js /tmp/p-scorers.js
+          node --check /tmp/p-app.js
+          node --check /tmp/p-core.js
+          echo EXACT_STABLE_PUBLIC=YES
+
+      - name: Mark verified exact restore
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf 'EXACT_STABLE_RESTORED\nSOURCE=38f4a384ef102cab8b7d94a6272c973121a34c03\nVERIFIED_AT=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > nexus-exact-stable-status.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nexus-exact-stable-status.txt
+          git commit -m '[bootstrap] Exact stable Nexus restored and verified'
+          git push origin HEAD:main
