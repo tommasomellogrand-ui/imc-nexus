@@ -21,8 +21,11 @@ RTH.COPY={
 '4-3':['TWO TEAMS HUNTING A WAY BACK INTO THE STORY.','WHO TURNS FRAGILE DEFENDING INTO A NIGHT OF REDEMPTION?'],
 '4-4':['BERLIN WANTS A STATEMENT. DORTMUND WANTS THE THRONE.','CAN HERTHA’S WIRTZ FACTOR BREAK DORTMUND’S CONTROL?']};
 (function(){
-function routeDataButtons(){document.querySelectorAll('a.navbtn[href^="#data-"]').forEach(function(a){var m=a.getAttribute('href').match(/^#data-(\d)-(\d)$/);if(m)a.setAttribute('href','data.html?d='+m[1]+'&i='+m[2]);});}
+function routeButtons(){
+ document.querySelectorAll('a.navbtn[href^="#data-"]').forEach(function(a){var m=a.getAttribute('href').match(/^#data-(\d)-(\d)$/);if(m)a.setAttribute('href','data.html?d='+m[1]+'&i='+m[2]);});
+ document.querySelectorAll('a.navbtn[href^="#match-"]').forEach(function(a){var m=a.getAttribute('href').match(/^#match-(\d)-(\d)$/);if(m)a.setAttribute('href','match.html?d='+m[1]+'&i='+m[2]);});
+}
 function patchStory(){var m=(location.hash||'').match(/^#match-(\d)-(\d)$/);if(!m)return;var c=RTH.COPY[m[1]+'-'+m[2]];if(!c)return;var h=document.querySelector('.storybox h2');if(h)h.textContent=c[0];}
-function refresh(){routeDataButtons();patchStory();}
+function refresh(){routeButtons();patchStory();}
 var obs=new MutationObserver(refresh);obs.observe(document.documentElement,{childList:true,subtree:true});window.addEventListener('hashchange',function(){setTimeout(refresh,0)});setTimeout(refresh,0);
 })();
