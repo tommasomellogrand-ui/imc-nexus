@@ -1,0 +1,129 @@
+name: Emergency Restore Nexus Build 53
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/emergency-restore-nexus-build53.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexus-emergency-restore
+  cancel-in-progress: false
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout stable runtime
+        uses: actions/checkout@v4
+
+      - name: Validate stable Build 53 runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s nexus/index.html
+          test -s nexus/js/app.js
+          test -s nexus/js/app-core-53.js
+          test -s nexus/js/imc-results-scorers.js
+          node --check nexus/js/app.js
+          node --check nexus/js/app-core-53.js
+          node --check nexus/js/imc-results-scorers.js
+          if grep -Eq '^[[:space:]]*const[[:space:]]+NEXUS_BUILD' nexus/js/app.js; then
+            echo 'Unsafe duplicate NEXUS_BUILD declaration found in loader'
+            exit 1
+          fi
+          grep -Fq 'js/app-core-53.js?v=53.0-core' nexus/js/app.js
+          grep -Fq 'js/imc-results-scorers.js?v=1.0.0' nexus/js/app.js
+          if grep -Fq 'imc-match-report' nexus/js/app.js; then
+            echo 'Match report pilot still wired into loader'
+            exit 1
+          fi
+
+      - name: Prepare cache-busted production index
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('nexus/index.html')
+          s=p.read_text(encoding='utf-8')
+          old='js/app.js?v=53.0'
+          new='js/app.js?v=53.0-recovery-20260823-0926'
+          if old not in s and new not in s:
+              raise SystemExit('app.js reference not found in index')
+          s=s.replace(old,new)
+          p.write_text(s,encoding='utf-8')
+          print('CACHE_BUST_READY=YES')
+          PY
+          grep -Fq 'js/app.js?v=53.0-recovery-20260823-0926' nexus/index.html
+
+      - name: Restore and verify production runtime on Aruba
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS
+
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user=os.environ['ARUBA_FTP_USERNAME']
+          password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+
+          ctx=ssl.create_default_context()
+          ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx)
+          ftp.connect(host,21,timeout=30)
+          ftp.login(user,password)
+          ftp.prot_p()
+
+          files=[
+            (Path('nexus/js/app.js'), f'{root}/js', 'app.js'),
+            (Path('nexus/js/app-core-53.js'), f'{root}/js', 'app-core-53.js'),
+            (Path('nexus/js/imc-results-scorers.js'), f'{root}/js', 'imc-results-scorers.js'),
+            (Path('nexus/index.html'), root, 'index.html'),
+          ]
+          for local,remote_dir,name in files:
+              data=local.read_bytes()
+              ftp.cwd(remote_dir)
+              with local.open('rb') as fh:
+                  ftp.storbinary(f'STOR {name}',fh,blocksize=65536)
+              buf=io.BytesIO()
+              ftp.retrbinary(f'RETR {name}',buf.write,blocksize=65536)
+              remote=buf.getvalue()
+              if remote!=data:
+                  raise SystemExit(f'READBACK_MISMATCH {name}')
+              print(f'RESTORED {name} {len(data)} bytes SHA256={hashlib.sha256(data).hexdigest()}')
+          ftp.quit()
+          print('ARUBA_RUNTIME_RESTORE=YES')
+          PY
+
+      - name: Verify public production files
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://www.italianmastersclub.it/nexus'
+          TOKEN="${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache' "$BASE/index.html?restore=$TOKEN" -o /tmp/prod-index.html
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache' "$BASE/js/app.js?v=53.0-recovery-20260823-0926&restore=$TOKEN" -o /tmp/prod-app.js
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache' "$BASE/js/app-core-53.js?v=53.0-core&restore=$TOKEN" -o /tmp/prod-core.js
+          grep -Fq 'js/app.js?v=53.0-recovery-20260823-0926' /tmp/prod-index.html
+          grep -Fq 'js/app-core-53.js?v=53.0-core' /tmp/prod-app.js
+          grep -Fq 'js/imc-results-scorers.js?v=1.0.0' /tmp/prod-app.js
+          if grep -Fq 'imc-match-report' /tmp/prod-app.js; then exit 1; fi
+          node --check /tmp/prod-app.js
+          node --check /tmp/prod-core.js
+          echo 'PUBLIC_RUNTIME_RECOVERY=YES'
