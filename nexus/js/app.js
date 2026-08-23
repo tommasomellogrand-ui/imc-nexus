@@ -1,5 +1,6 @@
 (function(){
   "use strict";
+  const NEXUS_BUILD = "53";
   function writeScript(src){
     document.write('<script src="'+src+'"></'+'script>');
   }
