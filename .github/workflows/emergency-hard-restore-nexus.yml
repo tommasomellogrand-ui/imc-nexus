@@ -1,0 +1,107 @@
+name: Emergency Hard Restore Nexus
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/emergency-hard-restore-nexus.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nexus-emergency-hard-restore
+  cancel-in-progress: false
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Export exact stable Nexus snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/stable-nexus
+          mkdir -p /tmp/stable-nexus
+          git archive 38f4a384ef102cab8b7d94a6272c973121a34c03 nexus | tar -x -C /tmp/stable-nexus
+          test -s /tmp/stable-nexus/nexus/index.html
+          test -s /tmp/stable-nexus/nexus/js/app.js
+          node --check /tmp/stable-nexus/nexus/js/app.js
+          node --check /tmp/stable-nexus/nexus/js/app-core-53.js
+          node --check /tmp/stable-nexus/nexus/js/imc-results-scorers.js
+          if grep -Fq 'imc-match-report' /tmp/stable-nexus/nexus/js/app.js; then
+            echo 'Pilot reference found in stable loader'
+            exit 1
+          fi
+          echo 'STABLE_SNAPSHOT_OK=YES'
+
+      - name: Install FTPS client
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Hard restore exact snapshot to Aruba
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          HOST="${ARUBA_FTP_HOST#ftp://}"
+          HOST="${HOST#ftps://}"
+          DOMAIN="${HOST#ftp.}"
+          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          if [[ "$RAW_REMOTE" == /www.* ]]; then
+            REMOTE="$RAW_REMOTE"
+          else
+            REMOTE="/www.$DOMAIN$RAW_REMOTE"
+          fi
+          lftp -c "
+            set cmd:fail-exit yes;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate yes;
+            set ssl:check-hostname no;
+            set net:max-retries 2;
+            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
+            mirror -R --delete --verbose --parallel=4 --no-perms /tmp/stable-nexus/nexus \"$REMOTE\";
+            bye;
+          "
+          echo 'ARUBA_HARD_RESTORE=YES'
+
+      - name: Verify public production against stable files
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://www.italianmastersclub.it/nexus'
+          TOKEN="${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/index.html?verify=$TOKEN" -o /tmp/prod-index.html
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/js/app.js?v=53.0&verify=$TOKEN" -o /tmp/prod-app.js
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/js/app-core-53.js?v=53.0-core&verify=$TOKEN" -o /tmp/prod-core.js
+          cmp -s /tmp/stable-nexus/nexus/index.html /tmp/prod-index.html
+          cmp -s /tmp/stable-nexus/nexus/js/app.js /tmp/prod-app.js
+          cmp -s /tmp/stable-nexus/nexus/js/app-core-53.js /tmp/prod-core.js
+          node --check /tmp/prod-app.js
+          node --check /tmp/prod-core.js
+          grep -Fq '<title>IMC Nexus · Build 53</title>' /tmp/prod-index.html
+          grep -Fq 'js/app-core-53.js?v=53.0-core' /tmp/prod-app.js
+          grep -Fq 'js/imc-results-scorers.js?v=1.0.0' /tmp/prod-app.js
+          if grep -Fq 'imc-match-report' /tmp/prod-app.js; then exit 1; fi
+          echo 'PUBLIC_EXACT_MATCH=YES'
+
+      - name: Write verified marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf 'NEXUS_EXACT_RESTORE_OK\nSTABLE_COMMIT=38f4a384ef102cab8b7d94a6272c973121a34c03\nVERIFIED_AT=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > nexus-exact-restore-status.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nexus-exact-restore-status.txt
+          git commit -m '[bootstrap] Nexus exact stable production restored'
+          git push origin HEAD:main
