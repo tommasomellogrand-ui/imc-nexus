@@ -1,4 +1,4 @@
-name: Deploy Live Test 3D to Aruba
+name: Deploy Live Match to Aruba
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: live-test-3d-production-deploy
+  group: live-match-production-deploy
   cancel-in-progress: false
 
 jobs:
@@ -38,9 +38,9 @@ jobs:
           done
           test -s live-test-3d/index.html
           grep -Fq 'ROAD TO HISTORY' live-test-3d/index.html
-          grep -Fq 'MATCHDAY' live-test-3d/index.html
+          grep -Fq 'MATCHDAY 13' live-test-3d/index.html
 
-      - name: Deploy Live Test 3D with verified FTPS
+      - name: Deploy Live Match with verified FTPS
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
           ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
@@ -60,7 +60,7 @@ jobs:
           domain = host[4:] if host.startswith('ftp.') else host
 
           if raw.endswith('/nexus'):
-              target_raw = raw[:-len('/nexus')] + '/live-test-3d'
+              target_raw = raw[:-len('/nexus')] + '/live-match'
           else:
               raise SystemExit(f'ARUBA_FTP_REMOTE_DIR must end in /nexus, got: {raw}')
 
@@ -68,7 +68,7 @@ jobs:
           local_root = Path('live-test-3d')
           files = [p for p in local_root.rglob('*') if p.is_file()]
           if not files:
-              raise SystemExit('No live-test-3d files to deploy')
+              raise SystemExit('No live files to deploy')
 
           ctx = ssl.create_default_context()
           ctx.check_hostname = False
@@ -109,11 +109,12 @@ jobs:
       - name: Public smoke test
         run: |
           set -euo pipefail
-          URL="https://www.italianmastersclub.it/live-test-3d/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          URL="https://www.italianmastersclub.it/live-match/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
           curl -fsSL --connect-timeout 15 --max-time 30 \
             -H 'Cache-Control: no-cache, no-store, must-revalidate' \
             -H 'Pragma: no-cache' \
-            "$URL" -o /tmp/live-test-3d-public.html
-          grep -Fq 'ROAD TO HISTORY' /tmp/live-test-3d-public.html
-          grep -Fq 'MATCHDAY' /tmp/live-test-3d-public.html
-          echo 'LIVE_TEST_3D_PUBLIC_SMOKE=YES'
+            "$URL" -o /tmp/live-match-public.html
+          grep -Fq 'ROAD TO HISTORY' /tmp/live-match-public.html
+          grep -Fq 'MATCHDAY 13' /tmp/live-match-public.html
+          grep -Fq 'POWERED BY NEXUS' /tmp/live-match-public.html
+          echo 'LIVE_MATCH_PUBLIC_SMOKE=YES'
