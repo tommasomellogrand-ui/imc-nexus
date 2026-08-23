@@ -1,0 +1,127 @@
+name: Deploy Nexus Staging to Aruba
+
+on:
+  push:
+    branches:
+      - staging
+    paths:
+      - 'nexus/**'
+      - '.github/workflows/deploy-nexus-staging-aruba.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexus-staging-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging
+        uses: actions/checkout@v4
+        with:
+          ref: staging
+
+      - name: Build isolated staging snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/nexus-test
+          cp -a nexus /tmp/nexus-test
+          python3 - <<'PY'
+          from pathlib import Path
+
+          root = Path('/tmp/nexus-test')
+          text_ext = {'.html','.js','.css','.json','.txt','.md','.svg'}
+          for p in root.rglob('*'):
+              if not p.is_file() or p.suffix.lower() not in text_ext:
+                  continue
+              try:
+                  s = p.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              original = s
+              s = s.replace('/nexus/', '/nexus-test/')
+              s = s.replace('/nexus"', '/nexus-test"')
+              s = s.replace("/nexus'", "/nexus-test'")
+              if p.name == 'index.html':
+                  s = s.replace('<title>IMC Nexus ·', '<title>IMC Nexus TEST ·', 1)
+                  badge = '''\n<style id="nexusStagingBadgeStyle">\n#nexusStagingBadge{position:fixed;top:max(8px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:2147483647;padding:6px 12px;border-radius:999px;background:#b42318;color:#fff;font:900 10px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.12em;box-shadow:0 4px 14px rgba(0,0,0,.22);pointer-events:none}\n</style>\n<div id="nexusStagingBadge">NEXUS TEST</div>\n'''
+                  s = s.replace('<body>', '<body>'+badge, 1)
+              if s != original:
+                  p.write_text(s, encoding='utf-8')
+          PY
+          test -s /tmp/nexus-test/index.html
+          test -s /tmp/nexus-test/js/app.js
+          test -s /tmp/nexus-test/js/app-core-53.js
+          grep -Fq '<base href="/nexus-test/">' /tmp/nexus-test/index.html
+          grep -Fq 'NEXUS TEST' /tmp/nexus-test/index.html
+          grep -Fq 'const NEXUS_ROUTE_BASE = "/nexus-test";' /tmp/nexus-test/js/app-core-53.js
+          grep -Fq '/nexus-test/index.html' /tmp/nexus-test/js/app-core-53.js
+          node --check /tmp/nexus-test/js/app.js
+          node --check /tmp/nexus-test/js/app-core-53.js
+
+      - name: Install FTPS client
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Deploy staging only to Aruba nexus-test
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          HOST="${ARUBA_FTP_HOST#ftp://}"
+          HOST="${HOST#ftps://}"
+          DOMAIN="${HOST#ftp.}"
+          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          if [[ "$RAW_REMOTE" == /www.* ]]; then
+            PROD_REMOTE="$RAW_REMOTE"
+          else
+            PROD_REMOTE="/www.$DOMAIN$RAW_REMOTE"
+          fi
+          if [[ "$PROD_REMOTE" == */nexus ]]; then
+            TEST_REMOTE="${PROD_REMOTE%/nexus}/nexus-test"
+          else
+            TEST_REMOTE="${PROD_REMOTE}-test"
+          fi
+          echo "PRODUCTION_REMOTE=$PROD_REMOTE"
+          echo "STAGING_REMOTE=$TEST_REMOTE"
+          lftp -c "
+            set cmd:fail-exit yes;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate yes;
+            set ssl:check-hostname no;
+            set net:max-retries 2;
+            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
+            mirror -R --delete --verbose --parallel=4 --no-perms \
+              --exclude-glob .gitkeep \
+              --exclude-glob .env \
+              --exclude-glob '.env.*' \
+              --exclude-glob '*.pem' \
+              --exclude-glob '*.key' \
+              /tmp/nexus-test \"$TEST_REMOTE\";
+            bye;
+          "
+
+      - name: Verify staging public URL
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://www.italianmastersclub.it/nexus-test'
+          TOKEN="${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/index.html?verify=$TOKEN" -o /tmp/staging-index.html
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/js/app.js?verify=$TOKEN" -o /tmp/staging-app.js
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/js/app-core-53.js?verify=$TOKEN" -o /tmp/staging-core.js
+          grep -Fq '<base href="/nexus-test/">' /tmp/staging-index.html
+          grep -Fq 'NEXUS TEST' /tmp/staging-index.html
+          grep -Fq 'const NEXUS_ROUTE_BASE = "/nexus-test";' /tmp/staging-core.js
+          node --check /tmp/staging-app.js
+          node --check /tmp/staging-core.js
+          echo 'NEXUS_STAGING_PUBLIC=YES'
