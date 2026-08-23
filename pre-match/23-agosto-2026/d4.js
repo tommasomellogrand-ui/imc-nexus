@@ -1,6 +1,5 @@
 Object.assign(RTH.T,{111:['Borussia Dortmund',26,24,9,'L W D W L',56.4,16.3,6.7,'https://cdn.soccerwiki.org/images/logos/clubs/392.png','RAPHINHA · 8.9'],149:['Lazio',25,28,16,'W W D W W',55.3,16.3,6.8,'https://cdn.soccerwiki.org/images/logos/clubs/111.png','K MBAPPÉ · 9.1'],142:['Dynamo Kyiv',22,23,9,'W W L W W',57.3,17.9,7.3,'https://cdn.soccerwiki.org/images/logos/clubs/347.png','J BELLINGHAM · 8.2'],148:['Roma',22,18,11,'W W D L W',51,14.1,5.3,'https://cdn.soccerwiki.org/images/logos/clubs/123.png','ENDRICK · 7.9'],139:['Legia Warszawa',20,19,17,'L W W L L',46.1,12.2,3.4,'https://cdn.soccerwiki.org/images/logos/clubs/651.png','A GRIEZMANN · 7.8'],150:['Hertha Berlino',19,21,19,'W L W L W',54.8,14.6,6.2,'https://cdn.soccerwiki.org/images/logos/clubs/404.png','F WIRTZ · 9.0'],144:['River Plate',10,13,26,'L L D W L',45.2,10.7,3.1,'https://cdn.soccerwiki.org/images/logos/clubs/282.png','F BALOGUN · 7.3'],143:['Campobasso',9,19,25,'L L W L L',45.8,14.6,5.3,'https://cdn.soccerwiki.org/images/logos/clubs/3874.png','L DÍAZ · 7.9'],146:['Club América',8,12,31,'L L L W W',43.3,10.3,2.9,'https://cdn.soccerwiki.org/images/logos/clubs/439.png','J PANICHELLI · 7.6'],145:['Flamengo',7,10,24,'W L L L L',44.9,11.1,2.7,'https://cdn.soccerwiki.org/images/logos/clubs/294.png','RODRYGO · 7.1']});RTH.D[4]=[111,149,142,148,139,150,144,143,146,145];RTH.F[4]=[[143,139],[148,142],[149,145],[146,144],[150,111]];
 
-/* Data Room readability patch: always show both club logos */
 (function(){
   function patchDataRoom(){
     var m=(location.hash||'').match(/^#data-(\d)-(\d)$/);
@@ -21,19 +20,18 @@ Object.assign(RTH.T,{111:['Borussia Dortmund',26,24,9,'L W D W L',56.4,16.3,6.7,
       row.querySelectorAll('img').forEach(function(img){img.style.width='30px';img.style.height='30px';img.style.objectFit='contain';});
     });
   }
-  var obs=new MutationObserver(patchDataRoom); obs.observe(document.documentElement,{childList:true,subtree:true});
-  window.addEventListener('hashchange',function(){setTimeout(patchDataRoom,0);}); setTimeout(patchDataRoom,0);
 
-  /* Hard navigation for Safari/iPhone: open the full index.html URL for every internal button */
-  function fullNavigate(e){
-    var a=e.target.closest && e.target.closest('a[href^="#"]');
-    if(!a) return;
-    var target=a.getAttribute('href');
-    if(!target) return;
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    window.location.href='https://www.italianmastersclub.it/pre-match/23-agosto-2026/index.html'+target;
+  function routeDataButtons(){
+    document.querySelectorAll('a.navbtn[href^="#data-"]').forEach(function(a){
+      var m=a.getAttribute('href').match(/^#data-(\d)-(\d)$/);
+      if(!m) return;
+      a.setAttribute('href','data.html?d='+m[1]+'&i='+m[2]);
+    });
   }
-  document.addEventListener('click',fullNavigate,true);
-  document.addEventListener('touchend',fullNavigate,{capture:true,passive:false});
+
+  function refresh(){patchDataRoom();routeDataButtons();}
+  var obs=new MutationObserver(refresh);
+  obs.observe(document.documentElement,{childList:true,subtree:true});
+  window.addEventListener('hashchange',function(){setTimeout(refresh,0);});
+  setTimeout(refresh,0);
 })();
