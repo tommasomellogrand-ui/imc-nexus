@@ -39,10 +39,8 @@ jobs:
           for p in root.rglob('*'):
               if not p.is_file() or p.suffix.lower() not in text_ext:
                   continue
-              try:
-                  s = p.read_text(encoding='utf-8')
-              except UnicodeDecodeError:
-                  continue
+              try: s = p.read_text(encoding='utf-8')
+              except UnicodeDecodeError: continue
               original = s
               s = s.replace('/nexus/', '/nexus-test/')
               s = s.replace('/nexus"', '/nexus-test"')
@@ -51,8 +49,7 @@ jobs:
                   s = s.replace('<title>IMC Nexus ·', '<title>IMC Nexus TEST ·', 1)
                   badge = '''\n<style id="nexusStagingBadgeStyle">\n#nexusStagingBadge{position:fixed;top:max(8px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:2147483647;padding:6px 12px;border-radius:999px;background:#b42318;color:#fff;font:900 10px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.12em;box-shadow:0 4px 14px rgba(0,0,0,.22);pointer-events:none}\n</style>\n<div id="nexusStagingBadge">NEXUS TEST</div>\n'''
                   s = s.replace('<body>', '<body>'+badge, 1)
-              if s != original:
-                  p.write_text(s, encoding='utf-8')
+              if s != original: p.write_text(s, encoding='utf-8')
           PY
           test -s /tmp/nexus-test/index.html
           test -s /tmp/nexus-test/js/app.js
@@ -82,55 +79,26 @@ jobs:
           ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
         run: |
           set -euo pipefail
-          HOST="${ARUBA_FTP_HOST#ftp://}"
-          HOST="${HOST#ftps://}"
-          DOMAIN="${HOST#ftp.}"
-          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
-          if [[ "$RAW_REMOTE" == /www.* ]]; then
-            PROD_REMOTE="$RAW_REMOTE"
-          else
-            PROD_REMOTE="/www.$DOMAIN$RAW_REMOTE"
-          fi
-          if [[ "$PROD_REMOTE" == */nexus ]]; then
-            TEST_REMOTE="${PROD_REMOTE%/nexus}/nexus-test"
-          else
-            TEST_REMOTE="${PROD_REMOTE}-test"
-          fi
-          echo "PRODUCTION_REMOTE=$PROD_REMOTE"
+          HOST="${ARUBA_FTP_HOST#ftp://}"; HOST="${HOST#ftps://}"; DOMAIN="${HOST#ftp.}"; RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
+          if [[ "$RAW_REMOTE" == /www.* ]]; then PROD_REMOTE="$RAW_REMOTE"; else PROD_REMOTE="/www.$DOMAIN$RAW_REMOTE"; fi
+          if [[ "$PROD_REMOTE" == */nexus ]]; then TEST_REMOTE="${PROD_REMOTE%/nexus}/nexus-test"; else TEST_REMOTE="${PROD_REMOTE}-test"; fi
           echo "STAGING_REMOTE=$TEST_REMOTE"
-          lftp -c "
-            set cmd:fail-exit yes;
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
-            set ssl:verify-certificate yes;
-            set ssl:check-hostname no;
-            set net:max-retries 2;
-            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
-            mirror -R --delete --verbose --parallel=4 --no-perms \
-              --exclude-glob .gitkeep \
-              --exclude-glob .env \
-              --exclude-glob '.env.*' \
-              --exclude-glob '*.pem' \
-              --exclude-glob '*.key' \
-              /tmp/nexus-test \"$TEST_REMOTE\";
-            bye;
-          "
+          lftp -c "set cmd:fail-exit yes; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate yes; set ssl:check-hostname no; set net:max-retries 2; open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST; mirror -R --delete --verbose --parallel=4 --no-perms --exclude-glob .gitkeep --exclude-glob .env --exclude-glob '.env.*' --exclude-glob '*.pem' --exclude-glob '*.key' /tmp/nexus-test \"$TEST_REMOTE\"; bye;"
           touch /tmp/staging-deploy-ok
 
       - name: Verify staging public URL
         shell: bash
         run: |
           set -euo pipefail
-          BASE='https://www.italianmastersclub.it/nexus-test'
-          TOKEN="${GITHUB_SHA}-$(date +%s)"
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/index.html?verify=$TOKEN" -o /tmp/staging-index.html
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/js/app.js?verify=$TOKEN" -o /tmp/staging-app.js
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/js/app-core-53.js?verify=$TOKEN" -o /tmp/staging-core.js
-          grep -Fq '<base href="/nexus-test/">' /tmp/staging-index.html
-          grep -Fq 'NEXUS TEST' /tmp/staging-index.html
-          grep -Fq 'const NEXUS_ROUTE_BASE = "/nexus-test";' /tmp/staging-core.js
-          node --check /tmp/staging-app.js
-          node --check /tmp/staging-core.js
+          BASE='https://www.italianmastersclub.it/nexus-test'; TOKEN="${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/index.html?verify=$TOKEN" -o /tmp/staging-index.html; touch /tmp/v-index-http
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/js/app.js?verify=$TOKEN" -o /tmp/staging-app.js; touch /tmp/v-app-http
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/js/app-core-53.js?verify=$TOKEN" -o /tmp/staging-core.js; touch /tmp/v-core-http
+          grep -Fq '<base href="/nexus-test/">' /tmp/staging-index.html; touch /tmp/v-base
+          grep -Fq 'NEXUS TEST' /tmp/staging-index.html; touch /tmp/v-badge
+          grep -Fq 'const NEXUS_ROUTE_BASE = "/nexus-test";' /tmp/staging-core.js; touch /tmp/v-route
+          node --check /tmp/staging-app.js; touch /tmp/v-app-js
+          node --check /tmp/staging-core.js; touch /tmp/v-core-js
           touch /tmp/staging-verify-ok
 
       - name: Publish staging status
@@ -138,14 +106,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          b=NO; f=NO; d=NO; v=NO
-          [ -f /tmp/staging-build-ok ] && b=YES
-          [ -f /tmp/staging-ftps-ok ] && f=YES
-          [ -f /tmp/staging-deploy-ok ] && d=YES
-          [ -f /tmp/staging-verify-ok ] && v=YES
-          printf 'NEXUS_STAGING_STATUS\nSTATUS=%s\nBUILD=%s\nFTPS=%s\nDEPLOY=%s\nVERIFY=%s\nURL=https://www.italianmastersclub.it/nexus-test/\nRUN_SHA=%s\nUPDATED_AT=%s\n' "${{ job.status }}" "$b" "$f" "$d" "$v" "$GITHUB_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > nexus-staging-status.txt
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          yn(){ [ -f "$1" ] && printf YES || printf NO; }
+          printf 'NEXUS_STAGING_STATUS\nSTATUS=%s\nBUILD=%s\nFTPS=%s\nDEPLOY=%s\nVERIFY=%s\nINDEX_HTTP=%s\nAPP_HTTP=%s\nCORE_HTTP=%s\nBASE_PATH=%s\nBADGE=%s\nROUTE_PATH=%s\nAPP_JS=%s\nCORE_JS=%s\nURL=https://www.italianmastersclub.it/nexus-test/\nRUN_SHA=%s\nUPDATED_AT=%s\n' "${{ job.status }}" "$(yn /tmp/staging-build-ok)" "$(yn /tmp/staging-ftps-ok)" "$(yn /tmp/staging-deploy-ok)" "$(yn /tmp/staging-verify-ok)" "$(yn /tmp/v-index-http)" "$(yn /tmp/v-app-http)" "$(yn /tmp/v-core-http)" "$(yn /tmp/v-base)" "$(yn /tmp/v-badge)" "$(yn /tmp/v-route)" "$(yn /tmp/v-app-js)" "$(yn /tmp/v-core-js)" "$GITHUB_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > nexus-staging-status.txt
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add nexus-staging-status.txt
-          git commit -m '[staging] Nexus test diagnostics ${{ job.status }}' || exit 0
+          git commit -m '[staging] Nexus test verification diagnostics' || exit 0
           git push origin HEAD:staging
