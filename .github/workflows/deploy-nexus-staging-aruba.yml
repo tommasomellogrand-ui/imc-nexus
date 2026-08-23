@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: nexus-staging-deploy
@@ -125,3 +125,14 @@ jobs:
           node --check /tmp/staging-app.js
           node --check /tmp/staging-core.js
           echo 'NEXUS_STAGING_PUBLIC=YES'
+
+      - name: Publish verified staging marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf 'NEXUS_STAGING_OK\nURL=https://www.italianmastersclub.it/nexus-test/\nVERIFIED_SHA=%s\nVERIFIED_AT=%s\n' "$GITHUB_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > nexus-staging-status.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nexus-staging-status.txt
+          git commit -m '[staging] Nexus test deployed and verified' || exit 0
+          git push origin HEAD:staging
