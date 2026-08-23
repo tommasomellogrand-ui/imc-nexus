@@ -1,0 +1,37 @@
+name: Deploy scorer dedupe only
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/deploy-scorer-dedupe.yml']
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy only scorer bridge
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          local=Path('nexus/js/imc-results-scorers.js'); data=local.read_bytes()
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p(); ftp.cwd(f'{root}/js')
+          with local.open('rb') as fh: ftp.storbinary('STOR imc-results-scorers.js',fh,blocksize=65536)
+          buf=io.BytesIO(); ftp.retrbinary('RETR imc-results-scorers.js',buf.write,blocksize=65536)
+          if buf.getvalue()!=data: raise SystemExit('scorer file readback mismatch')
+          ftp.quit(); print('SCORER_DEDUPE_DEPLOYED=YES')
+          PY
