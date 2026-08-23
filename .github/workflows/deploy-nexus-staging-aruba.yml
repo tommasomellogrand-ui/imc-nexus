@@ -74,6 +74,26 @@ jobs:
           [[ "$PROD" == /www.* ]] || PROD="/www.$DOMAIN$PROD"
           if [[ "$PROD" == */nexus ]]; then TEST="${PROD%/nexus}/nexus-test"; else TEST="${PROD}-test"; fi
           lftp -c "set cmd:fail-exit yes; set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate yes; set ssl:check-hostname no; open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST; mirror -R --delete --parallel=4 --no-perms /tmp/nexus-test \"$TEST\"; bye;"
+          TEST_REMOTE="$TEST" python3 - <<'PY'
+          import io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']; root=os.environ['TEST_REMOTE']
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
+          files=[
+            (Path('/tmp/nexus-test/index.html'),root,'index.html'),
+            (Path('/tmp/nexus-test/js/app.js'),root+'/js','app.js'),
+            (Path('/tmp/nexus-test/js/app-core-53.js'),root+'/js','app-core-53.js')
+          ]
+          for local,remote_dir,name in files:
+              data=local.read_bytes(); ftp.cwd(remote_dir)
+              with local.open('rb') as fh: ftp.storbinary(f'STOR {name}',fh,blocksize=65536)
+              buf=io.BytesIO(); ftp.retrbinary(f'RETR {name}',buf.write,blocksize=65536)
+              if buf.getvalue()!=data: raise SystemExit(f'readback mismatch {name}')
+          ftp.quit()
+          PY
           touch /tmp/staging-deploy-ok
 
       - name: Verify public staging
