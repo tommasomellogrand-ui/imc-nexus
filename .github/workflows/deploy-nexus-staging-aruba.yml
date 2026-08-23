@@ -1,3 +1,4 @@
+# staging workflow registered on main; this file deploys staging only
 name: Deploy Nexus Staging to Aruba
 
 on:
