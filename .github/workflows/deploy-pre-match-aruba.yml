@@ -106,13 +106,14 @@ jobs:
       - name: Public smoke test
         run: |
           set -euo pipefail
-          test -s pre-match/20-agosto-2026/index.html
-          URL="https://www.italianmastersclub.it/pre-match/20-agosto-2026/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          test -s pre-match/23-agosto-2026/index.html
+          URL="https://www.italianmastersclub.it/pre-match/23-agosto-2026/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
           curl -fsSL --connect-timeout 15 --max-time 30 \
             -H 'Cache-Control: no-cache, no-store, must-revalidate' \
             -H 'Pragma: no-cache' \
             "$URL" -o /tmp/pre-match-public.html
-          grep -Fq 'MATCH 12' /tmp/pre-match-public.html
-          grep -Fq 'AFTER MATCH 11' /tmp/pre-match-public.html
-          grep -Fq '20 AUG 2026' /tmp/pre-match-public.html
+          grep -Fq 'MATCHDAY 13' /tmp/pre-match-public.html
+          grep -Fq 'DATA ERA' /tmp/pre-match-public.html
+          grep -Fq '23 AUG 2026' /tmp/pre-match-public.html
+          grep -Fq 'background:#fff' /tmp/pre-match-public.html
           echo 'PRE_MATCH_PUBLIC_SMOKE=YES'
