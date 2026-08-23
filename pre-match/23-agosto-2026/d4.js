@@ -11,29 +11,33 @@ Object.assign(RTH.T,{111:['Borussia Dortmund',26,24,9,'L W D W L',56.4,16.3,6.7,
     if(!x || !y) return;
     var metrics=document.querySelectorAll('.metric');
     if(metrics.length<6) return;
-    var values=[
-      [x[5]+'%',y[5]+'%'],
-      [x[6],y[6]],
-      [x[7],y[7]],
-      [x[2],y[2]],
-      [x[3],y[3]],
-      [x[1]+' PT',y[1]+' PT']
-    ];
+    var values=[[x[5]+'%',y[5]+'%'],[x[6],y[6]],[x[7],y[7]],[x[2],y[2]],[x[3],y[3]],[x[1]+' PT',y[1]+' PT']];
     var labels=['POSSESSO MEDIO','TIRI / MATCH','IN PORTA / MATCH','GOL FATTI','GOL SUBITI','PUNTI IN CLASSIFICA'];
     metrics.forEach(function(box,idx){
-      var label=box.querySelector('small');
-      if(label) label.textContent=labels[idx];
-      var row=box.querySelector('.metric-v');
-      if(!row) return;
-      row.style.gridTemplateColumns='32px minmax(0,1fr) 20px minmax(0,1fr) 32px';
-      row.style.gap='6px';
+      var label=box.querySelector('small'); if(label) label.textContent=labels[idx];
+      var row=box.querySelector('.metric-v'); if(!row) return;
+      row.style.gridTemplateColumns='32px minmax(0,1fr) 20px minmax(0,1fr) 32px'; row.style.gap='6px';
       row.innerHTML='<img src="'+x[8]+'" alt="'+x[0]+'"><b style="text-align:left">'+values[idx][0]+'</b><span style="font-size:8px;font-weight:900;color:#718096;text-align:center">VS</span><b class="away" style="text-align:right">'+values[idx][1]+'</b><img src="'+y[8]+'" alt="'+y[0]+'">';
-      var imgs=row.querySelectorAll('img');
-      imgs.forEach(function(img){img.style.width='30px';img.style.height='30px';img.style.objectFit='contain';});
+      row.querySelectorAll('img').forEach(function(img){img.style.width='30px';img.style.height='30px';img.style.objectFit='contain';});
     });
   }
-  var obs=new MutationObserver(function(){patchDataRoom();});
-  obs.observe(document.documentElement,{childList:true,subtree:true});
-  window.addEventListener('hashchange',function(){setTimeout(patchDataRoom,0);});
-  setTimeout(patchDataRoom,0);
+  var obs=new MutationObserver(patchDataRoom); obs.observe(document.documentElement,{childList:true,subtree:true});
+  window.addEventListener('hashchange',function(){setTimeout(patchDataRoom,0);}); setTimeout(patchDataRoom,0);
+
+  /* Global iPhone-safe navigation: every internal RTH button follows its href explicitly */
+  function follow(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    var target=a.getAttribute('href'); if(!target) return;
+    e.preventDefault(); e.stopPropagation();
+    if(location.hash===target){ if(typeof render==='function') render(); }
+    else location.hash=target;
+  }
+  document.addEventListener('click',follow,true);
+  document.addEventListener('touchend',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    e.preventDefault(); e.stopPropagation();
+    var target=a.getAttribute('href');
+    if(location.hash===target){ if(typeof render==='function') render(); }
+    else location.hash=target;
+  },{capture:true,passive:false});
 })();
