@@ -8,7 +8,7 @@
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-match-report-beta.js?v=1.0.0");
     writeScript("js/imc-match-report-beta-ui.js?v=1.0.0");
-    writeScript("js/imc-match-report-beta-button.js?v=1.0.0");
+    writeScript("js/imc-match-report-beta-button.js?v=1.0.1");
     return;
   }
   var core=document.createElement("script");
@@ -24,7 +24,7 @@
         matchReportUi.src="js/imc-match-report-beta-ui.js?v=1.0.0";
         matchReportUi.onload=function(){
           var matchReportButton=document.createElement("script");
-          matchReportButton.src="js/imc-match-report-beta-button.js?v=1.0.0";
+          matchReportButton.src="js/imc-match-report-beta-button.js?v=1.0.1";
           document.head.appendChild(matchReportButton);
         };
         document.head.appendChild(matchReportUi);
