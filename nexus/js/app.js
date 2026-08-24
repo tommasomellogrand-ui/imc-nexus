@@ -9,6 +9,7 @@
     writeScript("js/imc-match-report-beta.js?v=1.0.0");
     writeScript("js/imc-match-report-beta-ui.js?v=1.0.0");
     writeScript("js/imc-match-report-beta-button.js?v=1.0.1");
+    writeScript("js/imc-beta-matchdays-only.js?v=1.0.0");
     return;
   }
   var core=document.createElement("script");
@@ -34,4 +35,8 @@
     document.head.appendChild(scorers);
   };
   document.head.appendChild(core);
+
+  var matchdaysOnly=document.createElement("script");
+  matchdaysOnly.src="js/imc-beta-matchdays-only.js?v=1.0.0";
+  document.head.appendChild(matchdaysOnly);
 })();
