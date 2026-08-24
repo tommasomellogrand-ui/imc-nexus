@@ -1,0 +1,219 @@
+(function(){
+  "use strict";
+
+  var cache=new Map();
+  var loading=new Map();
+  var timer=null;
+
+  function clean(value){
+    return String(value==null?"":value).replace(/\s+/g," ").trim();
+  }
+
+  function norm(value){
+    return clean(value)
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g,"")
+      .toLowerCase()
+      .replace(/[·]/g," ")
+      .replace(/[^a-z0-9]+/g," ")
+      .trim();
+  }
+
+  function worldFromDom(){
+    var node=document.querySelector(".nx-competitions-title p, .nx-competition-cover-copy p");
+    var match=node&&clean(node.textContent).match(/GW\d{3}/i);
+    return match?match[0].toUpperCase():"";
+  }
+
+  function tableForWorld(worldId){
+    return String(worldId||"").toLowerCase()+"_gw_competitions";
+  }
+
+  function categoryForType(value){
+    var key=clean(value).toLowerCase();
+    if(key==="international")return "international";
+    if(key==="nations")return "nations";
+    if(key==="friendly")return "friendly";
+    return "domestic";
+  }
+
+  function splitAliases(value){
+    return clean(value).split("|").map(clean).filter(Boolean);
+  }
+
+  function internalCandidates(alias){
+    var value=clean(alias);
+    var out=[value];
+    var match=value.match(/^(.*?)\s*League\s+Div\s+(\d+)$/i);
+    if(match){
+      var nation=clean(match[1]);
+      out.push(nation?nation+" · Division "+match[2]:"Division "+match[2]);
+    }
+    match=value.match(/^(.*?)\s+(National Cup|League Cup|Charity Shield)$/i);
+    if(match){
+      var prefix=clean(match[1]);
+      var base=clean(match[2]);
+      out.push(prefix?prefix+" · "+base:base);
+    }
+    if(/^World Cup Qualifier$/i.test(value))out.push("World Cup Qualifying");
+    return out;
+  }
+
+  function buildRegistry(rows){
+    var aliases=[];
+    var byInternal=new Map();
+    (rows||[]).forEach(function(row){
+      splitAliases(row.IMC_competition_alias).forEach(function(alias){
+        var item={
+          alias:alias,
+          category:categoryForType(row.IMC_competition_type),
+          division:clean(row.IMC_league_divisions),
+          source:clean(row.sm_competition_name)
+        };
+        aliases.push(item);
+        internalCandidates(alias).forEach(function(candidate){
+          byInternal.set(norm(candidate),item);
+        });
+      });
+    });
+    return {aliases:aliases,byInternal:byInternal};
+  }
+
+  function loadRegistry(worldId){
+    if(cache.has(worldId))return Promise.resolve(cache.get(worldId));
+    if(loading.has(worldId))return loading.get(worldId);
+    var client=window.__IMC_BETA_CLIENT__;
+    if(!client)return Promise.resolve(null);
+
+    var request=client
+      .from(tableForWorld(worldId))
+      .select("sm_competition_name,IMC_competition_type,IMC_league_divisions,IMC_competition_alias")
+      .then(function(result){
+        if(result.error)throw result.error;
+        var registry=buildRegistry(result.data||[]);
+        cache.set(worldId,registry);
+        loading.delete(worldId);
+        return registry;
+      })
+      .catch(function(error){
+        loading.delete(worldId);
+        console.error("Nexus beta competition source",error);
+        return null;
+      });
+
+    loading.set(worldId,request);
+    return request;
+  }
+
+  function matchTile(registry,button){
+    var id=clean(button.getAttribute("data-comp-id"));
+    var item=registry.byInternal.get(norm(id));
+    if(item)return item;
+
+    var strong=button.querySelector(".nx-comp-tile-copy strong");
+    var small=button.querySelector(".nx-comp-tile-copy small");
+    var name=strong?clean(strong.textContent):"";
+    var nation=small?clean(small.textContent):"";
+    var candidates=[name,nation&&name?nation+" · "+name:""];
+    for(var i=0;i<candidates.length;i+=1){
+      item=registry.byInternal.get(norm(candidates[i]));
+      if(item)return item;
+    }
+    return null;
+  }
+
+  function updateSummary(registry){
+    var active=document.querySelector("[data-competition-category].active");
+    var category=active?clean(active.getAttribute("data-competition-category")):"domestic";
+    var counts={domestic:0,international:0,nations:0};
+    registry.aliases.forEach(function(item){
+      if(Object.prototype.hasOwnProperty.call(counts,item.category))counts[item.category]+=1;
+    });
+    var total=counts.domestic+counts.international+counts.nations;
+    var summary=document.querySelector(".nx-competition-summary span");
+    if(summary){
+      var label=category==="international"?"International":(category==="nations"?"Nations":"Domestic");
+      summary.innerHTML=label+": <strong>"+(counts[category]||0)+"</strong> · Totale: <strong>"+total+"</strong>";
+    }
+  }
+
+  function applyIndex(registry){
+    var root=document.getElementById("worldCompetitionsContent");
+    if(!root)return;
+    var buttons=Array.prototype.slice.call(root.querySelectorAll(".nx-comp-tile[data-comp-id]"));
+    buttons.forEach(function(button){
+      var item=matchTile(registry,button);
+      if(!item){
+        button.remove();
+        return;
+      }
+      var strong=button.querySelector(".nx-comp-tile-copy strong");
+      if(strong)strong.textContent=item.alias;
+    });
+
+    root.querySelectorAll(".nx-nation-competition-box").forEach(function(section){
+      if(!section.querySelector(".nx-comp-tile[data-comp-id]"))section.remove();
+    });
+
+    var grid=root.querySelector(".nx-competition-filtered-grid");
+    if(grid&&!root.querySelector(".nx-comp-tile[data-comp-id]")){
+      grid.innerHTML='<div class="nx-empty-box"><strong>Nessuna competizione trovata</strong><span>Nessuna competizione presente nel repository del Game World.</span></div>';
+    }
+    updateSummary(registry);
+  }
+
+  function detailCandidates(title){
+    var value=clean(title);
+    var out=[value];
+    var words={one:"1",two:"2",three:"3",four:"4",five:"5"};
+    var match=value.match(/^(.*?)\s*Division\s+(One|Two|Three|Four|Five|\d+)$/i);
+    if(match){
+      var nation=clean(match[1]).replace(/·\s*$/g,"").trim();
+      var number=words[String(match[2]).toLowerCase()]||match[2];
+      out.push(nation?nation+" · Division "+number:"Division "+number);
+    }
+    return out;
+  }
+
+  function matchDetail(registry,title){
+    var candidates=detailCandidates(title);
+    for(var i=0;i<candidates.length;i+=1){
+      var item=registry.byInternal.get(norm(candidates[i]));
+      if(item)return item;
+    }
+    return null;
+  }
+
+  function applyDetail(registry){
+    var title=document.querySelector(".nx-competition-cover-copy h1");
+    if(!title)return;
+    if(!title.dataset.betaSourceName)title.dataset.betaSourceName=clean(title.textContent);
+    var item=matchDetail(registry,title.dataset.betaSourceName);
+    if(!item){
+      var back=document.getElementById("backToCompetitions");
+      if(back)back.click();
+      return;
+    }
+    title.textContent=item.alias;
+  }
+
+  function run(){
+    var worldId=worldFromDom();
+    if(!worldId)return;
+    loadRegistry(worldId).then(function(registry){
+      if(!registry)return;
+      if(document.getElementById("worldCompetitionsContent"))applyIndex(registry);
+      applyDetail(registry);
+    });
+  }
+
+  function schedule(){
+    clearTimeout(timer);
+    timer=setTimeout(run,20);
+  }
+
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",schedule,{once:true});
+  else schedule();
+
+  new MutationObserver(schedule).observe(document.documentElement,{childList:true,subtree:true});
+})();
