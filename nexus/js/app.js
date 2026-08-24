@@ -83,10 +83,13 @@
     if(!target || !title || !meta) return null;
     var worldMatch=String(meta.textContent || "").match(/GW\d{3}/i);
     if(!worldMatch) return null;
+    var displayName=String(title.textContent || "").trim();
+    var sourceName=String(title.dataset.betaSourceName || displayName).trim();
     return {
       target:target,
       worldId:worldMatch[0].toUpperCase(),
-      divisionName:String(title.textContent || "").trim()
+      divisionName:sourceName,
+      displayName:displayName
     };
   }
 
@@ -165,7 +168,7 @@
 
       rows.sort(function(a,b){return a.name.localeCompare(b.name,"it",{sensitivity:"base"});});
       context.target.innerHTML=rows.length
-        ? zeroStandingsMarkup(rows,context.divisionName)
+        ? zeroStandingsMarkup(rows,context.displayName)
         : '<div class="card"><div class="row-sub">Nessuna squadra configurata per questa divisione.</div></div>';
       context.target.dataset.betaZeroStandings=key;
     }catch(error){
@@ -203,6 +206,7 @@
   }
 
   function loadLegacyAfterCore(){
+    appendScript("js/imc-beta-competition-source.js?v=1.0.0");
     appendScript("js/imc-results-scorers.js?v=1.0.0",function(){
       appendScript("js/imc-match-report-beta.js?v=1.0.0",function(){
         appendScript("js/imc-match-report-beta-ui.js?v=1.0.0",function(){
@@ -217,6 +221,7 @@
 
   if(document.readyState === "loading"){
     writeScript("js/app-core-53.js?v=53.0-core");
+    writeScript("js/imc-beta-competition-source.js?v=1.0.0");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-match-report-beta.js?v=1.0.0");
     writeScript("js/imc-match-report-beta-ui.js?v=1.0.0");
