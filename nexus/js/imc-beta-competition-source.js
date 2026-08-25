@@ -255,9 +255,10 @@
       return '<div class="nx-beta-schedule-source"><div class="nx-empty-box"><strong>Nessuna schedule disponibile</strong><span>Nessuna data presente in gw005_schedule per '+esc(context.label)+'.</span></div></div>';
     }
     return '<div class="nx-beta-schedule-source">'+rows.map(function(row){
-      var label=clean(row.sm_round_label)||context.label||"Schedule";
-      var cardClass=context.action==="league"?"nx-league-matchday-card":"nx-cup-round-card";
-      return '<article class="'+cardClass+'"><div class="nx-unified-matchday-head"><div><small>'+esc(label.toUpperCase())+'</small><strong>'+esc(formatDate(row.match_date))+'</strong></div></div></article>';
+      var round=clean(row.sm_round_label);
+      return '<article class="nx-beta-schedule-row"><div class="nx-unified-matchday-head"><div>'+
+        (round?'<small>'+esc(round.toUpperCase())+'</small>':'')+
+        '<strong>'+esc(formatDate(row.match_date))+'</strong></div></div></article>';
     }).join("")+'</div>';
   }
 
@@ -325,9 +326,11 @@
     });
 
     return '<div class="nx-beta-results-source">'+groups.map(function(group){
-      var label=group.round||context.label||"Results";
+      var round=clean(group.round);
       return '<section class="nx-beta-result-group">'+
-        '<div class="nx-unified-matchday-head"><div><small>'+esc(label.toUpperCase())+'</small><strong>'+esc(formatDate(group.date))+'</strong></div><span>'+group.rows.length+' partite</span></div>'+
+        '<div class="nx-unified-matchday-head"><div>'+
+          (round?'<small>'+esc(round.toUpperCase())+'</small>':'')+
+          '<strong>'+esc(formatDate(group.date))+'</strong></div><span>'+group.rows.length+' partite</span></div>'+
         '<div class="nx-entity-match-list">'+group.rows.map(function(row){
           return '<div class="nx-entity-match nx-beta-result-row"><div class="match-line">'+
             '<span class="nx-beta-team nx-beta-home">'+esc(row.home_name)+'</span>'+
