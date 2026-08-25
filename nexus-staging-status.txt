@@ -13,5 +13,5 @@ ROUTE=YES
 APP_JS=YES
 CORE_JS=YES
 URL=https://www.italianmastersclub.it/nexus-test/
-RUN_SHA=6b284c8da4fe98fc3d26471c57e9c3fc5faf9d9d
-UPDATED_AT=2026-08-24T20:53:06Z
+RUN_SHA=46b5f66fa4ca76c040bbdaddb14a5cdf82e5adfe
+UPDATED_AT=2026-08-25T04:58:23Z
