@@ -4,6 +4,7 @@
   var cache=new Map();
   var loading=new Map();
   var scheduleCache=new Map();
+  var resultCache=new Map();
   var timer=null;
 
   function clean(value){
@@ -224,10 +225,10 @@
     return map[String(word[1]).toLowerCase()]||0;
   }
 
-  function scheduleContext(registry){
+  function tabContext(registry,tabName){
     if(worldFromDom()!=="GW005")return null;
-    var divisionTab=document.querySelector('[data-div-tab="schedule"].active, [data-division-tab="schedule"].active');
-    var competitionTab=document.querySelector('[data-comp-tab="schedule"].active, [data-competition-tab="schedule"].active');
+    var divisionTab=document.querySelector('[data-div-tab="'+tabName+'"].active, [data-division-tab="'+tabName+'"].active');
+    var competitionTab=document.querySelector('[data-comp-tab="'+tabName+'"].active, [data-competition-tab="'+tabName+'"].active');
     var active=divisionTab||competitionTab;
     if(!active)return null;
     var section=active.closest("section");
@@ -279,14 +280,14 @@
   }
 
   function applySchedule(registry){
-    var context=scheduleContext(registry);
+    var context=tabContext(registry,"schedule");
     if(!context)return;
     var key=context.action+"|"+(context.division||"")+"|"+norm(context.label);
     if(context.target.dataset.betaScheduleLoading===key)return;
     if(context.target.dataset.betaScheduleSource===key&&context.target.querySelector(".nx-beta-schedule-source"))return;
     context.target.dataset.betaScheduleLoading=key;
     loadScheduleRows(context).then(function(rows){
-      var latest=scheduleContext(registry);
+      var latest=tabContext(registry,"schedule");
       if(!latest||latest.target!==context.target)return;
       context.target.innerHTML=scheduleMarkup(rows,context);
       context.target.dataset.betaScheduleSource=key;
@@ -297,6 +298,83 @@
     });
   }
 
+  function resultScore(row){
+    var score=esc(row.home_score)+" - "+esc(row.away_score);
+    if(row.decided_on_penalties&&row.home_penalties!=null&&row.away_penalties!=null){
+      score+='<small class="nx-beta-penalties"> ('+esc(row.home_penalties)+'-'+esc(row.away_penalties)+' rig.)</small>';
+    }
+    return score;
+  }
+
+  function resultMarkup(rows,context){
+    if(!rows.length){
+      return '<div class="nx-beta-results-source"><div class="nx-empty-box"><strong>Nessun risultato disponibile</strong><span>Nessun risultato presente in gw005_results per '+esc(context.label)+'.</span></div></div>';
+    }
+
+    var groups=[];
+    var byKey=new Map();
+    rows.forEach(function(row){
+      var round=clean(row.sm_round_label);
+      var key=clean(row.source_page_date)+"|"+round;
+      if(!byKey.has(key)){
+        var group={date:row.source_page_date,round:round,rows:[]};
+        byKey.set(key,group);
+        groups.push(group);
+      }
+      byKey.get(key).rows.push(row);
+    });
+
+    return '<div class="nx-beta-results-source">'+groups.map(function(group){
+      var label=group.round||context.label||"Results";
+      return '<section class="nx-beta-result-group">'+
+        '<div class="nx-unified-matchday-head"><div><small>'+esc(label.toUpperCase())+'</small><strong>'+esc(formatDate(group.date))+'</strong></div><span>'+group.rows.length+' partite</span></div>'+
+        '<div class="nx-entity-match-list">'+group.rows.map(function(row){
+          return '<div class="nx-entity-match nx-beta-result-row"><div class="match-line">'+
+            '<span class="nx-beta-team nx-beta-home">'+esc(row.home_name)+'</span>'+
+            '<span class="match-score">'+resultScore(row)+'</span>'+
+            '<span class="nx-beta-team nx-beta-away">'+esc(row.away_name)+'</span>'+
+          '</div></div>';
+        }).join("")+'</div></section>';
+    }).join("")+'</div>';
+  }
+
+  function loadResultRows(context){
+    var key=context.action+"|"+(context.division||"");
+    if(resultCache.has(key))return Promise.resolve(resultCache.get(key));
+    var client=window.__IMC_BETA_CLIENT__;
+    if(!client)return Promise.resolve([]);
+    var query=client.from("gw005_results")
+      .select("raw_match_id,sm_fixture_id,source_page_date,home_name,away_name,home_score,away_score,home_penalties,away_penalties,decided_on_penalties,sm_action,sm_division,sm_country,sm_compid,sm_round_label")
+      .eq("game_world_id","GW005")
+      .eq("sm_action",context.action);
+    if(context.division!=null)query=query.eq("sm_division",context.division);
+    return query.order("source_page_date",{ascending:false}).order("raw_match_id",{ascending:true}).then(function(result){
+      if(result.error)throw result.error;
+      var rows=result.data||[];
+      resultCache.set(key,rows);
+      return rows;
+    });
+  }
+
+  function applyResults(registry){
+    var context=tabContext(registry,"results");
+    if(!context)return;
+    var key=context.action+"|"+(context.division||"")+"|"+norm(context.label);
+    if(context.target.dataset.betaResultsGw005Loading===key)return;
+    if(context.target.dataset.betaResultsGw005Source===key&&context.target.querySelector(".nx-beta-results-source"))return;
+    context.target.dataset.betaResultsGw005Loading=key;
+    loadResultRows(context).then(function(rows){
+      var latest=tabContext(registry,"results");
+      if(!latest||latest.target!==context.target)return;
+      context.target.innerHTML=resultMarkup(rows,context);
+      context.target.dataset.betaResultsGw005Source=key;
+      delete context.target.dataset.betaResultsGw005Loading;
+    }).catch(function(error){
+      context.target.innerHTML='<div class="nx-empty-box"><strong>Errore risultati</strong><span>'+esc(error&&error.message?error.message:"Impossibile leggere gw005_results.")+'</span></div>';
+      delete context.target.dataset.betaResultsGw005Loading;
+    });
+  }
+
   function run(){
     var worldId=worldFromDom();
     if(!worldId)return;
@@ -304,6 +382,7 @@
       if(!registry)return;
       if(document.getElementById("worldCompetitionsContent"))applyIndex(registry);
       applyDetail(registry);
+      applyResults(registry);
       applySchedule(registry);
     });
   }
