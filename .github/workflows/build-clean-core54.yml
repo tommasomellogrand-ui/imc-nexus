@@ -116,7 +116,6 @@ jobs:
               if end < len(text) and text[end] == '\n': end += 1
               return text[:m.start()] + text[end:]
 
-          # Build label inside the real core.
           source, count = re.subn(
               r'const NEXUS_BUILD = \"53\";',
               'const NEXUS_BUILD = \"54\";',
@@ -126,7 +125,6 @@ jobs:
           if count != 1:
               raise RuntimeError('Unable to promote core NEXUS_BUILD to 54')
 
-          # Remove the hard-coded GW001 league calendar and neutralize its legacy resolver.
           source = remove_const_object(source, 'OFFICIAL_SINGLE_LEAGUE_CALENDARS')
           source = replace_function(
               source,
@@ -134,7 +132,6 @@ jobs:
               'function officialLeagueMatchday(){\n    return null;\n  }'
           )
 
-          # Remove hard-coded date maps from the GW004 fallback config while preserving metadata.
           fallback_anchor = source.find('const FALLBACK_GW004_CONFIG')
           if fallback_anchor < 0:
               raise RuntimeError('FALLBACK_GW004_CONFIG not found')
@@ -146,7 +143,6 @@ jobs:
           cal_end = matching_brace(source, cal_brace) + 1
           source = source[:cal_start] + 'calendars: {}' + source[cal_end:]
 
-          # Results/Schedule tabs are owned exclusively by gwXXX_results / gwXXX_schedule.
           division_guard = '''const target=document.getElementById("divisionContent");\n    if(!target||!state.client)return;'''
           division_replacement = division_guard + '''\n    if(state.divisionTab==="results"||state.divisionTab==="schedule"){\n      target.innerHTML='<div class="nx-loading">Caricamento dati…</div>';\n      return;\n    }'''
           if source.count(division_guard) != 1:
@@ -159,14 +155,12 @@ jobs:
               raise RuntimeError('Unexpected loadCompetitionData target guard count')
           source = source.replace(competition_guard, competition_replacement, 1)
 
-          # Expose the authenticated Supabase client directly to the repository-only layer.
           client_block = '''if(window.supabase){\n      state.client=window.supabase.createClient(\n        state.config.url,\n        state.config.key\n      );\n    }'''
           client_replacement = client_block + '''\n    window.__IMC_NEXUS_CLIENT__=state.client;'''
           if source.count(client_block) != 1:
               raise RuntimeError('Unexpected Supabase client creation block count')
           source = source.replace(client_block, client_replacement, 1)
 
-          # Remove the division registry branch that reads gw_season_matchdays.
           registry_start_marker = '      // Build 32 · Global matchday registry.'
           registry_end_marker = '      if(state.divisionTab==="results"){' 
           rs = source.find(registry_start_marker)
@@ -175,17 +169,14 @@ jobs:
               raise RuntimeError('Division matchday registry block not found')
           source = source[:rs] + '      // Core 54: Results/Schedule are rendered only by dedicated per-GW repositories.\n' + source[re_:]
 
-          # The old results/schedule branch is unreachable and is removed from the generated core.
           legacy_branch = '''      if(state.divisionTab==="results"){\n        target.innerHTML=renderResults(matches);\n      }else{\n        target.innerHTML=renderSchedule(matches);\n      }'''
           if source.count(legacy_branch) != 1:
               raise RuntimeError('Legacy division Results/Schedule branch not found')
           source = source.replace(legacy_branch, '      return;', 1)
 
-          # Remove legacy league Results/Schedule renderers, now unused.
           source = remove_function(source, 'renderResults')
           source = remove_function(source, 'renderSchedule')
 
-          # Remove all Matchday Control functions from Admin Import Center.
           control_names = []
           for m in re.finditer(r'(?m)^[ \t]*(?:async\s+)?function\s+([A-Za-z_$][\w$]*)\s*\(', source):
               name = m.group(1)
@@ -201,7 +192,6 @@ jobs:
               '', source
           )
 
-          # Remove global matchday registry renderers/helpers.
           for name in [
               'matchdayRegistryBucket',
               'matchdayRegistryRoundLabel',
@@ -209,13 +199,17 @@ jobs:
               'matchdayRegistryProgressMarkup',
               'renderMatchdayRegistryResults',
               'renderMatchdayRegistrySchedule',
+              'nexusLocalIsoDate',
           ]:
               source = remove_function(source, name)
 
-          # Core 54 owns the repository renderer directly; no external override is needed.
+          source = source.replace(
+              '  // Build 32 · Global registry rendering for every league division with official matchdays.\n  // Matchdays come from gw_season_matchdays; fixtures/results still come only from gw_matches.\n',
+              ''
+          )
+
           source += '\n\n/* CORE 54 · Repository-only Results + Schedule */\n' + repo_layer + '\n'
 
-          # Rewrite bootstrap to load only the clean Core 54 + scorer addon.
           app, count = re.subn(
               r'const NEXUS_BUILD = \"[^\"]+\";',
               'const NEXUS_BUILD = \"54\";',
@@ -230,7 +224,6 @@ jobs:
           app = app.replace('  appendScript("js/imc-no-matchdays.js?v=1.0.2",loadCoreAsync,loadCoreAsync);', '  loadCoreAsync();')
           app = app.replace('js/app-core-53.js?v=53.0-core', 'js/app-core-54.js?v=54.0-core')
 
-          # Hard validation. Any legacy Matchday source in Core 54 aborts the build.
           forbidden = [
               'gw_season_matchdays',
               'OFFICIAL_SINGLE_LEAGUE_CALENDARS',
