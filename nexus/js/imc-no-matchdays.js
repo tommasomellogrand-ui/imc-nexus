@@ -43,6 +43,7 @@
           return originalFrom(table);
         };
       }
+      window.__IMC_NEXUS_CLIENT__=client;
       return client;
     }
 
