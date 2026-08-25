@@ -208,6 +208,7 @@
   function loadLegacyAfterCore(){
     appendScript("js/imc-beta-competition-source.js?v=1.0.0");
     appendScript("js/imc-beta-results-source.js?v=1.0.0");
+    appendScript("js/imc-beta-schedule-source.js?v=1.0.0");
     appendScript("js/imc-results-scorers.js?v=1.0.0",function(){
       appendScript("js/imc-match-report-beta.js?v=1.0.0",function(){
         appendScript("js/imc-match-report-beta-ui.js?v=1.0.0",function(){
@@ -224,6 +225,7 @@
     writeScript("js/app-core-53.js?v=53.0-core");
     writeScript("js/imc-beta-competition-source.js?v=1.0.0");
     writeScript("js/imc-beta-results-source.js?v=1.0.0");
+    writeScript("js/imc-beta-schedule-source.js?v=1.0.0");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-match-report-beta.js?v=1.0.0");
     writeScript("js/imc-match-report-beta-ui.js?v=1.0.0");
