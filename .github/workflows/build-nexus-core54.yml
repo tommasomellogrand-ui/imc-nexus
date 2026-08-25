@@ -81,6 +81,7 @@ jobs:
               '  function configuredSeasonOptions(worldId){',
               'Matchday Control block',
           )
+          core = core.replace('if(state.adminMode&&state.adminPage==="import"&&document.getElementById("matchdayControl")){loadMatchdayControl();}', '')
 
           # Results/Schedule are repository-only. The core never loads legacy match sources for these tabs.
           division_anchor = '''  async function loadDivisionData(){\n    if(!state.selectedDivision) return;\n\n    const target=document.getElementById("divisionContent");\n    if(!target||!state.client)return;\n'''
