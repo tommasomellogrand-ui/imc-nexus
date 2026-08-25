@@ -29,6 +29,17 @@
     return chain;
   }
 
+  function repositoryResultsScheduleView(){
+    return !!document.querySelector([
+      '[data-div-tab="results"].active',
+      '[data-div-tab="schedule"].active',
+      '[data-comp-tab="results"].active',
+      '[data-comp-tab="schedule"].active',
+      '[data-competition-tab="results"].active',
+      '[data-competition-tab="schedule"].active'
+    ].join(','));
+  }
+
   function wrapSupabase(){
     if(!window.supabase || typeof window.supabase.createClient!=="function") return false;
     if(window.supabase.createClient.__imcNoMatchdayWrapped) return true;
@@ -39,7 +50,9 @@
       if(client && typeof client.from==="function"){
         var originalFrom=client.from.bind(client);
         client.from=function(table){
-          if(String(table)==="gw_season_matchdays") return emptyQuery();
+          var name=String(table);
+          if(name==="gw_season_matchdays") return emptyQuery();
+          if(name==="gw_matches"&&repositoryResultsScheduleView()) return emptyQuery();
           return originalFrom(table);
         };
       }
