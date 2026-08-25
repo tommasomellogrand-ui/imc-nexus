@@ -16,7 +16,7 @@
   }
 
   function loadAfterCore(){
-    appendScript("js/imc-repository-results-schedule.js?v=1.0.2");
+    appendScript("js/imc-repository-results-schedule.js?v=1.0.0");
     appendScript("js/imc-results-scorers.js?v=1.0.0");
   }
 
@@ -26,7 +26,7 @@
 
   if(document.readyState==="loading"){
     writeScript("js/app-core-54.js?v=54.0-core");
-    writeScript("js/imc-repository-results-schedule.js?v=1.0.2");
+    writeScript("js/imc-repository-results-schedule.js?v=1.0.0");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     return;
   }
