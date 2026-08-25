@@ -1,4 +1,4 @@
-name: Wire IMC World Features Build 53
+name: Wire IMC World Features Build 54
 
 on:
   workflow_run:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nexus-world-features-build53-wire
+  group: nexus-world-features-build54-wire
   cancel-in-progress: false
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
           ref: main
           fetch-depth: 2
 
-      - name: Validate Build 53 addons
+      - name: Validate Build 54 addons
         shell: bash
         run: |
           set -euo pipefail
@@ -38,7 +38,7 @@ jobs:
           node --check nexus/js/imc-world-features.js
           node --check nexus/js/imc-world-context-fix.js
 
-      - name: Promote Nexus runtime to Build 53
+      - name: Promote Nexus runtime to Build 54
         shell: bash
         run: |
           set -euo pipefail
@@ -56,7 +56,7 @@ jobs:
 
           app_text, count = re.subn(
               r'const NEXUS_BUILD = "[^"]+";',
-              'const NEXUS_BUILD = "53";',
+              'const NEXUS_BUILD = "54";',
               app_text,
               count=1,
           )
@@ -67,7 +67,7 @@ jobs:
           # eligibility query or World Codex DOM work.
           codex_text = re.sub(
               r'const ADDON_VERSION="[^"]+";',
-              'const ADDON_VERSION="2.1-build53";',
+              'const ADDON_VERSION="2.1-build54";',
               codex_text,
               count=1,
           )
@@ -88,13 +88,13 @@ jobs:
 
           index_text = re.sub(
               r'<title>IMC Nexus · Build [^<]+</title>',
-              '<title>IMC Nexus · Build 53</title>',
+              '<title>IMC Nexus · Build 54</title>',
               index_text,
               count=1,
           )
           index_text = re.sub(
               r'<script\s+src="js/app\.js\?v=[^"]+"\s*></script>',
-              '<script src="js/app.js?v=53.0"></script>',
+              '<script src="js/app.js?v=54.0"></script>',
               index_text,
               count=1,
           )
@@ -109,9 +109,9 @@ jobs:
           ]:
               index_text = re.sub(pattern, '', index_text, flags=re.MULTILINE)
 
-          needle = '  <script src="js/app.js?v=53.0"></script>'
+          needle = '  <script src="js/app.js?v=54.0"></script>'
           if needle not in index_text:
-              raise SystemExit('Unable to find Build 53 app.js script tag')
+              raise SystemExit('Unable to find Build 54 app.js script tag')
           index_text = index_text.replace(needle, needle + '\n' + context + '\n' + codex + '\n' + features, 1)
 
           app.write_text(app_text, encoding='utf-8')
@@ -123,29 +123,29 @@ jobs:
           node --check nexus/js/imc-player-codex.js
           node --check nexus/js/imc-world-features.js
           node --check nexus/js/imc-world-context-fix.js
-          grep -Fq 'const ADDON_VERSION="2.1-build53"' nexus/js/imc-player-codex.js
+          grep -Fq 'const ADDON_VERSION="2.1-build54"' nexus/js/imc-player-codex.js
           grep -Fq 'guard.blockedWorlds.has(worldId)' nexus/js/imc-player-codex.js
-          grep -Fq '<title>IMC Nexus · Build 53</title>' nexus/index.html
-          grep -Fq 'js/app.js?v=53.0' nexus/index.html
+          grep -Fq '<title>IMC Nexus · Build 54</title>' nexus/index.html
+          grep -Fq 'js/app.js?v=54.0' nexus/index.html
           grep -Fq 'js/imc-world-context-fix.js?v=2.1' nexus/index.html
           grep -Fq 'js/imc-player-codex.js?v=2.1' nexus/index.html
           grep -Fq 'js/imc-world-features.js?v=1.2' nexus/index.html
 
-      - name: Persist Build 53 runtime in repository
+      - name: Persist Build 54 runtime in repository
         shell: bash
         run: |
           set -euo pipefail
           if git diff --quiet -- nexus/index.html nexus/js/app.js nexus/js/imc-player-codex.js; then
-            echo 'BUILD53_ALREADY_WIRED=YES'
+            echo 'BUILD54_ALREADY_WIRED=YES'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- nexus/index.html nexus/js/app.js nexus/js/imc-player-codex.js
-          git commit -m 'build: promote Nexus to Build 53'
+          git commit -m 'build: promote Nexus to Build 54'
           git push origin HEAD:main
 
-      - name: Upload and verify Build 53 runtime on Aruba
+      - name: Upload and verify Build 54 runtime on Aruba
         shell: bash
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
