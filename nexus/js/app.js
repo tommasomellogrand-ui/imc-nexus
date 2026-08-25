@@ -17,6 +17,7 @@
 
   function loadAfterCore(){
     appendScript("js/imc-results-scorers.js?v=1.0.0");
+    appendScript("js/imc-transfers-v2.js?v=2.0.0");
   }
 
   function loadCoreAsync(){
@@ -26,6 +27,7 @@
   if(document.readyState==="loading"){
     writeScript("js/app-core-54.js?v=54.0-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
+    writeScript("js/imc-transfers-v2.js?v=2.0.0");
     return;
   }
 
