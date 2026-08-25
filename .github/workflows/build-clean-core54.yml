@@ -203,9 +203,13 @@ jobs:
           ]:
               source = remove_function(source, name)
 
-          source = source.replace(
-              '  // Build 32 · Global registry rendering for every league division with official matchdays.\n  // Matchdays come from gw_season_matchdays; fixtures/results still come only from gw_matches.\n',
-              ''
+          # Remove only stale comments naming the old Matchday table. Executable
+          # references are deliberately left untouched so the hard validation below
+          # still stops the build if any real dependency survives.
+          source = re.sub(
+              r'(?m)^[ \t]*//[^\n]*gw_season_matchdays[^\n]*(?:\n|$)',
+              '',
+              source,
           )
 
           source += '\n\n/* CORE 54 · Repository-only Results + Schedule */\n' + repo_layer + '\n'
