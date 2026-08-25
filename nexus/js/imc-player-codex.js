@@ -1,7 +1,7 @@
 (function(){
   "use strict";
 
-  const ADDON_VERSION="2.1-build53";
+  const ADDON_VERSION="2.1-build54";
   const DEFAULT_SUPABASE_URL="https://toanuzojdkfjgucztpze.supabase.co";
   const DEFAULT_SUPABASE_PUBLISHABLE_KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
   const OVERLAY_ID="imcPlayerCodexOverlay";
