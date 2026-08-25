@@ -38,8 +38,6 @@ jobs:
           core54_path = Path('nexus/js/app-core-54.js')
           app_path = Path('nexus/js/app.js')
           index_path = Path('nexus/index.html')
-          deploy_path = Path('.github/workflows/deploy-aruba.yml')
-          wire_path = Path('.github/workflows/wire-imc-world-features-build53.yml')
 
           core = core53_path.read_text(encoding='utf-8')
 
@@ -57,10 +55,8 @@ jobs:
                   raise SystemExit(f'Missing end marker: {label}')
               return text[:a] + text[b:]
 
-          # Core/UI build identity.
           core = replace_once(core, 'const NEXUS_BUILD = "53";', 'const NEXUS_BUILD = "54";', 'core build label')
 
-          # Nexus repository layer needs the actual authenticated client directly.
           client_pattern = re.compile(
               r'state\.client=window\.supabase\.createClient\(\s*state\.config\.url,\s*state\.config\.key\s*\);'
           )
@@ -72,7 +68,6 @@ jobs:
           if client_count != 1:
               raise SystemExit('Unable to expose Nexus authenticated client')
 
-          # Remove the Matchday Control from Admin Import Center and all of its code.
           core = core.replace('${isGlobalAdmin ? matchdayControlShell() : ""}', '')
           core = core.replace('    bindMatchdayControl();\n', '')
           core = remove_between(
@@ -83,7 +78,6 @@ jobs:
           )
           core = core.replace('if(state.adminMode&&state.adminPage==="import"&&document.getElementById("matchdayControl")){loadMatchdayControl();}', '')
 
-          # Results/Schedule are repository-only. The core never loads legacy match sources for these tabs.
           division_anchor = '''  async function loadDivisionData(){\n    if(!state.selectedDivision) return;\n\n    const target=document.getElementById("divisionContent");\n    if(!target||!state.client)return;\n'''
           division_replacement = division_anchor + '''    if(state.divisionTab==="results"||state.divisionTab==="schedule"){\n      target.innerHTML='<div class="nx-loading">Caricamento dati…</div>';\n      return;\n    }\n'''
           core = replace_once(core, division_anchor, division_replacement, 'division repository gate')
@@ -92,7 +86,6 @@ jobs:
           competition_replacement = competition_anchor + '''    if(state.competitionTab==="results"||state.competitionTab==="schedule"){\n      target.innerHTML='<div class="nx-loading">Caricamento dati…</div>';\n      return;\n    }\n'''
           core = replace_once(core, competition_anchor, competition_replacement, 'competition repository gate')
 
-          # Remove the division Matchday registry and the old league Results/Schedule renderers entirely.
           core = remove_between(
               core,
               '  // Build 32 · Global registry rendering for every league division with official matchdays.',
@@ -100,12 +93,10 @@ jobs:
               'legacy division Results/Schedule renderers',
           )
 
-          # Remove the now-unreachable gw_season_matchdays registry branch from loadDivisionData.
           registry_start = '      // Build 32 · Global matchday registry. The official calendar skeleton comes'
           registry_end = '    }catch(error){'
           core = remove_between(core, registry_start, registry_end, 'loadDivisionData matchday registry')
 
-          # Hard requirements for the generated core.
           forbidden = [
               'gw_season_matchdays',
               'renderMatchdayRegistryResults',
@@ -125,7 +116,6 @@ jobs:
 
           core54_path.write_text(core, encoding='utf-8')
 
-          # Bootstrap Core 54 directly. No Matchday compatibility shim is loaded anymore.
           app = app_path.read_text(encoding='utf-8')
           app = app.replace('js/app-core-53.js?v=53.0-core', 'js/app-core-54.js?v=54.0-core')
           app = re.sub(r'^\s*(?:writeScript|appendScript)\("js/imc-no-matchdays\.js\?v=[^"]+"[^\n]*\n', '', app, flags=re.MULTILINE)
@@ -136,19 +126,9 @@ jobs:
               raise SystemExit('Core 54 bootstrap missing')
           app_path.write_text(app, encoding='utf-8')
 
-          # Force iPhone/Safari to fetch the new bootstrap.
           index = index_path.read_text(encoding='utf-8')
           index = re.sub(r'js/app\.js\?v=54\.[^"<]+', 'js/app.js?v=54.1', index)
           index_path.write_text(index, encoding='utf-8')
-
-          # Keep production preflight and the automatic Build 54 wire aligned to runtime 54.1.
-          deploy = deploy_path.read_text(encoding='utf-8')
-          deploy = deploy.replace('js/app.js?v=$BUILD.0', 'js/app.js?v=$BUILD.1')
-          deploy_path.write_text(deploy, encoding='utf-8')
-
-          wire = wire_path.read_text(encoding='utf-8')
-          wire = wire.replace('js/app.js?v=54.0', 'js/app.js?v=54.1')
-          wire_path.write_text(wire, encoding='utf-8')
           PY
 
           node --check nexus/js/app-core-54.js
@@ -169,12 +149,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- \
-            nexus/js/app-core-54.js \
-            nexus/js/app.js \
-            nexus/index.html \
-            .github/workflows/deploy-aruba.yml \
-            .github/workflows/wire-imc-world-features-build53.yml
+          git add -- nexus/js/app-core-54.js nexus/js/app.js nexus/index.html
           if git diff --cached --quiet; then
             echo 'CORE54_ALREADY_GENERATED=YES'
             exit 0
