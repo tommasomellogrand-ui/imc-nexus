@@ -16,21 +16,18 @@
   }
 
   function loadAfterCore(){
-    appendScript("js/imc-repository-results-schedule.js?v=1.0.0");
+    appendScript("js/imc-repository-results-schedule.js?v=1.0.1");
     appendScript("js/imc-results-scorers.js?v=1.0.0");
   }
 
   function loadCoreAsync(){
-    appendScript("js/app-core-53.js?v=53.0-core",loadAfterCore);
+    appendScript("js/app-core-54.js?v=54.0-core",loadAfterCore);
   }
 
   if(document.readyState==="loading"){
-    writeScript("js/imc-no-matchdays.js?v=1.0.2");
-    writeScript("js/app-core-53.js?v=53.0-core");
-    writeScript("js/imc-repository-results-schedule.js?v=1.0.0");
+    writeScript("js/app-core-54.js?v=54.0-core");
+    writeScript("js/imc-repository-results-schedule.js?v=1.0.1");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     return;
   }
-
-  appendScript("js/imc-no-matchdays.js?v=1.0.2",loadCoreAsync,loadCoreAsync);
 })();
