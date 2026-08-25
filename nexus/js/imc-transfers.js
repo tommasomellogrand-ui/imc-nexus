@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-const V="1.0-build56";
+const V="1.0.1-build56";
 const URL="https://toanuzojdkfjgucztpze.supabase.co";
 const KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
 const OID="imcTransfers";
