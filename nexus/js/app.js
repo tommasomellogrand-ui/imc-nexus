@@ -1,19 +1,33 @@
 (function(){
   "use strict";
+
+  const NEXUS_BUILD = "53";
+
   function writeScript(src){
     document.write('<script src="'+src+'"></'+'script>');
   }
+
+  function loadCoreAsync(){
+    var core=document.createElement("script");
+    core.src="js/app-core-53.js?v=53.0-core";
+    core.onload=function(){
+      var scorers=document.createElement("script");
+      scorers.src="js/imc-results-scorers.js?v=1.0.0";
+      document.head.appendChild(scorers);
+    };
+    document.head.appendChild(core);
+  }
+
   if(document.readyState==="loading"){
+    writeScript("js/imc-no-matchdays.js?v=1.0.0");
     writeScript("js/app-core-53.js?v=53.0-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     return;
   }
-  var core=document.createElement("script");
-  core.src="js/app-core-53.js?v=53.0-core";
-  core.onload=function(){
-    var scorers=document.createElement("script");
-    scorers.src="js/imc-results-scorers.js?v=1.0.0";
-    document.head.appendChild(scorers);
-  };
-  document.head.appendChild(core);
+
+  var guard=document.createElement("script");
+  guard.src="js/imc-no-matchdays.js?v=1.0.0";
+  guard.onload=loadCoreAsync;
+  guard.onerror=loadCoreAsync;
+  document.head.appendChild(guard);
 })();
