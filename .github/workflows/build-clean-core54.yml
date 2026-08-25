@@ -1,0 +1,364 @@
+name: Build Clean Nexus Core 54
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'nexus/.core54-build-trigger'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nexus-clean-core54-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+
+      - name: Generate clean Core 54
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+
+          core53_path = Path('nexus/js/app-core-53.js')
+          repo_layer_path = Path('nexus/js/imc-repository-results-schedule.js')
+          core54_path = Path('nexus/js/app-core-54.js')
+          app_path = Path('nexus/js/app.js')
+
+          source = core53_path.read_text(encoding='utf-8')
+          repo_layer = repo_layer_path.read_text(encoding='utf-8')
+          app = app_path.read_text(encoding='utf-8')
+
+          def matching_brace(text, start):
+              if text[start] != '{':
+                  raise RuntimeError('matching_brace called outside opening brace')
+              depth = 0
+              i = start
+              state = 'code'
+              quote = None
+              while i < len(text):
+                  c = text[i]
+                  n = text[i+1] if i+1 < len(text) else ''
+                  if state == 'line_comment':
+                      if c == '\n': state = 'code'
+                      i += 1
+                      continue
+                  if state == 'block_comment':
+                      if c == '*' and n == '/':
+                          state = 'code'; i += 2; continue
+                      i += 1
+                      continue
+                  if state == 'string':
+                      if c == '\\': i += 2; continue
+                      if c == quote:
+                          state = 'code'; quote = None
+                      i += 1
+                      continue
+                  if c == '/' and n == '/':
+                      state = 'line_comment'; i += 2; continue
+                  if c == '/' and n == '*':
+                      state = 'block_comment'; i += 2; continue
+                  if c in ('\"', "'", '`'):
+                      state = 'string'; quote = c; i += 1; continue
+                  if c == '{': depth += 1
+                  elif c == '}':
+                      depth -= 1
+                      if depth == 0: return i
+                  i += 1
+              raise RuntimeError('Unbalanced brace while generating Core 54')
+
+          def function_span(text, name):
+              pat = re.compile(r'(?m)^[ \t]*(?:async\s+)?function\s+' + re.escape(name) + r'\s*\(')
+              m = pat.search(text)
+              if not m: return None
+              brace = text.find('{', m.end())
+              if brace < 0: raise RuntimeError('No function body for ' + name)
+              end = matching_brace(text, brace) + 1
+              while end < len(text) and text[end] in ' \t': end += 1
+              if end < len(text) and text[end] == '\r': end += 1
+              if end < len(text) and text[end] == '\n': end += 1
+              return m.start(), end
+
+          def remove_function(text, name, required=True):
+              span = function_span(text, name)
+              if not span:
+                  if required: raise RuntimeError('Missing function: ' + name)
+                  return text
+              return text[:span[0]] + '\n' + text[span[1]:]
+
+          def replace_function(text, name, replacement):
+              span = function_span(text, name)
+              if not span: raise RuntimeError('Missing function for replacement: ' + name)
+              indent = re.match(r'[ \t]*', text[span[0]:]).group(0)
+              return text[:span[0]] + indent + replacement + '\n\n' + text[span[1]:]
+
+          def remove_const_object(text, name):
+              m = re.search(r'(?m)^[ \t]*const\s+' + re.escape(name) + r'\s*=\s*\{', text)
+              if not m: raise RuntimeError('Missing const object: ' + name)
+              brace = text.find('{', m.start())
+              end = matching_brace(text, brace) + 1
+              while end < len(text) and text[end] in ' \t': end += 1
+              if end < len(text) and text[end] == ';': end += 1
+              while end < len(text) and text[end] in ' \t\r': end += 1
+              if end < len(text) and text[end] == '\n': end += 1
+              return text[:m.start()] + text[end:]
+
+          # Build label inside the real core.
+          source, count = re.subn(
+              r'const NEXUS_BUILD = \"53\";',
+              'const NEXUS_BUILD = \"54\";',
+              source,
+              count=1,
+          )
+          if count != 1:
+              raise RuntimeError('Unable to promote core NEXUS_BUILD to 54')
+
+          # Remove the hard-coded GW001 league calendar and neutralize its legacy resolver.
+          source = remove_const_object(source, 'OFFICIAL_SINGLE_LEAGUE_CALENDARS')
+          source = replace_function(
+              source,
+              'officialLeagueMatchday',
+              'function officialLeagueMatchday(){\n    return null;\n  }'
+          )
+
+          # Remove hard-coded date maps from the GW004 fallback config while preserving metadata.
+          fallback_anchor = source.find('const FALLBACK_GW004_CONFIG')
+          if fallback_anchor < 0:
+              raise RuntimeError('FALLBACK_GW004_CONFIG not found')
+          cal_start = source.find('calendars:', fallback_anchor)
+          comp_start = source.find('competitions:', fallback_anchor)
+          if cal_start < 0 or comp_start < 0 or cal_start > comp_start:
+              raise RuntimeError('GW004 fallback calendars block not found')
+          cal_brace = source.find('{', cal_start, comp_start)
+          cal_end = matching_brace(source, cal_brace) + 1
+          source = source[:cal_start] + 'calendars: {}' + source[cal_end:]
+
+          # Results/Schedule tabs are owned exclusively by gwXXX_results / gwXXX_schedule.
+          division_guard = '''const target=document.getElementById("divisionContent");\n    if(!target||!state.client)return;'''
+          division_replacement = division_guard + '''\n    if(state.divisionTab==="results"||state.divisionTab==="schedule"){\n      target.innerHTML='<div class="nx-loading">Caricamento dati…</div>';\n      return;\n    }'''
+          if source.count(division_guard) != 1:
+              raise RuntimeError('Unexpected loadDivisionData target guard count')
+          source = source.replace(division_guard, division_replacement, 1)
+
+          competition_guard = '''const target=document.getElementById("competitionContent");\n    if(!target||!state.client)return;'''
+          competition_replacement = competition_guard + '''\n    if(state.competitionTab==="results"||state.competitionTab==="schedule"){\n      target.innerHTML='<div class="nx-loading">Caricamento dati…</div>';\n      return;\n    }'''
+          if source.count(competition_guard) != 1:
+              raise RuntimeError('Unexpected loadCompetitionData target guard count')
+          source = source.replace(competition_guard, competition_replacement, 1)
+
+          # Expose the authenticated Supabase client directly to the repository-only layer.
+          client_block = '''if(window.supabase){\n      state.client=window.supabase.createClient(\n        state.config.url,\n        state.config.key\n      );\n    }'''
+          client_replacement = client_block + '''\n    window.__IMC_NEXUS_CLIENT__=state.client;'''
+          if source.count(client_block) != 1:
+              raise RuntimeError('Unexpected Supabase client creation block count')
+          source = source.replace(client_block, client_replacement, 1)
+
+          # Remove the division registry branch that reads gw_season_matchdays.
+          registry_start_marker = '      // Build 32 · Global matchday registry.'
+          registry_end_marker = '      if(state.divisionTab==="results"){' 
+          rs = source.find(registry_start_marker)
+          re_ = source.find(registry_end_marker, rs if rs >= 0 else 0)
+          if rs < 0 or re_ < 0:
+              raise RuntimeError('Division matchday registry block not found')
+          source = source[:rs] + '      // Core 54: Results/Schedule are rendered only by dedicated per-GW repositories.\n' + source[re_:]
+
+          # The old results/schedule branch is unreachable and is removed from the generated core.
+          legacy_branch = '''      if(state.divisionTab==="results"){\n        target.innerHTML=renderResults(matches);\n      }else{\n        target.innerHTML=renderSchedule(matches);\n      }'''
+          if source.count(legacy_branch) != 1:
+              raise RuntimeError('Legacy division Results/Schedule branch not found')
+          source = source.replace(legacy_branch, '      return;', 1)
+
+          # Remove legacy league Results/Schedule renderers, now unused.
+          source = remove_function(source, 'renderResults')
+          source = remove_function(source, 'renderSchedule')
+
+          # Remove all Matchday Control functions from Admin Import Center.
+          control_names = []
+          for m in re.finditer(r'(?m)^[ \t]*(?:async\s+)?function\s+([A-Za-z_$][\w$]*)\s*\(', source):
+              name = m.group(1)
+              if 'matchdaycontrol' in name.lower():
+                  control_names.append(name)
+          for name in sorted(set(control_names)):
+              source = remove_function(source, name)
+
+          source = source.replace('${isGlobalAdmin ? matchdayControlShell() : ""}', '')
+          source = source.replace('    bindMatchdayControl();\n', '')
+          source = re.sub(
+              r'\s*if\(state\.adminMode&&state\.adminPage===\"import\"&&document\.getElementById\(\"matchdayControl\"\)\)\{loadMatchdayControl\(\);\}',
+              '', source
+          )
+
+          # Remove global matchday registry renderers/helpers.
+          for name in [
+              'matchdayRegistryBucket',
+              'matchdayRegistryRoundLabel',
+              'matchdayRegistryEmptyMarkup',
+              'matchdayRegistryProgressMarkup',
+              'renderMatchdayRegistryResults',
+              'renderMatchdayRegistrySchedule',
+          ]:
+              source = remove_function(source, name)
+
+          # Core 54 owns the repository renderer directly; no external override is needed.
+          source += '\n\n/* CORE 54 · Repository-only Results + Schedule */\n' + repo_layer + '\n'
+
+          # Rewrite bootstrap to load only the clean Core 54 + scorer addon.
+          app, count = re.subn(
+              r'const NEXUS_BUILD = \"[^\"]+\";',
+              'const NEXUS_BUILD = \"54\";',
+              app,
+              count=1,
+          )
+          if count != 1:
+              raise RuntimeError('Unable to set bootstrap build 54')
+          app = app.replace('    appendScript("js/imc-repository-results-schedule.js?v=1.0.0");\n', '')
+          app = app.replace('    writeScript("js/imc-repository-results-schedule.js?v=1.0.0");\n', '')
+          app = app.replace('    writeScript("js/imc-no-matchdays.js?v=1.0.2");\n', '')
+          app = app.replace('  appendScript("js/imc-no-matchdays.js?v=1.0.2",loadCoreAsync,loadCoreAsync);', '  loadCoreAsync();')
+          app = app.replace('js/app-core-53.js?v=53.0-core', 'js/app-core-54.js?v=54.0-core')
+
+          # Hard validation. Any legacy Matchday source in Core 54 aborts the build.
+          forbidden = [
+              'gw_season_matchdays',
+              'OFFICIAL_SINGLE_LEAGUE_CALENDARS',
+              'renderMatchdayRegistryResults',
+              'renderMatchdayRegistrySchedule',
+              'matchdayControlShell',
+              'loadMatchdayControl',
+              'bindMatchdayControl',
+          ]
+          leftovers = [token for token in forbidden if token in source]
+          if leftovers:
+              raise RuntimeError('Legacy Matchday tokens remain in Core 54: ' + ', '.join(leftovers))
+
+          if 'js/app-core-53.js?v=53.0-core' in app:
+              raise RuntimeError('Bootstrap still references Core 53')
+          if 'imc-no-matchdays.js' in app:
+              raise RuntimeError('Bootstrap still references no-matchdays override')
+          if 'imc-repository-results-schedule.js' in app:
+              raise RuntimeError('Bootstrap still references external repository override')
+          if 'js/app-core-54.js?v=54.0-core' not in app:
+              raise RuntimeError('Bootstrap does not reference Core 54')
+          if '__IMC_REPOSITORY_RESULTS_SCHEDULE__' not in source:
+              raise RuntimeError('Repository-only renderer was not embedded in Core 54')
+          if 'window.__IMC_NEXUS_CLIENT__=state.client;' not in source:
+              raise RuntimeError('Core 54 does not expose the Nexus Supabase client')
+
+          core54_path.write_text(source, encoding='utf-8')
+          app_path.write_text(app, encoding='utf-8')
+
+          print('CORE53_BYTES=' + str(core53_path.stat().st_size))
+          print('CORE54_BYTES=' + str(core54_path.stat().st_size))
+          print('REMOVED_MATCHDAY_CONTROL_FUNCTIONS=' + ','.join(sorted(set(control_names))))
+          PY
+
+          node --check nexus/js/app-core-54.js
+          node --check nexus/js/app.js
+          grep -Fq 'const NEXUS_BUILD = "54";' nexus/js/app-core-54.js
+          grep -Fq 'js/app-core-54.js?v=54.0-core' nexus/js/app.js
+          grep -Fq '__IMC_REPOSITORY_RESULTS_SCHEDULE__' nexus/js/app-core-54.js
+          ! grep -Fq 'gw_season_matchdays' nexus/js/app-core-54.js
+          ! grep -Fq 'OFFICIAL_SINGLE_LEAGUE_CALENDARS' nexus/js/app-core-54.js
+          ! grep -Fq 'imc-no-matchdays.js' nexus/js/app.js
+          ! grep -Fq 'imc-repository-results-schedule.js' nexus/js/app.js
+
+      - name: Persist Core 54 in repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f nexus/.core54-build-trigger
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- nexus/js/app-core-54.js nexus/js/app.js nexus/.core54-build-trigger
+          if git diff --cached --quiet; then
+            echo 'CORE54_ALREADY_CURRENT=YES'
+          else
+            git commit -m 'build: generate clean Nexus Core 54'
+            git push origin HEAD:main
+          fi
+
+      - name: Upload and verify Core 54 runtime on Aruba
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS
+
+          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user = os.environ['ARUBA_FTP_USERNAME']
+          password = os.environ['ARUBA_FTP_PASSWORD']
+          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain = host[4:] if host.startswith('ftp.') else host
+          remote_root = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+
+          ctx = ssl.create_default_context()
+          ctx.check_hostname = False
+          ftp = FTP_TLS(context=ctx)
+          ftp.connect(host, 21, timeout=30)
+          ftp.login(user, password)
+          ftp.prot_p()
+
+          files = [
+              (Path('nexus/js/app-core-54.js'), f'{remote_root}/js', 'app-core-54.js'),
+              (Path('nexus/js/app.js'), f'{remote_root}/js', 'app.js'),
+          ]
+
+          for local, remote_dir, remote_name in files:
+              data = local.read_bytes()
+              ftp.cwd(remote_dir)
+              with local.open('rb') as fh:
+                  ftp.storbinary(f'STOR {remote_name}', fh, blocksize=65536)
+              buf = io.BytesIO()
+              ftp.retrbinary(f'RETR {remote_name}', buf.write, blocksize=65536)
+              remote = buf.getvalue()
+              if remote != data:
+                  raise SystemExit(f'FTPS read-back mismatch for {remote_name}')
+              print(f'UPLOAD_MATCH=YES {remote_name} {len(data)} bytes sha256={hashlib.sha256(data).hexdigest()}')
+
+          ftp.quit()
+          PY
+
+      - name: Public Core 54 smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE_URL='https://www.italianmastersclub.it/nexus'
+          TOKEN="${GITHUB_SHA}-$(date +%s)"
+
+          curl -fsSL --connect-timeout 15 --max-time 30 \
+            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
+            "$BASE_URL/js/app.js?v=54.0&deploy_verify=$TOKEN" -o /tmp/public-app.js
+          curl -fsSL --connect-timeout 15 --max-time 30 \
+            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
+            "$BASE_URL/js/app-core-54.js?v=54.0-core&deploy_verify=$TOKEN" -o /tmp/public-core54.js
+
+          test "$(sha256sum nexus/js/app.js | awk '{print $1}')" = "$(sha256sum /tmp/public-app.js | awk '{print $1}')"
+          test "$(sha256sum nexus/js/app-core-54.js | awk '{print $1}')" = "$(sha256sum /tmp/public-core54.js | awk '{print $1}')"
+          node --check /tmp/public-app.js
+          node --check /tmp/public-core54.js
+          grep -Fq 'const NEXUS_BUILD = "54";' /tmp/public-core54.js
+          grep -Fq 'js/app-core-54.js?v=54.0-core' /tmp/public-app.js
+          ! grep -Fq 'gw_season_matchdays' /tmp/public-core54.js
+          ! grep -Fq 'OFFICIAL_SINGLE_LEAGUE_CALENDARS' /tmp/public-core54.js
+          echo 'PUBLIC_CORE54_MATCH=YES'
+          echo 'NEXUS_CLEAN_CORE54_VERIFIED=YES'
