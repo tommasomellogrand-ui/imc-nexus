@@ -63,8 +63,6 @@ jobs:
           if count != 1:
               raise SystemExit('Unable to update NEXUS_BUILD in app.js')
 
-          # World Codex isolation: blocked worlds must exit before any Codex
-          # eligibility query or World Codex DOM work.
           codex_text = re.sub(
               r'const ADDON_VERSION="[^"]+";',
               'const ADDON_VERSION="2.1-build54";',
@@ -94,7 +92,7 @@ jobs:
           )
           index_text = re.sub(
               r'<script\s+src="js/app\.js\?v=[^"]+"\s*></script>',
-              '<script src="js/app.js?v=54.0"></script>',
+              '<script src="js/app.js?v=54.1"></script>',
               index_text,
               count=1,
           )
@@ -109,7 +107,7 @@ jobs:
           ]:
               index_text = re.sub(pattern, '', index_text, flags=re.MULTILINE)
 
-          needle = '  <script src="js/app.js?v=54.0"></script>'
+          needle = '  <script src="js/app.js?v=54.1"></script>'
           if needle not in index_text:
               raise SystemExit('Unable to find Build 54 app.js script tag')
           index_text = index_text.replace(needle, needle + '\n' + context + '\n' + codex + '\n' + features, 1)
@@ -126,7 +124,7 @@ jobs:
           grep -Fq 'const ADDON_VERSION="2.1-build54"' nexus/js/imc-player-codex.js
           grep -Fq 'guard.blockedWorlds.has(worldId)' nexus/js/imc-player-codex.js
           grep -Fq '<title>IMC Nexus · Build 54</title>' nexus/index.html
-          grep -Fq 'js/app.js?v=54.0' nexus/index.html
+          grep -Fq 'js/app.js?v=54.1' nexus/index.html
           grep -Fq 'js/imc-world-context-fix.js?v=2.1' nexus/index.html
           grep -Fq 'js/imc-player-codex.js?v=2.1' nexus/index.html
           grep -Fq 'js/imc-world-features.js?v=1.2' nexus/index.html
