@@ -1,7 +1,10 @@
 (function(){
   "use strict";
 
-  const NEXUS_BUILD = "54";
+  const NEXUS_BUILD = "55";
+  document.title = "IMC Nexus · Build 55";
+  var buildMeta = document.querySelector('meta[name="imc-nexus-build"]');
+  if(buildMeta) buildMeta.setAttribute("content", NEXUS_BUILD);
 
   function writeScript(src){
     document.write('<script src="'+src+'"></'+'script>');
