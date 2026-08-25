@@ -7,27 +7,30 @@
     document.write('<script src="'+src+'"></'+'script>');
   }
 
+  function appendScript(src,onload,onerror){
+    var script=document.createElement("script");
+    script.src=src;
+    if(onload) script.onload=onload;
+    if(onerror) script.onerror=onerror;
+    document.head.appendChild(script);
+  }
+
+  function loadAfterCore(){
+    appendScript("js/imc-gw001-schedule-results.js?v=1.0.0");
+    appendScript("js/imc-results-scorers.js?v=1.0.0");
+  }
+
   function loadCoreAsync(){
-    var core=document.createElement("script");
-    core.src="js/app-core-53.js?v=53.0-core";
-    core.onload=function(){
-      var scorers=document.createElement("script");
-      scorers.src="js/imc-results-scorers.js?v=1.0.0";
-      document.head.appendChild(scorers);
-    };
-    document.head.appendChild(core);
+    appendScript("js/app-core-53.js?v=53.0-core",loadAfterCore);
   }
 
   if(document.readyState==="loading"){
-    writeScript("js/imc-no-matchdays.js?v=1.0.0");
+    writeScript("js/imc-no-matchdays.js?v=1.0.1");
     writeScript("js/app-core-53.js?v=53.0-core");
+    writeScript("js/imc-gw001-schedule-results.js?v=1.0.0");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     return;
   }
 
-  var guard=document.createElement("script");
-  guard.src="js/imc-no-matchdays.js?v=1.0.0";
-  guard.onload=loadCoreAsync;
-  guard.onerror=loadCoreAsync;
-  document.head.appendChild(guard);
+  appendScript("js/imc-no-matchdays.js?v=1.0.1",loadCoreAsync,loadCoreAsync);
 })();
