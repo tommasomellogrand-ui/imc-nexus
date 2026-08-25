@@ -3,6 +3,7 @@
 
   var cache=new Map();
   var loading=new Map();
+  var scheduleCache=new Map();
   var timer=null;
 
   function clean(value){
@@ -17,6 +18,22 @@
       .replace(/[·]/g," ")
       .replace(/[^a-z0-9]+/g," ")
       .trim();
+  }
+
+  function esc(value){
+    return clean(value).replace(/[&<>"']/g,function(char){
+      if(char==="&")return "&amp;";
+      if(char==="<")return "&lt;";
+      if(char===">")return "&gt;";
+      if(char==='"')return "&quot;";
+      return "&#39;";
+    });
+  }
+
+  function formatDate(value){
+    var raw=clean(value);
+    var match=raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    return match?match[3]+"/"+match[2]+"/"+match[1]:raw;
   }
 
   function worldFromDom(){
@@ -68,7 +85,8 @@
           alias:alias,
           category:categoryForType(row.IMC_competition_type),
           division:clean(row.IMC_league_divisions),
-          source:clean(row.sm_competition_name)
+          source:clean(row.sm_competition_name),
+          action:clean(row.sm_action)
         };
         aliases.push(item);
         internalCandidates(alias).forEach(function(candidate){
@@ -87,7 +105,7 @@
 
     var request=client
       .from(tableForWorld(worldId))
-      .select("sm_competition_name,IMC_competition_type,IMC_league_divisions,IMC_competition_alias")
+      .select("sm_competition_name,sm_action,IMC_competition_type,IMC_league_divisions,IMC_competition_alias")
       .then(function(result){
         if(result.error)throw result.error;
         var registry=buildRegistry(result.data||[]);
@@ -197,6 +215,88 @@
     title.textContent=item.alias;
   }
 
+  function divisionNumberFromTitle(value){
+    var numeric=clean(value).match(/(?:League\s+Div|Division)\s+(\d+)/i);
+    if(numeric)return Number(numeric[1]);
+    var word=clean(value).match(/Division\s+(One|Two|Three|Four|Five)/i);
+    if(!word)return 0;
+    var map={one:1,two:2,three:3,four:4,five:5};
+    return map[String(word[1]).toLowerCase()]||0;
+  }
+
+  function scheduleContext(registry){
+    if(worldFromDom()!=="GW005")return null;
+    var divisionTab=document.querySelector('[data-div-tab="schedule"].active, [data-division-tab="schedule"].active');
+    var competitionTab=document.querySelector('[data-comp-tab="schedule"].active, [data-competition-tab="schedule"].active');
+    var active=divisionTab||competitionTab;
+    if(!active)return null;
+    var section=active.closest("section");
+    if(!section)return null;
+    var title=section.querySelector(".nx-competition-cover-copy h1");
+    var target=divisionTab?section.querySelector("#divisionContent"):section.querySelector("#competitionContent");
+    if(!title||!target)return null;
+    var sourceName=clean(title.dataset.betaSourceName||title.textContent);
+    var displayName=clean(title.textContent);
+
+    if(divisionTab){
+      var division=divisionNumberFromTitle(sourceName)||divisionNumberFromTitle(displayName);
+      if(!division)return null;
+      return {target:target,action:"league",division:String(division),label:"League Div "+division};
+    }
+
+    var item=matchDetail(registry,sourceName)||matchDetail(registry,displayName);
+    if(!item||!item.action)return null;
+    return {target:target,action:item.action,division:null,label:item.alias||displayName};
+  }
+
+  function scheduleMarkup(rows,context){
+    if(!rows.length){
+      return '<div class="nx-beta-schedule-source"><div class="nx-empty-box"><strong>Nessuna schedule disponibile</strong><span>Nessuna data presente in gw005_schedule per '+esc(context.label)+'.</span></div></div>';
+    }
+    return '<div class="nx-beta-schedule-source">'+rows.map(function(row){
+      var label=clean(row.sm_round_label)||context.label||"Schedule";
+      var cardClass=context.action==="league"?"nx-league-matchday-card":"nx-cup-round-card";
+      return '<article class="'+cardClass+'"><div class="nx-unified-matchday-head"><div><small>'+esc(label.toUpperCase())+'</small><strong>'+esc(formatDate(row.match_date))+'</strong></div></div></article>';
+    }).join("")+'</div>';
+  }
+
+  function loadScheduleRows(context){
+    var key=context.action+"|"+(context.division||"");
+    if(scheduleCache.has(key))return Promise.resolve(scheduleCache.get(key));
+    var client=window.__IMC_BETA_CLIENT__;
+    if(!client)return Promise.resolve([]);
+    var query=client.from("gw005_schedule")
+      .select("schedule_id,match_date,sm_action,sm_division,sm_country,sm_compid,sm_round_label")
+      .eq("game_world_id","GW005")
+      .eq("sm_action",context.action);
+    if(context.division!=null)query=query.eq("sm_division",context.division);
+    return query.order("match_date",{ascending:true}).then(function(result){
+      if(result.error)throw result.error;
+      var rows=result.data||[];
+      scheduleCache.set(key,rows);
+      return rows;
+    });
+  }
+
+  function applySchedule(registry){
+    var context=scheduleContext(registry);
+    if(!context)return;
+    var key=context.action+"|"+(context.division||"")+"|"+norm(context.label);
+    if(context.target.dataset.betaScheduleLoading===key)return;
+    if(context.target.dataset.betaScheduleSource===key&&context.target.querySelector(".nx-beta-schedule-source"))return;
+    context.target.dataset.betaScheduleLoading=key;
+    loadScheduleRows(context).then(function(rows){
+      var latest=scheduleContext(registry);
+      if(!latest||latest.target!==context.target)return;
+      context.target.innerHTML=scheduleMarkup(rows,context);
+      context.target.dataset.betaScheduleSource=key;
+      delete context.target.dataset.betaScheduleLoading;
+    }).catch(function(error){
+      context.target.innerHTML='<div class="nx-empty-box"><strong>Errore schedule</strong><span>'+esc(error&&error.message?error.message:"Impossibile leggere gw005_schedule.")+'</span></div>';
+      delete context.target.dataset.betaScheduleLoading;
+    });
+  }
+
   function run(){
     var worldId=worldFromDom();
     if(!worldId)return;
@@ -204,6 +304,7 @@
       if(!registry)return;
       if(document.getElementById("worldCompetitionsContent"))applyIndex(registry);
       applyDetail(registry);
+      applySchedule(registry);
     });
   }
 
@@ -214,6 +315,5 @@
 
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",schedule,{once:true});
   else schedule();
-
   new MutationObserver(schedule).observe(document.documentElement,{childList:true,subtree:true});
 })();
