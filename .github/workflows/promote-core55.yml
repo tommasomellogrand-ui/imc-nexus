@@ -1,0 +1,152 @@
+name: Promote Nexus Core 55
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/promote-core55.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Build core 55 and make deploy workflow build-aware
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          # 1) Create app-core-55.js from the currently deployed core, changing only build identity.
+          src = Path('nexus/js/app-core-54.js')
+          dst = Path('nexus/js/app-core-55.js')
+          core = src.read_text(encoding='utf-8')
+          marker = 'const NEXUS_BUILD = "54";'
+          if core.count(marker) != 1:
+              raise SystemExit(f'Unexpected core build marker count: {core.count(marker)}')
+          dst.write_text(core.replace(marker, 'const NEXUS_BUILD = "55";', 1), encoding='utf-8')
+
+          # 2) Point app.js to the Build 55 core.
+          app_path = Path('nexus/js/app.js')
+          app = app_path.read_text(encoding='utf-8')
+          old_core_ref = 'js/app-core-54.js?v=54.0-core'
+          if app.count(old_core_ref) != 2:
+              raise SystemExit(f'Unexpected app core ref count: {app.count(old_core_ref)}')
+          app = app.replace(old_core_ref, 'js/app-core-55.js?v=55.0-core')
+          app_path.write_text(app, encoding='utf-8')
+
+          # 3) Make Aruba deploy checks resolve the current core from NEXUS_BUILD.
+          wf_path = Path('.github/workflows/deploy-aruba.yml')
+          wf = wf_path.read_text(encoding='utf-8')
+
+          preflight_pattern = re.compile(r'''      - name: Preflight Nexus build\n        shell: bash\n        run: \|\n.*?\n      - name: Deploy full Nexus snapshot''', re.S)
+          preflight_repl = '''      - name: Preflight Nexus build
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s nexus/index.html
+          test -s nexus/js/app.js
+          grep -Fq '</html>' nexus/index.html
+          node --check nexus/js/app.js
+
+          BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\\([^"]*\\)";.*/\\1/p' nexus/js/app.js | head -n1)"
+          if [ -z "$BUILD" ]; then
+            echo 'Unable to resolve NEXUS_BUILD from app.js'
+            exit 1
+          fi
+
+          CORE="nexus/js/app-core-$BUILD.js"
+          test -s "$CORE"
+          node --check "$CORE"
+          ! grep -Fq 'gw_season_matchdays' "$CORE"
+
+          grep -Fq "<title>IMC Nexus · Build $BUILD</title>" nexus/index.html
+          grep -Fq "js/app.js?v=$BUILD.1" nexus/index.html
+          grep -Fq "js/app-core-$BUILD.js?v=$BUILD.0-core" nexus/js/app.js
+
+          echo "PREFLIGHT_BUILD=$BUILD"
+          echo "PREFLIGHT_INDEX_SIZE=$(wc -c < nexus/index.html)"
+          echo "PREFLIGHT_APP_SIZE=$(wc -c < nexus/js/app.js)"
+          echo "PREFLIGHT_CORE_SIZE=$(wc -c < \"$CORE\")"
+
+      - name: Deploy full Nexus snapshot'''
+          wf, n = preflight_pattern.subn(preflight_repl, wf, count=1)
+          if n != 1:
+              raise SystemExit(f'Preflight block replacement count: {n}')
+
+          if "--exclude-glob 'js/app-core-54.js'" not in wf:
+              raise SystemExit('Legacy full-snapshot core exclude not found')
+          wf = wf.replace("--exclude-glob 'js/app-core-54.js'", "--exclude-glob 'js/app-core-*.js'", 1)
+
+          legacy_skip = "if not path or path in ('nexus/index.html', 'nexus/js/app.js', 'nexus/js/app-core-54.js'):"
+          if legacy_skip not in wf:
+              raise SystemExit('Legacy non-critical skip rule not found')
+          wf = wf.replace(legacy_skip, "if not path or path in ('nexus/index.html', 'nexus/js/app.js') or (path.startswith('nexus/js/app-core-') and path.endswith('.js')):", 1)
+
+          # Critical upload: resolve core filename from app.js build.
+          if 'import hashlib, io, os, ssl' not in wf:
+              raise SystemExit('Critical upload import block not found')
+          wf = wf.replace('import hashlib, io, os, ssl', 'import hashlib, io, os, re, ssl', 1)
+          critical_old = """          critical = [
+              (Path('nexus/js/app-core-54.js'), f'{remote_root}/js', 'app-core-54.js'),
+              (Path('nexus/js/app.js'), f'{remote_root}/js', 'app.js'),
+              (Path('nexus/index.html'), remote_root, 'index.html'),
+          ]"""
+          critical_new = """          app_text = Path('nexus/js/app.js').read_text(encoding='utf-8')
+          match = re.search(r'const NEXUS_BUILD = \"([^\"]+)\";', app_text)
+          if not match:
+              raise SystemExit('Unable to resolve NEXUS_BUILD for critical upload')
+          build = match.group(1)
+          core_name = f'app-core-{build}.js'
+          critical = [
+              (Path(f'nexus/js/{core_name}'), f'{remote_root}/js', core_name),
+              (Path('nexus/js/app.js'), f'{remote_root}/js', 'app.js'),
+              (Path('nexus/index.html'), remote_root, 'index.html'),
+          ]"""
+          if critical_old not in wf:
+              raise SystemExit('Legacy critical runtime list not found')
+          wf = wf.replace(critical_old, critical_new, 1)
+
+          smoke_pattern = re.compile(r'''          CORE_URL="\$BASE_URL/js/app-core-54\.js\?v=54\.0-core&deploy_verify=\$\{GITHUB_SHA\}-\$\(date \+%s\)"\n.*?          ! grep -Fq 'gw_season_matchdays' /tmp/nexus-public-core54\.js''', re.S)
+          smoke_repl = '''          CORE_URL="$BASE_URL/js/app-core-$BUILD.js?v=$BUILD.0-core&deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL --connect-timeout 15 --max-time 30 \\
+            -H 'Cache-Control: no-cache, no-store, must-revalidate' \\
+            -H 'Pragma: no-cache' \\
+            "$CORE_URL" -o /tmp/nexus-public-core.js
+
+          LOCAL_CORE_SHA="$(sha256sum nexus/js/app-core-$BUILD.js | awk '{print $1}')"
+          HTTP_CORE_SHA="$(sha256sum /tmp/nexus-public-core.js | awk '{print $1}')"
+          echo "LOCAL_CORE_SHA256=$LOCAL_CORE_SHA"
+          echo "PUBLIC_CORE_SHA256=$HTTP_CORE_SHA"
+          test "$LOCAL_CORE_SHA" = "$HTTP_CORE_SHA"
+          node --check /tmp/nexus-public-core.js
+          ! grep -Fq 'gw_season_matchdays' /tmp/nexus-public-core.js'''
+          wf, n = smoke_pattern.subn(smoke_repl, wf, count=1)
+          if n != 1:
+              raise SystemExit(f'Smoke core block replacement count: {n}')
+
+          wf = wf.replace("echo 'PUBLIC_CORE54_MATCH=YES'", "echo 'PUBLIC_CORE_MATCH=YES'", 1)
+          wf_path.write_text(wf, encoding='utf-8')
+          PY
+
+          node --check nexus/js/app-core-55.js
+          node --check nexus/js/app.js
+          grep -Fq 'const NEXUS_BUILD = "55";' nexus/js/app-core-55.js
+          grep -Fq 'js/app-core-55.js?v=55.0-core' nexus/js/app.js
+          grep -Fq 'CORE="nexus/js/app-core-$BUILD.js"' .github/workflows/deploy-aruba.yml
+
+      - name: Commit promotion
+        run: |
+          set -euo pipefail
+          git config user.name 'tommasomellogrand-ui'
+          git config user.email 'tommaso.mello.grand@gmail.com'
+          git rm .github/workflows/promote-core55.yml
+          git add nexus/js/app-core-55.js nexus/js/app.js .github/workflows/deploy-aruba.yml
+          git commit -m 'Nexus Build 55: activate core 55'
+          git push origin HEAD:main
