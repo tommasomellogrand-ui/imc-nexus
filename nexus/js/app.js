@@ -60,11 +60,11 @@
   }
 
   function loadCoreAsync(){
-    appendScript("js/app-core-54.js?v=54.0-core",loadAfterCore);
+    appendScript("js/app-core-55.js?v=55.0-core",loadAfterCore);
   }
 
   if(document.readyState==="loading"){
-    writeScript("js/app-core-54.js?v=54.0-core");
+    writeScript("js/app-core-55.js?v=55.0-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-transfers.js?v=1.0.1");
     writeScript("js/imc-player-codex-gw.js?v=1.0.2");
