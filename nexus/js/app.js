@@ -2,7 +2,7 @@
   "use strict";
 
   // Build 55 production runtime.
-  const NEXUS_BUILD = "54";
+  const NEXUS_BUILD = "55";
 
   function writeScript(src){
     document.write('<script src="'+src+'"></'+'script>');
