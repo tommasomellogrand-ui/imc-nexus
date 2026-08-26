@@ -38,32 +38,18 @@ jobs:
           if app.count(old_ref) != 2:
               raise SystemExit(f'Unexpected app core ref count: {app.count(old_ref)}')
           app_path.write_text(app.replace(old_ref, 'js/app-core-55.js?v=55.0-core'), encoding='utf-8')
-
-          wf_path = Path('.github/workflows/deploy-aruba.yml')
-          wf = wf_path.read_text(encoding='utf-8')
-          replacements = [
-              ('app-core-54.js', 'app-core-55.js'),
-              ('54.0-core', '55.0-core'),
-              ('CORE54', 'CORE55'),
-              ('core54', 'core55'),
-          ]
-          for old_value, new_value in replacements:
-              wf = wf.replace(old_value, new_value)
-          wf_path.write_text(wf, encoding='utf-8')
           PY
 
           node --check nexus/js/app-core-55.js
           node --check nexus/js/app.js
           grep -Fq 'const NEXUS_BUILD = "55";' nexus/js/app-core-55.js
           grep -Fq 'js/app-core-55.js?v=55.0-core' nexus/js/app.js
-          grep -Fq 'nexus/js/app-core-55.js' .github/workflows/deploy-aruba.yml
 
-      - name: Commit promotion
+      - name: Commit core 55
         run: |
           set -euo pipefail
           git config user.name 'tommasomellogrand-ui'
           git config user.email 'tommaso.mello.grand@gmail.com'
-          git rm .github/workflows/promote-core55.yml
-          git add nexus/js/app-core-55.js nexus/js/app.js .github/workflows/deploy-aruba.yml
+          git add nexus/js/app-core-55.js nexus/js/app.js
           git commit -m 'Nexus Build 55: activate core 55'
           git push origin HEAD:main
