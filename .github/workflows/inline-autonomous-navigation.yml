@@ -1,0 +1,243 @@
+name: Inline Autonomous Navigation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/inline-autonomous-navigation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Patch autonomous module navigation
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def one(path, old, new, expected=1):
+              p=Path(path)
+              s=p.read_text(encoding='utf-8')
+              n=s.count(old)
+              if n != expected:
+                  raise SystemExit(f'{path}: expected {expected} occurrences, found {n}: {old[:80]!r}')
+              p.write_text(s.replace(old,new),encoding='utf-8')
+
+          # ------------------------------------------------------------
+          # PLAYER CODEX GW: mount inside Nexus #pageRoot, never on body.
+          # ------------------------------------------------------------
+          p=Path('nexus/js/imc-player-codex-gw.js')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('const VERSION="1.0.2-build56-gw";','const VERSION="1.0.3-build55-inline";',1)
+          s=s.replace('const ui={world:"",name:"",rows:[],q:"",sort:"rating_desc",limit:STEP};','const ui={world:"",name:"",rows:[],q:"",sort:"rating_desc",limit:STEP};\nlet returnNav=null;',1)
+          s=s.replace('#${OID}{position:fixed;inset:0;z-index:2147483600;overflow:auto;background:#f3f6fb;color:#0b1833;font-family:inherit;-webkit-overflow-scrolling:touch}#${OID} *{box-sizing:border-box}', '#${OID}{position:relative;width:100%;min-height:100%;background:#f3f6fb;color:#0b1833;font-family:inherit}#${OID}[hidden]{display:none!important}#${OID} *{box-sizing:border-box}',1)
+          s=s.replace('.pcg-top{position:sticky;top:0;z-index:5;', '.pcg-top{position:relative;z-index:1;',1)
+          marker='function open(id){\n'
+          helpers='''function activeReturn(){
+  const b=document.querySelector(".nx-world-nav button.active,.nx-bottom.nx-bottom-b6 button.active");
+  if(!b||b.matches('[data-world-section="player-codex"],[data-imc-codex-world]'))return null;
+  return {section:b.getAttribute("data-world-section")||"",page:b.getAttribute("data-page")||""};
+}
+function markActive(){
+  document.querySelectorAll(".nx-world-nav button,.nx-bottom.nx-bottom-b6 button").forEach(b=>b.classList.remove("active"));
+  const b=document.querySelector('.nx-world-nav [data-world-section="player-codex"],.nx-world-nav [data-imc-codex-world]');
+  if(b)b.classList.add("active");
+}
+function leave(){
+  let b=null;
+  if(returnNav&&returnNav.section)b=document.querySelector('.nx-world-nav [data-world-section="'+returnNav.section+'"]');
+  else if(returnNav&&returnNav.page)b=document.querySelector('.nx-bottom.nx-bottom-b6 [data-page="'+returnNav.page+'"]');
+  if(b){b.click();return;}
+  const fallback=document.querySelector('.nx-world-nav [data-world-section="competitions"]');
+  if(fallback)fallback.click();
+}
+
+function open(id){
+'''
+          if s.count(marker)!=1: raise SystemExit('codex open marker mismatch')
+          s=s.replace(marker,helpers,1)
+          old='''  css();document.getElementById(OID)?.remove();
+  const o=document.createElement("section");o.id=OID;'''
+          new='''  css();document.getElementById(OID)?.remove();
+  const host=document.getElementById("pageRoot");if(!host)return;
+  returnNav=activeReturn();markActive();host.innerHTML="";
+  const o=document.createElement("section");o.id=OID;'''
+          if s.count(old)!=1: raise SystemExit('codex host marker mismatch')
+          s=s.replace(old,new,1)
+          old='''  document.body.appendChild(o);document.body.style.overflow="hidden";
+  document.getElementById("pcgBack").onclick=()=>{o.remove();document.body.style.overflow="";};'''
+          new='''  host.appendChild(o);
+  document.getElementById("pcgBack").onclick=leave;'''
+          if s.count(old)!=1: raise SystemExit('codex append marker mismatch')
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+
+          # ------------------------------------------------------------
+          # TRANSFERS: list + detail inline in #pageRoot.
+          # ------------------------------------------------------------
+          p=Path('nexus/js/imc-transfers.js')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('const V="1.0.1-build56";','const V="1.0.2-build55-inline";',1)
+          s=s.replace('const ui={world:"",name:"",rows:[],teams:[],seasons:[],q:"",team:"all",season:"all",limit:80};','const ui={world:"",name:"",rows:[],teams:[],seasons:[],q:"",team:"all",season:"all",limit:80};\nlet returnNav=null;',1)
+          s=s.replace('#${OID},#${DID}{position:fixed;inset:0;background:#fff;color:#101217;font-family:inherit;overflow:auto}#${OID}{z-index:2147483300}#${DID}{z-index:2147483400}#${OID} *,#${DID} *{box-sizing:border-box}', '#${OID},#${DID}{position:relative;width:100%;min-height:100%;background:#fff;color:#101217;font-family:inherit}#${OID}[hidden]{display:none!important}#${OID} *,#${DID} *{box-sizing:border-box}',1)
+          s=s.replace('.imct-top{position:sticky;top:0;z-index:6;', '.imct-top{position:relative;z-index:1;',1)
+          marker='function detail(x){\n'
+          helpers='''function activeReturn(){
+  const b=document.querySelector(".nx-world-nav button.active,.nx-bottom.nx-bottom-b6 button.active");
+  if(!b||b.matches('[data-imc-transfers-world],[data-page="transfers"]'))return null;
+  return {section:b.getAttribute("data-world-section")||"",page:b.getAttribute("data-page")||""};
+}
+function markActive(){
+  document.querySelectorAll(".nx-world-nav button,.nx-bottom.nx-bottom-b6 button").forEach(b=>b.classList.remove("active"));
+  const b=document.querySelector('.nx-bottom.nx-bottom-b6 [data-imc-transfers-world],.nx-bottom.nx-bottom-b6 [data-page="transfers"]');
+  if(b)b.classList.add("active");
+}
+function leave(){
+  let b=null;
+  if(returnNav&&returnNav.section)b=document.querySelector('.nx-world-nav [data-world-section="'+returnNav.section+'"]');
+  else if(returnNav&&returnNav.page)b=document.querySelector('.nx-bottom.nx-bottom-b6 [data-page="'+returnNav.page+'"]');
+  if(b){b.click();return;}
+  const fallback=document.querySelector('.nx-world-nav [data-world-section="competitions"]');
+  if(fallback)fallback.click();
+}
+
+function detail(x){
+'''
+          if s.count(marker)!=1: raise SystemExit('transfer detail marker mismatch')
+          s=s.replace(marker,helpers,1)
+          old='''  if(!x)return;document.getElementById(DID)?.remove();
+  const d=document.createElement("section");d.id=DID;'''
+          new='''  if(!x)return;document.getElementById(DID)?.remove();
+  const host=document.getElementById("pageRoot"),list=document.getElementById(OID);if(!host)return;
+  if(list)list.hidden=true;
+  const d=document.createElement("section");d.id=DID;'''
+          if s.count(old)!=1: raise SystemExit('transfer detail host mismatch')
+          s=s.replace(old,new,1)
+          old='''  document.body.appendChild(d);document.getElementById("imctdback").onclick=()=>d.remove();'''
+          new='''  host.appendChild(d);document.getElementById("imctdback").onclick=()=>{d.remove();if(list)list.hidden=false;};'''
+          if s.count(old)!=1: raise SystemExit('transfer detail append mismatch')
+          s=s.replace(old,new,1)
+          old='''async function open(id){
+  if(!valid(id))return;css();document.getElementById(DID)?.remove();document.getElementById(OID)?.remove();
+  ui.world=id;'''
+          new='''async function open(id){
+  if(!valid(id))return;css();document.getElementById(DID)?.remove();document.getElementById(OID)?.remove();
+  const host=document.getElementById("pageRoot");if(!host)return;
+  returnNav=activeReturn();markActive();host.innerHTML="";
+  ui.world=id;'''
+          if s.count(old)!=1: raise SystemExit('transfer open host mismatch')
+          s=s.replace(old,new,1)
+          old='''  document.body.appendChild(o);document.body.style.overflow="hidden";
+  document.getElementById("imctback").onclick=()=>{document.getElementById(DID)?.remove();o.remove();document.body.style.overflow="";};'''
+          new='''  host.appendChild(o);
+  document.getElementById("imctback").onclick=leave;'''
+          if s.count(old)!=1: raise SystemExit('transfer open append mismatch')
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+
+          # ------------------------------------------------------------
+          # COMPETITIONS: list + detail inline in #pageRoot.
+          # Resolver/data flow untouched.
+          # ------------------------------------------------------------
+          p=Path('nexus/js/imc-competitions.js')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('const V="1.1.0-build56-autonomous"','const V="1.1.2-build55-inline"',1)
+          s=s.replace('const ui={world:"",meta:null,rows:[],gmap:new Map(),rr:[],ss:[],cat:"domestic",q:"",key:""};','const ui={world:"",meta:null,rows:[],gmap:new Map(),rr:[],ss:[],cat:"domestic",q:"",key:""};\nlet returnNav=null;',1)
+          s=s.replace('#${OID},#${DID}{position:fixed;inset:0;overflow:auto;-webkit-overflow-scrolling:touch;background:#f7f8fa;color:#10141a;font-family:inherit}#${OID}{z-index:2147483200}#${DID}{z-index:2147483300}#${OID} *,#${DID} *{box-sizing:border-box}', '#${OID},#${DID}{position:relative;width:100%;min-height:100%;background:#f7f8fa;color:#10141a;font-family:inherit}#${OID}[hidden]{display:none!important}#${OID} *,#${DID} *{box-sizing:border-box}',1)
+          s=s.replace('.imcc-top{position:sticky;top:0;z-index:5;', '.imcc-top{position:relative;z-index:1;',1)
+          marker='function render(){'
+          helpers='''function activeReturn(){const b=document.querySelector(".nx-world-nav button.active,.nx-bottom.nx-bottom-b6 button.active");if(!b||b.matches('[data-world-section="competitions"]'))return null;return {section:b.getAttribute("data-world-section")||"",page:b.getAttribute("data-page")||""};}
+function markActive(){document.querySelectorAll(".nx-world-nav button,.nx-bottom.nx-bottom-b6 button").forEach(b=>b.classList.remove("active"));const b=document.querySelector('.nx-world-nav [data-world-section="competitions"]');if(b)b.classList.add("active");}
+function returnButton(){if(returnNav&&returnNav.section)return document.querySelector('.nx-world-nav [data-world-section="'+returnNav.section+'"]');if(returnNav&&returnNav.page)return document.querySelector('.nx-bottom.nx-bottom-b6 [data-page="'+returnNav.page+'"]');return null;}
+function render(){'''
+          if s.count(marker)!=1: raise SystemExit('competition render marker mismatch')
+          s=s.replace(marker,helpers,1)
+          old='''function detail(key,tab){const row=ui.rows.find(r=>String(r.competition_key)===String(key));if(!row)return;ui.key=key;let root=document.getElementById(DID);if(!root){root=document.createElement("section");root.id=DID;document.body.appendChild(root);}const rows='''
+          new='''function detail(key,tab){const row=ui.rows.find(r=>String(r.competition_key)===String(key));if(!row)return;ui.key=key;const host=document.getElementById("pageRoot"),listRoot=document.getElementById(OID);if(!host)return;let root=document.getElementById(DID);if(!root){if(listRoot)listRoot.hidden=true;root=document.createElement("section");root.id=DID;host.appendChild(root);}const rows='''
+          if s.count(old)!=1: raise SystemExit('competition detail host mismatch')
+          s=s.replace(old,new,1)
+          old='''root.querySelector("[data-back]")?.addEventListener("click",()=>{root.remove();ui.key="";});'''
+          new='''root.querySelector("[data-back]")?.addEventListener("click",()=>{root.remove();ui.key="";if(listRoot)listRoot.hidden=false;});'''
+          if s.count(old)!=1: raise SystemExit('competition detail back mismatch')
+          s=s.replace(old,new,1)
+          old='''async function open(force){const w=world();if(!valid(w))return;if(force)suppressed="";css();let root=document.getElementById(OID);if(!root){root=document.createElement("section");root.id=OID;document.body.appendChild(root);}root.innerHTML='''
+          new='''async function open(force){const w=world();if(!valid(w))return;if(force)suppressed="";css();const host=document.getElementById("pageRoot");if(!host)return;let root=document.getElementById(OID);if(!root){returnNav=activeReturn();markActive();host.innerHTML="";root=document.createElement("section");root.id=OID;host.appendChild(root);}else markActive();root.innerHTML='''
+          if s.count(old)!=1: raise SystemExit('competition open host mismatch')
+          s=s.replace(old,new,1)
+          old='''function close(){suppressed=world();document.getElementById(DID)?.remove();document.getElementById(OID)?.remove();ui.key="";}'''
+          new='''function close(){const b=returnButton();if(!b)return;suppressed=world();document.getElementById(DID)?.remove();document.getElementById(OID)?.remove();ui.key="";b.click();}'''
+          if s.count(old)!=1: raise SystemExit('competition close mismatch')
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+
+          # ------------------------------------------------------------
+          # GW PLAYER DETAIL: inline only for GW Codex. Global stays as-is.
+          # ------------------------------------------------------------
+          p=Path('nexus/js/imc-player-codex-global-detail.js')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('const VERSION="1.1.0";','const VERSION="1.1.1";',1)
+          s=s.replace('#${DID}{position:fixed;inset:0;z-index:2147483800;overflow:auto;background:#f3f6fb;color:#0b1833;font-family:inherit;-webkit-overflow-scrolling:touch}#${DID} *{box-sizing:border-box}', '#${DID}{position:fixed;inset:0;z-index:2147483800;overflow:auto;background:#f3f6fb;color:#0b1833;font-family:inherit;-webkit-overflow-scrolling:touch}#${DID}.is-inline{position:relative;inset:auto;z-index:auto;overflow:visible;width:100%;min-height:100%}#${DID}.is-inline .pcgd-top{position:relative;top:auto}#${DID} *{box-sizing:border-box}',1)
+          old='''  const d=document.createElement("section");
+  d.id=DID;
+  d.innerHTML='<main class="pcgd-main"><div class="pcgd-loading">Caricamento scheda completa…</div></main>';
+  document.body.appendChild(d);'''
+          new='''  const d=document.createElement("section");
+  d.id=DID;
+  const inline=validWorld(context),gwRoot=inline?document.getElementById("imcPlayerCodexGw"):null,host=inline?document.getElementById("pageRoot"):document.body;
+  if(inline&&(!gwRoot||!host))return;
+  if(inline){d.classList.add("is-inline");gwRoot.hidden=true;}
+  d.innerHTML='<main class="pcgd-main"><div class="pcgd-loading">Caricamento scheda completa…</div></main>';
+  host.appendChild(d);'''
+          if s.count(old)!=1: raise SystemExit('player detail host mismatch')
+          s=s.replace(old,new,1)
+          old='''    document.getElementById("pcgdBack").onclick=()=>d.remove();'''
+          new='''    document.getElementById("pcgdBack").onclick=()=>{d.remove();if(gwRoot)gwRoot.hidden=false;};'''
+          if s.count(old)!=1: raise SystemExit('player detail back mismatch')
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+
+          # Cache-bust the autonomous modules from the existing Build 55 loader.
+          p=Path('nexus/js/app.js')
+          s=p.read_text(encoding='utf-8')
+          pairs=[
+            ('js/imc-transfers.js?v=1.0.1','js/imc-transfers.js?v=1.0.2'),
+            ('js/imc-player-codex-gw.js?v=1.0.2','js/imc-player-codex-gw.js?v=1.0.3'),
+            ('js/imc-player-codex-global-detail.js?v=1.1.0','js/imc-player-codex-global-detail.js?v=1.1.1'),
+            ('js/imc-competitions.js?v=1.1.1','js/imc-competitions.js?v=1.1.2'),
+          ]
+          for old,new in pairs:
+              n=s.count(old)
+              if n!=2: raise SystemExit(f'app.js cache ref mismatch {old}: {n}')
+              s=s.replace(old,new)
+          p.write_text(s,encoding='utf-8')
+          PY
+
+          node --check nexus/js/imc-player-codex-gw.js
+          node --check nexus/js/imc-transfers.js
+          node --check nexus/js/imc-competitions.js
+          node --check nexus/js/imc-player-codex-global-detail.js
+          node --check nexus/js/app.js
+
+          grep -Fq 'document.getElementById("pageRoot")' nexus/js/imc-player-codex-gw.js
+          grep -Fq 'document.getElementById("pageRoot")' nexus/js/imc-transfers.js
+          grep -Fq 'document.getElementById("pageRoot")' nexus/js/imc-competitions.js
+          ! grep -Fq 'document.body.style.overflow="hidden"' nexus/js/imc-player-codex-gw.js
+          ! grep -Fq 'document.body.style.overflow="hidden"' nexus/js/imc-transfers.js
+
+      - name: Commit navigation fix
+        run: |
+          set -euo pipefail
+          git config user.name 'tommasomellogrand-ui'
+          git config user.email 'tommaso.mello.grand@gmail.com'
+          git add nexus/js/imc-player-codex-gw.js nexus/js/imc-transfers.js nexus/js/imc-competitions.js nexus/js/imc-player-codex-global-detail.js nexus/js/app.js
+          git commit -m 'Nexus Build 55: keep autonomous pages inside shell'
+          git push origin HEAD:main
