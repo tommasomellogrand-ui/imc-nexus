@@ -15,6 +15,25 @@
     document.head.appendChild(script);
   }
 
+  function isClubHouse(){
+    var el=document.querySelector("#openDrawerWorld strong,.nx-sport-world strong");
+    var text=String(el&&el.textContent||"").trim().toLowerCase();
+    if(text) return text==="club house";
+    return !!document.querySelector(".nx-card.nx-clubhouse");
+  }
+
+  document.addEventListener("click",function(event){
+    var target=event.target&&event.target.closest?event.target.closest('#openImcGlobalCodex,[data-world-section="player-codex"]'):null;
+    if(!target) return;
+    if(target.id!=="openImcGlobalCodex"&&!isClubHouse()) return;
+    var codex=window.IMC_PLAYER_CODEX_GLOBAL;
+    if(!codex||typeof codex.open!=="function") return;
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    codex.open();
+  },true);
+
   function loadAfterCore(){
     appendScript("js/imc-results-scorers.js?v=1.0.0");
     appendScript("js/imc-transfers.js?v=1.0.1");
