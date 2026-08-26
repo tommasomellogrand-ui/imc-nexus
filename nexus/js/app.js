@@ -22,6 +22,21 @@
     return !!document.querySelector(".nx-card.nx-clubhouse");
   }
 
+  function removeClubHouseManagerHero(){
+    if(!document.getElementById("openImcGlobalCodex")) return;
+    var clubhouse=document.querySelector(".nx-card.nx-clubhouse");
+    if(!clubhouse) return;
+    var hero=clubhouse.querySelector(".nx-hero-card");
+    if(hero) hero.remove();
+  }
+
+  var clubHouseTimer=null;
+  new MutationObserver(function(){
+    clearTimeout(clubHouseTimer);
+    clubHouseTimer=setTimeout(removeClubHouseManagerHero,80);
+  }).observe(document.documentElement,{childList:true,subtree:true});
+  removeClubHouseManagerHero();
+
   document.addEventListener("click",function(event){
     var target=event.target&&event.target.closest?event.target.closest('#openImcGlobalCodex,[data-world-section="player-codex"]'):null;
     if(!target) return;
