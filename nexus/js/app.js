@@ -52,7 +52,7 @@
   function loadAfterCore(){
     appendScript("js/imc-results-scorers.js?v=1.0.0");
     appendScript("js/imc-transfers.js?v=1.0.1");
-    appendScript("js/imc-player-codex-gw.js?v=1.0.1");
+    appendScript("js/imc-player-codex-gw.js?v=1.0.2");
     appendScript("js/imc-player-codex-global.js?v=1.0.0");
   }
 
@@ -64,7 +64,7 @@
     writeScript("js/app-core-54.js?v=54.0-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-transfers.js?v=1.0.1");
-    writeScript("js/imc-player-codex-gw.js?v=1.0.1");
+    writeScript("js/imc-player-codex-gw.js?v=1.0.2");
     writeScript("js/imc-player-codex-global.js?v=1.0.0");
     return;
   }
