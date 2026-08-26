@@ -30,6 +30,25 @@
     if(hero) hero.remove();
   }
 
+  function syncWorldMenus(){
+    var codex=window.IMC_PLAYER_CODEX_GW;
+    if(codex&&typeof codex.syncMenus==="function") codex.syncMenus();
+  }
+
+  var guardAttempts=0;
+  var guardTimer=setInterval(function(){
+    guardAttempts+=1;
+    var guard=window.IMC_WORLD_CONTEXT_FIX;
+    if(guard&&guard.blockedWorlds&&typeof guard.blockedWorlds.clear==="function"){
+      guard.blockedWorlds.clear();
+      clearInterval(guardTimer);
+      setTimeout(syncWorldMenus,0);
+      setTimeout(syncWorldMenus,120);
+      return;
+    }
+    if(guardAttempts>=80) clearInterval(guardTimer);
+  },25);
+
   var clubHouseTimer=null;
   new MutationObserver(function(){
     clearTimeout(clubHouseTimer);
@@ -38,6 +57,13 @@
   removeClubHouseManagerHero();
 
   document.addEventListener("click",function(event){
+    var worldSwitch=event.target&&event.target.closest?event.target.closest('[data-drawer-world],[data-select-world],[data-world-id],[data-game-world-id],[data-world]'):null;
+    if(worldSwitch){
+      setTimeout(syncWorldMenus,0);
+      setTimeout(syncWorldMenus,120);
+      setTimeout(syncWorldMenus,300);
+    }
+
     var target=event.target&&event.target.closest?event.target.closest('#openImcGlobalCodex,[data-world-section="player-codex"]'):null;
     if(!target) return;
     if(target.id!=="openImcGlobalCodex"&&!isClubHouse()) return;
@@ -54,6 +80,8 @@
     appendScript("js/imc-transfers.js?v=1.0.1");
     appendScript("js/imc-player-codex-gw.js?v=1.0.2");
     appendScript("js/imc-player-codex-global.js?v=1.0.0");
+    setTimeout(syncWorldMenus,0);
+    setTimeout(syncWorldMenus,120);
   }
 
   function loadCoreAsync(){
@@ -66,6 +94,8 @@
     writeScript("js/imc-transfers.js?v=1.0.1");
     writeScript("js/imc-player-codex-gw.js?v=1.0.2");
     writeScript("js/imc-player-codex-global.js?v=1.0.0");
+    setTimeout(syncWorldMenus,0);
+    setTimeout(syncWorldMenus,120);
     return;
   }
 
