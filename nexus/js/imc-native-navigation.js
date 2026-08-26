@@ -1,6 +1,7 @@
 (function(){
   "use strict";
 
+  // Build 55 · Keep autonomous modules inside the native Nexus shell.
   const VERSION="1.0.0";
   const TOP_IDS=["imcPlayerCodexGw","imcTransfers","imcCompetitions"];
   const DETAIL_OWNER={
