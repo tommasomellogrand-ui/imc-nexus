@@ -50,11 +50,11 @@ jobs:
           set -euo pipefail
           test -s nexus/index.html
           test -s nexus/js/app.js
-          test -s nexus/js/app-core-54.js
+          test -s nexus/js/app-core-55.js
           grep -Fq '</html>' nexus/index.html
           node --check nexus/js/app.js
-          node --check nexus/js/app-core-54.js
-          ! grep -Fq 'gw_season_matchdays' nexus/js/app-core-54.js
+          node --check nexus/js/app-core-55.js
+          ! grep -Fq 'gw_season_matchdays' nexus/js/app-core-55.js
 
           BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\([^"]*\)";.*/\1/p' nexus/js/app.js | head -n1)"
           if [ -z "$BUILD" ]; then
@@ -64,12 +64,12 @@ jobs:
 
           grep -Fq "<title>IMC Nexus · Build $BUILD</title>" nexus/index.html
           grep -Fq "js/app.js?v=$BUILD.1" nexus/index.html
-          grep -Fq 'js/app-core-54.js?v=54.0-core' nexus/js/app.js
+          grep -Fq 'js/app-core-55.js?v=55.0-core' nexus/js/app.js
 
           echo "PREFLIGHT_BUILD=$BUILD"
           echo "PREFLIGHT_INDEX_SIZE=$(wc -c < nexus/index.html)"
           echo "PREFLIGHT_APP_SIZE=$(wc -c < nexus/js/app.js)"
-          echo "PREFLIGHT_CORE54_SIZE=$(wc -c < nexus/js/app-core-54.js)"
+          echo "PREFLIGHT_CORE55_SIZE=$(wc -c < nexus/js/app-core-55.js)"
 
       - name: Deploy full Nexus snapshot
         if: ${{ github.event_name == 'workflow_dispatch' }}
@@ -108,7 +108,7 @@ jobs:
               --exclude-glob '*.key' \
               --exclude-glob 'index.html' \
               --exclude-glob 'js/app.js' \
-              --exclude-glob 'js/app-core-54.js' \
+              --exclude-glob 'js/app-core-55.js' \
               nexus \"$REMOTE\";
             bye;
           "
@@ -165,7 +165,7 @@ jobs:
           if upload_list.exists():
               for line in upload_list.read_text(encoding='utf-8').splitlines():
                   path = line.strip()
-                  if not path or path in ('nexus/index.html', 'nexus/js/app.js', 'nexus/js/app-core-54.js'):
+                  if not path or path in ('nexus/index.html', 'nexus/js/app.js', 'nexus/js/app-core-55.js'):
                       continue
                   local = Path(path)
                   if local.is_file():
@@ -246,7 +246,7 @@ jobs:
           ftp.prot_p()
 
           critical = [
-              (Path('nexus/js/app-core-54.js'), f'{remote_root}/js', 'app-core-54.js'),
+              (Path('nexus/js/app-core-55.js'), f'{remote_root}/js', 'app-core-55.js'),
               (Path('nexus/js/app.js'), f'{remote_root}/js', 'app.js'),
               (Path('nexus/index.html'), remote_root, 'index.html'),
           ]
@@ -315,19 +315,19 @@ jobs:
           test "$LOCAL_APP_SHA" = "$HTTP_APP_SHA"
           node --check /tmp/nexus-public-app.js
 
-          CORE_URL="$BASE_URL/js/app-core-54.js?v=54.0-core&deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          CORE_URL="$BASE_URL/js/app-core-55.js?v=55.0-core&deploy_verify=${GITHUB_SHA}-$(date +%s)"
           curl -fsSL --connect-timeout 15 --max-time 30 \
             -H 'Cache-Control: no-cache, no-store, must-revalidate' \
             -H 'Pragma: no-cache' \
-            "$CORE_URL" -o /tmp/nexus-public-core54.js
+            "$CORE_URL" -o /tmp/nexus-public-core55.js
 
-          LOCAL_CORE_SHA="$(sha256sum nexus/js/app-core-54.js | awk '{print $1}')"
-          HTTP_CORE_SHA="$(sha256sum /tmp/nexus-public-core54.js | awk '{print $1}')"
-          echo "LOCAL_CORE54_SHA256=$LOCAL_CORE_SHA"
-          echo "PUBLIC_CORE54_SHA256=$HTTP_CORE_SHA"
+          LOCAL_CORE_SHA="$(sha256sum nexus/js/app-core-55.js | awk '{print $1}')"
+          HTTP_CORE_SHA="$(sha256sum /tmp/nexus-public-core55.js | awk '{print $1}')"
+          echo "LOCAL_CORE55_SHA256=$LOCAL_CORE_SHA"
+          echo "PUBLIC_CORE55_SHA256=$HTTP_CORE_SHA"
           test "$LOCAL_CORE_SHA" = "$HTTP_CORE_SHA"
-          node --check /tmp/nexus-public-core54.js
-          ! grep -Fq 'gw_season_matchdays' /tmp/nexus-public-core54.js
+          node --check /tmp/nexus-public-core55.js
+          ! grep -Fq 'gw_season_matchdays' /tmp/nexus-public-core55.js
 
           CHROME="$(command -v google-chrome || command -v google-chrome-stable || true)"
           if [ -n "$CHROME" ]; then
@@ -342,7 +342,7 @@ jobs:
 
           echo 'PUBLIC_INDEX_MATCH=YES'
           echo 'PUBLIC_APP_MATCH=YES'
-          echo 'PUBLIC_CORE54_MATCH=YES'
+          echo 'PUBLIC_CORE55_MATCH=YES'
           echo "NEXUS_RELEASE_VERIFIED=BUILD_$BUILD"
 
       - name: Deployment summary
