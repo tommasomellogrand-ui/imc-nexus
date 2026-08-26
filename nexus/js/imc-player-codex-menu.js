@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-const VERSION="1.0.0";
+const VERSION="1.1.0";
 const WORLD_BY_NAME={
   "road to history":"GW001",
   "gold 558":"GW002",
@@ -16,6 +16,8 @@ const WORLD_BY_NAME={
 };
 const norm=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();
 const valid=id=>/^GW(?:00[1-9]|010)$/.test(String(id||""));
+let observer=null;
+let frame=0;
 
 function currentWorld(){
   const guard=window.IMC_WORLD_CONTEXT_FIX;
@@ -40,8 +42,8 @@ function sync(){
   if(!nav)return;
 
   const matches=[...nav.querySelectorAll('[data-world-section="player-codex"],[data-imc-codex-world]')];
-  let button=matches.shift()||null;
-  matches.forEach(el=>el.remove());
+  let button=matches.find(el=>el.getAttribute("data-world-section")==="player-codex")||matches[0]||null;
+  matches.forEach(el=>{if(el!==button)el.remove();});
 
   if(!button){
     button=document.createElement("button");
@@ -55,18 +57,28 @@ function sync(){
   if(nav.firstElementChild!==button)nav.insertBefore(button,nav.firstElementChild||null);
 }
 
-function schedule(){
-  [0,60,140,280,520,900,1500].forEach(ms=>setTimeout(sync,ms));
+function queueSync(){
+  if(frame)return;
+  frame=requestAnimationFrame(function(){
+    frame=0;
+    sync();
+  });
 }
 
-document.addEventListener("click",function(e){
-  const target=e.target&&e.target.closest&&e.target.closest('[data-drawer-world],[data-select-world],[data-world-id],[data-game-world-id],[data-world],.nx-world-nav button,#openDrawerWorld');
-  if(target)schedule();
-},true);
+function start(){
+  const root=document.getElementById("app");
+  if(!root)return false;
+  if(observer)observer.disconnect();
+  observer=new MutationObserver(queueSync);
+  observer.observe(root,{childList:true,subtree:true});
+  sync();
+  return true;
+}
 
-window.addEventListener("pageshow",schedule);
-document.addEventListener("visibilitychange",function(){if(!document.hidden)schedule();});
+if(!start()){
+  document.addEventListener("DOMContentLoaded",start,{once:true});
+}
+window.addEventListener("pageshow",sync);
 
-schedule();
-window.IMC_PLAYER_CODEX_MENU={version:VERSION,sync,schedule};
+window.IMC_PLAYER_CODEX_MENU={version:VERSION,sync};
 })();
