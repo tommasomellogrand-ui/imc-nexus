@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-const VERSION="1.0-build56-gw";
+const VERSION="1.0.1-build56-gw";
 const URL="https://toanuzojdkfjgucztpze.supabase.co";
 const KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
 const OID="imcPlayerCodexGw";
@@ -26,7 +26,7 @@ function currentWorld(){
     const id=String(guard.currentWorld()||"");
     if(valid(id))return id;
   }
-  const tagged=document.querySelector("[data-imc-codex-world]");
+  const tagged=document.querySelector(".nx-world-nav [data-imc-codex-world]");
   if(tagged&&valid(tagged.getAttribute("data-imc-codex-world")))return tagged.getAttribute("data-imc-codex-world");
   const text=document.querySelector("#openDrawerWorld strong,.nx-sport-world strong")?.textContent||"";
   const map={"road to history":"GW001","gold 558":"GW002","gold 557":"GW003","world league":"GW004","hall of famers":"GW005","master league world":"GW006","the four kingdoms":"GW007","gold 1":"GW008","kick off":"GW009","sensible soccer academy":"GW010"};
@@ -116,24 +116,32 @@ function open(id){
   hydrate(false);
 }
 
-function ensureButton(){
+function ensureMenus(){
   const id=currentWorld();if(!valid(id))return;
-  const bot=document.querySelector(".nx-bottom.nx-bottom-b6");if(!bot)return;
-  let b=bot.querySelector('[data-world-section="player-codex"]');
-  if(!b){
-    b=document.createElement("button");b.type="button";b.setAttribute("data-world-section","player-codex");b.innerHTML='<b>▣</b><span>PLAYER CODEX</span>';
-    const transfers=bot.querySelector("[data-imc-transfers-world],[data-page='transfers']");
-    if(transfers)transfers.insertAdjacentElement("beforebegin",b);else bot.appendChild(b);
+
+  const bottom=document.querySelector(".nx-bottom.nx-bottom-b6");
+  if(bottom){
+    bottom.querySelectorAll('[data-world-section="player-codex"],[data-imc-codex-world]').forEach(el=>el.remove());
   }
+
+  const nav=document.querySelector(".nx-world-nav");if(!nav)return;
+  let b=nav.querySelector('[data-world-section="player-codex"],[data-imc-codex-world]');
+  if(!b){
+    b=document.createElement("button");
+    b.type="button";
+    b.innerHTML='<b>▣</b><span>PLAYER CODEX</span>';
+    nav.insertBefore(b,nav.firstChild);
+  }
+  b.setAttribute("data-world-section","player-codex");
   b.setAttribute("data-imc-codex-world",id);
 }
 
 let timer=null;
-new MutationObserver(()=>{clearTimeout(timer);timer=setTimeout(ensureButton,80);}).observe(document.documentElement,{childList:true,subtree:true});
-ensureButton();
+new MutationObserver(()=>{clearTimeout(timer);timer=setTimeout(ensureMenus,80);}).observe(document.documentElement,{childList:true,subtree:true});
+ensureMenus();
 
 document.addEventListener("click",function(e){
-  const b=e.target&&e.target.closest&&e.target.closest('[data-world-section="player-codex"],[data-imc-codex-world]');
+  const b=e.target&&e.target.closest&&e.target.closest('.nx-world-nav [data-world-section="player-codex"],.nx-world-nav [data-imc-codex-world]');
   if(!b)return;
   const id=b.getAttribute("data-imc-codex-world")||currentWorld();if(!valid(id))return;
   e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();open(id);
