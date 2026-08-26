@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-const VERSION="1.1.0";
+const VERSION="1.2.0";
 const WORLD_BY_NAME={
   "road to history":"GW001",
   "gold 558":"GW002",
@@ -19,6 +19,68 @@ const valid=id=>/^GW(?:00[1-9]|010)$/.test(String(id||""));
 let observer=null;
 let frame=0;
 
+function installResponsiveCss(){
+  if(document.getElementById("imcPlayerCodexMenuResponsiveCss"))return;
+  const style=document.createElement("style");
+  style.id="imcPlayerCodexMenuResponsiveCss";
+  style.textContent=`
+@media(max-width:620px){
+  .nx-world-nav.nx-world-nav-b6{
+    display:grid!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    width:100%!important;
+    max-width:100%!important;
+    gap:2px!important;
+    padding-left:4px!important;
+    padding-right:4px!important;
+    overflow:visible!important;
+  }
+  .nx-world-nav.nx-world-nav-b6>button{
+    min-width:0!important;
+    width:auto!important;
+    max-width:none!important;
+    padding:8px 2px 7px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:4px!important;
+    overflow:hidden!important;
+  }
+  .nx-world-nav.nx-world-nav-b6>button>b{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:22px!important;
+    height:22px!important;
+    min-width:22px!important;
+    font-size:16px!important;
+    line-height:1!important;
+  }
+  .nx-world-nav.nx-world-nav-b6>button>span{
+    display:block!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:16px!important;
+    margin:0!important;
+    padding:0!important;
+    white-space:normal!important;
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+    text-align:center!important;
+    font-size:7px!important;
+    line-height:1.08!important;
+    letter-spacing:0!important;
+  }
+}
+@media(max-width:360px){
+  .nx-world-nav.nx-world-nav-b6>button{padding-left:1px!important;padding-right:1px!important;}
+  .nx-world-nav.nx-world-nav-b6>button>span{font-size:6.5px!important;}
+}
+`;
+  document.head.appendChild(style);
+}
+
 function currentWorld(){
   const guard=window.IMC_WORLD_CONTEXT_FIX;
   if(guard&&typeof guard.currentWorld==="function"){
@@ -30,6 +92,7 @@ function currentWorld(){
 }
 
 function sync(){
+  installResponsiveCss();
   const id=currentWorld();
   if(!valid(id))return;
 
@@ -66,6 +129,7 @@ function queueSync(){
 }
 
 function start(){
+  installResponsiveCss();
   const root=document.getElementById("app");
   if(!root)return false;
   if(observer)observer.disconnect();
