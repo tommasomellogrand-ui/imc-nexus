@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-const VERSION="1.0.1-build56-gw";
+const VERSION="1.0.2-build56-gw";
 const URL="https://toanuzojdkfjgucztpze.supabase.co";
 const KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
 const OID="imcPlayerCodexGw";
@@ -103,6 +103,7 @@ async function hydrate(force){
 }
 function open(id){
   id=valid(id)?id:currentWorld();if(!valid(id))return;
+  syncMenus();
   ui.world=id;ui.name=worldName(id);
   css();document.getElementById(OID)?.remove();
   const o=document.createElement("section");o.id=OID;
@@ -116,36 +117,30 @@ function open(id){
   hydrate(false);
 }
 
-function ensureMenus(){
+function syncMenus(){
   const id=currentWorld();if(!valid(id))return;
-
   const bottom=document.querySelector(".nx-bottom.nx-bottom-b6");
-  if(bottom){
-    bottom.querySelectorAll('[data-world-section="player-codex"],[data-imc-codex-world]').forEach(el=>el.remove());
-  }
-
+  if(bottom)bottom.querySelectorAll('[data-world-section="player-codex"],[data-imc-codex-world]').forEach(el=>el.remove());
   const nav=document.querySelector(".nx-world-nav");if(!nav)return;
   let b=nav.querySelector('[data-world-section="player-codex"],[data-imc-codex-world]');
   if(!b){
-    b=document.createElement("button");
-    b.type="button";
-    b.innerHTML='<b>▣</b><span>PLAYER CODEX</span>';
-    nav.insertBefore(b,nav.firstChild);
+    b=document.createElement("button");b.type="button";b.innerHTML='<b>▣</b><span>PLAYER CODEX</span>';nav.insertBefore(b,nav.firstChild);
   }
   b.setAttribute("data-world-section","player-codex");
   b.setAttribute("data-imc-codex-world",id);
 }
 
-let timer=null;
-new MutationObserver(()=>{clearTimeout(timer);timer=setTimeout(ensureMenus,80);}).observe(document.documentElement,{childList:true,subtree:true});
-ensureMenus();
+syncMenus();
 
 document.addEventListener("click",function(e){
+  const gwSwitch=e.target&&e.target.closest&&e.target.closest("[data-select-world],[data-world-id],[data-game-world-id],[data-world]");
+  if(gwSwitch)setTimeout(syncMenus,120);
+
   const b=e.target&&e.target.closest&&e.target.closest('.nx-world-nav [data-world-section="player-codex"],.nx-world-nav [data-imc-codex-world]');
   if(!b)return;
   const id=b.getAttribute("data-imc-codex-world")||currentWorld();if(!valid(id))return;
   e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();open(id);
 },true);
 
-window.IMC_PLAYER_CODEX_GW={version:VERSION,open,refresh:id=>{if(valid(id))ui.world=id;return hydrate(true);}};
+window.IMC_PLAYER_CODEX_GW={version:VERSION,open,refresh:id=>{if(valid(id))ui.world=id;return hydrate(true);},syncMenus};
 })();
