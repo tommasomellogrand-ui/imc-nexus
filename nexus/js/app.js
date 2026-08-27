@@ -61,7 +61,7 @@
       appendScript("js/imc-competition-ui.js?v=1.2.1",function(){
         appendScript("js/imc-match-report-gw001.js?v=0.1.0",function(){
           appendScript("js/imc-match-report-lineups-gw001.js?v=0.2.0",function(){
-            appendScript("js/imc-match-report-ratings-gw001.js?v=0.1.0");
+            appendScript("js/imc-match-report-ratings-gw001.js?v=0.1.1");
           });
         });
       });
@@ -84,7 +84,7 @@
     writeScript("js/imc-competition-ui.js?v=1.2.1");
     writeScript("js/imc-match-report-gw001.js?v=0.1.0");
     writeScript("js/imc-match-report-lineups-gw001.js?v=0.2.0");
-    writeScript("js/imc-match-report-ratings-gw001.js?v=0.1.0");
+    writeScript("js/imc-match-report-ratings-gw001.js?v=0.1.1");
     return;
   }
 
