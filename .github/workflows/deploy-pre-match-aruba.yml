@@ -103,20 +103,26 @@ jobs:
           ftp.quit()
           PY
 
-      - name: Public smoke test
+      - name: Public smoke test Matchday 14
         run: |
           set -euo pipefail
-          test -s pre-match/23-agosto-2026/index.html
-          URL="https://www.italianmastersclub.it/pre-match/23-agosto-2026/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
-          curl -fsSL --connect-timeout 15 --max-time 30 \
-            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
-            -H 'Pragma: no-cache' \
-            "$URL" -o /tmp/pre-match-public.html
-          grep -Fq 'MATCHDAY 13' /tmp/pre-match-public.html
-          grep -Fq 'DATA ERA' /tmp/pre-match-public.html
-          grep -Fq '23 AUG 2026' /tmp/pre-match-public.html
-          grep -Fq 'background:#fff' /tmp/pre-match-public.html
-          echo 'PRE_MATCH_PUBLIC_SMOKE=YES'
+          test -s pre-match/27-agosto-2026/index.html
+          test -s pre-match/27-agosto-2026/data.js
+          test -s pre-match/27-agosto-2026/tsv-1860.svg
+          BASE="https://www.italianmastersclub.it/pre-match/27-agosto-2026"
+          TOKEN="${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE/index.html?deploy_verify=$TOKEN" -o /tmp/pre-match-public.html
+          grep -Fq 'MATCHDAY 14' /tmp/pre-match-public.html
+          grep -Fq '20 MATCHES. 40 CLUBS.' /tmp/pre-match-public.html
+          grep -Fq '27 AUG 2026' /tmp/pre-match-public.html
+          grep -Fq 'POWERED BY NEXUS DATA' /tmp/pre-match-public.html
+
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' "$BASE/tsv-1860.svg?deploy_verify=$TOKEN" -o /tmp/1860.svg
+          grep -Fq 'viewBox="0 0 512 512"' /tmp/1860.svg
+
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' "$BASE/data.js?v=1&deploy_verify=$TOKEN" -o /tmp/data-loader.js
+          grep -Fq "tsv-1860.svg" /tmp/data-loader.js
+          echo 'PRE_MATCH_MD14_PUBLIC_SMOKE=YES'
 
       - name: Write verified deploy receipt
         run: |
@@ -126,7 +132,7 @@ jobs:
           {
             "status": "verified",
             "source_sha": "${GITHUB_SHA}",
-            "url": "https://www.italianmastersclub.it/pre-match/23-agosto-2026/",
+            "url": "https://www.italianmastersclub.it/pre-match/27-agosto-2026/index.html",
             "verified_at_utc": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           }
           EOF
