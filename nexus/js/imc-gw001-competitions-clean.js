@@ -4,7 +4,7 @@
 if(window.__IMC_GW001_COMPETITIONS_CLEAN__)return;
 window.__IMC_GW001_COMPETITIONS_CLEAN__=true;
 
-const VERSION="0.1.0-data-only";
+const VERSION="0.1.1-data-only";
 const WORLD="GW001";
 let ownClient=null;
 let observer=null;
@@ -45,9 +45,7 @@ function isOurPage(){const root=pageRoot();return !!(root&&root.querySelector('[
 async function loadRegistry(){
   const client=db();
   if(!client)throw new Error("Client Supabase non disponibile");
-  const result=await client.from("gw001_gw_competitions")
-    .select('sm_competition_name,sm_action,IMC_competition_type,IMC_league_divisions,IMC_league_playoffs,IMC_league_teams_count,competition_key,Nexus View,sm_round_label')
-    .order("Nexus View",{ascending:true});
+  const result=await client.from("gw001_gw_competitions").select("*");
   if(result.error)throw result.error;
   return result.data||[];
 }
@@ -163,7 +161,7 @@ function standingsMarkup(rows){
   }).join("")+'</tbody></table>';
 }
 
-function detailShell(row,tab){
+function detailShell(row){
   const root=pageRoot();if(!root)return null;
   const isLeague=clean(row.sm_action).toLowerCase()==="league";
   root.innerHTML='<section data-imc-gw001-competitions-clean="1">'+
@@ -185,13 +183,12 @@ function detailShell(row,tab){
 async function openCompetition(row){
   activeView="detail";activeCompetition=row;activeTab="results";
   markCompetitionActive();
-  detailShell(row,"results");
   await openTab("results");
 }
 async function openTab(tab){
   if(!activeCompetition)return;
   activeTab=tab;
-  const content=detailShell(activeCompetition,tab);
+  const content=detailShell(activeCompetition);
   if(!content)return;
   try{
     if(tab==="results")content.innerHTML=resultRowsMarkup(await loadResults(activeCompetition.competition_key));
