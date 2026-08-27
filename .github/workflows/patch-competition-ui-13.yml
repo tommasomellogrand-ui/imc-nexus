@@ -1,0 +1,119 @@
+name: Patch Competition UI 1.3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-competition-ui-13.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Patch Competition UI
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p=Path('nexus/js/imc-competitions.js')
+          s=p.read_text(encoding='utf-8')
+
+          def one(old,new,label):
+              global s
+              n=s.count(old)
+              if n!=1:
+                  raise SystemExit(f'{label}: expected 1 occurrence, found {n}')
+              s=s.replace(old,new,1)
+
+          one('const V="1.2.0-build55-matchday-cards"','const V="1.3.0-build55-nexus-view-logos"','version')
+          one('const ui={world:"",meta:null,rows:[],gmap:new Map(),rr:[],ss:[],cat:"domestic",q:"",key:""};',
+              'const ui={world:"",meta:null,rows:[],gmap:new Map(),rr:[],ss:[],logoByWorldId:new Map(),logoByName:new Map(),cat:"domestic",q:"",key:""};',
+              'ui maps')
+
+          one('.imcc-dtabs{display:grid;grid-template-columns:1fr 1fr;',
+              '.imcc-dtabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));',
+              'detail tabs grid')
+          one('.imcc-dtabs button.active{background:#102a5d;color:#fff;box-shadow:0 2px 8px rgba(16,42,93,.12)}',
+              '.imcc-dtabs button.active{background:#102a5d;color:#fff;box-shadow:0 2px 8px rgba(16,42,93,.12)}.imcc-dtabs button.imcc-pending{opacity:.5;cursor:default}',
+              'pending tab css')
+          one('.imcc-team{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#111d35;font-size:11px;font-weight:750}.imcc-team.aw{text-align:right}',
+              '.imcc-teamcell{display:flex;align-items:center;gap:7px;min-width:0}.imcc-teamcell.aw{flex-direction:row-reverse}.imcc-club-logo{display:flex;align-items:center;justify-content:center;flex:0 0 26px;width:26px;height:26px;border:1px solid #e1e6ed;border-radius:50%;overflow:hidden;background:#fff;color:#6f7d91;font-size:7px;font-weight:800}.imcc-club-logo img{width:100%;height:100%;object-fit:contain}.imcc-club-logo b{display:none;width:100%;height:100%;align-items:center;justify-content:center}.imcc-team{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#111d35;font-size:11px;font-weight:750}.imcc-team.aw{text-align:right}',
+              'team logo css')
+
+          marker='function gmap(g,w){const m=new Map();g.forEach(r=>((r.worlds&&r.worlds[w])||[]).forEach(k=>m.set(String(k),String(r.competition_class||""))));return m;}'
+          helpers='''function gmap(g,w){const m=new Map();g.forEach(r=>((r.worlds&&r.worlds[w])||[]).forEach(k=>m.set(String(k),String(r.competition_class||""))));return m;}
+function viewName(r){return String(r&&r["Nexus View"]||r&&r.sm_competition_name||r&&r.competition_key||"").trim();}
+function logoUrl(v){v=String(v||"").trim();return v.startsWith("//")?"https:"+v:v;}
+async function loadClubLogos(w,teams){
+  const ids=[...new Set((teams||[]).map(t=>t.sm_club_id).filter(v=>v!=null).map(String))],masters=[];
+  for(let i=0;i<ids.length;i+=150){
+    const r=await db.from("sm_clubs_master").select("sm_club_id,club_name,alias,nexus_display_name,image_filename,image_url").in("sm_club_id",ids.slice(i,i+150));
+    if(r.error)throw r.error;
+    masters.push(...(r.data||[]));
+  }
+  const mm=new Map(masters.map(m=>[String(m.sm_club_id),m])),byWorldId=new Map(),byName=new Map();
+  (teams||[]).forEach(t=>{
+    const m=mm.get(String(t.sm_club_id||""))||{},u=logoUrl(m.image_url)||(m.image_filename?"assets/clubs/"+String(m.image_filename).trim():"");
+    if(!u)return;
+    if(t.sm_world_club_id!=null)byWorldId.set(String(t.sm_world_club_id),u);
+    [t.club_name,m.club_name,m.alias,m.nexus_display_name].filter(Boolean).forEach(n=>byName.set(norm(n),u));
+  });
+  return {byWorldId,byName};
+}
+function teamLogo(name,id){
+  const u=(id!=null?ui.logoByWorldId.get(String(id)):"")||ui.logoByName.get(norm(name))||"";
+  const initials=String(name||"?").split(/\\s+/).filter(Boolean).slice(0,2).map(x=>x[0]||"").join("").toUpperCase()||"?";
+  return `<span class="imcc-club-logo">${u?`<img src="${esc(u)}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><b>${esc(initials)}</b>`:`<b style="display:flex">${esc(initials)}</b>`}</span>`;
+}'''
+          one(marker,helpers,'helpers')
+
+          one('d={meta,rows,gmap:gmap(g,w),rr,ss};cache.set(w,d);return d;',
+              'const teams=await all(tbl(w,"_gw_teams"),"sm_world_club_id,sm_club_id,club_name"),logos=await loadClubLogos(w,teams),d={meta,rows,gmap:gmap(g,w),rr,ss,logoByWorldId:logos.byWorldId,logoByName:logos.byName};cache.set(w,d);return d;',
+              'load logos')
+
+          old='function list(){const q=norm(ui.q);return ui.rows.filter(r=>cat(r)===ui.cat&&(!q||norm([r.sm_competition_name,r.competition_key,r.sm_country,r.IMC_league_divisions].join(" ")).includes(q))).sort((a,b)=>String(a.sm_country||"").localeCompare(String(b.sm_country||""),"it")||String(a.sm_competition_name||a.competition_key).localeCompare(String(b.sm_competition_name||b.competition_key),"it",{numeric:true}));}'
+          new='function list(){const q=norm(ui.q);return ui.rows.filter(r=>cat(r)===ui.cat&&(!q||norm([viewName(r),r.competition_key,r.sm_country,r.IMC_league_divisions].join(" ")).includes(q))).sort((a,b)=>String(a.sm_country||"").localeCompare(String(b.sm_country||""),"it")||viewName(a).localeCompare(viewName(b),"it",{numeric:true}));}'
+          one(old,new,'list Nexus View')
+
+          one('<strong>${esc(r.sm_competition_name||r.competition_key)}</strong>','<strong>${esc(viewName(r))}</strong>','card Nexus View')
+
+          old='function gameMarkup(r,played){const sc=played?(r.home_score==null||r.away_score==null?"-":r.home_score+" - "+r.away_score):"VS",pen=played&&r.decided_on_penalties?(r.penalty_text||((r.home_penalties??"")+" - "+(r.away_penalties??""))):"";return `<div class="imcc-game"><div class="imcc-line"><span class="imcc-team">${esc(r.home_name||"-")}</span><strong class="imcc-score">${esc(sc)}</strong><span class="imcc-team aw">${esc(r.away_name||"-")}</span></div>${pen?`<div class="imcc-pen">${esc(pen)}</div>`:""}</div>`;}'
+          new='function gameMarkup(r,played){const sc=played?(r.home_score==null||r.away_score==null?"-":r.home_score+" - "+r.away_score):"VS",pen=played&&r.decided_on_penalties?(r.penalty_text||((r.home_penalties??"")+" - "+(r.away_penalties??""))):"";return `<div class="imcc-game"><div class="imcc-line"><span class="imcc-teamcell">${teamLogo(r.home_name,r.home_team_id)}<span class="imcc-team">${esc(r.home_name||"-")}</span></span><strong class="imcc-score">${esc(sc)}</strong><span class="imcc-teamcell aw">${teamLogo(r.away_name,r.away_team_id)}<span class="imcc-team aw">${esc(r.away_name||"-")}</span></span></div>${pen?`<div class="imcc-pen">${esc(pen)}</div>`:""}</div>`;}'
+          one(old,new,'game logos')
+
+          one('<strong>${esc(row.sm_competition_name||"Competition")}</strong>','<strong>${esc(viewName(row)||"Competition")}</strong>','detail title Nexus View')
+          one('<h1>${esc(row.sm_competition_name||row.competition_key)}</h1>','<h1>${esc(viewName(row))}</h1>','detail hero Nexus View')
+          one('<div class="imcc-dtabs"><button data-tab="results" class="${tab==="results"?"active":""}">RESULTS</button><button data-tab="schedule" class="${tab==="schedule"?"active":""}">SCHEDULE</button></div>',
+              '<div class="imcc-dtabs"><button data-tab="results" class="${tab==="results"?"active":""}">RESULTS</button><button type="button" class="imcc-pending" aria-disabled="true">TABLE</button><button data-tab="schedule" class="${tab==="schedule"?"active":""}">SCHEDULE</button><button type="button" class="imcc-pending" aria-disabled="true">TROPHY ROOM</button></div>',
+              'four detail tabs')
+
+          one('ui.rr=d.rr;ui.ss=d.ss;ui.cat="domestic";',
+              'ui.rr=d.rr;ui.ss=d.ss;ui.logoByWorldId=d.logoByWorldId||new Map();ui.logoByName=d.logoByName||new Map();ui.cat="domestic";',
+              'hydrate logo maps')
+
+          p.write_text(s,encoding='utf-8')
+          PY
+
+          node --check nexus/js/imc-competitions.js
+          git diff --check
+          grep -q '1.3.0-build55-nexus-view-logos' nexus/js/imc-competitions.js
+          grep -q 'TROPHY ROOM' nexus/js/imc-competitions.js
+          grep -q 'viewName(row)' nexus/js/imc-competitions.js
+
+      - name: Commit Competition UI
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nexus/js/imc-competitions.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Nexus: Competition Nexus View names and club logos"
+          git push
