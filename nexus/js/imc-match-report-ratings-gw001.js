@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-const VERSION="0.1.0-compact-ratings";
+const VERSION="0.1.1-ratings-minute-fix";
 const ROOT_ID="imcMatchReportGW001";
 const STYLE_ID="imcMatchReportGW001RatingsCss";
 const COMPETITION_KEY="GW001-LEAGUECUP";
@@ -56,17 +56,24 @@ function installCss(){
   document.head.appendChild(s);
 }
 
+function validMinute(value){
+  const n=Number(value);
+  return Number.isFinite(n)&&n>0&&n<=120?n:null;
+}
 function parseMinute(p,type){
   const raw=String(p?.metadata?.rawHtml||p?.sourceText||"");
-  if(type==="on"){
-    const m=raw.match(/subon[\s\S]*?\((\d+)\)/i)||(!p.isStarter?raw.match(/\((\d+)\)/):null);
-    return m?Number(m[1]):null;
-  }
-  const m=raw.match(/suboff[\s\S]*?\((\d+)\)/i);
-  return m?Number(m[1]):null;
+  const marker=type==="on"?"subon":"suboff";
+  const m=raw.match(new RegExp(marker+"[\\s\\S]*?\\((\\d+)\\)","i"));
+  return m?validMinute(m[1]):null;
 }
-function subOn(p){return p&&p.subOnMinute!=null?Number(p.subOnMinute):parseMinute(p,"on");}
-function subOff(p){return p&&p.subOffMinute!=null?Number(p.subOffMinute):parseMinute(p,"off");}
+function subOn(p){
+  const direct=validMinute(p&&p.subOnMinute);
+  return direct!=null?direct:parseMinute(p,"on");
+}
+function subOff(p){
+  const direct=validMinute(p&&p.subOffMinute);
+  return direct!=null?direct:parseMinute(p,"off");
+}
 function minutesPlayed(p){
   const on=subOn(p),off=subOff(p);
   if(p.isStarter)return off!=null?Math.max(0,Math.min(90,off)):90;
@@ -74,8 +81,14 @@ function minutesPlayed(p){
   return 0;
 }
 
-function ratingClass(v){const n=Number(v);return !Number.isFinite(n)?"empty":n>=7?"":n>=6?"mid":"low";}
-function ratingText(v){const n=Number(v);return Number.isFinite(n)?n.toFixed(1):"-";}
+function ratingClass(v){
+  const n=Number(v);
+  return !Number.isFinite(n)||n<=0?"empty":n>=7?"":n>=6?"mid":"low";
+}
+function ratingText(v){
+  const n=Number(v);
+  return Number.isFinite(n)&&n>0?n.toFixed(1):"—";
+}
 function initials(name){return clean(name).split(" ").filter(Boolean).slice(0,2).map(x=>x[0]||"").join("").toUpperCase()||"?";}
 
 function eventMarkup(p){
@@ -124,7 +137,8 @@ async function loadImages(players){
 function rowMarkup(p){
   const url=imageCache.get(String(p.smPlayerId||""))||"";
   const min=minutesPlayed(p);
-  return `<div class="imcmr-rating-row"><span class="imcmr-rating-num">${esc(p.lineupSlot||"")}</span><span class="imcmr-rating-player"><span class="imcmr-rating-avatar">${url?`<img src="${esc(url)}" alt="" loading="lazy">`:`<b>${esc(initials(p.playerName))}</b>`}</span><span class="imcmr-rating-name">${esc(p.playerName||"-")}</span></span><span class="imcmr-rating-min">${esc(min)}'</span><span class="imcmr-rating-pill ${ratingClass(p.rating)}">${esc(ratingText(p.rating))}</span><span class="imcmr-rating-events">${eventMarkup(p)}</span></div>`;
+  const minText=min>0?`${min}'`:"—";
+  return `<div class="imcmr-rating-row"><span class="imcmr-rating-num">${esc(p.lineupSlot||"")}</span><span class="imcmr-rating-player"><span class="imcmr-rating-avatar">${url?`<img src="${esc(url)}" alt="" loading="lazy">`:`<b>${esc(initials(p.playerName))}</b>`}</span><span class="imcmr-rating-name">${esc(p.playerName||"-")}</span></span><span class="imcmr-rating-min">${esc(minText)}</span><span class="imcmr-rating-pill ${ratingClass(p.rating)}">${esc(ratingText(p.rating))}</span><span class="imcmr-rating-events">${eventMarkup(p)}</span></div>`;
 }
 
 function sectionMarkup(players,side){
