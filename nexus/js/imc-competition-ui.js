@@ -1,10 +1,11 @@
 (function(){
 "use strict";
 
-const VERSION="1.1.0";
+const VERSION="1.2.0";
 const URL="https://toanuzojdkfjgucztpze.supabase.co";
 const KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
 const cache=new Map();
+const logoCache=new Map();
 let currentKey="";
 let timer=null;
 let rootObserver=null;
@@ -194,22 +195,11 @@ async function all(table,select){
 
 async function loadWorld(id){
   if(cache.has(id))return cache.get(id);
-  const [competitions,teams,metaResult]=await Promise.all([
+  const [competitions,metaResult]=await Promise.all([
     all(tbl(id,"_gw_competitions"),"*"),
-    all(tbl(id,"_gw_teams"),"sm_world_club_id,sm_club_id,club_name"),
     db.from("imc_game_worlds").select("game_world_id,imc_season").eq("game_world_id",id).maybeSingle()
   ]);
   if(metaResult.error)throw metaResult.error;
-
-  const ids=[...new Set(teams.map(t=>t.sm_club_id).filter(v=>v!=null).map(String))];
-  const masters=[];
-  for(let i=0;i<ids.length;i+=150){
-    const r=await db.from("sm_clubs_master")
-      .select("sm_club_id,club_name,alias,nexus_display_name,image_filename,image_url")
-      .in("sm_club_id",ids.slice(i,i+150));
-    if(r.error)throw r.error;
-    masters.push(...(r.data||[]));
-  }
 
   const names=new Map();
   const rowsByKey=new Map();
@@ -222,6 +212,28 @@ async function loadWorld(id){
     }
   });
 
+  const data={
+    names,
+    rowsByKey,
+    season:metaResult.data&&metaResult.data.imc_season!=null?metaResult.data.imc_season:null
+  };
+  cache.set(id,data);
+  return data;
+}
+
+async function loadLogos(id){
+  if(logoCache.has(id))return logoCache.get(id);
+  const teams=await all(tbl(id,"_gw_teams"),"sm_world_club_id,sm_club_id,club_name");
+  const ids=[...new Set(teams.map(t=>t.sm_club_id).filter(v=>v!=null).map(String))];
+  const masters=[];
+  for(let i=0;i<ids.length;i+=150){
+    const r=await db.from("sm_clubs_master")
+      .select("sm_club_id,club_name,alias,nexus_display_name,image_filename,image_url")
+      .in("sm_club_id",ids.slice(i,i+150));
+    if(r.error)throw r.error;
+    masters.push(...(r.data||[]));
+  }
+
   const masterById=new Map(masters.map(row=>[String(row.sm_club_id),row]));
   const logos=new Map();
   teams.forEach(team=>{
@@ -230,15 +242,8 @@ async function loadWorld(id){
     if(!url)return;
     [team.club_name,master.club_name,master.alias,master.nexus_display_name].filter(Boolean).forEach(name=>logos.set(norm(name),url));
   });
-
-  const data={
-    names,
-    logos,
-    rowsByKey,
-    season:metaResult.data&&metaResult.data.imc_season!=null?metaResult.data.imc_season:null
-  };
-  cache.set(id,data);
-  return data;
+  logoCache.set(id,logos);
+  return logos;
 }
 
 function initials(name){
@@ -337,12 +342,12 @@ function applyTabs(){
   }
 }
 
-function applyLogos(data){
+function applyLogos(logos){
   document.querySelectorAll("#imcCompetitionDetail .imcc-game .imcc-team").forEach(team=>{
     if(team.getAttribute("data-imc-logo-ready")==="1")return;
     const name=String(team.textContent||"").trim();
     if(!name)return;
-    const url=data.logos.get(norm(name))||"";
+    const url=logos.get(norm(name))||"";
     team.classList.add("imc-ui-team");
     team.setAttribute("data-imc-logo-ready","1");
     team.innerHTML=logoMarkup(name,url)+`<span class="imc-ui-team-name">${esc(name)}</span>`;
@@ -359,7 +364,12 @@ async function enhance(){
     decorateIndex(data);
     applyCompetitionNames(data);
     applyTabs();
-    applyLogos(data);
+    try{
+      const logos=await loadLogos(id);
+      if(world()===id)applyLogos(logos);
+    }catch(error){
+      console.error("IMC Competition logos",id,error);
+    }
   }catch(error){
     console.error("IMC Competition UI",id,error);
   }
@@ -406,5 +416,5 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 else attach();
 window.addEventListener("pageshow",scheduleEnhance);
 
-window.IMC_COMPETITION_UI={version:VERSION,refresh:enhance,clearCache:()=>cache.clear()};
+window.IMC_COMPETITION_UI={version:VERSION,refresh:enhance,clearCache:()=>{cache.clear();logoCache.clear();}};
 })();
