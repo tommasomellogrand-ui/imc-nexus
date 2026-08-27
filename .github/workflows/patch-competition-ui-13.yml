@@ -117,3 +117,5 @@ function teamLogo(name,id){
           git diff --cached --quiet && exit 0
           git commit -m "Nexus: Competition Nexus View names and club logos"
           git push
+
+# trigger 2
