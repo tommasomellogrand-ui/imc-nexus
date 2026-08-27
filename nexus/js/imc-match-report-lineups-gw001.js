@@ -1,14 +1,15 @@
 (function(){
 "use strict";
 
-const VERSION="0.2.0-editorial-lineups";
+const VERSION="0.3.0-starting-xi";
 const ROOT_ID="imcMatchReportGW001";
-const STYLE_ID="imcMatchReportGW001LineupsCss";
+const STYLE_ID="imcMatchReportGW001StartingXiCss";
 const URL="https://toanuzojdkfjgucztpze.supabase.co";
 const KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
 let timer=null;
 let reportIndexPromise=null;
 const imageCache=new Map();
+const featuredCache=new Map();
 let cfg=null;
 try{cfg=JSON.parse(localStorage.getItem("imc_nexus_config")||"null");}catch(_){}
 const db=window.__IMC_NEXUS_CLIENT__||(window.supabase?window.supabase.createClient(cfg&&cfg.url?cfg.url:URL,cfg&&cfg.key?cfg.key:KEY):null);
@@ -19,46 +20,49 @@ const norm=v=>clean(v).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCa
 const esc=v=>clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 const img=v=>{v=clean(v);return v.startsWith("//")?"https:"+v:v;};
 
-const POS={
-  1:[50,91],
-  2:[15,72],3:[38,72],4:[62,72],5:[85,72],
-  6:[38,52],7:[62,52],
-  8:[15,31],10:[50,31],11:[85,31],
-  9:[50,12]
-};
-
 function installCss(){
   if(document.getElementById(STYLE_ID))return;
   const style=document.createElement("style");
   style.id=STYLE_ID;
   style.textContent=`
 #${ROOT_ID} [data-imcmr-panel="lineups"]{padding-bottom:10px}
-#${ROOT_ID} .imcmr-editorial-switch{display:grid;grid-template-columns:1fr 1fr;margin:0 0 10px;border:1px solid #dfe5ee;border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 3px 12px rgba(18,39,73,.035)}
-#${ROOT_ID} .imcmr-editorial-switch button{height:42px;border:0;background:#fff;color:#63718a;font:800 9px/1 Inter,system-ui;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 9px}
-#${ROOT_ID} .imcmr-editorial-switch button.active{background:#173766;color:#fff}
-#${ROOT_ID} .imcmr-editorial-shell{padding:10px;border:1px solid #dce4ef;border-radius:19px;background:#fff;box-shadow:0 7px 22px rgba(18,39,73,.055)}
-#${ROOT_ID} .imcmr-editorial-board{position:relative;height:650px;overflow:hidden;border-radius:15px;border:1px solid #d7e1ed;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(248,250,253,.96)),repeating-linear-gradient(0deg,rgba(23,55,102,.015) 0,rgba(23,55,102,.015) 1px,transparent 1px,transparent 4px);box-shadow:inset 0 0 0 8px rgba(255,255,255,.72)}
-#${ROOT_ID} .imcmr-editorial-board:before{content:"";position:absolute;left:11%;right:11%;top:7%;bottom:7%;border:1.5px solid #c7d4e5;border-radius:3px;opacity:.85}
-#${ROOT_ID} .imcmr-editorial-board:after{content:"";position:absolute;left:50%;top:49%;width:105px;height:105px;border:1.5px solid #c7d4e5;border-radius:50%;transform:translate(-50%,-50%);opacity:.8}
-#${ROOT_ID} .imcmr-editorial-half{position:absolute;left:11%;right:11%;top:49%;height:1.5px;background:#c7d4e5;opacity:.8}
-#${ROOT_ID} .imcmr-editorial-box-top,#${ROOT_ID} .imcmr-editorial-box-bottom{position:absolute;left:31%;width:38%;height:13%;border:1.5px solid #c7d4e5;opacity:.8}
-#${ROOT_ID} .imcmr-editorial-box-top{top:7%;border-top:0}
-#${ROOT_ID} .imcmr-editorial-box-bottom{bottom:7%;border-bottom:0}
-#${ROOT_ID} .imcmr-editorial-formation{position:absolute;left:18px;top:15px;z-index:3;color:#173766;font:700 24px/1.05 "Marker Felt","Comic Sans MS",cursive;transform:rotate(-3deg)}
-#${ROOT_ID} .imcmr-editorial-formation:after{content:"";display:block;width:72px;height:3px;margin-top:5px;border-radius:4px;background:#173766;transform:rotate(-2deg);opacity:.8}
-#${ROOT_ID} .imcmr-scribble{position:absolute;z-index:1;color:#8eb0de;font:700 27px/1 "Marker Felt","Comic Sans MS",cursive;opacity:.38;pointer-events:none}
-#${ROOT_ID} .imcmr-s1{left:8%;top:18%;transform:rotate(-18deg)}#${ROOT_ID} .imcmr-s2{right:9%;top:22%;transform:rotate(14deg)}#${ROOT_ID} .imcmr-s3{left:12%;bottom:19%;transform:rotate(-12deg)}#${ROOT_ID} .imcmr-s4{right:12%;bottom:15%;transform:rotate(17deg)}#${ROOT_ID} .imcmr-s5{left:46%;top:43%;font-size:20px;transform:rotate(8deg)}
-#${ROOT_ID} .imcmr-editorial-player{position:absolute;left:var(--left);top:var(--top);z-index:4;width:82px;transform:translate(-50%,-50%);text-align:center}
-#${ROOT_ID} .imcmr-editorial-portrait{position:relative;width:68px;height:70px;margin:0 auto;border:2px solid #173766;border-radius:36px 36px 23px 23px;background:linear-gradient(180deg,#f7faff,#e9eef7);overflow:hidden;box-shadow:0 5px 14px rgba(16,42,93,.16)}
-#${ROOT_ID} .imcmr-editorial-portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom}
-#${ROOT_ID} .imcmr-editorial-fallback{display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#173766;font-size:18px;font-weight:900}
-#${ROOT_ID} .imcmr-editorial-number{position:absolute;right:-7px;top:-6px;display:flex;align-items:center;justify-content:center;width:25px;height:25px;border:3px solid #fff;border-radius:50%;background:#173766;color:#fff;font-size:9px;font-weight:900;box-shadow:0 2px 7px rgba(16,42,93,.18)}
-#${ROOT_ID} .imcmr-editorial-cap{position:absolute;left:-5px;top:-5px;display:flex;align-items:center;justify-content:center;width:20px;height:20px;border:2px solid #fff;border-radius:50%;background:#d1a129;color:#fff;font-size:7px;font-weight:900}
-#${ROOT_ID} .imcmr-editorial-name{position:relative;z-index:3;display:block;width:max-content;max-width:88px;margin:-5px auto 0;padding:5px 8px;border-radius:7px;background:#173766;color:#fff;font-size:8px;font-weight:900;line-height:1;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-shadow:0 3px 10px rgba(16,42,93,.18)}
-#${ROOT_ID} .imcmr-editorial-club{display:flex;align-items:center;justify-content:center;width:23px;height:23px;margin:-1px auto 0;border:2px solid #fff;border-radius:50%;background:#fff;box-shadow:0 2px 7px rgba(16,42,93,.13);overflow:hidden}
-#${ROOT_ID} .imcmr-editorial-club img{max-width:100%;max-height:100%;object-fit:contain}
-#${ROOT_ID} .imcmr-editorial-loading{display:flex;align-items:center;justify-content:center;height:240px;color:#6f7d91;font-size:9px;font-weight:800}
-@media(max-width:390px){#${ROOT_ID} .imcmr-editorial-board{height:605px}#${ROOT_ID} .imcmr-editorial-player{width:74px}#${ROOT_ID} .imcmr-editorial-portrait{width:61px;height:64px}#${ROOT_ID} .imcmr-editorial-name{max-width:78px;font-size:7px;padding:4px 6px}#${ROOT_ID} .imcmr-editorial-number{width:23px;height:23px;font-size:8px}}
+#${ROOT_ID} .imcmr-xi-switch{display:grid;grid-template-columns:1fr 1fr;margin:0 0 10px;border:1px solid #dfe5ee;border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 3px 12px rgba(18,39,73,.035)}
+#${ROOT_ID} .imcmr-xi-switch button{height:42px;border:0;background:#fff;color:#63718a;font:800 9px/1 Inter,system-ui;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 9px}
+#${ROOT_ID} .imcmr-xi-switch button.active{background:#173766;color:#fff}
+#${ROOT_ID} .imcmr-xi-card{overflow:hidden;border:1px solid #dfe5ed;border-radius:18px;background:linear-gradient(180deg,#fff,#fbfcfe);box-shadow:0 7px 22px rgba(18,39,73,.055)}
+#${ROOT_ID} .imcmr-xi-main{display:grid;grid-template-columns:44% 56%;min-height:520px}
+#${ROOT_ID} .imcmr-xi-feature{position:relative;overflow:hidden;min-width:0;background:linear-gradient(160deg,#f7f8fb 0%,#eef2f7 55%,#e4eaf2 100%)}
+#${ROOT_ID} .imcmr-xi-feature:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(23,55,102,.08),transparent 48%),repeating-linear-gradient(135deg,rgba(23,55,102,.025) 0,rgba(23,55,102,.025) 1px,transparent 1px,transparent 8px)}
+#${ROOT_ID} .imcmr-xi-feature img{position:absolute;left:50%;bottom:0;z-index:2;width:122%;height:88%;transform:translateX(-50%);object-fit:contain;object-position:center bottom}
+#${ROOT_ID} .imcmr-xi-feature-fallback{position:absolute;left:50%;top:50%;z-index:2;display:flex;align-items:center;justify-content:center;width:110px;height:110px;transform:translate(-50%,-50%);border-radius:50%;background:#173766;color:#fff;font-size:28px;font-weight:900}
+#${ROOT_ID} .imcmr-xi-feature-number{position:absolute;left:14px;top:18px;z-index:4;color:#c69a32;font-size:44px;font-weight:300;line-height:1}
+#${ROOT_ID} .imcmr-xi-feature-name{position:absolute;left:14px;right:14px;bottom:18px;z-index:4;padding-top:10px;border-top:1px solid rgba(23,55,102,.22);color:#173766;font-size:9px;font-weight:900;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#${ROOT_ID} .imcmr-xi-feature-team{position:absolute;left:14px;bottom:7px;z-index:4;color:#7a8799;font-size:6px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+#${ROOT_ID} .imcmr-xi-list{padding:18px 15px 15px;background:#fff}
+#${ROOT_ID} .imcmr-xi-title{margin:0 0 15px;color:#173766;font-size:29px;font-weight:900;line-height:.95;letter-spacing:-.045em;text-transform:uppercase}
+#${ROOT_ID} .imcmr-xi-title span{color:#c79b33}
+#${ROOT_ID} .imcmr-xi-row{display:grid;grid-template-columns:28px minmax(0,1fr) 18px;gap:7px;align-items:center;min-height:32px;border-top:1px solid #f0f2f5}
+#${ROOT_ID} .imcmr-xi-row:first-of-type{border-top:0}
+#${ROOT_ID} .imcmr-xi-num{color:#c79b33;font-size:12px;font-weight:900;text-align:right}
+#${ROOT_ID} .imcmr-xi-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#122744;font-size:10px;font-weight:850;text-transform:uppercase}
+#${ROOT_ID} .imcmr-xi-cap{display:flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:4px;background:#c79b33;color:#fff;font-size:7px;font-weight:900}
+#${ROOT_ID} .imcmr-xi-subs{padding:13px 14px 15px;border-top:1px solid #e4e9f0;background:#fafbfd}
+#${ROOT_ID} .imcmr-xi-subs-head{margin-bottom:10px;color:#173766;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}
+#${ROOT_ID} .imcmr-xi-subs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+#${ROOT_ID} .imcmr-xi-sub{display:grid;grid-template-columns:24px minmax(0,1fr);gap:6px;align-items:center;min-height:27px;border-top:1px solid #eef1f5}
+#${ROOT_ID} .imcmr-xi-sub:nth-child(-n+2){border-top:0}
+#${ROOT_ID} .imcmr-xi-sub b{color:#c79b33;font-size:8px;text-align:right}.imcmr-xi-sub span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#42516a;font-size:7.5px;font-weight:800;text-transform:uppercase}
+#${ROOT_ID} .imcmr-xi-loading{display:flex;align-items:center;justify-content:center;height:240px;color:#6f7d91;font-size:9px;font-weight:800}
+@media(max-width:390px){
+  #${ROOT_ID} .imcmr-xi-main{grid-template-columns:43% 57%;min-height:480px}
+  #${ROOT_ID} .imcmr-xi-list{padding:15px 11px 12px}
+  #${ROOT_ID} .imcmr-xi-title{font-size:25px;margin-bottom:12px}
+  #${ROOT_ID} .imcmr-xi-row{grid-template-columns:24px minmax(0,1fr) 16px;gap:5px;min-height:30px}
+  #${ROOT_ID} .imcmr-xi-num{font-size:10px}#${ROOT_ID} .imcmr-xi-name{font-size:8.5px}
+  #${ROOT_ID} .imcmr-xi-feature-number{font-size:38px;left:10px;top:15px}
+  #${ROOT_ID} .imcmr-xi-feature-name{left:10px;right:10px;font-size:8px}
+  #${ROOT_ID} .imcmr-xi-feature-team{left:10px;font-size:5.5px}
+}
 `;
   document.head.appendChild(style);
 }
@@ -83,9 +87,7 @@ function currentMatchKey(root){
 }
 
 function reportMatches(report,key){
-  const p=report?.source_payload||{};
-  const m=p.match||{};
-  const r=p.result||{};
+  const p=report?.source_payload||{},m=p.match||{},r=p.result||{};
   const score=(r.homeScore!=null&&r.awayScore!=null)?String(r.homeScore)+"-"+String(r.awayScore):String(m.homeScore)+"-"+String(m.awayScore);
   return norm(m.homeTeam||r.homeTeam||"")===key.home&&norm(m.awayTeam||r.awayTeam||"")===key.away&&clean(score)===key.score&&norm(r.sm_round_label||"")===key.round;
 }
@@ -99,68 +101,76 @@ async function playerImages(players){
     (r.data||[]).forEach(row=>imageCache.set(Number(row.player_id),img(row.image_url)));
     missing.forEach(id=>{if(!imageCache.has(id))imageCache.set(id,"");});
   }
-  return imageCache;
 }
 
 function initials(name){return clean(name).split(" ").filter(Boolean).slice(0,2).map(x=>x[0]||"").join("").toUpperCase()||"?";}
-function surname(name){const parts=clean(name).split(" ").filter(Boolean);return parts.length>1?parts.slice(1).join(" "):parts[0]||"-";}
-
-function cardMarkup(player,clubLogo){
-  const pos=POS[Number(player.lineupSlot)]||[50,50];
-  const image=imageCache.get(Number(player.smPlayerId))||"";
-  return `<div class="imcmr-editorial-player" style="--left:${pos[0]}%;--top:${pos[1]}%"><div class="imcmr-editorial-portrait">${image?`<img src="${esc(image)}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="imcmr-editorial-fallback" style="display:none">${esc(initials(player.playerName))}</span>`:`<span class="imcmr-editorial-fallback">${esc(initials(player.playerName))}</span>`}<span class="imcmr-editorial-number">${esc(player.lineupSlot)}</span>${player.isCaptain?'<span class="imcmr-editorial-cap">C</span>':''}</div><span class="imcmr-editorial-name">${esc(surname(player.playerName))}</span>${clubLogo?`<span class="imcmr-editorial-club"><img src="${esc(clubLogo)}" alt=""></span>`:""}</div>`;
-}
-
-function boardMarkup(players,formation,clubLogo){
-  const starters=players.filter(p=>p.isStarter).sort((a,b)=>Number(a.lineupSlot||99)-Number(b.lineupSlot||99));
-  return `<section class="imcmr-editorial-shell"><div class="imcmr-editorial-board"><span class="imcmr-editorial-half"></span><span class="imcmr-editorial-box-top"></span><span class="imcmr-editorial-box-bottom"></span><strong class="imcmr-editorial-formation">${esc(formation||"XI")}</strong><span class="imcmr-scribble imcmr-s1">↗</span><span class="imcmr-scribble imcmr-s2">↙</span><span class="imcmr-scribble imcmr-s3">⤴</span><span class="imcmr-scribble imcmr-s4">↖</span><span class="imcmr-scribble imcmr-s5">×</span>${starters.map(p=>cardMarkup(p,clubLogo)).join("")}</div></section>`;
-}
+function surname(name){const p=clean(name).split(" ").filter(Boolean);return p.length>1?p.slice(1).join(" "):p[0]||"-";}
 
 function teamData(payload,side){
-  const players=(Array.isArray(payload.players)?payload.players:[]).filter(p=>p.side===side);
-  const tactic=(Array.isArray(payload.tactics)?payload.tactics:[]).find(t=>t.side===side&&Number(t.minute)===0)||{};
   const match=payload.match||{};
-  return {name:side==="home"?clean(match.homeTeam||"Casa"):clean(match.awayTeam||"Ospite"),players,formation:clean(tactic.formation||"")};
+  const players=(Array.isArray(payload.players)?payload.players:[]).filter(p=>p.side===side).sort((a,b)=>Number(a.lineupSlot||99)-Number(b.lineupSlot||99));
+  return {name:side==="home"?clean(match.homeTeam||"Casa"):clean(match.awayTeam||"Ospite"),players};
 }
 
-async function renderLineups(root,report){
+function featuredPlayer(report,team,side){
+  const starters=team.players.filter(p=>p.isStarter);
+  if(!starters.length)return null;
+  const key=String(report.sm_fixture_id)+":"+side;
+  if(!featuredCache.has(key))featuredCache.set(key,starters[Math.floor(Math.random()*starters.length)]);
+  return featuredCache.get(key);
+}
+
+function featureMarkup(player,teamName){
+  if(!player)return '<div class="imcmr-xi-feature"><span class="imcmr-xi-feature-fallback">XI</span></div>';
+  const url=imageCache.get(Number(player.smPlayerId))||"";
+  return `<div class="imcmr-xi-feature">${url?`<img src="${esc(url)}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="imcmr-xi-feature-fallback" style="display:none">${esc(initials(player.playerName))}</span>`:`<span class="imcmr-xi-feature-fallback">${esc(initials(player.playerName))}</span>`}<span class="imcmr-xi-feature-number">${esc(player.lineupSlot)}</span><strong class="imcmr-xi-feature-name">${esc(player.playerName)}</strong><small class="imcmr-xi-feature-team">${esc(teamName)}</small></div>`;
+}
+
+function starterRows(players){
+  return players.filter(p=>p.isStarter).map(p=>`<div class="imcmr-xi-row"><span class="imcmr-xi-num">${esc(p.lineupSlot)}</span><span class="imcmr-xi-name">${esc(p.playerName)}</span>${p.isCaptain?'<span class="imcmr-xi-cap">C</span>':'<span></span>'}</div>`).join("");
+}
+
+function subRows(players){
+  const subs=players.filter(p=>!p.isStarter);
+  if(!subs.length)return '<div class="imcmr-xi-sub"><b>—</b><span>Nessun sostituto</span></div>';
+  return subs.map(p=>`<div class="imcmr-xi-sub"><b>${esc(p.lineupSlot)}</b><span>${esc(p.playerName)}</span></div>`).join("");
+}
+
+function teamMarkup(report,team,side){
+  const featured=featuredPlayer(report,team,side);
+  return `<section class="imcmr-xi-card"><div class="imcmr-xi-main">${featureMarkup(featured,team.name)}<div class="imcmr-xi-list"><h2 class="imcmr-xi-title">Starting <span>XI</span></h2>${starterRows(team.players)}</div></div><div class="imcmr-xi-subs"><div class="imcmr-xi-subs-head">Substitutes</div><div class="imcmr-xi-subs-grid">${subRows(team.players)}</div></div></section>`;
+}
+
+async function renderStartingXi(root,report){
   const panel=root.querySelector('[data-imcmr-panel="lineups"]');
   if(!panel)return;
   const payload=report.source_payload||{};
-  const home=teamData(payload,"home");
-  const away=teamData(payload,"away");
+  const home=teamData(payload,"home"),away=teamData(payload,"away");
   await playerImages(home.players.concat(away.players));
-  const heroLogos=root.querySelectorAll(".imcmr-hero .imcmr-side img");
-  const logos={home:heroLogos[0]?.getAttribute("src")||"",away:heroLogos[1]?.getAttribute("src")||""};
-  panel.dataset.editorialReady="1";
-  panel.innerHTML=`<div class="imcmr-editorial-switch"><button type="button" data-editorial-side="home" class="active">${esc(home.name)}</button><button type="button" data-editorial-side="away">${esc(away.name)}</button></div><div data-editorial-board>${boardMarkup(home.players,home.formation,logos.home)}</div>`;
-  panel.querySelectorAll("[data-editorial-side]").forEach(btn=>btn.addEventListener("click",()=>{
-    const side=btn.dataset.editorialSide;
-    panel.querySelectorAll("[data-editorial-side]").forEach(x=>x.classList.toggle("active",x===btn));
-    const team=side==="away"?away:home;
-    const logo=side==="away"?logos.away:logos.home;
-    const target=panel.querySelector("[data-editorial-board]");
-    if(target)target.innerHTML=boardMarkup(team.players,team.formation,logo);
+  const tab=root.querySelector('[data-imcmr-tab="lineups"]');
+  if(tab)tab.textContent="STARTING XI";
+  panel.dataset.startingXiReady="1";
+  panel.innerHTML=`<div class="imcmr-xi-switch"><button type="button" data-xi-side="home" class="active">${esc(home.name)}</button><button type="button" data-xi-side="away">${esc(away.name)}</button></div><div data-xi-body>${teamMarkup(report,home,"home")}</div>`;
+  panel.querySelectorAll("[data-xi-side]").forEach(btn=>btn.addEventListener("click",()=>{
+    const side=btn.dataset.xiSide;
+    panel.querySelectorAll("[data-xi-side]").forEach(x=>x.classList.toggle("active",x===btn));
+    const target=panel.querySelector("[data-xi-body]");
+    if(target)target.innerHTML=side==="away"?teamMarkup(report,away,"away"):teamMarkup(report,home,"home");
   }));
 }
 
 async function apply(){
-  const root=document.getElementById(ROOT_ID);
-  if(!root)return;
+  const root=document.getElementById(ROOT_ID);if(!root)return;
   installCss();
+  const tab=root.querySelector('[data-imcmr-tab="lineups"]');if(tab)tab.textContent="STARTING XI";
   const panel=root.querySelector('[data-imcmr-panel="lineups"]');
-  if(!panel||panel.dataset.editorialReady==="1")return;
-  panel.innerHTML='<div class="imcmr-editorial-loading">Caricamento formazione…</div>';
+  if(!panel||panel.dataset.startingXiReady==="1")return;
+  panel.innerHTML='<div class="imcmr-xi-loading">Caricamento Starting XI…</div>';
   try{
-    const reports=await loadReports();
-    const key=currentMatchKey(root);
-    const report=reports.find(r=>reportMatches(r,key));
-    if(!report){panel.innerHTML='<div class="imcmr-editorial-loading">Formazione non disponibile.</div>';return;}
-    await renderLineups(root,report);
-  }catch(error){
-    panel.innerHTML='<div class="imcmr-editorial-loading">Formazione non disponibile.</div>';
-    console.error("IMC GW001 editorial lineups",error);
-  }
+    const reports=await loadReports(),key=currentMatchKey(root),report=reports.find(r=>reportMatches(r,key));
+    if(!report){panel.innerHTML='<div class="imcmr-xi-loading">Starting XI non disponibile.</div>';return;}
+    await renderStartingXi(root,report);
+  }catch(error){panel.innerHTML='<div class="imcmr-xi-loading">Starting XI non disponibile.</div>';console.error("IMC GW001 Starting XI",error);}
 }
 
 function schedule(){clearTimeout(timer);timer=setTimeout(apply,40);}
@@ -168,5 +178,5 @@ new MutationObserver(schedule).observe(document.documentElement,{childList:true,
 document.addEventListener("click",event=>{if(event.target&&event.target.closest&&event.target.closest('[data-imcmr-tab="lineups"]'))schedule();},true);
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",schedule,{once:true});else schedule();
 window.addEventListener("pageshow",schedule);
-window.IMC_MATCH_REPORT_GW001_LINEUPS={version:VERSION,refresh:apply,clearCache:()=>{reportIndexPromise=null;imageCache.clear();}};
+window.IMC_MATCH_REPORT_GW001_LINEUPS={version:VERSION,refresh:apply,clearCache:()=>{reportIndexPromise=null;imageCache.clear();featuredCache.clear();}};
 })();
