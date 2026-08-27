@@ -4,9 +4,9 @@
 if(window.__IMC_GW001_COMPETITIONS_CLEAN__)return;
 window.__IMC_GW001_COMPETITIONS_CLEAN__=true;
 
-const VERSION="0.3.0-a1-compact-s3";
+const VERSION="0.4.0-mobile-standings-next-schedule";
 const WORLD="GW001";
-const STYLE_ID="imcGw001CompetitionsCleanCssV3";
+const STYLE_ID="imcGw001CompetitionsCleanCssV4";
 let ownClient=null;
 let observer=null;
 let renderTimer=null;
@@ -15,8 +15,7 @@ let activeCompetition=null;
 let activeTab="results";
 let activeCategory="all";
 let overviewCache=null;
-let worldTeamMap=null;
-const logoCache=new Map();
+let logoMapCache=null;
 
 function clean(value){return String(value==null?"":value).replace(/\s+/g," ").trim();}
 function norm(value){return clean(value).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();}
@@ -55,9 +54,9 @@ function installStyles(){
 .imc-clean-loading,.imc-clean-error{padding:24px 16px;border:1px solid #e1e6ee;border-radius:17px;background:#fff;color:#798498;text-align:center;font-size:10px;font-weight:850}.imc-clean-error{color:#9d3030}
 .imc-clean-detail{padding:3px 0 26px}.imc-clean-back{border:0;background:transparent;padding:4px 0;color:#2862cf;font:inherit;font-size:12px;font-weight:900}.imc-clean-detail-head{margin:11px 0 0}.imc-clean-detail-head h1{margin:0;color:#081c49;font-size:28px;line-height:1;font-weight:950;letter-spacing:-.03em}.imc-clean-detail-head p{margin:6px 0 0;color:#7c8799;font-size:9px;font-weight:800}
 .imc-clean-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:16px 0 14px;padding:4px;border:1px solid #e0e6ef;border-radius:15px;background:#f7f9fc}.imc-clean-tabs.is-two{grid-template-columns:repeat(2,minmax(0,1fr))}.imc-clean-tabs button{min-height:39px;border:0;border-radius:11px;background:transparent;color:#637089;font:inherit;font-size:8px;font-weight:950}.imc-clean-tabs button.is-active{background:#0a255d;color:#fff;box-shadow:0 4px 11px rgba(10,37,93,.14)}
-.imc-clean-content{min-width:0}.imc-matchday-stack{display:grid;gap:12px}.imc-matchday-box{overflow:hidden;border:1px solid #e0e6ef;border-radius:18px;background:#fff;box-shadow:0 7px 18px rgba(20,39,83,.055)}.imc-matchday-head{padding:10px 12px 9px;border-bottom:1px solid #edf1f5;text-align:center;background:#fbfcfe}.imc-matchday-head strong{display:block;color:#0a2155;font-size:10px;font-weight:950;letter-spacing:.04em;text-transform:uppercase}.imc-matchday-head span{display:block;margin-top:3px;color:#79869b;font-size:8px;font-weight:850;text-transform:uppercase}.imc-match-list{padding:0 10px}.imc-match-row{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr);gap:7px;align-items:center;min-height:58px;padding:8px 2px;border-top:1px solid #edf1f5}.imc-match-row:first-child{border-top:0}.imc-side{display:flex;align-items:center;gap:7px;min-width:0}.imc-side.away{justify-content:flex-end;text-align:right}.imc-team-logo{display:flex;align-items:center;justify-content:center;flex:0 0 31px;width:31px;height:31px;overflow:hidden;border-radius:9px;background:#f1f4f8;color:#50617e;font-size:8px;font-weight:950}.imc-team-logo img{max-width:100%;max-height:100%;object-fit:contain}.imc-team-name{min-width:0;color:#0b1b3f;font-size:9px;font-weight:900;line-height:1.15}.imc-score{display:flex;align-items:center;justify-content:center;min-height:34px;border-radius:12px;background:#eef4fc;color:#245aa5;font-size:14px;font-weight:950}.imc-score small{display:block;margin-left:2px;font-size:6px}.imc-time{display:flex;align-items:center;justify-content:center;min-height:30px;color:#0a2155;font-size:9px;font-weight:950}
-.imc-standings-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #e0e6ef;border-radius:17px;background:#fff;box-shadow:0 6px 16px rgba(20,39,83,.045)}.imc-standings{width:100%;min-width:510px;border-collapse:collapse}.imc-standings th{padding:9px 6px;border-bottom:1px solid #e8edf4;color:#7c8798;font-size:7px;font-weight:950;text-align:center;text-transform:uppercase}.imc-standings th:nth-child(2){text-align:left}.imc-standings td{padding:9px 6px;border-bottom:1px solid #edf1f5;color:#13264d;font-size:8px;font-weight:850;text-align:center}.imc-standings tr:last-child td{border-bottom:0}.imc-standings td:first-child{font-weight:950}.imc-standings-team{display:flex;align-items:center;gap:7px;min-width:150px;text-align:left}.imc-standings-team .imc-team-logo{width:26px;height:26px;flex-basis:26px;border-radius:8px}.imc-standings-team strong{font-size:8.5px;font-weight:950}.imc-standings-pts{font-size:10px!important;font-weight:950!important;color:#071d52!important}
-@media(max-width:390px){.imc-clean-head h1{font-size:29px}.imc-clean-filters{gap:4px}.imc-clean-filter{font-size:7px;padding-left:3px;padding-right:3px}.imc-clean-grid{gap:7px}.imc-clean-card{grid-template-columns:38px minmax(0,1fr) 13px;gap:7px;min-height:84px;padding:9px 8px;border-radius:15px}.imc-clean-icon{width:38px;height:38px;border-radius:12px}.imc-clean-icon svg{width:24px;height:24px}.imc-clean-copy strong{font-size:9px}.imc-clean-copy small{font-size:6.4px}.imc-clean-arrow{font-size:17px}.imc-clean-detail-head h1{font-size:25px}.imc-match-row{grid-template-columns:minmax(0,1fr) 50px minmax(0,1fr);gap:5px}.imc-side{gap:5px}.imc-team-logo{width:27px;height:27px;flex-basis:27px}.imc-team-name{font-size:8px}.imc-score{font-size:13px}.imc-time{font-size:8px}}
+.imc-clean-content{min-width:0}.imc-matchday-stack{display:grid;gap:12px}.imc-matchday-box{overflow:hidden;border:1px solid #e0e6ef;border-radius:18px;background:#fff;box-shadow:0 7px 18px rgba(20,39,83,.055)}.imc-matchday-head{padding:10px 12px 9px;border-bottom:1px solid #edf1f5;text-align:center;background:#fbfcfe}.imc-matchday-head strong{display:block;color:#0a2155;font-size:10px;font-weight:950;letter-spacing:.04em;text-transform:uppercase}.imc-matchday-head span{display:block;margin-top:3px;color:#79869b;font-size:8px;font-weight:850}.imc-match-list{padding:0 10px}.imc-match-row{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr);gap:7px;align-items:center;min-height:58px;padding:8px 2px;border-top:1px solid #edf1f5}.imc-match-row:first-child{border-top:0}.imc-side{display:flex;align-items:center;gap:7px;min-width:0}.imc-side.home{justify-content:flex-end;text-align:right}.imc-side.away{justify-content:flex-start;text-align:left}.imc-team-logo{display:flex;align-items:center;justify-content:center;flex:0 0 31px;width:31px;height:31px;overflow:hidden;border-radius:9px;background:#f1f4f8;color:#50617e;font-size:8px;font-weight:950}.imc-team-logo img{max-width:100%;max-height:100%;object-fit:contain}.imc-team-name{min-width:0;color:#0b1b3f;font-size:9px;font-weight:900;line-height:1.15;overflow-wrap:anywhere}.imc-score{display:flex;align-items:center;justify-content:center;min-height:34px;border-radius:12px;background:#eef4fc;color:#245aa5;font-size:14px;font-weight:950}.imc-time{display:flex;align-items:center;justify-content:center;min-height:30px;color:#0a2155;font-size:9px;font-weight:950}
+.imc-standings-card{overflow:hidden;border:1px solid #e0e6ef;border-radius:17px;background:#fff;box-shadow:0 6px 16px rgba(20,39,83,.045)}.imc-standings-head,.imc-standing-row{display:grid;grid-template-columns:24px minmax(0,1fr) 25px 25px 25px 25px 31px 34px;gap:2px;align-items:center}.imc-standings-head{padding:9px 7px;border-bottom:1px solid #e8edf4;color:#7c8798;font-size:6.4px;font-weight:950;text-align:center;text-transform:uppercase}.imc-standings-head span:nth-child(2){text-align:left}.imc-standing-row{min-height:48px;padding:7px;border-bottom:1px solid #edf1f5;color:#13264d;font-size:7.5px;font-weight:850;text-align:center}.imc-standing-row:last-child{border-bottom:0}.imc-standing-pos{font-size:9px;font-weight:950}.imc-standing-team{display:grid;grid-template-columns:24px minmax(0,1fr);gap:5px;align-items:center;min-width:0;text-align:left}.imc-standing-team .imc-team-logo{width:24px;height:24px;flex-basis:24px;border-radius:7px}.imc-standing-team strong{display:-webkit-box;min-width:0;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:#0b1b3f;font-size:7.5px;line-height:1.05;font-weight:950}.imc-standing-pts{display:flex;align-items:center;justify-content:center;min-height:27px;border-radius:9px;background:#0a255d;color:#fff;font-size:9px;font-weight:950}
+@media(max-width:390px){.imc-clean-head h1{font-size:29px}.imc-clean-filters{gap:4px}.imc-clean-filter{font-size:7px;padding-left:3px;padding-right:3px}.imc-clean-grid{gap:7px}.imc-clean-card{grid-template-columns:38px minmax(0,1fr) 13px;gap:7px;min-height:84px;padding:9px 8px;border-radius:15px}.imc-clean-icon{width:38px;height:38px;border-radius:12px}.imc-clean-icon svg{width:24px;height:24px}.imc-clean-copy strong{font-size:9px}.imc-clean-copy small{font-size:6.4px}.imc-clean-arrow{font-size:17px}.imc-clean-detail-head h1{font-size:25px}.imc-match-row{grid-template-columns:minmax(0,1fr) 50px minmax(0,1fr);gap:5px}.imc-side{gap:5px}.imc-team-logo{width:27px;height:27px;flex-basis:27px}.imc-team-name{font-size:8px}.imc-score{font-size:13px}.imc-time{font-size:8px}.imc-standings-head,.imc-standing-row{grid-template-columns:21px minmax(0,1fr) 23px 23px 23px 23px 28px 31px;gap:1px;padding-left:5px;padding-right:5px}.imc-standings-head{font-size:5.8px}.imc-standing-row{font-size:7px}.imc-standing-team{grid-template-columns:22px minmax(0,1fr);gap:4px}.imc-standing-team .imc-team-logo{width:22px;height:22px;flex-basis:22px}.imc-standing-team strong{font-size:6.8px}.imc-standing-pts{font-size:8px}}
 `;
   document.head.appendChild(style);
 }
@@ -114,97 +113,124 @@ function sectionIcon(key){return iconSvg(categoryMeta(key).icon);}
 function metricText(row,overview){
   const parts=[];const teams=Number(row&&row.IMC_league_teams_count);if(Number.isFinite(teams)&&teams>0)parts.push(teams+" teams");
   const results=overview.results.get(clean(row.competition_key))||0,schedule=overview.schedule.get(clean(row.competition_key))||0;
-  if(results)parts.push(results+" results");if(schedule)parts.push(schedule+" schedule");return parts.join(" · ")||clean(row.sm_action)||"Competition";
+  if(results)parts.push(results+" results");if(schedule)parts.push(schedule+" schedule");
+  return parts.join(" · ")||clean(row.sm_action)||"Competition";
 }
 
-function renderListLoading(){installStyles();const root=pageRoot();if(!root)return;root.innerHTML='<section class="imc-clean-competitions" data-imc-gw001-competitions-clean="1"><div class="imc-clean-head"><h1>Competitions</h1><p>GW001 · Road To History</p></div><div class="imc-clean-loading">Caricamento dati…</div></section>';}
+function renderListLoading(){
+  installStyles();const root=pageRoot();if(!root)return;
+  root.innerHTML='<section class="imc-clean-competitions" data-imc-gw001-competitions-clean="1"><div class="imc-clean-head"><h1>Competitions</h1><p>GW001 · Road To History</p></div><div class="imc-clean-loading">Caricamento dati…</div></section>';
+}
 function renderList(overview){
   installStyles();const root=pageRoot();if(!root)return;
   const rows=(overview.rows||[]).slice().sort(function(a,b){const ca=categoryKey(a),cb=categoryKey(b);return categoryOrder(ca)-categoryOrder(cb)||competitionRank(a)-competitionRank(b)||registryLabel(a).localeCompare(registryLabel(b),"it",{numeric:true});});
-  const categories=["domestic","international","nations","friendly"],filters=[{key:"all",label:"All"},{key:"domestic",label:"Domestic"},{key:"international",label:"International"},{key:"nations",label:"Nations"},{key:"friendly",label:"Friendly"}];
-  root.innerHTML='<section class="imc-clean-competitions" data-imc-gw001-competitions-clean="1"><div class="imc-clean-head"><h1>Competitions</h1><p>GW001 · Road To History</p></div><div class="imc-clean-filters">'+filters.map(function(f){return '<button type="button" class="imc-clean-filter '+(activeCategory===f.key?'is-active':'')+'" data-clean-filter="'+f.key+'">'+f.label+'</button>';}).join('')+'</div><div class="imc-clean-sections">'+categories.map(function(cat){const meta=categoryMeta(cat),items=rows.filter(function(row){return categoryKey(row)===cat;});return '<section class="imc-clean-section" data-clean-section="'+cat+'" '+(activeCategory!=="all"&&activeCategory!==cat?'hidden':'')+'><header class="imc-clean-section-head"><b>'+sectionIcon(cat)+'</b><strong>'+meta.label+'</strong><span>'+items.length+' competizioni</span></header><div class="imc-clean-grid">'+items.map(function(row){return '<button type="button" class="imc-clean-card" data-clean-competition-key="'+esc(row.competition_key)+'"><span class="imc-clean-icon">'+cardIcon(row)+'</span><span class="imc-clean-copy"><strong>'+esc(registryLabel(row))+'</strong><small>'+esc(metricText(row,overview))+'</small></span><span class="imc-clean-arrow">›</span></button>';}).join('')+'</div></section>';}).join('')+'</div></section>';
-  root.querySelectorAll('[data-clean-filter]').forEach(function(button){button.addEventListener('click',function(){activeCategory=button.getAttribute('data-clean-filter')||'all';renderList(overview);});});
-  root.querySelectorAll('[data-clean-competition-key]').forEach(function(button){button.addEventListener('click',function(){const key=button.getAttribute('data-clean-competition-key');const row=rows.find(function(item){return String(item.competition_key)===String(key);});if(row)openCompetition(row);});});
+  const categories=["domestic","international","nations","friendly"];
+  const filters=[{key:"all",label:"All"},{key:"domestic",label:"Domestic"},{key:"international",label:"International"},{key:"nations",label:"Nations"},{key:"friendly",label:"Friendly"}];
+  root.innerHTML='<section class="imc-clean-competitions" data-imc-gw001-competitions-clean="1">'+
+    '<div class="imc-clean-head"><h1>Competitions</h1><p>GW001 · Road To History</p></div>'+
+    '<div class="imc-clean-filters">'+filters.map(function(item){return '<button type="button" class="imc-clean-filter '+(activeCategory===item.key?'is-active':'')+'" data-clean-category="'+item.key+'">'+item.label+'</button>';}).join("")+'</div>'+
+    '<div class="imc-clean-sections">'+categories.map(function(category){
+      const items=rows.filter(function(row){return categoryKey(row)===category;});if(!items.length)return'';const meta=categoryMeta(category);
+      return '<section class="imc-clean-section" data-clean-section="'+category+'" '+(activeCategory!=="all"&&activeCategory!==category?'hidden':'')+'><div class="imc-clean-section-head"><b>'+sectionIcon(category)+'</b><strong>'+meta.label+'</strong><span>'+items.length+'</span></div><div class="imc-clean-grid">'+items.map(function(row){return '<button type="button" class="imc-clean-card" data-clean-competition-key="'+esc(row.competition_key)+'"><span class="imc-clean-icon">'+cardIcon(row)+'</span><span class="imc-clean-copy"><strong>'+esc(registryLabel(row))+'</strong><small>'+esc(metricText(row,overview))+'</small></span><span class="imc-clean-arrow">›</span></button>';}).join("")+'</div></section>';
+    }).join("")+'</div></section>';
+  root.querySelectorAll("[data-clean-category]").forEach(function(button){button.addEventListener("click",function(){activeCategory=button.getAttribute("data-clean-category")||"all";renderList(overview);});});
+  root.querySelectorAll("[data-clean-competition-key]").forEach(function(button){button.addEventListener("click",function(){const key=button.getAttribute("data-clean-competition-key");const row=rows.find(function(item){return String(item.competition_key)===String(key);});if(row)openCompetition(row);});});
 }
-async function showList(){if(currentWorld()!==WORLD)return;activeView="list";activeCompetition=null;activeTab="results";markCompetitionActive();renderListLoading();try{renderList(await loadOverview());}catch(error){const root=pageRoot();if(root)root.innerHTML='<section class="imc-clean-competitions" data-imc-gw001-competitions-clean="1"><div class="imc-clean-error">'+esc(error&&error.message||"Errore caricamento")+'</div></section>';}}
-
-async function loadResults(key){const client=db();const result=await client.from("gw001_results").select("raw_match_id,sm_fixture_id,source_page_date,home_name,away_name,home_score,away_score,home_penalties,away_penalties,decided_on_penalties,sm_round_label,competition_key").eq("competition_key",key).order("source_page_date",{ascending:true}).order("raw_match_id",{ascending:true}).range(0,999);if(result.error)throw result.error;return result.data||[];}
-async function loadSchedule(key){const client=db();const result=await client.from("gw001_schedule").select("schedule_id,sm_fixture_id,match_date,matchday_number,home_name,away_name,sm_round_label,competition_key").eq("competition_key",key).order("match_date",{ascending:true}).order("schedule_id",{ascending:true}).range(0,999);if(result.error)throw result.error;return result.data||[];}
-
-async function ensureWorldTeamMap(){
-  if(worldTeamMap)return worldTeamMap;
-  const client=db(),map=new Map();
-  if(!client){worldTeamMap=map;return map;}
-  const result=await client.from("gw_teams").select("sm_club_id,team_name,display_name").eq("game_world_id",WORLD).range(0,999);
-  if(result.error){worldTeamMap=map;return map;}
-  (result.data||[]).forEach(function(row){if(row.sm_club_id==null)return;[row.team_name,row.display_name].filter(Boolean).forEach(function(name){map.set(norm(name),String(row.sm_club_id));});});
-  worldTeamMap=map;return map;
+async function showList(){
+  if(currentWorld()!==WORLD)return;activeView="list";activeCompetition=null;activeTab="results";markCompetitionActive();renderListLoading();
+  try{renderList(await loadOverview());}catch(error){const root=pageRoot();if(root)root.innerHTML='<section class="imc-clean-competitions" data-imc-gw001-competitions-clean="1"><div class="imc-clean-error">'+esc(error&&error.message||"Caricamento non riuscito")+'</div></section>';}
 }
-async function loadLogos(names){
-  const unique=Array.from(new Set((names||[]).map(clean).filter(Boolean))),missing=unique.filter(function(name){return !logoCache.has(norm(name));});
-  if(!missing.length)return logoCache;
-  const client=db(),teamMap=await ensureWorldTeamMap(),ids=Array.from(new Set(missing.map(function(name){return teamMap.get(norm(name));}).filter(Boolean)));
-  missing.forEach(function(name){if(!teamMap.get(norm(name)))logoCache.set(norm(name),"");});
-  if(!client||!ids.length)return logoCache;
-  const result=await client.from("sm_clubs_master").select("sm_club_id,club_name,alias,image_url,image_filename").in("sm_club_id",ids);
-  if(result.error)return logoCache;
-  const byId=new Map();(result.data||[]).forEach(function(row){byId.set(String(row.sm_club_id),clean(row.image_url));});
-  missing.forEach(function(name){const id=teamMap.get(norm(name));logoCache.set(norm(name),id?(byId.get(String(id))||""):"");});
-  return logoCache;
+
+async function loadResults(key){
+  const client=db();const result=await client.from("gw001_results").select("raw_match_id,sm_fixture_id,source_page_date,home_name,away_name,home_score,away_score,home_penalties,away_penalties,decided_on_penalties,sm_round_label,competition_key").eq("competition_key",key).order("source_page_date",{ascending:true}).order("raw_match_id",{ascending:true}).range(0,999);
+  if(result.error)throw result.error;return result.data||[];
+}
+async function loadSchedule(key){
+  const client=db();const result=await client.from("gw001_schedule").select("schedule_id,sm_fixture_id,match_date,matchday_number,home_name,away_name,sm_round_label,competition_key").eq("competition_key",key).order("match_date",{ascending:true}).order("schedule_id",{ascending:true}).range(0,999);
+  if(result.error)throw result.error;return result.data||[];
+}
+async function loadLogoMap(){
+  if(logoMapCache)return logoMapCache;
+  const client=db();const map=new Map();
+  try{
+    const teamsResult=await client.from("gw001_gw_teams").select("sm_club_id,club_name").range(0,999);
+    if(teamsResult.error)throw teamsResult.error;
+    const teams=teamsResult.data||[],ids=[...new Set(teams.map(function(row){return row.sm_club_id;}).filter(function(v){return v!=null;}))];
+    const masters=[];
+    for(let i=0;i<ids.length;i+=100){const result=await client.from("sm_clubs_master").select("sm_club_id,club_name,alias,image_filename,image_url").in("sm_club_id",ids.slice(i,i+100));if(result.error)throw result.error;masters.push.apply(masters,result.data||[]);}
+    const byId=new Map(masters.map(function(row){return [String(row.sm_club_id),row];}));
+    teams.forEach(function(team){const master=byId.get(String(team.sm_club_id));if(!master)return;const url=clean(master.image_url);if(!url)return;[team.club_name,master.club_name,master.alias].filter(Boolean).forEach(function(name){map.set(norm(name),url);});});
+  }catch(error){console.error("GW001 competition logos",error);}
+  logoMapCache=map;return map;
 }
 function initials(name){return clean(name).split(/\s+/).filter(Boolean).slice(0,2).map(function(part){return part.charAt(0);}).join("").toUpperCase()||"?";}
-function logoMarkup(name){const url=logoCache.get(norm(name))||"";if(!url)return '<span>'+esc(initials(name))+'</span>';return '<img src="'+esc(url)+'" alt="" loading="lazy" onerror="this.remove()">';}
-function dateLabel(value){if(!value)return"";const d=new Date(String(value).slice(0,10)+"T12:00:00");if(Number.isNaN(d.getTime()))return clean(value);return new Intl.DateTimeFormat("it-IT",{day:"2-digit",month:"long",year:"numeric"}).format(d).toUpperCase();}
-function timeLabel(value){const raw=clean(value);const m=raw.match(/T(\d{2}:\d{2})/);return m?m[1]:"";}
-function groupResults(rows){
-  const dateOrder=Array.from(new Set((rows||[]).map(function(r){return clean(r.source_page_date);}).filter(Boolean))).sort();
-  const matchNo=new Map(dateOrder.map(function(date,index){return [date,index+1];})),groups=new Map();
-  (rows||[]).forEach(function(row){const date=clean(row.source_page_date)||"Senza data";if(!groups.has(date))groups.set(date,[]);groups.get(date).push(row);});
-  return Array.from(groups.entries()).map(function(entry){return {date:entry[0],match:matchNo.get(entry[0])||null,rows:entry[1]};}).sort(function(a,b){return String(b.date).localeCompare(String(a.date));});
+function teamLogo(name,logos){const url=logos.get(norm(name))||"";return url?'<span class="imc-team-logo"><img src="'+esc(url)+'" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent=\''+esc(initials(name))+'\'"></span>':'<span class="imc-team-logo">'+esc(initials(name))+'</span>';}
+function prettyDate(value){
+  const raw=clean(value);if(!raw)return"";const d=new Date(raw.slice(0,10)+"T12:00:00");if(Number.isNaN(d.getTime()))return raw;
+  const text=new Intl.DateTimeFormat("it-IT",{day:"numeric",month:"long",year:"numeric"}).format(d);return text.charAt(0).toUpperCase()+text.slice(1);
 }
-function groupSchedule(rows){
-  const groups=new Map();(rows||[]).forEach(function(row){const key=String(row.matchday_number==null?clean(row.match_date):row.matchday_number)+"|"+clean(row.match_date);if(!groups.has(key))groups.set(key,{date:clean(row.match_date),match:row.matchday_number==null?null:Number(row.matchday_number),rows:[]});groups.get(key).rows.push(row);});
-  const out=Array.from(groups.values()).sort(function(a,b){return String(a.date).localeCompare(String(b.date));});
-  let fallback=1;out.forEach(function(group){if(!Number.isFinite(group.match))group.match=fallback;fallback+=1;});return out;
+function playedRows(rows){return (rows||[]).filter(function(row){return row.home_score!=null&&row.away_score!=null;});}
+function chronologicalDates(rows,dateField){return [...new Set((rows||[]).map(function(row){return clean(row[dateField]);}).filter(Boolean))].sort();}
+function groupByDate(rows,dateField){
+  const map=new Map();(rows||[]).forEach(function(row){const date=clean(row[dateField]);if(!map.has(date))map.set(date,[]);map.get(date).push(row);});return map;
 }
-function scoreMarkup(row){if(row.home_score==null||row.away_score==null)return"-";const base=esc(row.home_score)+" - "+esc(row.away_score);if(row.decided_on_penalties&&row.home_penalties!=null&&row.away_penalties!=null)return base+'<small>('+esc(row.home_penalties)+'-'+esc(row.away_penalties)+')</small>';return base;}
-async function resultsMarkup(rows){
-  const names=[];(rows||[]).forEach(function(r){names.push(r.home_name,r.away_name);});await loadLogos(names);
-  const groups=groupResults(rows);if(!groups.length)return '<div class="imc-clean-loading">Nessun risultato presente.</div>';
-  return '<div class="imc-matchday-stack">'+groups.map(function(group){return '<section class="imc-matchday-box"><header class="imc-matchday-head"><strong>MATCH '+esc(group.match||"")+'</strong><span>'+esc(dateLabel(group.date))+'</span></header><div class="imc-match-list">'+group.rows.map(function(row){return '<div class="imc-match-row"><div class="imc-side"><span class="imc-team-logo">'+logoMarkup(row.home_name)+'</span><strong class="imc-team-name">'+esc(row.home_name||"")+'</strong></div><span class="imc-score">'+scoreMarkup(row)+'</span><div class="imc-side away"><strong class="imc-team-name">'+esc(row.away_name||"")+'</strong><span class="imc-team-logo">'+logoMarkup(row.away_name)+'</span></div></div>';}).join('')+'</div></section>';}).join('')+'</div>';
+function roundLabel(rows,fallback){const found=(rows||[]).map(function(row){return clean(row.sm_round_label);}).find(Boolean);return found||fallback;}
+function scoreMarkup(row){
+  if(row.home_score==null||row.away_score==null)return"-";
+  let value=esc(row.home_score)+" - "+esc(row.away_score);
+  if(row.decided_on_penalties&&row.home_penalties!=null&&row.away_penalties!=null)value+='<small> '+esc(row.home_penalties)+"-"+esc(row.away_penalties)+" r.</small>";
+  return value;
 }
-async function scheduleMarkup(rows){
-  const names=[];(rows||[]).forEach(function(r){names.push(r.home_name,r.away_name);});await loadLogos(names);
-  const groups=groupSchedule(rows);if(!groups.length)return '<div class="imc-clean-loading">Nessuna partita in schedule.</div>';
-  return '<div class="imc-matchday-stack">'+groups.map(function(group){return '<section class="imc-matchday-box"><header class="imc-matchday-head"><strong>MATCH '+esc(group.match||"")+'</strong><span>'+esc(dateLabel(group.date))+'</span></header><div class="imc-match-list">'+group.rows.map(function(row){const time=timeLabel(row.match_date);return '<div class="imc-match-row"><div class="imc-side"><span class="imc-team-logo">'+logoMarkup(row.home_name)+'</span><strong class="imc-team-name">'+esc(row.home_name||"")+'</strong></div><span class="imc-time">'+esc(time||"VS")+'</span><div class="imc-side away"><strong class="imc-team-name">'+esc(row.away_name||"")+'</strong><span class="imc-team-logo">'+logoMarkup(row.away_name)+'</span></div></div>';}).join('')+'</div></section>';}).join('')+'</div>';
+function matchRowMarkup(row,logos,played){
+  return '<div class="imc-match-row"><div class="imc-side home"><span class="imc-team-name">'+esc(row.home_name||"-")+'</span>'+teamLogo(row.home_name,logos)+'</div><div class="'+(played?'imc-score':'imc-time')+'">'+(played?scoreMarkup(row):'VS')+'</div><div class="imc-side away">'+teamLogo(row.away_name,logos)+'<span class="imc-team-name">'+esc(row.away_name||"-")+'</span></div></div>';
+}
+async function resultsMarkup(rows,isLeague){
+  const played=playedRows(rows);if(!played.length)return '<div class="imc-clean-loading">Nessun risultato presente.</div>';
+  const logos=await loadLogoMap(),dates=chronologicalDates(played,"source_page_date"),numberByDate=new Map(dates.map(function(date,index){return [date,index+1];})),groups=groupByDate(played,"source_page_date");
+  const ordered=dates.slice().reverse();
+  return '<div class="imc-matchday-stack">'+ordered.map(function(date){const games=groups.get(date)||[],fallback=isLeague?'MATCH '+numberByDate.get(date):'MATCH '+numberByDate.get(date),label=roundLabel(games,fallback);return '<section class="imc-matchday-box"><header class="imc-matchday-head"><strong>'+esc(label)+'</strong><span>'+esc(prettyDate(date))+'</span></header><div class="imc-match-list">'+games.map(function(row){return matchRowMarkup(row,logos,true);}).join("")+'</div></section>';}).join("")+'</div>';
 }
 function buildStandings(rows){
-  const fixtures=new Map();(rows||[]).forEach(function(row){if(row.home_score==null||row.away_score==null)return;const key=row.sm_fixture_id!=null?String(row.sm_fixture_id):[row.source_page_date,row.home_name,row.away_name].join("|");fixtures.set(key,row);});
+  const fixtures=new Map();playedRows(rows).forEach(function(row){const key=row.sm_fixture_id!=null?String(row.sm_fixture_id):[row.source_page_date,row.home_name,row.away_name].join("|");fixtures.set(key,row);});
   const table=new Map();function ensure(name){const key=norm(name);if(!table.has(key))table.set(key,{team_name:clean(name),played:0,won:0,drawn:0,lost:0,gf:0,ga:0,gd:0,points:0});return table.get(key);}
-  fixtures.forEach(function(row){const home=ensure(row.home_name),away=ensure(row.away_name),hs=Number(row.home_score),as=Number(row.away_score);home.played+=1;away.played+=1;home.gf+=hs;home.ga+=as;away.gf+=as;away.ga+=hs;if(hs>as){home.won+=1;away.lost+=1;home.points+=3;}else if(hs<as){away.won+=1;home.lost+=1;away.points+=3;}else{home.drawn+=1;away.drawn+=1;home.points+=1;away.points+=1;}});
-  return Array.from(table.values()).map(function(row){row.gd=row.gf-row.ga;return row;}).sort(function(a,b){return b.points-a.points||b.gd-a.gd||b.gf-a.gf||a.team_name.localeCompare(b.team_name,"it");});
+  fixtures.forEach(function(row){const home=ensure(row.home_name),away=ensure(row.away_name),hs=Number(row.home_score),as=Number(row.away_score);home.played++;away.played++;home.gf+=hs;home.ga+=as;away.gf+=as;away.ga+=hs;if(hs>as){home.won++;away.lost++;home.points+=3;}else if(hs<as){away.won++;home.lost++;away.points+=3;}else{home.drawn++;away.drawn++;home.points++;away.points++;}});
+  return [...table.values()].map(function(row){row.gd=row.gf-row.ga;return row;}).sort(function(a,b){return b.points-a.points||b.gd-a.gd||b.gf-a.gf||a.team_name.localeCompare(b.team_name,"it");});
 }
 async function standingsMarkup(rows){
-  const data=buildStandings(rows);await loadLogos(data.map(function(r){return r.team_name;}));if(!data.length)return '<div class="imc-clean-loading">Classifica non disponibile.</div>';
-  return '<div class="imc-standings-wrap"><table class="imc-standings"><thead><tr><th>POS</th><th>TEAM</th><th>PG</th><th>V</th><th>N</th><th>P</th><th>DR</th><th>PTS</th></tr></thead><tbody>'+data.map(function(row,index){return '<tr><td>'+(index+1)+'</td><td><div class="imc-standings-team"><span class="imc-team-logo">'+logoMarkup(row.team_name)+'</span><strong>'+esc(row.team_name)+'</strong></div></td><td>'+row.played+'</td><td>'+row.won+'</td><td>'+row.drawn+'</td><td>'+row.lost+'</td><td>'+(row.gd>0?'+':'')+row.gd+'</td><td class="imc-standings-pts">'+row.points+'</td></tr>';}).join('')+'</tbody></table></div>';
+  const table=buildStandings(rows);if(!table.length)return '<div class="imc-clean-loading">Classifica non disponibile.</div>';
+  const logos=await loadLogoMap();
+  return '<div class="imc-standings-card"><div class="imc-standings-head"><span>Pos</span><span>Club</span><span>PG</span><span>V</span><span>N</span><span>P</span><span>DR</span><span>PT</span></div>'+table.map(function(row,index){return '<div class="imc-standing-row"><span class="imc-standing-pos">'+(index+1)+'</span><span class="imc-standing-team">'+teamLogo(row.team_name,logos)+'<strong>'+esc(row.team_name)+'</strong></span><span>'+row.played+'</span><span>'+row.won+'</span><span>'+row.drawn+'</span><span>'+row.lost+'</span><span>'+esc(row.gd>0?'+'+row.gd:row.gd)+'</span><strong class="imc-standing-pts">'+row.points+'</strong></div>';}).join("")+'</div>';
+}
+async function scheduleMarkup(scheduleRows,resultRows,isLeague){
+  const played=playedRows(resultRows),playedFixtures=new Set(played.map(function(row){return row.sm_fixture_id!=null?String(row.sm_fixture_id):"";}).filter(Boolean));
+  const remaining=(scheduleRows||[]).filter(function(row){return !(row.sm_fixture_id!=null&&playedFixtures.has(String(row.sm_fixture_id)));});
+  if(!remaining.length)return '<div class="imc-clean-loading">Nessuna partita in schedule.</div>';
+  const logos=await loadLogoMap(),playedMatchdays=chronologicalDates(played,"source_page_date").length,dates=chronologicalDates(remaining,"match_date"),groups=groupByDate(remaining,"match_date");
+  return '<div class="imc-matchday-stack">'+dates.map(function(date,index){const games=groups.get(date)||[];const fallback='MATCH '+(playedMatchdays+index+1);const label=isLeague?fallback:roundLabel(games,fallback);return '<section class="imc-matchday-box"><header class="imc-matchday-head"><strong>'+esc(label)+'</strong><span>'+esc(prettyDate(date))+'</span></header><div class="imc-match-list">'+games.map(function(row){return matchRowMarkup(row,logos,false);}).join("")+'</div></section>';}).join("")+'</div>';
 }
 
-function detailShell(row,tab){
-  installStyles();const root=pageRoot();if(!root)return null;const isLeague=norm(row&&row.sm_action)==="league";
-  root.innerHTML='<section class="imc-clean-competitions imc-clean-detail" data-imc-gw001-competitions-clean="1"><button type="button" class="imc-clean-back" data-clean-back>‹ Competitions</button><header class="imc-clean-detail-head"><h1>'+esc(registryLabel(row))+'</h1><p>'+esc(row.IMC_competition_type||"")+' · '+esc(row.competition_key||"")+'</p></header><div class="imc-clean-tabs '+(isLeague?'':'is-two')+'"><button type="button" data-clean-tab="results" class="'+(tab==="results"?'is-active':'')+'">RESULTS</button>'+(isLeague?'<button type="button" data-clean-tab="standings" class="'+(tab==="standings"?'is-active':'')+'">STANDINGS</button>':'')+'<button type="button" data-clean-tab="schedule" class="'+(tab==="schedule"?'is-active':'')+'">SCHEDULE</button></div><div class="imc-clean-content" data-clean-content><div class="imc-clean-loading">Caricamento dati…</div></div></section>';
-  root.querySelector('[data-clean-back]').addEventListener('click',showList);root.querySelectorAll('[data-clean-tab]').forEach(function(button){button.addEventListener('click',function(){openTab(button.getAttribute('data-clean-tab'));});});return root.querySelector('[data-clean-content]');
+function detailShell(row){
+  installStyles();const root=pageRoot();if(!root)return null;const isLeague=norm(row.sm_action)==="league";
+  root.innerHTML='<section class="imc-clean-detail" data-imc-gw001-competitions-clean="1"><button type="button" class="imc-clean-back" data-clean-back>‹ Competitions</button><div class="imc-clean-detail-head"><h1>'+esc(registryLabel(row))+'</h1><p>'+esc(row.IMC_competition_type||"")+' · '+esc(row.competition_key||"")+'</p></div><div class="imc-clean-tabs '+(isLeague?'':'is-two')+'"><button type="button" data-clean-tab="results" class="'+(activeTab==="results"?'is-active':'')+'">RESULTS</button>'+(isLeague?'<button type="button" data-clean-tab="standings" class="'+(activeTab==="standings"?'is-active':'')+'">STANDINGS</button>':'')+'<button type="button" data-clean-tab="schedule" class="'+(activeTab==="schedule"?'is-active':'')+'">SCHEDULE</button></div><div class="imc-clean-content" data-clean-content><div class="imc-clean-loading">Caricamento dati…</div></div></section>';
+  root.querySelector("[data-clean-back]").addEventListener("click",showList);root.querySelectorAll("[data-clean-tab]").forEach(function(button){button.addEventListener("click",function(){openTab(button.getAttribute("data-clean-tab"));});});return root.querySelector("[data-clean-content]");
 }
 async function openCompetition(row){activeView="detail";activeCompetition=row;activeTab="results";markCompetitionActive();await openTab("results");}
-async function openTab(tab){if(!activeCompetition)return;activeTab=tab;const content=detailShell(activeCompetition,tab);if(!content)return;try{if(tab==="results")content.innerHTML=await resultsMarkup(await loadResults(activeCompetition.competition_key));else if(tab==="schedule")content.innerHTML=await scheduleMarkup(await loadSchedule(activeCompetition.competition_key));else if(tab==="standings")content.innerHTML=await standingsMarkup(await loadResults(activeCompetition.competition_key));}catch(error){content.innerHTML='<div class="imc-clean-error">'+esc(error&&error.message||"Caricamento non riuscito")+'</div>';}}
+async function openTab(tab){
+  if(!activeCompetition)return;activeTab=tab;const content=detailShell(activeCompetition);if(!content)return;const isLeague=norm(activeCompetition.sm_action)==="league";
+  try{
+    if(tab==="results")content.innerHTML=await resultsMarkup(await loadResults(activeCompetition.competition_key),isLeague);
+    else if(tab==="standings")content.innerHTML=await standingsMarkup(await loadResults(activeCompetition.competition_key));
+    else if(tab==="schedule"){const values=await Promise.all([loadSchedule(activeCompetition.competition_key),loadResults(activeCompetition.competition_key)]);content.innerHTML=await scheduleMarkup(values[0],values[1],isLeague);}
+  }catch(error){content.innerHTML='<div class="imc-clean-error">'+esc(error&&error.message||"Caricamento non riuscito")+'</div>';}
+}
 
-function scheduleRender(){clearTimeout(renderTimer);renderTimer=setTimeout(function(){if(currentWorld()!==WORLD)return;if(!competitionIsActive())return;if(activeView==="detail"&&activeCompetition){if(!isOurPage())openTab(activeTab);}else if(!isOurPage())showList();},30);}
+function scheduleRender(){clearTimeout(renderTimer);renderTimer=setTimeout(function(){if(currentWorld()!==WORLD||!competitionIsActive())return;if(activeView==="detail"&&activeCompetition){if(!isOurPage())openTab(activeTab);}else if(!isOurPage())showList();},35);}
 function start(){
   installStyles();
   if(!ownClient&&window.supabase){let cfg=null;try{cfg=JSON.parse(localStorage.getItem("imc_nexus_config")||"null");}catch(_){}const url=cfg&&cfg.url?cfg.url:"https://toanuzojdkfjgucztpze.supabase.co",key=cfg&&cfg.key?cfg.key:"sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";ownClient=window.supabase.createClient(url,key);}
   document.addEventListener("click",function(event){const button=event.target&&event.target.closest?event.target.closest('.nx-world-nav [data-world-section="competitions"]'):null;if(!button||currentWorld()!==WORLD)return;activeView="list";activeCompetition=null;activeTab="results";setTimeout(showList,0);},true);
-  const app=document.getElementById("app")||document.documentElement;observer=new MutationObserver(scheduleRender);observer.observe(app,{childList:true,subtree:true,attributes:true,attributeFilter:["class"]});scheduleRender();
+  const app=document.getElementById("app")||document.documentElement;observer=new MutationObserver(scheduleRender);observer.observe(app,{childList:true,subtree:true});scheduleRender();
 }
-
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
 window.IMC_GW001_COMPETITIONS_CLEAN={version:VERSION,showList:showList};
 })();
