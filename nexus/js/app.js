@@ -52,20 +52,12 @@
 
   function loadAfterCore(){
     appendScript("js/imc-results-scorers.js?v=1.0.0");
-    appendScript("js/imc-transfers.js?v=1.0.1");
-    appendScript("js/imc-player-codex-gw.js?v=1.0.2");
-    appendScript("js/imc-player-codex-menu.js?v=1.2.0");
     appendScript("js/imc-player-codex-global.js?v=1.0.0");
     appendScript("js/imc-player-codex-global-detail.js?v=1.1.0");
-    appendScript("js/imc-gw001-inline-sections.js?v=1.0.0");
-    appendScript("js/imc-competitions.js?v=1.3.0",function(){
-      appendScript("js/imc-competition-ui.js?v=1.2.1",function(){
-        appendScript("js/imc-gw001-standings.js?v=1.0.0");
-        appendScript("js/imc-match-report-gw001.js?v=0.1.0",function(){
-          appendScript("js/imc-match-report-lineups-gw001.js?v=0.5.0",function(){
-            appendScript("js/imc-match-report-ratings-gw001.js?v=0.1.1");
-          });
-        });
+    appendScript("js/imc-gw001-standings.js?v=1.0.1");
+    appendScript("js/imc-match-report-gw001.js?v=0.1.0",function(){
+      appendScript("js/imc-match-report-lineups-gw001.js?v=0.5.0",function(){
+        appendScript("js/imc-match-report-ratings-gw001.js?v=0.1.1");
       });
     });
   }
@@ -77,15 +69,9 @@
   if(document.readyState==="loading"){
     writeScript("js/app-core-55.js?v=55.0-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
-    writeScript("js/imc-transfers.js?v=1.0.1");
-    writeScript("js/imc-player-codex-gw.js?v=1.0.2");
-    writeScript("js/imc-player-codex-menu.js?v=1.2.0");
     writeScript("js/imc-player-codex-global.js?v=1.0.0");
     writeScript("js/imc-player-codex-global-detail.js?v=1.1.0");
-    writeScript("js/imc-gw001-inline-sections.js?v=1.0.0");
-    writeScript("js/imc-competitions.js?v=1.3.0");
-    writeScript("js/imc-competition-ui.js?v=1.2.1");
-    writeScript("js/imc-gw001-standings.js?v=1.0.0");
+    writeScript("js/imc-gw001-standings.js?v=1.0.1");
     writeScript("js/imc-match-report-gw001.js?v=0.1.0");
     writeScript("js/imc-match-report-lineups-gw001.js?v=0.5.0");
     writeScript("js/imc-match-report-ratings-gw001.js?v=0.1.1");
