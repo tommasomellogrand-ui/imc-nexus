@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-const VERSION="1.2.0";
+const VERSION="1.2.1-final-cards";
 const URL="https://toanuzojdkfjgucztpze.supabase.co";
 const KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
 const cache=new Map();
@@ -166,6 +166,98 @@ function installCss(){
 #imcCompetitionDetail .imc-ui-team-logo{display:flex;align-items:center;justify-content:center;flex:0 0 28px;width:28px;height:28px;border:1px solid #e1e6ed;border-radius:50%;overflow:hidden;background:#fff;color:#6f7d91;font-size:7px;font-weight:800}
 #imcCompetitionDetail .imc-ui-team-logo img{width:100%;height:100%;object-fit:contain}
 #imcCompetitionDetail .imc-ui-team-logo b{display:none;width:100%;height:100%;align-items:center;justify-content:center}
+
+#imcCompetitionDetail .imcc-round-card.is-results.imc-ui-final-card{
+  position:relative;
+  isolation:isolate;
+  border:2px solid #e3ad2f!important;
+  background:linear-gradient(180deg,#fff 0%,#fffdf7 100%)!important;
+  box-shadow:0 9px 24px rgba(174,126,22,.16),0 0 0 1px rgba(227,173,47,.06)!important;
+}
+#imcCompetitionDetail .imcc-round-card.is-results.imc-ui-final-card:before,
+#imcCompetitionDetail .imcc-round-card.is-results.imc-ui-final-card:after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+}
+#imcCompetitionDetail .imcc-round-card.is-results.imc-ui-final-card:before{
+  inset:0;
+  background:
+    radial-gradient(circle at 6% 18%,rgba(227,173,47,.30) 0 2px,transparent 2.6px),
+    radial-gradient(circle at 94% 22%,rgba(227,173,47,.24) 0 2px,transparent 2.6px),
+    radial-gradient(circle at 10% 82%,rgba(227,173,47,.20) 0 1.5px,transparent 2px),
+    radial-gradient(circle at 90% 78%,rgba(227,173,47,.26) 0 1.5px,transparent 2px),
+    radial-gradient(circle at 22% 10%,rgba(227,173,47,.15) 0 1px,transparent 1.7px),
+    radial-gradient(circle at 78% 88%,rgba(227,173,47,.16) 0 1px,transparent 1.7px);
+  opacity:.78;
+}
+#imcCompetitionDetail .imcc-round-card.is-results.imc-ui-final-card:after{
+  right:-34px;
+  bottom:-44px;
+  width:130px;
+  height:130px;
+  border:1px solid rgba(227,173,47,.15);
+  border-radius:50%;
+  box-shadow:0 0 0 18px rgba(227,173,47,.035),0 0 0 38px rgba(227,173,47,.018);
+}
+#imcCompetitionDetail .imc-ui-final-card .imcc-round-head,
+#imcCompetitionDetail .imc-ui-final-card .imcc-games{
+  position:relative;
+  z-index:1;
+}
+#imcCompetitionDetail .imc-ui-final-card .imcc-round-head{
+  min-height:54px;
+  padding-left:101px!important;
+  border-bottom:1px solid rgba(227,173,47,.28)!important;
+  background:linear-gradient(90deg,rgba(255,251,239,.96),#fff)!important;
+}
+#imcCompetitionDetail .imc-ui-final-card .imcc-cal{display:none!important}
+#imcCompetitionDetail .imc-ui-final-card .imcc-round-title strong{
+  color:#0b1833!important;
+  font-weight:850!important;
+}
+#imcCompetitionDetail .imc-ui-final-card .imcc-round-date{
+  color:#6b7483!important;
+  font-weight:750!important;
+}
+#imcCompetitionDetail .imc-ui-final-ribbon{
+  position:absolute;
+  z-index:2;
+  top:0;
+  bottom:0;
+  left:0;
+  width:88px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding-right:7px;
+  clip-path:polygon(0 0,100% 0,83% 100%,0 100%);
+  background:linear-gradient(135deg,#102a5d,#173b75);
+  color:#f0bd45;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+#imcCompetitionDetail .imc-ui-final-ribbon b{
+  font-size:13px;
+  line-height:1;
+}
+#imcCompetitionDetail .imc-ui-final-card .imcc-score{
+  color:#102a5d!important;
+  font-size:17px!important;
+  font-weight:900!important;
+}
+#imcCompetitionDetail .imc-ui-final-card .imcc-pen{
+  color:#9b7424!important;
+  font-weight:750!important;
+}
+#imcCompetitionDetail .imc-ui-final-card .imcc-game{
+  border-top-color:rgba(227,173,47,.20)!important;
+}
+
 @media(max-width:390px){
   #imcCompetitions .imcc-card{min-height:210px!important}
   #imcCompetitions .imc-ui-comp-main{min-height:167px;padding:12px 8px 8px}
@@ -176,6 +268,9 @@ function installCss(){
   #imcCompetitions .imc-ui-comp-main:after{right:13px}
   #imcCompetitionDetail .imc-ui-team-logo{width:25px;height:25px;flex-basis:25px}
   #imcCompetitionDetail .imcc-team.imc-ui-team{gap:5px}
+  #imcCompetitionDetail .imc-ui-final-card .imcc-round-head{padding-left:91px!important}
+  #imcCompetitionDetail .imc-ui-final-ribbon{width:79px;font-size:7px}
+  #imcCompetitionDetail .imc-ui-final-ribbon b{font-size:12px}
 }
 `;
   document.head.appendChild(style);
@@ -342,6 +437,26 @@ function applyTabs(){
   }
 }
 
+function isFinalLabel(value){
+  return /(^|\s)finale$/i.test(String(value||"").trim());
+}
+
+function applyFinalCards(){
+  document.querySelectorAll("#imcCompetitionDetail .imcc-round-card.is-results").forEach(card=>{
+    const title=card.querySelector(".imcc-round-title strong");
+    const label=String(title&&title.textContent||"").trim();
+    if(!isFinalLabel(label))return;
+    card.classList.add("imc-ui-final-card");
+    const head=card.querySelector(".imcc-round-head");
+    if(head&&!head.querySelector(".imc-ui-final-ribbon")){
+      const ribbon=document.createElement("span");
+      ribbon.className="imc-ui-final-ribbon";
+      ribbon.innerHTML='<b>♛</b><span>FINAL</span>';
+      head.appendChild(ribbon);
+    }
+  });
+}
+
 function applyLogos(logos){
   document.querySelectorAll("#imcCompetitionDetail .imcc-game .imcc-team").forEach(team=>{
     if(team.getAttribute("data-imc-logo-ready")==="1")return;
@@ -364,6 +479,7 @@ async function enhance(){
     decorateIndex(data);
     applyCompetitionNames(data);
     applyTabs();
+    applyFinalCards();
     try{
       const logos=await loadLogos(id);
       if(world()===id)applyLogos(logos);
