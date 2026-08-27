@@ -55,7 +55,7 @@
     appendScript("js/imc-transfers.js?v=1.0.1");
     appendScript("js/imc-player-codex-gw.js?v=1.0.2");
     appendScript("js/imc-player-codex-menu.js?v=1.2.0");
-    appendScript("js/imc-player-codex-global.js?v=1.0.0\");
+    appendScript("js/imc-player-codex-global.js?v=1.0.0");
     appendScript("js/imc-player-codex-global-detail.js?v=1.1.0");
     appendScript("js/imc-competitions.js?v=1.3.0",function(){
       appendScript("js/imc-competition-ui.js?v=1.2.1",function(){
