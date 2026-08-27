@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-const VERSION="1.0.0";
+const VERSION="1.1.0";
 const URL="https://toanuzojdkfjgucztpze.supabase.co";
 const KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
 const cache=new Map();
@@ -36,6 +36,127 @@ function installCss(){
   const style=document.createElement("style");
   style.id="imcCompetitionUiCss";
   style.textContent=`
+#imcCompetitions .imcc-card{
+  min-height:226px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:space-between!important;
+  align-items:stretch!important;
+  background:#fff!important;
+  border:1px solid #dce3ec!important;
+  border-radius:18px!important;
+  box-shadow:0 5px 16px rgba(18,39,73,.045)!important;
+  text-align:center!important;
+}
+#imcCompetitions .imc-ui-comp-main{
+  position:relative;
+  min-height:180px;
+  padding:14px 10px 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  overflow:hidden;
+}
+#imcCompetitions .imc-ui-comp-main:before,
+#imcCompetitions .imc-ui-comp-main:after{
+  content:"";
+  position:absolute;
+  top:35px;
+  width:50px;
+  height:88px;
+  opacity:.10;
+  border:3px solid #173766;
+  border-top-color:transparent;
+  border-bottom-color:transparent;
+  border-radius:50%;
+  pointer-events:none;
+}
+#imcCompetitions .imc-ui-comp-main:before{left:19px;transform:rotate(-16deg)}
+#imcCompetitions .imc-ui-comp-main:after{right:19px;transform:rotate(16deg)}
+#imcCompetitions .imc-ui-comp-art{
+  position:relative;
+  z-index:1;
+  width:112px;
+  height:112px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 4px;
+}
+#imcCompetitions .imc-ui-comp-art img{
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  filter:grayscale(1) saturate(.12) contrast(.90) brightness(1.08);
+  opacity:.88;
+}
+#imcCompetitions .imc-ui-comp-art .imc-ui-comp-fallback{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:86px;
+  height:86px;
+  border:2px solid #d4dce8;
+  border-radius:50%;
+  color:#7a8799;
+  font-size:42px;
+  background:linear-gradient(145deg,#fff,#f4f6f9);
+}
+#imcCompetitions .imc-ui-comp-name{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  margin-top:2px;
+  color:#2f80ed;
+  font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:18px;
+  line-height:1.05;
+  font-weight:800;
+  letter-spacing:-.025em;
+  text-align:center;
+  overflow-wrap:anywhere;
+}
+#imcCompetitions .imc-ui-comp-footer{
+  min-height:39px;
+  padding:8px 9px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);
+  align-items:center;
+  gap:6px;
+  border-top:1px solid #e7ebf1;
+  background:#fff;
+  color:#64738a;
+  font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:7.5px;
+  font-weight:700;
+}
+#imcCompetitions .imc-ui-comp-meta{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+#imcCompetitions .imc-ui-comp-meta b{
+  flex:0 0 auto;
+  color:#173766;
+  font-size:10px;
+  line-height:1;
+}
+#imcCompetitions .imc-ui-comp-meta span{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
 #imcCompetitionDetail .imcc-dtabs{grid-template-columns:repeat(4,minmax(0,1fr))!important}
 #imcCompetitionDetail .imcc-dtabs .imcc-extra-tab{font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 #imcCompetitionDetail .imcc-team.imc-ui-team{display:flex!important;align-items:center;gap:7px;min-width:0}
@@ -44,7 +165,17 @@ function installCss(){
 #imcCompetitionDetail .imc-ui-team-logo{display:flex;align-items:center;justify-content:center;flex:0 0 28px;width:28px;height:28px;border:1px solid #e1e6ed;border-radius:50%;overflow:hidden;background:#fff;color:#6f7d91;font-size:7px;font-weight:800}
 #imcCompetitionDetail .imc-ui-team-logo img{width:100%;height:100%;object-fit:contain}
 #imcCompetitionDetail .imc-ui-team-logo b{display:none;width:100%;height:100%;align-items:center;justify-content:center}
-@media(max-width:390px){#imcCompetitionDetail .imc-ui-team-logo{width:25px;height:25px;flex-basis:25px}#imcCompetitionDetail .imcc-team.imc-ui-team{gap:5px}}
+@media(max-width:390px){
+  #imcCompetitions .imcc-card{min-height:210px!important}
+  #imcCompetitions .imc-ui-comp-main{min-height:167px;padding:12px 8px 8px}
+  #imcCompetitions .imc-ui-comp-art{width:101px;height:101px}
+  #imcCompetitions .imc-ui-comp-name{font-size:16px}
+  #imcCompetitions .imc-ui-comp-main:before,#imcCompetitions .imc-ui-comp-main:after{width:44px;height:78px;top:34px}
+  #imcCompetitions .imc-ui-comp-main:before{left:13px}
+  #imcCompetitions .imc-ui-comp-main:after{right:13px}
+  #imcCompetitionDetail .imc-ui-team-logo{width:25px;height:25px;flex-basis:25px}
+  #imcCompetitionDetail .imcc-team.imc-ui-team{gap:5px}
+}
 `;
   document.head.appendChild(style);
 }
@@ -63,10 +194,12 @@ async function all(table,select){
 
 async function loadWorld(id){
   if(cache.has(id))return cache.get(id);
-  const [competitions,teams]=await Promise.all([
+  const [competitions,teams,metaResult]=await Promise.all([
     all(tbl(id,"_gw_competitions"),"*"),
-    all(tbl(id,"_gw_teams"),"sm_world_club_id,sm_club_id,club_name")
+    all(tbl(id,"_gw_teams"),"sm_world_club_id,sm_club_id,club_name"),
+    db.from("imc_game_worlds").select("game_world_id,imc_season").eq("game_world_id",id).maybeSingle()
   ]);
+  if(metaResult.error)throw metaResult.error;
 
   const ids=[...new Set(teams.map(t=>t.sm_club_id).filter(v=>v!=null).map(String))];
   const masters=[];
@@ -79,10 +212,14 @@ async function loadWorld(id){
   }
 
   const names=new Map();
+  const rowsByKey=new Map();
   competitions.forEach(row=>{
     const key=String(row.competition_key||"");
     const view=String(row["Nexus View"]||"").trim();
-    if(key&&view)names.set(key,view);
+    if(key){
+      rowsByKey.set(key,row);
+      if(view)names.set(key,view);
+    }
   });
 
   const masterById=new Map(masters.map(row=>[String(row.sm_club_id),row]));
@@ -94,7 +231,12 @@ async function loadWorld(id){
     [team.club_name,master.club_name,master.alias,master.nexus_display_name].filter(Boolean).forEach(name=>logos.set(norm(name),url));
   });
 
-  const data={names,logos};
+  const data={
+    names,
+    logos,
+    rowsByKey,
+    season:metaResult.data&&metaResult.data.imc_season!=null?metaResult.data.imc_season:null
+  };
   cache.set(id,data);
   return data;
 }
@@ -109,11 +251,56 @@ function logoMarkup(name,url){
   return `<span class="imc-ui-team-logo"><img src="${esc(url)}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><b>${esc(init)}</b></span>`;
 }
 
+function trophyPath(row){
+  const name=norm(row&&row["Nexus View"]);
+  if(name==="league div 1")return "assets/trophies/division-one.png";
+  if(name==="league div 2")return "assets/trophies/division-two.png";
+  if(name==="league div 3")return "assets/trophies/division-three.png";
+  if(name==="league div 4")return "assets/trophies/division-four.png";
+  if(name==="league div 5")return "assets/trophies/division-five.png";
+  if(name==="national cup")return "assets/trophies/national-cup.png";
+  if(name==="league cup")return "assets/trophies/league-cup.png";
+  if(name==="charity shield")return "assets/trophies/charity-shield.png";
+  if(name==="smfa champions")return "assets/trophies/imc-champions-v27.png";
+  if(name==="smfa shield")return "assets/trophies/imc-shield.png";
+  if(name==="smfa super cup")return "assets/trophies/imc-super-cup.png";
+  if(name==="world cup qualifier")return "assets/trophies/world-cup-qualifying.png";
+  if(name==="world cup")return "assets/trophies/world-cup.png";
+  return "";
+}
+
+function formatLabel(row){
+  const action=String(row&&row.sm_action||"").trim().toLowerCase();
+  if(action==="league")return "League";
+  if(action==="friendly")return "Friendly";
+  if(action==="charityshield"||action==="supercup")return "One-off";
+  if(action==="interqualifier")return "Qualifier";
+  if(action==="worldcup")return "Tournament";
+  return "Knockout";
+}
+
+function trophyMarkup(row){
+  const path=trophyPath(row);
+  if(!path)return `<span class="imc-ui-comp-fallback">♛</span>`;
+  return `<img src="${esc(path)}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="imc-ui-comp-fallback" style="display:none">♛</span>`;
+}
+
+function decorateIndex(data){
+  document.querySelectorAll("#imcCompetitions [data-key]").forEach(card=>{
+    const key=String(card.getAttribute("data-key")||"");
+    const row=data.rowsByKey.get(key);
+    if(!row)return;
+    const name=data.names.get(key)||String(row.sm_competition_name||key);
+    const season=data.season==null?"Season":"Season "+data.season;
+    card.innerHTML=`<span class="imc-ui-comp-main"><span class="imc-ui-comp-art">${trophyMarkup(row)}</span><strong class="imc-ui-comp-name">${esc(name)}</strong></span><span class="imc-ui-comp-footer"><span class="imc-ui-comp-meta"><b>▣</b><span>${esc(season)}</span></span><span class="imc-ui-comp-meta"><b>♜</b><span>${esc(formatLabel(row))}</span></span></span>`;
+  });
+}
+
 function applyCompetitionNames(data){
   document.querySelectorAll("#imcCompetitions [data-key]").forEach(card=>{
     const key=String(card.getAttribute("data-key")||"");
     const name=data.names.get(key);
-    const title=card.querySelector("strong");
+    const title=card.querySelector(".imc-ui-comp-name")||card.querySelector("strong");
     if(name&&title)title.textContent=name;
   });
 
@@ -169,6 +356,7 @@ async function enhance(){
   try{
     const data=await loadWorld(id);
     if(world()!==id)return;
+    decorateIndex(data);
     applyCompetitionNames(data);
     applyTabs();
     applyLogos(data);
