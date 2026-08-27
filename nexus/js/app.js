@@ -56,11 +56,8 @@
     appendScript("js/imc-player-codex-global-detail.js?v=1.1.0");
     appendScript("js/imc-gw001-transfer-inline.js?v=1.0.0");
     appendScript("js/imc-gw001-competitions-clean.js?v=0.4.0");
-    appendScript("js/imc-match-report-gw001.js?v=0.1.1",function(){
+    appendScript("js/imc-match-report-gw001.js?v=0.2.0",function(){
       appendScript("js/imc-gw001-results-match-reports.js?v=1.0.0");
-      appendScript("js/imc-match-report-lineups-gw001.js?v=0.5.0",function(){
-        appendScript("js/imc-match-report-ratings-gw001.js?v=0.1.1");
-      });
     });
   }
 
@@ -75,10 +72,8 @@
     writeScript("js/imc-player-codex-global-detail.js?v=1.1.0");
     writeScript("js/imc-gw001-transfer-inline.js?v=1.0.0");
     writeScript("js/imc-gw001-competitions-clean.js?v=0.4.0");
-    writeScript("js/imc-match-report-gw001.js?v=0.1.1");
+    writeScript("js/imc-match-report-gw001.js?v=0.2.0");
     writeScript("js/imc-gw001-results-match-reports.js?v=1.0.0");
-    writeScript("js/imc-match-report-lineups-gw001.js?v=0.5.0");
-    writeScript("js/imc-match-report-ratings-gw001.js?v=0.1.1");
     return;
   }
 
