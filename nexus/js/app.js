@@ -57,7 +57,7 @@
     appendScript("js/imc-player-codex-menu.js?v=1.2.0");
     appendScript("js/imc-player-codex-global.js?v=1.0.0");
     appendScript("js/imc-player-codex-global-detail.js?v=1.1.0");
-    appendScript("js/imc-competitions.js?v=1.2.1",function(){
+    appendScript("js/imc-competitions.js?v=1.3.0",function(){
       appendScript("js/imc-competition-ui.js?v=1.2.0");
     });
   }
@@ -74,7 +74,7 @@
     writeScript("js/imc-player-codex-menu.js?v=1.2.0");
     writeScript("js/imc-player-codex-global.js?v=1.0.0");
     writeScript("js/imc-player-codex-global-detail.js?v=1.1.0");
-    writeScript("js/imc-competitions.js?v=1.2.1");
+    writeScript("js/imc-competitions.js?v=1.3.0");
     writeScript("js/imc-competition-ui.js?v=1.2.0");
     return;
   }
