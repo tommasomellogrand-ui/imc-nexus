@@ -1,0 +1,1 @@
+(function(){var x=new XMLHttpRequest();x.open('GET','data.js?raw=1',false);x.send(null);if(x.status>=200&&x.status<300){(0,eval)(x.responseText);if(window.RTH14&&RTH14.T&&RTH14.T[85])RTH14.T[85][2]='tsv-1860.svg';}else{throw new Error('RTH Matchday data unavailable');}})();
