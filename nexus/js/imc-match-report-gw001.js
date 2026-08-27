@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-const VERSION="0.1.0-gw001-national-cup-pilot";
+const VERSION="0.1.1-gw001-results-link";
 const WORLD="GW001";
 const COMPETITION_KEY="GW001-LEAGUECUP";
 const ROOT_ID="imcMatchReportGW001";
@@ -320,6 +320,23 @@ async function openReport(game){
   try{const report=await loadReport(fixtureId);renderReport(report,logos);}catch(error){const root=document.getElementById(ROOT_ID);if(root)root.innerHTML=`<header class="imcmr-top"><button data-imcmr-back>‹</button><div class="imcmr-title"><small>${WORLD}</small><strong>National Cup</strong></div><span></span></header><div class="imcmr-loading">${esc(error&&error.message||"Errore Match Report")}</div>`;root?.querySelector("[data-imcmr-back]")?.addEventListener("click",()=>root.remove());console.error("IMC GW001 Match Report",error);}
 }
 
+async function openFixture(fixtureId,logos,title){
+  if(fixtureId==null)return;
+  openShell();
+  try{
+    const report=await loadReport(fixtureId);
+    renderReport(report,logos||{home:"",away:""});
+    const root=document.getElementById(ROOT_ID);
+    const heading=root?.querySelector(".imcmr-title strong");
+    if(heading&&clean(title))heading.textContent=clean(title);
+  }catch(error){
+    const root=document.getElementById(ROOT_ID);
+    if(root)root.innerHTML=`<header class="imcmr-top"><button data-imcmr-back>‹</button><div class="imcmr-title"><small>${WORLD}</small><strong>${esc(title||"Match Report")}</strong></div><span></span></header><div class="imcmr-loading">${esc(error&&error.message||"Errore Match Report")}</div>`;
+    root?.querySelector("[data-imcmr-back]")?.addEventListener("click",()=>root.remove());
+    console.error("IMC GW001 Match Report",error);
+  }
+}
+
 function scheduleDecorate(){clearTimeout(timer);timer=setTimeout(decorateResults,70);}
 
 document.addEventListener("click",event=>{
@@ -338,5 +355,5 @@ function attach(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attach,{once:true});else attach();
 window.addEventListener("pageshow",scheduleDecorate);
-window.IMC_MATCH_REPORT_GW001={version:VERSION,refresh:decorateResults,clearCache:()=>{indexPromise=null;reportCache.clear();}};
+window.IMC_MATCH_REPORT_GW001={version:VERSION,refresh:decorateResults,openFixture:openFixture,clearCache:()=>{indexPromise=null;reportCache.clear();}};
 })();
