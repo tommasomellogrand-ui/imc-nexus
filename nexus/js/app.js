@@ -56,7 +56,7 @@
     appendScript("js/imc-player-codex-global-detail.js?v=1.1.0");
     appendScript("js/imc-community-feed-fix.js?v=1.0.0");
     appendScript("js/imc-gw001-page-standard.js?v=1.0.0");
-    appendScript("js/imc-gw001-page-standard-size-fix.js?v=1.0.1");
+    appendScript("js/imc-gw001-page-standard-size-fix.js?v=1.0.2");
     appendScript("js/imc-gw001-transfer-inline.js?v=1.0.0");
     appendScript("js/imc-gw001-competitions-clean.js?v=0.4.0");
     appendScript("js/imc-gw001-competition-hero.js?v=1.0.0");
@@ -76,7 +76,7 @@
     writeScript("js/imc-player-codex-global-detail.js?v=1.1.0");
     writeScript("js/imc-community-feed-fix.js?v=1.0.0");
     writeScript("js/imc-gw001-page-standard.js?v=1.0.0");
-    writeScript("js/imc-gw001-page-standard-size-fix.js?v=1.0.1");
+    writeScript("js/imc-gw001-page-standard-size-fix.js?v=1.0.2");
     writeScript("js/imc-gw001-transfer-inline.js?v=1.0.0");
     writeScript("js/imc-gw001-competitions-clean.js?v=0.4.0");
     writeScript("js/imc-gw001-competition-hero.js?v=1.0.0");
