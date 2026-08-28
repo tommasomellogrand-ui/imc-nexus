@@ -3,7 +3,7 @@
 if(window.__IMC_GW001_PAGE_STANDARD_SIZE_FIX__)return;
 window.__IMC_GW001_PAGE_STANDARD_SIZE_FIX__=true;
 
-const VERSION="1.0.0";
+const VERSION="1.0.1";
 const STYLE_ID="imcGw001PageStandardSizeFixCss";
 
 function install(){
@@ -16,7 +16,7 @@ function install(){
   min-height:0!important;
   height:auto!important;
   aspect-ratio:800/203!important;
-  margin:6px 0 18px!important;
+  margin:8px 0 18px!important;
   border-radius:19px!important;
   grid-template-columns:minmax(88px,34%) 1px minmax(0,1fr)!important;
   box-sizing:border-box!important;
@@ -31,7 +31,7 @@ function install(){
 @media(max-width:390px){
   .imc-gw001-page-hero{
     aspect-ratio:800/203!important;
-    margin-top:4px!important;
+    margin-top:6px!important;
     margin-bottom:16px!important;
     border-radius:17px!important;
     grid-template-columns:minmax(82px,34%) 1px minmax(0,1fr)!important;
