@@ -1,12 +1,13 @@
 (function(){
 "use strict";
-if(window.__IMC_GW001_COMPETITION_MANAGER_LABELS__)return;
-window.__IMC_GW001_COMPETITION_MANAGER_LABELS__=true;
+if(window.__IMC_COMPETITION_MANAGER_LABELS_ALL_WORLDS__)return;
+window.__IMC_COMPETITION_MANAGER_LABELS_ALL_WORLDS__=true;
 
-const VERSION="1.0.0";
-const WORLD="GW001";
-const STYLE_ID="imcGw001CompetitionManagerLabelsCss";
-let client=null,observer=null,timer=null,mapPromise=null;
+const VERSION="1.1.0";
+const STYLE_ID="imcCompetitionManagerLabelsAllWorldsCss";
+const VALID_WORLDS=new Set(["GW001","GW002","GW003","GW004","GW005","GW006","GW007","GW008","GW009","GW010"]);
+let client=null,observer=null,timer=null;
+const mapPromises=new Map();
 
 function clean(v){return String(v==null?"":v).replace(/\s+/g," ").trim();}
 function norm(v){return clean(v).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();}
@@ -29,25 +30,25 @@ async function fetchIn(table,select,column,values){
 function installCss(){
   if(document.getElementById(STYLE_ID))return;
   const s=document.createElement("style");s.id=STYLE_ID;s.textContent=`
-.imc-comp-detail[data-imc-competitions-world="GW001"] .imc-team-copy-manager{display:flex;flex-direction:column;justify-content:center;min-width:0;max-width:100%}
-.imc-comp-detail[data-imc-competitions-world="GW001"] .imc-side.home .imc-team-copy-manager{align-items:flex-end;text-align:right}
-.imc-comp-detail[data-imc-competitions-world="GW001"] .imc-side.away .imc-team-copy-manager{align-items:flex-start;text-align:left}
-.imc-comp-detail[data-imc-competitions-world="GW001"] .imc-manager-name{display:block;max-width:100%;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#748096;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:8.8px;line-height:1.08;font-weight:800;letter-spacing:-.01em}
-@media(min-width:600px){.imc-comp-detail[data-imc-competitions-world="GW001"] .imc-manager-name{font-size:9.5px}}
+.imc-comp-detail[data-imc-competitions-world] .imc-team-copy-manager{display:flex;flex-direction:column;justify-content:center;min-width:0;max-width:100%}
+.imc-comp-detail[data-imc-competitions-world] .imc-side.home .imc-team-copy-manager{align-items:flex-end;text-align:right}
+.imc-comp-detail[data-imc-competitions-world] .imc-side.away .imc-team-copy-manager{align-items:flex-start;text-align:left}
+.imc-comp-detail[data-imc-competitions-world] .imc-manager-name{display:block;max-width:100%;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#748096;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:8.8px;line-height:1.08;font-weight:800;letter-spacing:-.01em}
+@media(min-width:600px){.imc-comp-detail[data-imc-competitions-world] .imc-manager-name{font-size:9.5px}}
 `;document.head.appendChild(s);
 }
-async function loadManagerMap(){
-  if(mapPromise)return mapPromise;
-  mapPromise=(async()=>{
+async function loadManagerMap(world){
+  if(mapPromises.has(world))return mapPromises.get(world);
+  const promise=(async()=>{
     const c=db();if(!c)throw new Error("Client Supabase non disponibile");
-    const aRes=await c.from("gw_manager_assignments").select("manager_id,team_id,start_date,end_date").eq("game_world_id",WORLD).eq("assignment_type","club");
+    const aRes=await c.from("gw_manager_assignments").select("manager_id,team_id,start_date,end_date").eq("game_world_id",world).eq("assignment_type","club");
     if(aRes.error)throw aRes.error;
     const today=todayLocal(),assignments=(aRes.data||[]).filter(a=>isActive(a,today));
     const teamIds=assignments.map(a=>a.team_id),managerIds=assignments.map(a=>a.manager_id);
     const [teams,managers,worldTeams]=await Promise.all([
-      fetchIn("gw_teams","team_id,sm_world_club_id,sm_club_id", "team_id",teamIds),
-      fetchIn("imc_managers","manager_id,full_name", "manager_id",managerIds),
-      (async()=>{const r=await c.from("gw001_gw_teams").select("sm_world_club_id,sm_club_id,club_name");if(r.error)throw r.error;return r.data||[];})()
+      fetchIn("gw_teams","team_id,sm_world_club_id,sm_club_id","team_id",teamIds),
+      fetchIn("imc_managers","manager_id,full_name","manager_id",managerIds),
+      (async()=>{const r=await c.from(`${world.toLowerCase()}_gw_teams`).select("sm_world_club_id,sm_club_id,club_name");if(r.error)throw r.error;return r.data||[];})()
     ]);
     const teamById=new Map(teams.map(t=>[String(t.team_id),t]));
     const managerById=new Map(managers.map(m=>[String(m.manager_id),clean(m.full_name)]));
@@ -61,7 +62,8 @@ async function loadManagerMap(){
     });
     return map;
   })();
-  try{return await mapPromise;}catch(e){mapPromise=null;throw e;}
+  mapPromises.set(world,promise);
+  try{return await promise;}catch(e){mapPromises.delete(world);throw e;}
 }
 function annotateSide(side,map){
   if(!side)return;
@@ -76,12 +78,13 @@ function annotateSide(side,map){
 }
 async function enhance(){
   installCss();
-  const root=document.querySelector('.imc-comp-detail[data-imc-competitions-world="GW001"]');if(!root)return;
+  const root=document.querySelector('.imc-comp-detail[data-imc-competitions-world]');if(!root)return;
+  const world=clean(root.getAttribute("data-imc-competitions-world")).toUpperCase();if(!VALID_WORLDS.has(world))return;
   const rows=[...root.querySelectorAll(".imc-match-row")];if(!rows.length)return;
-  try{const map=await loadManagerMap();rows.forEach(r=>{annotateSide(r.querySelector(".imc-side.home"),map);annotateSide(r.querySelector(".imc-side.away"),map);});}catch(e){console.warn("GW001 manager labels:",e&&e.message||e);}
+  try{const map=await loadManagerMap(world);rows.forEach(r=>{annotateSide(r.querySelector(".imc-side.home"),map);annotateSide(r.querySelector(".imc-side.away"),map);});}catch(e){console.warn("Competition manager labels:",e&&e.message||e);}
 }
 function schedule(){clearTimeout(timer);timer=setTimeout(enhance,45);}
 function start(){installCss();observer=new MutationObserver(schedule);observer.observe(document.documentElement,{childList:true,subtree:true});schedule();}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
-window.IMC_GW001_COMPETITION_MANAGER_LABELS={version:VERSION,refresh:enhance,clearCache:()=>{mapPromise=null;}};
+window.IMC_COMPETITION_MANAGER_LABELS_ALL_WORLDS={version:VERSION,refresh:enhance,clearCache:()=>{mapPromises.clear();}};
 })();
