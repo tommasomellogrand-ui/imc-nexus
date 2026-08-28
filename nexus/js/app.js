@@ -61,7 +61,7 @@
     appendScript("js/imc-nexus-client-bridge.js?v=1.0.0",function(){
       appendScript("js/imc-match-report-all-worlds.js?v=1.0.0");
       appendScript("js/imc-competitions-all-worlds.js?v=1.0.0");
-      appendScript("js/imc-gw007-competition-stats.js?v=1.0.0");
+      appendScript("js/imc-gw007-competition-stats.js?v=1.1.0");
     });
   }
 
@@ -81,7 +81,7 @@
     writeScript("js/imc-nexus-client-bridge.js?v=1.0.0");
     writeScript("js/imc-match-report-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competitions-all-worlds.js?v=1.0.0");
-    writeScript("js/imc-gw007-competition-stats.js?v=1.0.0");
+    writeScript("js/imc-gw007-competition-stats.js?v=1.1.0");
     return;
   }
 
