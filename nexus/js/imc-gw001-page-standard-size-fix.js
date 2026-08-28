@@ -3,7 +3,7 @@
 if(window.__IMC_GW001_PAGE_STANDARD_SIZE_FIX__)return;
 window.__IMC_GW001_PAGE_STANDARD_SIZE_FIX__=true;
 
-const VERSION="1.0.2";
+const VERSION="1.0.3";
 const STYLE_ID="imcGw001PageStandardSizeFixCss";
 
 function install(){
@@ -11,6 +11,7 @@ function install(){
   const style=document.createElement("style");
   style.id=STYLE_ID;
   style.textContent=`
+#pageRoot:has(> .imc-clean-competitions[data-imc-gw001-competitions-clean="1"]){padding-top:0!important}
 .imc-gw001-page-hero{
   width:100%!important;
   min-height:0!important;
