@@ -19,27 +19,32 @@ async function loadIdentity(user){
   if(!r.data)throw new Error("Account Nexus non associato a un manager IMC");
   return r.data;
 }
-function renderHeader(){
+function renderAccount(){
   el("userName").textContent=identity.username||"Nexus User";
   el("managerId").textContent=identity.manager_id||"";
-  el("buildLabel").textContent="BUILD "+BUILD;
+}
+function mountNavigation(){
+  if(!window.IMC_NAVIGATION)throw new Error("Modulo Navigation non disponibile");
+  window.IMC_NAVIGATION.mount({host:el("navigationHost"),current:"clubhouse"});
 }
 async function openClubHouse(){
   currentView="clubhouse";selectedWorld=null;
+  if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.setContext({current:"clubhouse",worldId:null,worldName:null});
   const host=el("moduleHost");host.hidden=false;el("worldArea").hidden=true;el("worldArea").innerHTML="";
   if(!window.IMC_CLUBHOUSE)throw new Error("Modulo Club House non disponibile");
   await window.IMC_CLUBHOUSE.mount({container:host,client:db,user:identity,managerId:identity.manager_id,username:identity.username});
 }
 function openWorld(worldId){
   currentView="game-world";selectedWorld=worldId;
+  const name=WORLDS[worldId]||worldId;
+  if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.setContext({current:"game-world",worldId,worldName:name});
   if(window.IMC_CLUBHOUSE)window.IMC_CLUBHOUSE.unmount();
   el("moduleHost").hidden=true;
   const area=el("worldArea");area.hidden=false;
-  const name=WORLDS[worldId]||worldId;
-  area.innerHTML=`<section class="world-home"><button id="backClubHouse" class="back">← CLUB HOUSE</button><div class="world-hero"><span>${esc(worldId)}</span><h2>${esc(name)}</h2><p>Nexus Build 1.0</p></div><div class="empty">Game World pronto per il prossimo modulo autonomo.</div></section>`;
+  area.innerHTML=`<section class="world-home"><div class="world-hero"><span>${esc(worldId)}</span><h2>${esc(name)}</h2><p>Nexus Build 1.0</p></div><div class="empty">Game World pronto per il prossimo modulo autonomo.</div></section>`;
 }
 async function enter(user){
-  identity=await loadIdentity(user);renderHeader();show("appView");await openClubHouse();
+  identity=await loadIdentity(user);renderAccount();show("appView");mountNavigation();await openClubHouse();
 }
 async function boot(){
   document.title="IMC Nexus · Build 1.0";
@@ -60,14 +65,18 @@ document.addEventListener("submit",async e=>{
   }catch(err){setStatus(err.message||"Accesso non riuscito",true)}
 });
 
-document.addEventListener("nexus:navigate",e=>{
+document.addEventListener("nexus:navigate",async e=>{
   const d=e.detail||{};
+  if(d.target==="clubhouse"){await openClubHouse();return;}
   if(d.target==="game-world"&&d.worldId)openWorld(String(d.worldId));
 });
 
 document.addEventListener("click",async e=>{
-  if(e.target.closest("#backClubHouse")){await openClubHouse();return;}
-  if(e.target.closest("#logout")){if(window.IMC_CLUBHOUSE)window.IMC_CLUBHOUSE.unmount();await db.auth.signOut();identity=null;selectedWorld=null;currentView="clubhouse";show("loginView");setStatus("")}
+  if(e.target.closest("#logout")){
+    if(window.IMC_CLUBHOUSE)window.IMC_CLUBHOUSE.unmount();
+    if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.unmount();
+    await db.auth.signOut();identity=null;selectedWorld=null;currentView="clubhouse";show("loginView");setStatus("");
+  }
 });
 
 boot().catch(e=>{show("loginView");setStatus(e.message||String(e),true)});
