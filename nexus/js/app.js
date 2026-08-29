@@ -85,7 +85,7 @@
     appendScript("js/imc-gw001-page-standard-size-fix.js?v=1.0.3");
     appendScript("js/imc-gw001-transfer-inline.js?v=1.0.0");
     appendScript("js/imc-nexus-client-bridge.js?v=1.0.0",function(){
-      appendScript("js/imc-trophy-room-all-worlds.js?v=2.0.0",loadFeatureModules);
+      appendScript("js/imc-trophy-room-all-worlds.js?v=2.1.0",loadFeatureModules);
     });
   }
 
@@ -103,7 +103,7 @@
     writeScript("js/imc-gw001-page-standard-size-fix.js?v=1.0.3");
     writeScript("js/imc-gw001-transfer-inline.js?v=1.0.0");
     writeScript("js/imc-nexus-client-bridge.js?v=1.0.0");
-    writeScript("js/imc-trophy-room-all-worlds.js?v=2.0.0");
+    writeScript("js/imc-trophy-room-all-worlds.js?v=2.1.0");
     writeScript("js/imc-match-report-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competitions-all-worlds.js?v=1.1.0");
     writeScript("js/imc-competition-iphone-typography-all-worlds.js?v=1.0.0");
