@@ -63,7 +63,7 @@ jobs:
           fi
 
           grep -Fq "<title>IMC Nexus · Build $BUILD</title>" nexus/index.html
-          grep -Fq "js/app.js?v=$BUILD.1" nexus/index.html
+          grep -Fq "js/app.js?v=$BUILD.3" nexus/index.html
           grep -Fq 'js/app-core-55.js?v=55.0-core' nexus/js/app.js
 
           echo "PREFLIGHT_BUILD=$BUILD"
@@ -297,10 +297,10 @@ jobs:
 
           test "$LOCAL_INDEX_SHA" = "$HTTP_INDEX_SHA"
           grep -Fq "<title>IMC Nexus · Build $BUILD</title>" /tmp/nexus-public-index.html
-          grep -Fq "js/app.js?v=$BUILD.1" /tmp/nexus-public-index.html
+          grep -Fq "js/app.js?v=$BUILD.3" /tmp/nexus-public-index.html
           grep -Fq '</html>' /tmp/nexus-public-index.html
 
-          APP_URL="$BASE_URL/js/app.js?v=$BUILD.1&deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          APP_URL="$BASE_URL/js/app.js?v=$BUILD.3&deploy_verify=${GITHUB_SHA}-$(date +%s)"
           curl -fsSL --connect-timeout 15 --max-time 30 \
             -H 'Cache-Control: no-cache, no-store, must-revalidate' \
             -H 'Pragma: no-cache' \
