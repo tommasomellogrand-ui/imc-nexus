@@ -33,11 +33,15 @@ jobs:
           test -s nexus/v1/modules/navigation/navigation.css
           test -s nexus/v1/modules/clubhouse/clubhouse.js
           test -s nexus/v1/modules/clubhouse/clubhouse.css
+          test -s nexus/v1/modules/game-world-shell/game-world-shell.js
+          test -s nexus/v1/modules/game-world-shell/game-world-shell.css
           grep -Fq 'v1/modules/navigation/navigation.js' nexus/index.html
           grep -Fq 'v1/modules/clubhouse/clubhouse.js' nexus/index.html
+          grep -Fq 'v1/modules/game-world-shell/game-world-shell.js' nexus/index.html
           node --check nexus/v1/app.js
           node --check nexus/v1/modules/navigation/navigation.js
           node --check nexus/v1/modules/clubhouse/clubhouse.js
+          node --check nexus/v1/modules/game-world-shell/game-world-shell.js
 
       - name: Validate Aruba secrets
         env:
@@ -70,7 +74,8 @@ jobs:
           files=[
             Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/assets/imc-logo.png'),
             Path('nexus/v1/modules/navigation/navigation.js'),Path('nexus/v1/modules/navigation/navigation.css'),
-            Path('nexus/v1/modules/clubhouse/clubhouse.js'),Path('nexus/v1/modules/clubhouse/clubhouse.css')
+            Path('nexus/v1/modules/clubhouse/clubhouse.js'),Path('nexus/v1/modules/clubhouse/clubhouse.css'),
+            Path('nexus/v1/modules/game-world-shell/game-world-shell.js'),Path('nexus/v1/modules/game-world-shell/game-world-shell.css')
           ]
           ctx=ssl.create_default_context(); ctx.check_hostname=False
           ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
@@ -102,14 +107,20 @@ jobs:
           curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/index.html?verify=$TOKEN" -o /tmp/index.html
           grep -Fq 'v1/modules/navigation/navigation.js' /tmp/index.html
           grep -Fq 'v1/modules/clubhouse/clubhouse.js' /tmp/index.html
+          grep -Fq 'v1/modules/game-world-shell/game-world-shell.js' /tmp/index.html
           curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/navigation/navigation.js?verify=$TOKEN" -o /tmp/navigation.js
           curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/navigation/navigation.css?verify=$TOKEN" -o /tmp/navigation.css
           curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/clubhouse/clubhouse.js?verify=$TOKEN" -o /tmp/clubhouse.js
           curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/clubhouse/clubhouse.css?verify=$TOKEN" -o /tmp/clubhouse.css
+          curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/game-world-shell/game-world-shell.js?verify=$TOKEN" -o /tmp/game-world-shell.js
+          curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/game-world-shell/game-world-shell.css?verify=$TOKEN" -o /tmp/game-world-shell.css
           grep -Fq 'window.IMC_NAVIGATION' /tmp/navigation.js
           grep -Fq 'window.IMC_CLUBHOUSE' /tmp/clubhouse.js
+          grep -Fq 'window.IMC_GAME_WORLD_SHELL' /tmp/game-world-shell.js
           node --check /tmp/navigation.js
           node --check /tmp/clubhouse.js
+          node --check /tmp/game-world-shell.js
           test -s /tmp/navigation.css
           test -s /tmp/clubhouse.css
+          test -s /tmp/game-world-shell.css
           echo 'NEXUS_MODULES_ONLINE=YES'
