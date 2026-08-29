@@ -3,7 +3,7 @@
 if(window.__IMC_COMPETITION_FILTERS_FINAL__)return;
 window.__IMC_COMPETITION_FILTERS_FINAL__=true;
 
-const VERSION="3.1.0";
+const VERSION="3.2.0";
 const MULTI_LEAGUE_WORLDS=new Set(["GW002","GW003","GW007","GW008"]);
 const registryCache=new Map();
 const state=new Map();
@@ -67,6 +67,10 @@ function button(parent,label,attr,value,active,click){
   b.addEventListener("click",click);
   parent.appendChild(b);
 }
+function setCardVisible(card,show){
+  if(show)card.style.removeProperty("display");
+  else card.style.setProperty("display","none","important");
+}
 function apply(el,world,rowByKey){
   const st=currentState(world),multi=isMultiLeague(world);
   el.querySelectorAll("[data-imc-final-country]").forEach(b=>b.classList.toggle("is-active",b.getAttribute("data-imc-final-country")===st.country));
@@ -78,7 +82,7 @@ function apply(el,world,rowByKey){
       const type=typeOf(row),country=countryOf(row);
       let show=!!row&&!!type&&type===st.type;
       if(show&&multi&&st.country!=="all"&&(type==="domestic-leagues"||type==="domestic-cups"))show=country===st.country;
-      card.style.display=show?"":"none";
+      setCardVisible(card,show);
       card.dataset.imcRegistryType=type||"";
       card.dataset.imcRegistryCountry=country;
       if(show)visible++;
