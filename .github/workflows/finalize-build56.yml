@@ -1,0 +1,60 @@
+name: Finalize Build 56
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/finalize-build56.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Finalize Build 56 runtime versions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          hub=Path('nexus/js/imc-team-hub-gw008.js')
+          s=hub.read_text(encoding='utf-8')
+          if s.count('const VERSION="2.0.0";') != 1:
+              raise SystemExit('Expected Team Hub version 2.0.0 exactly once')
+          hub.write_text(s.replace('const VERSION="2.0.0";','const VERSION="2.0.1";',1),encoding='utf-8')
+
+          app=Path('nexus/js/app.js')
+          s=app.read_text(encoding='utf-8')
+          if s.count('js/imc-team-hub-gw008.js?v=2.0.0') != 2:
+              raise SystemExit('Expected two Team Hub v2.0.0 loader refs')
+          app.write_text(s.replace('js/imc-team-hub-gw008.js?v=2.0.0','js/imc-team-hub-gw008.js?v=2.0.1'),encoding='utf-8')
+
+          index=Path('nexus/index.html')
+          s=index.read_text(encoding='utf-8')
+          if s.count('js/app.js?v=56.0') != 1:
+              raise SystemExit('Expected app.js?v=56.0 exactly once')
+          index.write_text(s.replace('js/app.js?v=56.0','js/app.js?v=56.1',1),encoding='utf-8')
+          PY
+
+          node --check nexus/js/app.js
+          node --check nexus/js/app-core-56.js
+          node --check nexus/js/imc-team-hub-gw008.js
+          grep -Fq 'const NEXUS_BUILD = "56";' nexus/js/app.js
+          grep -Fq 'js/app-core-56.js?v=56.0-core' nexus/js/app.js
+          grep -Fq 'js/imc-team-hub-gw008.js?v=2.0.1' nexus/js/app.js
+          ! grep -Fq 'imc-entities-current-manager-gw008.js' nexus/js/app.js
+          ! grep -Fq 'imc-entity-season-results-gw008.js' nexus/js/app.js
+          grep -Fq '<title>IMC Nexus · Build 56</title>' nexus/index.html
+          grep -Fq 'js/app.js?v=56.1' nexus/index.html
+          grep -Fq 'js/imc-world-features.js?v=1.5' nexus/index.html
+          grep -Fq 'clearTimeout(clubHouseTimer);' nexus/js/app.js
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nexus/js/imc-team-hub-gw008.js nexus/js/app.js nexus/index.html
+          git commit -m 'Nexus Build 56: finalize Team Hub runtime'
+          git push origin HEAD:main
