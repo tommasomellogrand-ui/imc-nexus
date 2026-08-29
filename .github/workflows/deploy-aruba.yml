@@ -50,26 +50,24 @@ jobs:
           set -euo pipefail
           test -s nexus/index.html
           test -s nexus/js/app.js
-          test -s nexus/js/app-core-55.js
+          test -s nexus/js/app-core-56.js
           grep -Fq '</html>' nexus/index.html
           node --check nexus/js/app.js
-          node --check nexus/js/app-core-55.js
-          ! grep -Fq 'gw_season_matchdays' nexus/js/app-core-55.js
+          node --check nexus/js/app-core-56.js
+          node --check nexus/js/imc-team-hub-gw008.js
+          ! grep -Fq 'gw_season_matchdays' nexus/js/app-core-56.js
 
           BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\([^"]*\)";.*/\1/p' nexus/js/app.js | head -n1)"
-          if [ -z "$BUILD" ]; then
-            echo 'Unable to resolve NEXUS_BUILD from app.js'
-            exit 1
-          fi
-
-          grep -Fq "<title>IMC Nexus · Build $BUILD</title>" nexus/index.html
-          grep -Fq "js/app.js?v=$BUILD.3" nexus/index.html
-          grep -Fq 'js/app-core-55.js?v=55.0-core' nexus/js/app.js
+          test "$BUILD" = "56"
+          grep -Fq '<title>IMC Nexus · Build 56</title>' nexus/index.html
+          grep -Fq 'js/app.js?v=56.0' nexus/index.html
+          grep -Fq 'js/app-core-56.js?v=56.0-core' nexus/js/app.js
+          grep -Fq 'js/imc-team-hub-gw008.js?v=2.0.0' nexus/js/app.js
 
           echo "PREFLIGHT_BUILD=$BUILD"
           echo "PREFLIGHT_INDEX_SIZE=$(wc -c < nexus/index.html)"
           echo "PREFLIGHT_APP_SIZE=$(wc -c < nexus/js/app.js)"
-          echo "PREFLIGHT_CORE55_SIZE=$(wc -c < nexus/js/app-core-55.js)"
+          echo "PREFLIGHT_CORE56_SIZE=$(wc -c < nexus/js/app-core-56.js)"
 
       - name: Deploy full Nexus snapshot
         if: ${{ github.event_name == 'workflow_dispatch' }}
@@ -84,14 +82,7 @@ jobs:
           HOST="${HOST#ftps://}"
           DOMAIN="${HOST#ftp.}"
           RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
-          if [[ "$RAW_REMOTE" == /www.* ]]; then
-            REMOTE="$RAW_REMOTE"
-          else
-            REMOTE="/www.$DOMAIN$RAW_REMOTE"
-          fi
-
-          test -d nexus
-
+          if [[ "$RAW_REMOTE" == /www.* ]]; then REMOTE="$RAW_REMOTE"; else REMOTE="/www.$DOMAIN$RAW_REMOTE"; fi
           lftp -c "
             set cmd:fail-exit yes;
             set ftp:ssl-force true;
@@ -108,7 +99,7 @@ jobs:
               --exclude-glob '*.key' \
               --exclude-glob 'index.html' \
               --exclude-glob 'js/app.js' \
-              --exclude-glob 'js/app-core-55.js' \
+              --exclude-glob 'js/app-core-56.js' \
               nexus \"$REMOTE\";
             bye;
           "
@@ -116,27 +107,20 @@ jobs:
       - name: Build minimal changed-file upload list
         if: ${{ github.event_name == 'push' }}
         id: changes
+        shell: bash
         run: |
           set -euo pipefail
           BEFORE="${{ github.event.before }}"
           AFTER="${{ github.sha }}"
-
           if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
             git ls-files nexus > /tmp/nexus-files.txt
           else
             git diff --diff-filter=AMCR --name-only "$BEFORE" "$AFTER" -- nexus/ > /tmp/nexus-files.txt
           fi
-
           grep -vE '(^|/)\.gitkeep$|(^|/)\.env($|\.)|\.pem$|\.key$|\.p12$|\.pfx$' /tmp/nexus-files.txt > /tmp/nexus-upload.txt || true
-
-          echo "Files selected for deployment:"
+          echo 'Files selected for deployment:'
           cat /tmp/nexus-upload.txt || true
-
-          if [ -s /tmp/nexus-upload.txt ]; then
-            echo "has_files=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "has_files=false" >> "$GITHUB_OUTPUT"
-          fi
+          if [ -s /tmp/nexus-upload.txt ]; then echo 'has_files=true' >> "$GITHUB_OUTPUT"; else echo 'has_files=false' >> "$GITHUB_OUTPUT"; fi
 
       - name: Deploy changed non-critical files with verified FTPS
         if: ${{ github.event_name == 'push' && steps.changes.outputs.has_files == 'true' }}
@@ -153,67 +137,41 @@ jobs:
           from pathlib import Path
           from ftplib import FTP_TLS, error_perm
 
-          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
-          user = os.environ['ARUBA_FTP_USERNAME']
-          password = os.environ['ARUBA_FTP_PASSWORD']
-          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
-          domain = host[4:] if host.startswith('ftp.') else host
-          remote_root = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-
-          changed = []
-          upload_list = Path('/tmp/nexus-upload.txt')
-          if upload_list.exists():
-              for line in upload_list.read_text(encoding='utf-8').splitlines():
-                  path = line.strip()
-                  if not path or path in ('nexus/index.html', 'nexus/js/app.js', 'nexus/js/app-core-55.js'):
-                      continue
-                  local = Path(path)
-                  if local.is_file():
-                      changed.append(local)
-
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host
+          remote_root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          skip={'nexus/index.html','nexus/js/app.js','nexus/js/app-core-56.js'}
+          changed=[]
+          p=Path('/tmp/nexus-upload.txt')
+          if p.exists():
+              for line in p.read_text(encoding='utf-8').splitlines():
+                  path=line.strip()
+                  if path and path not in skip and Path(path).is_file(): changed.append(Path(path))
           if not changed:
-              print('NO_NON_CRITICAL_FILES=YES')
-              raise SystemExit(0)
+              print('NO_NON_CRITICAL_FILES=YES'); raise SystemExit(0)
 
-          ctx = ssl.create_default_context()
-          ctx.check_hostname = False
-          ftp = FTP_TLS(context=ctx)
-          ftp.connect(host, 21, timeout=30)
-          ftp.login(user, password)
-          ftp.prot_p()
-
-          def ensure_dir(relative_dir):
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
+          def ensure_dir(rel):
               ftp.cwd(remote_root)
-              if not relative_dir:
-                  return
-              for part in relative_dir.split('/'):
-                  if not part:
-                      continue
-                  try:
-                      ftp.cwd(part)
+              if not rel:return
+              for part in rel.split('/'):
+                  if not part:continue
+                  try: ftp.cwd(part)
                   except error_perm:
-                      try:
-                          ftp.mkd(part)
+                      try: ftp.mkd(part)
                       except error_perm as exc:
-                          if not str(exc).startswith('550'):
-                              raise
+                          if not str(exc).startswith('550'): raise
                       ftp.cwd(part)
-
           for local in changed:
-              rel = local.as_posix().removeprefix('nexus/')
-              parent = str(Path(rel).parent).replace('\\','/')
-              if parent == '.':
-                  parent = ''
-              ensure_dir(parent)
-              data = local.read_bytes()
-              with local.open('rb') as fh:
-                  ftp.storbinary(f'STOR {local.name}', fh, blocksize=65536)
-              buf = io.BytesIO()
-              ftp.retrbinary(f'RETR {local.name}', buf.write, blocksize=65536)
-              if buf.getvalue() != data:
-                  raise SystemExit(f'FTPS read-back mismatch for {rel}')
+              rel=local.as_posix().removeprefix('nexus/'); parent=str(Path(rel).parent).replace('\\','/')
+              if parent=='.':parent=''
+              ensure_dir(parent); data=local.read_bytes()
+              with local.open('rb') as fh: ftp.storbinary(f'STOR {local.name}',fh,blocksize=65536)
+              buf=io.BytesIO(); ftp.retrbinary(f'RETR {local.name}',buf.write,blocksize=65536)
+              if buf.getvalue()!=data: raise SystemExit(f'FTPS read-back mismatch for {rel}')
               print(f'UPLOAD_MATCH=YES {rel} {len(data)} bytes')
-
           ftp.quit()
           PY
 
@@ -231,47 +189,25 @@ jobs:
           from pathlib import Path
           from ftplib import FTP_TLS
 
-          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
-          user = os.environ['ARUBA_FTP_USERNAME']
-          password = os.environ['ARUBA_FTP_PASSWORD']
-          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
-          domain = host[4:] if host.startswith('ftp.') else host
-          remote_root = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-
-          ctx = ssl.create_default_context()
-          ctx.check_hostname = False
-          ftp = FTP_TLS(context=ctx)
-          ftp.connect(host, 21, timeout=30)
-          ftp.login(user, password)
-          ftp.prot_p()
-
-          critical = [
-              (Path('nexus/js/app-core-55.js'), f'{remote_root}/js', 'app-core-55.js'),
-              (Path('nexus/js/app.js'), f'{remote_root}/js', 'app.js'),
-              (Path('nexus/index.html'), remote_root, 'index.html'),
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host
+          remote_root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
+          critical=[
+              (Path('nexus/js/app-core-56.js'),f'{remote_root}/js','app-core-56.js'),
+              (Path('nexus/js/app.js'),f'{remote_root}/js','app.js'),
+              (Path('nexus/index.html'),remote_root,'index.html'),
           ]
-
-          for local, remote_dir, remote_name in critical:
-              data = local.read_bytes()
-              ftp.cwd(remote_dir)
-              with local.open('rb') as fh:
-                  ftp.storbinary(f'STOR {remote_name}', fh, blocksize=65536)
-
-              remote_size = ftp.size(remote_name)
-              buf = io.BytesIO()
-              ftp.retrbinary(f'RETR {remote_name}', buf.write, blocksize=65536)
-              remote_bytes = buf.getvalue()
-
-              local_sha = hashlib.sha256(data).hexdigest()
-              remote_sha = hashlib.sha256(remote_bytes).hexdigest()
-              print(f'{remote_name}: LOCAL_SIZE={len(data)} REMOTE_SIZE={remote_size}')
-              print(f'{remote_name}: LOCAL_SHA256={local_sha}')
-              print(f'{remote_name}: REMOTE_SHA256={remote_sha}')
-
-              if remote_size != len(data) or remote_bytes != data:
-                  raise SystemExit(f'Critical FTPS read-back mismatch for {remote_name}')
+          for local,remote_dir,remote_name in critical:
+              data=local.read_bytes(); ftp.cwd(remote_dir)
+              with local.open('rb') as fh: ftp.storbinary(f'STOR {remote_name}',fh,blocksize=65536)
+              size=ftp.size(remote_name); buf=io.BytesIO(); ftp.retrbinary(f'RETR {remote_name}',buf.write,blocksize=65536); remote=buf.getvalue()
+              print(f'{remote_name}: LOCAL_SHA256={hashlib.sha256(data).hexdigest()}')
+              print(f'{remote_name}: REMOTE_SHA256={hashlib.sha256(remote).hexdigest()}')
+              if size!=len(data) or remote!=data: raise SystemExit(f'Critical FTPS read-back mismatch for {remote_name}')
               print(f'CRITICAL_MATCH=YES {remote_name}')
-
           ftp.quit()
           PY
 
@@ -279,73 +215,35 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-
-          BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\([^"]*\)";.*/\1/p' nexus/js/app.js | head -n1)"
           BASE_URL='https://www.italianmastersclub.it/nexus'
-          INDEX_URL="$BASE_URL/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          TOKEN="${GITHUB_SHA}-$(date +%s)"
+          INDEX_URL="$BASE_URL/index.html?deploy_verify=$TOKEN"
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$INDEX_URL" -o /tmp/nexus-public-index.html
+          test "$(sha256sum nexus/index.html | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-index.html | awk '{print $1}')"
+          grep -Fq '<title>IMC Nexus · Build 56</title>' /tmp/nexus-public-index.html
+          grep -Fq 'js/app.js?v=56.0' /tmp/nexus-public-index.html
 
-          curl -fsSL --connect-timeout 15 --max-time 30 \
-            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
-            -H 'Pragma: no-cache' \
-            "$INDEX_URL" -o /tmp/nexus-public-index.html
-
-          LOCAL_INDEX_SHA="$(sha256sum nexus/index.html | awk '{print $1}')"
-          HTTP_INDEX_SHA="$(sha256sum /tmp/nexus-public-index.html | awk '{print $1}')"
-          echo "PUBLIC_INDEX_SIZE=$(wc -c < /tmp/nexus-public-index.html)"
-          echo "LOCAL_INDEX_SHA256=$LOCAL_INDEX_SHA"
-          echo "PUBLIC_INDEX_SHA256=$HTTP_INDEX_SHA"
-
-          test "$LOCAL_INDEX_SHA" = "$HTTP_INDEX_SHA"
-          grep -Fq "<title>IMC Nexus · Build $BUILD</title>" /tmp/nexus-public-index.html
-          grep -Fq "js/app.js?v=$BUILD.3" /tmp/nexus-public-index.html
-          grep -Fq '</html>' /tmp/nexus-public-index.html
-
-          APP_URL="$BASE_URL/js/app.js?v=$BUILD.3&deploy_verify=${GITHUB_SHA}-$(date +%s)"
-          curl -fsSL --connect-timeout 15 --max-time 30 \
-            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
-            -H 'Pragma: no-cache' \
-            "$APP_URL" -o /tmp/nexus-public-app.js
-
-          LOCAL_APP_SHA="$(sha256sum nexus/js/app.js | awk '{print $1}')"
-          HTTP_APP_SHA="$(sha256sum /tmp/nexus-public-app.js | awk '{print $1}')"
-          echo "PUBLIC_APP_SIZE=$(wc -c < /tmp/nexus-public-app.js)"
-          echo "LOCAL_APP_SHA256=$LOCAL_APP_SHA"
-          echo "PUBLIC_APP_SHA256=$HTTP_APP_SHA"
-
-          test "$LOCAL_APP_SHA" = "$HTTP_APP_SHA"
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/js/app.js?v=56.0&deploy_verify=$TOKEN" -o /tmp/nexus-public-app.js
+          test "$(sha256sum nexus/js/app.js | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-app.js | awk '{print $1}')"
           node --check /tmp/nexus-public-app.js
+          grep -Fq 'js/app-core-56.js?v=56.0-core' /tmp/nexus-public-app.js
+          grep -Fq 'js/imc-team-hub-gw008.js?v=2.0.0' /tmp/nexus-public-app.js
 
-          CORE_URL="$BASE_URL/js/app-core-55.js?v=55.0-core&deploy_verify=${GITHUB_SHA}-$(date +%s)"
-          curl -fsSL --connect-timeout 15 --max-time 30 \
-            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
-            -H 'Pragma: no-cache' \
-            "$CORE_URL" -o /tmp/nexus-public-core55.js
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/js/app-core-56.js?v=56.0-core&deploy_verify=$TOKEN" -o /tmp/nexus-public-core56.js
+          test "$(sha256sum nexus/js/app-core-56.js | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-core56.js | awk '{print $1}')"
+          node --check /tmp/nexus-public-core56.js
 
-          LOCAL_CORE_SHA="$(sha256sum nexus/js/app-core-55.js | awk '{print $1}')"
-          HTTP_CORE_SHA="$(sha256sum /tmp/nexus-public-core55.js | awk '{print $1}')"
-          echo "LOCAL_CORE55_SHA256=$LOCAL_CORE_SHA"
-          echo "PUBLIC_CORE55_SHA256=$HTTP_CORE_SHA"
-          test "$LOCAL_CORE_SHA" = "$HTTP_CORE_SHA"
-          node --check /tmp/nexus-public-core55.js
-          ! grep -Fq 'gw_season_matchdays' /tmp/nexus-public-core55.js
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/js/imc-team-hub-gw008.js?v=2.0.0&deploy_verify=$TOKEN" -o /tmp/nexus-public-team-hub.js
+          test "$(sha256sum nexus/js/imc-team-hub-gw008.js | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-team-hub.js | awk '{print $1}')"
+          node --check /tmp/nexus-public-team-hub.js
 
           CHROME="$(command -v google-chrome || command -v google-chrome-stable || true)"
           if [ -n "$CHROME" ]; then
-            "$CHROME" --headless=new --no-sandbox --disable-gpu \
-              --virtual-time-budget=7000 --dump-dom "$INDEX_URL" \
-              > /tmp/nexus-public-dom.html 2>/tmp/nexus-chrome.log
+            "$CHROME" --headless=new --no-sandbox --disable-gpu --virtual-time-budget=7000 --dump-dom "$INDEX_URL" > /tmp/nexus-public-dom.html 2>/tmp/nexus-chrome.log
             grep -Fq 'id="loginForm"' /tmp/nexus-public-dom.html
             echo 'BROWSER_SMOKE=YES'
-          else
-            echo 'BROWSER_SMOKE=SKIPPED_NO_CHROME'
           fi
-
-          echo 'PUBLIC_INDEX_MATCH=YES'
-          echo 'PUBLIC_APP_MATCH=YES'
-          echo 'PUBLIC_CORE55_MATCH=YES'
-          echo "NEXUS_RELEASE_VERIFIED=BUILD_$BUILD"
+          echo 'NEXUS_RELEASE_VERIFIED=BUILD_56'
 
       - name: Deployment summary
-        run: |
-          BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\([^"]*\)";.*/\1/p' nexus/js/app.js | head -n1)"
-          echo "Nexus Build $BUILD deployed and verified on public production."
+        run: echo 'Nexus Build 56 deployed and verified on public production.'
