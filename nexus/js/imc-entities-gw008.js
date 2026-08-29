@@ -3,7 +3,7 @@
 if(window.__IMC_ENTITIES_GW008__)return;
 window.__IMC_ENTITIES_GW008__=true;
 
-const VERSION="1.0.0";
+const VERSION="1.0.1";
 const WORLD="GW008";
 const WORLD_NAME="Gold 1";
 const ROOT_FLAG="imc-entities-gw008";
@@ -29,13 +29,13 @@ function syncNav(){
   const clubs=navButton("clubs"),national=navButton("national");
   if(!clubs&&!national)return;
   const inWorld=currentWorld()===WORLD;
+  if(inWorld&&national&&national.classList.contains("active")&&clubs)clubs.classList.add("active");
   if(clubs){
     const span=clubs.querySelector("span");
     if(inWorld){if(span)span.textContent="ENTITIES";clubs.setAttribute("aria-label","Entities");}
     else{if(span&&span.textContent==="ENTITIES")span.textContent="CLUBS";clubs.removeAttribute("aria-label");}
   }
-  if(national){national.style.display=inWorld?"none":"";}
-  if(inWorld&&national&&national.classList.contains("active")&&clubs)clubs.classList.add("active");
+  if(inWorld&&national)national.remove();
 }
 
 function installStyles(){
