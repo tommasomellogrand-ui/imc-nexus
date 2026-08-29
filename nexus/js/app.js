@@ -1,13 +1,13 @@
 (function(){
   "use strict";
 
-  // Build 57 production runtime.
-  const NEXUS_BUILD = "57";
+  // Build 58 production runtime.
+  const NEXUS_BUILD = "58";
   window.__NEXUS_RUNTIME_BUILD__ = NEXUS_BUILD;
 
   function syncVisibleBuildLabel(){
     document.querySelectorAll(".nx-sport-title small,.nx-admin-head small").forEach(function(el){
-      if(/BUILD\s+56\b/.test(el.textContent||"")) el.textContent=(el.textContent||"").replace(/BUILD\s+56\b/g,"BUILD "+NEXUS_BUILD);
+      if(/BUILD\s+(?:56|57)\b/.test(el.textContent||"")) el.textContent=(el.textContent||"").replace(/BUILD\s+(?:56|57)\b/g,"BUILD "+NEXUS_BUILD);
     });
   }
 
@@ -87,11 +87,11 @@
   }
 
   function loadCoreAsync(){
-    appendScript("js/app-core-56.js?v=56.0-core",loadAfterCore);
+    appendScript("js/app-core-58.js?v=58.0-core",loadAfterCore);
   }
 
   if(document.readyState==="loading"){
-    writeScript("js/app-core-56.js?v=56.0-core");
+    writeScript("js/app-core-58.js?v=58.0-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-player-codex-global.js?v=1.0.0");
     writeScript("js/imc-player-codex-global-detail.js?v=1.1.0");
