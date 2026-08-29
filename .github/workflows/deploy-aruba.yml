@@ -19,8 +19,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          FILES="nexus/index.html nexus/v1/app.js nexus/v1/modules/navigation/navigation.js nexus/v1/modules/navigation/navigation.css nexus/v1/modules/clubhouse/clubhouse.js nexus/v1/modules/clubhouse/clubhouse.css nexus/v1/modules/game-world-shell/game-world-shell.js nexus/v1/modules/game-world-shell/game-world-shell.css nexus/v1/modules/team-hub/team-hub.js nexus/v1/modules/team-hub/team-hub.css nexus/v1/modules/managers/managers.js nexus/v1/modules/managers/managers.css nexus/v1/modules/competitions/competitions.js nexus/v1/modules/competitions/competitions.css nexus/v1/modules/trophy-room/trophy-room.js nexus/v1/modules/trophy-room/trophy-room.css nexus/v1/modules/results/results.js nexus/v1/modules/results/results.css nexus/v1/modules/match-report/match-report.js nexus/v1/modules/match-report/match-report.css nexus/v1/modules/manager-detail/manager-detail.js nexus/v1/modules/manager-detail/manager-detail.css nexus/v1/modules/competition-detail/competition-detail.js nexus/v1/modules/competition-detail/competition-detail.css"
-          for f in $FILES; do test -s "$f"; done
+          for f in nexus/index.html nexus/v1/app.js nexus/v1/modules/*/*.js nexus/v1/modules/*/*.css; do test -s "$f"; done
           for f in nexus/v1/app.js nexus/v1/modules/*/*.js; do node --check "$f"; done
       - name: Validate Aruba secrets
         env:
@@ -44,8 +43,7 @@ jobs:
           from pathlib import Path
           from ftplib import FTP_TLS,error_perm
           host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://',''); user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']; raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host; root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-          rels=['index.html','v1/app.js','assets/imc-logo.png','v1/modules/navigation/navigation.js','v1/modules/navigation/navigation.css','v1/modules/clubhouse/clubhouse.js','v1/modules/clubhouse/clubhouse.css','v1/modules/game-world-shell/game-world-shell.js','v1/modules/game-world-shell/game-world-shell.css','v1/modules/team-hub/team-hub.js','v1/modules/team-hub/team-hub.css','v1/modules/managers/managers.js','v1/modules/managers/managers.css','v1/modules/competitions/competitions.js','v1/modules/competitions/competitions.css','v1/modules/trophy-room/trophy-room.js','v1/modules/trophy-room/trophy-room.css','v1/modules/results/results.js','v1/modules/results/results.css','v1/modules/match-report/match-report.js','v1/modules/match-report/match-report.css','v1/modules/manager-detail/manager-detail.js','v1/modules/manager-detail/manager-detail.css','v1/modules/competition-detail/competition-detail.js','v1/modules/competition-detail/competition-detail.css']
-          files=[Path('nexus')/r for r in rels]
+          files=[Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/assets/imc-logo.png')]+sorted(Path('nexus/v1/modules').glob('*/*'))
           ctx=ssl.create_default_context();ctx.check_hostname=False;ftp=FTP_TLS(context=ctx);ftp.connect(host,21,timeout=30);ftp.login(user,password);ftp.prot_p()
           def ensure(path):
             ftp.cwd('/')
@@ -56,9 +54,10 @@ jobs:
                 except error_perm: pass
                 ftp.cwd(p)
           for local in files:
+            if not local.is_file(): continue
             rel=local.as_posix().removeprefix('nexus/'); parent=str(Path(rel).parent).replace('\\','/'); ensure(root if parent=='.' else f'{root}/{parent}'); data=local.read_bytes()
             with local.open('rb') as fh: ftp.storbinary(f'STOR {local.name}',fh)
-            b=io.BytesIO();ftp.retrbinary(f'RETR {local.name}',b.write)
+            b=io.BytesIO(); ftp.retrbinary(f'RETR {local.name}',b.write)
             if b.getvalue()!=data: raise SystemExit('Upload non verificato '+rel)
           ftp.quit()
           PY
@@ -67,16 +66,11 @@ jobs:
         run: |
           set -euo pipefail
           BASE='https://www.italianmastersclub.it/nexus'; TOKEN="${GITHUB_SHA}-$(date +%s)"
-          for f in index.html v1/app.js v1/modules/trophy-room/trophy-room.js v1/modules/results/results.js v1/modules/match-report/match-report.js v1/modules/manager-detail/manager-detail.js v1/modules/competition-detail/competition-detail.js; do curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/$f?verify=$TOKEN" -o "/tmp/$(basename $f)"; done
-          grep -Fq 'window.IMC_TROPHY_ROOM' /tmp/trophy-room.js
-          grep -Fq 'window.IMC_RESULTS' /tmp/results.js
-          grep -Fq 'window.IMC_MATCH_REPORT' /tmp/match-report.js
-          grep -Fq 'window.IMC_MANAGER_DETAIL' /tmp/manager-detail.js
-          grep -Fq 'window.IMC_COMPETITION_DETAIL' /tmp/competition-detail.js
+          for f in index.html v1/app.js v1/modules/syntex/syntex.js v1/modules/team-detail/team-detail.js v1/modules/results/results.js v1/modules/trophy-room/trophy-room.js; do curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/$f?verify=$TOKEN" -o "/tmp/$(basename $f)"; done
+          grep -Fq 'window.IMC_SYNTEX' /tmp/syntex.js
+          grep -Fq 'window.IMC_TEAM_DETAIL' /tmp/team-detail.js
           node --check /tmp/app.js
-          node --check /tmp/trophy-room.js
+          node --check /tmp/syntex.js
+          node --check /tmp/team-detail.js
           node --check /tmp/results.js
-          node --check /tmp/match-report.js
-          node --check /tmp/manager-detail.js
-          node --check /tmp/competition-detail.js
-          echo 'NEXUS_PACKAGE_ONLINE=YES'
+          echo 'TEAM_DETAIL_PACKAGE_ONLINE=YES'
