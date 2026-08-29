@@ -2,7 +2,11 @@
 "use strict";
 if(window.IMC_NAVIGATION)return;
 
-const VERSION="1.0.0";
+const VERSION="1.0.1";
+const WORLDS=[
+  ["GW001","Road To History"],["GW002","Gold 558"],["GW003","Gold 557"],["GW004","World League"],["GW005","Hall Of Famers"],
+  ["GW006","Master League World"],["GW007","The Four Kingdoms"],["GW008","Gold 1"],["GW009","Kick Off"],["GW010","Sensible Soccer Academy"]
+];
 let state={host:null,current:"clubhouse",worldId:null,worldName:null};
 
 function clean(v){return String(v==null?"":v).trim()}
@@ -20,16 +24,13 @@ function render(){
     </div>
   </nav>
   <div class="nx-drawer" data-nav-drawer hidden>
-    <button type="button" data-nav-home>CLUB HOUSE</button>
-    ${inWorld?`<button type="button" data-nav-world="${esc(state.worldId)}">${esc(state.worldId)} · ${esc(state.worldName||state.worldId)}</button>`:""}
+    <button type="button" class="nx-home-link" data-nav-home>CLUB HOUSE</button>
+    <div class="nx-drawer-title">GAME WORLDS</div>
+    <div class="nx-world-list">${WORLDS.map(([id,name])=>`<button type="button" data-nav-world="${id}" class="${state.worldId===id?"is-current":""}"><span>${id}</span><strong>${esc(name)}</strong></button>`).join("")}</div>
   </div>`;
 }
 
-function mount(opts){
-  if(!opts||!opts.host)throw new Error("Navigation: contenitore mancante");
-  state={...state,...opts,host:opts.host};
-  render();
-}
+function mount(opts){if(!opts||!opts.host)throw new Error("Navigation: contenitore mancante");state={...state,...opts,host:opts.host};render()}
 function setContext(ctx){state={...state,...ctx};render()}
 function unmount(){if(state.host)state.host.innerHTML="";state.host=null}
 
@@ -39,12 +40,7 @@ document.addEventListener("click",e=>{
   const world=e.target.closest&&e.target.closest("[data-nav-world]");
   if(world){dispatch("game-world",{worldId:clean(world.getAttribute("data-nav-world"))});return;}
   const toggle=e.target.closest&&e.target.closest("[data-nav-toggle]");
-  if(toggle){
-    const drawer=state.host&&state.host.querySelector("[data-nav-drawer]");
-    if(!drawer)return;
-    drawer.hidden=!drawer.hidden;
-    toggle.setAttribute("aria-expanded",drawer.hidden?"false":"true");
-  }
+  if(toggle){const drawer=state.host&&state.host.querySelector("[data-nav-drawer]");if(!drawer)return;drawer.hidden=!drawer.hidden;toggle.setAttribute("aria-expanded",drawer.hidden?"false":"true")}
 });
 
 window.IMC_NAVIGATION={version:VERSION,mount,setContext,unmount};
