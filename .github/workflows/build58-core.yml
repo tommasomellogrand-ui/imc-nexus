@@ -1,5 +1,6 @@
 name: Build 58 Core One Shot
 
+# One-shot source migration for GW008 native ownership.
 on:
   push:
     paths:
