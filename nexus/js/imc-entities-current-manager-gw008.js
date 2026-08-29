@@ -3,7 +3,7 @@
 if(window.__IMC_ENTITIES_CURRENT_MANAGER_GW008__)return;
 window.__IMC_ENTITIES_CURRENT_MANAGER_GW008__=true;
 
-const VERSION="1.0.0";
+const VERSION="1.0.1";
 const WORLD="GW008";
 const STYLE_ID="imcEntitiesCurrentManagerGw008Css";
 let cache=null,timer=null,observer=null,detail=null;
@@ -13,6 +13,7 @@ function esc(v){return clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;","
 function db(){return window.__IMC_NEXUS_CLIENT__||null;}
 function todayIso(){const d=new Date(),y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,"0"),day=String(d.getDate()).padStart(2,"0");return `${y}-${m}-${day}`;}
 function assignmentActive(a,today){const start=clean(a&&a.start_date),end=clean(a&&a.end_date);return (!start||start<=today)&&(!end||end>=today);}
+function formatDate(v){const s=clean(v);if(!s)return"-";const d=new Date(`${s}T12:00:00`);if(Number.isNaN(d.getTime()))return s;return d.toLocaleDateString("it-IT",{day:"2-digit",month:"2-digit",year:"numeric"});}
 function root(){return document.querySelector(`#pageRoot > [data-imc-entities-world="${WORLD}"]`);}
 
 function installStyles(){
@@ -21,6 +22,12 @@ function installStyles(){
   s.id=STYLE_ID;
   s.textContent=`
 .imc-ent8-current-manager{display:block!important;margin-top:5px!important;color:#0a255d!important;font-size:7px!important;font-weight:900!important;line-height:1.25!important}
+.imc-ent8-manager-timeline{position:relative;margin-top:16px;padding:14px 14px 14px 34px;border:1px solid #dfe5ed;border-radius:14px;background:#fafbfd}
+.imc-ent8-manager-timeline:before{content:"";position:absolute;left:17px;top:18px;bottom:18px;width:2px;background:#d7ad48}
+.imc-ent8-manager-timeline-dot{position:absolute;left:12px;top:19px;width:12px;height:12px;border:3px solid #fff;border-radius:50%;background:#0a255d;box-shadow:0 0 0 2px #d7ad48}
+.imc-ent8-manager-timeline span{display:block;color:#8b96a8;font-size:6px;font-weight:950;letter-spacing:.05em;text-transform:uppercase}
+.imc-ent8-manager-timeline strong{display:block;margin-top:4px;color:#0a255d;font-size:11px;font-weight:950;line-height:1.2}
+.imc-ent8-manager-timeline small{display:block;margin-top:5px;color:#66758a;font-size:7px;font-weight:850}
 `;
   document.head.appendChild(s);
 }
@@ -58,12 +65,13 @@ async function load(force){
     assignments.filter(a=>clean(a.game_world_id).toUpperCase()===WORLD&&assignmentActive(a,today)).forEach(a=>{
       const manager=managerMap.get(clean(a.manager_id));
       if(!manager)return;
+      const info={manager,startDate:clean(a.start_date),endDate:clean(a.end_date)};
       if(clean(a.assignment_type)==="club"&&a.team_id!=null){
         const team=teamMap.get(String(a.team_id));
-        if(team&&team.sm_club_id!=null)clubManagers.set(String(team.sm_club_id),manager);
+        if(team&&team.sm_club_id!=null)clubManagers.set(String(team.sm_club_id),info);
       }
       if(clean(a.assignment_type)==="national_team"&&a.nation_id!=null){
-        nationManagers.set(String(a.nation_id),manager);
+        nationManagers.set(String(a.nation_id),info);
       }
     });
 
@@ -81,14 +89,14 @@ function injectCards(data){
   const r=root();if(!r)return;
   r.querySelectorAll("[data-ent-open][data-ent-id]").forEach(card=>{
     if(card.querySelector("[data-imc-current-manager]"))return;
-    const manager=managerFor(data,card.getAttribute("data-ent-open"),card.getAttribute("data-ent-id"));
-    if(!manager)return;
+    const info=managerFor(data,card.getAttribute("data-ent-open"),card.getAttribute("data-ent-id"));
+    if(!info||!info.manager)return;
     const body=card.querySelector("div");
     if(!body)return;
     const label=document.createElement("small");
     label.className="imc-ent8-current-manager";
     label.setAttribute("data-imc-current-manager","");
-    label.innerHTML=`Manager · ${esc(manager.full_name||manager.manager_id)}`;
+    label.innerHTML=`Manager · ${esc(info.manager.full_name||info.manager.manager_id)}`;
     const badge=body.querySelector(".imc-ent8-managed");
     if(badge)body.insertBefore(label,badge);else body.appendChild(label);
   });
@@ -97,15 +105,26 @@ function injectCards(data){
 function injectDetail(data){
   const r=root();
   if(!r||!detail)return;
+  const info=managerFor(data,detail.type,detail.id);
+  if(!info||!info.manager)return;
+
   const fields=r.querySelector(".imc-ent8-fields");
-  if(!fields||fields.querySelector("[data-imc-current-manager]"))return;
-  const manager=managerFor(data,detail.type,detail.id);
-  if(!manager)return;
-  const field=document.createElement("div");
-  field.className="imc-ent8-field";
-  field.setAttribute("data-imc-current-manager","");
-  field.innerHTML=`<span>Manager attuale</span><strong>${esc(manager.full_name||manager.manager_id)}</strong>`;
-  fields.appendChild(field);
+  if(fields&&!fields.querySelector("[data-imc-current-manager]")){
+    const field=document.createElement("div");
+    field.className="imc-ent8-field";
+    field.setAttribute("data-imc-current-manager","");
+    field.innerHTML=`<span>Manager attuale</span><strong>${esc(info.manager.full_name||info.manager.manager_id)}</strong>`;
+    fields.appendChild(field);
+  }
+
+  if(detail.type!=="club")return;
+  const article=r.querySelector(".imc-ent8-detail");
+  if(!article||article.querySelector("[data-imc-manager-timeline]"))return;
+  const timeline=document.createElement("div");
+  timeline.className="imc-ent8-manager-timeline";
+  timeline.setAttribute("data-imc-manager-timeline","");
+  timeline.innerHTML=`<i class="imc-ent8-manager-timeline-dot"></i><span>Manager IMC attivo</span><strong>${esc(info.manager.full_name||info.manager.manager_id)}</strong><small>Dal ${esc(formatDate(info.startDate))}</small>`;
+  article.appendChild(timeline);
 }
 
 async function apply(){
