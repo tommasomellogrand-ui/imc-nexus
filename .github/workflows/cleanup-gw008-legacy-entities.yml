@@ -1,0 +1,92 @@
+name: Cleanup GW008 Legacy Entities
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/cleanup-gw008-legacy-entities.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Disable legacy GW008 entity engine and bust runtime cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          core = Path('nexus/js/app-core-55.js')
+          text = core.read_text(encoding='utf-8')
+
+          targets = {
+              'function entityListPage(type){': 'function entityListPage(type){\n    if(state.selectedWorld==="GW008")return "";',
+              'async function loadEntityList(type){': 'async function loadEntityList(type){\n    if(state.selectedWorld==="GW008")return;',
+              'function bindEntityList(type){': 'function bindEntityList(type){\n    if(state.selectedWorld==="GW008")return;',
+              'function entityProfilePage(type){': 'function entityProfilePage(type){\n    if(state.selectedWorld==="GW008")return "";',
+              'async function loadEntityProfile(type){': 'async function loadEntityProfile(type){\n    if(state.selectedWorld==="GW008")return;',
+              'function bindEntityProfile(type){': 'function bindEntityProfile(type){\n    if(state.selectedWorld==="GW008")return;'
+          }
+
+          for old,new in targets.items():
+              count=text.count(old)
+              if count != 1:
+                  raise SystemExit(f'Expected exactly one occurrence of {old!r}, found {count}')
+              text=text.replace(old,new,1)
+
+          core.write_text(text,encoding='utf-8')
+
+          entities = Path('nexus/js/imc-entities-gw008.js')
+          et = entities.read_text(encoding='utf-8')
+          if 'const VERSION="1.0.3";' not in et:
+              raise SystemExit('GW008 entities version 1.0.3 not found')
+          et=et.replace('const VERSION="1.0.3";','const VERSION="1.0.4";',1)
+          old='function renderIfNeeded(){syncNav();if(currentWorld()!==WORLD||!entitiesActive())return;if(isOurPage())return;view.detail=null;renderCurrent(false);}'
+          new='function renderIfNeeded(){syncNav();if(currentWorld()!==WORLD||!entitiesActive())return;if(isOurPage())return;renderCurrent(false);}'
+          if old not in et:
+              raise SystemExit('Expected GW008 renderIfNeeded implementation not found')
+          et=et.replace(old,new,1)
+          entities.write_text(et,encoding='utf-8')
+
+          app=Path('nexus/js/app.js')
+          at=app.read_text(encoding='utf-8')
+          count=at.count('js/imc-entities-gw008.js?v=1.0.3')
+          if count != 2:
+              raise SystemExit(f'Expected 2 GW008 entities loader refs, found {count}')
+          at=at.replace('js/imc-entities-gw008.js?v=1.0.3','js/imc-entities-gw008.js?v=1.0.4')
+          app.write_text(at,encoding='utf-8')
+
+          index=Path('nexus/index.html')
+          it=index.read_text(encoding='utf-8')
+          if 'js/app.js?v=55.3.1' not in it:
+              raise SystemExit('Expected index app cache version 55.3.1 not found')
+          it=it.replace('js/app.js?v=55.3.1','js/app.js?v=55.3.2',1)
+          index.write_text(it,encoding='utf-8')
+          PY
+
+          node --check nexus/js/app-core-55.js
+          node --check nexus/js/imc-entities-gw008.js
+          node --check nexus/js/app.js
+          grep -Fq 'js/app.js?v=55.3.2' nexus/index.html
+          grep -Fq 'js/imc-entities-gw008.js?v=1.0.4' nexus/js/app.js
+          grep -Fq 'if(state.selectedWorld==="GW008")return "";' nexus/js/app-core-55.js
+
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nexus/js/app-core-55.js nexus/js/imc-entities-gw008.js nexus/js/app.js nexus/index.html
+          git commit -m 'Disable legacy GW008 entities and bust runtime cache'
+          git push origin HEAD:main
