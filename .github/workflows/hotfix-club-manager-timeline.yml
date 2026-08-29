@@ -1,0 +1,80 @@
+name: Hotfix GW008 Club Manager Timeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/hotfix-club-manager-timeline.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  hotfix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s nexus/js/app.js
+          test -s nexus/js/imc-entities-current-manager-gw008.js
+          node --check nexus/js/app.js
+          node --check nexus/js/imc-entities-current-manager-gw008.js
+          grep -Fq 'js/imc-entities-current-manager-gw008.js?v=1.0.1' nexus/js/app.js
+          grep -Fq 'Manager IMC attivo' nexus/js/imc-entities-current-manager-gw008.js
+          grep -Fq 'startDate' nexus/js/imc-entities-current-manager-gw008.js
+
+      - name: Upload files to Aruba
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS
+
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user=os.environ['ARUBA_FTP_USERNAME']
+          password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          remote_root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          files=[Path('nexus/js/imc-entities-current-manager-gw008.js'),Path('nexus/js/app.js')]
+
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
+          ftp.cwd(f'{remote_root}/js')
+          for local in files:
+              data=local.read_bytes()
+              with local.open('rb') as fh: ftp.storbinary(f'STOR {local.name}',fh,blocksize=65536)
+              buf=io.BytesIO(); ftp.retrbinary(f'RETR {local.name}',buf.write,blocksize=65536)
+              if buf.getvalue()!=data: raise SystemExit(f'FTPS mismatch: {local.name}')
+              print(f'UPLOAD_MATCH=YES {local.name}')
+          ftp.quit()
+          PY
+
+      - name: Verify public files
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://www.italianmastersclub.it/nexus/js'
+          TOKEN="${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL -H 'Cache-Control: no-cache, no-store, must-revalidate' "$BASE/app.js?hotfix=$TOKEN" -o /tmp/app.js
+          curl -fsSL -H 'Cache-Control: no-cache, no-store, must-revalidate' "$BASE/imc-entities-current-manager-gw008.js?hotfix=$TOKEN" -o /tmp/timeline.js
+          test "$(sha256sum nexus/js/app.js | awk '{print $1}')" = "$(sha256sum /tmp/app.js | awk '{print $1}')"
+          test "$(sha256sum nexus/js/imc-entities-current-manager-gw008.js | awk '{print $1}')" = "$(sha256sum /tmp/timeline.js | awk '{print $1}')"
+          grep -Fq 'js/imc-entities-current-manager-gw008.js?v=1.0.1' /tmp/app.js
+          grep -Fq 'Manager IMC attivo' /tmp/timeline.js
+          grep -Fq 'Dal ${esc(formatDate(info.startDate))}' /tmp/timeline.js
+          echo 'PUBLIC_APP_MATCH=YES'
+          echo 'PUBLIC_TIMELINE_MATCH=YES'
