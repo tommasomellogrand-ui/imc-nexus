@@ -3,7 +3,7 @@
 if(window.__IMC_COMPETITION_FILTERS_FINAL__)return;
 window.__IMC_COMPETITION_FILTERS_FINAL__=true;
 
-const VERSION="3.0.0";
+const VERSION="3.1.0";
 const MULTI_LEAGUE_WORLDS=new Set(["GW002","GW003","GW007","GW008"]);
 const registryCache=new Map();
 const state=new Map();
@@ -20,7 +20,6 @@ function installCss(){
   const s=document.createElement("style");
   s.id="imcCompetitionFiltersFinalCss";
   s.textContent=`
-.imc-competitions-all-worlds:not(.imc-comp-detail) > .imc-comp-filters{display:none!important}
 .imc-comp-filter-stack-final{display:grid;gap:8px;margin:0 0 20px}
 .imc-comp-country-filters-final{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .imc-comp-country-filters-final::-webkit-scrollbar{display:none}
@@ -103,7 +102,7 @@ async function enhance(){
   const present=rows.filter(r=>keys.has(clean(r&&r.competition_key)));
   const st=currentState(world);
 
-  el.querySelectorAll(':scope > .imc-comp-filter-stack,:scope > .imc-comp-filter-stack-final').forEach(n=>n.remove());
+  el.querySelectorAll(':scope > .imc-comp-filters,:scope > .imc-comp-filter-stack,:scope > .imc-comp-filter-stack-final').forEach(n=>n.remove());
   const stack=document.createElement("div");
   stack.className="imc-comp-filter-stack-final";
   const hero=el.querySelector(':scope > .imc-comp-hero');
