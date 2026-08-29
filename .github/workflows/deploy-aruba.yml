@@ -29,13 +29,14 @@ jobs:
           set -euo pipefail
           test -s nexus/index.html
           test -s nexus/v1/app.js
+          test -s nexus/v1/modules/navigation/navigation.js
+          test -s nexus/v1/modules/navigation/navigation.css
           test -s nexus/v1/modules/clubhouse/clubhouse.js
           test -s nexus/v1/modules/clubhouse/clubhouse.css
-          grep -Fq '<title>IMC Nexus · Build 1.0</title>' nexus/index.html
-          grep -Fq 'v1/app.js' nexus/index.html
+          grep -Fq 'v1/modules/navigation/navigation.js' nexus/index.html
           grep -Fq 'v1/modules/clubhouse/clubhouse.js' nexus/index.html
-          grep -Fq 'v1/modules/clubhouse/clubhouse.css' nexus/index.html
           node --check nexus/v1/app.js
+          node --check nexus/v1/modules/navigation/navigation.js
           node --check nexus/v1/modules/clubhouse/clubhouse.js
 
       - name: Validate Aruba secrets
@@ -66,7 +67,11 @@ jobs:
           user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']
           raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host
           remote_root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-          files=[Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/v1/modules/clubhouse/clubhouse.js'),Path('nexus/v1/modules/clubhouse/clubhouse.css'),Path('nexus/assets/imc-logo.png')]
+          files=[
+            Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/assets/imc-logo.png'),
+            Path('nexus/v1/modules/navigation/navigation.js'),Path('nexus/v1/modules/navigation/navigation.css'),
+            Path('nexus/v1/modules/clubhouse/clubhouse.js'),Path('nexus/v1/modules/clubhouse/clubhouse.css')
+          ]
           ctx=ssl.create_default_context(); ctx.check_hostname=False
           ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
           def ensure_abs(path):
@@ -95,10 +100,16 @@ jobs:
           BASE='https://www.italianmastersclub.it/nexus'
           TOKEN="${GITHUB_SHA}-$(date +%s)"
           curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/index.html?verify=$TOKEN" -o /tmp/index.html
+          grep -Fq 'v1/modules/navigation/navigation.js' /tmp/index.html
           grep -Fq 'v1/modules/clubhouse/clubhouse.js' /tmp/index.html
+          curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/navigation/navigation.js?verify=$TOKEN" -o /tmp/navigation.js
+          curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/navigation/navigation.css?verify=$TOKEN" -o /tmp/navigation.css
           curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/clubhouse/clubhouse.js?verify=$TOKEN" -o /tmp/clubhouse.js
           curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/clubhouse/clubhouse.css?verify=$TOKEN" -o /tmp/clubhouse.css
+          grep -Fq 'window.IMC_NAVIGATION' /tmp/navigation.js
           grep -Fq 'window.IMC_CLUBHOUSE' /tmp/clubhouse.js
+          node --check /tmp/navigation.js
           node --check /tmp/clubhouse.js
+          test -s /tmp/navigation.css
           test -s /tmp/clubhouse.css
-          echo 'CLUBHOUSE_ONLINE=YES'
+          echo 'NEXUS_MODULES_ONLINE=YES'
