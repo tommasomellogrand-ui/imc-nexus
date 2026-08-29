@@ -66,11 +66,14 @@ jobs:
         run: |
           set -euo pipefail
           BASE='https://www.italianmastersclub.it/nexus'; TOKEN="${GITHUB_SHA}-$(date +%s)"
-          for f in index.html v1/app.js v1/modules/syntex/syntex.js v1/modules/team-detail/team-detail.js v1/modules/results/results.js v1/modules/trophy-room/trophy-room.js; do curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/$f?verify=$TOKEN" -o "/tmp/$(basename $f)"; done
+          for f in index.html v1/app.js v1/modules/syntex/syntex.js v1/modules/team-detail/team-detail.js v1/modules/results/results.js v1/modules/trophy-room/trophy-room.js v1/modules/transfers/transfers.js v1/modules/transfers/transfers.css; do curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/$f?verify=$TOKEN" -o "/tmp/$(basename $f)"; done
           grep -Fq 'window.IMC_SYNTEX' /tmp/syntex.js
           grep -Fq 'window.IMC_TEAM_DETAIL' /tmp/team-detail.js
+          grep -Fq 'window.IMC_TRANSFERS' /tmp/transfers.js
           node --check /tmp/app.js
           node --check /tmp/syntex.js
           node --check /tmp/team-detail.js
           node --check /tmp/results.js
-          echo 'TEAM_DETAIL_PACKAGE_ONLINE=YES'
+          node --check /tmp/transfers.js
+          test -s /tmp/transfers.css
+          echo 'TRANSFERS_PACKAGE_ONLINE=YES'
