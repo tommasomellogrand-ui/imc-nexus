@@ -1,121 +1,29 @@
 (function(){
 "use strict";
-
-if(window.__IMC_TROPHY_ROOM_ALL_WORLDS__)return;
-window.__IMC_TROPHY_ROOM_ALL_WORLDS__=true;
-
-const VERSION="1.1.0";
-const ROOT_ATTR="data-imc-trophy-room-module";
-const TROPHIES=[
-  ["Charity Shield","assets/trophies/charity-shield.png"],
-  ["Division One","assets/trophies/division-one.png"],
-  ["Division Two","assets/trophies/division-two.png"],
-  ["Division Three","assets/trophies/division-three.png"],
-  ["Division Four","assets/trophies/division-four.png"],
-  ["Division Five","assets/trophies/division-five.png"],
-  ["IMC Champions","assets/trophies/imc-champions.png"],
-  ["IMC Champions V27","assets/trophies/imc-champions-v27.png"],
-  ["IMC Shield","assets/trophies/imc-shield.png"],
-  ["IMC Super Cup","assets/trophies/imc-super-cup.png"],
-  ["Kick Off Cup","assets/trophies/kick-off-cup.webp"],
-  ["League Cup","assets/trophies/league-cup.png"],
-  ["National Cup","assets/trophies/national-cup.png"],
-  ["Playoff","assets/trophies/playoff.png"],
-  ["SMFA Champions","assets/trophies/smfa-champions.png"],
-  ["SMFA Shield","assets/trophies/smfa-shield.png"],
-  ["SMFA Super Cup","assets/trophies/smfa-super-cup.png"],
-  ["World Cup Qualifying","assets/trophies/world-cup-qualifying.png"],
-  ["World Cup","assets/trophies/world-cup.png"]
-];
-
-function clean(value){return String(value==null?"":value).replace(/\s+/g," ").trim();}
-function esc(value){return clean(value).replace(/[&<>"']/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c];});}
-function pageRoot(){return document.getElementById("pageRoot");}
-
-function currentWorld(){
-  const selectors=["#openDrawerWorld strong",".nx-sport-world strong",".nx-world-header strong",".nx-world-header p"];
-  for(const selector of selectors){
-    const nodes=document.querySelectorAll(selector);
-    for(const node of nodes){
-      const text=clean(node.textContent);
-      const match=text.match(/GW\d{3}/i);
-      if(match)return match[0].toUpperCase();
-    }
-  }
-  return "";
-}
-
-function currentWorldName(){
-  const nodes=document.querySelectorAll("#openDrawerWorld strong,.nx-sport-world strong");
-  for(const node of nodes){
-    const text=clean(node.textContent);
-    if(text&&!/^GW\d{3}$/i.test(text)&&text.toLowerCase()!=="club house")return text;
-  }
-  return "Game World";
-}
-
-function setTrophyNavActive(){
-  document.querySelectorAll(".nx-bottom [data-page]").forEach(function(button){
-    button.classList.toggle("active",button.getAttribute("data-page")==="trophies");
-  });
-}
-
-function ensureStyle(){
-  if(document.getElementById("imcTrophyRoomAssetStyle"))return;
-  const style=document.createElement("style");
-  style.id="imcTrophyRoomAssetStyle";
-  style.textContent=`
-    .nx-trophy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
-    .nx-trophy-card{min-width:0;border:1px solid rgba(8,43,99,.10);border-radius:18px;background:#fff;padding:14px 10px 12px;text-align:center;box-shadow:0 8px 24px rgba(8,43,99,.07)}
-    .nx-trophy-card img{display:block;width:100%;height:150px;object-fit:contain;margin:0 auto 10px}
-    .nx-trophy-card strong{display:block;color:#082b63;font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.25}
-    @media(max-width:380px){.nx-trophy-grid{gap:10px}.nx-trophy-card{padding:10px 8px}.nx-trophy-card img{height:128px}.nx-trophy-card strong{font-size:12px}}
-  `;
-  document.head.appendChild(style);
-}
-
-function trophyGrid(){
-  return `<div class="nx-trophy-grid">${TROPHIES.map(function(item){
-    return `<article class="nx-trophy-card"><img src="${esc(item[1])}" alt="${esc(item[0])}" loading="lazy"><strong>${esc(item[0])}</strong></article>`;
-  }).join("")}</div>`;
-}
-
-function render(worldId){
-  const root=pageRoot();
-  if(!root||!worldId)return false;
-  ensureStyle();
-  root.innerHTML=`
-    <section class="nx-card nx-trophy-room" ${ROOT_ATTR}="${esc(worldId)}">
-      <div class="nx-page-title">
-        <div>
-          <small>${esc(worldId)}</small>
-          <h1>🏆 Trophy Room</h1>
-          <p>${esc(currentWorldName())}</p>
-        </div>
-      </div>
-      ${trophyGrid()}
-    </section>`;
-  setTrophyNavActive();
-  return true;
-}
-
-function open(worldId){
-  const resolved=clean(worldId||currentWorld()).toUpperCase();
-  if(!/^GW\d{3}$/.test(resolved))return false;
-  return render(resolved);
-}
-
-function isTrophyTrigger(target){return !!(target&&target.closest&&target.closest('.nx-bottom [data-page="trophies"]'));}
-
-document.addEventListener("click",function(event){
-  if(!isTrophyTrigger(event.target))return;
-  const worldId=currentWorld();
-  if(!worldId)return;
-  event.preventDefault();
-  event.stopPropagation();
-  event.stopImmediatePropagation();
-  open(worldId);
-},true);
-
-window.IMC_TROPHY_ROOM_ALL_WORLDS={version:VERSION,open:open,currentWorld:currentWorld};
+if(window.__IMC_TROPHY_ROOM_ALL_WORLDS_V2__)return;
+window.__IMC_TROPHY_ROOM_ALL_WORLDS_V2__=true;
+const VERSION="2.0.0",STYLE_ID="imcTrophyRoomAllWorldsCss";
+const cache=new Map();
+function clean(v){return String(v==null?"":v).replace(/\s+/g," ").trim()}
+function norm(v){return clean(v).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase()}
+function esc(v){return clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function db(){return window.__IMC_NEXUS_CLIENT__||null}
+function pageRoot(){return document.getElementById("pageRoot")}
+function prefix(world){return clean(world).toLowerCase()}
+function formatDate(v){const s=clean(v);if(!s)return"";const d=new Date(s+"T12:00:00");return Number.isNaN(d.getTime())?s:d.toLocaleDateString("it-IT",{day:"2-digit",month:"2-digit",year:"numeric"})}
+function currentWorld(){const nodes=document.querySelectorAll("#openDrawerWorld strong,.nx-sport-world strong,.nx-world-header strong,.nx-world-header p");for(const n of nodes){const t=clean(n.textContent),m=t.match(/GW\d{3}/i);if(m)return m[0].toUpperCase()}return""}
+async function allRows(table,select){const c=db();if(!c)throw new Error("Client Supabase non disponibile");const out=[];for(let from=0;;from+=1000){const r=await c.from(table).select(select||"*").range(from,from+999);if(r.error)throw r.error;out.push(...(r.data||[]));if((r.data||[]).length<1000)break}return out}
+function installStyles(){if(document.getElementById(STYLE_ID))return;const s=document.createElement("style");s.id=STYLE_ID;s.textContent=`.imc-tr{padding:0 0 30px;color:#0b1b3f}.imc-tr-hero{padding:18px;border:1px solid #dfe5ed;border-radius:18px;background:#fff}.imc-tr-hero small{font-size:9px;font-weight:950;color:#64748b}.imc-tr-hero h1{margin:5px 0 3px;font-size:24px;color:#082b63}.imc-tr-hero p{margin:0;font-size:10px;color:#7b8799}.imc-tr-seasons{display:flex;gap:7px;overflow:auto;margin:12px 0;padding-bottom:2px}.imc-tr-season{min-width:max-content;padding:8px 11px;border:1px solid #dfe5ed;border-radius:11px;background:#fff;color:#637086;font:900 9px Inter}.imc-tr-season.is-active{border-color:#0d47a1;background:#0a255d;color:#fff}.imc-tr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.imc-tr-card{display:grid;grid-template-columns:52px 1fr;gap:11px;align-items:center;padding:12px;border:1px solid #dfe5ed;border-radius:15px;background:#fff}.imc-tr-logo{width:52px;height:52px;display:grid;place-items:center;overflow:hidden;border-radius:13px;background:#f5f7fa}.imc-tr-logo.nation{border-radius:50%;background:#fff}.imc-tr-logo img{max-width:46px;max-height:46px;object-fit:contain}.imc-tr-copy small{display:block;font-size:8px;font-weight:950;color:#7a8799}.imc-tr-copy strong{display:block;margin-top:3px;font-size:12px;color:#0a255d}.imc-tr-copy span{display:block;margin-top:3px;font-size:9px;color:#68768a}.imc-tr-manager{margin-top:5px!important;color:#956400!important;font-weight:900}.imc-tr-date{margin-top:5px!important;font-size:8px!important;color:#8b96a8!important}.imc-tr-empty,.imc-tr-loading,.imc-tr-error{padding:20px;border:1px solid #e4e9ef;border-radius:14px;background:#fff;text-align:center;color:#738095;font-size:10px}@media(max-width:430px){.imc-tr-grid{grid-template-columns:1fr}}`;document.head.appendChild(s)}
+function assignmentManager(row,world,assignments,managerMap,nationCodex){const d=clean(row.won_on);if(!d)return null;let match=null;if(row.winning_team_id!=null){match=assignments.find(a=>clean(a.game_world_id).toUpperCase()===world&&clean(a.assignment_type)==="club"&&String(a.team_id)===String(row.winning_team_id)&&(!a.start_date||String(a.start_date)<=d)&&(!a.end_date||String(a.end_date)>=d))||null}else if(row.winning_nation_id!=null){const codex=nationCodex.find(n=>{const w=n&&n.worlds&&n.worlds[world];return w&&String(w.sm_nation_id)===String(row.winning_nation_id)})||null;const nationId=codex&&codex.id!=null?String(codex.id):null;if(nationId)match=assignments.find(a=>clean(a.game_world_id).toUpperCase()===world&&clean(a.assignment_type)==="national_team"&&String(a.nation_id)===nationId&&(!a.start_date||String(a.start_date)<=d)&&(!a.end_date||String(a.end_date)>=d))||null}if(!match)return null;const m=managerMap.get(clean(match.manager_id));return m?{manager_id:clean(m.manager_id),name:clean(m.full_name)||clean(m.manager_id)}:null}
+function competitionLabel(key,compMap){const c=compMap.get(clean(key));return clean(c&&c["Nexus View"])||clean(c&&c.sm_competition_name)||clean(key)}
+async function load(world,force){world=clean(world).toUpperCase();if(!/^GW\d{3}$/.test(world))throw new Error("Game World non valido");if(cache.has(world)&&!force)return cache.get(world);const p=(async()=>{const pfx=prefix(world),[trophies,seasons,comps,assignments,managers,teams,nations]=await Promise.all([allRows(`${pfx}_trophy_room`,"season_id,competition_key,group_name,winning_team_id,winning_team_name,winning_team_logo,winning_nation_id,winning_nation_name,winning_nation_logo,won_on"),allRows(`${pfx}_imc_seasons`,"imc_season,soccer_manager_season,imc_season_start_date,imc_season_end_date"),allRows(`${pfx}_gw_competitions`,'competition_key,sm_competition_name,"Nexus View"'),allRows("gw_manager_assignments","game_world_id,manager_id,team_id,nation_id,assignment_type,start_date,end_date"),allRows("imc_managers","manager_id,full_name"),allRows("gw_teams","team_id,game_world_id,team_name,display_name,logo_file"),allRows("national_team_codex_global","id,n,i,worlds")]);const managerMap=new Map(managers.map(m=>[clean(m.manager_id),m])),teamMap=new Map(teams.filter(t=>clean(t.game_world_id).toUpperCase()===world).map(t=>[String(t.team_id),t])),compMap=new Map(comps.map(c=>[clean(c.competition_key),c]));const rows=trophies.map(r=>{const team=r.winning_team_id!=null?teamMap.get(String(r.winning_team_id)):null;const nation=r.winning_nation_id!=null?nations.find(n=>{const w=n&&n.worlds&&n.worlds[world];return w&&String(w.sm_nation_id)===String(r.winning_nation_id)}):null;return Object.assign({},r,{competition_name:competitionLabel(r.competition_key,compMap),winner_name:clean(r.winning_team_name)||clean(r.winning_nation_name),winner_logo:clean(r.winning_team_logo)||clean(team&&team.logo_file)||clean(r.winning_nation_logo)||clean(nation&&nation.i),winner_type:r.winning_nation_id!=null?"nation":"club",manager:assignmentManager(r,world,assignments,managerMap,nations),nation_codex_id:nation&&nation.id!=null?nation.id:null})}).sort((a,b)=>clean(b.won_on).localeCompare(clean(a.won_on))||clean(a.competition_name).localeCompare(clean(b.competition_name),"it"));return{world,rows,seasons:seasons.slice().sort((a,b)=>(+a.imc_season||0)-(+b.imc_season||0))}})();cache.set(world,p);try{return await p}catch(e){cache.delete(world);throw e}}
+function filterRows(data,filter){filter=filter||{};return data.rows.filter(r=>{if(filter.seasonId!=null&&String(r.season_id)!==String(filter.seasonId))return false;if(filter.teamId!=null&&String(r.winning_team_id)!==String(filter.teamId))return false;if(filter.nationId!=null&&String(r.winning_nation_id)!==String(filter.nationId)&&String(r.nation_codex_id)!==String(filter.nationId))return false;if(filter.managerId!=null&&(!r.manager||String(r.manager.manager_id)!==String(filter.managerId)))return false;if(filter.competitionKey&&clean(r.competition_key)!==clean(filter.competitionKey))return false;return true})}
+function card(r){return`<article class="imc-tr-card"><div class="imc-tr-logo ${r.winner_type==="nation"?"nation":""}">${r.winner_logo?`<img src="${esc(r.winner_logo)}" alt="">`:"🏆"}</div><div class="imc-tr-copy"><small>${esc(r.competition_name)}${r.group_name?` · ${esc(r.group_name)}`:""}</small><strong>${esc(r.winner_name||"Vincitore")}</strong>${r.manager?`<span class="imc-tr-manager">${esc(r.manager.name)}</span>`:""}${r.won_on?`<span class="imc-tr-date">${esc(formatDate(r.won_on))}</span>`:""}</div></article>`}
+function renderMarkup(data,filter,opts){opts=opts||{};const rows=filterRows(data,filter),seasonIds=[...new Set(data.rows.map(r=>String(r.season_id)))].sort((a,b)=>Number(a)-Number(b));const active=filter&&filter.seasonId!=null?String(filter.seasonId):"all";return`${opts.hero===false?"":`<div class="imc-tr-hero"><small>${esc(data.world)}</small><h1>🏆 Trophy Room</h1><p>${esc(opts.subtitle||"Tutti i titoli ufficiali del Game World")}</p></div>`}${opts.seasonFilter===false?"":`<div class="imc-tr-seasons"><button class="imc-tr-season ${active==="all"?"is-active":""}" data-imc-tr-season="all">TUTTE</button>${seasonIds.map(s=>`<button class="imc-tr-season ${active===s?"is-active":""}" data-imc-tr-season="${esc(s)}">SEASON ${esc(s)}</button>`).join("")}</div>`}<div class="imc-tr-grid">${rows.map(card).join("")}</div>${rows.length?"":'<div class="imc-tr-empty">Nessun trofeo disponibile.</div>'}`}
+function bindSeasonButtons(target,data,filter,opts){target.querySelectorAll("[data-imc-tr-season]").forEach(b=>b.addEventListener("click",()=>{const v=b.getAttribute("data-imc-tr-season"),next=Object.assign({},filter||{});if(v==="all")delete next.seasonId;else next.seasonId=v;target.innerHTML=renderMarkup(data,next,opts);bindSeasonButtons(target,data,next,opts)}))}
+async function renderInto(target,world,filter,opts){installStyles();if(typeof target==="string")target=document.querySelector(target);if(!target)return false;target.innerHTML='<div class="imc-tr-loading">Caricamento Trophy Room…</div>';try{const data=await load(world,false);target.innerHTML=renderMarkup(data,filter||{},opts||{});bindSeasonButtons(target,data,filter||{},opts||{});return true}catch(e){target.innerHTML=`<div class="imc-tr-error">${esc(e&&e.message||"Caricamento non riuscito")}</div>`;return false}}
+async function open(world){world=clean(world||currentWorld()).toUpperCase();const root=pageRoot();if(!root||!world)return false;root.innerHTML=`<section class="imc-tr" data-imc-trophy-room-world="${esc(world)}"><div id="imcTrophyRoomBody"></div></section>`;document.querySelectorAll(".nx-bottom [data-page]").forEach(b=>b.classList.toggle("active",b.getAttribute("data-page")==="trophies"));return renderInto(document.getElementById("imcTrophyRoomBody"),world,{},{} )}
+document.addEventListener("click",function(e){const b=e.target.closest&&e.target.closest('.nx-bottom [data-page="trophies"]');if(!b)return;const w=currentWorld();if(!w)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();open(w)},true);
+installStyles();
+window.IMC_TROPHY_ROOM_ALL_WORLDS={version:VERSION,open,load,filterRows,renderInto,clearCache:function(world){if(world)cache.delete(clean(world).toUpperCase());else cache.clear()}};
 })();
