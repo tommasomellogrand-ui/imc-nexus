@@ -3,11 +3,11 @@
 if(window.__IMC_ENTITY_SEASON_RESULTS_GW008__)return;
 window.__IMC_ENTITY_SEASON_RESULTS_GW008__=true;
 
-const VERSION="1.0.0";
+const VERSION="1.0.1";
 const WORLD="GW008";
 const STYLE_ID="imcEntitySeasonResultsGw008Css";
 const SELECT="raw_match_id,season_number,sm_fixture_id,source_page_date,home_name,away_name,home_score,away_score,home_penalties,away_penalties,decided_on_penalties,penalty_winner_name,penalty_text,sm_action,sm_round_label,competition_key";
-let detail=null,timer=null,observer=null;
+let timer=null,observer=null;
 const cache=new Map();
 
 function clean(v){return String(v==null?"":v).replace(/\s+/g," ").trim();}
@@ -16,6 +16,15 @@ function norm(v){return clean(v).normalize("NFD").replace(/[\u0300-\u036f]/g,"")
 function db(){return window.__IMC_NEXUS_CLIENT__||null;}
 function root(){return document.querySelector(`#pageRoot > [data-imc-entities-world="${WORLD}"]`);}
 function detailArticle(){const r=root();return r?r.querySelector(".imc-ent8-detail"):null;}
+function currentDetail(){
+  const r=root();if(!r||!detailArticle())return null;
+  const tab=r.querySelector('.imc-ent8-tab.is-active[data-ent-tab]');
+  const type=tab&&tab.getAttribute("data-ent-tab")==="nations"?"nation":"club";
+  const fields=[...r.querySelectorAll(".imc-ent8-field")];
+  const idField=fields.find(f=>clean(f.querySelector("span")&&f.querySelector("span").textContent).toLowerCase()==="id globale");
+  const id=clean(idField&&idField.querySelector("strong")&&idField.querySelector("strong").textContent);
+  return id?{type,id}:null;
+}
 function formatDate(v){const s=clean(v);if(!s)return"-";const d=new Date(`${s}T12:00:00`);if(Number.isNaN(d.getTime()))return s;return d.toLocaleDateString("it-IT",{day:"2-digit",month:"2-digit",year:"numeric"});}
 
 function installStyles(){
@@ -98,6 +107,7 @@ function renderData(data){const a=detailArticle();if(!a)return;let box=a.querySe
 function renderError(e){const a=detailArticle();if(!a)return;let box=a.querySelector("[data-imc-season-results]");if(!box){box=document.createElement("section");box.className="imc-ent8-season-results";box.setAttribute("data-imc-season-results","");a.appendChild(box);}box.innerHTML=`<h3>RISULTATI STAGIONALI</h3><div class="imc-ent8-season-error">${esc(e&&e.message||"Caricamento risultati non riuscito")}</div>`;}
 
 async function apply(force){
+  const detail=currentDetail();
   if(!detail||!detailArticle())return;
   installStyles();renderLoading();
   try{renderData(await loadEntity(detail.type,detail.id,!!force));}catch(e){renderError(e);}
@@ -105,14 +115,9 @@ async function apply(force){
 function schedule(){clearTimeout(timer);timer=setTimeout(()=>apply(false),70);}
 function start(){
   installStyles();
-  document.addEventListener("click",function(e){
-    const open=e.target&&e.target.closest?e.target.closest("[data-ent-open][data-ent-id]"):null;
-    if(open){detail={type:open.getAttribute("data-ent-open")==="nation"?"nation":"club",id:open.getAttribute("data-ent-id")};setTimeout(schedule,0);return;}
-    const back=e.target&&e.target.closest?e.target.closest("[data-ent-back],[data-ent-tab]"):null;
-    if(back){detail=null;}
-  },true);
   observer=new MutationObserver(schedule);observer.observe(document.documentElement,{childList:true,subtree:true});
+  schedule();
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
-window.IMC_ENTITY_SEASON_RESULTS_GW008={version:VERSION,refresh:()=>{if(detail)cache.delete(`${detail.type}:${detail.id}`);apply(true);},clearCache:()=>cache.clear()};
+window.IMC_ENTITY_SEASON_RESULTS_GW008={version:VERSION,refresh:()=>{const d=currentDetail();if(d)cache.delete(`${d.type}:${d.id}`);apply(true);},clearCache:()=>cache.clear()};
 })();
