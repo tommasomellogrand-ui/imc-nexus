@@ -2,7 +2,7 @@
 "use strict";
 if(window.IMC_CLUBHOUSE)return;
 
-const VERSION="1.0.2";
+const VERSION="1.0.3";
 let state={container:null,client:null,user:null,managerId:"",username:"",worlds:[],assignments:[],teams:new Map(),nations:new Map()};
 
 function clean(v){return String(v==null?"":v).trim()}
@@ -13,19 +13,14 @@ function worldName(id){const w=state.worlds.find(x=>x.game_world_id===id);return
 function teamKey(worldId,teamId){return clean(worldId)+"|"+clean(teamId)}
 function teamName(a){if(a.assignment_type==="national_team")return state.nations.get(String(a.nation_id))||("Nazionale "+clean(a.nation_id));return state.teams.get(teamKey(a.game_world_id,a.team_id))||("Club "+clean(a.team_id))}
 
-async function required(query,label){const r=await query;if(r.error)throw new Error(label+": "+(r.error.message||"errore dati"));return r.data||[]}
-async function optional(query){try{const r=await query;return r.error?[]:(r.data||[])}catch(_){return[]}}
-
 async function load(){
-  const c=state.client,m=state.managerId;
-  const worldsPromise=required(c.from("imc_game_worlds").select("game_world_id,imc_name,name,soccer_manager_name").order("game_world_id",{ascending:true}),"Game World");
-  const assignmentsPromise=required(c.from("gw_manager_assignments").select("assignment_id,game_world_id,manager_id,team_id,nation_id,assignment_type,start_date,end_date,season_id").eq("manager_id",m).order("start_date",{ascending:true}),"Incarichi manager");
-  const nationsPromise=optional(c.from("imc_national_teams").select("nation_id,nation_name"));
-  const [worlds,assignments,nations]=await Promise.all([worldsPromise,assignmentsPromise,nationsPromise]);
-  state.worlds=worlds;state.assignments=assignments;
-  const clubAssignments=assignments.filter(a=>a.assignment_type==="club"&&a.team_id!=null);
-  const ids=[...new Set(clubAssignments.map(a=>a.team_id))];
-  const teams=ids.length?await optional(c.from("gw_teams").select("team_id,game_world_id,team_name,display_name").in("team_id",ids)):[];
+  const r=await state.client.rpc("imc_nexus_gateway",{p_action:"club_house",p_args:{managerId:state.managerId}});
+  if(r.error)throw new Error("Club House: "+(r.error.message||"errore dati"));
+  const data=r.data||{};
+  state.worlds=Array.isArray(data.worlds)?data.worlds:[];
+  state.assignments=Array.isArray(data.assignments)?data.assignments:[];
+  const teams=Array.isArray(data.teams)?data.teams:[];
+  const nations=Array.isArray(data.nations)?data.nations:[];
   state.teams=new Map(teams.map(x=>[teamKey(x.game_world_id,x.team_id),clean(x.display_name||x.team_name)]));
   state.nations=new Map(nations.map(x=>[String(x.nation_id),clean(x.nation_name)]));
 }
