@@ -69,6 +69,7 @@
       appendScript("js/imc-managers-gw008.js?v=1.0.2");
       appendScript("js/imc-entities-gw008.js?v=1.0.3");
       appendScript("js/imc-entities-current-manager-gw008.js?v=1.0.1");
+      appendScript("js/imc-entity-season-results-gw008.js?v=1.0.0");
     });
   }
 
@@ -96,6 +97,7 @@
     writeScript("js/imc-managers-gw008.js?v=1.0.2");
     writeScript("js/imc-entities-gw008.js?v=1.0.3");
     writeScript("js/imc-entities-current-manager-gw008.js?v=1.0.1");
+    writeScript("js/imc-entity-season-results-gw008.js?v=1.0.0");
     return;
   }
 
