@@ -1,0 +1,36 @@
+name: Create App Core 56
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/create-app-core-56.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create Build 56 core
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp nexus/js/app-core-55.js nexus/js/app-core-56.js
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('nexus/js/app-core-56.js')
+          s=p.read_text(encoding='utf-8')
+          old='const NEXUS_BUILD = "55";'
+          if s.count(old)!=1:
+              raise SystemExit(f'Expected one build marker, found {s.count(old)}')
+          p.write_text(s.replace(old,'const NEXUS_BUILD = "56";',1),encoding='utf-8')
+          PY
+          node --check nexus/js/app-core-56.js
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add nexus/js/app-core-56.js
+          git commit -m 'Add Nexus app core 56'
+          git push origin HEAD:main
