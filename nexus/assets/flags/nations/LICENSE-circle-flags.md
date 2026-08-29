@@ -1,3 +1,5 @@
+Circle flag assets used by IMC Nexus are sourced from HatScripts/circle-flags.
+
 # MIT License
 
 Copyright (c) 2026 HatScripts
