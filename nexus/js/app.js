@@ -76,23 +76,21 @@
       appendScript("js/imc-match-report-all-worlds.js?v=1.0.0");
       appendScript("js/imc-competitions-all-worlds.js?v=1.0.0");
       appendScript("js/imc-competition-trophy-room-gw008.js?v=1.0.0");
-      appendScript("js/imc-competition-stats-all-worlds.js?v=1.0.0");
       appendScript("js/imc-competition-iphone-typography-all-worlds.js?v=1.0.0");
       appendScript("js/imc-competition-premium-list-all-worlds.js?v=1.0.0");
       appendScript("js/imc-competition-card-insights-all-worlds.js?v=1.0.0");
       appendScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
       appendScript("js/imc-managers-gw008.js?v=1.5.0");
       appendScript("js/imc-team-hub-gw008.js?v=2.2.0");
-      appendScript("js/imc-trophy-room-all-worlds.js?v=1.1.0");
     });
   }
 
   function loadCoreAsync(){
-    appendScript("js/app-core-59.js?v=59.0-core",loadAfterCore);
+    appendScript("js/app-core-59.js?v=59.1-core",loadAfterCore);
   }
 
   if(document.readyState==="loading"){
-    writeScript("js/app-core-59.js?v=59.0-core");
+    writeScript("js/app-core-59.js?v=59.1-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-player-codex-global.js?v=1.0.0");
     writeScript("js/imc-player-codex-global-detail.js?v=1.1.0");
@@ -104,14 +102,12 @@
     writeScript("js/imc-match-report-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competitions-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competition-trophy-room-gw008.js?v=1.0.0");
-    writeScript("js/imc-competition-stats-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competition-iphone-typography-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competition-premium-list-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competition-card-insights-all-worlds.js?v=1.0.0");
     writeScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
     writeScript("js/imc-managers-gw008.js?v=1.5.0");
     writeScript("js/imc-team-hub-gw008.js?v=2.2.0");
-    writeScript("js/imc-trophy-room-all-worlds.js?v=1.1.0");
     setTimeout(syncVisibleBuildLabel,0);
     return;
   }
