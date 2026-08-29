@@ -3,7 +3,7 @@
 if(window.__IMC_COMPETITION_COUNTRY_TYPE_FILTERS_V2__)return;
 window.__IMC_COMPETITION_COUNTRY_TYPE_FILTERS_V2__=true;
 
-const VERSION="2.0.0";
+const VERSION="2.1.0";
 const STYLE_ID="imcCompetitionCountryTypeFiltersCssV2";
 const MULTI_LEAGUE_WORLDS=new Set(["GW002","GW003","GW007","GW008"]);
 const registryCache=new Map(),countryState=new Map(),typeState=new Map();
@@ -24,7 +24,7 @@ function installCss(){
 .imc-comp-country-filters{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .imc-comp-country-filters::-webkit-scrollbar{display:none}
 .imc-comp-country-filters .imc-comp-filter{flex:0 0 auto;min-width:max-content;padding-left:12px!important;padding-right:12px!important}
-.imc-comp-type-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.imc-comp-type-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
 .imc-comp-section[data-imc-section="friendly"]{display:none!important}
 `;
   document.head.appendChild(s);
@@ -46,12 +46,12 @@ function competitionType(row){
   const explicit=norm(row&&row.IMC_competition_type);
   if(explicit.includes("international"))return"international";
   if(explicit.includes("nation"))return"nations";
-  if(explicit.includes("friendly"))return"friendly";
   if(explicit.includes("domestic"))return"domestic";
+  if(explicit.includes("friendly"))return null;
   const action=norm(row&&row.sm_action);
-  if(action==="friendly")return"friendly";
   if(action==="international")return"international";
   if(action==="nations"||action==="nation")return"nations";
+  if(action==="friendly")return null;
   return"domestic";
 }
 
@@ -77,15 +77,9 @@ function cardMeta(card,rowByKey){
 }
 
 function shouldShow(meta,country,type,multiLeague){
-  if(!meta.row)return type==="all"&&country==="all";
-  if(meta.type==="friendly")return false;
-
-  if(type!=="all"&&meta.type!==type)return false;
-
-  if(multiLeague&&country!=="all"){
-    return meta.country===country;
-  }
-
+  if(!meta.row||!meta.type)return false;
+  if(meta.type!==type)return false;
+  if(multiLeague&&country!=="all")return meta.country===country;
   return true;
 }
 
@@ -95,7 +89,7 @@ function apply(el,world,rowByKey){
   try{
     const multiLeague=isMultiLeague(world);
     const country=multiLeague?(countryState.get(world)||"all"):"all";
-    const type=typeState.get(world)||"all";
+    const type=typeState.get(world)||"domestic";
 
     el.querySelectorAll("[data-imc-country-filter]").forEach(b=>{
       b.classList.toggle("is-active",b.getAttribute("data-imc-country-filter")===country);
@@ -108,7 +102,7 @@ function apply(el,world,rowByKey){
       let visible=0;
       section.querySelectorAll('.imc-comp-card[data-imc-key]').forEach(card=>{
         const meta=cardMeta(card,rowByKey);
-        card.dataset.imcRegistryType=meta.type;
+        card.dataset.imcRegistryType=meta.type||"";
         card.dataset.imcRegistryCountry=meta.country;
         const show=shouldShow(meta,country,type,multiLeague);
         card.style.display=show?"":"none";
@@ -146,12 +140,13 @@ async function enhance(){
   const hero=el.querySelector(':scope > .imc-comp-hero');
   hero?hero.insertAdjacentElement("afterend",stack):el.prepend(stack);
 
-  if(!typeState.has(world))typeState.set(world,"all");
+  if(!typeState.has(world)||!['domestic','international','nations'].includes(typeState.get(world)))typeState.set(world,"domestic");
 
   if(isMultiLeague(world)){
     const countries=[];
     const seen=new Set();
     presentRows.forEach(r=>{
+      if(!competitionType(r))return;
       const c=competitionCountry(r);
       if(c&&!seen.has(c)){seen.add(c);countries.push(c);}
     });
@@ -179,7 +174,7 @@ async function enhance(){
 
   const types=document.createElement("div");
   types.className="imc-comp-type-filters";
-  [["all","All"],["domestic","Domestic"],["international","International"],["nations","Nations"]].forEach(([k,l])=>{
+  [["domestic","Domestic"],["international","International"],["nations","Nations"]].forEach(([k,l])=>{
     addButton(types,l,"data-imc-type-filter",k,typeState.get(world)===k,()=>{
       typeState.set(world,k);
       if(isMultiLeague(world)&&(k==="international"||k==="nations"))countryState.set(world,"all");
@@ -194,7 +189,7 @@ async function enhance(){
 function schedule(){
   if(applying)return;
   clearTimeout(timer);
-  timer=setTimeout(()=>enhance().catch(e=>console.warn("IMC Competition filters v2:",e&&e.message||e)),120);
+  timer=setTimeout(()=>enhance().catch(e=>console.warn("IMC Competition filters v2.1:",e&&e.message||e)),120);
 }
 
 function start(){
