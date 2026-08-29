@@ -50,30 +50,51 @@ jobs:
           set -euo pipefail
           test -s nexus/index.html
           test -s nexus/js/app.js
-          test -s nexus/js/app-core-56.js
-          test -s nexus/js/imc-team-hub-gw008.js
-          test -s nexus/js/imc-managers-gw008.js
           grep -Fq '</html>' nexus/index.html
           node --check nexus/js/app.js
-          node --check nexus/js/app-core-56.js
-          node --check nexus/js/imc-team-hub-gw008.js
-          node --check nexus/js/imc-managers-gw008.js
-          ! grep -Fq 'gw_season_matchdays' nexus/js/app-core-56.js
 
           BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\([^"]*\)";.*/\1/p' nexus/js/app.js | head -n1)"
-          test "$BUILD" = "56"
-          grep -Fq '<title>IMC Nexus · Build 56</title>' nexus/index.html
-          grep -Fq 'js/app.js?v=56.1' nexus/index.html
-          grep -Fq 'js/app-core-56.js?v=56.0-core' nexus/js/app.js
-          grep -Fq 'js/imc-team-hub-gw008.js?v=2.2.0' nexus/js/app.js
-          grep -Fq 'js/imc-managers-gw008.js?v=1.5.0' nexus/js/app.js
+          APP_REF="$(grep -oE 'js/app\.js\?v=[^"<]+' nexus/index.html | head -n1)"
+          CORE_REF="$(grep -oE 'js/app-core-[0-9]+\.js\?v=[^" ]+' nexus/js/app.js | head -n1)"
+          TEAM_REF="$(grep -oE 'js/imc-team-hub-gw008\.js\?v=[^" ]+' nexus/js/app.js | head -n1)"
+          MANAGERS_REF="$(grep -oE 'js/imc-managers-gw008\.js\?v=[^" ]+' nexus/js/app.js | head -n1)"
+
+          test -n "$BUILD"
+          test -n "$APP_REF"
+          test -n "$CORE_REF"
+          test -n "$TEAM_REF"
+          test -n "$MANAGERS_REF"
+          grep -Fq "<title>IMC Nexus · Build $BUILD</title>" nexus/index.html
+          grep -Fq "$APP_REF" nexus/index.html
+          grep -Fq "$CORE_REF" nexus/js/app.js
+          grep -Fq "$TEAM_REF" nexus/js/app.js
+          grep -Fq "$MANAGERS_REF" nexus/js/app.js
+
+          CORE_PATH="nexus/${CORE_REF%%\?*}"
+          TEAM_PATH="nexus/${TEAM_REF%%\?*}"
+          MANAGERS_PATH="nexus/${MANAGERS_REF%%\?*}"
+          test -s "$CORE_PATH"
+          test -s "$TEAM_PATH"
+          test -s "$MANAGERS_PATH"
+          node --check "$CORE_PATH"
+          node --check "$TEAM_PATH"
+          node --check "$MANAGERS_PATH"
+          ! grep -Fq 'gw_season_matchdays' "$CORE_PATH"
+
+          echo "NEXUS_BUILD=$BUILD" >> "$GITHUB_ENV"
+          echo "NEXUS_APP_REF=$APP_REF" >> "$GITHUB_ENV"
+          echo "NEXUS_CORE_REF=$CORE_REF" >> "$GITHUB_ENV"
+          echo "NEXUS_TEAM_REF=$TEAM_REF" >> "$GITHUB_ENV"
+          echo "NEXUS_MANAGERS_REF=$MANAGERS_REF" >> "$GITHUB_ENV"
+          echo "NEXUS_CORE_PATH=$CORE_PATH" >> "$GITHUB_ENV"
+          echo "NEXUS_TEAM_PATH=$TEAM_PATH" >> "$GITHUB_ENV"
+          echo "NEXUS_MANAGERS_PATH=$MANAGERS_PATH" >> "$GITHUB_ENV"
 
           echo "PREFLIGHT_BUILD=$BUILD"
-          echo "PREFLIGHT_INDEX_SIZE=$(wc -c < nexus/index.html)"
-          echo "PREFLIGHT_APP_SIZE=$(wc -c < nexus/js/app.js)"
-          echo "PREFLIGHT_CORE56_SIZE=$(wc -c < nexus/js/app-core-56.js)"
-          echo "PREFLIGHT_TEAM_HUB_SIZE=$(wc -c < nexus/js/imc-team-hub-gw008.js)"
-          echo "PREFLIGHT_MANAGERS_SIZE=$(wc -c < nexus/js/imc-managers-gw008.js)"
+          echo "PREFLIGHT_APP_REF=$APP_REF"
+          echo "PREFLIGHT_CORE_REF=$CORE_REF"
+          echo "PREFLIGHT_TEAM_REF=$TEAM_REF"
+          echo "PREFLIGHT_MANAGERS_REF=$MANAGERS_REF"
 
       - name: Deploy full Nexus snapshot
         if: ${{ github.event_name == 'workflow_dispatch' }}
@@ -105,7 +126,7 @@ jobs:
               --exclude-glob '*.key' \
               --exclude-glob 'index.html' \
               --exclude-glob 'js/app.js' \
-              --exclude-glob 'js/app-core-56.js' \
+              --exclude-glob 'js/app-core-*.js' \
               --exclude-glob 'js/imc-team-hub-gw008.js' \
               --exclude-glob 'js/imc-managers-gw008.js' \
               nexus \"$REMOTE\";
@@ -149,7 +170,7 @@ jobs:
           user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']
           raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host
           remote_root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-          skip={'nexus/index.html','nexus/js/app.js','nexus/js/app-core-56.js','nexus/js/imc-team-hub-gw008.js','nexus/js/imc-managers-gw008.js'}
+          skip={'nexus/index.html','nexus/js/app.js',os.environ['NEXUS_CORE_PATH'],os.environ['NEXUS_TEAM_PATH'],os.environ['NEXUS_MANAGERS_PATH']}
           changed=[]
           p=Path('/tmp/nexus-upload.txt')
           if p.exists():
@@ -203,21 +224,18 @@ jobs:
           remote_root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
           ctx=ssl.create_default_context(); ctx.check_hostname=False
           ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
-          critical=[
-              (Path('nexus/js/app-core-56.js'),f'{remote_root}/js','app-core-56.js'),
-              (Path('nexus/js/app.js'),f'{remote_root}/js','app.js'),
-              (Path('nexus/js/imc-team-hub-gw008.js'),f'{remote_root}/js','imc-team-hub-gw008.js'),
-              (Path('nexus/js/imc-managers-gw008.js'),f'{remote_root}/js','imc-managers-gw008.js'),
-              (Path('nexus/index.html'),remote_root,'index.html'),
-          ]
-          for local,remote_dir,remote_name in critical:
+          critical=[Path(os.environ['NEXUS_CORE_PATH']),Path('nexus/js/app.js'),Path(os.environ['NEXUS_TEAM_PATH']),Path(os.environ['NEXUS_MANAGERS_PATH']),Path('nexus/index.html')]
+          for local in critical:
+              rel=local.as_posix().removeprefix('nexus/')
+              remote_dir=remote_root if '/' not in rel else f"{remote_root}/{str(Path(rel).parent).replace(chr(92),'/')}"
+              remote_name=local.name
               data=local.read_bytes(); ftp.cwd(remote_dir)
               with local.open('rb') as fh: ftp.storbinary(f'STOR {remote_name}',fh,blocksize=65536)
               size=ftp.size(remote_name); buf=io.BytesIO(); ftp.retrbinary(f'RETR {remote_name}',buf.write,blocksize=65536); remote=buf.getvalue()
-              print(f'{remote_name}: LOCAL_SHA256={hashlib.sha256(data).hexdigest()}')
-              print(f'{remote_name}: REMOTE_SHA256={hashlib.sha256(remote).hexdigest()}')
-              if size!=len(data) or remote!=data: raise SystemExit(f'Critical FTPS read-back mismatch for {remote_name}')
-              print(f'CRITICAL_MATCH=YES {remote_name}')
+              print(f'{rel}: LOCAL_SHA256={hashlib.sha256(data).hexdigest()}')
+              print(f'{rel}: REMOTE_SHA256={hashlib.sha256(remote).hexdigest()}')
+              if size!=len(data) or remote!=data: raise SystemExit(f'Critical FTPS read-back mismatch for {rel}')
+              print(f'CRITICAL_MATCH=YES {rel}')
           ftp.quit()
           PY
 
@@ -230,27 +248,26 @@ jobs:
           INDEX_URL="$BASE_URL/index.html?deploy_verify=$TOKEN"
           curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$INDEX_URL" -o /tmp/nexus-public-index.html
           test "$(sha256sum nexus/index.html | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-index.html | awk '{print $1}')"
-          grep -Fq '<title>IMC Nexus · Build 56</title>' /tmp/nexus-public-index.html
-          grep -Fq 'js/app.js?v=56.1' /tmp/nexus-public-index.html
+          grep -Fq "<title>IMC Nexus · Build $NEXUS_BUILD</title>" /tmp/nexus-public-index.html
+          grep -Fq "$NEXUS_APP_REF" /tmp/nexus-public-index.html
 
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/js/app.js?v=56.1&deploy_verify=$TOKEN" -o /tmp/nexus-public-app.js
+          APP_URL="$BASE_URL/$NEXUS_APP_REF&deploy_verify=$TOKEN"
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$APP_URL" -o /tmp/nexus-public-app.js
           test "$(sha256sum nexus/js/app.js | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-app.js | awk '{print $1}')"
           node --check /tmp/nexus-public-app.js
-          grep -Fq 'js/app-core-56.js?v=56.0-core' /tmp/nexus-public-app.js
-          grep -Fq 'js/imc-team-hub-gw008.js?v=2.2.0' /tmp/nexus-public-app.js
-          grep -Fq 'js/imc-managers-gw008.js?v=1.5.0' /tmp/nexus-public-app.js
+          grep -Fq "$NEXUS_CORE_REF" /tmp/nexus-public-app.js
+          grep -Fq "$NEXUS_TEAM_REF" /tmp/nexus-public-app.js
+          grep -Fq "$NEXUS_MANAGERS_REF" /tmp/nexus-public-app.js
 
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/js/app-core-56.js?v=56.0-core&deploy_verify=$TOKEN" -o /tmp/nexus-public-core56.js
-          test "$(sha256sum nexus/js/app-core-56.js | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-core56.js | awk '{print $1}')"
-          node --check /tmp/nexus-public-core56.js
-
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/js/imc-team-hub-gw008.js?v=2.2.0&deploy_verify=$TOKEN" -o /tmp/nexus-public-team-hub.js
-          test "$(sha256sum nexus/js/imc-team-hub-gw008.js | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-team-hub.js | awk '{print $1}')"
-          node --check /tmp/nexus-public-team-hub.js
-
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/js/imc-managers-gw008.js?v=1.5.0&deploy_verify=$TOKEN" -o /tmp/nexus-public-managers.js
-          test "$(sha256sum nexus/js/imc-managers-gw008.js | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-managers.js | awk '{print $1}')"
-          node --check /tmp/nexus-public-managers.js
+          verify_js(){
+            local ref="$1" local_path="$2" out="$3"
+            curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/$ref&deploy_verify=$TOKEN" -o "$out"
+            test "$(sha256sum "$local_path" | awk '{print $1}')" = "$(sha256sum "$out" | awk '{print $1}')"
+            node --check "$out"
+          }
+          verify_js "$NEXUS_CORE_REF" "$NEXUS_CORE_PATH" /tmp/nexus-public-core.js
+          verify_js "$NEXUS_TEAM_REF" "$NEXUS_TEAM_PATH" /tmp/nexus-public-team-hub.js
+          verify_js "$NEXUS_MANAGERS_REF" "$NEXUS_MANAGERS_PATH" /tmp/nexus-public-managers.js
 
           CHROME="$(command -v google-chrome || command -v google-chrome-stable || true)"
           if [ -n "$CHROME" ]; then
@@ -258,7 +275,7 @@ jobs:
             grep -Fq 'id="loginForm"' /tmp/nexus-public-dom.html
             echo 'BROWSER_SMOKE=YES'
           fi
-          echo 'NEXUS_RELEASE_VERIFIED=BUILD_56'
+          echo "NEXUS_RELEASE_VERIFIED=BUILD_$NEXUS_BUILD"
 
       - name: Deployment summary
-        run: echo 'Nexus Build 56 deployed and verified on public production.'
+        run: echo "Nexus Build $NEXUS_BUILD deployed and verified on public production."
