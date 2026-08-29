@@ -3,10 +3,10 @@
 if(window.__IMC_ENTITIES_CURRENT_MANAGER_GW008__)return;
 window.__IMC_ENTITIES_CURRENT_MANAGER_GW008__=true;
 
-const VERSION="1.0.1";
+const VERSION="1.0.2";
 const WORLD="GW008";
 const STYLE_ID="imcEntitiesCurrentManagerGw008Css";
-let cache=null,timer=null,observer=null,detail=null;
+let cache=null,timer=null,observer=null;
 
 function clean(v){return String(v==null?"":v).replace(/\s+/g," ").trim();}
 function esc(v){return clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
@@ -15,6 +15,15 @@ function todayIso(){const d=new Date(),y=d.getFullYear(),m=String(d.getMonth()+1
 function assignmentActive(a,today){const start=clean(a&&a.start_date),end=clean(a&&a.end_date);return (!start||start<=today)&&(!end||end>=today);}
 function formatDate(v){const s=clean(v);if(!s)return"-";const d=new Date(`${s}T12:00:00`);if(Number.isNaN(d.getTime()))return s;return d.toLocaleDateString("it-IT",{day:"2-digit",month:"2-digit",year:"numeric"});}
 function root(){return document.querySelector(`#pageRoot > [data-imc-entities-world="${WORLD}"]`);}
+function currentDetail(){
+  const r=root();if(!r||!r.querySelector(".imc-ent8-detail"))return null;
+  const tab=r.querySelector('.imc-ent8-tab.is-active[data-ent-tab]');
+  const type=tab&&tab.getAttribute("data-ent-tab")==="nations"?"nation":"club";
+  const fields=[...r.querySelectorAll(".imc-ent8-field")];
+  const idField=fields.find(f=>clean(f.querySelector("span")&&f.querySelector("span").textContent).toLowerCase()==="id globale");
+  const id=clean(idField&&idField.querySelector("strong")&&idField.querySelector("strong").textContent);
+  return id?{type,id}:null;
+}
 
 function installStyles(){
   if(document.getElementById(STYLE_ID))return;
@@ -103,7 +112,7 @@ function injectCards(data){
 }
 
 function injectDetail(data){
-  const r=root();
+  const r=root(),detail=currentDetail();
   if(!r||!detail)return;
   const info=managerFor(data,detail.type,detail.id);
   if(!info||!info.manager)return;
@@ -142,12 +151,6 @@ async function apply(){
 function schedule(){clearTimeout(timer);timer=setTimeout(apply,60);}
 function start(){
   installStyles();
-  document.addEventListener("click",function(e){
-    const open=e.target&&e.target.closest?e.target.closest("[data-ent-open][data-ent-id]"):null;
-    if(open){detail={type:open.getAttribute("data-ent-open")==="nation"?"nation":"club",id:open.getAttribute("data-ent-id")};setTimeout(schedule,0);return;}
-    const back=e.target&&e.target.closest?e.target.closest("[data-ent-back],[data-ent-tab]"):null;
-    if(back){detail=null;setTimeout(schedule,0);}
-  },true);
   observer=new MutationObserver(schedule);
   observer.observe(document.documentElement,{childList:true,subtree:true});
   schedule();
