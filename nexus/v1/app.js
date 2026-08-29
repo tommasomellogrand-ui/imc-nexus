@@ -1,86 +1,24 @@
 (function(){
 "use strict";
-
 const BUILD="1.0";
 const SUPABASE_URL="https://toanuzojdkfjgucztpze.supabase.co";
 const SUPABASE_KEY="sb_publishable_DYmVU7yEavK_ddsdNMUjcg_a7HesB-l";
 const WORLDS={GW001:"Road To History",GW002:"Gold 558",GW003:"Gold 557",GW004:"World League",GW005:"Hall Of Famers",GW006:"Master League World",GW007:"The Four Kingdoms",GW008:"Gold 1",GW009:"Kick Off",GW010:"Sensible Soccer Academy"};
-
 let db=null,identity=null,currentView="clubhouse",selectedWorld=null;
 function el(id){return document.getElementById(id)}
 function technicalEmail(username){return username.trim().toLowerCase()+"@users.imcnexus.local"}
 function setStatus(msg,isError){const n=el("status");if(!n)return;n.textContent=msg||"";n.classList.toggle("error",!!isError)}
 function show(id){["loginView","appView"].forEach(x=>{const n=el(x);if(n)n.hidden=x!==id})}
-
-async function loadIdentity(user){
-  const r=await db.from("imc_users").select("auth_user_id,manager_id,username,role,must_change_password").eq("auth_user_id",user.id).maybeSingle();
-  if(r.error)throw r.error;
-  if(!r.data)throw new Error("Account Nexus non associato a un manager IMC");
-  return r.data;
-}
-function renderAccount(){
-  el("userName").textContent=identity.username||"Nexus User";
-  el("managerId").textContent=identity.manager_id||"";
-}
-function mountNavigation(){
-  if(!window.IMC_NAVIGATION)throw new Error("Modulo Navigation non disponibile");
-  window.IMC_NAVIGATION.mount({host:el("navigationHost"),current:"clubhouse"});
-}
-async function openClubHouse(){
-  currentView="clubhouse";selectedWorld=null;
-  if(window.IMC_GAME_WORLD_SHELL)window.IMC_GAME_WORLD_SHELL.unmount();
-  if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.setContext({current:"clubhouse",worldId:null,worldName:null});
-  const host=el("moduleHost");host.hidden=false;
-  const area=el("worldArea");area.hidden=true;area.innerHTML="";
-  if(!window.IMC_CLUBHOUSE)throw new Error("Modulo Club House non disponibile");
-  await window.IMC_CLUBHOUSE.mount({container:host,client:db,user:identity,managerId:identity.manager_id,username:identity.username});
-}
-function openWorld(worldId){
-  currentView="game-world";selectedWorld=worldId;
-  const name=WORLDS[worldId]||worldId;
-  if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.setContext({current:"game-world",worldId,worldName:name});
-  if(window.IMC_CLUBHOUSE)window.IMC_CLUBHOUSE.unmount();
-  el("moduleHost").hidden=true;
-  const area=el("worldArea");area.hidden=false;
-  if(!window.IMC_GAME_WORLD_SHELL)throw new Error("Modulo Game World Shell non disponibile");
-  window.IMC_GAME_WORLD_SHELL.mount({container:area,worldId,worldName:name});
-}
-async function enter(user){
-  identity=await loadIdentity(user);renderAccount();show("appView");mountNavigation();await openClubHouse();
-}
-async function boot(){
-  document.title="IMC Nexus · Build 1.0";
-  if(!window.supabase)throw new Error("Supabase non disponibile");
-  db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);window.__IMC_NEXUS_CLIENT__=db;
-  const r=await db.auth.getSession();if(r.error)throw r.error;
-  if(r.data.session&&r.data.session.user){try{await enter(r.data.session.user);return}catch(e){await db.auth.signOut()}}
-  show("loginView");
-}
-
-document.addEventListener("submit",async e=>{
-  if(e.target.id!=="loginForm")return;e.preventDefault();setStatus("Accesso in corso…");
-  const username=el("username").value.trim(),password=el("password").value;
-  if(!username||!password){setStatus("Inserisci username e password",true);return;}
-  try{
-    const auth=await db.auth.signInWithPassword({email:technicalEmail(username),password});if(auth.error)throw auth.error;
-    await enter(auth.data.user);setStatus("");
-  }catch(err){setStatus(err.message||"Accesso non riuscito",true)}
-});
-
-document.addEventListener("nexus:navigate",async e=>{
-  const d=e.detail||{};
-  if(d.target==="clubhouse"){await openClubHouse();return;}
-  if(d.target==="game-world"&&d.worldId){openWorld(String(d.worldId));return;}
-});
-
-document.addEventListener("click",async e=>{
-  if(e.target.closest("#logout")){
-    if(window.IMC_CLUBHOUSE)window.IMC_CLUBHOUSE.unmount();
-    if(window.IMC_GAME_WORLD_SHELL)window.IMC_GAME_WORLD_SHELL.unmount();
-    if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.unmount();
-    await db.auth.signOut();identity=null;selectedWorld=null;currentView="clubhouse";show("loginView");setStatus("");
-  }
-});
-
+async function loadIdentity(user){const r=await db.from("imc_users").select("auth_user_id,manager_id,username,role,must_change_password").eq("auth_user_id",user.id).maybeSingle();if(r.error)throw r.error;if(!r.data)throw new Error("Account Nexus non associato a un manager IMC");return r.data}
+function renderAccount(){el("userName").textContent=identity.username||"Nexus User";el("managerId").textContent=identity.manager_id||""}
+function mountNavigation(){if(!window.IMC_NAVIGATION)throw new Error("Modulo Navigation non disponibile");window.IMC_NAVIGATION.mount({host:el("navigationHost"),current:"clubhouse"})}
+async function openClubHouse(){currentView="clubhouse";selectedWorld=null;if(window.IMC_TEAM_HUB)window.IMC_TEAM_HUB.unmount();if(window.IMC_GAME_WORLD_SHELL)window.IMC_GAME_WORLD_SHELL.unmount();if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.setContext({current:"clubhouse",worldId:null,worldName:null});const host=el("moduleHost");host.hidden=false;const area=el("worldArea");area.hidden=true;area.innerHTML="";if(!window.IMC_CLUBHOUSE)throw new Error("Modulo Club House non disponibile");await window.IMC_CLUBHOUSE.mount({container:host,client:db,user:identity,managerId:identity.manager_id,username:identity.username})}
+function openWorld(worldId){currentView="game-world";selectedWorld=worldId;const name=WORLDS[worldId]||worldId;if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.setContext({current:"game-world",worldId,worldName:name});if(window.IMC_CLUBHOUSE)window.IMC_CLUBHOUSE.unmount();if(window.IMC_TEAM_HUB)window.IMC_TEAM_HUB.unmount();el("moduleHost").hidden=true;const area=el("worldArea");area.hidden=false;if(!window.IMC_GAME_WORLD_SHELL)throw new Error("Modulo Game World Shell non disponibile");window.IMC_GAME_WORLD_SHELL.mount({container:area,worldId,worldName:name})}
+async function openWorldSection(worldId,section){if(worldId!==selectedWorld)openWorld(worldId);const content=el("worldArea").querySelector("[data-gw-content]");if(!content)return;if(window.IMC_TEAM_HUB)window.IMC_TEAM_HUB.unmount();if(section==="teams"){if(!window.IMC_TEAM_HUB)throw new Error("Modulo Team Hub non disponibile");await window.IMC_TEAM_HUB.mount({container:content,client:db,worldId});return}content.innerHTML='<div class="gw-shell-empty">Sezione pronta per il relativo modulo autonomo.</div>'}
+async function enter(user){identity=await loadIdentity(user);renderAccount();show("appView");mountNavigation();await openClubHouse()}
+async function boot(){document.title="IMC Nexus · Build 1.0";if(!window.supabase)throw new Error("Supabase non disponibile");db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);window.__IMC_NEXUS_CLIENT__=db;const r=await db.auth.getSession();if(r.error)throw r.error;if(r.data.session&&r.data.session.user){try{await enter(r.data.session.user);return}catch(e){await db.auth.signOut()}}show("loginView")}
+document.addEventListener("submit",async e=>{if(e.target.id!=="loginForm")return;e.preventDefault();setStatus("Accesso in corso…");const username=el("username").value.trim(),password=el("password").value;if(!username||!password){setStatus("Inserisci username e password",true);return}try{const auth=await db.auth.signInWithPassword({email:technicalEmail(username),password});if(auth.error)throw auth.error;await enter(auth.data.user);setStatus("")}catch(err){setStatus(err.message||"Accesso non riuscito",true)}});
+document.addEventListener("nexus:navigate",async e=>{const d=e.detail||{};if(d.target==="clubhouse"){await openClubHouse();return}if(d.target==="game-world"&&d.worldId){openWorld(String(d.worldId));return}if(d.target==="game-world-section"&&d.worldId&&d.section){await openWorldSection(String(d.worldId),String(d.section));return}});
+document.addEventListener("click",async e=>{if(e.target.closest("#logout")){if(window.IMC_TEAM_HUB)window.IMC_TEAM_HUB.unmount();if(window.IMC_CLUBHOUSE)window.IMC_CLUBHOUSE.unmount();if(window.IMC_GAME_WORLD_SHELL)window.IMC_GAME_WORLD_SHELL.unmount();if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.unmount();await db.auth.signOut();identity=null;selectedWorld=null;currentView="clubhouse";show("loginView");setStatus("")}});
 boot().catch(e=>{show("loginView");setStatus(e.message||String(e),true)});
 })();
