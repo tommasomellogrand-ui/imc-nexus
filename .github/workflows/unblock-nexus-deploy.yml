@@ -1,0 +1,116 @@
+name: Unblock Nexus Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/unblock-nexus-deploy.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: true
+
+jobs:
+  unblock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Nexus files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s nexus/js/app.js
+          test -s nexus/js/imc-managers-gw008.js
+          test -s nexus/js/imc-entities-gw008.js
+          test -s nexus/js/imc-entities-current-manager-gw008.js
+          node --check nexus/js/app.js
+          node --check nexus/js/imc-managers-gw008.js
+          node --check nexus/js/imc-entities-gw008.js
+          node --check nexus/js/imc-entities-current-manager-gw008.js
+          grep -Fq 'js/imc-managers-gw008.js?v=1.0.2' nexus/js/app.js
+          grep -Fq 'js/imc-entities-current-manager-gw008.js?v=1.0.0' nexus/js/app.js
+          grep -Fq 'national_team_codex_global' nexus/js/imc-managers-gw008.js
+          ! grep -Fq 'allRows("imc_national_teams"' nexus/js/imc-managers-gw008.js
+
+      - name: Upload current Nexus runtime files
+        shell: bash
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import io, os, ssl, hashlib
+          from pathlib import Path
+          from ftplib import FTP_TLS
+
+          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user = os.environ['ARUBA_FTP_USERNAME']
+          password = os.environ['ARUBA_FTP_PASSWORD']
+          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain = host[4:] if host.startswith('ftp.') else host
+          remote_root = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+
+          files = [
+              Path('nexus/js/app.js'),
+              Path('nexus/js/imc-managers-gw008.js'),
+              Path('nexus/js/imc-entities-gw008.js'),
+              Path('nexus/js/imc-entities-current-manager-gw008.js'),
+          ]
+
+          ctx = ssl.create_default_context()
+          ctx.check_hostname = False
+          ftp = FTP_TLS(context=ctx)
+          ftp.connect(host, 21, timeout=30)
+          ftp.login(user, password)
+          ftp.prot_p()
+          ftp.cwd(f'{remote_root}/js')
+
+          for local in files:
+              data = local.read_bytes()
+              with local.open('rb') as fh:
+                  ftp.storbinary(f'STOR {local.name}', fh, blocksize=65536)
+              buf = io.BytesIO()
+              ftp.retrbinary(f'RETR {local.name}', buf.write, blocksize=65536)
+              remote = buf.getvalue()
+              if remote != data:
+                  raise SystemExit(f'FTPS read-back mismatch for {local.name}')
+              print(f'UPLOAD_MATCH=YES {local.name} {hashlib.sha256(data).hexdigest()}')
+
+          ftp.quit()
+          PY
+
+      - name: Verify public Nexus files
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='https://www.italianmastersclub.it/nexus/js'
+          TOKEN="${GITHUB_SHA}-$(date +%s)"
+
+          curl -fsSL -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE/app.js?v=55.3&unblock=$TOKEN" -o /tmp/app.js
+          curl -fsSL -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE/imc-managers-gw008.js?v=1.0.2&unblock=$TOKEN" -o /tmp/managers.js
+          curl -fsSL -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE/imc-entities-gw008.js?v=1.0.2&unblock=$TOKEN" -o /tmp/entities.js
+          curl -fsSL -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE/imc-entities-current-manager-gw008.js?v=1.0.0&unblock=$TOKEN" -o /tmp/current-manager.js
+
+          test "$(sha256sum nexus/js/app.js | awk '{print $1}')" = "$(sha256sum /tmp/app.js | awk '{print $1}')"
+          test "$(sha256sum nexus/js/imc-managers-gw008.js | awk '{print $1}')" = "$(sha256sum /tmp/managers.js | awk '{print $1}')"
+          test "$(sha256sum nexus/js/imc-entities-gw008.js | awk '{print $1}')" = "$(sha256sum /tmp/entities.js | awk '{print $1}')"
+          test "$(sha256sum nexus/js/imc-entities-current-manager-gw008.js | awk '{print $1}')" = "$(sha256sum /tmp/current-manager.js | awk '{print $1}')"
+
+          grep -Fq 'js/imc-managers-gw008.js?v=1.0.2' /tmp/app.js
+          grep -Fq 'js/imc-entities-current-manager-gw008.js?v=1.0.0' /tmp/app.js
+          grep -Fq 'national_team_codex_global' /tmp/managers.js
+          ! grep -Fq 'allRows("imc_national_teams"' /tmp/managers.js
+          grep -Fq 'IMC_ENTITIES_CURRENT_MANAGER_GW008' /tmp/current-manager.js
+
+          echo 'PUBLIC_NEXUS_RUNTIME_MATCH=YES'
+          echo 'PUBLIC_MANAGERS_FIX_MATCH=YES'
+          echo 'PUBLIC_ENTITY_MANAGER_LABELS_MATCH=YES'
