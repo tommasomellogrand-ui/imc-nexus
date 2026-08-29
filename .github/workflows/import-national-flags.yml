@@ -1,0 +1,61 @@
+name: Import National Team Flags
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-national-flags.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-flags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Nexus
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch circle-flags
+        run: git clone --depth 1 --branch gh-pages https://github.com/HatScripts/circle-flags.git /tmp/circle-flags
+
+      - name: Copy 80 national team flags
+        shell: bash
+        run: |
+          set -euo pipefail
+          dst="nexus/assets/flags/nations"
+          src="/tmp/circle-flags/flags"
+          mkdir -p "$dst"
+
+          declare -A flags=(
+            [1]=gb-eng [2]=fr [3]=de [4]=it [5]=cz [6]=pt [7]=nl [8]=es [9]=gr [10]=se
+            [11]=hr [12]=ro [13]=pl [14]=tr [15]=ru [16]=ch [17]=dk [18]=bg [19]=rs [20]=no
+            [21]=il [22]=ua [23]=gb-sct [24]=sk [25]=ie [26]=fi [27]=be [28]=ba [29]=at [30]=lv
+            [31]=hu [32]=lt [33]=si [34]=gb-wls [35]=gb-nir [36]=ee [37]=mk [38]=by [39]=cy [40]=is
+            [41]=mt [42]=ge [43]=al [44]=me [45]=md [46]=ar [47]=br [48]=cl [49]=co [50]=ec
+            [51]=py [52]=pe [53]=uy [54]=ve [55]=bo [56]=cr [57]=us [58]=mx [59]=ca [60]=jm
+            [61]=tt [62]=eg [63]=gh [64]=cm [65]=ng [66]=ci [67]=dz [68]=ma [69]=za [70]=tn
+            [71]=sn [72]=ml [73]=gn [74]=au [75]=cn [76]=jp [77]=kr [78]=ir [79]=sa [80]=iq
+          )
+
+          for id in $(seq 1 80); do
+            code="${flags[$id]}"
+            test -f "$src/$code.svg"
+            cp "$src/$code.svg" "$dst/$id.svg"
+          done
+
+          cp /tmp/circle-flags/LICENSE.md "$dst/LICENSE-circle-flags.md"
+          test "$(find "$dst" -maxdepth 1 -name '*.svg' | wc -l)" -eq 80
+
+      - name: Commit imported flags
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nexus/assets/flags/nations
+          git diff --cached --quiet && exit 0
+          git commit -m "assets: add 80 national team flags"
+          git push origin HEAD:main
