@@ -33,7 +33,7 @@
 
   var clubHouseTimer=null;
   new MutationObserver(function(){
-    clearTimeout(clHouseTimer);
+    clearTimeout(clubHouseTimer);
     clubHouseTimer=setTimeout(removeClubHouseManagerHero,80);
   }).observe(document.documentElement,{childList:true,subtree:true});
   removeClubHouseManagerHero();
