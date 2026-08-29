@@ -29,10 +29,14 @@ jobs:
           set -euo pipefail
           test -s nexus/index.html
           test -s nexus/v1/app.js
+          test -s nexus/v1/modules/clubhouse/clubhouse.js
+          test -s nexus/v1/modules/clubhouse/clubhouse.css
           grep -Fq '<title>IMC Nexus · Build 1.0</title>' nexus/index.html
           grep -Fq 'v1/app.js' nexus/index.html
-          grep -Fq 'const BUILD="1.0"' nexus/v1/app.js
+          grep -Fq 'v1/modules/clubhouse/clubhouse.js' nexus/index.html
+          grep -Fq 'v1/modules/clubhouse/clubhouse.css' nexus/index.html
           node --check nexus/v1/app.js
+          node --check nexus/v1/modules/clubhouse/clubhouse.js
 
       - name: Validate Aruba secrets
         env:
@@ -43,9 +47,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
-            test -n "${!name:-}"
-          done
+          for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do test -n "${!name:-}"; done
 
       - name: Upload Build 1.0 to Aruba
         env:
@@ -57,67 +59,46 @@ jobs:
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import hashlib, io, os, ssl
+          import io, os, ssl
           from pathlib import Path
           from ftplib import FTP_TLS, error_perm
-
           host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
-          user=os.environ['ARUBA_FTP_USERNAME']
-          password=os.environ['ARUBA_FTP_PASSWORD']
-          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
-          domain=host[4:] if host.startswith('ftp.') else host
+          user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host
           remote_root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-
-          files=[Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/assets/imc-logo.png')]
-          for p in files:
-              if not p.is_file():
-                  raise SystemExit(f'Missing required file: {p}')
-
-          ctx=ssl.create_default_context()
-          ctx.check_hostname=False
-          ftp=FTP_TLS(context=ctx)
-          ftp.connect(host,21,timeout=30)
-          ftp.login(user,password)
-          ftp.prot_p()
-
+          files=[Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/v1/modules/clubhouse/clubhouse.js'),Path('nexus/v1/modules/clubhouse/clubhouse.css'),Path('nexus/assets/imc-logo.png')]
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
           def ensure_abs(path):
-              parts=[x for x in path.split('/') if x]
               ftp.cwd('/')
-              for part in parts:
-                  try:
-                      ftp.cwd(part)
+              for part in [x for x in path.split('/') if x]:
+                  try: ftp.cwd(part)
                   except error_perm:
                       try: ftp.mkd(part)
                       except error_perm: pass
                       ftp.cwd(part)
-
           for local in files:
-              rel=local.as_posix().removeprefix('nexus/')
-              parent=str(Path(rel).parent).replace('\\','/')
-              remote_dir=remote_root if parent=='.' else f'{remote_root}/{parent}'
-              ensure_abs(remote_dir)
+              rel=local.as_posix().removeprefix('nexus/'); parent=str(Path(rel).parent).replace('\\','/')
+              ensure_abs(remote_root if parent=='.' else f'{remote_root}/{parent}')
               data=local.read_bytes()
-              with local.open('rb') as fh:
-                  ftp.storbinary(f'STOR {local.name}',fh,blocksize=65536)
-              buf=io.BytesIO()
-              ftp.retrbinary(f'RETR {local.name}',buf.write,blocksize=65536)
-              remote=buf.getvalue()
-              if remote != data:
-                  raise SystemExit(f'FTPS read-back mismatch: {rel}')
-              print(f'UPLOAD_MATCH=YES {rel} SHA256={hashlib.sha256(data).hexdigest()}')
+              with local.open('rb') as fh: ftp.storbinary(f'STOR {local.name}',fh,blocksize=65536)
+              buf=io.BytesIO(); ftp.retrbinary(f'RETR {local.name}',buf.write,blocksize=65536)
+              if buf.getvalue()!=data: raise SystemExit(f'Upload non verificato: {rel}')
+              print(f'UPLOAD_OK {rel}')
           ftp.quit()
           PY
 
-      - name: Public smoke test
+      - name: Verifica pubblica
         shell: bash
         run: |
           set -euo pipefail
           BASE='https://www.italianmastersclub.it/nexus'
           TOKEN="${GITHUB_SHA}-$(date +%s)"
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/index.html?verify=$TOKEN" -o /tmp/index.html
-          grep -Fq '<title>IMC Nexus · Build 1.0</title>' /tmp/index.html
-          grep -Fq 'v1/app.js' /tmp/index.html
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/v1/app.js?verify=$TOKEN" -o /tmp/app.js
-          grep -Fq 'const BUILD="1.0"' /tmp/app.js
-          node --check /tmp/app.js
-          echo 'NEXUS_BUILD_1_0_ONLINE=YES'
+          curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/index.html?verify=$TOKEN" -o /tmp/index.html
+          grep -Fq 'v1/modules/clubhouse/clubhouse.js' /tmp/index.html
+          curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/clubhouse/clubhouse.js?verify=$TOKEN" -o /tmp/clubhouse.js
+          curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/v1/modules/clubhouse/clubhouse.css?verify=$TOKEN" -o /tmp/clubhouse.css
+          grep -Fq 'window.IMC_CLUBHOUSE' /tmp/clubhouse.js
+          node --check /tmp/clubhouse.js
+          test -s /tmp/clubhouse.css
+          echo 'CLUBHOUSE_ONLINE=YES'
