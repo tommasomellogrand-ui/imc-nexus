@@ -1,4 +1,4 @@
-name: Deploy Nexus to Aruba
+name: Deploy Nexus Build 1.0 to Aruba
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'nexus/**'
+      - '.github/workflows/deploy-aruba.yml'
   workflow_dispatch:
 
 permissions:
@@ -17,17 +18,21 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[bootstrap]') }}
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
 
-      - name: Install FTPS client
-        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Validate Build 1.0
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s nexus/index.html
+          test -s nexus/v1/app.js
+          grep -Fq '<title>IMC Nexus · Build 1.0</title>' nexus/index.html
+          grep -Fq 'v1/app.js' nexus/index.html
+          grep -Fq 'const BUILD="1.0"' nexus/v1/app.js
+          node --check nexus/v1/app.js
 
       - name: Validate Aruba secrets
         env:
@@ -35,247 +40,84 @@ jobs:
           ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
           ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
           ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        shell: bash
         run: |
           set -euo pipefail
           for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
-            if [ -z "${!name:-}" ]; then
-              echo "Missing required secret: $name"
-              exit 1
-            fi
+            test -n "${!name:-}"
           done
 
-      - name: Preflight Nexus build
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -s nexus/index.html
-          test -s nexus/js/app.js
-          grep -Fq '</html>' nexus/index.html
-          node --check nexus/js/app.js
-
-          BUILD="$(sed -n 's/.*const NEXUS_BUILD = "\([^"]*\)";.*/\1/p' nexus/js/app.js | head -n1)"
-          APP_REF="$(grep -oE 'js/app\.js\?v=[^"<]+' nexus/index.html | head -n1)"
-          CORE_REF="$(grep -oE 'js/app-core-[0-9]+\.js\?v=[^" ]+' nexus/js/app.js | head -n1)"
-          TEAM_REF="$(grep -oE 'js/imc-team-hub-gw008\.js\?v=[^" ]+' nexus/js/app.js | head -n1)"
-          MANAGERS_REF="$(grep -oE 'js/imc-managers-gw008\.js\?v=[^" ]+' nexus/js/app.js | head -n1)"
-
-          test -n "$BUILD"
-          test -n "$APP_REF"
-          test -n "$CORE_REF"
-          test -n "$TEAM_REF"
-          test -n "$MANAGERS_REF"
-          grep -Fq "<title>IMC Nexus · Build $BUILD</title>" nexus/index.html
-          grep -Fq "$APP_REF" nexus/index.html
-          grep -Fq "$CORE_REF" nexus/js/app.js
-          grep -Fq "$TEAM_REF" nexus/js/app.js
-          grep -Fq "$MANAGERS_REF" nexus/js/app.js
-
-          CORE_PATH="nexus/${CORE_REF%%\?*}"
-          TEAM_PATH="nexus/${TEAM_REF%%\?*}"
-          MANAGERS_PATH="nexus/${MANAGERS_REF%%\?*}"
-          test -s "$CORE_PATH"
-          test -s "$TEAM_PATH"
-          test -s "$MANAGERS_PATH"
-          node --check "$CORE_PATH"
-          node --check "$TEAM_PATH"
-          node --check "$MANAGERS_PATH"
-          ! grep -Fq 'gw_season_matchdays' "$CORE_PATH"
-
-          echo "NEXUS_BUILD=$BUILD" >> "$GITHUB_ENV"
-          echo "NEXUS_APP_REF=$APP_REF" >> "$GITHUB_ENV"
-          echo "NEXUS_CORE_REF=$CORE_REF" >> "$GITHUB_ENV"
-          echo "NEXUS_TEAM_REF=$TEAM_REF" >> "$GITHUB_ENV"
-          echo "NEXUS_MANAGERS_REF=$MANAGERS_REF" >> "$GITHUB_ENV"
-          echo "NEXUS_CORE_PATH=$CORE_PATH" >> "$GITHUB_ENV"
-          echo "NEXUS_TEAM_PATH=$TEAM_PATH" >> "$GITHUB_ENV"
-          echo "NEXUS_MANAGERS_PATH=$MANAGERS_PATH" >> "$GITHUB_ENV"
-
-          echo "PREFLIGHT_BUILD=$BUILD"
-          echo "PREFLIGHT_APP_REF=$APP_REF"
-          echo "PREFLIGHT_CORE_REF=$CORE_REF"
-          echo "PREFLIGHT_TEAM_REF=$TEAM_REF"
-          echo "PREFLIGHT_MANAGERS_REF=$MANAGERS_REF"
-
-      - name: Deploy full Nexus snapshot
-        if: ${{ github.event_name == 'workflow_dispatch' }}
+      - name: Upload Build 1.0 to Aruba
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
           ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
           ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
           ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
-        run: |
-          set -euo pipefail
-          HOST="${ARUBA_FTP_HOST#ftp://}"
-          HOST="${HOST#ftps://}"
-          DOMAIN="${HOST#ftp.}"
-          RAW_REMOTE="${ARUBA_FTP_REMOTE_DIR%/}"
-          if [[ "$RAW_REMOTE" == /www.* ]]; then REMOTE="$RAW_REMOTE"; else REMOTE="/www.$DOMAIN$RAW_REMOTE"; fi
-          lftp -c "
-            set cmd:fail-exit yes;
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
-            set ssl:verify-certificate yes;
-            set ssl:check-hostname no;
-            set net:max-retries 2;
-            open -u \"$ARUBA_FTP_USERNAME\",\"$ARUBA_FTP_PASSWORD\" ftp://$HOST;
-            mirror -R --verbose --parallel=4 --no-perms \
-              --exclude-glob .gitkeep \
-              --exclude-glob .env \
-              --exclude-glob '.env.*' \
-              --exclude-glob '*.pem' \
-              --exclude-glob '*.key' \
-              --exclude-glob 'index.html' \
-              --exclude-glob 'js/app.js' \
-              --exclude-glob 'js/app-core-*.js' \
-              --exclude-glob 'js/imc-team-hub-gw008.js' \
-              --exclude-glob 'js/imc-managers-gw008.js' \
-              nexus \"$REMOTE\";
-            bye;
-          "
-
-      - name: Build minimal changed-file upload list
-        if: ${{ github.event_name == 'push' }}
-        id: changes
         shell: bash
-        run: |
-          set -euo pipefail
-          BEFORE="${{ github.event.before }}"
-          AFTER="${{ github.sha }}"
-          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
-            git ls-files nexus > /tmp/nexus-files.txt
-          else
-            git diff --diff-filter=AMCR --name-only "$BEFORE" "$AFTER" -- nexus/ > /tmp/nexus-files.txt
-          fi
-          grep -vE '(^|/)\.gitkeep$|(^|/)\.env($|\.)|\.pem$|\.key$|\.p12$|\.pfx$' /tmp/nexus-files.txt > /tmp/nexus-upload.txt || true
-          echo 'Files selected for deployment:'
-          cat /tmp/nexus-upload.txt || true
-          if [ -s /tmp/nexus-upload.txt ]; then echo 'has_files=true' >> "$GITHUB_OUTPUT"; else echo 'has_files=false' >> "$GITHUB_OUTPUT"; fi
-
-      - name: Deploy changed non-critical files with verified FTPS
-        if: ${{ github.event_name == 'push' && steps.changes.outputs.has_files == 'true' }}
-        shell: bash
-        env:
-          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
-          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
-          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
-          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          import io, os, ssl
-          from pathlib import Path
-          from ftplib import FTP_TLS, error_perm
-
-          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
-          user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']
-          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host
-          remote_root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-          skip={'nexus/index.html','nexus/js/app.js',os.environ['NEXUS_CORE_PATH'],os.environ['NEXUS_TEAM_PATH'],os.environ['NEXUS_MANAGERS_PATH']}
-          changed=[]
-          p=Path('/tmp/nexus-upload.txt')
-          if p.exists():
-              for line in p.read_text(encoding='utf-8').splitlines():
-                  path=line.strip()
-                  if path and path not in skip and Path(path).is_file(): changed.append(Path(path))
-          if not changed:
-              print('NO_NON_CRITICAL_FILES=YES'); raise SystemExit(0)
-
-          ctx=ssl.create_default_context(); ctx.check_hostname=False
-          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
-          def ensure_dir(rel):
-              ftp.cwd(remote_root)
-              if not rel:return
-              for part in rel.split('/'):
-                  if not part:continue
-                  try: ftp.cwd(part)
-                  except error_perm:
-                      try: ftp.mkd(part)
-                      except error_perm as exc:
-                          if not str(exc).startswith('550'): raise
-                      ftp.cwd(part)
-          for local in changed:
-              rel=local.as_posix().removeprefix('nexus/'); parent=str(Path(rel).parent).replace('\\','/')
-              if parent=='.':parent=''
-              ensure_dir(parent); data=local.read_bytes()
-              with local.open('rb') as fh: ftp.storbinary(f'STOR {local.name}',fh,blocksize=65536)
-              buf=io.BytesIO(); ftp.retrbinary(f'RETR {local.name}',buf.write,blocksize=65536)
-              if buf.getvalue()!=data: raise SystemExit(f'FTPS read-back mismatch for {rel}')
-              print(f'UPLOAD_MATCH=YES {rel} {len(data)} bytes')
-          ftp.quit()
-          PY
-
-      - name: Upload and verify critical runtime files
-        shell: bash
-        env:
-          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
-          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
-          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
-          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
         run: |
           set -euo pipefail
           python3 - <<'PY'
           import hashlib, io, os, ssl
           from pathlib import Path
-          from ftplib import FTP_TLS
+          from ftplib import FTP_TLS, error_perm
 
           host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
-          user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']
-          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host
+          user=os.environ['ARUBA_FTP_USERNAME']
+          password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
           remote_root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-          ctx=ssl.create_default_context(); ctx.check_hostname=False
-          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
-          critical=[Path(os.environ['NEXUS_CORE_PATH']),Path('nexus/js/app.js'),Path(os.environ['NEXUS_TEAM_PATH']),Path(os.environ['NEXUS_MANAGERS_PATH']),Path('nexus/index.html')]
-          for local in critical:
+
+          files=[Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/assets/imc-logo.png')]
+          for p in files:
+              if not p.is_file():
+                  raise SystemExit(f'Missing required file: {p}')
+
+          ctx=ssl.create_default_context()
+          ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx)
+          ftp.connect(host,21,timeout=30)
+          ftp.login(user,password)
+          ftp.prot_p()
+
+          def ensure_abs(path):
+              parts=[x for x in path.split('/') if x]
+              ftp.cwd('/')
+              for part in parts:
+                  try:
+                      ftp.cwd(part)
+                  except error_perm:
+                      try: ftp.mkd(part)
+                      except error_perm: pass
+                      ftp.cwd(part)
+
+          for local in files:
               rel=local.as_posix().removeprefix('nexus/')
-              remote_dir=remote_root if '/' not in rel else f"{remote_root}/{str(Path(rel).parent).replace(chr(92),'/')}"
-              remote_name=local.name
-              data=local.read_bytes(); ftp.cwd(remote_dir)
-              with local.open('rb') as fh: ftp.storbinary(f'STOR {remote_name}',fh,blocksize=65536)
-              size=ftp.size(remote_name); buf=io.BytesIO(); ftp.retrbinary(f'RETR {remote_name}',buf.write,blocksize=65536); remote=buf.getvalue()
-              print(f'{rel}: LOCAL_SHA256={hashlib.sha256(data).hexdigest()}')
-              print(f'{rel}: REMOTE_SHA256={hashlib.sha256(remote).hexdigest()}')
-              if size!=len(data) or remote!=data: raise SystemExit(f'Critical FTPS read-back mismatch for {rel}')
-              print(f'CRITICAL_MATCH=YES {rel}')
+              parent=str(Path(rel).parent).replace('\\','/')
+              remote_dir=remote_root if parent=='.' else f'{remote_root}/{parent}'
+              ensure_abs(remote_dir)
+              data=local.read_bytes()
+              with local.open('rb') as fh:
+                  ftp.storbinary(f'STOR {local.name}',fh,blocksize=65536)
+              buf=io.BytesIO()
+              ftp.retrbinary(f'RETR {local.name}',buf.write,blocksize=65536)
+              remote=buf.getvalue()
+              if remote != data:
+                  raise SystemExit(f'FTPS read-back mismatch: {rel}')
+              print(f'UPLOAD_MATCH=YES {rel} SHA256={hashlib.sha256(data).hexdigest()}')
           ftp.quit()
           PY
 
-      - name: Public production smoke test
+      - name: Public smoke test
         shell: bash
         run: |
           set -euo pipefail
-          BASE_URL='https://www.italianmastersclub.it/nexus'
+          BASE='https://www.italianmastersclub.it/nexus'
           TOKEN="${GITHUB_SHA}-$(date +%s)"
-          INDEX_URL="$BASE_URL/index.html?deploy_verify=$TOKEN"
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$INDEX_URL" -o /tmp/nexus-public-index.html
-          test "$(sha256sum nexus/index.html | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-index.html | awk '{print $1}')"
-          grep -Fq "<title>IMC Nexus · Build $NEXUS_BUILD</title>" /tmp/nexus-public-index.html
-          grep -Fq "$NEXUS_APP_REF" /tmp/nexus-public-index.html
-
-          APP_URL="$BASE_URL/$NEXUS_APP_REF&deploy_verify=$TOKEN"
-          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$APP_URL" -o /tmp/nexus-public-app.js
-          test "$(sha256sum nexus/js/app.js | awk '{print $1}')" = "$(sha256sum /tmp/nexus-public-app.js | awk '{print $1}')"
-          node --check /tmp/nexus-public-app.js
-          grep -Fq "$NEXUS_CORE_REF" /tmp/nexus-public-app.js
-          grep -Fq "$NEXUS_TEAM_REF" /tmp/nexus-public-app.js
-          grep -Fq "$NEXUS_MANAGERS_REF" /tmp/nexus-public-app.js
-
-          verify_js(){
-            local ref="$1" local_path="$2" out="$3"
-            curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/$ref&deploy_verify=$TOKEN" -o "$out"
-            test "$(sha256sum "$local_path" | awk '{print $1}')" = "$(sha256sum "$out" | awk '{print $1}')"
-            node --check "$out"
-          }
-          verify_js "$NEXUS_CORE_REF" "$NEXUS_CORE_PATH" /tmp/nexus-public-core.js
-          verify_js "$NEXUS_TEAM_REF" "$NEXUS_TEAM_PATH" /tmp/nexus-public-team-hub.js
-          verify_js "$NEXUS_MANAGERS_REF" "$NEXUS_MANAGERS_PATH" /tmp/nexus-public-managers.js
-
-          CHROME="$(command -v google-chrome || command -v google-chrome-stable || true)"
-          if [ -n "$CHROME" ]; then
-            "$CHROME" --headless=new --no-sandbox --disable-gpu --virtual-time-budget=7000 --dump-dom "$INDEX_URL" > /tmp/nexus-public-dom.html 2>/tmp/nexus-chrome.log
-            grep -Fq 'id="loginForm"' /tmp/nexus-public-dom.html
-            echo 'BROWSER_SMOKE=YES'
-          fi
-          echo "NEXUS_RELEASE_VERIFIED=BUILD_$NEXUS_BUILD"
-
-      - name: Deployment summary
-        run: echo "Nexus Build $NEXUS_BUILD deployed and verified on public production."
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/index.html?verify=$TOKEN" -o /tmp/index.html
+          grep -Fq '<title>IMC Nexus · Build 1.0</title>' /tmp/index.html
+          grep -Fq 'v1/app.js' /tmp/index.html
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store' "$BASE/v1/app.js?verify=$TOKEN" -o /tmp/app.js
+          grep -Fq 'const BUILD="1.0"' /tmp/app.js
+          node --check /tmp/app.js
+          echo 'NEXUS_BUILD_1_0_ONLINE=YES'
