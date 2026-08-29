@@ -1,8 +1,21 @@
 (function(){
   "use strict";
 
-  // Build 56 production runtime. GW008 Syntex deployment trigger.
-  const NEXUS_BUILD = "56";
+  // Build 57 production runtime.
+  const NEXUS_BUILD = "57";
+  window.__NEXUS_RUNTIME_BUILD__ = NEXUS_BUILD;
+
+  function syncVisibleBuildLabel(){
+    document.querySelectorAll(".nx-sport-title small,.nx-admin-head small").forEach(function(el){
+      if(/BUILD\s+56\b/.test(el.textContent||"")) el.textContent=(el.textContent||"").replace(/BUILD\s+56\b/g,"BUILD "+NEXUS_BUILD);
+    });
+  }
+
+  var buildLabelTimer=null;
+  new MutationObserver(function(){
+    clearTimeout(buildLabelTimer);
+    buildLabelTimer=setTimeout(syncVisibleBuildLabel,30);
+  }).observe(document.documentElement,{childList:true,subtree:true});
 
   function writeScript(src){
     document.write('<script src="'+src+'"></'+'script>');
@@ -51,6 +64,7 @@
   },true);
 
   function loadAfterCore(){
+    syncVisibleBuildLabel();
     appendScript("js/imc-results-scorers.js?v=1.0.0");
     appendScript("js/imc-player-codex-global.js?v=1.0.0");
     appendScript("js/imc-player-codex-global-detail.js?v=1.1.0");
@@ -94,6 +108,7 @@
     writeScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
     writeScript("js/imc-managers-gw008.js?v=1.5.0");
     writeScript("js/imc-team-hub-gw008.js?v=2.2.0");
+    setTimeout(syncVisibleBuildLabel,0);
     return;
   }
 
