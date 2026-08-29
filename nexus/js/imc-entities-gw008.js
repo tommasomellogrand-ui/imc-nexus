@@ -3,12 +3,12 @@
 if(window.__IMC_ENTITIES_GW008__)return;
 window.__IMC_ENTITIES_GW008__=true;
 
-const VERSION="1.0.1";
+const VERSION="1.0.2";
 const WORLD="GW008";
 const WORLD_NAME="Gold 1";
 const ROOT_FLAG="imc-entities-gw008";
 const STYLE_ID="imcEntitiesGw008Css";
-let cache=null,observer=null,timer=null;
+let cache={clubs:null,nations:null},observer=null,timer=null;
 let view={tab:"clubs",detail:null};
 
 function clean(v){return String(v==null?"":v).replace(/\s+/g," ").trim();}
@@ -54,22 +54,29 @@ function installStyles(){
 
 async function allRows(table,select){const c=db();if(!c)throw new Error("Client Supabase non disponibile");const out=[];let from=0;while(true){const r=await c.from(table).select(select||"*").range(from,from+999);if(r.error)throw r.error;const page=r.data||[];out.push(...page);if(page.length<1000)break;from+=1000;}return out;}
 
-async function loadData(force){
-  if(cache&&!force)return cache;
+async function loadData(tab,force){
+  const key=tab==="nations"?"nations":"clubs";
+  if(cache[key]&&!force)return cache[key];
   const p=(async()=>{
-    const [clubCodex,clubMaster,nationCodex,nationGw]=await Promise.all([
-      allRows("club_codex_global","id,n,i,worlds"),
-      allRows("sm_clubs_master","sm_club_id,club_name,nexus_display_name,image_url,short_name"),
+    if(key==="clubs"){
+      const [clubCodex,clubMaster]=await Promise.all([
+        allRows("club_codex_global","id,n,i,worlds"),
+        allRows("sm_clubs_master","sm_club_id,club_name,nexus_display_name,image_url,short_name")
+      ]);
+      const clubMasterMap=new Map(clubMaster.map(r=>[String(r.sm_club_id),r]));
+      const clubs=clubCodex.filter(isActive).map(r=>{const master=clubMasterMap.get(String(r.id))||null,w=worldData(r);return {type:"club",id:r.id,name:clean(master&&master.nexus_display_name)||clean(r.n)||clean(master&&master.club_name)||`Club ${r.id}`,image:clean(master&&master.image_url),managed:isManaged(r),worldId:w.sm_world_club_id==null?"":w.sm_world_club_id,shortName:clean(master&&master.short_name),raw:r};}).sort((a,b)=>a.name.localeCompare(b.name,"it"));
+      return {clubs,nations:[]};
+    }
+    const [nationCodex,nationGw]=await Promise.all([
       allRows("national_team_codex_global","id,n,i,worlds"),
       allRows("gw008_gw_national_teams","sm_world_national_club_id,nation_name")
     ]);
-    const clubMasterMap=new Map(clubMaster.map(r=>[String(r.sm_club_id),r]));
     const nationGwMap=new Map(nationGw.map(r=>[norm(r.nation_name),r]));
-    const clubs=clubCodex.filter(isActive).map(r=>{const master=clubMasterMap.get(String(r.id))||null,w=worldData(r);return {type:"club",id:r.id,name:clean(master&&master.nexus_display_name)||clean(r.n)||clean(master&&master.club_name)||`Club ${r.id}`,image:clean(master&&master.image_url),managed:isManaged(r),worldId:w.sm_world_club_id==null?"":w.sm_world_club_id,shortName:clean(master&&master.short_name),raw:r};}).sort((a,b)=>a.name.localeCompare(b.name,"it"));
     const nations=nationCodex.filter(isActive).map(r=>{const gw=nationGwMap.get(norm(r.n))||null;return {type:"nation",id:r.id,name:clean(r.n)||`Nazionale ${r.id}`,image:clean(r.i),managed:isManaged(r),worldId:gw&&gw.sm_world_national_club_id!=null?gw.sm_world_national_club_id:"",raw:r};}).sort((a,b)=>a.name.localeCompare(b.name,"it"));
-    return {clubs,nations};
+    return {clubs:[],nations};
   })();
-  cache=p;try{return await p;}catch(e){cache=null;throw e;}
+  cache[key]=p;
+  try{return await p;}catch(e){cache[key]=null;throw e;}
 }
 
 function hero(){return `<div class="imc-ent8-hero"><div class="imc-ent8-hero-copy"><span>GW008</span><strong>ENTITIES</strong><small>Gold 1</small></div></div>`;}
@@ -94,7 +101,7 @@ function renderError(e){const root=pageRoot();if(root)root.innerHTML=`<section c
 async function renderCurrent(force){
   if(currentWorld()!==WORLD||!entitiesActive())return;
   if(!isOurPage())renderLoading();
-  try{const data=await loadData(!!force);if(view.detail){const list=view.detail.type==="nation"?data.nations:data.clubs;const item=list.find(x=>String(x.id)===String(view.detail.id));if(item){renderDetail(data,item);return;}view.detail=null;}renderList(data);}catch(e){renderError(e);}
+  try{const data=await loadData(view.tab,!!force);if(view.detail){const list=view.detail.type==="nation"?data.nations:data.clubs;const item=list.find(x=>String(x.id)===String(view.detail.id));if(item){renderDetail(data,item);return;}view.detail=null;}renderList(data);}catch(e){renderError(e);}
 }
 function renderIfNeeded(){syncNav();if(currentWorld()!==WORLD||!entitiesActive())return;if(isOurPage())return;view.detail=null;renderCurrent(false);}
 function schedule(){clearTimeout(timer);timer=setTimeout(renderIfNeeded,55);}
@@ -115,5 +122,5 @@ function start(){
 }
 
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
-window.IMC_ENTITIES_GW008={version:VERSION,refresh:()=>{cache=null;renderCurrent(true);},load:()=>loadData(false),openTab:(tab)=>{view.tab=tab==="nations"?"nations":"clubs";view.detail=null;renderCurrent(false);},clearCache:()=>{cache=null;}};
+window.IMC_ENTITIES_GW008={version:VERSION,refresh:()=>{cache={clubs:null,nations:null};renderCurrent(true);},load:()=>loadData(view.tab,false),openTab:(tab)=>{view.tab=tab==="nations"?"nations":"clubs";view.detail=null;renderCurrent(false);},clearCache:()=>{cache={clubs:null,nations:null};}};
 })();
