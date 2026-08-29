@@ -3,7 +3,7 @@
 if(window.__IMC_TEAM_HUB_GW008__)return;
 window.__IMC_TEAM_HUB_GW008__=true;
 
-const VERSION="2.0.0";
+const VERSION="2.0.1";
 const WORLD="GW008";
 const WORLD_NAME="Gold 1";
 const ROOT_FLAG="imc-team-hub-gw008";
