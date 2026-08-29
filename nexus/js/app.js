@@ -76,7 +76,7 @@
       appendScript("js/imc-trophy-room-all-worlds.js?v=2.0.0",function(){
         appendScript("js/imc-trophy-room-tabs.js?v=1.1.0",function(){
           appendScript("js/imc-match-report-all-worlds.js?v=1.0.0");
-          appendScript("js/imc-competitions-all-worlds.js?v=1.1.0");
+          appendScript("js/imc-competitions-all-worlds.js?v=1.1.0",function(){appendScript("js/imc-competition-trophy-manager.js?v=1.0.0");});
           appendScript("js/imc-competition-iphone-typography-all-worlds.js?v=1.0.0");
           appendScript("js/imc-competition-premium-list-all-worlds.js?v=1.0.0");
           appendScript("js/imc-competition-card-insights-all-worlds.js?v=1.0.0");
@@ -106,6 +106,7 @@
     writeScript("js/imc-trophy-room-tabs.js?v=1.1.0");
     writeScript("js/imc-match-report-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competitions-all-worlds.js?v=1.1.0");
+    writeScript("js/imc-competition-trophy-manager.js?v=1.0.0");
     writeScript("js/imc-competition-iphone-typography-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competition-premium-list-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competition-card-insights-all-worlds.js?v=1.0.0");
