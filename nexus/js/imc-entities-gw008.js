@@ -3,7 +3,7 @@
 if(window.__IMC_ENTITIES_GW008__)return;
 window.__IMC_ENTITIES_GW008__=true;
 
-const VERSION="1.0.3";
+const VERSION="1.0.4";
 const WORLD="GW008";
 const WORLD_NAME="Gold 1";
 const ROOT_FLAG="imc-entities-gw008";
@@ -108,7 +108,7 @@ async function renderCurrent(force){
   if(!isOurPage())renderLoading();
   try{const data=await loadData(view.tab,!!force);if(view.detail){const list=view.detail.type==="nation"?data.nations:data.clubs;const item=list.find(x=>String(x.id)===String(view.detail.id));if(item){renderDetail(data,item);return;}view.detail=null;}renderList(data);}catch(e){renderError(e);}
 }
-function renderIfNeeded(){syncNav();if(currentWorld()!==WORLD||!entitiesActive())return;if(isOurPage())return;view.detail=null;renderCurrent(false);}
+function renderIfNeeded(){syncNav();if(currentWorld()!==WORLD||!entitiesActive())return;if(isOurPage())return;renderCurrent(false);}
 function schedule(){clearTimeout(timer);timer=setTimeout(renderIfNeeded,55);}
 
 function start(){

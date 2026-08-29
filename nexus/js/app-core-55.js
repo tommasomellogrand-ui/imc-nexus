@@ -6715,6 +6715,7 @@ function renderShell(fromRoute){
   }
 
   function entityListPage(type){
+    if(state.selectedWorld==="GW008")return "";
     const isClub = type === "club";
     const title = isClub ? "Clubs" : "Nazionali";
     const subtitle = isClub
@@ -6758,6 +6759,7 @@ function renderShell(fromRoute){
   }
 
   function bindEntityList(type){
+    if(state.selectedWorld==="GW008")return;
     const input = document.getElementById("entitySearch");
     if(input){
       input.addEventListener("input",applyEntityListFilters);
@@ -6794,6 +6796,7 @@ function renderShell(fromRoute){
   }
 
   async function loadEntityList(type){
+    if(state.selectedWorld==="GW008")return;
     const target=document.getElementById("entityListContent");
     if(!target||!state.client)return;
 
@@ -6989,6 +6992,7 @@ function renderShell(fromRoute){
   }
 
   function entityProfilePage(type){
+    if(state.selectedWorld==="GW008")return "";
     const entity = type === "club" ? state.selectedClub : state.selectedNation;
     const icon = type === "club" ? "◈" : "⚑";
     const profileVisual = entity
@@ -7020,6 +7024,7 @@ function renderShell(fromRoute){
   }
 
   function bindEntityProfile(type){
+    if(state.selectedWorld==="GW008")return;
     const back = document.getElementById("backToEntityList");
     if(back){
       back.addEventListener("click",function(){
@@ -7034,6 +7039,7 @@ function renderShell(fromRoute){
   }
 
   async function loadEntityProfile(type){
+    if(state.selectedWorld==="GW008")return;
     await ensureSeason2FinalHonoursV12(state.selectedWorld||null);
     const target = document.getElementById("entityProfileContent");
     const entity = type === "club" ? state.selectedClub : state.selectedNation;
