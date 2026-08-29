@@ -11,12 +11,13 @@
   <title>IMC Nexus · Build 1.0</title>
   <link rel="icon" href="assets/imc-logo.png">
   <link rel="apple-touch-icon" href="assets/imc-logo.png">
+  <link rel="stylesheet" href="v1/modules/clubhouse/clubhouse.css?v=1.0.0">
   <style>
     :root{--navy:#082b63;--blue:#1762ad;--gold:#d7ad48;--ink:#0b1b3f;--muted:#718096;--line:#dfe5ed;--bg:#f6f8fb}
     *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input{font:inherit}[hidden]{display:none!important}
     .screen{min-height:100svh}.login{display:grid;place-items:center;padding:28px;background:linear-gradient(180deg,#fff,#f4f7fb)}.login-wrap{width:min(100%,420px)}.brand{text-align:center;margin-bottom:26px}.brand img{width:72px;height:72px;object-fit:contain}.brand h1{margin:14px 0 5px;font-size:36px;letter-spacing:.16em;color:var(--navy)}.brand p{margin:0;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.12em}.card{padding:22px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 14px 40px rgba(8,43,99,.08)}.field{display:grid;gap:7px;margin-bottom:14px}.field label{font-size:10px;font-weight:900;color:var(--navy)}.field input{height:52px;padding:0 14px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);outline:none}.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,98,173,.08)}.primary{width:100%;height:52px;border:0;border-radius:13px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-weight:900}.status{min-height:18px;margin-top:12px;text-align:center;color:var(--muted);font-size:10px}.status.error{color:#b42318}
-    .shell{min-height:100svh}.topbar{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.96);backdrop-filter:blur(14px)}.topbar h1{margin:0;font-size:19px;color:var(--navy)}.meta{margin-top:4px;color:var(--muted);font-size:9px;font-weight:800}.user{text-align:right}.user strong,.user span{display:block}.user strong{font-size:11px;color:var(--navy)}.user span{margin-top:2px;font-size:9px;color:var(--muted)}.logout{margin-top:5px;border:0;background:transparent;color:var(--blue);font-size:9px;font-weight:900}.main{max-width:860px;margin:auto;padding:16px 14px 40px}.intro{padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff;margin-bottom:14px}.intro span{font-size:9px;font-weight:950;color:var(--gold)}.intro h2{margin:6px 0 4px;font-size:24px;color:var(--navy)}.intro p{margin:0;color:var(--muted);font-size:10px}.world-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.world-card{min-height:112px;padding:14px;text-align:left;border:1px solid var(--line);border-radius:16px;background:#fff}.world-card span,.world-card strong,.world-card small{display:block}.world-card span{font-size:9px;font-weight:950;color:var(--gold)}.world-card strong{margin-top:7px;font-size:14px;color:var(--navy)}.world-card small{margin-top:12px;font-size:8px;font-weight:900;color:var(--blue)}.back{margin:0 0 10px;border:0;background:transparent;color:var(--blue);font-size:10px;font-weight:900}.world-hero{padding:22px;border:1px solid rgba(215,173,72,.7);border-radius:18px;background:linear-gradient(135deg,#041833,#082b63);color:#fff}.world-hero span{font-size:9px;font-weight:950;color:#e9c56d}.world-hero h2{margin:6px 0 4px;font-size:26px}.world-hero p{margin:0;color:#cdd8ea;font-size:10px}.empty{margin-top:12px;padding:18px;border:1px solid var(--line);border-radius:15px;background:#fff;text-align:center;color:var(--muted);font-size:10px}
-    @media(max-width:520px){.world-grid{grid-template-columns:1fr}.topbar{padding-top:max(14px,env(safe-area-inset-top))}}
+    .shell{min-height:100svh}.topbar{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.96);backdrop-filter:blur(14px)}.topbar h1{margin:0;font-size:19px;color:var(--navy)}.meta{margin-top:4px;color:var(--muted);font-size:9px;font-weight:800}.user{text-align:right}.user strong,.user span{display:block}.user strong{font-size:11px;color:var(--navy)}.user span{margin-top:2px;font-size:9px;color:var(--muted)}.logout{margin-top:5px;border:0;background:transparent;color:var(--blue);font-size:9px;font-weight:900}.main{max-width:860px;margin:auto;padding:16px 14px 40px}.back{margin:0 0 10px;border:0;background:transparent;color:var(--blue);font-size:10px;font-weight:900}.world-hero{padding:22px;border:1px solid rgba(215,173,72,.7);border-radius:18px;background:linear-gradient(135deg,#041833,#082b63);color:#fff}.world-hero span{font-size:9px;font-weight:950;color:#e9c56d}.world-hero h2{margin:6px 0 4px;font-size:26px}.world-hero p{margin:0;color:#cdd8ea;font-size:10px}.empty{margin-top:12px;padding:18px;border:1px solid var(--line);border-radius:15px;background:#fff;text-align:center;color:var(--muted);font-size:10px}
+    @media(max-width:520px){.topbar{padding-top:max(14px,env(safe-area-inset-top))}}
   </style>
 </head>
 <body>
@@ -38,13 +39,13 @@
       <div class="user"><strong id="userName"></strong><span id="managerId"></span><button id="logout" class="logout">ESCI</button></div>
     </header>
     <main class="main">
-      <div class="intro"><span>IMC</span><h2>Game Worlds</h2><p>Nuova architettura Nexus · Build 1.0</p></div>
-      <div id="worldGrid" class="world-grid"></div>
-      <div id="worldArea"></div>
+      <div id="moduleHost"></div>
+      <div id="worldArea" hidden></div>
     </main>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="v1/app.js?v=1.0.1"></script>
+  <script src="v1/modules/clubhouse/clubhouse.js?v=1.0.0"></script>
+  <script src="v1/app.js?v=1.0.2"></script>
 </body>
 </html>
