@@ -3,7 +3,7 @@
 if(window.__IMC_ENTITIES_GW008__)return;
 window.__IMC_ENTITIES_GW008__=true;
 
-const VERSION="1.0.2";
+const VERSION="1.0.3";
 const WORLD="GW008";
 const WORLD_NAME="Gold 1";
 const ROOT_FLAG="imc-entities-gw008";
@@ -23,6 +23,8 @@ function isOurPage(){const root=pageRoot();return !!(root&&root.querySelector(`:
 function worldData(row){return row&&row.worlds&&row.worlds[WORLD]?row.worlds[WORLD]:{};}
 function isActive(row){return worldData(row).active===true;}
 function isManaged(row){return worldData(row).managed===true;}
+function todayIso(){const d=new Date(),y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,"0"),day=String(d.getDate()).padStart(2,"0");return `${y}-${m}-${day}`;}
+function assignmentActive(a,today){const start=clean(a&&a.start_date),end=clean(a&&a.end_date);return (!start||start<=today)&&(!end||end>=today);}
 function imageSrc(item){return clean(item&&item.image)||"";}
 
 function syncNav(){
@@ -67,12 +69,15 @@ async function loadData(tab,force){
       const clubs=clubCodex.filter(isActive).map(r=>{const master=clubMasterMap.get(String(r.id))||null,w=worldData(r);return {type:"club",id:r.id,name:clean(master&&master.nexus_display_name)||clean(r.n)||clean(master&&master.club_name)||`Club ${r.id}`,image:clean(master&&master.image_url),managed:isManaged(r),worldId:w.sm_world_club_id==null?"":w.sm_world_club_id,shortName:clean(master&&master.short_name),raw:r};}).sort((a,b)=>a.name.localeCompare(b.name,"it"));
       return {clubs,nations:[]};
     }
-    const [nationCodex,nationGw]=await Promise.all([
+    const [nationCodex,nationGw,assignments]=await Promise.all([
       allRows("national_team_codex_global","id,n,i,worlds"),
-      allRows("gw008_gw_national_teams","sm_world_national_club_id,nation_name")
+      allRows("gw008_gw_national_teams","sm_world_national_club_id,nation_name"),
+      allRows("gw_manager_assignments","game_world_id,nation_id,assignment_type,start_date,end_date")
     ]);
+    const today=todayIso();
+    const managedNationIds=new Set(assignments.filter(a=>clean(a.game_world_id).toUpperCase()===WORLD&&clean(a.assignment_type)==="national_team"&&a.nation_id!=null&&assignmentActive(a,today)).map(a=>String(a.nation_id)));
     const nationGwMap=new Map(nationGw.map(r=>[norm(r.nation_name),r]));
-    const nations=nationCodex.filter(isActive).map(r=>{const gw=nationGwMap.get(norm(r.n))||null;return {type:"nation",id:r.id,name:clean(r.n)||`Nazionale ${r.id}`,image:clean(r.i),managed:isManaged(r),worldId:gw&&gw.sm_world_national_club_id!=null?gw.sm_world_national_club_id:"",raw:r};}).sort((a,b)=>a.name.localeCompare(b.name,"it"));
+    const nations=nationCodex.filter(isActive).map(r=>{const gw=nationGwMap.get(norm(r.n))||null;return {type:"nation",id:r.id,name:clean(r.n)||`Nazionale ${r.id}`,image:clean(r.i),managed:managedNationIds.has(String(r.id)),worldId:gw&&gw.sm_world_national_club_id!=null?gw.sm_world_national_club_id:"",raw:r};}).sort((a,b)=>a.name.localeCompare(b.name,"it"));
     return {clubs:[],nations};
   })();
   cache[key]=p;
