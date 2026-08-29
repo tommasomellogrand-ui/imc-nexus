@@ -8,7 +8,6 @@ const WORLDS={GW001:"Road To History",GW002:"Gold 558",GW003:"Gold 557",GW004:"W
 
 let db=null,identity=null,currentView="clubhouse",selectedWorld=null;
 function el(id){return document.getElementById(id)}
-function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function technicalEmail(username){return username.trim().toLowerCase()+"@users.imcnexus.local"}
 function setStatus(msg,isError){const n=el("status");if(!n)return;n.textContent=msg||"";n.classList.toggle("error",!!isError)}
 function show(id){["loginView","appView"].forEach(x=>{const n=el(x);if(n)n.hidden=x!==id})}
@@ -29,8 +28,10 @@ function mountNavigation(){
 }
 async function openClubHouse(){
   currentView="clubhouse";selectedWorld=null;
+  if(window.IMC_GAME_WORLD_SHELL)window.IMC_GAME_WORLD_SHELL.unmount();
   if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.setContext({current:"clubhouse",worldId:null,worldName:null});
-  const host=el("moduleHost");host.hidden=false;el("worldArea").hidden=true;el("worldArea").innerHTML="";
+  const host=el("moduleHost");host.hidden=false;
+  const area=el("worldArea");area.hidden=true;area.innerHTML="";
   if(!window.IMC_CLUBHOUSE)throw new Error("Modulo Club House non disponibile");
   await window.IMC_CLUBHOUSE.mount({container:host,client:db,user:identity,managerId:identity.manager_id,username:identity.username});
 }
@@ -41,7 +42,8 @@ function openWorld(worldId){
   if(window.IMC_CLUBHOUSE)window.IMC_CLUBHOUSE.unmount();
   el("moduleHost").hidden=true;
   const area=el("worldArea");area.hidden=false;
-  area.innerHTML=`<section class="world-home"><div class="world-hero"><span>${esc(worldId)}</span><h2>${esc(name)}</h2><p>Nexus Build 1.0</p></div><div class="empty">Game World pronto per il prossimo modulo autonomo.</div></section>`;
+  if(!window.IMC_GAME_WORLD_SHELL)throw new Error("Modulo Game World Shell non disponibile");
+  window.IMC_GAME_WORLD_SHELL.mount({container:area,worldId,worldName:name});
 }
 async function enter(user){
   identity=await loadIdentity(user);renderAccount();show("appView");mountNavigation();await openClubHouse();
@@ -68,12 +70,13 @@ document.addEventListener("submit",async e=>{
 document.addEventListener("nexus:navigate",async e=>{
   const d=e.detail||{};
   if(d.target==="clubhouse"){await openClubHouse();return;}
-  if(d.target==="game-world"&&d.worldId)openWorld(String(d.worldId));
+  if(d.target==="game-world"&&d.worldId){openWorld(String(d.worldId));return;}
 });
 
 document.addEventListener("click",async e=>{
   if(e.target.closest("#logout")){
     if(window.IMC_CLUBHOUSE)window.IMC_CLUBHOUSE.unmount();
+    if(window.IMC_GAME_WORLD_SHELL)window.IMC_GAME_WORLD_SHELL.unmount();
     if(window.IMC_NAVIGATION)window.IMC_NAVIGATION.unmount();
     await db.auth.signOut();identity=null;selectedWorld=null;currentView="clubhouse";show("loginView");setStatus("");
   }
