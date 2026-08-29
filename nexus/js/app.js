@@ -64,7 +64,6 @@
       appendScript("js/imc-competition-stats-all-worlds.js?v=1.0.0");
       appendScript("js/imc-competition-iphone-typography-all-worlds.js?v=1.0.0");
       appendScript("js/imc-competition-premium-list-all-worlds.js?v=1.0.0");
-      appendScript("js/imc-competition-country-type-filters.js?v=2.2.0");
       appendScript("js/imc-competition-card-insights-all-worlds.js?v=1.0.0");
       appendScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
       appendScript("js/imc-managers-gw008.js?v=1.0.1");
@@ -91,7 +90,6 @@
     writeScript("js/imc-competition-stats-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competition-iphone-typography-all-worlds.js?v=1.0.0");
     writeScript("js/imc-competition-premium-list-all-worlds.js?v=1.0.0");
-    writeScript("js/imc-competition-country-type-filters.js?v=2.2.0");
     writeScript("js/imc-competition-card-insights-all-worlds.js?v=1.0.0");
     writeScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
     writeScript("js/imc-managers-gw008.js?v=1.0.1");
