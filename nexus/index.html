@@ -8,33 +8,43 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>IMC Nexus · Build 61</title>
+  <title>IMC Nexus · Build 1.0</title>
   <link rel="icon" href="assets/imc-logo.png">
   <link rel="apple-touch-icon" href="assets/imc-logo.png">
-  <link rel="stylesheet" href="css/app.css?v=44.2">
-  <link rel="stylesheet" href="css/nexus-visual-system-v1.css?v=1.0.2">
-  <link rel="stylesheet" href="css/nexus-iphone-typography-v1.css?v=1.0.0">
   <style>
-    #boot{position:relative;overflow:hidden;min-height:100svh;display:grid;place-items:center;padding:max(30px,env(safe-area-inset-top)) 24px max(28px,env(safe-area-inset-bottom));background:radial-gradient(circle at 50% 35%,rgba(30,144,255,.11),transparent 28%),linear-gradient(180deg,#fff 0%,#f8fafc 58%,#eef3f8 100%)}
-    #boot:before,.login-screen:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.62;background-image:linear-gradient(rgba(20,85,170,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(20,85,170,.045) 1px,transparent 1px),radial-gradient(circle,rgba(23,98,173,.18) 1px,transparent 1.6px);background-size:34px 34px,34px 34px,86px 86px;mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%)}
-    #boot:after,.login-screen:after{content:"";position:absolute;width:min(88vw,620px);aspect-ratio:1;left:50%;top:43%;transform:translate(-50%,-50%);border:1px solid rgba(23,98,173,.09);border-radius:50%;box-shadow:0 0 0 42px rgba(23,98,173,.035),0 0 0 92px rgba(23,98,173,.025);pointer-events:none}
-    .boot-card{position:relative;z-index:1;width:min(100%,520px);text-align:center;display:flex;flex-direction:column;align-items:center}.nx-wordmark{margin:0;color:#082b63;font-size:clamp(46px,15vw,76px);font-weight:800;letter-spacing:.22em;line-height:.95;text-indent:.22em;text-transform:uppercase;text-shadow:0 1px 0 #fff}.nx-wordmark .nx-x{color:#1762ad;text-shadow:0 0 16px rgba(23,98,173,.3)}.nx-tagline{margin:18px 0 0;color:#1762ad;font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}.nx-powered{display:flex;flex-direction:column;align-items:center;gap:9px;margin-top:48px;color:#0b2a58;font-size:10px;font-weight:900;letter-spacing:.24em;text-transform:uppercase}.nx-powered img{width:82px;height:82px;object-fit:contain;filter:drop-shadow(0 12px 20px rgba(7,26,54,.14))}.nx-loader{width:min(76vw,340px);height:7px;margin-top:54px;border:1px solid rgba(23,98,173,.16);border-radius:999px;background:rgba(255,255,255,.7);overflow:hidden;box-shadow:inset 0 1px 3px rgba(7,26,54,.08)}.nx-loader span{display:block;width:44%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#0d47a1,#1e90ff,#8ed8ff);box-shadow:0 0 14px rgba(30,144,255,.7);animation:nxLoad 1.55s ease-in-out infinite}.nx-loading-copy{margin-top:17px;color:#1762ad;font-size:10px;font-weight:900;letter-spacing:.28em;text-transform:uppercase}@keyframes nxLoad{0%{transform:translateX(-115%)}55%{transform:translateX(120%)}100%{transform:translateX(250%)}}
-    .login-screen{position:relative;overflow:hidden;isolation:isolate;min-height:100svh;padding:max(30px,env(safe-area-inset-top)) 22px max(24px,env(safe-area-inset-bottom));background:radial-gradient(circle at 50% 22%,rgba(30,144,255,.10),transparent 25%),linear-gradient(180deg,#fff 0%,#f8fafc 62%,#eef3f8 100%)}.login-screen:after{top:30%;width:min(110vw,660px);opacity:.75;z-index:-1}.login-brand{position:relative;z-index:1;padding-top:clamp(18px,6vh,58px);display:flex;flex-direction:column;align-items:center}.login-brand>img{width:78px!important;height:78px;object-fit:contain;order:3;margin-top:10px;filter:drop-shadow(0 12px 20px rgba(7,26,54,.14))!important}.login-brand h1{margin:0!important;color:#082b63!important;font-size:clamp(42px,13vw,66px)!important;font-weight:800!important;letter-spacing:.20em!important;line-height:1!important;text-indent:.20em;text-transform:uppercase}.login-brand h1 .nx-x{color:#1762ad;text-shadow:0 0 14px rgba(23,98,173,.28)}.login-brand p{order:2;margin:13px 0 0!important;color:#0b2a58!important;font-size:9px!important;font-weight:900!important;letter-spacing:.22em!important;text-transform:uppercase!important}.login-brand p:after{content:""}.login-card{position:relative;z-index:2;width:min(100%,430px);margin:28px auto 0!important;padding:24px 20px 22px!important;border:1px solid rgba(255,255,255,.92)!important;border-radius:26px!important;background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(239,246,255,.58))!important;box-shadow:0 20px 55px rgba(7,26,54,.13),inset 0 1px 0 rgba(255,255,255,.96)!important;backdrop-filter:blur(20px) saturate(135%);-webkit-backdrop-filter:blur(20px) saturate(135%)}.login-card:before{content:"BENTORNATO IN NEXUS";display:block;margin:0 0 24px;text-align:center;color:#082b63;font-size:13px;font-weight:900;letter-spacing:.15em}.login-card .field{margin-bottom:16px}.login-card .field label{margin:0 0 8px 2px;color:#082b63;font-size:11px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}.login-card .field input{min-height:56px;border:1px solid rgba(31,91,170,.22);border-radius:15px;background:rgba(255,255,255,.66);color:#082b63;padding:15px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}.login-card .field input:focus{border-color:#1e90ff;box-shadow:0 0 0 4px rgba(30,144,255,.09),0 0 22px rgba(30,144,255,.08);background:rgba(255,255,255,.92)}.login-card .primary{min-height:54px;margin-top:5px;border-radius:16px;background:linear-gradient(135deg,#082b63 0%,#0d47a1 48%,#1e90ff 100%);box-shadow:0 12px 24px rgba(13,71,161,.22),0 0 18px rgba(30,144,255,.12);letter-spacing:.11em}.login-card .status{margin-bottom:-4px}.login-screen:not(.nx-password-change-screen):after{z-index:0}@media(min-width:700px){.login-screen{justify-content:center}.login-brand{padding-top:0}.login-card{margin-top:30px!important}}@media(max-width:380px){.nx-tagline{font-size:8px;letter-spacing:.12em}.nx-powered{margin-top:38px}.login-brand h1{font-size:39px!important}.login-card{padding:20px 17px!important}}
+    :root{--navy:#082b63;--blue:#1762ad;--gold:#d7ad48;--ink:#0b1b3f;--muted:#718096;--line:#dfe5ed;--bg:#f6f8fb}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input{font:inherit}[hidden]{display:none!important}
+    .screen{min-height:100svh}.login{display:grid;place-items:center;padding:28px;background:linear-gradient(180deg,#fff,#f4f7fb)}.login-wrap{width:min(100%,420px)}.brand{text-align:center;margin-bottom:26px}.brand img{width:72px;height:72px;object-fit:contain}.brand h1{margin:14px 0 5px;font-size:36px;letter-spacing:.16em;color:var(--navy)}.brand p{margin:0;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.12em}.card{padding:22px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 14px 40px rgba(8,43,99,.08)}.field{display:grid;gap:7px;margin-bottom:14px}.field label{font-size:10px;font-weight:900;color:var(--navy)}.field input{height:52px;padding:0 14px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);outline:none}.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,98,173,.08)}.primary{width:100%;height:52px;border:0;border-radius:13px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-weight:900}.status{min-height:18px;margin-top:12px;text-align:center;color:var(--muted);font-size:10px}.status.error{color:#b42318}
+    .shell{min-height:100svh}.topbar{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.96);backdrop-filter:blur(14px)}.topbar h1{margin:0;font-size:19px;color:var(--navy)}.meta{margin-top:4px;color:var(--muted);font-size:9px;font-weight:800}.user{text-align:right}.user strong,.user span{display:block}.user strong{font-size:11px;color:var(--navy)}.user span{margin-top:2px;font-size:9px;color:var(--muted)}.logout{margin-top:5px;border:0;background:transparent;color:var(--blue);font-size:9px;font-weight:900}.main{max-width:860px;margin:auto;padding:16px 14px 40px}.intro{padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff;margin-bottom:14px}.intro span{font-size:9px;font-weight:950;color:var(--gold)}.intro h2{margin:6px 0 4px;font-size:24px;color:var(--navy)}.intro p{margin:0;color:var(--muted);font-size:10px}.world-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.world-card{min-height:112px;padding:14px;text-align:left;border:1px solid var(--line);border-radius:16px;background:#fff}.world-card span,.world-card strong,.world-card small{display:block}.world-card span{font-size:9px;font-weight:950;color:var(--gold)}.world-card strong{margin-top:7px;font-size:14px;color:var(--navy)}.world-card small{margin-top:12px;font-size:8px;font-weight:900;color:var(--blue)}.back{margin:0 0 10px;border:0;background:transparent;color:var(--blue);font-size:10px;font-weight:900}.world-hero{padding:22px;border:1px solid rgba(215,173,72,.7);border-radius:18px;background:linear-gradient(135deg,#041833,#082b63);color:#fff}.world-hero span{font-size:9px;font-weight:950;color:#e9c56d}.world-hero h2{margin:6px 0 4px;font-size:26px}.world-hero p{margin:0;color:#cdd8ea;font-size:10px}.empty{margin-top:12px;padding:18px;border:1px solid var(--line);border-radius:15px;background:#fff;text-align:center;color:var(--muted);font-size:10px}
+    @media(max-width:520px){.world-grid{grid-template-columns:1fr}.topbar{padding-top:max(14px,env(safe-area-inset-top))}}
   </style>
 </head>
 <body>
-  <div id="boot"><div class="boot-card"><h1 class="nx-wordmark">NE<span class="nx-x">X</span>US</h1><p class="nx-tagline">EVERY WORLD · EVERY MATCH · EVERY MANAGER</p><div class="nx-powered"><span>POWERED BY</span><img src="assets/imc-logo.png" alt="IMC"></div><div class="nx-loader" aria-hidden="true"><span></span></div><p class="nx-loading-copy">CONNECTING TO NEXUS</p></div></div>
-  <div id="app" hidden></div>
-  <noscript><main class="fatal"><h1>JavaScript è disattivato</h1><p>IMC Nexus richiede JavaScript per funzionare.</p></main></noscript>
+  <section id="loginView" class="screen login">
+    <div class="login-wrap">
+      <div class="brand"><img src="assets/imc-logo.png" alt="IMC"><h1>NEXUS</h1><p>BUILD 1.0</p></div>
+      <form id="loginForm" class="card">
+        <div class="field"><label for="username">USERNAME</label><input id="username" autocomplete="username" required></div>
+        <div class="field"><label for="password">PASSWORD</label><input id="password" type="password" autocomplete="current-password" required></div>
+        <button class="primary" type="submit">ACCEDI</button>
+        <div id="status" class="status"></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="appView" class="screen shell" hidden>
+    <header class="topbar">
+      <div><h1>NEXUS</h1><div class="meta"><span id="buildLabel">BUILD 1.0</span></div></div>
+      <div class="user"><strong id="userName"></strong><span id="managerId"></span><button id="logout" class="logout">ESCI</button></div>
+    </header>
+    <main class="main">
+      <div class="intro"><span>IMC</span><h2>Game Worlds</h2><p>Nuova architettura Nexus · Build 1.0</p></div>
+      <div id="worldGrid" class="world-grid"></div>
+      <div id="worldArea"></div>
+    </main>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/app.js?v=61.0"></script>
-  <script src="js/imc-competition-filters-final.js?v=3.2.0"></script>
-  <script src="js/imc-world-context-fix.js?v=2.1"></script>
-  <script src="js/imc-player-codex.js?v=2.1"></script>
-  <script src="js/imc-world-features.js?v=1.5"></script>
-  <script src="js/imc-native-navigation.js?v=1.1.0"></script>
-  <script src="js/nexus-visual-system-v1.js?v=1.0.2"></script>
+  <script src="v1/app.js?v=1.0.1"></script>
 </body>
 </html>
