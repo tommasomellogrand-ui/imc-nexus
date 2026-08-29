@@ -4,7 +4,7 @@
   // Build 59 · GW008 native ownership preserved from Build 58.
   // The Build 56 core remains historical source. These verified replacements
   // are applied before execution, so legacy GW008 renderers never reach the DOM.
-  const VERSION="59.0-core";
+  const VERSION="59.1-core";
   const SOURCE="js/app-core-56.js?v=56.0-build59-source";
 
   function replaceOnce(source,oldValue,newValue,label){
@@ -48,6 +48,27 @@
     '      }else{\n        if(state.selectedManager){\n          root.innerHTML = managerProfilePage();\n          bindManagerProfile();\n        }else{\n          root.innerHTML = managerRegistryPage();\n          bindManagerRegistry();\n        }\n      }\n      return;',
     '      }else{\n        if(state.selectedWorld === "GW008"){\n          root.innerHTML = "";\n        }else if(state.selectedManager){\n          root.innerHTML = managerProfilePage();\n          bindManagerProfile();\n        }else{\n          root.innerHTML = managerRegistryPage();\n          bindManagerRegistry();\n        }\n      }\n      return;',
     "GW008 legacy manager renderer"
+  );
+
+  source=replaceOnce(
+    source,
+    '<button data-page="stats" class="${state.page==="stats"?"active":""}"><b>${nexusNavIcon("stats")}</b><span>STATS</span></button>',
+    '${state.selectedWorld==="GW008"?"":`<button data-page="stats" class="${state.page==="stats"?"active":""}"><b>${nexusNavIcon("stats")}</b><span>STATS</span></button>`}',
+    "GW008 legacy stats nav"
+  );
+
+  source=replaceOnce(
+    source,
+    '<button data-page="h2h" class="${state.page==="h2h"?"active":""}"><b>${nexusNavIcon("h2h")}</b><span>H2H</span></button>',
+    '${state.selectedWorld==="GW008"?"":`<button data-page="h2h" class="${state.page==="h2h"?"active":""}"><b>${nexusNavIcon("h2h")}</b><span>H2H</span></button>`}',
+    "GW008 legacy h2h nav"
+  );
+
+  source=replaceOnce(
+    source,
+    '<button data-page="trophies" class="${state.worldSection==="trophy-room"||state.page==="trophies"?"active":""}"><b>${nexusNavIcon("trophy")}</b><span>TROPHY ROOM</span></button>',
+    '${state.selectedWorld==="GW008"?"":`<button data-page="trophies" class="${state.worldSection==="trophy-room"||state.page==="trophies"?"active":""}"><b>${nexusNavIcon("trophy")}</b><span>TROPHY ROOM</span></button>`}',
+    "GW008 legacy trophy nav"
   );
 
   window.__NEXUS_CORE_BUILD__="59";
