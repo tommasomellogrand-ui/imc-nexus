@@ -1,7 +1,7 @@
 (function(){
   "use strict";
 
-  // Build 56 production runtime.
+  // Build 56 production runtime. GW008 Syntex deployment trigger.
   const NEXUS_BUILD = "56";
 
   function writeScript(src){
