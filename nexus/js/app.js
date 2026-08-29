@@ -1,13 +1,13 @@
 (function(){
   "use strict";
 
-  // Build 59 production runtime.
-  const NEXUS_BUILD = "59";
+  // Build 60 production runtime.
+  const NEXUS_BUILD = "60";
   window.__NEXUS_RUNTIME_BUILD__ = NEXUS_BUILD;
 
   function syncVisibleBuildLabel(){
     document.querySelectorAll(".nx-sport-title small,.nx-admin-head small").forEach(function(el){
-      if(/BUILD\s+(?:56|57|58)\b/.test(el.textContent||"")) el.textContent=(el.textContent||"").replace(/BUILD\s+(?:56|57|58)\b/g,"BUILD "+NEXUS_BUILD);
+      if(/BUILD\s+(?:56|57|58|59)\b/.test(el.textContent||"")) el.textContent=(el.textContent||"").replace(/BUILD\s+(?:56|57|58|59)\b/g,"BUILD "+NEXUS_BUILD);
     });
   }
 
@@ -81,6 +81,7 @@
       appendScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
       appendScript("js/imc-managers-gw008.js?v=1.5.0");
       appendScript("js/imc-team-hub-gw008.js?v=2.2.0");
+      appendScript("js/imc-trophy-room-all-worlds.js?v=2.0.0");
     });
   }
 
@@ -106,6 +107,7 @@
     writeScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
     writeScript("js/imc-managers-gw008.js?v=1.5.0");
     writeScript("js/imc-team-hub-gw008.js?v=2.2.0");
+    writeScript("js/imc-trophy-room-all-worlds.js?v=2.0.0");
     setTimeout(syncVisibleBuildLabel,0);
     return;
   }
