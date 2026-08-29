@@ -34,8 +34,8 @@ function syncNav(){
   if(inWorld&&national&&national.classList.contains("active")&&clubs)clubs.classList.add("active");
   if(clubs){
     const span=clubs.querySelector("span");
-    if(inWorld){if(span)span.textContent="ENTITIES";clubs.setAttribute("aria-label","Entities");}
-    else{if(span&&span.textContent==="ENTITIES")span.textContent="CLUBS";clubs.removeAttribute("aria-label");}
+    if(inWorld){if(span)span.textContent="TEAM HUB";clubs.setAttribute("aria-label","Team Hub");}
+    else{if(span&&span.textContent==="TEAM HUB")span.textContent="CLUBS";clubs.removeAttribute("aria-label");}
   }
   if(inWorld&&national)national.remove();
 }
@@ -84,7 +84,7 @@ async function loadData(tab,force){
   try{return await p;}catch(e){cache[key]=null;throw e;}
 }
 
-function hero(){return `<div class="imc-ent8-hero"><div class="imc-ent8-hero-copy"><span>GW008</span><strong>ENTITIES</strong><small>Gold 1</small></div></div>`;}
+function hero(){return `<div class="imc-ent8-hero"><div class="imc-ent8-hero-copy"><span>GW008</span><strong>TEAM HUB</strong><small>Gold 1</small></div></div>`;}
 function tabs(){return `<div class="imc-ent8-tabs" role="tablist"><button class="imc-ent8-tab ${view.tab==="clubs"?"is-active":""}" data-ent-tab="clubs">Clubs</button><button class="imc-ent8-tab ${view.tab==="nations"?"is-active":""}" data-ent-tab="nations">Nazionali</button></div>`;}
 function logo(item,detail){const src=imageSrc(item),cls=item.type==="nation"?" is-nation":"",box=detail?"imc-ent8-detail-logo":"imc-ent8-logo";return `<span class="${box}${cls}">${src?`<img src="${esc(src)}" alt="" loading="lazy" onerror="this.style.display='none'">`:""}</span>`;}
 function entityMeta(item){return item.type==="club"?`ID ${item.id} · World Club ID ${item.worldId||"-"}`:`ID ${item.id} · World National ID ${item.worldId||"-"}`;}
