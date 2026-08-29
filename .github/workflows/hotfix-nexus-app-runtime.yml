@@ -1,0 +1,91 @@
+name: Hotfix Nexus Runtime Loader
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/hotfix-nexus-app-runtime.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  hotfix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate corrected runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s nexus/js/app.js
+          node --check nexus/js/app.js
+          grep -Fq 'clearTimeout(clubHouseTimer);' nexus/js/app.js
+          ! grep -Fq 'clearTimeout(clHouseTimer);' nexus/js/app.js
+          grep -Fq 'js/imc-entities-gw008.js?v=1.0.2' nexus/js/app.js
+
+      - name: Upload corrected app.js to Aruba
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, io, os, ssl
+          from pathlib import Path
+          from ftplib import FTP_TLS
+
+          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user = os.environ['ARUBA_FTP_USERNAME']
+          password = os.environ['ARUBA_FTP_PASSWORD']
+          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain = host[4:] if host.startswith('ftp.') else host
+          remote_root = raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          local = Path('nexus/js/app.js')
+          data = local.read_bytes()
+
+          ctx = ssl.create_default_context()
+          ctx.check_hostname = False
+          ftp = FTP_TLS(context=ctx)
+          ftp.connect(host, 21, timeout=30)
+          ftp.login(user, password)
+          ftp.prot_p()
+          ftp.cwd(f'{remote_root}/js')
+          with local.open('rb') as fh:
+              ftp.storbinary('STOR app.js', fh, blocksize=65536)
+          buf = io.BytesIO()
+          ftp.retrbinary('RETR app.js', buf.write, blocksize=65536)
+          ftp.quit()
+
+          remote = buf.getvalue()
+          if remote != data:
+              raise SystemExit('FTPS read-back mismatch for app.js')
+          print('APP_JS_FTPS_MATCH=YES')
+          print('APP_JS_SHA256=' + hashlib.sha256(data).hexdigest())
+          PY
+
+      - name: Verify public runtime and boot
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE_URL='https://www.italianmastersclub.it/nexus'
+          TOKEN="${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$BASE_URL/js/app.js?v=55.3&hotfix=$TOKEN" -o /tmp/public-app.js
+          test "$(sha256sum nexus/js/app.js | awk '{print $1}')" = "$(sha256sum /tmp/public-app.js | awk '{print $1}')"
+          grep -Fq 'clearTimeout(clubHouseTimer);' /tmp/public-app.js
+          ! grep -Fq 'clearTimeout(clHouseTimer);' /tmp/public-app.js
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || true)"
+          if [ -z "$CHROME" ]; then
+            echo 'Chrome not available on runner'
+            exit 1
+          fi
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --virtual-time-budget=10000 --dump-dom "$BASE_URL/index.html?hotfix=$TOKEN" > /tmp/nexus-dom.html 2>/tmp/chrome.log
+          grep -Fq 'id="loginForm"' /tmp/nexus-dom.html
+          echo 'PUBLIC_APP_MATCH=YES'
+          echo 'LOGIN_BOOT=YES'
