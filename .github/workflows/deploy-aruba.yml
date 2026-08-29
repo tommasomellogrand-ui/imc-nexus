@@ -19,12 +19,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for f in nexus/index.html nexus/v1/app.js nexus/v1/modules/navigation/navigation.js nexus/v1/modules/navigation/navigation.css nexus/v1/modules/clubhouse/clubhouse.js nexus/v1/modules/clubhouse/clubhouse.css nexus/v1/modules/game-world-shell/game-world-shell.js nexus/v1/modules/game-world-shell/game-world-shell.css nexus/v1/modules/team-hub/team-hub.js nexus/v1/modules/team-hub/team-hub.css; do test -s "$f"; done
+          for f in nexus/index.html nexus/v1/app.js nexus/v1/modules/navigation/navigation.js nexus/v1/modules/navigation/navigation.css nexus/v1/modules/clubhouse/clubhouse.js nexus/v1/modules/clubhouse/clubhouse.css nexus/v1/modules/game-world-shell/game-world-shell.js nexus/v1/modules/game-world-shell/game-world-shell.css nexus/v1/modules/team-hub/team-hub.js nexus/v1/modules/team-hub/team-hub.css nexus/v1/modules/managers/managers.js nexus/v1/modules/managers/managers.css; do test -s "$f"; done
           node --check nexus/v1/app.js
           node --check nexus/v1/modules/navigation/navigation.js
           node --check nexus/v1/modules/clubhouse/clubhouse.js
           node --check nexus/v1/modules/game-world-shell/game-world-shell.js
           node --check nexus/v1/modules/team-hub/team-hub.js
+          node --check nexus/v1/modules/managers/managers.js
       - name: Validate Aruba secrets
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
@@ -47,7 +48,7 @@ jobs:
           from pathlib import Path
           from ftplib import FTP_TLS,error_perm
           host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://',''); user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']; raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host; root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-          files=[Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/assets/imc-logo.png'),Path('nexus/v1/modules/navigation/navigation.js'),Path('nexus/v1/modules/navigation/navigation.css'),Path('nexus/v1/modules/clubhouse/clubhouse.js'),Path('nexus/v1/modules/clubhouse/clubhouse.css'),Path('nexus/v1/modules/game-world-shell/game-world-shell.js'),Path('nexus/v1/modules/game-world-shell/game-world-shell.css'),Path('nexus/v1/modules/team-hub/team-hub.js'),Path('nexus/v1/modules/team-hub/team-hub.css')]
+          files=[Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/assets/imc-logo.png'),Path('nexus/v1/modules/navigation/navigation.js'),Path('nexus/v1/modules/navigation/navigation.css'),Path('nexus/v1/modules/clubhouse/clubhouse.js'),Path('nexus/v1/modules/clubhouse/clubhouse.css'),Path('nexus/v1/modules/game-world-shell/game-world-shell.js'),Path('nexus/v1/modules/game-world-shell/game-world-shell.css'),Path('nexus/v1/modules/team-hub/team-hub.js'),Path('nexus/v1/modules/team-hub/team-hub.css'),Path('nexus/v1/modules/managers/managers.js'),Path('nexus/v1/modules/managers/managers.css')]
           ctx=ssl.create_default_context();ctx.check_hostname=False;ftp=FTP_TLS(context=ctx);ftp.connect(host,21,timeout=30);ftp.login(user,password);ftp.prot_p()
           def ensure(path):
             ftp.cwd('/')
@@ -69,8 +70,11 @@ jobs:
         run: |
           set -euo pipefail
           BASE='https://www.italianmastersclub.it/nexus'; TOKEN="${GITHUB_SHA}-$(date +%s)"
-          for f in index.html v1/app.js v1/modules/navigation/navigation.js v1/modules/clubhouse/clubhouse.js v1/modules/game-world-shell/game-world-shell.js v1/modules/team-hub/team-hub.js v1/modules/team-hub/team-hub.css; do curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/$f?verify=$TOKEN" -o "/tmp/$(basename $f)"; done
+          for f in index.html v1/app.js v1/modules/navigation/navigation.js v1/modules/clubhouse/clubhouse.js v1/modules/game-world-shell/game-world-shell.js v1/modules/team-hub/team-hub.js v1/modules/team-hub/team-hub.css v1/modules/managers/managers.js v1/modules/managers/managers.css; do curl -fsSL -H 'Cache-Control: no-cache, no-store' "$BASE/$f?verify=$TOKEN" -o "/tmp/$(basename $f)"; done
           grep -Fq 'window.IMC_TEAM_HUB' /tmp/team-hub.js
+          grep -Fq 'window.IMC_MANAGERS' /tmp/managers.js
           node --check /tmp/team-hub.js
+          node --check /tmp/managers.js
           test -s /tmp/team-hub.css
-          echo 'TEAM_HUB_ONLINE=YES'
+          test -s /tmp/managers.css
+          echo 'MANAGERS_ONLINE=YES'
