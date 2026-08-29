@@ -1,8 +1,8 @@
 (function(){
   "use strict";
 
-  // Build 55 production runtime.
-  const NEXUS_BUILD = "55";
+  // Build 56 production runtime.
+  const NEXUS_BUILD = "56";
 
   function writeScript(src){
     document.write('<script src="'+src+'"></'+'script>');
@@ -67,18 +67,16 @@
       appendScript("js/imc-competition-card-insights-all-worlds.js?v=1.0.0");
       appendScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
       appendScript("js/imc-managers-gw008.js?v=1.0.2");
-      appendScript("js/imc-team-hub-gw008.js?v=1.0.4");
-      appendScript("js/imc-entities-current-manager-gw008.js?v=1.0.2");
-      appendScript("js/imc-entity-season-results-gw008.js?v=1.0.1");
+      appendScript("js/imc-team-hub-gw008.js?v=2.0.0");
     });
   }
 
   function loadCoreAsync(){
-    appendScript("js/app-core-55.js?v=55.0-core",loadAfterCore);
+    appendScript("js/app-core-56.js?v=56.0-core",loadAfterCore);
   }
 
   if(document.readyState==="loading"){
-    writeScript("js/app-core-55.js?v=55.0-core");
+    writeScript("js/app-core-56.js?v=56.0-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-player-codex-global.js?v=1.0.0");
     writeScript("js/imc-player-codex-global-detail.js?v=1.1.0");
@@ -95,9 +93,7 @@
     writeScript("js/imc-competition-card-insights-all-worlds.js?v=1.0.0");
     writeScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
     writeScript("js/imc-managers-gw008.js?v=1.0.2");
-    writeScript("js/imc-team-hub-gw008.js?v=1.0.4");
-    writeScript("js/imc-entities-current-manager-gw008.js?v=1.0.2");
-    writeScript("js/imc-entity-season-results-gw008.js?v=1.0.1");
+    writeScript("js/imc-team-hub-gw008.js?v=2.0.0");
     return;
   }
 
