@@ -1,13 +1,13 @@
 (function(){
   "use strict";
 
-  // Build 58 production runtime.
-  const NEXUS_BUILD = "58";
+  // Build 59 production runtime.
+  const NEXUS_BUILD = "59";
   window.__NEXUS_RUNTIME_BUILD__ = NEXUS_BUILD;
 
   function syncVisibleBuildLabel(){
     document.querySelectorAll(".nx-sport-title small,.nx-admin-head small").forEach(function(el){
-      if(/BUILD\s+(?:56|57)\b/.test(el.textContent||"")) el.textContent=(el.textContent||"").replace(/BUILD\s+(?:56|57)\b/g,"BUILD "+NEXUS_BUILD);
+      if(/BUILD\s+(?:56|57|58)\b/.test(el.textContent||"")) el.textContent=(el.textContent||"").replace(/BUILD\s+(?:56|57|58)\b/g,"BUILD "+NEXUS_BUILD);
     });
   }
 
@@ -82,16 +82,16 @@
       appendScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
       appendScript("js/imc-managers-gw008.js?v=1.5.0");
       appendScript("js/imc-team-hub-gw008.js?v=2.2.0");
-      appendScript("js/imc-trophy-room-all-worlds.js?v=1.0.0");
+      appendScript("js/imc-trophy-room-all-worlds.js?v=1.1.0");
     });
   }
 
   function loadCoreAsync(){
-    appendScript("js/app-core-58.js?v=58.0-core",loadAfterCore);
+    appendScript("js/app-core-59.js?v=59.0-core",loadAfterCore);
   }
 
   if(document.readyState==="loading"){
-    writeScript("js/app-core-58.js?v=58.0-core");
+    writeScript("js/app-core-59.js?v=59.0-core");
     writeScript("js/imc-results-scorers.js?v=1.0.0");
     writeScript("js/imc-player-codex-global.js?v=1.0.0");
     writeScript("js/imc-player-codex-global-detail.js?v=1.1.0");
@@ -109,7 +109,7 @@
     writeScript("js/imc-gw001-competition-manager-labels.js?v=1.1.0");
     writeScript("js/imc-managers-gw008.js?v=1.5.0");
     writeScript("js/imc-team-hub-gw008.js?v=2.2.0");
-    writeScript("js/imc-trophy-room-all-worlds.js?v=1.0.0");
+    writeScript("js/imc-trophy-room-all-worlds.js?v=1.1.0");
     setTimeout(syncVisibleBuildLabel,0);
     return;
   }
