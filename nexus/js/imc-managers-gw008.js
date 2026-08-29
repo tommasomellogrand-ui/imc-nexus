@@ -3,7 +3,7 @@
 if(window.__IMC_MANAGERS_GW008__)return;
 window.__IMC_MANAGERS_GW008__=true;
 
-const VERSION="1.0.1";
+const VERSION="1.0.2";
 const WORLD="GW008";
 const WORLD_NAME="Gold 1";
 const ROOT_FLAG="imc-managers-gw008";
@@ -34,7 +34,7 @@ async function allRows(table,select){const c=db();if(!c)throw new Error("Client 
 async function loadData(force){if(cache&&!force)return cache;const p=(async()=>{const [assignments,teams,nations]=await Promise.all([
   allRows("gw_manager_assignments","assignment_id,game_world_id,manager_id,team_id,assignment_type,start_date,end_date,season_id,nation_id"),
   allRows("gw_teams","team_id,game_world_id,country_id,team_type,team_name,display_name,logo_file,area_id,sm_club_id,team_scope,sm_world_club_id"),
-  allRows("imc_national_teams","nation_id,nation_name,continent")
+  allRows("national_team_codex_global","id,n,i,worlds")
 ]);
 const gwAssignments=assignments.filter(a=>clean(a.game_world_id).toUpperCase()===WORLD),today=todayIso();
 const activeIds=[...new Set(gwAssignments.filter(a=>assignmentActive(a,today)).map(a=>clean(a.manager_id)).filter(Boolean))];
@@ -42,12 +42,12 @@ const managers=await allRows("imc_managers","manager_id,full_name,imc_join_date,
 const activeManagers=managers.filter(m=>activeIds.includes(clean(m.manager_id)));
 const activeSet=new Set(activeIds),managerAssignments=gwAssignments.filter(a=>activeSet.has(clean(a.manager_id)));
 const teamMap=new Map(teams.filter(t=>clean(t.game_world_id).toUpperCase()===WORLD).map(t=>[String(t.team_id),t]));
-const nationMap=new Map(nations.map(n=>[String(n.nation_id),n]));
+const nationMap=new Map(nations.map(n=>[String(n.id),n]));
 const models=activeManagers.map(m=>({manager:m,assignments:managerAssignments.filter(a=>clean(a.manager_id)===clean(m.manager_id)).map(a=>({raw:a,team:a.team_id!=null?teamMap.get(String(a.team_id))||null:null,nation:a.nation_id!=null?nationMap.get(String(a.nation_id))||null:null,current:assignmentActive(a,today)}))}));
 return {world:WORLD,today,managers:activeManagers,assignments:managerAssignments,teams:[...teamMap.values()],nations,models};})();cache=p;try{return await p;}catch(e){cache=null;throw e;}}
 
 function hero(){return `<div class="imc-mgr8-hero"><div class="imc-mgr8-hero-copy"><span>GW008</span><strong>MANAGERS</strong><small>Gold 1</small></div></div>`;}
-function assignmentName(x){if(x.team)return clean(x.team.display_name)||clean(x.team.team_name)||"Club";if(x.nation)return clean(x.nation.nation_name)||"Nazionale";return clean(x.raw.assignment_type)||"Incarico";}
+function assignmentName(x){if(x.team)return clean(x.team.display_name)||clean(x.team.team_name)||"Club";if(x.nation)return clean(x.nation.n)||"Nazionale";return clean(x.raw.assignment_type)||"Incarico";}
 function assignmentMeta(x){const type=x.team?"Club":(x.nation?"Nazionale":clean(x.raw.assignment_type));return `${type} · ${formatDate(x.raw.start_date)} → ${x.raw.end_date?formatDate(x.raw.end_date):"Presente"}`;}
 function render(data){installStyles();const root=pageRoot();if(!root)return;const currentCount=data.assignments.filter(a=>assignmentActive(a,data.today)).length,historicalCount=data.assignments.length-currentCount;root.innerHTML=`<section class="${ROOT_FLAG}" data-imc-managers-world="GW008">${hero()}<div class="imc-mgr8-summary"><div><strong>${data.managers.length}</strong><span>Manager attivi</span></div><div><strong>${currentCount}</strong><span>Incarichi attuali</span></div><div><strong>${historicalCount}</strong><span>Incarichi storici</span></div></div><div class="imc-mgr8-list">${data.models.map(model=>{const m=model.manager;return `<article class="imc-mgr8-card" data-manager-id="${esc(m.manager_id)}"><div class="imc-mgr8-head"><strong>${esc(m.full_name||m.manager_id)}</strong><span>${esc(m.manager_id)} · SM ${esc(m.sm_manager_id||"-")} · IMC ${esc(m.imc_join_date||"-")}</span></div><div class="imc-mgr8-assignments">${model.assignments.map(x=>`<div class="imc-mgr8-assignment"><div><strong>${esc(assignmentName(x))}</strong><span>${esc(assignmentMeta(x))}</span></div><span class="imc-mgr8-badge ${x.current?"is-current":""}">${x.current?"Attuale":"Storico"}</span></div>`).join("")}</div></article>`;}).join("")}</div></section>`;}
 function renderLoading(){installStyles();const root=pageRoot();if(root)root.innerHTML=`<section class="${ROOT_FLAG}" data-imc-managers-world="GW008">${hero()}<div class="imc-mgr8-loading">Caricamento manager e incarichi…</div></section>`;}
