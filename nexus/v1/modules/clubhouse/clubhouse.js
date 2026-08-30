@@ -1,38 +1,48 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE)return;
-const VERSION="1.8.2";
-let state={container:null,client:null,managerId:"",username:"",worlds:[],assignments:[],teams:new Map(),nations:new Map(),clubLogos:new Map(),details:new Map()};
-const clean=v=>String(v==null?"":v).trim();
-const esc=v=>clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const norm=v=>clean(v).toLocaleLowerCase("it-IT").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]/g,"");
-const today=()=>new Date().toISOString().slice(0,10);
-function isActive(a){const d=today();return(!a.start_date||a.start_date<=d)&&(!a.end_date||a.end_date>=d)}
-function worldName(id){const w=state.worlds.find(x=>x.game_world_id===id);return clean(w&&(w.imc_name||w.name||w.soccer_manager_name))||id}
-function teamKey(w,t){return clean(w)+"|"+clean(t)}
-function teamName(a){return a.assignment_type==="national_team"?(state.nations.get(String(a.nation_id))||"Nazionale"):(state.teams.get(teamKey(a.game_world_id,a.team_id))||"Club")}
-async function rpc(action,args){const r=await state.client.rpc("imc_nexus_gateway",{p_action:action,p_args:args});if(r.error)throw r.error;return r.data||{}}
-async function load(){const d=await rpc("club_house",{managerId:state.managerId});state.worlds=Array.isArray(d.worlds)?d.worlds:[];state.assignments=Array.isArray(d.assignments)?d.assignments:[];state.teams=new Map((d.teams||[]).map(x=>[teamKey(x.game_world_id,x.team_id),clean(x.display_name||x.team_name)]));state.nations=new Map((d.nations||[]).map(x=>[String(x.nation_id),clean(x.nation_name)]));await loadWorldDetails()}
-function groupActive(){const m=new Map();state.assignments.filter(isActive).forEach(a=>{const id=clean(a.game_world_id);if(!id)return;if(!m.has(id))m.set(id,[]);m.get(id).push(a)});return [...m.entries()].sort((a,b)=>a[0].localeCompare(b[0]))}
-async function loadWorldDetails(){const groups=groupActive();await Promise.all(groups.map(async([id,items])=>{const names=[...new Set(items.map(teamName).filter(Boolean))];const calls=[rpc("gw_teams",{gameWorld:id}).catch(()=>({rows:[]})),rpc("schedule",{gameWorld:id,teamNames:[]}).catch(()=>({rows:[]})),rpc("results",{gameWorld:id,limit:500}).catch(()=>({rows:[]})),rpc("trophy_room",{gameWorld:id,managerId:state.managerId}).catch(()=>({rows:[]})),rpc("manager_scan_events",{gameWorld:id}).catch(()=>({rows:[]}))];const [teams,schedule,results,trophies,managers]=await Promise.all(calls);(teams.rows||[]).forEach(t=>{if(t.team_id&&t.logo_file)state.clubLogos.set(teamKey(id,t.team_id),clean(t.logo_file))});state.details.set(id,{schedule:schedule.rows||[],results:results.rows||[],trophies:trophies.rows||[],managers:managers.rows||[],names})}))}
-function roleLogo(a){if(!a)return"";if(a.assignment_type==="national_team")return `/nexus/assets/flags/nations/${encodeURIComponent(a.nation_id)}.svg`;const p=state.clubLogos.get(teamKey(a.game_world_id,a.team_id));if(!p)return"";return p.startsWith("/")?p:`/nexus/${p.replace(/^\.\//,"")}`}
-function dateValue(v){const x=clean(v);if(!x)return null;const d=new Date(x.length===10?x+"T12:00:00":x);return Number.isNaN(d.getTime())?null:d}
-function belongsToManager(x,names){const h=norm(x.home_name),a=norm(x.away_name);return names.some(n=>{const k=norm(n);return k&&(h===k||a===k)})}
-function nextForWorld(id){const d=state.details.get(id)||{},now=new Date(new Date().setHours(0,0,0,0)),names=d.names||[];return (d.schedule||[]).filter(x=>belongsToManager(x,names)).map(x=>({...x,_date:dateValue(x.match_date)})).filter(x=>x._date&&x._date>=now).sort((a,b)=>a._date-b._date)[0]||null}
-function lastForWorld(id){const d=state.details.get(id)||{},names=d.names||[];return (d.results||[]).filter(x=>belongsToManager(x,names)).map(x=>({...x,_date:dateValue(x.source_page_date||x.match_date)})).filter(x=>x._date).sort((a,b)=>b._date-a._date)[0]||null}
-function progressForWorld(id){const d=state.details.get(id)||{},names=d.names||[],played=(d.results||[]).filter(x=>belongsToManager(x,names)).length,future=(d.schedule||[]).filter(x=>belongsToManager(x,names)).filter(x=>{const dt=dateValue(x.match_date);return dt&&dt>=new Date(new Date().setHours(0,0,0,0))}).length,total=played+future;return total?Math.max(0,Math.min(100,Math.round(played/total*100))):0}
-function roleCard(a,label,cls){const src=roleLogo(a);return `<div class="ch-cc-card ch-cc-role ${cls}"><em>${label}</em>${src?`<img src="${esc(src)}" alt="">`:""}<strong>${a?esc(teamName(a)):"—"}</strong><small>${a?(a.assignment_type==="national_team"?"NAZIONALE":"CLUB"):""}</small></div>`}
-function matchCard(x,label,cls){if(!x)return `<div class="ch-cc-card ch-cc-match ${cls} is-empty"><em>${label}</em><strong>Nessuna partita disponibile</strong></div>`;const home=clean(x.home_name),away=clean(x.away_name),done=x.home_score!=null&&x.away_score!=null,score=done?`${x.home_score} - ${x.away_score}`:"VS",meta=clean(x.alias_nexus||x.competition_key||x.sm_round_label||x.sm_action||"MATCH"),when=x._date?x._date.toLocaleDateString("it-IT",{day:"2-digit",month:"short"}):"";return `<div class="ch-cc-card ch-cc-match ${cls}"><em>${label}</em><small>${esc(meta)}</small><div class="ch-cc-versus"><span>${esc(home)}</span><b>${esc(score)}</b><span>${esc(away)}</span></div><time>${esc(when)}</time></div>`}
-function pulseCard([id,items]){const club=items.find(a=>a.assignment_type!=="national_team")||null,nation=items.find(a=>a.assignment_type==="national_team")||null,next=nextForWorld(id),last=lastForWorld(id),progress=progressForWorld(id);return `<button class="ch-pulse" data-ch-world="${esc(id)}"><div class="ch-cc-stage">${roleCard(club,"IL TUO CLUB","ch-cc-club")}<div class="ch-cc-title"><strong>${esc(id)}</strong><span>${esc(worldName(id))}</span></div>${roleCard(nation,"LA TUA NAZIONALE","ch-cc-nation")}${matchCard(last,"LAST MATCH","ch-cc-next")}<div class="ch-cc-core" style="--progress:${progress*3.6}deg"><div class="ch-cc-core-inner"><small>STAGIONE</small><strong>${progress}%</strong><span>COMPLETATA</span></div></div>${matchCard(next,"NEXT MATCH","ch-cc-last")}</div></button>`}
-function menuWorlds(){return state.worlds.filter(w=>/^GW00[1-9]$/.test(clean(w.game_world_id))).sort((a,b)=>clean(a.game_world_id).localeCompare(clean(b.game_world_id))).map(w=>`<button type="button" data-ch-world="${esc(w.game_world_id)}"><span>${esc(w.game_world_id)}</span><strong>${esc(worldName(w.game_world_id))}</strong></button>`).join("")}
-function managerTitle(x){const manager=clean(x.manager_name||x.new_manager_name||x.current_manager_name),entity=clean(x.entity_name||x.team_name||x.nation_name),status=clean(x.change_status||x.event_type||x.change_type);return[manager,entity,status].filter(Boolean).join(" · ")||"Cambio manager"}
-function latestFeed(){const out=[];for(const [id,d] of state.details){(d.trophies||[]).forEach(x=>out.push({type:"AWARD",id,date:dateValue(x.won_on),title:clean(x.winning_team_name||x.winning_nation_name||x.winning_manager_name||"Award assegnato"),sub:`${id} · ${clean(x.competition_key||"TROPHY ROOM")}`}));(d.managers||[]).forEach(x=>out.push({type:"MANAGER",id,date:dateValue(x.imported_at||x.event_date||x.created_at||x.detected_at),title:managerTitle(x),sub:`${id} · MANAGER NETWORK`}))}return out.sort((a,b)=>(b.date?.getTime()||0)-(a.date?.getTime()||0)).slice(0,10)}
-function feedHtml(){const rows=latestFeed();if(!rows.length)return'<div class="ch-empty">Nessun cambio manager o award disponibile.</div>';return rows.map(x=>`<article class="ch-feed-row ${x.type.toLowerCase()}"><b>${x.type}</b><small>${esc(x.sub)}</small><strong>${esc(x.title)}</strong></article>`).join("")}
-function scheduleRows(mode){const now=new Date(),start=new Date(now.getFullYear(),now.getMonth(),now.getDate()),tom=new Date(start);tom.setDate(tom.getDate()+1);const weekEnd=new Date(start);weekEnd.setDate(weekEnd.getDate()+7);const rows=[],seen=new Set();for(const [id,d] of state.details)(d.schedule||[]).forEach(x=>{const dt=dateValue(x.match_date);if(!dt||dt<start)return;const k=`${id}|${clean(x.sm_fixture_id||x.schedule_id)}|${clean(x.home_name)}|${clean(x.away_name)}|${clean(x.match_date)}`;if(seen.has(k))return;seen.add(k);const ok=mode==="today"?dt.toDateString()===start.toDateString():mode==="tomorrow"?dt.toDateString()===tom.toDateString():dt>=start&&dt<weekEnd;if(ok)rows.push({...x,id,dt})});return rows.sort((a,b)=>a.dt-b.dt||a.id.localeCompare(b.id)).slice(0,30)}
-function scheduleHtml(mode="today"){const rows=scheduleRows(mode);if(!rows.length)return'<div class="ch-empty">Nessuna partita prevista.</div>';return rows.map(x=>`<div class="ch-match"><div><span>${esc(x.id)}</span><small>${esc(x.alias_nexus||x.competition_key||x.sm_round_label||x.sm_action||"MATCH")}</small></div><strong>${esc(x.home_name)} <b>VS</b> ${esc(x.away_name)}</strong><time>${x.dt.toLocaleDateString("it-IT",{weekday:"short",day:"2-digit",month:"short"})}</time></div>`).join("")}
-function render(){const root=state.container;if(!root)return;const grouped=groupActive();root.innerHTML=`<section class="clubhouse" data-clubhouse-version="${VERSION}"><div class="ch-header-shell"><header class="ch-top"><div class="ch-brand-panel"><img src="assets/imc-logo.png" alt="IMC"></div><div class="ch-brand-title"><h1>NEXUS</h1><small><i></i>CLUB HOUSE<i></i></small></div><button class="ch-menu" type="button" data-ch-menu aria-label="Apri menu" aria-expanded="false"><i></i><i></i><i></i></button></header><div class="ch-drawer" data-ch-drawer hidden><div class="ch-drawer-head"><strong>GAME WORLD</strong><button type="button" data-ch-menu-close>×</button></div><div class="ch-drawer-worlds">${menuWorlds()}</div></div></div><section class="ch-section"><div class="ch-title"><h2>WORLD PULSE</h2><span>${grouped.length} GAME WORLD</span></div><div class="ch-pulses">${grouped.map(pulseCard).join("")}</div></section><section class="ch-section"><div class="ch-title"><h2>NEXUS FEED</h2><span>LIVE</span></div><div class="ch-feed">${feedHtml()}</div></section><section class="ch-section"><div class="ch-title"><h2>GLOBAL SCHEDULE</h2><span>PROSSIME</span></div><div class="ch-tabs"><button class="active" data-ch-schedule="today">OGGI</button><button data-ch-schedule="tomorrow">DOMANI</button><button data-ch-schedule="week">SETTIMANA</button></div><div class="ch-schedule" data-ch-schedule-list>${scheduleHtml("today")}</div></section></section>`}
-async function mount(o){if(!o||!o.container||!o.client||!o.managerId)throw Error("Club House: parametri mancanti");state={...state,...o,managerId:clean(o.managerId),username:clean(o.username),clubLogos:new Map(),details:new Map()};state.container.innerHTML='<div class="ch-loading">Caricamento Club House…</div>';await load();render()}
+const VERSION="2.0.0";
+let state={container:null};
+function render(){
+  const root=state.container;
+  if(!root)return;
+  root.innerHTML=`<section class="clubhouse clubhouse-reset" data-clubhouse-version="${VERSION}">
+    <div class="ch-hero-header-shell">
+      <header class="ch-hero-header">
+        <div class="ch-hero-logo"><img src="assets/imc-logo.png" alt="IMC"></div>
+        <div class="ch-hero-brand" aria-label="Nexus Club House">
+          <h1>NEXUS</h1>
+          <div class="ch-hero-subtitle"><i></i><span>CLUB HOUSE</span><i></i></div>
+        </div>
+        <button class="ch-hero-menu" type="button" data-ch-menu aria-label="Apri menu" aria-expanded="false"><i></i><i></i><i></i></button>
+      </header>
+      <div class="ch-hero-drawer" data-ch-drawer hidden>
+        <div class="ch-hero-drawer-head"><strong>MENU</strong><button type="button" data-ch-menu-close aria-label="Chiudi menu">×</button></div>
+      </div>
+    </div>
+    <div class="ch-clubhouse-canvas" aria-hidden="true"></div>
+  </section>`;
+}
+async function mount(o){
+  if(!o||!o.container)throw Error("Club House: container mancante");
+  state={...state,...o,container:o.container};
+  render();
+}
 function unmount(){if(state.container)state.container.innerHTML="";state.container=null}
-document.addEventListener("click",e=>{const world=e.target.closest&&e.target.closest("[data-ch-world]");if(world){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world",worldId:clean(world.getAttribute("data-ch-world"))}}));return}const open=e.target.closest&&e.target.closest("[data-ch-menu]");if(open){const d=state.container?.querySelector("[data-ch-drawer]");if(d){const x=d.hidden;d.hidden=!x;open.setAttribute("aria-expanded",String(x))}return}const close=e.target.closest&&e.target.closest("[data-ch-menu-close]");if(close){const d=state.container?.querySelector("[data-ch-drawer]");if(d)d.hidden=true;return}const tab=e.target.closest&&e.target.closest("[data-ch-schedule]");if(tab&&state.container){state.container.querySelectorAll("[data-ch-schedule]").forEach(b=>b.classList.toggle("active",b===tab));const list=state.container.querySelector("[data-ch-schedule-list]");if(list)list.innerHTML=scheduleHtml(tab.dataset.chSchedule)}});
+document.addEventListener("click",e=>{
+  const open=e.target.closest&&e.target.closest("[data-ch-menu]");
+  if(open&&state.container&&state.container.contains(open)){
+    const drawer=state.container.querySelector("[data-ch-drawer]");
+    if(drawer){const show=drawer.hidden;drawer.hidden=!show;open.setAttribute("aria-expanded",String(show))}
+    return;
+  }
+  const close=e.target.closest&&e.target.closest("[data-ch-menu-close]");
+  if(close&&state.container&&state.container.contains(close)){
+    const drawer=state.container.querySelector("[data-ch-drawer]");
+    const button=state.container.querySelector("[data-ch-menu]");
+    if(drawer)drawer.hidden=true;
+    if(button)button.setAttribute("aria-expanded","false");
+  }
+});
 window.IMC_CLUBHOUSE={version:VERSION,mount,unmount};
 })();
