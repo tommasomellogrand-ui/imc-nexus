@@ -1,13 +1,32 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE)return;
-const VERSION="2.1.0";
+const VERSION="2.2.0";
 const INTER="https://commons.wikimedia.org/wiki/Special:Redirect/file/FC_Internazionale_Milano_2021.svg";
 const MILAN="https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_of_AC_Milan.svg";
 const JUVE="https://commons.wikimedia.org/wiki/Special:Redirect/file/Juventus_FC_-_logo_black_%28Italy%2C_2020%29.svg";
 let state={container:null};
-function italyShield(){return '<span class="ch-italy-shield" aria-label="Italia"><i></i><i></i><i></i></span>'}
-function navIcon(type){const icons={home:'⌂',feed:'▤',schedule:'▦',worlds:'◎',calendar:'▣'};return `<span class="ch-bottom-icon">${icons[type]||'•'}</span>`}
+function italyShield(){return `<svg class="ch-italy-shield" viewBox="0 0 60 72" role="img" aria-label="Italia"><defs><clipPath id="chItalyShield"><path d="M6 4h48v38c0 14-9 23-24 29C15 65 6 56 6 42Z"/></clipPath></defs><g clip-path="url(#chItalyShield)"><rect x="6" y="4" width="16" height="67" fill="#159447"/><rect x="22" y="4" width="16" height="67" fill="#fff"/><rect x="38" y="4" width="16" height="67" fill="#e12634"/></g><path d="M6 4h48v38c0 14-9 23-24 29C15 65 6 56 6 42Z" fill="none" stroke="#0b1b3f" stroke-width="2"/></svg>`}
+function svgIcon(type){
+  const map={
+    teams:'<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 19c.4-4 2.4-6 5-6s4.6 2 5 6M11 19c.4-4 2.4-6 5-6s4.6 2 5 6"/>',
+    managers:'<circle cx="12" cy="7" r="4"/><path d="M5 21c.6-5 3-8 7-8s6.4 3 7 8"/>',
+    competitions:'<path d="M7 4h10v4c0 4-2 7-5 8-3-1-5-4-5-8V4Z"/><path d="M9 16v4h6v-4M4 6H2c0 4 2 6 5 6M20 6h2c0 4-2 6-5 6"/>',
+    results:'<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+    schedule:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h2M14 14h2M8 18h2"/>',
+    trophy:'<path d="M7 4h10v4c0 5-2 8-5 9-3-1-5-4-5-9V4Z"/><path d="M9 17v3h6v-3M4 6H2c0 4 2 6 5 6M20 6h2c0 4-2 6-5 6"/>',
+    stats:'<path d="M4 20V11h3v9M10 20V6h3v14M16 20V3h3v17"/>',
+    h2h:'<path d="M7 8h10M14 5l3 3-3 3M17 16H7M10 13l-3 3 3 3"/>',
+    transfers:'<path d="M4 8h14M15 5l3 3-3 3M20 16H6M9 13l-3 3 3 3"/>',
+    codex:'<path d="M5 3h13a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2V3Z"/><path d="M8 3v18M11 7h6M11 11h6M11 15h4"/>',
+    home:'<path d="M3 11 12 3l9 8M5 10v10h14V10M9 20v-6h6v6"/>',
+    feed:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h6"/>',
+    worlds:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9M12 3c-3 3-4 6-4 9s1 6 4 9"/>',
+    calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h2M14 14h2M8 18h2"/>'
+  };
+  return `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${map[type]||''}</svg>`;
+}
+function navIcon(type){return `<span class="ch-bottom-icon">${svgIcon(type)}</span>`}
 function render(){
   const root=state.container;
   if(!root)return;
@@ -15,137 +34,34 @@ function render(){
     <div class="ch-hero-header-shell">
       <header class="ch-hero-header">
         <div class="ch-hero-logo"><img src="assets/imc-logo.png" alt="IMC"></div>
-        <div class="ch-hero-brand" aria-label="Nexus Club House">
-          <h1>NEXUS</h1>
-          <div class="ch-hero-subtitle"><i></i><span>CLUB HOUSE</span><i></i></div>
-        </div>
+        <div class="ch-hero-brand" aria-label="Nexus Club House"><h1>NEXUS</h1><div class="ch-hero-subtitle"><i></i><span>CLUB HOUSE</span><i></i></div></div>
         <button class="ch-hero-menu" type="button" data-ch-menu aria-label="Apri menu" aria-expanded="false"><i></i><i></i><i></i></button>
       </header>
-      <div class="ch-hero-drawer" data-ch-drawer hidden>
-        <div class="ch-hero-drawer-head"><strong>MENU</strong><button type="button" data-ch-menu-close aria-label="Chiudi menu">×</button></div>
-      </div>
+      <div class="ch-hero-drawer" data-ch-drawer hidden><div class="ch-hero-drawer-head"><strong>MENU</strong><button type="button" data-ch-menu-close aria-label="Chiudi menu">×</button></div></div>
     </div>
 
     <div class="ch-clubhouse-canvas">
       <section class="ch-mock-world" aria-label="Game World overview">
-        <article class="ch-mock-card ch-mock-club">
-          <span class="ch-card-kicker">IL TUO CLUB</span>
-          <img class="ch-main-badge" src="${INTER}" alt="Inter">
-          <strong>Inter</strong>
-          <small>Serie A</small>
-        </article>
-
-        <div class="ch-world-heading">
-          <strong>GW001</strong>
-          <span>THE BEGINNING</span>
-        </div>
-
-        <article class="ch-mock-card ch-mock-nation">
-          <span class="ch-card-kicker">LA TUA NAZIONALE</span>
-          ${italyShield()}
-          <strong>Italia</strong>
-          <small>Nazionale</small>
-        </article>
-
-        <article class="ch-mock-card ch-mock-next">
-          <span class="ch-card-kicker">NEXT MATCH</span>
-          <small class="ch-match-meta">Serie A · Giornata 28</small>
-          <div class="ch-fixture-row">
-            <div><img src="${INTER}" alt="Inter"><b>Inter</b></div>
-            <strong>VS</strong>
-            <div><img src="${JUVE}" alt="Juventus"><b>Juventus</b></div>
-          </div>
-          <div class="ch-match-foot"><span>▣ Domani · 20:45</span><span>⌖ San Siro</span></div>
-        </article>
-
-        <div class="ch-season-core" style="--season:78%">
-          <div class="ch-season-ticks"></div>
-          <div class="ch-season-inner">
-            <span>STAGIONE</span>
-            <strong>78%</strong>
-            <small>COMPLETATA</small>
-          </div>
-        </div>
-
-        <article class="ch-mock-card ch-mock-last">
-          <span class="ch-card-kicker">LAST MATCH</span>
-          <small class="ch-match-meta">Giornata 27</small>
-          <div class="ch-result-row">
-            <div><img src="${MILAN}" alt="Milan"><b>Milan</b></div>
-            <strong>2 - 1</strong>
-            <div><img src="${INTER}" alt="Inter"><b>Inter</b></div>
-          </div>
-          <div class="ch-result-foot"><span>2 - 1</span><span>MVN</span></div>
-        </article>
+        <article class="ch-mock-card ch-mock-club"><span class="ch-card-kicker">IL TUO CLUB</span><img class="ch-main-badge" src="${INTER}" alt="Inter"><strong>Inter</strong><small>Serie A</small></article>
+        <div class="ch-world-heading"><strong>GW001</strong><span>THE BEGINNING</span></div>
+        <article class="ch-mock-card ch-mock-nation"><span class="ch-card-kicker">LA TUA NAZIONALE</span>${italyShield()}<strong>Italia</strong><small>Nazionale</small></article>
+        <article class="ch-mock-card ch-mock-next"><span class="ch-card-kicker">NEXT MATCH</span><small class="ch-match-meta">Serie A · Giornata 28</small><div class="ch-fixture-row"><div><img src="${INTER}" alt="Inter"><b>Inter</b></div><strong>VS</strong><div><img src="${JUVE}" alt="Juventus"><b>Juventus</b></div></div><div class="ch-match-foot"><span>▣ Domani · 20:45</span><span>⌖ San Siro</span></div></article>
+        <div class="ch-season-core" style="--season:78%"><div class="ch-season-ticks"></div><div class="ch-season-inner"><span>STAGIONE</span><strong>78%</strong><small>COMPLETATA</small></div></div>
+        <article class="ch-mock-card ch-mock-last"><span class="ch-card-kicker">LAST MATCH</span><small class="ch-match-meta">Giornata 27</small><div class="ch-result-row"><div><img src="${MILAN}" alt="Milan"><b>Milan</b></div><strong>2 - 1</strong><div><img src="${INTER}" alt="Inter"><b>Inter</b></div></div><div class="ch-result-foot"><span>2 - 1</span><span>MVN</span></div></article>
       </section>
 
-      <section class="ch-mock-section ch-performance">
-        <h2>PERFORMANCE OVERVIEW</h2>
-        <div class="ch-performance-grid">
-          <article><span>POSIZIONE</span><strong>1°</strong></article>
-          <article><span>PUNTI</span><strong>58</strong></article>
-          <article><span>GOL FATTI</span><strong>42</strong></article>
-          <article><span>GOL SUBITI</span><strong>18</strong></article>
-          <article class="ch-form-card"><div class="ch-form-head"><span>FORMA</span><span>ULTIME 5</span></div><div class="ch-form-bars"><i class="win"></i><i class="win tall"></i><i class="loss mid"></i><i class="win tall2"></i><i class="draw short"></i></div><div class="ch-form-labels"><b>V</b><b>V</b><b class="loss-t">P</b><b>V</b><b class="draw-t">N</b></div></article>
-        </div>
-      </section>
+      <section class="ch-mock-section ch-performance"><h2>PERFORMANCE OVERVIEW</h2><div class="ch-performance-grid"><article><span>POSIZIONE</span><strong>1°</strong></article><article><span>PUNTI</span><strong>58</strong></article><article><span>GOL FATTI</span><strong>42</strong></article><article><span>GOL SUBITI</span><strong>18</strong></article><article class="ch-form-card"><div class="ch-form-head"><span>FORMA</span><span>ULTIME 5</span></div><div class="ch-form-bars"><i class="win"></i><i class="win tall"></i><i class="loss mid"></i><i class="win tall2"></i><i class="draw short"></i></div><div class="ch-form-labels"><b>V</b><b>V</b><b class="loss-t">P</b><b>V</b><b class="draw-t">N</b></div></article></div></section>
 
-      <section class="ch-mock-section ch-competition">
-        <h2>COMPETITION PULSE</h2>
-        <div class="ch-competition-grid">
-          <article><div class="ch-comp-ring green"><span>◆</span></div><strong>SERIE A</strong><small>1° posto</small></article>
-          <article><div class="ch-comp-ring blue"><span>⚡</span></div><strong>COPPA ITALIA</strong><small>Semifinale</small></article>
-          <article><div class="ch-comp-ring blue"><span>✹</span></div><strong>CHAMPIONS LEAGUE</strong><small>Ottavi</small></article>
-          <article><div class="ch-comp-ring cyan"><span>⚑</span></div><strong>NATIONS LEAGUE</strong><small>Gruppo A</small></article>
-        </div>
-      </section>
+      <section class="ch-mock-section ch-competition"><h2>COMPETITION PULSE</h2><div class="ch-competition-grid"><article><div class="ch-comp-ring green"><span>◆</span></div><strong>SERIE A</strong><small>1° posto</small></article><article><div class="ch-comp-ring blue"><span>⚡</span></div><strong>COPPA ITALIA</strong><small>Semifinale</small></article><article><div class="ch-comp-ring blue"><span>✹</span></div><strong>CHAMPIONS LEAGUE</strong><small>Ottavi</small></article><article><div class="ch-comp-ring cyan"><span>⚑</span></div><strong>NATIONS LEAGUE</strong><small>Gruppo A</small></article></div></section>
 
-      <section class="ch-mock-section ch-explore">
-        <h2>ESPLORA GW001</h2>
-        <div class="ch-explore-grid">
-          <button type="button"><span>♧</span><b>TEAMS</b></button>
-          <button type="button"><span>♙</span><b>MANAGERS</b></button>
-          <button type="button"><span>♕</span><b>COMPETITIONS</b></button>
-          <button type="button"><span>▣</span><b>RESULTS</b></button>
-          <button type="button"><span>▦</span><b>SCHEDULE</b></button>
-          <button type="button"><span>◇</span><b>TROPHY ROOM</b></button>
-          <button type="button"><span>▥</span><b>STATS</b></button>
-          <button type="button"><span>ↄ</span><b>H2H</b></button>
-          <button type="button"><span>⇄</span><b>TRANSFERS</b></button>
-          <button type="button"><span>▧</span><b>CODEX</b></button>
-        </div>
-      </section>
+      <section class="ch-mock-section ch-explore"><h2>ESPLORA GW001</h2><div class="ch-explore-grid"><button type="button">${svgIcon('teams')}<b>TEAMS</b></button><button type="button">${svgIcon('managers')}<b>MANAGERS</b></button><button type="button">${svgIcon('competitions')}<b>COMPETITIONS</b></button><button type="button">${svgIcon('results')}<b>RESULTS</b></button><button type="button">${svgIcon('schedule')}<b>SCHEDULE</b></button><button type="button">${svgIcon('trophy')}<b>TROPHY ROOM</b></button><button type="button">${svgIcon('stats')}<b>STATS</b></button><button type="button">${svgIcon('h2h')}<b>H2H</b></button><button type="button">${svgIcon('transfers')}<b>TRANSFERS</b></button><button type="button">${svgIcon('codex')}<b>CODEX</b></button></div></section>
 
-      <nav class="ch-bottom-nav" aria-label="Club House navigation">
-        <button class="active" type="button">${navIcon('home')}<span>HOME</span></button>
-        <button type="button">${navIcon('feed')}<span>FEED</span></button>
-        <button type="button">${navIcon('schedule')}<span>SCHEDULE</span></button>
-        <button type="button">${navIcon('worlds')}<span>WORLDS</span></button>
-        <button type="button">${navIcon('calendar')}<span>CALENDAR</span></button>
-      </nav>
+      <nav class="ch-bottom-nav" aria-label="Club House navigation"><button class="active" type="button">${navIcon('home')}<span>HOME</span></button><button type="button">${navIcon('feed')}<span>FEED</span></button><button type="button">${navIcon('schedule')}<span>SCHEDULE</span></button><button type="button">${navIcon('worlds')}<span>WORLDS</span></button><button type="button">${navIcon('calendar')}<span>CALENDAR</span></button></nav>
     </div>
   </section>`;
 }
-async function mount(o){
-  if(!o||!o.container)throw Error("Club House: container mancante");
-  state={...state,...o,container:o.container};
-  render();
-}
+async function mount(o){if(!o||!o.container)throw Error("Club House: container mancante");state={...state,...o,container:o.container};render()}
 function unmount(){if(state.container)state.container.innerHTML="";state.container=null}
-document.addEventListener("click",e=>{
-  const open=e.target.closest&&e.target.closest("[data-ch-menu]");
-  if(open&&state.container&&state.container.contains(open)){
-    const drawer=state.container.querySelector("[data-ch-drawer]");
-    if(drawer){const show=drawer.hidden;drawer.hidden=!show;open.setAttribute("aria-expanded",String(show))}
-    return;
-  }
-  const close=e.target.closest&&e.target.closest("[data-ch-menu-close]");
-  if(close&&state.container&&state.container.contains(close)){
-    const drawer=state.container.querySelector("[data-ch-drawer]");
-    const button=state.container.querySelector("[data-ch-menu]");
-    if(drawer)drawer.hidden=true;
-    if(button)button.setAttribute("aria-expanded","false");
-  }
-});
+document.addEventListener("click",e=>{const open=e.target.closest&&e.target.closest("[data-ch-menu]");if(open&&state.container&&state.container.contains(open)){const drawer=state.container.querySelector("[data-ch-drawer]");if(drawer){const show=drawer.hidden;drawer.hidden=!show;open.setAttribute("aria-expanded",String(show))}return}const close=e.target.closest&&e.target.closest("[data-ch-menu-close]");if(close&&state.container&&state.container.contains(close)){const drawer=state.container.querySelector("[data-ch-drawer]");const button=state.container.querySelector("[data-ch-menu]");if(drawer)drawer.hidden=true;if(button)button.setAttribute("aria-expanded","false")}});
 window.IMC_CLUBHOUSE={version:VERSION,mount,unmount};
 })();
