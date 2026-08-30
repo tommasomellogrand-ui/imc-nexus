@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE)return;
-const VERSION="2.2.0";
+const VERSION="2.4.0";
 const INTER="https://commons.wikimedia.org/wiki/Special:Redirect/file/FC_Internazionale_Milano_2021.svg";
 const MILAN="https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_of_AC_Milan.svg";
 const JUVE="https://commons.wikimedia.org/wiki/Special:Redirect/file/Juventus_FC_-_logo_black_%28Italy%2C_2020%29.svg";
@@ -41,13 +41,19 @@ function render(){
     </div>
 
     <div class="ch-clubhouse-canvas">
-      <section class="ch-mock-world" aria-label="Game World overview">
-        <article class="ch-mock-card ch-mock-club"><span class="ch-card-kicker">IL TUO CLUB</span><img class="ch-main-badge" src="${INTER}" alt="Inter"><strong>Inter</strong><small>Serie A</small></article>
-        <div class="ch-world-heading"><strong>GW001</strong><span>THE BEGINNING</span></div>
-        <article class="ch-mock-card ch-mock-nation"><span class="ch-card-kicker">LA TUA NAZIONALE</span>${italyShield()}<strong>Italia</strong><small>Nazionale</small></article>
-        <article class="ch-mock-card ch-mock-next"><span class="ch-card-kicker">NEXT MATCH</span><small class="ch-match-meta">Serie A · Giornata 28</small><div class="ch-fixture-row"><div><img src="${INTER}" alt="Inter"><b>Inter</b></div><strong>VS</strong><div><img src="${JUVE}" alt="Juventus"><b>Juventus</b></div></div><div class="ch-match-foot"><span>▣ Domani · 20:45</span><span>⌖ San Siro</span></div></article>
+      <section class="ch-mock-world ch-mock-world-fused" aria-label="Game World overview">
+        <div class="ch-top-fused">
+          <article class="ch-mock-club ch-top-zone ch-top-zone-club"><span class="ch-card-kicker">IL TUO CLUB</span><img class="ch-main-badge" src="${INTER}" alt="Inter"><strong>Inter</strong><small>Serie A</small></article>
+          <div class="ch-world-heading"><strong>GW001</strong><span>THE BEGINNING</span></div>
+          <article class="ch-mock-nation ch-top-zone ch-top-zone-nation"><span class="ch-card-kicker">LA TUA NAZIONALE</span>${italyShield()}<strong>Italia</strong><small>Nazionale</small></article>
+        </div>
+
         <div class="ch-season-core" style="--season:78%"><div class="ch-season-ticks"></div><div class="ch-season-inner"><span>STAGIONE</span><strong>78%</strong><small>COMPLETATA</small></div></div>
-        <article class="ch-mock-card ch-mock-last"><span class="ch-card-kicker">LAST MATCH</span><small class="ch-match-meta">Giornata 27</small><div class="ch-result-row"><div><img src="${MILAN}" alt="Milan"><b>Milan</b></div><strong>2 - 1</strong><div><img src="${INTER}" alt="Inter"><b>Inter</b></div></div><div class="ch-result-foot"><span>2 - 1</span><span>MVN</span></div></article>
+
+        <div class="ch-lower-pair">
+          <article class="ch-mock-card ch-mock-next"><span class="ch-card-kicker">NEXT MATCH</span><small class="ch-match-meta">Serie A · Giornata 28</small><div class="ch-fixture-row"><div><img src="${INTER}" alt="Inter"><b>Inter</b></div><strong>VS</strong><div><img src="${JUVE}" alt="Juventus"><b>Juventus</b></div></div><div class="ch-match-foot"><span>▣ Domani · 20:45</span><span>⌖ San Siro</span></div></article>
+          <article class="ch-mock-card ch-mock-last"><span class="ch-card-kicker">LAST MATCH</span><small class="ch-match-meta">Giornata 27</small><div class="ch-result-row"><div><img src="${MILAN}" alt="Milan"><b>Milan</b></div><strong>2 - 1</strong><div><img src="${INTER}" alt="Inter"><b>Inter</b></div></div><div class="ch-result-foot"><span>2 - 1</span><span>MVN</span></div></article>
+        </div>
       </section>
 
       <section class="ch-mock-section ch-performance"><h2>PERFORMANCE OVERVIEW</h2><div class="ch-performance-grid"><article><span>POSIZIONE</span><strong>1°</strong></article><article><span>PUNTI</span><strong>58</strong></article><article><span>GOL FATTI</span><strong>42</strong></article><article><span>GOL SUBITI</span><strong>18</strong></article><article class="ch-form-card"><div class="ch-form-head"><span>FORMA</span><span>ULTIME 5</span></div><div class="ch-form-bars"><i class="win"></i><i class="win tall"></i><i class="loss mid"></i><i class="win tall2"></i><i class="draw short"></i></div><div class="ch-form-labels"><b>V</b><b>V</b><b class="loss-t">P</b><b>V</b><b class="draw-t">N</b></div></article></div></section>
