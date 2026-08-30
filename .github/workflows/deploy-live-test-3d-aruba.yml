@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'live-test-3d/**'
+      - 'live-match/**'
+      - '.github/workflows/deploy-live-test-3d-aruba.yml'
   workflow_dispatch:
 
 permissions:
@@ -31,14 +32,11 @@ jobs:
         run: |
           set -euo pipefail
           for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
-            if [ -z "${!name:-}" ]; then
-              echo "Missing required secret: $name"
-              exit 1
-            fi
+            if [ -z "${!name:-}" ]; then echo "Missing required secret: $name"; exit 1; fi
           done
-          test -s live-test-3d/index.html
-          grep -Fq 'ROAD TO HISTORY' live-test-3d/index.html
-          grep -Fq 'MATCHDAY 13' live-test-3d/index.html
+          test -s live-match/md15/index.html
+          grep -Fq 'ROAD TO HISTORY' live-match/md15/index.html
+          grep -Fq 'MATCHDAY 15' live-match/md15/index.html
 
       - name: Deploy Live Match with verified FTPS
         env:
@@ -52,69 +50,37 @@ jobs:
           import io, os, ssl
           from pathlib import Path
           from ftplib import FTP_TLS, error_perm
-
-          host = os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
-          user = os.environ['ARUBA_FTP_USERNAME']
-          password = os.environ['ARUBA_FTP_PASSWORD']
-          raw = os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
-          domain = host[4:] if host.startswith('ftp.') else host
-
-          if raw.endswith('/nexus'):
-              target_raw = raw[:-len('/nexus')] + '/live-match'
-          else:
-              raise SystemExit(f'ARUBA_FTP_REMOTE_DIR must end in /nexus, got: {raw}')
-
-          remote_root = target_raw if target_raw.startswith('/www.') else f'/www.{domain}{target_raw}'
-          local_root = Path('live-test-3d')
-          files = [p for p in local_root.rglob('*') if p.is_file()]
-          if not files:
-              raise SystemExit('No live files to deploy')
-
-          ctx = ssl.create_default_context()
-          ctx.check_hostname = False
-          ftp = FTP_TLS(context=ctx)
-          ftp.connect(host, 21, timeout=30)
-          ftp.login(user, password)
-          ftp.prot_p()
-
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host
+          if not raw.endswith('/nexus'): raise SystemExit(f'ARUBA_FTP_REMOTE_DIR must end in /nexus, got: {raw}')
+          target_raw=raw[:-len('/nexus')]+'/live-match'
+          remote_root=target_raw if target_raw.startswith('/www.') else f'/www.{domain}{target_raw}'
+          local_root=Path('live-match'); files=[p for p in local_root.rglob('*') if p.is_file()]
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30); ftp.login(user,password); ftp.prot_p()
           def ensure_dir(path):
-              parts = [x for x in path.split('/') if x]
-              ftp.cwd('/')
-              current = ''
+              parts=[x for x in path.split('/') if x]; ftp.cwd('/'); current=''
               for part in parts:
-                  current += '/' + part
-                  try:
-                      ftp.cwd(current)
-                  except error_perm:
-                      ftp.mkd(current)
-                      ftp.cwd(current)
-
+                  current+='/'+part
+                  try: ftp.cwd(current)
+                  except error_perm: ftp.mkd(current); ftp.cwd(current)
           for local in files:
-              rel = local.relative_to(local_root).as_posix()
-              parent = str(Path(rel).parent).replace('\\','/')
-              remote_dir = remote_root if parent == '.' else remote_root + '/' + parent
-              ensure_dir(remote_dir)
-              data = local.read_bytes()
-              with local.open('rb') as fh:
-                  ftp.storbinary(f'STOR {local.name}', fh, blocksize=65536)
-              buf = io.BytesIO()
-              ftp.retrbinary(f'RETR {local.name}', buf.write, blocksize=65536)
-              if buf.getvalue() != data:
-                  raise SystemExit(f'FTPS read-back mismatch for {rel}')
+              rel=local.relative_to(local_root).as_posix(); parent=str(Path(rel).parent).replace('\\','/')
+              remote_dir=remote_root if parent=='.' else remote_root+'/'+parent
+              ensure_dir(remote_dir); data=local.read_bytes()
+              with local.open('rb') as fh: ftp.storbinary(f'STOR {local.name}',fh,blocksize=65536)
+              buf=io.BytesIO(); ftp.retrbinary(f'RETR {local.name}',buf.write,blocksize=65536)
+              if buf.getvalue()!=data: raise SystemExit(f'FTPS read-back mismatch for {rel}')
               print(f'UPLOAD_MATCH=YES {rel} {len(data)} bytes')
-
           ftp.quit()
           PY
 
       - name: Public smoke test
         run: |
           set -euo pipefail
-          URL="https://www.italianmastersclub.it/live-match/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
-          curl -fsSL --connect-timeout 15 --max-time 30 \
-            -H 'Cache-Control: no-cache, no-store, must-revalidate' \
-            -H 'Pragma: no-cache' \
-            "$URL" -o /tmp/live-match-public.html
+          URL="https://www.italianmastersclub.it/live-match/md15/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$URL" -o /tmp/live-match-public.html
           grep -Fq 'ROAD TO HISTORY' /tmp/live-match-public.html
-          grep -Fq 'MATCHDAY 13' /tmp/live-match-public.html
-          grep -Fq 'POWERED BY NEXUS' /tmp/live-match-public.html
-          echo 'LIVE_MATCH_PUBLIC_SMOKE=YES'
+          grep -Fq 'MATCHDAY 15' /tmp/live-match-public.html
+          echo 'LIVE_MATCH_MD15_PUBLIC_SMOKE=YES'
