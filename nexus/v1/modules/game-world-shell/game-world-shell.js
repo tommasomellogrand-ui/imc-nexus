@@ -1,28 +1,44 @@
 (function(){
 "use strict";
 if(window.IMC_GAME_WORLD_SHELL)return;
-const VERSION="1.0.1";
-let state={container:null,worldId:"",worldName:""};
-function clean(v){return String(v==null?"":v).trim()}
-function esc(v){return clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function render(){
-  if(!state.container)return;
-  state.container.innerHTML=`<section class="gw-shell" data-gw-shell-version="${VERSION}">
-    <header class="gw-shell-hero"><span>${esc(state.worldId)}</span><h1>${esc(state.worldName||state.worldId)}</h1><p>IMC Nexus</p></header>
-    <div class="gw-shell-tabs" role="navigation" aria-label="Sezioni Game World">
-      <button type="button" data-gw-section="home">HOME</button>
-      <button type="button" data-gw-section="teams">TEAMS</button>
-      <button type="button" data-gw-section="managers">MANAGERS</button>
-      <button type="button" data-gw-section="competitions">COMPETITIONS</button>
-      <button type="button" data-gw-section="transfers">TRASFERIMENTI</button>
-      <button type="button" data-gw-section="trophy-room">TROPHY ROOM</button>
-    </div>
-    <div class="gw-shell-content" data-gw-content><div class="gw-shell-empty">Game World pronto.</div></div>
-  </section>`;
-}
-function mount(opts){if(!opts||!opts.container||!opts.worldId)throw new Error("Game World Shell: parametri mancanti");state={container:opts.container,worldId:clean(opts.worldId),worldName:clean(opts.worldName)};render()}
-function setWorld(opts){if(!opts||!opts.worldId)return;state.worldId=clean(opts.worldId);state.worldName=clean(opts.worldName);render()}
-function unmount(){if(state.container)state.container.innerHTML="";state={container:null,worldId:"",worldName:""}}
-document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-gw-section]");if(!b)return;document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:clean(b.getAttribute("data-gw-section"))}}))});
+const VERSION="2.0.0";
+let state={container:null,client:null,worldId:"",worldName:"",managerId:"",assignments:[],teams:new Map(),nations:new Map(),logos:new Map(),schedule:[],results:[],competitions:[]};
+const clean=v=>String(v==null?"":v).trim();
+const esc=v=>clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const key=(w,t)=>clean(w)+"|"+clean(t);
+const today=()=>new Date().toISOString().slice(0,10);
+function active(a){const d=today();return a.game_world_id===state.worldId&&(!a.start_date||a.start_date<=d)&&(!a.end_date||a.end_date>=d)}
+function teamName(a){return a.assignment_type==="national_team"?(state.nations.get(String(a.nation_id))||"Nazionale"):(state.teams.get(key(a.game_world_id,a.team_id))||"Club")}
+function logo(a){if(!a)return"";if(a.assignment_type==="national_team")return `/nexus/assets/flags/nations/${encodeURIComponent(a.nation_id)}.svg`;const p=state.logos.get(key(a.game_world_id,a.team_id));if(!p)return"";return p.startsWith("/")?p:`/nexus/${p.replace(/^\.\//,"")}`}
+function img(src,alt=""){return src?`<img src="${esc(src)}" alt="${esc(alt)}">`:""}
+async function rpc(action,args){const r=await state.client.rpc("imc_nexus_gateway",{p_action:action,p_args:args});if(r.error)throw r.error;return r.data||{}}
+async function load(){const ch=await rpc("club_house",{managerId:state.managerId});state.assignments=(ch.assignments||[]).filter(active);state.teams=new Map((ch.teams||[]).map(x=>[key(x.game_world_id,x.team_id),clean(x.display_name||x.team_name)]));state.nations=new Map((ch.nations||[]).map(x=>[String(x.nation_id),clean(x.nation_name)]));const names=state.assignments.map(teamName).filter(Boolean);const [teams,schedule,results,competitions]=await Promise.all([
+ rpc("gw_teams",{gameWorld:state.worldId}).catch(()=>({rows:[]})),
+ rpc("schedule",{gameWorld:state.worldId,teamNames:names}).catch(()=>({rows:[]})),
+ rpc("results",{gameWorld:state.worldId,teamNames:names,limit:30}).catch(()=>({rows:[]})),
+ rpc("competitions",{gameWorld:state.worldId}).catch(()=>({rows:[]}))
+]);(teams.rows||[]).forEach(t=>{if(t.team_id&&t.logo_file)state.logos.set(key(state.worldId,t.team_id),clean(t.logo_file))});state.schedule=schedule.rows||[];state.results=results.rows||[];state.competitions=competitions.rows||[]}
+function dateOf(x){const s=clean(x);if(!s)return null;const d=new Date(s.length===10?s+"T12:00:00":s);return isNaN(d)?null:d}
+function nextMatch(){const now=new Date(new Date().setHours(0,0,0,0));return state.schedule.map(x=>({...x,_d:dateOf(x.match_date||x.source_page_date||x.date)})).filter(x=>x._d&&x._d>=now).sort((a,b)=>a._d-b._d)[0]||null}
+function lastMatch(){return state.results.map(x=>({...x,_d:dateOf(x.source_page_date||x.match_date||x.date)})).filter(x=>x._d).sort((a,b)=>b._d-a._d)[0]||null}
+function clubAssignment(){return state.assignments.find(a=>a.assignment_type!=="national_team")||null}
+function nationAssignment(){return state.assignments.find(a=>a.assignment_type==="national_team")||null}
+function roleCard(a,label){if(!a)return `<div class="gw-role glass empty"><span>${label}</span><strong>—</strong></div>`;return `<button class="gw-role glass" data-gw-section="teams"><span>${label}</span>${img(logo(a),teamName(a))}<strong>${esc(teamName(a))}</strong><small>${a.assignment_type==="national_team"?"NAZIONALE":"CLUB"}</small></button>`}
+function matchLogo(name){const n=clean(name).toLowerCase();for(const a of state.assignments){if(teamName(a).toLowerCase()===n)return logo(a)}return""}
+function matchCard(x,type){if(!x)return `<div class="gw-match glass empty"><span>${type}</span><strong>Nessuna partita disponibile</strong></div>`;const home=clean(x.home_name),away=clean(x.away_name),score=(x.home_score!=null&&x.away_score!=null)?`${x.home_score} - ${x.away_score}`:"VS";const d=x._d?x._d.toLocaleDateString("it-IT",{day:"2-digit",month:"short"}):"";return `<button class="gw-match glass" data-gw-section="${type==="NEXT MATCH"?"schedule":"results"}"><span>${type}</span><small>${esc(x.alias_nexus||x.competition_key||x.sm_round_label||"MATCH")}</small><div class="gw-match-line"><div>${img(matchLogo(home),home)}<b>${esc(home)}</b></div><strong>${esc(score)}</strong><div>${img(matchLogo(away),away)}<b>${esc(away)}</b></div></div><time>${esc(d)}</time></button>`}
+function performance(){const club=clubAssignment();const name=club?teamName(club):"";let w=0,d=0,l=0,gf=0,ga=0,played=0;state.results.forEach(r=>{const home=clean(r.home_name)===name,away=clean(r.away_name)===name;if(!home&&!away)return;const hs=Number(r.home_score),as=Number(r.away_score);if(Number.isNaN(hs)||Number.isNaN(as))return;played++;const f=home?hs:as,a=home?as:hs;gf+=f;ga+=a;if(f>a)w++;else if(f===a)d++;else l++});return {played,w,d,l,gf,ga}}
+function competitionCards(){const rows=state.competitions.slice(0,4);if(!rows.length)return `<div class="gw-comp glass empty">Nessuna competizione disponibile.</div>`;return rows.map((c,i)=>`<button class="gw-comp glass" data-gw-section="competitions"><div class="gw-ring mini"><span>${i+1}</span></div><strong>${esc(c.alias_nexus||c.display_name||c.name||c.competition_key||"COMPETITION")}</strong><small>${esc(c.current_round_label||c.sm_round_label||c.type||"")}</small></button>`).join("")}
+function renderHome(){const club=clubAssignment(),nat=nationAssignment(),perf=performance(),nxt=nextMatch(),last=lastMatch();const form=[...Array(perf.w).fill("V"),...Array(perf.d).fill("N"),...Array(perf.l).fill("P")].slice(-5);return `<div class="gw-control">
+ <section class="gw-identity glass"><div>${roleCard(club,"IL TUO CLUB")}</div><div class="gw-core"><span>${esc(state.worldId)}</span><h1>${esc(state.worldName||state.worldId)}</h1><div class="gw-ring"><strong>${perf.played}</strong><small>PARTITE</small></div></div><div>${roleCard(nat,"LA TUA NAZIONALE")}</div></section>
+ <section class="gw-match-grid">${matchCard(nxt,"NEXT MATCH")}${matchCard(last,"LAST MATCH")}</section>
+ <section class="gw-performance glass"><div class="gw-section-head"><span>PERFORMANCE OVERVIEW</span></div><div class="gw-kpis"><div><small>PG</small><strong>${perf.played}</strong></div><div><small>V</small><strong>${perf.w}</strong></div><div><small>N</small><strong>${perf.d}</strong></div><div><small>P</small><strong>${perf.l}</strong></div><div><small>GF</small><strong>${perf.gf}</strong></div><div><small>GS</small><strong>${perf.ga}</strong></div></div><div class="gw-form">${form.length?form.map(x=>`<i class="${x==="V"?"win":x==="N"?"draw":"loss"}">${x}</i>`).join(""):'<span>Nessun risultato disponibile</span>'}</div></section>
+ <section class="gw-competition"><div class="gw-section-head"><span>COMPETITION PULSE</span></div><div class="gw-comp-grid">${competitionCards()}</div></section>
+ <section class="gw-quick glass"><div class="gw-section-head"><span>ESPLORA ${esc(state.worldId)}</span></div><div class="gw-quick-grid"><button data-gw-section="teams">TEAMS</button><button data-gw-section="managers">MANAGERS</button><button data-gw-section="competitions">COMPETITIONS</button><button data-gw-section="results">RESULTS</button><button data-gw-section="schedule">SCHEDULE</button><button data-gw-section="trophy-room">TROPHY ROOM</button><button data-gw-section="stats">STATS</button><button data-gw-section="h2h">H2H</button><button data-gw-section="transfers">TRANSFERS</button></div></section>
+ </div>`}
+function render(){if(!state.container)return;state.container.innerHTML=`<section class="gw-shell" data-gw-shell-version="${VERSION}"><div class="gw-shell-content" data-gw-content>${renderHome()}</div></section>`}
+async function mount(opts){if(!opts||!opts.container||!opts.worldId||!opts.client||!opts.managerId)throw new Error("Game World Shell: parametri mancanti");state={...state,container:opts.container,client:opts.client,worldId:clean(opts.worldId),worldName:clean(opts.worldName),managerId:clean(opts.managerId),assignments:[],teams:new Map(),nations:new Map(),logos:new Map(),schedule:[],results:[],competitions:[]};state.container.innerHTML='<div class="gw-shell-empty">Caricamento Game World…</div>';await load();render()}
+async function setWorld(opts){if(!opts||!opts.worldId)return;state.worldId=clean(opts.worldId);state.worldName=clean(opts.worldName);await load();render()}
+function unmount(){if(state.container)state.container.innerHTML="";state={container:null,client:null,worldId:"",worldName:"",managerId:"",assignments:[],teams:new Map(),nations:new Map(),logos:new Map(),schedule:[],results:[],competitions:[]}}
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-gw-section]");if(!b||!state.container||!state.container.contains(b))return;document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:clean(b.getAttribute("data-gw-section"))}}))});
 window.IMC_GAME_WORLD_SHELL={version:VERSION,mount,setWorld,unmount};
 })();
