@@ -4,7 +4,7 @@ if(window.IMC_TRANSFER_DETAIL)return;
 const VERSION="1.2.0";
 let s={container:null,client:null,worldId:"",transferId:"",row:null};
 const c=v=>String(v==null?"":v).trim();
-const e=v=>c(v).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;","\>":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
+const e=v=>c(v).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
 function value(v){if(v==null||v==="")return "—";if(typeof v==="object"){try{return JSON.stringify(v)}catch(_){return String(v)}}return String(v)}
 async function load(){const r=await s.client.rpc("imc_nexus_gateway",{p_action:"transfers",p_args:{gameWorld:s.worldId}});if(r.error)throw r.error;const rows=Array.isArray(r.data&&r.data.rows)?r.data.rows:[];s.row=rows.find(x=>c(x.transfer_id)===s.transferId)||null;if(!s.row)throw Error("Trasferimento non trovato")}
 function item(label,v){return `<div class="td-item"><small>${e(label)}</small><strong>${e(value(v))}</strong></div>`}
