@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_TEAM_ROSTER)return;
-const VERSION="2.0.0";
+const VERSION="2.0.1";
 let s={container:null};
 const c=v=>String(v==null?"":v).trim();
 const e=v=>c(v).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
@@ -29,15 +29,18 @@ function redMinute(player){
   return values.length?Math.min(...values):null;
 }
 function duration(payload,players){
-  let max=90;
+  let max=null;
+  const commentary=Array.isArray(payload&&payload.commentary)?payload.commentary:[];
+  for(const x of commentary){const n=num(x&&x.minute);if(Number.isFinite(n))max=max==null?n:Math.max(max,n)}
+  if(Number.isFinite(max))return max;
   const events=Array.isArray(payload&&payload.events)?payload.events:[];
-  for(const x of events){const n=num(x&&x.minute);if(Number.isFinite(n))max=Math.max(max,n)}
+  for(const x of events){const n=num(x&&x.minute);if(Number.isFinite(n))max=max==null?n:Math.max(max,n)}
   for(const p of players){
     const raw=p&&p.metadata&&p.metadata.rawHtml;
-    for(const cls of ["spritev_subon","spritev_suboff"]){const n=markerMinute(raw,cls);if(Number.isFinite(n))max=Math.max(max,n)}
-    const r=redMinute(p);if(Number.isFinite(r))max=Math.max(max,r);
+    for(const cls of ["spritev_subon","spritev_suboff"]){const n=markerMinute(raw,cls);if(Number.isFinite(n))max=max==null?n:Math.max(max,n)}
+    const r=redMinute(p);if(Number.isFinite(r))max=max==null?r:Math.max(max,r);
   }
-  return max;
+  return Number.isFinite(max)?max:0;
 }
 function playerMinutes(player,matchDuration){
   const raw=player&&player.metadata&&player.metadata.rawHtml;
@@ -48,6 +51,7 @@ function playerMinutes(player,matchDuration){
   if(!starter&&!Number.isFinite(subOn))return 0;
   const start=starter?0:subOn;
   const exits=[matchDuration,subOff,red].filter(Number.isFinite);
+  if(!exits.length)return 0;
   const end=Math.min(...exits);
   return Math.max(0,end-start);
 }
