@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_NATIONAL_TEAM_FIX)return;
-const VERSION="3.0.0";
+const VERSION="3.1.0";
 const mod=window.IMC_CLUBHOUSE;
 if(!mod||mod.__nationalTeamFixWrapped){window.IMC_CLUBHOUSE_NATIONAL_TEAM_FIX={version:VERSION};return}
 const previousMount=mod.mount;
@@ -41,13 +41,20 @@ mod.mount=async function(o){
     }
 
     if((action==="results"||action==="schedule")&&gameWorld){
-      const assignment=assignmentsByWorld.get(gameWorld)&&assignmentsByWorld.get(gameWorld).club;
-      const worldId=assignment&&assignment.worldId;
-      if(worldId!=null&&String(worldId).trim()!==""){
-        const p={...(args&&args.p_args||{}),gameWorld,clubWorldId:worldId};
-        delete p.teamNames;
-        return source.rpc(fn,{...args,p_args:p});
+      const input=args&&args.p_args||{};
+      const explicitWorldId=input.clubWorldId!=null||input.nationWorldId!=null;
+      const hasTeamNames=Array.isArray(input.teamNames)&&input.teamNames.length>0;
+      if(explicitWorldId)return source.rpc(fn,args);
+      if(hasTeamNames){
+        const assignment=assignmentsByWorld.get(gameWorld)&&assignmentsByWorld.get(gameWorld).club;
+        const worldId=assignment&&assignment.worldId;
+        if(worldId!=null&&String(worldId).trim()!==""){
+          const p={...input,gameWorld,clubWorldId:worldId};
+          delete p.teamNames;
+          return source.rpc(fn,{...args,p_args:p});
+        }
       }
+      return source.rpc(fn,args);
     }
 
     if(action==="team_resolve"&&gameWorld){
