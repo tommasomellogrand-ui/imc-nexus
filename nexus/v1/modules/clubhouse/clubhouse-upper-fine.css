@@ -24,4 +24,10 @@
 .ch-fixture-row img,.ch-result-row img{width:33px!important;height:33px!important}
 .ch-fixture-row>strong,.ch-result-row>strong{font-size:14.5px!important}
 .ch-match-foot,.ch-result-foot{bottom:8px!important}
+.ch-form-bars i.win{height:35px!important;background:linear-gradient(#65d99a,#11a95c)!important}
+.ch-form-bars i.draw{height:18px!important;background:linear-gradient(#cbd3df,#8796ae)!important}
+.ch-form-bars i.loss{height:0!important;background:linear-gradient(#f07b84,#d62035)!important}
+.ch-form-labels b{color:#13a95c!important}
+.ch-form-labels b.draw-t{color:#7b8aa0!important}
+.ch-form-labels b.loss-t{color:#d62035!important}
 @media(max-width:390px){.ch-mock-world-fused{height:300px!important}.ch-top-fused{height:136px!important}.ch-world-heading{height:52px!important;margin-top:13px!important}.ch-world-heading:before{top:17px!important}.ch-season-core{top:101px!important;width:114px!important;height:114px!important}.ch-season-core:before{inset:15px!important}.ch-season-inner strong{font-size:25px!important}.ch-lower-pair{height:114px!important}.ch-lower-pair .ch-mock-card{height:114px!important}.ch-lower-pair .ch-mock-last{padding-right:37px!important}.ch-lower-pair .ch-mock-next{padding-left:37px!important}.ch-fixture-row img,.ch-result-row img{width:31px!important;height:31px!important}.ch-fixture-row>strong,.ch-result-row>strong{font-size:14px!important}}
