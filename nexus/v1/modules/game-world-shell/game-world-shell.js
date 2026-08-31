@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_GAME_WORLD_SHELL)return;
-const VERSION="3.0.4";
+const VERSION="3.0.5";
 let state={container:null,worldId:"",worldName:""};
 const clean=v=>String(v==null?"":v).trim();
 const esc=v=>clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -13,6 +13,6 @@ function render(){if(!state.container)return;state.container.innerHTML=`<section
 async function mount(o){if(!o||!o.container)throw Error("Game World: container mancante");state={...state,...o,container:o.container,worldId:clean(o.worldId),worldName:clean(o.worldName)};render()}
 async function setWorld(o){state.worldId=clean(o.worldId);state.worldName=clean(o.worldName);render()}
 function unmount(){if(state.container)state.container.innerHTML="";state.container=null}
-document.addEventListener("click",e=>{const section=e.target.closest?.("[data-gw-section]");if(section&&state.container?.contains(section)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:clean(section.getAttribute("data-gw-section"))}}));return}const a=e.target.closest?.("[data-gw-action]");if(a&&state.container?.contains(a)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"clubhouse"}}))}});
+document.addEventListener("click",e=>{const transfer=e.target.closest?.(".gw3-transfers");if(transfer&&state.container?.contains(transfer)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:"transfers"}}));return}const section=e.target.closest?.("[data-gw-section]");if(section&&state.container?.contains(section)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:clean(section.getAttribute("data-gw-section"))}}));return}const a=e.target.closest?.("[data-gw-action]");if(a&&state.container?.contains(a)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"clubhouse"}}))}});
 window.IMC_GAME_WORLD_SHELL={version:VERSION,mount,setWorld,unmount};
 })();
