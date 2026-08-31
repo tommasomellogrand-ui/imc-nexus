@@ -1,1 +1,30 @@
-(function(){"use strict";if(window.IMC_TRANSFERS)return;let s={container:null,client:null,worldId:"",clubWorldId:null,mode:"world",rows:[],incoming:[],outgoing:[]};const c=v=>String(v==null?"":v).trim(),e=v=>c(v).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));async function load(){const args={gameWorld:s.worldId};if(s.mode==="club")args.clubWorldId=s.clubWorldId;const r=await s.client.rpc("imc_nexus_gateway",{p_action:"transfers",p_args:args});if(r.error)throw r.error;const d=r.data||{};s.rows=Array.isArray(d.rows)?d.rows:[];s.incoming=Array.isArray(d.incoming)?d.incoming:[];s.outgoing=Array.isArray(d.outgoing)?d.outgoing:[]}function row(x,label){return `<article class="tf-row"><small>${e(x.transfer_date_text||"")} ${x.imc_season?"· S"+e(x.imc_season):""}</small><strong>${e(x.player_name||x.player_id)}</strong><p>${e(x.club_from||"-")} → ${e(x.club_to||"-")}</p>${x.amount_text?`<b>${e(x.amount_text)}</b>`:""}${label?`<em>${label}</em>`:""}</article>`}function renderWorld(){s.container.innerHTML=`<section class="tf"><header><h2>Trasferimenti</h2><b>${s.rows.length}</b></header><div class="tf-list">${s.rows.map(x=>row(x,"")).join("")||'<div class="tf-empty">Nessun trasferimento.</div>'}</div></section>`}function renderClub(){const incoming=s.incoming,outgoing=s.outgoing;s.container.innerHTML=`<section class="tf"><header><h2>Trasferimenti</h2><b>${incoming.length+outgoing.length}</b></header><div class="tf-tabs"><button data-tf-tab="in" class="active">ENTRATE</button><button data-tf-tab="out">USCITE</button></div><div data-tf-body>${incoming.map(x=>row(x,"ENTRATA")).join("")||'<div class="tf-empty">Nessuna entrata.</div>'}</div></section>`;s.container.dataset.tfMode="in";s.container._tfIn=incoming;s.container._tfOut=outgoing}async function mount(o){if(!o||!o.container||!o.client||!o.worldId)throw Error("Transfers: parametri mancanti");s={...s,...o,worldId:c(o.worldId),mode:o.clubWorldId?"club":"world",rows:[],incoming:[],outgoing:[]};s.container.innerHTML='<div class="tf-empty">Caricamento Trasferimenti…</div>';await load();s.mode==="club"?renderClub():renderWorld()}function unmount(){if(s.container){s.container.innerHTML="";delete s.container._tfIn;delete s.container._tfOut}s.container=null}document.addEventListener("click",ev=>{const b=ev.target.closest&&ev.target.closest("[data-tf-tab]");if(!b||!s.container||!s.container.contains(b))return;const tab=c(b.getAttribute("data-tf-tab"));s.container.querySelectorAll("[data-tf-tab]").forEach(x=>x.classList.toggle("active",x===b));const body=s.container.querySelector("[data-tf-body]");const list=tab==="out"?(s.container._tfOut||[]):(s.container._tfIn||[]);body.innerHTML=list.map(x=>row(x,tab==="out"?"USCITA":"ENTRATA")).join("")||`<div class="tf-empty">Nessuna ${tab==="out"?"uscita":"entrata"}.</div>`});window.IMC_TRANSFERS={mount,unmount};})();
+(function(){
+"use strict";
+if(window.IMC_TRANSFERS)return;
+const VERSION="1.1.0";
+let s={container:null,client:null,worldId:"",clubWorldId:null,mode:"world",rows:[],incoming:[],outgoing:[]};
+const c=v=>String(v==null?"":v).trim();
+const e=v=>c(v).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
+async function load(){const args={gameWorld:s.worldId};if(s.mode==="club")args.clubWorldId=s.clubWorldId;const r=await s.client.rpc("imc_nexus_gateway",{p_action:"transfers",p_args:args});if(r.error)throw r.error;const d=r.data||{};s.rows=Array.isArray(d.rows)?d.rows:[];s.incoming=Array.isArray(d.incoming)?d.incoming:[];s.outgoing=Array.isArray(d.outgoing)?d.outgoing:[]}
+function row(x,label){return `<button type="button" class="tf-row" data-tf-transfer="${e(x.transfer_id)}"><small>${e(x.transfer_date_text||"")} ${x.imc_season?"· S"+e(x.imc_season):""}</small><strong>${e(x.player_name||x.player_id)}</strong><p>${e(x.club_from||"-")} → ${e(x.club_to||"-")}</p>${x.amount_text?`<b>${e(x.amount_text)}</b>`:""}${label?`<em>${label}</em>`:""}</button>`}
+function renderWorld(){s.container.innerHTML=`<section class="tf" data-transfers-version="${VERSION}"><header><h2>Trasferimenti</h2><b>${s.rows.length}</b></header><div class="tf-list">${s.rows.map(x=>row(x,"")).join("")||'<div class="tf-empty">Nessun trasferimento.</div>'}</div></section>`}
+function renderClub(){const incoming=s.incoming,outgoing=s.outgoing;s.container.innerHTML=`<section class="tf" data-transfers-version="${VERSION}"><header><h2>Trasferimenti</h2><b>${incoming.length+outgoing.length}</b></header><div class="tf-tabs"><button data-tf-tab="in" class="active">ENTRATE</button><button data-tf-tab="out">USCITE</button></div><div data-tf-body>${incoming.map(x=>row(x,"ENTRATA")).join("")||'<div class="tf-empty">Nessuna entrata.</div>'}</div></section>`;s.container.dataset.tfMode="in";s.container._tfIn=incoming;s.container._tfOut=outgoing}
+async function mount(o){if(!o||!o.container||!o.client||!o.worldId)throw Error("Transfers: parametri mancanti");s={...s,...o,worldId:c(o.worldId),mode:o.clubWorldId?"club":"world",rows:[],incoming:[],outgoing:[]};s.container.innerHTML='<div class="tf-empty">Caricamento Trasferimenti…</div>';await load();s.mode==="club"?renderClub():renderWorld()}
+function unmount(){if(s.container){s.container.innerHTML="";delete s.container._tfIn;delete s.container._tfOut}s.container=null}
+document.addEventListener("click",ev=>{
+  if(!s.container)return;
+  const transfer=ev.target.closest&&ev.target.closest("[data-tf-transfer]");
+  if(transfer&&s.container.contains(transfer)){
+    document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"transfer-detail",worldId:s.worldId,transferId:c(transfer.getAttribute("data-tf-transfer"))}}));
+    return;
+  }
+  const b=ev.target.closest&&ev.target.closest("[data-tf-tab]");
+  if(!b||!s.container.contains(b))return;
+  const tab=c(b.getAttribute("data-tf-tab"));
+  s.container.querySelectorAll("[data-tf-tab]").forEach(x=>x.classList.toggle("active",x===b));
+  const body=s.container.querySelector("[data-tf-body]");
+  const list=tab==="out"?(s.container._tfOut||[]):(s.container._tfIn||[]);
+  body.innerHTML=list.map(x=>row(x,tab==="out"?"USCITA":"ENTRATA")).join("")||`<div class="tf-empty">Nessuna ${tab==="out"?"uscita":"entrata"}.</div>`;
+});
+window.IMC_TRANSFERS={version:VERSION,mount,unmount};
+})();
