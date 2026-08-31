@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_NATIONAL_TEAM_FIX)return;
-const VERSION="2.0.0";
+const VERSION="3.0.0";
 const mod=window.IMC_CLUBHOUSE;
 if(!mod||mod.__nationalTeamFixWrapped){window.IMC_CLUBHOUSE_NATIONAL_TEAM_FIX={version:VERSION};return}
 const previousMount=mod.mount;
@@ -25,16 +25,10 @@ mod.mount=async function(o){
             if(gw){
               const current=assignmentsByWorld.get(gw)||{};
               if(String(row.assignment_type||"").toLowerCase()==="club"){
-                current.club={
-                  teamId:row.team_id,
-                  worldId:row.sm_world_club_id
-                };
+                current.club={teamId:row.team_id,worldId:row.sm_world_club_id};
               }
               if(String(row.assignment_type||"").toLowerCase()==="nation"){
-                current.nation={
-                  nationId:row.nation_id,
-                  worldId:row.sm_world_national_club_id
-                };
+                current.nation={nationId:row.nation_id,worldId:row.sm_world_national_club_id};
               }
               assignmentsByWorld.set(gw,current);
             }
@@ -44,6 +38,16 @@ mod.mount=async function(o){
         }
         return r;
       });
+    }
+
+    if((action==="results"||action==="schedule")&&gameWorld){
+      const assignment=assignmentsByWorld.get(gameWorld)&&assignmentsByWorld.get(gameWorld).club;
+      const worldId=assignment&&assignment.worldId;
+      if(worldId!=null&&String(worldId).trim()!==""){
+        const p={...(args&&args.p_args||{}),gameWorld,clubWorldId:worldId};
+        delete p.teamNames;
+        return source.rpc(fn,{...args,p_args:p});
+      }
     }
 
     if(action==="team_resolve"&&gameWorld){
