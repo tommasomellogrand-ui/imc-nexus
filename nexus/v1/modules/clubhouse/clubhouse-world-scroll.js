@@ -1,91 +1,43 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_WORLD_SCROLL)return;
-const VERSION="1.0.0";
-let state={container:null,client:null,managerId:"",worlds:[],index:0};
+const VERSION="2.0.0";
+let state={container:null,client:null,managerId:"",worlds:[],index:0,base:null,cache:new Map()};
 const c=v=>String(v==null?"":v).trim();
-function uniqueAssignedWorlds(data){
-  const assignments=Array.isArray(data&&data.assignments)?data.assignments:[];
-  const worlds=Array.isArray(data&&data.worlds)?data.worlds:[];
-  const names=new Map(worlds.map(w=>[c(w.game_world_id),c(w.imc_name||w.name||w.soccer_manager_name||w.game_world_id)]));
-  const seen=new Set(),out=[];
-  for(const a of assignments){
-    const id=c(a.game_world_id);
-    if(!id||seen.has(id))continue;
-    seen.add(id);
-    out.push({id,name:names.get(id)||id});
-  }
-  return out;
+const n=v=>Number(v||0)||0;
+const nk=v=>c(v).toLocaleLowerCase("it-IT").replace(/\s+/g," ");
+function rpc(action,args){return state.client.rpc("imc_nexus_gateway",{p_action:action,p_args:args}).then(r=>{if(r.error)throw r.error;return r.data||{}})}
+function uniq(rows){const m=new Map();for(const x of rows||[]){const k=c(x.sm_fixture_id)||`${c(x.home_name)}|${c(x.away_name)}|${c(x.source_page_date||x.match_date)}`;if(!m.has(k))m.set(k,x)}return [...m.values()]}
+function dateOnly(v){const q=c(v);if(!q)return"—";const d=new Date(q.length===10?q+"T12:00:00":q);if(isNaN(d))return q;return d.toLocaleDateString("it-IT",{day:"2-digit",month:"short",year:"numeric"}).toUpperCase()}
+function worldName(w){return c(w&&w.imc_name||w&&w.name||w&&w.soccer_manager_name||w&&w.game_world_id)}
+function uniqueAssignedWorlds(data){const as=Array.isArray(data&&data.assignments)?data.assignments:[],ws=Array.isArray(data&&data.worlds)?data.worlds:[],names=new Map(ws.map(w=>[c(w.game_world_id),worldName(w)])),seen=new Set(),out=[];for(const a of as){const id=c(a.game_world_id);if(!id||seen.has(id))continue;seen.add(id);out.push({id,name:names.get(id)||id})}return out}
+function pickAssignment(worldId,type){const rows=(state.base&&state.base.assignments||[]).filter(a=>c(a.game_world_id)===worldId&&c(a.assignment_type)===type);if(!rows.length)return null;const now=new Date().toISOString().slice(0,10),active=rows.filter(a=>(!c(a.start_date)||c(a.start_date)<=now)&&(!c(a.end_date)||c(a.end_date)>=now));const pool=active.length?active:rows;return [...pool].sort((a,b)=>c(b.start_date).localeCompare(c(a.start_date))||n(b.assignment_id)-n(a.assignment_id))[0]||null}
+function compKey(x){return c(x&&x.competition_key)}
+function compName(x){return c(x&&x["Nexus View"]||x&&x.sm_competition_name||compKey(x)||"Competition")}
+function standings(rows){const map=new Map();for(const r of uniq(rows)){const h=c(r.home_name),a=c(r.away_name),hs=Number(r.home_score),as=Number(r.away_score);if(!h||!a||!Number.isFinite(hs)||!Number.isFinite(as))continue;for(const t of [h,a])if(!map.has(nk(t)))map.set(nk(t),{team:t,p:0,w:0,d:0,l:0,gf:0,ga:0,gd:0,pts:0});const H=map.get(nk(h)),A=map.get(nk(a));H.p++;A.p++;H.gf+=hs;H.ga+=as;A.gf+=as;A.ga+=hs;if(hs>as){H.w++;A.l++;H.pts+=3}else if(hs<as){A.w++;H.l++;A.pts+=3}else{H.d++;A.d++;H.pts++;A.pts++}}for(const x of map.values())x.gd=x.gf-x.ga;return [...map.values()].sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf||a.team.localeCompare(b.team))}
+function groupBlocks(){if(!state.container)return null;const canvas=state.container.querySelector(".ch-clubhouse-canvas");if(!canvas)return null;let group=canvas.querySelector("[data-ch-world-group]");if(group)return group;const first=canvas.querySelector(".ch-mock-world"),performance=canvas.querySelector(".ch-performance"),pulse=canvas.querySelector(".ch-competition");if(!first||!performance||!pulse)return null;group=document.createElement("div");group.className="ch-world-scroll-group";group.setAttribute("data-ch-world-group","");canvas.insertBefore(group,first);group.appendChild(first);group.appendChild(performance);group.appendChild(pulse);return group}
+function ensureControls(group){if(!group||group.querySelector("[data-ch-world-switcher]"))return;const controls=document.createElement("div");controls.className="ch-world-switcher";controls.setAttribute("data-ch-world-switcher","");controls.innerHTML='<button type="button" data-ch-world-prev aria-label="Game World precedente">‹</button><div><strong data-ch-world-current>—</strong><span data-ch-world-current-name>—</span></div><button type="button" data-ch-world-next aria-label="Game World successivo">›</button>';group.insertBefore(controls,group.firstChild)}
+function teamMap(rows){const m=new Map();for(const t of rows||[])for(const name of [t.club_name,t.display_name])if(c(name))m.set(nk(name),t);return m}
+function teamLogo(map,name){const t=map.get(nk(name));const p=c(t&&t.logo_file);if(!p)return"";return p.startsWith("/")?p:`/nexus/${p.replace(/^\.\//,"")}`}
+function setImg(img,src,alt){if(!img)return;if(src){img.src=src;img.alt=alt||"";img.hidden=false}else{img.removeAttribute("src");img.alt="";img.hidden=true}}
+function teamInMatch(row,names){const set=new Set(names.map(nk));return set.has(nk(row&&row.home_name))||set.has(nk(row&&row.away_name))}
+function latestTeamResult(rows,names){return [...rows].filter(x=>teamInMatch(x,names)).sort((a,b)=>c(b.source_page_date||b.match_date).localeCompare(c(a.source_page_date||a.match_date)))[0]||null}
+function nextTeamMatch(rows,names){const now=new Date().toISOString().slice(0,10);return [...rows].filter(x=>teamInMatch(x,names)&&c(x.match_date)>=now).sort((a,b)=>c(a.match_date).localeCompare(c(b.match_date)))[0]||null}
+function outcome(row,names){if(!row)return"";const set=new Set(names.map(nk)),home=set.has(nk(row.home_name)),hs=Number(row.home_score),as=Number(row.away_score);if(!Number.isFinite(hs)||!Number.isFinite(as))return"";if(hs===as)return"draw";return (home&&hs>as)||(!home&&as>hs)?"win":"loss"}
+async function loadWorld(world){if(state.cache.has(world.id))return state.cache.get(world.id);const worldId=world.id,clubA=pickAssignment(worldId,"club"),nationA=pickAssignment(worldId,"nation"),baseTeam=(state.base&&state.base.teams||[]).find(t=>c(t.game_world_id)===worldId&&c(t.team_id)===c(clubA&&clubA.team_id))||null,nation=(state.base&&state.base.nations||[]).find(x=>c(x.nation_id)===c(nationA&&nationA.nation_id))||null;const [gt,gc]=await Promise.all([rpc("gw_teams",{gameWorld:worldId}),rpc("gw_competitions",{gameWorld:worldId})]);const gwTeams=Array.isArray(gt.rows)?gt.rows:[],comps=Array.isArray(gc.rows)?gc.rows:[],clubRow=gwTeams.find(t=>c(t.team_id)===c(clubA&&clubA.team_id))||gwTeams.find(t=>nk(t.club_name)===nk(baseTeam&&baseTeam.display_name)||nk(t.display_name)===nk(baseTeam&&baseTeam.display_name))||null,clubName=c(clubRow&&clubRow.display_name||clubRow&&clubRow.club_name||baseTeam&&baseTeam.display_name||baseTeam&&baseTeam.team_name),teamNames=[clubName,c(baseTeam&&baseTeam.display_name),c(baseTeam&&baseTeam.team_name),c(clubRow&&clubRow.club_name)].filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i);let teamResults=[],teamSchedule=[];if(teamNames.length){const [rr,ss]=await Promise.all([rpc("results",{gameWorld:worldId,teamNames}),rpc("schedule",{gameWorld:worldId,teamNames})]);teamResults=uniq(rr.rows||[]);teamSchedule=uniq(ss.rows||[])}const participated=new Set([...teamResults,...teamSchedule].map(compKey).filter(Boolean)),league=comps.find(x=>c(x.sm_action).toLowerCase()==="league"&&participated.has(compKey(x)))||null;let leagueResults=[],leagueTable=[],teamStanding=null,percent=0,last=null,next=null,form=[];if(league){const lr=await rpc("results",{gameWorld:worldId,competitionKey:compKey(league),limit:1000});leagueResults=uniq(lr.rows||[]);leagueTable=standings(leagueResults);teamStanding=leagueTable.find(x=>teamNames.some(y=>nk(y)===nk(x.team)))||null;const total=n(league.expected_total_matches),played=leagueResults.length;percent=total?Math.min(100,Math.round(played/total*100)):0;const clubLeagueResults=teamResults.filter(x=>compKey(x)===compKey(league)),clubLeagueSchedule=teamSchedule.filter(x=>compKey(x)===compKey(league));last=latestTeamResult(clubLeagueResults,teamNames);next=nextTeamMatch(clubLeagueSchedule,teamNames);form=[...clubLeagueResults].sort((a,b)=>c(b.source_page_date||b.match_date).localeCompare(c(a.source_page_date||a.match_date))).slice(0,5).map(x=>outcome(x,teamNames))}
+  const pulse=[];for(const comp of comps){const key=compKey(comp);if(!participated.has(key))continue;let status="—";if(c(comp.sm_action).toLowerCase()==="league"){if(key===compKey(league)&&teamStanding){const pos=leagueTable.findIndex(x=>nk(x.team)===nk(teamStanding.team))+1;status=pos?`${pos}° posto`:"—"}}else{const sr=teamSchedule.filter(x=>compKey(x)===key).sort((a,b)=>c(a.match_date).localeCompare(c(b.match_date))),rr=teamResults.filter(x=>compKey(x)===key).sort((a,b)=>c(b.source_page_date||b.match_date).localeCompare(c(a.source_page_date||a.match_date))),nx=nextTeamMatch(sr,teamNames);status=c(nx&&nx.sm_round_label||rr[0]&&rr[0].sm_round_label)||"—"}pulse.push({name:compName(comp),status});if(pulse.length===4)break}
+  const data={world,clubA,nationA,clubName,clubLogo:teamLogo(teamMap(gwTeams),clubName),nationName:c(nation&&nation.nation_name),nationId:c(nation&&nation.nation_id),league,leagueName:compName(league),percent,standing:teamStanding,position:teamStanding?leagueTable.findIndex(x=>nk(x.team)===nk(teamStanding.team))+1:0,last,next,form,pulse,logos:teamMap(gwTeams),teamNames};state.cache.set(world.id,data);return data}
+function fillMatch(root,kind,row,data){const isNext=kind==="next",box=root.querySelector(isNext?".ch-mock-next":".ch-mock-last");if(!box)return;const meta=box.querySelector(".ch-match-meta"),rowEl=box.querySelector(isNext?".ch-fixture-row":".ch-result-row"),foot=box.querySelector(isNext?".ch-match-foot":".ch-result-foot");if(meta)meta.textContent=data.leagueName||"—";if(!rowEl)return;const sides=rowEl.querySelectorAll(":scope > div"),center=rowEl.querySelector(":scope > strong");const home=c(row&&row.home_name)||"—",away=c(row&&row.away_name)||"—";if(sides[0]){setImg(sides[0].querySelector("img"),teamLogo(data.logos,home),home);const b=sides[0].querySelector("b");if(b)b.textContent=home}if(sides[1]){setImg(sides[1].querySelector("img"),teamLogo(data.logos,away),away);const b=sides[1].querySelector("b");if(b)b.textContent=away}if(center)center.textContent=isNext?"VS":row?`${c(row.home_score)} - ${c(row.away_score)}`:"—";if(foot){const spans=foot.querySelectorAll("span");if(spans[0])spans[0].textContent=row?dateOnly(row.match_date||row.source_page_date):"—";if(spans[1])spans[1].textContent=c(row&&row.sm_round_label)||""}}
+function applyWorld(data){const group=groupBlocks();if(!group)return;const club=group.querySelector(".ch-mock-club"),nation=group.querySelector(".ch-mock-nation");if(club){setImg(club.querySelector(".ch-main-badge"),data.clubLogo,data.clubName);const strong=club.querySelector("strong"),small=club.querySelector("small");if(strong)strong.textContent=data.clubName||"—";if(small)small.textContent=data.leagueName||"—"}if(nation){let flag=nation.querySelector("img[data-ch-real-flag]");const old=nation.querySelector(".ch-italy-shield:not(img)");if(old)old.remove();if(!flag){flag=document.createElement("img");flag.className="ch-italy-shield";flag.setAttribute("data-ch-real-flag","");const strong=nation.querySelector("strong");nation.insertBefore(flag,strong||null)}setImg(flag,data.nationId?`/nexus/assets/flags/nations/${encodeURIComponent(data.nationId)}.svg`:"",data.nationName);const strong=nation.querySelector("strong"),small=nation.querySelector("small");if(strong)strong.textContent=data.nationName||"—";if(small)small.textContent=data.nationName?"Nazionale":"Nessuna nazionale"}
+  const season=group.querySelector(".ch-season-inner strong");if(season)season.textContent=`${data.percent}%`;
+  fillMatch(group,"next",data.next,data);fillMatch(group,"last",data.last,data);
+  const perf=group.querySelector(".ch-performance"),st=data.standing;if(perf){const vals={"POSIZIONE":data.position?`${data.position}°`:"—","PUNTI":st?st.pts:"—","GOL FATTI":st?st.gf:"—","GOL SUBITI":st?st.ga:"—"};perf.querySelectorAll(".ch-performance-grid>article").forEach(a=>{const label=c(a.querySelector(":scope > span")&&a.querySelector(":scope > span").textContent),strong=a.querySelector(":scope > strong");if(strong&&Object.prototype.hasOwnProperty.call(vals,label))strong.textContent=vals[label]});const bars=perf.querySelectorAll(".ch-form-bars i"),labels=perf.querySelectorAll(".ch-form-labels b");for(let i=0;i<Math.max(bars.length,labels.length);i++){const o=data.form[i]||"";if(bars[i]){bars[i].classList.remove("win","loss","draw");if(o)bars[i].classList.add(o);bars[i].style.opacity=o?"1":".25"}if(labels[i]){labels[i].classList.remove("loss-t","draw-t");labels[i].textContent=o==="win"?"V":o==="loss"?"P":o==="draw"?"N":"—";if(o==="loss")labels[i].classList.add("loss-t");if(o==="draw")labels[i].classList.add("draw-t")}}}
+  const pulse=group.querySelector(".ch-competition");if(pulse){const cards=pulse.querySelectorAll(".ch-competition-grid article");cards.forEach((card,i)=>{const p=data.pulse[i];card.hidden=!p;if(!p)return;const strong=card.querySelector("strong"),small=card.querySelector("small");if(strong)strong.textContent=p.name;if(small)small.textContent=p.status})}
 }
-function groupBlocks(){
-  if(!state.container)return null;
-  const canvas=state.container.querySelector(".ch-clubhouse-canvas");
-  if(!canvas)return null;
-  let group=canvas.querySelector("[data-ch-world-group]");
-  if(group)return group;
-  const first=canvas.querySelector(".ch-mock-world");
-  const performance=canvas.querySelector(".ch-performance");
-  const pulse=canvas.querySelector(".ch-competition");
-  if(!first||!performance||!pulse)return null;
-  group=document.createElement("div");
-  group.className="ch-world-scroll-group";
-  group.setAttribute("data-ch-world-group","");
-  canvas.insertBefore(group,first);
-  group.appendChild(first);
-  group.appendChild(performance);
-  group.appendChild(pulse);
-  return group;
-}
-function ensureControls(group){
-  if(!group||group.querySelector("[data-ch-world-switcher]"))return;
-  const controls=document.createElement("div");
-  controls.className="ch-world-switcher";
-  controls.setAttribute("data-ch-world-switcher","");
-  controls.innerHTML='<button type="button" data-ch-world-prev aria-label="Game World precedente">‹</button><div><strong data-ch-world-current>—</strong><span data-ch-world-current-name>—</span></div><button type="button" data-ch-world-next aria-label="Game World successivo">›</button>';
-  group.insertBefore(controls,group.firstChild);
-}
-function paint(direction){
-  const group=groupBlocks();if(!group)return;
-  ensureControls(group);
-  const current=state.worlds[state.index]||null;
-  const id=current?current.id:"—",name=current?current.name:"—";
-  const a=group.querySelector("[data-ch-world-current]");
-  const b=group.querySelector("[data-ch-world-current-name]");
-  if(a)a.textContent=id;if(b)b.textContent=name;
-  const heading=group.querySelector(".ch-world-heading");
-  if(heading){const hs=heading.querySelector("strong"),hn=heading.querySelector("span");if(hs)hs.textContent=id;if(hn)hn.textContent=name.toUpperCase()}
-  group.classList.remove("is-prev","is-next");
-  if(direction){void group.offsetWidth;group.classList.add(direction<0?"is-prev":"is-next")}
-  const disable=state.worlds.length<2;
-  group.querySelectorAll("[data-ch-world-prev],[data-ch-world-next]").forEach(x=>x.disabled=disable);
-}
-async function load(){
-  const r=await state.client.rpc("imc_nexus_gateway",{p_action:"club_house",p_args:{managerId:state.managerId}});
-  if(r.error)throw r.error;
-  state.worlds=uniqueAssignedWorlds(r.data||{});
-  state.index=0;
-  paint(0);
-}
-function attach(o){
-  state={...state,container:o&&o.container||null,client:o&&o.client||null,managerId:c(o&&o.managerId),worlds:[],index:0};
-  if(!state.container||!state.client||!state.managerId)return;
-  load().catch(()=>{groupBlocks();paint(0)});
-}
-document.addEventListener("click",e=>{
-  if(!state.container||state.worlds.length<2)return;
-  const prev=e.target.closest&&e.target.closest("[data-ch-world-prev]");
-  const next=e.target.closest&&e.target.closest("[data-ch-world-next]");
-  if(prev&&state.container.contains(prev)){state.index=(state.index-1+state.worlds.length)%state.worlds.length;paint(-1);return}
-  if(next&&state.container.contains(next)){state.index=(state.index+1)%state.worlds.length;paint(1)}
-});
-function bind(){
-  const mod=window.IMC_CLUBHOUSE;
-  if(!mod||mod.__worldScrollWrapped)return;
-  const mount=mod.mount,unmount=mod.unmount;
-  mod.mount=async function(o){const r=await mount.call(mod,o);attach(o);return r};
-  mod.unmount=function(){state={container:null,client:null,managerId:"",worlds:[],index:0};return unmount.call(mod)};
-  mod.__worldScrollWrapped=true;
-}
-bind();
-window.IMC_CLUBHOUSE_WORLD_SCROLL={version:VERSION,attach};
+function paint(direction){const group=groupBlocks();if(!group)return;ensureControls(group);const current=state.worlds[state.index]||null,id=current?current.id:"—",name=current?current.name:"—";const a=group.querySelector("[data-ch-world-current]"),b=group.querySelector("[data-ch-world-current-name]");if(a)a.textContent=id;if(b)b.textContent=name;const heading=group.querySelector(".ch-world-heading");if(heading){const hs=heading.querySelector("strong"),hn=heading.querySelector("span");if(hs)hs.textContent=id;if(hn)hn.textContent=name.toUpperCase()}group.classList.remove("is-prev","is-next");if(direction){void group.offsetWidth;group.classList.add(direction<0?"is-prev":"is-next")}const disable=state.worlds.length<2;group.querySelectorAll("[data-ch-world-prev],[data-ch-world-next]").forEach(x=>x.disabled=disable);if(!current)return;group.classList.add("is-loading-real");const wanted=current.id;loadWorld(current).then(data=>{const active=state.worlds[state.index];if(active&&active.id===wanted)applyWorld(data)}).finally(()=>{const active=state.worlds[state.index];if(active&&active.id===wanted)group.classList.remove("is-loading-real")})}
+async function load(){const r=await rpc("club_house",{managerId:state.managerId});state.base=r;state.worlds=uniqueAssignedWorlds(r);state.index=0;state.cache=new Map();paint(0)}
+function attach(o){state={...state,container:o&&o.container||null,client:o&&o.client||null,managerId:c(o&&o.managerId),worlds:[],index:0,base:null,cache:new Map()};if(!state.container||!state.client||!state.managerId)return;load().catch(()=>{groupBlocks();paint(0)})}
+document.addEventListener("click",e=>{if(!state.container||state.worlds.length<2)return;const prev=e.target.closest&&e.target.closest("[data-ch-world-prev]"),next=e.target.closest&&e.target.closest("[data-ch-world-next]");if(prev&&state.container.contains(prev)){state.index=(state.index-1+state.worlds.length)%state.worlds.length;paint(-1);return}if(next&&state.container.contains(next)){state.index=(state.index+1)%state.worlds.length;paint(1)}});
+function bind(){const mod=window.IMC_CLUBHOUSE;if(!mod||mod.__worldScrollWrapped)return;const mount=mod.mount,unmount=mod.unmount;mod.mount=async function(o){const r=await mount.call(mod,o);attach(o);return r};mod.unmount=function(){state={container:null,client:null,managerId:"",worlds:[],index:0,base:null,cache:new Map()};return unmount.call(mod)};mod.__worldScrollWrapped=true}
+bind();window.IMC_CLUBHOUSE_WORLD_SCROLL={version:VERSION,attach};
 })();
