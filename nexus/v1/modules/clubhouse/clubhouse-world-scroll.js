@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_WORLD_SCROLL)return;
-const VERSION="2.0.0";
+const VERSION="2.0.1";
 let state={container:null,client:null,managerId:"",worlds:[],index:0,base:null,cache:new Map()};
 const c=v=>String(v==null?"":v).trim();
 const n=v=>Number(v||0)||0;
@@ -10,7 +10,7 @@ function rpc(action,args){return state.client.rpc("imc_nexus_gateway",{p_action:
 function uniq(rows){const m=new Map();for(const x of rows||[]){const k=c(x.sm_fixture_id)||`${c(x.home_name)}|${c(x.away_name)}|${c(x.source_page_date||x.match_date)}`;if(!m.has(k))m.set(k,x)}return [...m.values()]}
 function dateOnly(v){const q=c(v);if(!q)return"—";const d=new Date(q.length===10?q+"T12:00:00":q);if(isNaN(d))return q;return d.toLocaleDateString("it-IT",{day:"2-digit",month:"short",year:"numeric"}).toUpperCase()}
 function worldName(w){return c(w&&w.imc_name||w&&w.name||w&&w.soccer_manager_name||w&&w.game_world_id)}
-function uniqueAssignedWorlds(data){const as=Array.isArray(data&&data.assignments)?data.assignments:[],ws=Array.isArray(data&&data.worlds)?data.worlds:[],names=new Map(ws.map(w=>[c(w.game_world_id),worldName(w)])),seen=new Set(),out=[];for(const a of as){const id=c(a.game_world_id);if(!id||seen.has(id))continue;seen.add(id);out.push({id,name:names.get(id)||id})}return out}
+function uniqueAssignedWorlds(data){const as=Array.isArray(data&&data.assignments)?data.assignments:[],ws=Array.isArray(data&&data.worlds)?data.worlds:[],names=new Map(ws.map(w=>[c(w.game_world_id),worldName(w)])),seen=new Set(),out=[];for(const a of as){const id=c(a.game_world_id);if(!id||seen.has(id))continue;seen.add(id);out.push({id,name:names.get(id)||id})}return out.sort((a,b)=>n(a.id.replace(/\D/g,""))-n(b.id.replace(/\D/g,"")))}
 function pickAssignment(worldId,type){const rows=(state.base&&state.base.assignments||[]).filter(a=>c(a.game_world_id)===worldId&&c(a.assignment_type)===type);if(!rows.length)return null;const now=new Date().toISOString().slice(0,10),active=rows.filter(a=>(!c(a.start_date)||c(a.start_date)<=now)&&(!c(a.end_date)||c(a.end_date)>=now));const pool=active.length?active:rows;return [...pool].sort((a,b)=>c(b.start_date).localeCompare(c(a.start_date))||n(b.assignment_id)-n(a.assignment_id))[0]||null}
 function compKey(x){return c(x&&x.competition_key)}
 function compName(x){return c(x&&x["Nexus View"]||x&&x.sm_competition_name||compKey(x)||"Competition")}
