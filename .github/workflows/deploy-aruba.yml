@@ -19,6 +19,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          test -s nexus/.htaccess
+          test -s nexus/s.php
           for f in nexus/index.html nexus/v1/app.js nexus/v1/modules/*/*.js nexus/v1/modules/*/*.css; do test -s "$f"; done
           for f in nexus/v1/app.js nexus/v1/modules/*/*.js; do node --check "$f"; done
       - name: Validate Aruba secrets
@@ -43,7 +45,7 @@ jobs:
           from pathlib import Path
           from ftplib import FTP_TLS,error_perm
           host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://',''); user=os.environ['ARUBA_FTP_USERNAME']; password=os.environ['ARUBA_FTP_PASSWORD']; raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/'); domain=host[4:] if host.startswith('ftp.') else host; root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
-          files=[Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/assets/imc-logo.png')]+sorted(Path('nexus/v1/modules').glob('*/*'))
+          files=[Path('nexus/.htaccess'),Path('nexus/s.php'),Path('nexus/index.html'),Path('nexus/v1/app.js'),Path('nexus/assets/imc-logo.png')]+sorted(Path('nexus/v1/modules').glob('*/*'))
           ctx=ssl.create_default_context();ctx.check_hostname=False;ftp=FTP_TLS(context=ctx);ftp.connect(host,21,timeout=30);ftp.login(user,password);ftp.prot_p()
           def ensure(path):
             ftp.cwd('/')
