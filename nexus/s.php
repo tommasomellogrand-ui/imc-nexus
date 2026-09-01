@@ -52,10 +52,6 @@ if (!is_string($html) || stripos($html, '<!doctype html>') === false) {
     exit;
 }
 
-$oldUrl = 'https://' . $host . '/nexus/s/' . $code;
-$newUrl = 'https://' . $host . '/nexus/s.php?c=' . rawurlencode($code);
-$html = str_replace($oldUrl, $newUrl, $html);
-
 header('Content-Type: text/html; charset=UTF-8');
 header('Cache-Control: public, max-age=300');
 header('X-Robots-Tag: noindex, nofollow');
