@@ -1,22 +1,24 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_FEED_ICONS)return;
-const VERSION="1.0.0";
+const VERSION="1.1.0";
 const SPRITE="assets/icons/nexus-feed-icons.svg";
 const clean=v=>String(v==null?"":v).trim();
 const upper=v=>clean(v).toLocaleUpperCase("it-IT");
-const emojiLead=/^[\uFE0F\u200D\s🔥⚖⚠🎟💔🏆⚔]+/u;
+const emojiChars=/[🔥⚖⚠🎟💔🏆⚔]/gu;
+const emojiJoiners=/[\uFE0F\u200D]/gu;
 function iconMarkup(name,cls="ch-nexus-icon"){
   return `<svg class="${cls}" aria-hidden="true" focusable="false"><use href="${SPRITE}#${name}"></use></svg>`;
 }
 function stripEmoji(el){
   if(!el)return;
   for(const node of [...el.childNodes]){
-    if(node.nodeType===Node.TEXT_NODE){
-      const next=node.nodeValue.replace(emojiLead,"");
-      if(next!==node.nodeValue)node.nodeValue=next;
-      break;
-    }
+    if(node.nodeType!==Node.TEXT_NODE)continue;
+    const next=String(node.nodeValue||"")
+      .replace(emojiChars,"")
+      .replace(emojiJoiners,"")
+      .replace(/^\s+/,"");
+    if(next!==node.nodeValue)node.nodeValue=next;
   }
 }
 function prependIcon(el,name,cls){
@@ -50,7 +52,7 @@ function headlineIcon(card){
   return statusIcon(card);
 }
 function processCard(card){
-  if(!card||card.dataset.nexusIcons==="1")return;
+  if(!card)return;
   const meta=[...card.querySelectorAll(".ch-feed-copy-meta span")];
   if(meta[0]){
     stripEmoji(meta[0]);
@@ -72,7 +74,7 @@ function processCard(card){
     if(text.includes("AVVERSARIO IMC"))prependIcon(foot[1],"manager-imc","ch-nexus-icon ch-nexus-icon-inline");
     else if(text.includes("AVVERSARIO EXTERNAL"))prependIcon(foot[1],"external-manager","ch-nexus-icon ch-nexus-icon-inline");
   }
-  card.dataset.nexusIcons="1";
+  card.dataset.nexusIcons=VERSION;
 }
 function processPanel(panel){
   if(!panel)return;
@@ -95,7 +97,16 @@ const observer=new MutationObserver(mutations=>{
     }
   }
 });
-function init(){scan();observer.observe(document.body,{childList:true,subtree:true})}
+function rescanBurst(){[0,60,180,500,1200].forEach(ms=>setTimeout(()=>scan(),ms))}
+function init(){
+  scan();
+  observer.observe(document.body,{childList:true,subtree:true});
+  document.addEventListener("click",ev=>{
+    const btn=ev.target.closest?.(".clubhouse .ch-bottom-nav button");
+    if(btn&&upper(btn.textContent)==="FEED")rescanBurst();
+  },true);
+  window.addEventListener("pageshow",rescanBurst);
+}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
-window.IMC_CLUBHOUSE_FEED_ICONS={version:VERSION,scan};
+window.IMC_CLUBHOUSE_FEED_ICONS={version:VERSION,scan,rescan:rescanBurst};
 })();
