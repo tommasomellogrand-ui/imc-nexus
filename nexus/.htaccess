@@ -4,10 +4,9 @@ Options -MultiViews
 
 RewriteEngine On
 
-# Public minimal Feed share preview. The short URL remains on the Nexus host;
-# the preview renderer receives only the short code and the original host.
-RewriteCond %{HTTP_HOST} ^([A-Za-z0-9.-]+(?::[0-9]+)?)$
-RewriteRule ^s/([1-9a][0-9a-z]{4,9})/?$ https://toanuzojdkfjgucztpze.supabase.co/functions/v1/nexus-feed-share?code=$1&host=%1 [R=302,L,NE,NC]
+# Public minimal Feed share preview. Keep the short URL on the Nexus host and
+# render it locally so social crawlers receive real text/html with Open Graph.
+RewriteRule ^s/([1-9a][0-9a-z]{4,9})/?$ s.php?c=$1 [L,QSA,NC]
 
 # Club logos: one canonical source for every Game World.
 # The filename is read from sm_clubs_master.image_filename and always starts
