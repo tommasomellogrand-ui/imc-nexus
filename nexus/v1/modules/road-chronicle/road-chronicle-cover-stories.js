@@ -1,14 +1,16 @@
 (function(){
 "use strict";
 if(window.IMC_ROAD_CHRONICLE_COVER_STORIES)return;
-const VERSION="1.0.6";
+const VERSION="1.0.7";
 let host=null;
 let homeHtml="";
 let activeTag="TUTTO";
 let allowBaseCover=false;
 const TAGS=["TUTTO","VITTORIE","NEWS","INTERVISTE","SCONFITTE","CRISI","MOMENTO POSITIVO","DERBY","MERCATO"];
 const STORY_TAGS=["VITTORIE","NEWS"];
-function loadArticleImages(){if(window.IMC_ROAD_CHRONICLE_ARTICLE_IMAGES||document.querySelector('script[data-rc-article-images]'))return;const s=document.createElement('script');s.src='v1/modules/road-chronicle/road-chronicle-article-images.js?v=1.3.2';s.dataset.rcArticleImages='1';document.body.appendChild(s);}
+const IMAGE_PARTS=["road-chronicle-image-hero-1.js","road-chronicle-image-hero-2.js","road-chronicle-image-hero-3.js","road-chronicle-image-final-1.js","road-chronicle-image-final-2.js","road-chronicle-image-final-3.js"];
+function addScript(file,version){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=`v1/modules/road-chronicle/${file}?v=${version}`;s.onload=resolve;s.onerror=reject;document.body.appendChild(s);});}
+function loadArticleImages(){if(window.__RC_IMAGE_LOADING__)return;if(window.IMC_ROAD_CHRONICLE_ARTICLE_IMAGES&&window.IMC_ROAD_CHRONICLE_ARTICLE_IMAGES.version==='1.4.0'){window.IMC_ROAD_CHRONICLE_ARTICLE_IMAGES.refresh?.();return;}window.__RC_IMAGE_LOADING__=true;(async()=>{try{window.__RC_HERO_PARTS__=[];window.__RC_FINAL_PARTS__=[];for(const file of IMAGE_PARTS)await addScript(file,'1.0.1');await addScript('road-chronicle-article-images.js','1.4.0');}catch(err){console.error('[Road Chronicle images]',err);}finally{window.__RC_IMAGE_LOADING__=false;}})();}
 function patchHomeLabels(){document.querySelectorAll('.rc-cover-entry').forEach(btn=>{const em=btn.querySelector('.rc-copy em');const h2=btn.querySelector('.rc-copy h2');if(em&&em.textContent!=='COVER STORIES')em.textContent='COVER STORIES';if(h2&&h2.textContent.replace(/\s+/g,'')!=='CoverStories')h2.innerHTML='Cover<br>Stories';});}
 function tagsHtml(){return TAGS.map(t=>`<button type="button" class="rc-cs-tag${activeTag===t?' active':''}" data-rc-cs-tag="${t}">${t}</button>`).join('');}
 function storyVisible(){return activeTag==='TUTTO'||STORY_TAGS.includes(activeTag);}
