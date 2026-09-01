@@ -1,14 +1,14 @@
 (function(){
 "use strict";
 if(window.IMC_ROAD_CHRONICLE_COVER_STORIES)return;
-const VERSION="1.0.5";
+const VERSION="1.0.6";
 let host=null;
 let homeHtml="";
 let activeTag="TUTTO";
 let allowBaseCover=false;
 const TAGS=["TUTTO","VITTORIE","NEWS","INTERVISTE","SCONFITTE","CRISI","MOMENTO POSITIVO","DERBY","MERCATO"];
 const STORY_TAGS=["VITTORIE","NEWS"];
-function loadArticleImages(){if(window.IMC_ROAD_CHRONICLE_ARTICLE_IMAGES||document.querySelector('script[data-rc-article-images]'))return;const s=document.createElement('script');s.src='v1/modules/road-chronicle/road-chronicle-article-images.js?v=1.3.1';s.dataset.rcArticleImages='1';document.body.appendChild(s);}
+function loadArticleImages(){if(window.IMC_ROAD_CHRONICLE_ARTICLE_IMAGES||document.querySelector('script[data-rc-article-images]'))return;const s=document.createElement('script');s.src='v1/modules/road-chronicle/road-chronicle-article-images.js?v=1.3.2';s.dataset.rcArticleImages='1';document.body.appendChild(s);}
 function patchHomeLabels(){document.querySelectorAll('.rc-cover-entry').forEach(btn=>{const em=btn.querySelector('.rc-copy em');const h2=btn.querySelector('.rc-copy h2');if(em&&em.textContent!=='COVER STORIES')em.textContent='COVER STORIES';if(h2&&h2.textContent.replace(/\s+/g,'')!=='CoverStories')h2.innerHTML='Cover<br>Stories';});}
 function tagsHtml(){return TAGS.map(t=>`<button type="button" class="rc-cs-tag${activeTag===t?' active':''}" data-rc-cs-tag="${t}">${t}</button>`).join('');}
 function storyVisible(){return activeTag==='TUTTO'||STORY_TAGS.includes(activeTag);}
