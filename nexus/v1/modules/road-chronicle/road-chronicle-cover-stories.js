@@ -1,15 +1,15 @@
 (function(){
 "use strict";
 if(window.IMC_ROAD_CHRONICLE_ISSUES)return;
-const VERSION="2.0.0";
+const VERSION="2.0.1";
 let host=null;
 let homeHtml="";
 function patchHomeLabels(){
   document.querySelectorAll('.rc-cover-entry').forEach(btn=>{
     const em=btn.querySelector('.rc-copy em');
     const h2=btn.querySelector('.rc-copy h2');
-    if(em)em.textContent='THE ROAD CHRONICLE';
-    if(h2)h2.innerHTML='Issues';
+    if(em&&em.textContent!=='THE ROAD CHRONICLE')em.textContent='THE ROAD CHRONICLE';
+    if(h2&&h2.textContent.trim()!=='Issues')h2.textContent='Issues';
   });
 }
 function issuesHtml(){return `<section class="rc-page rc-issues-page" aria-label="The Road Chronicle Issues">
