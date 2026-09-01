@@ -2,10 +2,10 @@
 "use strict";
 if(window.IMC_NAVIGATION)return;
 
-const VERSION="1.0.1";
+const VERSION="1.0.2";
 const WORLDS=[
   ["GW001","Road To History"],["GW002","Gold 558"],["GW003","Gold 557"],["GW004","World League"],["GW005","Hall Of Famers"],
-  ["GW006","Master League World"],["GW007","The Four Kingdoms"],["GW008","Gold 1"],["GW009","Kick Off"],["GW010","Sensible Soccer Academy"]
+  ["GW006","Master League World"],["GW007","The Four Kingdoms"],["GW008","Gold 1"],["GW009","Kick Off"]
 ];
 let state={host:null,current:"clubhouse",worldId:null,worldName:null};
 
