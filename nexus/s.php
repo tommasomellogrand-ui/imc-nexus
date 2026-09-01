@@ -12,6 +12,11 @@ if (!in_array($host, ['www.italianmastersclub.it', 'italianmastersclub.it'], tru
     $host = 'www.italianmastersclub.it';
 }
 
+$version = trim((string)($_GET['v'] ?? ''));
+if ($version !== '' && !preg_match('/^[0-9A-Za-z_-]{1,12}$/', $version)) {
+    $version = '';
+}
+
 $endpoint = 'https://toanuzojdkfjgucztpze.supabase.co/functions/v1/nexus-feed-share'
     . '?code=' . rawurlencode($code)
     . '&host=' . rawurlencode($host);
@@ -50,6 +55,12 @@ if (!is_string($html) || stripos($html, '<!doctype html>') === false) {
     header('Content-Type: text/plain; charset=UTF-8');
     echo 'Not found';
     exit;
+}
+
+if ($version !== '') {
+    $baseUrl = 'https://' . $host . '/nexus/s/' . $code;
+    $versionedUrl = $baseUrl . '?v=' . rawurlencode($version);
+    $html = str_replace($baseUrl, $versionedUrl, $html);
 }
 
 header('Content-Type: text/html; charset=UTF-8');
