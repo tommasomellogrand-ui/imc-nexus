@@ -63,6 +63,19 @@ if ($version !== '') {
     $html = str_replace($baseUrl, $versionedUrl, $html);
 }
 
+if (preg_match('/<meta property="og:image" content="([^"]+)">/i', $html, $imageMatch)) {
+    $imageUrl = $imageMatch[1];
+    $telegramImageMeta = '<meta property="og:image:secure_url" content="' . $imageUrl . '">'
+        . '<meta property="og:image:type" content="image/webp">'
+        . '<meta property="og:image:width" content="1536">'
+        . '<meta property="og:image:height" content="1024">';
+    $html = str_replace($imageMatch[0], $imageMatch[0] . $telegramImageMeta, $html);
+}
+
+if (preg_match('/<meta property="og:description" content="([^"]*)">/i', $html, $descriptionMatch)) {
+    $html = str_replace($descriptionMatch[0], $descriptionMatch[0] . '<meta name="description" content="' . $descriptionMatch[1] . '">', $html);
+}
+
 header('Content-Type: text/html; charset=UTF-8');
 header('Cache-Control: public, max-age=300');
 header('X-Robots-Tag: noindex, nofollow');
