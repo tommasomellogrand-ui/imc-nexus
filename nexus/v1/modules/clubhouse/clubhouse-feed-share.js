@@ -1,11 +1,11 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_FEED_SHARE)return;
-const VERSION="1.0.1";
+const VERSION="1.1.0";
 const c=v=>String(v==null?"":v).trim();
 function codeFor(gw,fixture){const n=Number(c(gw).replace(/^GW/i,""));const f=Number(fixture);if(!Number.isInteger(n)||n<1||n>10||!Number.isSafeInteger(f)||f<=0)return"";return(n===10?"a":String(n))+f.toString(36)}
 function gwFromCard(card){const raw=c(card.querySelector(".ch-feed-copy-foot span:first-child")?.textContent).toUpperCase();return/^GW\d{3}$/.test(raw)?raw:""}
-function shareUrl(card){const gw=gwFromCard(card),fixture=Number(card.getAttribute("data-fixture-id")),code=codeFor(gw,fixture);return code?`${location.origin}/nexus/s/${code}`:""}
+function shareUrl(card){const gw=gwFromCard(card),fixture=Number(card.getAttribute("data-fixture-id")),code=codeFor(gw,fixture);return code?`${location.origin}/nexus/s.php?c=${encodeURIComponent(code)}`:""}
 function shareTitle(card){return c(card.querySelector(".ch-feed-copy h3")?.textContent)||"IMC Nexus"}
 function shareText(card){return c(card.querySelector(".ch-feed-ed-story p")?.textContent)||c(card.querySelector(".ch-feed-copy p")?.textContent)||"News da IMC Nexus"}
 async function doShare(card,button){const url=shareUrl(card);if(!url)return;const title=shareTitle(card),text=shareText(card);try{if(navigator.share){await navigator.share({title,text,url});return}if(navigator.clipboard){await navigator.clipboard.writeText(url);const span=button.querySelector("span"),old=span?span.textContent:"CONDIVIDI";if(span)span.textContent="LINK COPIATO";setTimeout(()=>{if(span)span.textContent=old},1400)}}catch(err){if(err&&err.name==="AbortError")return}}
