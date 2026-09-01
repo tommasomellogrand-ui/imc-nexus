@@ -1,14 +1,14 @@
 (function(){
 "use strict";
 if(window.IMC_ROAD_CHRONICLE_COVER_STORIES)return;
-const VERSION="1.0.0";
+const VERSION="1.0.1";
 let host=null;
 let homeHtml="";
 let activeTag="TUTTO";
 let allowBaseCover=false;
 const TAGS=["TUTTO","VITTORIE","NEWS","INTERVISTE","SCONFITTE","CRISI","MOMENTO POSITIVO","DERBY","MERCATO"];
 const STORY_TAGS=["VITTORIE","NEWS"];
-function patchHomeLabels(){document.querySelectorAll('.rc-cover-entry').forEach(btn=>{const em=btn.querySelector('.rc-copy em');const h2=btn.querySelector('.rc-copy h2');if(em)em.textContent='COVER STORIES';if(h2)h2.innerHTML='Cover<br>Stories';});}
+function patchHomeLabels(){document.querySelectorAll('.rc-cover-entry').forEach(btn=>{const em=btn.querySelector('.rc-copy em');const h2=btn.querySelector('.rc-copy h2');if(em&&em.textContent!=='COVER STORIES')em.textContent='COVER STORIES';if(h2&&h2.textContent.replace(/\s+/g,'')!=='CoverStories')h2.innerHTML='Cover<br>Stories';});}
 function tagsHtml(){return TAGS.map(t=>`<button type="button" class="rc-cs-tag${activeTag===t?' active':''}" data-rc-cs-tag="${t}">${t}</button>`).join('');}
 function storyVisible(){return activeTag==='TUTTO'||STORY_TAGS.includes(activeTag);}
 function feedHtml(){return `<section class="rc-page rc-cs-page" aria-label="The Road Chronicle Cover Stories">
