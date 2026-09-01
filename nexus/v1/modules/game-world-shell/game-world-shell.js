@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_GAME_WORLD_SHELL)return;
-const VERSION="3.1.5";
+const VERSION="3.1.6";
 let state={container:null,client:null,worldId:"",worldName:"",season:null};
 const clean=v=>String(v==null?"":v).trim();
 const esc=v=>clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -14,6 +14,6 @@ function render(){if(!state.container)return;state.container.innerHTML=`<section
 async function mount(o){if(!o||!o.container||!o.client)throw Error("Game World: parametri mancanti");state={...state,...o,container:o.container,client:o.client,worldId:clean(o.worldId),worldName:clean(o.worldName),season:null};await loadSeason();render()}
 async function setWorld(o){state.worldId=clean(o.worldId);state.worldName=clean(o.worldName);state.season=null;await loadSeason();render()}
 function unmount(){if(state.container)state.container.innerHTML="";state.container=null;state.season=null}
-document.addEventListener("click",e=>{const journal=e.target.closest?.(".gw3-journal");if(journal&&state.container?.contains(journal)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:"road-chronicle"}}));return}const transfer=e.target.closest?.(".gw3-transfers");if(transfer&&state.container?.contains(transfer)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:"transfers"}}));return}const section=e.target.closest?.("[data-gw-section]");if(section&&state.container?.contains(section)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:clean(section.getAttribute("data-gw-section"))}}));return}const a=e.target.closest?.("[data-gw-action]");if(a&&state.container?.contains(a)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"clubhouse"}}))}});
+document.addEventListener("click",async e=>{const journal=e.target.closest?.(".gw3-journal");if(journal&&state.container?.contains(journal)){const content=state.container.querySelector("[data-gw-content]");if(!content)return;if(!window.IMC_ROAD_CHRONICLE||typeof window.IMC_ROAD_CHRONICLE.mount!=="function"){content.innerHTML='<div class="gw-shell-empty">Modulo Road Chronicle non disponibile</div>';return}await window.IMC_ROAD_CHRONICLE.mount({container:content,client:state.client,worldId:state.worldId||"GW001"});window.scrollTo({top:0,behavior:"auto"});return}const transfer=e.target.closest?.(".gw3-transfers");if(transfer&&state.container?.contains(transfer)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:"transfers"}}));return}const section=e.target.closest?.("[data-gw-section]");if(section&&state.container?.contains(section)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"game-world-section",worldId:state.worldId,section:clean(section.getAttribute("data-gw-section"))}}));return}const a=e.target.closest?.("[data-gw-action]");if(a&&state.container?.contains(a)){document.dispatchEvent(new CustomEvent("nexus:navigate",{detail:{target:"clubhouse"}}))}});
 window.IMC_GAME_WORLD_SHELL={version:VERSION,mount,setWorld,unmount};
 })();
