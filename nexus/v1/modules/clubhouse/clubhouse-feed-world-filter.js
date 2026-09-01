@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_FEED_WORLD_FILTER)return;
-const VERSION="1.0.0";
+const VERSION="1.0.1";
 const ALLOWED=new Set(["GW002","GW003","GW007","GW008"]);
 let scheduled=false,lastWorld="";
 const c=v=>String(v==null?"":v).trim();
@@ -28,6 +28,7 @@ function apply(){
  for(const card of cards){
    const show=ALLOWED.has(gw)&&cardWorld(card)===gw;
    card.hidden=!show;
+   card.setAttribute('data-world-filter-seen','1');
    if(show)visible++;
  }
  let empty=list.querySelector('[data-ch-feed-world-empty]');
