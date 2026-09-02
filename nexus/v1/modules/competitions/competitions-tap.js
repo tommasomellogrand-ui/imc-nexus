@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_TAP)return;
-const VERSION="1.7.2";
+const VERSION="1.7.3";
 const cache=new Map();
 const clean=v=>String(v==null?"":v).trim();
 function loadGlobalBack(){
@@ -14,7 +14,7 @@ function loadGlobalBack(){
   }
   if(!document.querySelector('script[data-nexus-global-back-js]')){
     const script=document.createElement('script');
-    script.src='v1/modules/global-back/global-back.js?v=1.1.0';
+    script.src='v1/modules/global-back/global-back.js?v=1.1.1';
     script.async=false;
     script.setAttribute('data-nexus-global-back-js','1');
     document.head.appendChild(script);
