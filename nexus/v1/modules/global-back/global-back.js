@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_GLOBAL_BACK)return;
-const VERSION="1.1.0";
+const VERSION="1.1.1";
 let current={target:"clubhouse"},history=[],backDispatch=false,raf=0;
 const clean=v=>String(v==null?"":v).trim();
 function route(d){
@@ -35,7 +35,7 @@ function host(){
   const sh=shell();
   if(sh)return{root:sh,content:sh.querySelector(".gw3-content"),shell:true};
   const moduleHost=document.getElementById("moduleHost");
-  if(moduleHost&&current&&current.target!=="clubhouse")return{root:moduleHost,content:moduleHost,shell:false};
+  if(moduleHost&&current&&current.target!=="clubhouse"&&current.target!=="clubhouse-feed")return{root:moduleHost,content:moduleHost,shell:false};
   return null;
 }
 function makeButton(){
@@ -59,7 +59,7 @@ function ensureButton(){
 }
 function sync(){
   raf=0;
-  document.querySelectorAll("[data-nx-global-back]").forEach(b=>{const sh=shell();if(sh&&!sh.contains(b)&&current.target!=="admin")b.remove()});
+  document.querySelectorAll("[data-nx-global-back]").forEach(b=>{const sh=shell();if(current&&["clubhouse","clubhouse-feed"].includes(current.target)){b.remove();return}if(sh&&!sh.contains(b)&&current.target!=="admin")b.remove()});
   const b=ensureButton();
   if(!b)return;
   const h=host();
