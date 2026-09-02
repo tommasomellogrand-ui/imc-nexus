@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_HOME_TABS)return;
-const VERSION="1.1.0";
+const VERSION="1.2.0";
 const mod=window.IMC_CLUBHOUSE;
 if(!mod){window.IMC_CLUBHOUSE_HOME_TABS={version:VERSION};return}
 let state={container:null,client:null,managerId:"",seq:0,season:null,availableSeasons:[]};
@@ -19,7 +19,7 @@ function ensureTabs(){
   box=document.createElement("section");
   box.className="ch-home-tabs";
   box.setAttribute("data-ch-home-tabs","");
-  box.innerHTML='<div class="ch-home-tabbar" role="tablist" aria-label="Nexus Home data"><button type="button" role="tab" aria-selected="true" data-ch-home-tab="overview">OVERVIEW</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="competitions">COMPETITIONS</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="schedule">SCHEDULE</button></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="overview"><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-overview-grid" data-ch-home-overview><div class="ch-home-overview-state">Caricamento Overview…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="competitions" hidden><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-competitions-grid" data-ch-home-competitions><div class="ch-home-overview-state">Caricamento Competitions…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="schedule" hidden><div data-ch-home-schedule-host></div></div>';
+  box.innerHTML='<div class="ch-home-tabbar" role="tablist" aria-label="Nexus Home data"><button type="button" role="tab" aria-selected="true" data-ch-home-tab="overview">OVERVIEW</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="competitions">COMPETITIONS</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="h2h">H2H</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="schedule">SCHEDULE</button></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="overview"><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-overview-grid" data-ch-home-overview><div class="ch-home-overview-state">Caricamento Overview…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="competitions" hidden><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-competitions-grid" data-ch-home-competitions><div class="ch-home-overview-state">Caricamento Competitions…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="h2h" hidden><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-h2h-list" data-ch-home-h2h><div class="ch-home-overview-state">Caricamento H2H…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="schedule" hidden><div data-ch-home-schedule-host></div></div>';
   if(preview)preview.insertAdjacentElement("afterend",box);
   else canvas.appendChild(box);
   const scheduleHost=box.querySelector("[data-ch-home-schedule-host]");
@@ -94,6 +94,43 @@ async function loadCompetitions(){
     host.innerHTML='<div class="ch-home-overview-state">'+e(err.message||"Competitions non disponibile")+'</div>';
   }
 }
+function h2hStats(row,className){
+  const values=[
+    ["PG",row.played??0],["V",row.wins??0],["N",row.draws??0],
+    ["S",row.losses??0],["GF",row.goalsFor??0],["GS",row.goalsAgainst??0]
+  ].map(item=>'<div><span>'+item[0]+'</span><strong>'+e(item[1])+'</strong></div>').join("");
+  return '<div class="'+className+'">'+values+'</div>';
+}
+function h2hCompetition(row){
+  return '<section class="ch-home-h2h-competition"><header><span>'+e(row.gameWorld)+'</span><strong>'+e(row.competitionName||row.competitionKey)+'</strong></header>'+h2hStats(row,"ch-home-h2h-competition-stats")+'</section>';
+}
+function h2hCard(row){
+  const competitions=Array.isArray(row.competitions)?row.competitions:[];
+  return '<article class="ch-home-h2h-card"><header class="ch-home-h2h-manager"><div><span>HEAD TO HEAD</span><strong>'+e(row.opponentName||row.opponentManagerId)+'</strong></div><b>'+e(row.opponentManagerId)+'</b></header>'+h2hStats(row,"ch-home-h2h-overall")+'<div class="ch-home-h2h-competitions">'+competitions.map(h2hCompetition).join("")+'</div></article>';
+}
+function paintH2H(payload){
+  const box=ensureTabs(),host=box&&box.querySelector("[data-ch-home-h2h]");
+  if(!host)return;
+  state.availableSeasons=Array.isArray(payload.availableSeasons)?payload.availableSeasons:[];
+  seasonButtons();
+  const rows=Array.isArray(payload.rows)?payload.rows:[];
+  host.innerHTML=rows.length?rows.map(h2hCard).join(""):'<div class="ch-home-overview-state">Nessun H2H certificato disponibile.</div>';
+}
+async function loadH2H(){
+  const seq=++state.seq,box=ensureTabs(),host=box&&box.querySelector("[data-ch-home-h2h]");
+  if(!host||!state.client||!state.managerId)return;
+  host.innerHTML='<div class="ch-home-overview-state">Caricamento H2H…</div>';
+  try{
+    const args={managerId:state.managerId};
+    if(state.season!=null)args.season=state.season;
+    const payload=await rpc("manager_home_h2h",args);
+    if(seq!==state.seq)return;
+    paintH2H(payload);
+  }catch(err){
+    if(seq!==state.seq)return;
+    host.innerHTML='<div class="ch-home-overview-state">'+e(err.message||"H2H non disponibile")+'</div>';
+  }
+}
 function activeTab(){
   const box=ensureTabs(),selected=box&&box.querySelector('[data-ch-home-tab][aria-selected="true"]');
   return c(selected&&selected.getAttribute("data-ch-home-tab"))||"overview";
@@ -109,6 +146,7 @@ function selectTab(name){
     panel.hidden=panel.getAttribute("data-ch-home-panel")!==name;
   });
   if(name==="competitions")loadCompetitions();
+  else if(name==="h2h")loadH2H();
   else if(name==="overview")loadOverview();
 }
 function attach(o){
@@ -128,7 +166,9 @@ document.addEventListener("click",event=>{
     const value=c(seasonButton.getAttribute("data-ch-home-season"));
     state.season=value?Number(value):null;
     seasonButtons();
-    if(activeTab()==="competitions")loadCompetitions();
+    const tabName=activeTab();
+    if(tabName==="competitions")loadCompetitions();
+    else if(tabName==="h2h")loadH2H();
     else loadOverview();
   }
 });

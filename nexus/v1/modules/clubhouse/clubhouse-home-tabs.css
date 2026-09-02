@@ -1,5 +1,5 @@
 .ch-home-tabs{margin-top:12px;padding:10px;border:1px solid #dbe4ee;border-radius:20px;background:linear-gradient(180deg,#fff,#f8fbfe);box-shadow:0 8px 22px rgba(8,43,99,.06),inset 0 1px 0 #fff}
-.ch-home-tabbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding:4px;border:1px solid #e1e8f0;border-radius:14px;background:#f2f6fa}
+.ch-home-tabbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:4px;border:1px solid #e1e8f0;border-radius:14px;background:#f2f6fa}
 .ch-home-tabbar button{height:34px;border:0;border-radius:10px;background:transparent;color:#66768c;font-size:8px;font-weight:900;letter-spacing:1px}
 .ch-home-tabbar button[aria-selected="true"]{background:#082b63;color:#fff;box-shadow:0 4px 10px rgba(8,43,99,.18)}
 .ch-home-tab-panel{padding-top:10px}
@@ -23,3 +23,23 @@
 .ch-home-competition-stats div{min-width:0;text-align:center}
 .ch-home-competition-stats span{display:block;font-size:6px;font-weight:900;color:#728096}
 .ch-home-competition-stats strong{display:block;margin-top:4px;font-size:13px;line-height:1;font-weight:950;color:#0b2b68}
+.ch-home-h2h-list{display:grid;gap:8px}
+.ch-home-h2h-card{padding:11px;border:1px solid #dfe7f0;border-radius:16px;background:linear-gradient(180deg,#fff,#f7faff)}
+.ch-home-h2h-manager{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:1px solid #e3eaf2}
+.ch-home-h2h-manager div{min-width:0}
+.ch-home-h2h-manager span{display:block;font-size:6px;font-weight:900;letter-spacing:1px;color:#9a772b}
+.ch-home-h2h-manager strong{display:block;margin-top:4px;font-size:12px;line-height:1.15;font-weight:950;color:#082b63}
+.ch-home-h2h-manager>b{flex:0 0 auto;padding:5px 7px;border-radius:999px;background:#082b63;color:#fff;font-size:6.5px;font-weight:900;letter-spacing:.7px}
+.ch-home-h2h-overall,.ch-home-h2h-competition-stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
+.ch-home-h2h-overall{padding:10px 0}
+.ch-home-h2h-overall div,.ch-home-h2h-competition-stats div{text-align:center}
+.ch-home-h2h-overall span,.ch-home-h2h-competition-stats span{display:block;font-size:6px;font-weight:900;color:#758399}
+.ch-home-h2h-overall strong{display:block;margin-top:4px;font-size:15px;line-height:1;font-weight:950;color:#0b2b68}
+.ch-home-h2h-competitions{display:grid;gap:5px}
+.ch-home-h2h-competition{padding:8px;border:1px solid #e5ebf2;border-radius:11px;background:#fff}
+.ch-home-h2h-competition header{display:flex;align-items:center;gap:7px}
+.ch-home-h2h-competition header span{flex:0 0 auto;padding:4px 6px;border-radius:999px;background:#eef3f8;color:#52647c;font-size:5.8px;font-weight:900}
+.ch-home-h2h-competition header strong{min-width:0;font-size:7.5px;line-height:1.15;font-weight:900;color:#203b67}
+.ch-home-h2h-competition-stats{margin-top:7px}
+.ch-home-h2h-competition-stats strong{display:block;margin-top:3px;font-size:10px;line-height:1;font-weight:900;color:#0b2b68}
+@media(max-width:390px){.ch-home-tabbar button{font-size:7px;letter-spacing:.65px}}
