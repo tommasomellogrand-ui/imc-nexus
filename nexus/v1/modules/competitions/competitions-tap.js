@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_TAP)return;
-const VERSION="1.7.1";
+const VERSION="1.7.2";
 const cache=new Map();
 const clean=v=>String(v==null?"":v).trim();
 function loadGlobalBack(){
@@ -58,7 +58,7 @@ function loadGW002Visuals(){
   }
   if(!document.querySelector('script[data-gw002-brand-system-js]')){
     const script=document.createElement('script');
-    script.src='v1/modules/competitions/competitions-gw002-brand-system.js?v=1.0.1';
+    script.src='v1/modules/competitions/competitions-gw002-brand-system.js?v=1.0.2';
     script.async=false;
     script.setAttribute('data-gw002-brand-system-js','1');
     document.body.appendChild(script);
