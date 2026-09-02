@@ -1,16 +1,17 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_GW002_BRAND_SYSTEM)return;
-const VERSION="1.0.1";
+const VERSION="1.0.2";
 const clean=v=>String(v==null?"":v).trim().toLowerCase();
 const classes=["nx-brand-domestic","nx-brand-international","nx-brand-nations"];
 function setBrand(node,type){
   if(!node)return;
+  if(type!=="domestic"&&type!=="international"&&type!=="nations")return;
+  const desired=`nx-brand-${type}`;
+  if(node.classList.contains("nx-brand-system")&&node.classList.contains(desired)&&node.dataset.nxBrand===type)return;
   node.classList.remove(...classes);
-  if(type==="domestic"||type==="international"||type==="nations"){
-    node.classList.add("nx-brand-system",`nx-brand-${type}`);
-    node.dataset.nxBrand=type;
-  }
+  node.classList.add("nx-brand-system",desired);
+  node.dataset.nxBrand=type;
 }
 function menuBrand(menu){
   const world=clean(menu.querySelector(".cp-menu-world span")?.textContent);
@@ -23,7 +24,7 @@ function detailBrand(root){
   const head=root.querySelector(".cd-head");
   const world=clean(head?.querySelector("span")?.textContent);
   if(world!=="gw002")return;
-  if(head)head.style.position="relative";
+  if(head&&head.style.position!=="relative")head.style.position="relative";
   const subtitle=clean(head?.querySelector("small")?.textContent);
   let type="";
   if(subtitle.includes("domestic"))type="domestic";
