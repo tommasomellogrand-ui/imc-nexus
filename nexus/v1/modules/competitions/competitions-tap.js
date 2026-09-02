@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_TAP)return;
-const VERSION="1.4.2";
+const VERSION="1.5.0";
 const cache=new Map();
 const clean=v=>String(v==null?"":v).trim();
 function loadGlobalBack(){
@@ -31,9 +31,9 @@ function loadGW002Visuals(){
   if(!document.querySelector('script[data-gw002-tiles-js]')){
     const script=document.createElement('script');
     script.src='v1/modules/competitions/competitions-gw002-tiles.js?v=1.1.0';
-    script.defer=true;
+    script.async=false;
     script.setAttribute('data-gw002-tiles-js','1');
-    document.head.appendChild(script);
+    document.body.appendChild(script);
   }
   if(!document.querySelector('link[data-gw002-hub-css]')){
     const link=document.createElement('link');
@@ -45,13 +45,21 @@ function loadGW002Visuals(){
   if(!document.querySelector('script[data-gw002-hub-js]')){
     const script=document.createElement('script');
     script.src='v1/modules/competitions/competitions-gw002-hub.js?v=2.0.2';
-    script.defer=true;
+    script.async=false;
     script.setAttribute('data-gw002-hub-js','1');
-    document.head.appendChild(script);
+    document.body.appendChild(script);
   }
 }
+function gw002HubReady(){
+  const hub=document.querySelector('.cp-hub');
+  if(!hub)return false;
+  return clean(hub.querySelector('.cp-world-mark span')?.textContent)==='GW002';
+}
+function maybeLoadGW002Visuals(){if(gw002HubReady())loadGW002Visuals()}
 loadGlobalBack();
-loadGW002Visuals();
+const visualObserver=new MutationObserver(maybeLoadGW002Visuals);
+visualObserver.observe(document.documentElement,{childList:true,subtree:true});
+document.addEventListener('DOMContentLoaded',maybeLoadGW002Visuals);
 async function getCompetitions(worldId){
   if(cache.has(worldId))return cache.get(worldId);
   const client=window.__IMC_NEXUS_CLIENT__;
