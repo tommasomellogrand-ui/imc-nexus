@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_TAP)return;
-const VERSION="1.6.0";
+const VERSION="1.7.0";
 const cache=new Map();
 const clean=v=>String(v==null?"":v).trim();
 function loadGlobalBack(){
@@ -30,7 +30,7 @@ function loadGW002Visuals(){
   }
   if(!document.querySelector('script[data-gw002-tiles-js]')){
     const script=document.createElement('script');
-    script.src='v1/modules/competitions/competitions-gw002-tiles.js?v=1.1.0';
+    script.src='v1/modules/competitions/competitions-gw002-tiles.js?v=1.2.0';
     script.async=false;
     script.setAttribute('data-gw002-tiles-js','1');
     document.body.appendChild(script);
@@ -47,6 +47,20 @@ function loadGW002Visuals(){
     script.src='v1/modules/competitions/competitions-gw002-hub.js?v=2.1.0';
     script.async=false;
     script.setAttribute('data-gw002-hub-js','1');
+    document.body.appendChild(script);
+  }
+  if(!document.querySelector('link[data-gw002-brand-system-css]')){
+    const link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href='v1/modules/competitions/competitions-gw002-brand-system.css?v=1.0.0';
+    link.setAttribute('data-gw002-brand-system-css','1');
+    document.head.appendChild(link);
+  }
+  if(!document.querySelector('script[data-gw002-brand-system-js]')){
+    const script=document.createElement('script');
+    script.src='v1/modules/competitions/competitions-gw002-brand-system.js?v=1.0.0';
+    script.async=false;
+    script.setAttribute('data-gw002-brand-system-js','1');
     document.body.appendChild(script);
   }
 }
