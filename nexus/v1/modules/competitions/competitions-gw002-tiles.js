@@ -1,11 +1,12 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_GW002_TILES)return;
-const VERSION="1.0.0";
+const VERSION="1.1.0";
 const NAVY="#082b63",GOLD="#d7ad48",SILVER="#b8c4d3";
 function svgWrap(body){return `<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">${body}</svg>`}
-function icon(kind){
-  if(kind==="league")return svgWrap(`<circle cx="32" cy="31" r="18" fill="#fff" stroke="${NAVY}" stroke-width="2.2"/><path d="m32 22 6 4-2 7h-8l-2-7 6-4Zm-6 4-7 1-3 7 5 6 7-7m8 0 7-7 6 2 2 7-6 6-9-8m-15 7 2 8 8 3 5-7m9-3-1 8-8 4" fill="none" stroke="${NAVY}" stroke-width="2" stroke-linejoin="round"/><path d="M18 50h28" stroke="${GOLD}" stroke-width="2.4" stroke-linecap="round"/>`);
+function leagueNumber(card){const name=(card.querySelector("h3")?.textContent||"").trim();const m=name.match(/\bDiv\s*(\d+)\b/i);return m?m[1]:"1"}
+function icon(kind,card){
+  if(kind==="league")return svgWrap(`<text x="32" y="42" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="900" fill="${NAVY}">${leagueNumber(card)}</text><path d="M18 51h28" stroke="${GOLD}" stroke-width="2.4" stroke-linecap="round"/>`);
   if(kind==="nationalcup")return svgWrap(`<path d="M23 15h18v8c0 10-4 17-9 20-5-3-9-10-9-20v-8Z" fill="#fff" stroke="${NAVY}" stroke-width="2.5"/><path d="M23 19h-7c0 9 3 14 10 15M41 19h7c0 9-3 14-10 15" fill="none" stroke="${SILVER}" stroke-width="2.7" stroke-linecap="round"/><path d="M29 43h6v6h8v3H21v-3h8Z" fill="${NAVY}"/><path d="M26 17h12" stroke="${GOLD}" stroke-width="2" stroke-linecap="round"/>`);
   if(kind==="leaguecup")return svgWrap(`<path d="M22 15h20v8c0 10-4 17-10 20-6-3-10-10-10-20v-8Z" fill="#fff" stroke="${NAVY}" stroke-width="2.5"/><path d="M22 19h-7c0 9 3 14 10 15M42 19h7c0 9-3 14-10 15" fill="none" stroke="${GOLD}" stroke-width="3" stroke-linecap="round"/><path d="M29 43h6v6h9v3H20v-3h9Z" fill="${NAVY}"/><path d="M27 20h10M29 24h6" stroke="${GOLD}" stroke-width="2" stroke-linecap="round"/>`);
   if(kind==="charityshield")return svgWrap(`<path d="M32 13 46 18v11c0 10-5 17-14 22-9-5-14-12-14-22V18l14-5Z" fill="#fff" stroke="${NAVY}" stroke-width="2.7"/><path d="M32 18 41 21v8c0 7-3 12-9 16-6-4-9-9-9-16v-8l9-3Z" fill="none" stroke="${GOLD}" stroke-width="2"/>`);
@@ -32,12 +33,12 @@ function kindFor(card){
 function apply(){
   document.querySelectorAll(".cp-menu.cp-gw002-lab .cp-lab-card").forEach(card=>{
     if(card.dataset.tileIconVersion===VERSION)return;
-    const old=card.querySelector(":scope > .cp-menu-emblem, :scope > .cp-menu-art");
+    const old=card.querySelector(":scope > .cp-menu-emblem, :scope > .cp-menu-art, :scope > .cp-tile-icon");
     if(!old)return;
     const kind=kindFor(card);
     const tile=document.createElement("div");
     tile.className=`cp-tile-icon cp-tile-${kind}`;
-    tile.innerHTML=icon(kind);
+    tile.innerHTML=icon(kind,card);
     old.replaceWith(tile);
     card.dataset.tileIconVersion=VERSION;
   });
