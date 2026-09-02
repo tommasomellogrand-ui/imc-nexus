@@ -1,0 +1,16 @@
+.ch-home-tabs{margin-top:12px;padding:10px;border:1px solid #dbe4ee;border-radius:20px;background:linear-gradient(180deg,#fff,#f8fbfe);box-shadow:0 8px 22px rgba(8,43,99,.06),inset 0 1px 0 #fff}
+.ch-home-tabbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:4px;border:1px solid #e1e8f0;border-radius:14px;background:#f2f6fa}
+.ch-home-tabbar button{height:34px;border:0;border-radius:10px;background:transparent;color:#66768c;font-size:8px;font-weight:900;letter-spacing:1px}
+.ch-home-tabbar button[aria-selected="true"]{background:#082b63;color:#fff;box-shadow:0 4px 10px rgba(8,43,99,.18)}
+.ch-home-tab-panel{padding-top:10px}
+.ch-home-season-tabs{display:flex;gap:6px;overflow-x:auto;padding:0 1px 9px;scrollbar-width:none}
+.ch-home-season-tabs::-webkit-scrollbar{display:none}
+.ch-home-season-tabs button{flex:0 0 auto;height:27px;padding:0 10px;border:1px solid #dce5ef;border-radius:999px;background:#fff;color:#60718a;font-size:7px;font-weight:900;letter-spacing:.65px}
+.ch-home-season-tabs button.is-active{border-color:#d7ad48;background:#fff8e7;color:#8a6417}
+.ch-home-overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.ch-home-overview-grid article{min-height:72px;padding:10px 5px;border:1px solid #dfe7f0;border-radius:14px;background:linear-gradient(180deg,#fff,#f7faff);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.ch-home-overview-grid article span{font-size:6.5px;font-weight:900;letter-spacing:.75px;color:#66768c}
+.ch-home-overview-grid article strong{margin-top:8px;font-size:22px;line-height:1;font-weight:950;color:#082b63}
+.ch-home-overview-state{grid-column:1/-1;padding:24px 10px;text-align:center;color:#66768c;font-size:9px;font-weight:800}
+.ch-home-tab-panel[data-ch-home-panel="schedule"] .ch-next10{margin-top:0;border:0;border-radius:14px;box-shadow:none;background:transparent;padding:4px}
+@media(max-width:390px){.ch-home-tabs{padding:9px}.ch-home-overview-grid{gap:5px}.ch-home-overview-grid article{min-height:68px}.ch-home-overview-grid article strong{font-size:20px}}
