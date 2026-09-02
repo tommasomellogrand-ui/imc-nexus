@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_GW002_HUB)return;
-const VERSION="2.0.1";
+const VERSION="2.0.2";
 function clean(v){return String(v==null?"":v).trim()}
 function icon(kind){
   if(kind==='domestic')return `<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M17 22h38v10c0 16-7 26-19 32C24 58 17 48 17 32V22Z"/><path d="M17 27H9c0 13 4 20 14 22M55 27h8c0 13-4 20-14 22"/><path d="M31 61h10v5H26v-5h5"/></svg>`;
@@ -19,7 +19,13 @@ function pattern(kind){
   return `<span class="cp-c3-pattern cp-c3-pattern-nations"></span>`;
 }
 function countFrom(root,selector){return clean(root.querySelector(selector)?.textContent)||'0'}
-function card(kind,title,description,count){return `<button type="button" class="cp-c3-card cp-c3-card-${kind}" data-cp-open="${kind}">${pattern(kind)}<span class="cp-c3-icon">${icon(kind)}</span><span class="cp-c3-copy"><h3>${title}</h3><p>${description}</p><span class="cp-c3-count"><b>${count}</b> COMPETITIONS</span></span><span class="cp-c3-scene">${scene(kind)}</span><span class="cp-c3-arrow">›</span></button>`}
+function card(kind,title,description,count){return `<button type="button" class="cp-c3-card cp-c3-card-${kind}" data-c3-open="${kind}">${pattern(kind)}<span class="cp-c3-icon">${icon(kind)}</span><span class="cp-c3-copy"><h3>${title}</h3><p>${description}</p><span class="cp-c3-count"><b>${count}</b> COMPETITIONS</span></span><span class="cp-c3-scene">${scene(kind)}</span><span class="cp-c3-arrow">›</span></button>`}
+function sourceButton(hub,kind){
+  if(kind==='domestic')return hub.querySelector(':scope > .cp-domestic[data-cp-open="domestic"]');
+  if(kind==='international')return hub.querySelector(':scope > .cp-secondary-grid .cp-international[data-cp-open="international"]');
+  if(kind==='nations')return hub.querySelector(':scope > .cp-secondary-grid .cp-nations[data-cp-open="nations"]');
+  return null;
+}
 function apply(){
   document.querySelectorAll('.cp-hub').forEach(hub=>{
     const worldId=clean(hub.querySelector('.cp-world-mark span')?.textContent);
@@ -39,6 +45,18 @@ function apply(){
     hub.dataset.gw002BrandCVersion=VERSION;
   });
 }
+document.addEventListener('click',e=>{
+  const card=e.target.closest&&e.target.closest('.cp-c3-card[data-c3-open]');
+  if(!card)return;
+  const hub=card.closest('.cp-hub');
+  if(!hub)return;
+  const kind=clean(card.getAttribute('data-c3-open'));
+  const source=sourceButton(hub,kind);
+  if(!source)return;
+  e.preventDefault();
+  e.stopImmediatePropagation();
+  source.click();
+},true);
 const observer=new MutationObserver(apply);
 observer.observe(document.documentElement,{childList:true,subtree:true});
 document.addEventListener('DOMContentLoaded',apply);
