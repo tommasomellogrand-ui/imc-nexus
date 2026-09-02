@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_GW002_HUB)return;
-const VERSION="2.0.0";
+const VERSION="2.0.1";
 function clean(v){return String(v==null?"":v).trim()}
 function icon(kind){
   if(kind==='domestic')return `<svg viewBox="0 0 72 72" aria-hidden="true"><path d="M17 22h38v10c0 16-7 26-19 32C24 58 17 48 17 32V22Z"/><path d="M17 27H9c0 13 4 20 14 22M55 27h8c0 13-4 20-14 22"/><path d="M31 61h10v5H26v-5h5"/></svg>`;
@@ -24,6 +24,7 @@ function apply(){
   document.querySelectorAll('.cp-hub').forEach(hub=>{
     const worldId=clean(hub.querySelector('.cp-world-mark span')?.textContent);
     if(worldId!=='GW002')return;
+    if(hub.dataset.gw002BrandCVersion===VERSION&&hub.querySelector('.cp-c3-stack'))return;
     const domestic=countFrom(hub,'.cp-domestic .cp-count strong');
     const international=countFrom(hub,'.cp-international strong');
     const nations=countFrom(hub,'.cp-nations strong');
