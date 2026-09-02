@@ -1,9 +1,25 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_TAP)return;
-const VERSION="1.2.0";
+const VERSION="1.3.0";
 const cache=new Map();
 const clean=v=>String(v==null?"":v).trim();
+function loadGlobalBack(){
+  if(!document.querySelector('link[data-nexus-global-back-css]')){
+    const link=document.createElement('link');
+    link.rel='stylesheet';
+    link.href='v1/modules/global-back/global-back.css?v=1.0.0';
+    link.setAttribute('data-nexus-global-back-css','1');
+    document.head.appendChild(link);
+  }
+  if(!document.querySelector('script[data-nexus-global-back-js]')){
+    const script=document.createElement('script');
+    script.src='v1/modules/global-back/global-back.js?v=1.0.0';
+    script.defer=false;
+    script.setAttribute('data-nexus-global-back-js','1');
+    document.head.appendChild(script);
+  }
+}
 function loadGW002Visuals(){
   if(!document.querySelector('link[data-gw002-tiles-css]')){
     const link=document.createElement('link');
@@ -34,6 +50,7 @@ function loadGW002Visuals(){
     document.head.appendChild(script);
   }
 }
+loadGlobalBack();
 loadGW002Visuals();
 async function getCompetitions(worldId){
   if(cache.has(worldId))return cache.get(worldId);
