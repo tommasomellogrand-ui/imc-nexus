@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_GW002_BRAND_SYSTEM)return;
-const VERSION="1.0.0";
+const VERSION="1.0.1";
 const clean=v=>String(v==null?"":v).trim().toLowerCase();
 const classes=["nx-brand-domestic","nx-brand-international","nx-brand-nations"];
 function setBrand(node,type){
@@ -20,9 +20,11 @@ function menuBrand(menu){
   setBrand(menu,type);
 }
 function detailBrand(root){
-  const world=clean(root.querySelector(".cd-head span")?.textContent);
+  const head=root.querySelector(".cd-head");
+  const world=clean(head?.querySelector("span")?.textContent);
   if(world!=="gw002")return;
-  const subtitle=clean(root.querySelector(".cd-head small")?.textContent);
+  if(head)head.style.position="relative";
+  const subtitle=clean(head?.querySelector("small")?.textContent);
   let type="";
   if(subtitle.includes("domestic"))type="domestic";
   else if(subtitle.includes("international"))type="international";
