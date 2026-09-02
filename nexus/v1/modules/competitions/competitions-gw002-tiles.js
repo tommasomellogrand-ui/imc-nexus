@@ -1,8 +1,8 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_GW002_TILES)return;
-const VERSION="1.1.0";
-const NAVY="#082b63",GOLD="#d7ad48",SILVER="#b8c4d3";
+const VERSION="1.2.0";
+const NAVY="currentColor",GOLD="currentColor",SILVER="currentColor";
 function svgWrap(body){return `<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">${body}</svg>`}
 function leagueNumber(card){const name=(card.querySelector("h3")?.textContent||"").trim();const m=name.match(/\bDiv\s*(\d+)\b/i);return m?m[1]:"1"}
 function icon(kind,card){
