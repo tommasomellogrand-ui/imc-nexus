@@ -1,5 +1,5 @@
 .ch-home-tabs{margin-top:12px;padding:10px;border:1px solid #dbe4ee;border-radius:20px;background:linear-gradient(180deg,#fff,#f8fbfe);box-shadow:0 8px 22px rgba(8,43,99,.06),inset 0 1px 0 #fff}
-.ch-home-tabbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:4px;border:1px solid #e1e8f0;border-radius:14px;background:#f2f6fa}
+.ch-home-tabbar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;padding:4px;border:1px solid #e1e8f0;border-radius:14px;background:#f2f6fa}
 .ch-home-tabbar button{height:34px;border:0;border-radius:10px;background:transparent;color:#66768c;font-size:8px;font-weight:900;letter-spacing:1px}
 .ch-home-tabbar button[aria-selected="true"]{background:#082b63;color:#fff;box-shadow:0 4px 10px rgba(8,43,99,.18)}
 .ch-home-tab-panel{padding-top:10px}
@@ -43,3 +43,14 @@
 .ch-home-h2h-competition-stats{margin-top:7px}
 .ch-home-h2h-competition-stats strong{display:block;margin-top:3px;font-size:10px;line-height:1;font-weight:900;color:#0b2b68}
 @media(max-width:390px){.ch-home-tabbar button{font-size:7px;letter-spacing:.65px}}
+.ch-home-performance-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.ch-home-performance-card{min-width:0;padding:10px;border:1px solid #dfe7f0;border-radius:15px;background:linear-gradient(180deg,#fff,#f7faff)}
+.ch-home-performance-card header{display:flex;align-items:center;justify-content:space-between;gap:6px;padding-bottom:8px;border-bottom:1px solid #e5ebf2}
+.ch-home-performance-card header span{font-size:7px;font-weight:900;letter-spacing:.55px;color:#082b63}
+.ch-home-performance-card header b{font-size:5.5px;font-weight:900;letter-spacing:.65px;color:#9a772b}
+.ch-home-performance-card>div{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);align-items:center;padding-top:10px}
+.ch-home-performance-card section{text-align:center}
+.ch-home-performance-card section small{display:block;font-size:5.8px;font-weight:900;letter-spacing:.6px;color:#758399}
+.ch-home-performance-card section strong{display:block;margin-top:5px;font-size:16px;line-height:1;font-weight:950;color:#0b2b68}
+.ch-home-performance-card>div>i{text-align:center;font-size:6px;font-style:normal;font-weight:900;color:#b7c1ce}
+@media(max-width:390px){.ch-home-tabbar button{font-size:6.2px;letter-spacing:.3px}.ch-home-performance-grid{gap:5px}.ch-home-performance-card{padding:9px 7px}.ch-home-performance-card section strong{font-size:14px}}

@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_HOME_TABS)return;
-const VERSION="1.2.0";
+const VERSION="1.3.0";
 const mod=window.IMC_CLUBHOUSE;
 if(!mod){window.IMC_CLUBHOUSE_HOME_TABS={version:VERSION};return}
 let state={container:null,client:null,managerId:"",seq:0,season:null,availableSeasons:[]};
@@ -19,7 +19,7 @@ function ensureTabs(){
   box=document.createElement("section");
   box.className="ch-home-tabs";
   box.setAttribute("data-ch-home-tabs","");
-  box.innerHTML='<div class="ch-home-tabbar" role="tablist" aria-label="Nexus Home data"><button type="button" role="tab" aria-selected="true" data-ch-home-tab="overview">OVERVIEW</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="competitions">COMPETITIONS</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="h2h">H2H</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="schedule">SCHEDULE</button></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="overview"><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-overview-grid" data-ch-home-overview><div class="ch-home-overview-state">Caricamento Overview…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="competitions" hidden><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-competitions-grid" data-ch-home-competitions><div class="ch-home-overview-state">Caricamento Competitions…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="h2h" hidden><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-h2h-list" data-ch-home-h2h><div class="ch-home-overview-state">Caricamento H2H…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="schedule" hidden><div data-ch-home-schedule-host></div></div>';
+  box.innerHTML='<div class="ch-home-tabbar" role="tablist" aria-label="Nexus Home data"><button type="button" role="tab" aria-selected="true" data-ch-home-tab="overview">OVERVIEW</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="competitions">COMPETITIONS</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="h2h">H2H</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="performance">PERFORMANCE</button><button type="button" role="tab" aria-selected="false" data-ch-home-tab="schedule">SCHEDULE</button></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="overview"><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-overview-grid" data-ch-home-overview><div class="ch-home-overview-state">Caricamento Overview…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="competitions" hidden><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-competitions-grid" data-ch-home-competitions><div class="ch-home-overview-state">Caricamento Competitions…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="h2h" hidden><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-h2h-list" data-ch-home-h2h><div class="ch-home-overview-state">Caricamento H2H…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="performance" hidden><div class="ch-home-season-tabs" data-ch-home-seasons></div><div class="ch-home-performance-grid" data-ch-home-performance><div class="ch-home-overview-state">Caricamento Performance…</div></div></div><div class="ch-home-tab-panel" role="tabpanel" data-ch-home-panel="schedule" hidden><div data-ch-home-schedule-host></div></div>';
   if(preview)preview.insertAdjacentElement("afterend",box);
   else canvas.appendChild(box);
   const scheduleHost=box.querySelector("[data-ch-home-schedule-host]");
@@ -131,6 +131,45 @@ async function loadH2H(){
     host.innerHTML='<div class="ch-home-overview-state">'+e(err.message||"H2H non disponibile")+'</div>';
   }
 }
+function performanceValue(value,suffix){
+  const number=Number(value);
+  if(!Number.isFinite(number))return "—";
+  const text=number.toLocaleString("it-IT",{minimumFractionDigits:0,maximumFractionDigits:2});
+  return text+(suffix||"");
+}
+function performanceCard(label,mode,forValue,againstValue,suffix){
+  return '<article class="ch-home-performance-card"><header><span>'+e(label)+'</span><b>'+e(mode)+'</b></header><div><section><small>TU</small><strong>'+e(performanceValue(forValue,suffix))+'</strong></section><i>VS</i><section><small>AVV</small><strong>'+e(performanceValue(againstValue,suffix))+'</strong></section></div></article>';
+}
+function paintPerformance(payload){
+  const box=ensureTabs(),host=box&&box.querySelector("[data-ch-home-performance]");
+  if(!host)return;
+  state.availableSeasons=Array.isArray(payload.availableSeasons)?payload.availableSeasons:[];
+  seasonButtons();
+  const averages=payload.averages||{},totals=payload.totals||{};
+  host.innerHTML=[
+    performanceCard("POSSESSO","MEDIA",averages.possessionFor,averages.possessionAgainst,"%"),
+    performanceCard("TIRI","MEDIA",averages.shotsFor,averages.shotsAgainst,""),
+    performanceCard("TIRI IN PORTA","MEDIA",averages.shotsOnTargetFor,averages.shotsOnTargetAgainst,""),
+    performanceCard("CORNER","MEDIA",averages.cornersFor,averages.cornersAgainst,""),
+    performanceCard("GIALLI","TOTALI",totals.yellowCardsFor,totals.yellowCardsAgainst,""),
+    performanceCard("ROSSI","TOTALI",totals.redCardsFor,totals.redCardsAgainst,"")
+  ].join("");
+}
+async function loadPerformance(){
+  const seq=++state.seq,box=ensureTabs(),host=box&&box.querySelector("[data-ch-home-performance]");
+  if(!host||!state.client||!state.managerId)return;
+  host.innerHTML='<div class="ch-home-overview-state">Caricamento Performance…</div>';
+  try{
+    const args={managerId:state.managerId};
+    if(state.season!=null)args.season=state.season;
+    const payload=await rpc("manager_home_performance",args);
+    if(seq!==state.seq)return;
+    paintPerformance(payload);
+  }catch(err){
+    if(seq!==state.seq)return;
+    host.innerHTML='<div class="ch-home-overview-state">'+e(err.message||"Performance non disponibile")+'</div>';
+  }
+}
 function activeTab(){
   const box=ensureTabs(),selected=box&&box.querySelector('[data-ch-home-tab][aria-selected="true"]');
   return c(selected&&selected.getAttribute("data-ch-home-tab"))||"overview";
@@ -147,6 +186,7 @@ function selectTab(name){
   });
   if(name==="competitions")loadCompetitions();
   else if(name==="h2h")loadH2H();
+  else if(name==="performance")loadPerformance();
   else if(name==="overview")loadOverview();
 }
 function attach(o){
@@ -169,6 +209,7 @@ document.addEventListener("click",event=>{
     const tabName=activeTab();
     if(tabName==="competitions")loadCompetitions();
     else if(tabName==="h2h")loadH2H();
+    else if(tabName==="performance")loadPerformance();
     else loadOverview();
   }
 });
