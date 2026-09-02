@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_COMPETITIONS_TAP)return;
-const VERSION="1.5.0";
+const VERSION="1.6.0";
 const cache=new Map();
 const clean=v=>String(v==null?"":v).trim();
 function loadGlobalBack(){
@@ -38,13 +38,13 @@ function loadGW002Visuals(){
   if(!document.querySelector('link[data-gw002-hub-css]')){
     const link=document.createElement('link');
     link.rel='stylesheet';
-    link.href='v1/modules/competitions/competitions-gw002-hub.css?v=2.0.0';
+    link.href='v1/modules/competitions/competitions-gw002-hub.css?v=2.1.0';
     link.setAttribute('data-gw002-hub-css','1');
     document.head.appendChild(link);
   }
   if(!document.querySelector('script[data-gw002-hub-js]')){
     const script=document.createElement('script');
-    script.src='v1/modules/competitions/competitions-gw002-hub.js?v=2.0.2';
+    script.src='v1/modules/competitions/competitions-gw002-hub.js?v=2.1.0';
     script.async=false;
     script.setAttribute('data-gw002-hub-js','1');
     document.body.appendChild(script);
