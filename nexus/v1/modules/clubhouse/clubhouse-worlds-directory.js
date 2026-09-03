@@ -1,11 +1,13 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_WORLDS_DIRECTORY)return;
-const VERSION="1.0.0";
+const VERSION="2.0.0";
 const WORLDS=[["GW001","Road To History"],["GW002","Gold 558"],["GW003","Gold 557"],["GW004","World League"],["GW005","Hall Of Famers"],["GW006","Master League World"],["GW007","The Four Kingdoms"],["GW008","Gold 1"],["GW009","Kick Off"]];
-let loading=false,loaded=false;
+let loading=false,loaded=false,selectedWorld="",touchStartX=null,scheduled=false;
+const managersByWorld=new Map();
 const clean=v=>String(v==null?"":v).trim();
 const esc=v=>clean(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const worldIndex=id=>WORLDS.findIndex(([worldId])=>worldId===id);
 
 function shell(){
   const panel=document.querySelector(".clubhouse [data-ch-feed-panel]");
@@ -16,9 +18,9 @@ function shell(){
   section.className="ch-worlds-directory";
   section.setAttribute("data-ch-worlds-directory","");
   section.setAttribute("data-version",VERSION);
-  section.innerHTML=`<header class="ch-worlds-directory-head"><span>IMC COMMUNITY</span><h2>OUR GAME WORLDS</h2><p>I 9 mondi di gioco della community e i manager IMC che vi partecipano.</p></header><div class="ch-worlds-directory-list">${WORLDS.map(([id,name])=>`<article class="ch-world-directory-card" data-world-card="${id}"><button type="button" class="ch-world-directory-toggle" data-world-toggle="${id}" aria-expanded="false"><span><small>${id}</small><strong>${esc(name)}</strong></span><b data-world-count>—</b><i>⌄</i></button><div class="ch-world-directory-body" data-world-body hidden><div class="ch-world-directory-loading">Caricamento manager…</div></div></article>`).join("")}</div>`;
+  section.innerHTML=`<div data-worlds-overview><header class="ch-worlds-directory-head"><span>IMC COMMUNITY</span><h2>OUR GAME WORLDS</h2><p>I 9 mondi di gioco della community IMC.</p></header><div class="ch-worlds-overview-grid">${WORLDS.map(([id,name])=>`<button type="button" class="ch-world-overview-tile" data-world-open="${id}"><small>${id}</small><strong>${esc(name)}</strong><span data-world-count="${id}">—</span></button>`).join("")}</div></div><div class="ch-world-view" data-world-view hidden><nav class="ch-world-view-nav"><button type="button" data-world-prev aria-label="Game World precedente">‹</button><button type="button" data-world-all>ALL WORLDS</button><button type="button" data-world-next aria-label="Game World successivo">›</button></nav><header class="ch-world-view-hero" data-world-swipe><small data-world-view-id>GW001</small><h2 data-world-view-name>Road To History</h2><span data-world-view-count>—</span></header><section class="ch-world-view-managers"><div class="ch-world-view-managers-head"><span>IMC MANAGERS</span><b data-world-view-manager-count>—</b></div><div data-world-view-manager-list><div class="ch-world-directory-loading">Caricamento manager…</div></div></section></div>`;
   const head=panel.querySelector(".ch-feed-head");
-  if(head)head.insertAdjacentElement("afterend",section);else panel.prepend(section);
+  if(head)head.insertAdjacentElement("beforebegin",section);else panel.prepend(section);
   return section;
 }
 
@@ -34,13 +36,66 @@ function activeManagers(rows){
   return managers.sort((a,b)=>a.name.localeCompare(b.name,"it",{sensitivity:"base"}));
 }
 
-function renderWorld(section,id,managers,error){
-  const card=section.querySelector(`[data-world-card="${id}"]`);
-  if(!card)return;
-  const count=card.querySelector("[data-world-count]"),body=card.querySelector("[data-world-body]");
-  if(error){count.textContent="—";body.innerHTML='<div class="ch-world-directory-empty">Dati non disponibili.</div>';return}
-  count.textContent=`${managers.length} ${managers.length===1?"MANAGER":"MANAGER"}`;
-  body.innerHTML=managers.length?`<div class="ch-world-manager-list">${managers.map(manager=>`<div class="ch-world-manager-row"><span><strong>${esc(manager.name)}</strong><small>${esc(manager.id)}</small></span><b>${esc(manager.teams.join(" · "))}</b></div>`).join("")}</div>`:'<div class="ch-world-directory-empty">Nessun manager IMC attualmente assegnato.</div>';
+function countLabel(count){return `${count} MANAGER IMC`}
+function updateCounts(section){
+  for(const [id] of WORLDS){
+    const node=section.querySelector(`[data-world-count="${id}"]`),data=managersByWorld.get(id);
+    if(node)node.textContent=data&&data.error?"—":data?countLabel(data.managers.length):"—";
+  }
+}
+
+function managerRows(data){
+  if(!data||data.error)return '<div class="ch-world-directory-empty">Dati non disponibili.</div>';
+  if(!data.managers.length)return '<div class="ch-world-directory-empty">Nessun manager IMC attualmente assegnato.</div>';
+  return `<div class="ch-world-manager-list">${data.managers.map(manager=>`<div class="ch-world-manager-row"><span><strong>${esc(manager.name)}</strong><small>${esc(manager.id)}</small></span><b>${esc(manager.teams.join(" · "))}</b></div>`).join("")}</div>`;
+}
+
+function feedWorld(card){return clean(card.getAttribute("data-game-world")).toUpperCase()}
+function applyFeedView(){
+  const root=document.querySelector(".clubhouse"),list=root&&root.querySelector("[data-ch-feed-list]");
+  if(!root||!list)return;
+  const cards=[...list.querySelectorAll(".ch-feed-card[data-fixture-id]")];
+  let visible=0;
+  for(const card of cards){const show=!selectedWorld||feedWorld(card)===selectedWorld;card.hidden=!show;if(show)visible++}
+  let empty=list.querySelector("[data-world-view-empty]");
+  if(selectedWorld&&cards.length&&visible===0){
+    if(!empty){empty=document.createElement("div");empty.className="ch-feed-empty";empty.setAttribute("data-world-view-empty","");list.prepend(empty)}
+    empty.textContent=`Nessuna news disponibile per ${selectedWorld}.`;empty.hidden=false;
+  }else if(empty)empty.hidden=true;
+  const title=root.querySelector(".ch-feed-head h2 b"),subtitle=root.querySelector(".ch-feed-head small");
+  if(title)title.textContent=selectedWorld||"ALL WORLDS";
+  if(subtitle)subtitle.textContent=selectedWorld?`Le notizie di ${selectedWorld}`:"Le notizie di tutti i Game World IMC";
+}
+
+function showOverview(){
+  selectedWorld="";
+  const section=shell();if(!section)return;
+  section.querySelector("[data-worlds-overview]").hidden=false;
+  section.querySelector("[data-world-view]").hidden=true;
+  applyFeedView();
+  section.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function showWorld(id,scroll=true){
+  if(worldIndex(id)<0)return;
+  selectedWorld=id;
+  const section=shell(),world=WORLDS[worldIndex(id)],data=managersByWorld.get(id);
+  if(!section)return;
+  section.querySelector("[data-worlds-overview]").hidden=true;
+  section.querySelector("[data-world-view]").hidden=false;
+  section.querySelector("[data-world-view-id]").textContent=world[0];
+  section.querySelector("[data-world-view-name]").textContent=world[1];
+  section.querySelector("[data-world-view-count]").textContent=data&&!data.error?countLabel(data.managers.length):"—";
+  section.querySelector("[data-world-view-manager-count]").textContent=data&&!data.error?String(data.managers.length):"—";
+  section.querySelector("[data-world-view-manager-list]").innerHTML=managerRows(data);
+  applyFeedView();
+  if(scroll)section.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function move(step){
+  if(!selectedWorld)return;
+  const index=worldIndex(selectedWorld),next=(index+step+WORLDS.length)%WORLDS.length;
+  showWorld(WORLDS[next][0],false);
 }
 
 async function load(){
@@ -52,24 +107,26 @@ async function load(){
     const results=await Promise.allSettled(WORLDS.map(([id])=>client.rpc("imc_nexus_gateway",{p_action:"managers",p_args:{gameWorld:id}})));
     results.forEach((result,index)=>{
       const id=WORLDS[index][0];
-      if(result.status!=="fulfilled"||result.value.error){renderWorld(section,id,[],true);return}
-      renderWorld(section,id,activeManagers(result.value.data&&result.value.data.rows),false);
+      if(result.status!=="fulfilled"||result.value.error){managersByWorld.set(id,{error:true,managers:[]});return}
+      managersByWorld.set(id,{error:false,managers:activeManagers(result.value.data&&result.value.data.rows)});
     });
-    loaded=true;
+    loaded=true;updateCounts(section);if(selectedWorld)showWorld(selectedWorld,false);
   }finally{loading=false}
 }
 
-function ensure(){shell();load()}
+function ensure(){
+  if(scheduled)return;scheduled=true;
+  requestAnimationFrame(()=>{scheduled=false;shell();load();applyFeedView()});
+}
 document.addEventListener("click",event=>{
-  const button=event.target.closest&&event.target.closest("[data-world-toggle]");
-  if(!button)return;
-  const card=button.closest("[data-world-card]"),body=card&&card.querySelector("[data-world-body]");
-  if(!body)return;
-  const open=body.hidden;
-  body.hidden=!open;
-  button.setAttribute("aria-expanded",String(open));
-  card.classList.toggle("open",open);
+  const open=event.target.closest&&event.target.closest("[data-world-open]");
+  if(open){showWorld(clean(open.getAttribute("data-world-open")).toUpperCase());return}
+  if(event.target.closest&&event.target.closest("[data-world-all]")){showOverview();return}
+  if(event.target.closest&&event.target.closest("[data-world-prev]")){move(-1);return}
+  if(event.target.closest&&event.target.closest("[data-world-next]")){move(1)}
 });
+document.addEventListener("touchstart",event=>{if(event.target.closest&&event.target.closest("[data-world-swipe]"))touchStartX=event.changedTouches[0].clientX},{passive:true});
+document.addEventListener("touchend",event=>{if(touchStartX==null||!(event.target.closest&&event.target.closest("[data-world-swipe]")))return;const delta=event.changedTouches[0].clientX-touchStartX;touchStartX=null;if(Math.abs(delta)>45)move(delta<0?1:-1)},{passive:true});
 new MutationObserver(ensure).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:["class"]});
-window.IMC_CLUBHOUSE_WORLDS_DIRECTORY={version:VERSION,load};
+window.IMC_CLUBHOUSE_WORLDS_DIRECTORY={version:VERSION,load,showOverview,showWorld};
 })();
