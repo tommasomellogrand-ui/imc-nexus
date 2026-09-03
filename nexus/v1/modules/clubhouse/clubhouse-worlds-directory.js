@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 if(window.IMC_CLUBHOUSE_WORLDS_DIRECTORY)return;
-const VERSION="2.0.0";
+const VERSION="2.1.0";
 const WORLDS=[["GW001","Road To History"],["GW002","Gold 558"],["GW003","Gold 557"],["GW004","World League"],["GW005","Hall Of Famers"],["GW006","Master League World"],["GW007","The Four Kingdoms"],["GW008","Gold 1"],["GW009","Kick Off"]];
 let loading=false,loaded=false,selectedWorld="",touchStartX=null,scheduled=false;
 const managersByWorld=new Map();
@@ -56,15 +56,19 @@ function applyFeedView(){
   if(!root||!list)return;
   const cards=[...list.querySelectorAll(".ch-feed-card[data-fixture-id]")];
   let visible=0;
-  for(const card of cards){const show=!selectedWorld||feedWorld(card)===selectedWorld;card.hidden=!show;if(show)visible++}
+  for(const card of cards){
+    const show=selectedWorld?feedWorld(card)===selectedWorld:visible<10;
+    card.hidden=!show;
+    if(show)visible++;
+  }
   let empty=list.querySelector("[data-world-view-empty]");
   if(selectedWorld&&cards.length&&visible===0){
     if(!empty){empty=document.createElement("div");empty.className="ch-feed-empty";empty.setAttribute("data-world-view-empty","");list.prepend(empty)}
     empty.textContent=`Nessuna news disponibile per ${selectedWorld}.`;empty.hidden=false;
   }else if(empty)empty.hidden=true;
-  const title=root.querySelector(".ch-feed-head h2 b"),subtitle=root.querySelector(".ch-feed-head small");
-  if(title)title.textContent=selectedWorld||"ALL WORLDS";
-  if(subtitle)subtitle.textContent=selectedWorld?`Le notizie di ${selectedWorld}`:"Le notizie di tutti i Game World IMC";
+  const title=root.querySelector(".ch-feed-head h2"),subtitle=root.querySelector(".ch-feed-head small");
+  if(title)title.innerHTML=selectedWorld?`FEED <b>${esc(selectedWorld)}</b>`:"LAST TEN NEWS <b>FROM THE FEED</b>";
+  if(subtitle)subtitle.textContent=selectedWorld?`Tutte le notizie di ${selectedWorld}`:"Le 10 notizie più recenti da tutti i Game World IMC";
 }
 
 function showOverview(){
