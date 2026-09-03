@@ -1,0 +1,59 @@
+name: Aruba FTPS Probe
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/aruba-ftps-probe.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe Aruba FTPS only
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
+            test -n "${!name:-}"
+          done
+          python3 - <<'PY'
+          import os, socket, ssl, time
+          from ftplib import FTP_TLS
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','').rstrip('/')
+          user=os.environ['ARUBA_FTP_USERNAME']
+          password=os.environ['ARUBA_FTP_PASSWORD']
+          addresses=[]
+          for item in socket.getaddrinfo(host,21,socket.AF_INET,socket.SOCK_STREAM):
+              ip=item[4][0]
+              if ip not in addresses: addresses.append(ip)
+          if not addresses:
+              raise SystemExit('FTPS_PROBE_FAIL|dns')
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          last=None
+          for attempt in range(3):
+              for ip in addresses:
+                  ftp=FTP_TLS(context=ctx)
+                  try:
+                      ftp.connect(ip,21,timeout=30)
+                      ftp.login(user,password)
+                      ftp.prot_p()
+                      pwd=ftp.pwd()
+                      ftp.quit()
+                      print('FTPS_PROBE_OK|root='+pwd)
+                      raise SystemExit(0)
+                  except Exception as exc:
+                      last=type(exc).__name__
+                      try: ftp.close()
+                      except Exception: pass
+              time.sleep(4)
+          raise SystemExit('FTPS_PROBE_FAIL|'+str(last))
+          PY
