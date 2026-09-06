@@ -34,9 +34,9 @@ jobs:
           for name in ARUBA_FTP_HOST ARUBA_FTP_USERNAME ARUBA_FTP_PASSWORD ARUBA_FTP_REMOTE_DIR; do
             if [ -z "${!name:-}" ]; then echo "Missing required secret: $name"; exit 1; fi
           done
-          test -s live-match/md16/index.html
-          grep -Fq 'ROAD TO HISTORY' live-match/md16/index.html
-          grep -Fq 'MATCHDAY 16' live-match/md16/index.html
+          test -s live-match/md17/index.html
+          grep -Fq 'ROAD TO HISTORY' live-match/md17/index.html
+          grep -Fq 'MATCHDAY 17' live-match/md17/index.html
 
       - name: Deploy Live Match with verified FTPS
         env:
@@ -79,8 +79,8 @@ jobs:
       - name: Public smoke test
         run: |
           set -euo pipefail
-          URL="https://www.italianmastersclub.it/live-match/md16/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
+          URL="https://www.italianmastersclub.it/live-match/md17/index.html?deploy_verify=${GITHUB_SHA}-$(date +%s)"
           curl -fsSL --connect-timeout 15 --max-time 30 -H 'Cache-Control: no-cache, no-store, must-revalidate' -H 'Pragma: no-cache' "$URL" -o /tmp/live-match-public.html
           grep -Fq 'ROAD TO HISTORY' /tmp/live-match-public.html
-          grep -Fq 'MATCHDAY 16' /tmp/live-match-public.html
-          echo 'LIVE_MATCH_MD16_PUBLIC_SMOKE=YES'
+          grep -Fq 'MATCHDAY 17' /tmp/live-match-public.html
+          echo 'LIVE_MATCH_MD17_PUBLIC_SMOKE=YES'
