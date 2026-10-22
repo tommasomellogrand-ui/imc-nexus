@@ -1,0 +1,46 @@
+name: Inspect All To Play For production
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/inspect-alltoplayfor.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read production files over FTPS
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os, ssl, json
+          from ftplib import FTP_TLS
+          from pathlib import Path
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context(); ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx); ftp.connect(host,21,timeout=30)
+          ftp.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']); ftp.prot_p()
+          ftp.cwd(root+'/alltoplayfor')
+          names=ftp.nlst()
+          Path('snapshot').mkdir()
+          for name in ['index.html','programme-tabs.js','programme-tabs.css','coffee.js','coffee.css','style.css']:
+              if name not in names: raise SystemExit('Required production file missing: '+name)
+              with open('snapshot/'+name,'wb') as out: ftp.retrbinary('RETR '+name,out.write)
+          ftp.cwd('assets')
+          Path('snapshot/assets-list.json').write_text(json.dumps(ftp.nlst()))
+          ftp.quit()
+          print('Production files recovered without modifying hosting.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: alltoplayfor-production
+          path: snapshot/
+          retention-days: 3
