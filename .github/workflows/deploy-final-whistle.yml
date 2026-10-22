@@ -1,0 +1,61 @@
+name: Deploy Final Whistle only to Aruba
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['finalwhistle-release/**', '.github/workflows/deploy-final-whistle.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Final Whistle
+        run: |
+          node --check finalwhistle-release/final-whistle.js
+          node --test finalwhistle-release/tests/core.cjs
+          python3 -m py_compile finalwhistle-release/deploy.py
+      - name: Scoped FTPS deploy with baseline guard and read-back
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 finalwhistle-release/deploy.py
+      - name: Verify public files bypassing cache
+        run: |
+          python3 - <<'PY'
+          import os,urllib.request
+          from pathlib import Path
+          root=Path('finalwhistle-release')
+          for name in ['index.html','final-whistle.js','final-whistle.css']:
+              url='https://www.italianmastersclub.it/nexus/alltoplayfor/'+name+'?verify='+os.environ['GITHUB_SHA']
+              if urllib.request.urlopen(url,timeout=30).read()!=(root/name).read_bytes():raise SystemExit('Public mismatch: '+name)
+          for name in ['postmatch.js','programme-tabs.js']:
+              url='https://www.italianmastersclub.it/nexus/alltoplayfor/'+name+'?verify='+os.environ['GITHUB_SHA']
+              if urllib.request.urlopen(url,timeout=30).read()!=(root/'baseline'/name).read_bytes():raise SystemExit('Existing programme changed: '+name)
+          print('Public files match deployment. Existing Final Whistle archive and programme navigation unchanged.')
+          PY
+  mobile:
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare WebKit
+        run: |
+          npm install --prefix /tmp/daytime-qa playwright@1.56.1 --fetch-timeout=60000 --fetch-retries=2
+          /tmp/daytime-qa/node_modules/.bin/playwright install --with-deps webkit
+      - name: Verify actual public page on iPhone WebKit
+        run: node finalwhistle-release/verify-live.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-whistle-live-iphone
+          path: /tmp/fw-live-iphone.png
+          retention-days: 7
