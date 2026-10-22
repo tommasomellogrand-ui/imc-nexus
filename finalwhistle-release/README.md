@@ -51,3 +51,12 @@ prepared on its own feature branch, awaiting the explicit publication instructio
 required by the project rules. Compare baseline against current production before
 publishing. Upload final-whistle.js/css, then replace index.html last. Never use
 the old full Nexus deployment workflow. Recheck public bytes and mobile behavior.
+
+Preview verification completed successfully in GitHub Actions run 39803988329:
+20 fixtures, four clickable divisions, pending/result/report/correction transitions,
+automatic refresh callback, both reporters per tested fixture, existing programmes,
+date isolation and WebKit iPhone at 390/375 pixels, with no JavaScript errors.
+The iPhone screenshot was also inspected visually: centered presenter portrait,
+legible cards, blue/gold styling and no horizontal overlap.
+`deploy.py` is prepared for an explicitly authorized scoped FTPS deployment,
+with baseline guards, verified backup and index rollback. It has not been run.

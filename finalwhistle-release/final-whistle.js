@@ -13,8 +13,9 @@
     const mr = report?.ok && validRow(report.row, fixture, date) ? report.row : null;
     const complete = r => r && number(r.home_score) !== null && number(r.away_score) !== null && number(r.home_score) >= 0 && number(r.away_score) >= 0;
     const row = complete(mr) ? mr : complete(result) ? result : null;
-    const stats = mr ? parse(mr.team_stats_json, {}) : {};
-    const players = mr ? parse(mr.players_json, []) : [];
+    const rawStats = mr && row === mr ? parse(mr.team_stats_json, {}) : {};
+    const stats = rawStats && typeof rawStats === 'object' && !Array.isArray(rawStats) ? rawStats : {};
+    const players = mr && row === mr ? parse(mr.players_json, []) : [];
     return { fixture, row, report: !!(mr && row === mr), stats, players: Array.isArray(players) ? players : [],
       goals: Array.isArray(stats.scorers) ? stats.scorers : [],
       conflict: !!(complete(mr) && complete(result) && (Number(mr.home_score) !== Number(result.home_score) || Number(mr.away_score) !== Number(result.away_score))) };
@@ -118,7 +119,7 @@
   async function json(url, signal) {
     const response=await fetch(url+(url.includes('?')?'&':'?')+'_fw='+Date.now(),{cache:'no-store',signal});
     if(response.status===404) return null;
-    if(!response.ok) throw Error('Fonte non disponibile'); return response.json();
+    if(!response.ok) throw Error('Fonte non disponibile'); const data=await response.json(); if(data?.ok===false) throw Error('Fonte non disponibile'); return data;
   }
   async function pool(items, fn) {const out=new Array(items.length);let cursor=0;await Promise.all(Array.from({length:Math.min(4,items.length)},async()=>{while(cursor<items.length){const i=cursor++;out[i]=await fn(items[i]);}}));return out;}
   async function load(reset=true) {
@@ -137,7 +138,8 @@
         const r=await Promise.allSettled([json(`/nexus/teams/matches.php?world=GW001&sm_club=${f.home_table.id}`,signal),json(`/nexus/competitions/match-report.php?world=GW001&fixture=${f.id}`,signal)]);
         const m=buildMatch(f,date,r[0].status==='fulfilled'?r[0].value:null,r[1].status==='fulfilled'?r[1].value:null);m.error=r.some(x=>x.status==='rejected');return m;
       });
-      if(token!==generation || date!==dateInput.value || signal.aborted) return;
+      if(token!==generation || date!==dateInput.value) return;
+      if(signal.aborted) throw Error('Verifica scaduta');
       state={coffee,matches,errors:matches.some(m=>m.error),checked:new Intl.DateTimeFormat('it-IT',{timeZone:'Europe/Rome',hour:'2-digit',minute:'2-digit'}).format(new Date())};
       const signature=JSON.stringify([coffee,matches]);
       if(signature!==lastSignature){lastSignature=signature;render();}
