@@ -1,0 +1,32 @@
+name: Verify public Final Whistle mobile
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verify-final-whistle-live.yml']
+permissions:
+  contents: read
+jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare browser test using installed Chrome
+        run: |
+          command -v google-chrome
+          npm install --prefix /tmp/daytime-qa playwright@1.56.1 --fetch-timeout=30000 --fetch-retries=1
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('finalwhistle-release/verify-live.cjs').read_text()
+          s=s.replace('{webkit,devices}','{chromium:webkit,devices}').replace('await webkit.launch()', "await webkit.launch({executablePath:process.env.CHROME_BIN})")
+          Path('/tmp/fw-live-chrome.cjs').write_text(s)
+          PY
+      - name: Verify live content and mobile navigation
+        run: CHROME_BIN="$(command -v google-chrome)" node /tmp/fw-live-chrome.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-whistle-live-mobile
+          path: /tmp/fw-live-iphone.png
+          retention-days: 7
