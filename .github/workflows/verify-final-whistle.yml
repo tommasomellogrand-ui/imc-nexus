@@ -1,0 +1,30 @@
+name: Verify Final Whistle preview (no deploy)
+on:
+  workflow_dispatch:
+  push:
+    branches: ['final-whistle-coffee-auto-20261022']
+    paths: ['finalwhistle-release/**', '.github/workflows/verify-final-whistle.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Core tests
+        run: node --test finalwhistle-release/tests/core.cjs
+      - name: Prepare WebKit and read-only source snapshots
+        run: |
+          npm install --prefix /tmp/daytime-qa playwright@1.56.1
+          /tmp/daytime-qa/node_modules/.bin/playwright install --with-deps webkit
+          curl --fail --max-time 60 'https://www.italianmastersclub.it/nexus/alltoplayfor/2026-10-22-coffee.json' -o /tmp/fw-coffee.json
+          curl --fail --max-time 60 'https://www.italianmastersclub.it/nexus/alltoplayfor/2026-10-20-postmatch.json' -o /tmp/fw-data.json
+          curl --fail --max-time 60 'https://www.italianmastersclub.it/nexus/alltoplayfor/portraits.json' -o /tmp/fw-portraits.json
+      - name: Verify proposed edition on iPhone WebKit
+        run: node finalwhistle-release/tests/browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-whistle-iphone-preview
+          path: /tmp/fw-preview-iphone.png
+          retention-days: 7
