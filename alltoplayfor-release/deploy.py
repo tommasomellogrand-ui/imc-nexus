@@ -12,7 +12,7 @@ ftp=FTP_TLS(context=ctx);ftp.connect(host,21,timeout=30)
 ftp.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);ftp.prot_p();ftp.cwd(remote)
 def read(name):
     b=io.BytesIO();ftp.retrbinary('RETR '+name,b.write);return b.getvalue()
-for name in ['index.html','programme-tabs.js','coffee.js','coffee.css','programme-tabs.css','style.css']:
+for name in ['index.html','programme-tabs.js','coffee.js','coffee.css','programme-tabs.css','style.css','daytime.js','daytime.css']:
     if read(name)!=(ROOT/'baseline'/name).read_bytes():raise SystemExit('Production changed; deploy stopped before writing: '+name)
 files=['daytime.css','daytime.js']+['assets/'+p.name for p in sorted((ROOT/'assets').glob('daytime-*.jpg'))]
 # Refuse to overwrite a new file created by someone else since inspection.
@@ -21,7 +21,7 @@ for directory in ['', 'assets']:
     existing={Path(n).name for n in names}
     for name in files:
         if str(Path(name).parent) != (directory or '.'):continue
-        if Path(name).name in existing and read(name)!=(ROOT/name).read_bytes():raise SystemExit('Unexpected existing file: '+name)
+        if Path(name).name in existing and read(name)!=((ROOT/'baseline'/name).read_bytes() if (ROOT/'baseline'/name).exists() else (ROOT/name).read_bytes()):raise SystemExit('Unexpected existing file: '+name)
 for name in files:
     data=(ROOT/name).read_bytes()
     ftp.storbinary('STOR '+name,io.BytesIO(data))

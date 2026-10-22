@@ -9,7 +9,7 @@ Verified portrait sources:
 - Sara Benci: https://edizioni.socialfootballsummit.com/speakers/sara-benci/
 - Luca Marchegiani: https://overtimefestival.it/luca-marchegiani/
 - Angelo Mangiante: https://sport.sky.it/autore/angelo-mangiante
-- Faina: https://www.zooartagency.com/portfolio_page/damiano-er-faina/
+- Valerio “Fayna” Spinella: https://sport.sky.it/autore/valerio-spinella
 
 The existing single fiction disclosure above the programmes also covers DAYTIME.
 No results, fixtures or transfers are added in this introductory release.
