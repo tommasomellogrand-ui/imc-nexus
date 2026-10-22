@@ -1,0 +1,2116 @@
+{
+  "date": "2026-10-22",
+  "world": "GW001",
+  "day": 8,
+  "season": 2,
+  "checked_at": "2026-10-22T07:22:53.077Z",
+  "source": "https://www.italianmastersclub.it/nexus/matchday/data.php?world=GW001&season=2&day=8",
+  "title": "Dalla coppa al campionato: ritrovare il ritmo",
+  "portraits": [
+    {
+      "name": "Federica Zille",
+      "image": "assets/coffee-zille.webp",
+      "source": "https://overtimefestival.it/federica-zille/"
+    },
+    {
+      "name": "Andrea Stramaccioni",
+      "image": "assets/coffee-stramaccioni.webp",
+      "source": "https://www.fcinternews.it/copertina/stramaccioni-allo-stadium-la-vittoria-dell-interismo-ecco-perche-dopo-il-derby-dissi-e-vostro-alla-curva-nord-337458"
+    },
+    {
+      "name": "Alessandro Florenzi",
+      "image": "assets/coffee-florenzi.webp",
+      "source": "https://sport.sky.it/calcio/serie-a/2025/08/27/alessandro-florenzi-ritiro-calcio-video"
+    }
+  ],
+  "cast": [
+    [
+      "Federica Zille",
+      "Conduzione"
+    ],
+    [
+      "Andrea Stramaccioni",
+      "Analisi tattica"
+    ],
+    [
+      "Alessandro Florenzi",
+      "Il punto di vista del calciatore"
+    ]
+  ],
+  "opening": [
+    "Buongiorno e benvenuti a Coffee Time. Oggi, 22 ottobre, Road To History torna in campo per l’ottava giornata di campionato: quaranta squadre, venti incontri e quattro divisioni, con calcio d’inizio alle 22:00. Il filo conduttore del turno è il passaggio dalla coppa al campionato: ritrovare ritmo e concentrazione prima di una nuova serata di calcio. Qui sotto trovate il programma completo; nelle quattro tab entreremo nel dettaglio di ogni divisione.",
+    "Il tema di oggi è la gestione del tempo fra una partita e l’altra. Sedici squadre hanno giocato in Coppa di Lega il 20 ottobre; per le altre ventiquattro l’ultimo impegno registrato risale al campionato del 18. Due giorni contro quattro tra gli incontri: un contesto diverso per preparare il turno, non una prova automatica di stanchezza. Chi ha giocato più di recente deve dosare il lavoro; chi ha avuto più tempo può curare i dettagli, senza perdere intensità.",
+    "Da calciatore, il cambio di competizione richiede soprattutto di voltare pagina. Una vittoria può darti fiducia, una sconfitta può restare in testa: in entrambi i casi devi ritrovare attenzione per il nuovo impegno. Con poco recupero contano la comunicazione e la lucidità; con qualche giorno in più, non bisogna confondere il riposo con una partita già facile. È questo il clima della giornata, prima di entrare nei singoli campi."
+  ],
+  "divisions": [
+    {
+      "name": "Div 1",
+      "intro": [
+        "Entriamo in Div 1: analizziamo la classifica prima di collegarci con i campi. Il Monaco 1860 guida con 17 punti, il Torino segue a 15 e la Sampdoria è terza a 12. Guardiamo tutte e dieci le squadre, poi vediamo come questo turno può cambiare gli equilibri.",
+        "Ciao Fede. Il Torino può andare in testa se batte l’Atalanta e il Monaco perde a Palermo: 18 punti contro 17. Se invece la capolista pareggia, una vittoria granata porterebbe entrambe a 18, senza assegnare qui il primato a pari punti. Dietro, la Dynamo può sorpassare la Samp vincendo lo scontro diretto: 13 a 12. Il Parma, battendo l’AEK, lo raggiungerebbe a quota 10. Il Torino ha incassato appena quattro gol: mantenere quell’equilibrio sarà importante per trasformare l’occasione in punti.",
+        "Ciao Strama, nella testa di chi gioca cambia molto sapere che puoi superare proprio l’avversario che hai davanti. Reggina e Genoa partono entrambe da 5: chi vince sale a 8 e lascia l’altra a 5, ma la posizione finale dipenderà anche da Parma e Atalanta. A Dresda la Samp può invece portare a cinque punti il margine sui padroni di casa: 15 contro 10. Sono opportunità concrete, da affrontare senza cercare il gol a ogni costo fin dal primo minuto."
+      ],
+      "fixtures": [
+        {
+          "id": 368861383,
+          "home": "Dynamo Dresden",
+          "away": "Sampdoria",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/394.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/125.png",
+          "home_manager": "Matteo Sartori",
+          "away_manager": "Mattia Bertonati",
+          "home_table": {
+            "id": 94079161,
+            "name": "Dynamo Dresden",
+            "played": 7,
+            "points": 10,
+            "gf": 8,
+            "ga": 6,
+            "position": 5
+          },
+          "away_table": {
+            "id": 94078892,
+            "name": "Sampdoria",
+            "played": 7,
+            "points": 12,
+            "gf": 9,
+            "ga": 9,
+            "position": 3
+          },
+          "reporters": [
+            {
+              "club_id": 94079161,
+              "club": "Dynamo Dresden",
+              "name": "Dario Massara",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home"
+            },
+            {
+              "club_id": 94078892,
+              "club": "Sampdoria",
+              "name": "Gianluca Di Marzio",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away"
+            }
+          ],
+          "title": "Due punti per cambiare gerarchie",
+          "text": "La Sampdoria arriva terza a quota 12, ma la Dynamo è a soli due punti. È uno scontro diretto che può consolidare il podio oppure riaprire la corsa: i padroni di casa hanno incassato sei gol, contro i nove dei blucerchiati. La Samp dovrà trovare continuità senza concedere alla Dynamo una gara giocata sui propri ritmi.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079161",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861382,
+              "home": "Atalanta BC",
+              "away": "Dynamo Dresden",
+              "score": "1–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079161"
+            },
+            "away": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216971,
+              "home": "Sampdoria",
+              "away": "Celtic",
+              "score": "0–4",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078892"
+            }
+          },
+          "recovery_text": "Dynamo Dresden: ultimo incontro registrato il 18 ottobre in campionato, Atalanta BC–Dynamo Dresden 1–1; 4 giorni tra le due date. Sampdoria: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Sampdoria–Celtic 0–4; 2 giorni tra le due date. Dynamo Dresden ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94079161,
+            "club": "Dynamo Dresden",
+            "name": "Dario Massara",
+            "status": "trial",
+            "label": "Inviato in prova",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Fede! Sono in prova a Dresda: non so neanche come ho trovato il campo, figurati la formazione. Mi sto ambientando; intanto ti racconto il percorso delle due squadre."
+        },
+        {
+          "id": 368861384,
+          "home": "Parma Calcio 1913",
+          "away": "AEK Athens",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/118.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/372.png",
+          "home_manager": "Lauro Crasti",
+          "away_manager": "Clemente Liggi",
+          "home_table": {
+            "id": 94078885,
+            "name": "Parma Calcio 1913",
+            "played": 7,
+            "points": 7,
+            "gf": 6,
+            "ga": 6,
+            "position": 6
+          },
+          "away_table": {
+            "id": 94079139,
+            "name": "AEK Athens",
+            "played": 7,
+            "points": 10,
+            "gf": 9,
+            "ga": 6,
+            "position": 4
+          },
+          "reporters": [
+            {
+              "club_id": 94078885,
+              "club": "Parma Calcio 1913",
+              "name": "Marco Nosotti",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home"
+            },
+            {
+              "club_id": 94079139,
+              "club": "AEK Athens",
+              "name": "Gianluigi Bagnulo",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "Parma cerca il contatto",
+          "text": "Il Parma parte da sette punti e può raggiungere l’AEK a dieci. Le due squadre hanno subito entrambe sei reti: la differenza finora è nella produzione offensiva, nove gol per gli ospiti e sei per i padroni di casa. Una sfida in cui la qualità delle occasioni potrebbe pesare più della quantità.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078885",
+          "recovery": {
+            "home": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216973,
+              "home": "Valencia CF",
+              "away": "Parma Calcio 1913",
+              "score": "0–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078885"
+            },
+            "away": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216977,
+              "home": "AS Roma",
+              "away": "AEK Athens",
+              "score": "2–2",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079139"
+            }
+          },
+          "recovery_text": "Parma Calcio 1913: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Valencia CF–Parma Calcio 1913 0–0; 2 giorni tra le due date. AEK Athens: ultimo incontro registrato il 20 ottobre in Coppa di Lega, AS Roma–AEK Athens 2–2; 2 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 2 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94078885,
+            "club": "Parma Calcio 1913",
+            "name": "Marco Nosotti",
+            "status": "trial",
+            "label": "Inviato in prova",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Strama! Qui a Parma sono ancora in prova: per ora riconosco meglio la strada per il bar che quella per lo spogliatoio. Sulla formazione non mi sbilancio, parto dagli ultimi impegni."
+        },
+        {
+          "id": 368861385,
+          "home": "Palermo FC",
+          "away": "TSV 1860 München",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/117.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/415.png",
+          "home_manager": "Al Zubeidi",
+          "away_manager": "Marco Fioretti",
+          "home_table": {
+            "id": 94078884,
+            "name": "Palermo FC",
+            "played": 7,
+            "points": 2,
+            "gf": 8,
+            "ga": 14,
+            "position": 10
+          },
+          "away_table": {
+            "id": 94079182,
+            "name": "TSV 1860 München",
+            "played": 7,
+            "points": 17,
+            "gf": 18,
+            "ga": 10,
+            "position": 1
+          },
+          "reporters": [
+            {
+              "club_id": 94078884,
+              "club": "Palermo FC",
+              "name": "Bruno Palermo",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home"
+            },
+            {
+              "club_id": 94079182,
+              "club": "TSV 1860 München",
+              "name": "Pietro Nicolodi",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "La capolista incontra la fame del Palermo",
+          "text": "Diciassette punti contro due: il Monaco 1860 arriva da primo, il Palermo da ultimo. I diciotto gol della capolista sono un riferimento importante, ma per i siciliani la priorità è restare dentro la partita. Il rischio per gli ospiti è considerare il divario in classifica una garanzia: va trasformato in prestazione.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078884",
+          "recovery": {
+            "home": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216975,
+              "home": "Palermo FC",
+              "away": "Borussia Dortmund",
+              "score": "2–2",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078884"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861380,
+              "home": "TSV 1860 München",
+              "away": "AS Reggina 1914",
+              "score": "5–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079182"
+            }
+          },
+          "recovery_text": "Palermo FC: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Palermo FC–Borussia Dortmund 2–2; 2 giorni tra le due date. TSV 1860 München: ultimo incontro registrato il 18 ottobre in campionato, TSV 1860 München–AS Reggina 1914 5–1; 4 giorni tra le due date. TSV 1860 München ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94078884,
+            "club": "Palermo FC",
+            "name": "Bruno Palermo",
+            "status": "trial",
+            "label": "Inviato in prova",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Ale! Mi hanno mandato a Palermo e pensavano che con questo cognome fossi già di casa. Invece sono in prova e devo ancora orientarmi: cominciamo dal cammino delle due squadre."
+        },
+        {
+          "id": 368861386,
+          "home": "AS Reggina 1914",
+          "away": "Genoa CFC",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/122.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/108.png",
+          "home_manager": "Saverio Cordiano",
+          "away_manager": "Giovanni Cabrioli",
+          "home_table": {
+            "id": 94078889,
+            "name": "AS Reggina 1914",
+            "played": 7,
+            "points": 5,
+            "gf": 5,
+            "ga": 13,
+            "position": 9
+          },
+          "away_table": {
+            "id": 94078875,
+            "name": "Genoa CFC",
+            "played": 7,
+            "points": 5,
+            "gf": 8,
+            "ga": 12,
+            "position": 8
+          },
+          "reporters": [
+            {
+              "club_id": 94078889,
+              "club": "AS Reggina 1914",
+              "name": "Eleonora Incardona",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94078875,
+              "club": "Genoa CFC",
+              "name": "Riccardo Re",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "Stessi punti, stessa urgenza",
+          "text": "Reggina e Genoa si presentano entrambe a quota cinque. I rossoblù hanno segnato otto reti, i calabresi cinque, ma nessuna delle due difese ha ancora trovato piena stabilità. È uno scontro diretto nella parte bassa: gestire bene i momenti di difficoltà conterà quanto cercare il vantaggio.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078889",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861380,
+              "home": "TSV 1860 München",
+              "away": "AS Reggina 1914",
+              "score": "5–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078889"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861381,
+              "home": "Genoa CFC",
+              "away": "Torino",
+              "score": "0–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078875"
+            }
+          },
+          "recovery_text": "AS Reggina 1914: ultimo incontro registrato il 18 ottobre in campionato, TSV 1860 München–AS Reggina 1914 5–1; 4 giorni tra le due date. Genoa CFC: ultimo incontro registrato il 18 ottobre in campionato, Genoa CFC–Torino 0–1; 4 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 4 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94078889,
+            "club": "AS Reggina 1914",
+            "name": "Eleonora Incardona",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Fede! Vi porto il punto da AS Reggina 1914: vediamo come arrivano le due squadre a questo appuntamento."
+        },
+        {
+          "id": 368861387,
+          "home": "Torino",
+          "away": "Atalanta BC",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/128.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/96.png",
+          "home_manager": "Federico Bonzi",
+          "away_manager": "Matteo Giovi",
+          "home_table": {
+            "id": 94078895,
+            "name": "Torino",
+            "played": 7,
+            "points": 15,
+            "gf": 11,
+            "ga": 4,
+            "position": 2
+          },
+          "away_table": {
+            "id": 94078863,
+            "name": "Atalanta BC",
+            "played": 7,
+            "points": 7,
+            "gf": 7,
+            "ga": 9,
+            "position": 7
+          },
+          "reporters": [
+            {
+              "club_id": 94078895,
+              "club": "Torino",
+              "name": "Paolo Aghemo",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home"
+            },
+            {
+              "club_id": 94078863,
+              "club": "Atalanta BC",
+              "name": "Massimo Nebuloni",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away"
+            }
+          ],
+          "title": "Torino, solidità da confermare",
+          "text": "Il Torino insegue il primo posto con quindici punti e soltanto quattro reti subite. L’Atalanta, ferma a sette, affronta quindi una delle difese più difficili da superare. Per i granata la sfida è unire controllo e iniziativa; per i bergamaschi, trovare occasioni senza sbilanciarsi nella ricerca del colpo esterno.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078895",
+          "recovery": {
+            "home": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216976,
+              "home": "Legia Warszawa",
+              "away": "Torino",
+              "score": "2–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078895"
+            },
+            "away": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216974,
+              "home": "1. FC Kaiserslautern",
+              "away": "Atalanta BC",
+              "score": "1–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078863"
+            }
+          },
+          "recovery_text": "Torino: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Legia Warszawa–Torino 2–1; 2 giorni tra le due date. Atalanta BC: ultimo incontro registrato il 20 ottobre in Coppa di Lega, 1. FC Kaiserslautern–Atalanta BC 1–1; 2 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 2 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94078895,
+            "club": "Torino",
+            "name": "Paolo Aghemo",
+            "status": "trial",
+            "label": "Inviato in prova",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Fede! In prova a Torino, presente: ho trovato il microfono, la formazione ancora no. Prima di fare il fenomeno, ti porto il quadro degli ultimi incontri."
+        }
+      ]
+    },
+    {
+      "name": "Div 2",
+      "intro": [
+        "Passiamo alla Div 2 e analizziamo la classifica: Celtic a 18, Bologna a 17, poi un gruppo molto compatto fra 13 e 12 punti. Ecco il quadro completo prima delle cinque partite di oggi.",
+        "Fede, il Bologna può sorpassare il Celtic vincendo a Rotterdam se la capolista non batte il Partizan: salirebbe a 20, contro 19 o 18 degli scozzesi. Con due vittorie il distacco resta di un punto. A Istanbul il Fenerbahçe, oggi sesto, può superare il Kaiserslautern: una vittoria lo porterebbe a 15 contro 13. Ma non equivale automaticamente al terzo posto, perché anche Boca e Valencia possono arrivare a 15. Conta gestire gli spazi, soprattutto contro i ventuno gol già segnati dal Kaiserslautern.",
+        "Ciao Fede, Boca e Valencia sono entrambe a 12: lo scontro diretto permette a una delle due di staccare l’altra di tre punti. Un pareggio le porterebbe a 13, lasciando aperta la porta alle rivali. Più in basso, Académica ed Eintracht partono da 5: vincere significa salire a 8 e prendere respiro; perdere espone anche al possibile sorpasso del Partizan, che vincendo arriverebbe a 7. Da giocatore, prima penso a questa possibilità concreta e poi guardo gli altri campi."
+      ],
+      "fixtures": [
+        {
+          "id": 368861473,
+          "home": "Académica de Coimbra",
+          "away": "Eintracht Frankfurt",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/214.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/395.png",
+          "home_manager": "Nick Keyen",
+          "away_manager": "Nicolae Sasarman",
+          "home_table": {
+            "id": 94078981,
+            "name": "Académica de Coimbra",
+            "played": 7,
+            "points": 5,
+            "gf": 9,
+            "ga": 18,
+            "position": 8
+          },
+          "away_table": {
+            "id": 94079162,
+            "name": "Eintracht Frankfurt",
+            "played": 7,
+            "points": 5,
+            "gf": 10,
+            "ga": 13,
+            "position": 7
+          },
+          "reporters": [
+            {
+              "club_id": 94078981,
+              "club": "Académica de Coimbra",
+              "name": "Antonio Nucera",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home"
+            },
+            {
+              "club_id": 94079162,
+              "club": "Eintracht Frankfurt",
+              "name": "Matteo Barzaghi",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "Una sfida per staccarsi",
+          "text": "Académica ed Eintracht hanno entrambe cinque punti: il confronto può interrompere un percorso fin qui complicato. I portoghesi hanno subito diciotto gol, i tedeschi tredici. Prima ancora delle ambizioni offensive, sarà importante evitare che ogni pallone perso diventi un’occasione per l’avversario.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078981",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861472,
+              "home": "Bologna FC",
+              "away": "Académica de Coimbra",
+              "score": "3–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078981"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861468,
+              "home": "Eintracht Frankfurt",
+              "away": "Celtic",
+              "score": "0–4",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079162"
+            }
+          },
+          "recovery_text": "Académica de Coimbra: ultimo incontro registrato il 18 ottobre in campionato, Bologna FC–Académica de Coimbra 3–0; 4 giorni tra le due date. Eintracht Frankfurt: ultimo incontro registrato il 18 ottobre in campionato, Eintracht Frankfurt–Celtic 0–4; 4 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 4 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94078981,
+            "club": "Académica de Coimbra",
+            "name": "Antonio Nucera",
+            "status": "trial",
+            "label": "Inviato in prova",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Strama! Sono in prova a Coimbra: sto imparando i nomi delle vie prima di quelli degli schemi. Non chiedermi ancora undici titolari a memoria, ma sugli ultimi risultati possiamo ragionare."
+        },
+        {
+          "id": 368861474,
+          "home": "Celtic",
+          "away": "FK Partizan",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/421.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/381.png",
+          "home_manager": "Sir Simone",
+          "away_manager": "Tommaso Prisco",
+          "home_table": {
+            "id": 94079188,
+            "name": "Celtic",
+            "played": 7,
+            "points": 18,
+            "gf": 19,
+            "ga": 4,
+            "position": 1
+          },
+          "away_table": {
+            "id": 94079148,
+            "name": "FK Partizan",
+            "played": 7,
+            "points": 4,
+            "gf": 9,
+            "ga": 20,
+            "position": 9
+          },
+          "reporters": [
+            {
+              "club_id": 94079188,
+              "club": "Celtic",
+              "name": "Nicola Roggero",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94079148,
+              "club": "FK Partizan",
+              "name": "Giovanni Guardalà",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "Celtic, il primato non ammette distrazioni",
+          "text": "Il Celtic guida con diciotto punti e una differenza reti di +15; il Partizan è a quattro. Il Bologna resta però a una sola lunghezza dalla vetta, quindi la capolista non ha margine per rilassarsi. Gli ospiti hanno già concesso venti reti: reggere la prima pressione sarà uno dei passaggi della loro partita.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079188",
+          "recovery": {
+            "home": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216971,
+              "home": "Sampdoria",
+              "away": "Celtic",
+              "score": "0–4",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079188"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861469,
+              "home": "FK Partizan",
+              "away": "Fenerbahçe SK",
+              "score": "0–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079148"
+            }
+          },
+          "recovery_text": "Celtic: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Sampdoria–Celtic 0–4; 2 giorni tra le due date. FK Partizan: ultimo incontro registrato il 18 ottobre in campionato, FK Partizan–Fenerbahçe SK 0–1; 4 giorni tra le due date. FK Partizan ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94079188,
+            "club": "Celtic",
+            "name": "Nicola Roggero",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Strama! Vi porto il punto da Celtic: vediamo come arrivano le due squadre a questo appuntamento."
+        },
+        {
+          "id": 368861475,
+          "home": "Fenerbahçe SK",
+          "away": "1. FC Kaiserslautern",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/350.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/405.png",
+          "home_manager": "Vincenzo Martorano",
+          "away_manager": "Vardan Minasyan",
+          "home_table": {
+            "id": 94079117,
+            "name": "Fenerbahçe SK",
+            "played": 7,
+            "points": 12,
+            "gf": 8,
+            "ga": 8,
+            "position": 6
+          },
+          "away_table": {
+            "id": 94079172,
+            "name": "1. FC Kaiserslautern",
+            "played": 7,
+            "points": 13,
+            "gf": 21,
+            "ga": 9,
+            "position": 3
+          },
+          "reporters": [
+            {
+              "club_id": 94079117,
+              "club": "Fenerbahçe SK",
+              "name": "Anna Billò",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94079172,
+              "club": "1. FC Kaiserslautern",
+              "name": "Giorgia Rossi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away"
+            }
+          ],
+          "title": "A Istanbul passa un pezzo di alta classifica",
+          "text": "Il Kaiserslautern arriva con tredici punti, uno più del Fenerbahçe. Il confronto mette accanto due percorsi diversi: ventuno gol segnati dai tedeschi, otto dai turchi, che hanno però incassato soltanto otto reti. La domanda è se prevarrà la capacità degli ospiti di produrre occasioni o il controllo dei padroni di casa.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079117",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861469,
+              "home": "FK Partizan",
+              "away": "Fenerbahçe SK",
+              "score": "0–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079117"
+            },
+            "away": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216974,
+              "home": "1. FC Kaiserslautern",
+              "away": "Atalanta BC",
+              "score": "1–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079172"
+            }
+          },
+          "recovery_text": "Fenerbahçe SK: ultimo incontro registrato il 18 ottobre in campionato, FK Partizan–Fenerbahçe SK 0–1; 4 giorni tra le due date. 1. FC Kaiserslautern: ultimo incontro registrato il 20 ottobre in Coppa di Lega, 1. FC Kaiserslautern–Atalanta BC 1–1; 2 giorni tra le due date. Fenerbahçe SK ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94079117,
+            "club": "Fenerbahçe SK",
+            "name": "Anna Billò",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Strama! Vi porto il punto da Fenerbahçe SK: vediamo come arrivano le due squadre a questo appuntamento."
+        },
+        {
+          "id": 368861476,
+          "home": "Boca Juniors",
+          "away": "Valencia CF",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/270.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/172.png",
+          "home_manager": "Luca Nudo",
+          "away_manager": "Giovanni Iodice",
+          "home_table": {
+            "id": 94079037,
+            "name": "Boca Juniors",
+            "played": 7,
+            "points": 12,
+            "gf": 12,
+            "ga": 12,
+            "position": 5
+          },
+          "away_table": {
+            "id": 94078939,
+            "name": "Valencia CF",
+            "played": 7,
+            "points": 12,
+            "gf": 20,
+            "ga": 15,
+            "position": 4
+          },
+          "reporters": [
+            {
+              "club_id": 94079037,
+              "club": "Boca Juniors",
+              "name": "Veronica Brunati",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94078939,
+              "club": "Valencia CF",
+              "name": "Vanessa Leonardi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away"
+            }
+          ],
+          "title": "Dodici punti a testa, due modi di arrivarci",
+          "text": "Boca e Valencia sono appaiate a dodici punti. Gli spagnoli hanno segnato venti reti e ne hanno subite quindici, gli argentini hanno un bilancio di dodici e dodici. Il Boca proverà a non farsi trascinare in una gara troppo aperta; il Valencia ha numeri offensivi per mettere alla prova questo equilibrio.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079037",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861470,
+              "home": "1. FC Kaiserslautern",
+              "away": "Boca Juniors",
+              "score": "4–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079037"
+            },
+            "away": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216973,
+              "home": "Valencia CF",
+              "away": "Parma Calcio 1913",
+              "score": "0–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078939"
+            }
+          },
+          "recovery_text": "Boca Juniors: ultimo incontro registrato il 18 ottobre in campionato, 1. FC Kaiserslautern–Boca Juniors 4–0; 4 giorni tra le due date. Valencia CF: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Valencia CF–Parma Calcio 1913 0–0; 2 giorni tra le due date. Boca Juniors ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94079037,
+            "club": "Boca Juniors",
+            "name": "Veronica Brunati",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Strama! Vi porto il punto da Boca Juniors: vediamo come arrivano le due squadre a questo appuntamento."
+        },
+        {
+          "id": 368861477,
+          "home": "Feyenoord",
+          "away": "Bologna FC",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/192.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/98.png",
+          "home_manager": "Ringhio Gattuso",
+          "away_manager": "Fabio Ferrini",
+          "home_table": {
+            "id": 94078959,
+            "name": "Feyenoord",
+            "played": 7,
+            "points": 1,
+            "gf": 2,
+            "ga": 24,
+            "position": 10
+          },
+          "away_table": {
+            "id": 94078865,
+            "name": "Bologna FC",
+            "played": 7,
+            "points": 17,
+            "gf": 19,
+            "ga": 6,
+            "position": 2
+          },
+          "reporters": [
+            {
+              "club_id": 94078959,
+              "club": "Feyenoord",
+              "name": "Riccardo Gentile",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home"
+            },
+            {
+              "club_id": 94078865,
+              "club": "Bologna FC",
+              "name": "Francesco Cosatti",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "Bologna in scia, Feyenoord in cerca di svolta",
+          "text": "Il Bologna ha diciassette punti e tiene il Celtic nel mirino. Il Feyenoord è ultimo con un punto, due gol fatti e ventiquattro subiti: una distanza netta, che rende ancora più importante per gli ospiti affrontare bene la partita dall’inizio. Per gli olandesi servono ordine e una prestazione capace di restituire fiducia.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078959",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861471,
+              "home": "Valencia CF",
+              "away": "Feyenoord",
+              "score": "5–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078959"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861472,
+              "home": "Bologna FC",
+              "away": "Académica de Coimbra",
+              "score": "3–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078865"
+            }
+          },
+          "recovery_text": "Feyenoord: ultimo incontro registrato il 18 ottobre in campionato, Valencia CF–Feyenoord 5–0; 4 giorni tra le due date. Bologna FC: ultimo incontro registrato il 18 ottobre in campionato, Bologna FC–Académica de Coimbra 3–0; 4 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 4 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94078959,
+            "club": "Feyenoord",
+            "name": "Riccardo Gentile",
+            "status": "trial",
+            "label": "Inviato in prova",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Ale! Da Rotterdam tutto bene, a parte che sono in prova e non ho ancora capito dove devo mettermi. Per le dritte di spogliatoio ripassa; oggi partiamo dal calendario."
+        }
+      ]
+    },
+    {
+      "name": "Div 3",
+      "intro": [
+        "Ora analizziamo la classifica della Div 3. Marsiglia a punteggio pieno con 21 punti, Dortmund e Legia a 15, Shakhtar e Guangzhou a 13: il turno può modificare soprattutto le distanze. Vediamo la classifica completa.",
+        "Ciao Fede. Il Marsiglia resterà primo anche perdendo, ma il Legia può dimezzare il distacco vincendo lo scontro diretto: da sei a tre punti. Una vittoria dei francesi porterebbe invece il margine sul Legia a nove. Anche il Dortmund può avvicinarsi a tre punti, se batte il Sunderland e il Marsiglia perde. Shakhtar e Guangzhou, vincendo, salirebbero a 16 e potrebbero superare le inseguitrici ferme a 15: è una serata in cui il gruppo alle spalle della capolista può ridisegnarsi.",
+        "Ciao Strama, per il Legia questa è l’occasione di rendere la corsa meno lontana, senza pensare di dover recuperare sei punti in una sola partita. In basso l’Atlético può salire da 3 a 6 battendo il Tottenham, che resterebbe a 7: per uscire dall’ultimo posto dovrà comunque guardare gli altri risultati. Il Napoli, vincendo con lo Shakhtar, arriverebbe a 7 e potrebbe raggiungere gli Spurs se questi perdessero. Sono traguardi piccoli ma importanti per ritrovare fiducia."
+      ],
+      "fixtures": [
+        {
+          "id": 368861563,
+          "home": "Borussia Dortmund",
+          "away": "Sunderland",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/392.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/76.png",
+          "home_manager": "Giorgio Grugni",
+          "away_manager": "Lorenzo Errico",
+          "home_table": {
+            "id": 94079159,
+            "name": "Borussia Dortmund",
+            "played": 7,
+            "points": 15,
+            "gf": 22,
+            "ga": 15,
+            "position": 2
+          },
+          "away_table": {
+            "id": 94078843,
+            "name": "Sunderland",
+            "played": 7,
+            "points": 5,
+            "gf": 13,
+            "ga": 17,
+            "position": 7
+          },
+          "reporters": [
+            {
+              "club_id": 94079159,
+              "club": "Borussia Dortmund",
+              "name": "Federica Lodi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94078843,
+              "club": "Sunderland",
+              "name": "Valentina Mariani",
+              "status": "trial",
+              "label": "Inviata in prova",
+              "side": "away"
+            }
+          ],
+          "title": "Dortmund, segnare non basta",
+          "text": "Il Borussia è secondo con quindici punti e ventidue gol segnati, ma anche quindici subiti. Il Sunderland, a cinque punti, ha trovato tredici reti: un dato che invita i padroni di casa a non trascurare le coperture. Per restare all’inseguimento del Marsiglia, il Dortmund deve accompagnare il proprio attacco con più equilibrio.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079159",
+          "recovery": {
+            "home": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216975,
+              "home": "Palermo FC",
+              "away": "Borussia Dortmund",
+              "score": "2–2",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079159"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861558,
+              "home": "Sunderland",
+              "away": "Tottenham Hotspur",
+              "score": "1–3",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078843"
+            }
+          },
+          "recovery_text": "Borussia Dortmund: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Palermo FC–Borussia Dortmund 2–2; 2 giorni tra le due date. Sunderland: ultimo incontro registrato il 18 ottobre in campionato, Sunderland–Tottenham Hotspur 1–3; 4 giorni tra le due date. Sunderland ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94079159,
+            "club": "Borussia Dortmund",
+            "name": "Federica Lodi",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Ale! Vi porto il punto da Borussia Dortmund: vediamo come arrivano le due squadre a questo appuntamento."
+        },
+        {
+          "id": 368861564,
+          "home": "Tottenham Hotspur",
+          "away": "Atlético Madrid",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/80.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/139.png",
+          "home_manager": "Max Zanoni",
+          "away_manager": "Giuseppe Trovato",
+          "home_table": {
+            "id": 94078847,
+            "name": "Tottenham Hotspur",
+            "played": 7,
+            "points": 7,
+            "gf": 15,
+            "ga": 20,
+            "position": 6
+          },
+          "away_table": {
+            "id": 94078906,
+            "name": "Atlético Madrid",
+            "played": 7,
+            "points": 3,
+            "gf": 10,
+            "ga": 18,
+            "position": 10
+          },
+          "reporters": [
+            {
+              "club_id": 94078847,
+              "club": "Tottenham Hotspur",
+              "name": "Massimo Marianella",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home"
+            },
+            {
+              "club_id": 94078906,
+              "club": "Atlético Madrid",
+              "name": "Giancarlo Marocchi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away"
+            }
+          ],
+          "title": "Tottenham–Atlético, difese sotto esame",
+          "text": "Sette punti per il Tottenham, tre per l’Atlético: entrambe cercano una gara che cambi il passo. I venti gol subiti dagli inglesi e i diciotto degli spagnoli raccontano la principale difficoltà. Prima di immaginare una partita risolta dall’attacco, occorre capire chi saprà proteggersi meglio quando perde il pallone.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078847",
+          "recovery": {
+            "home": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216972,
+              "home": "Tottenham Hotspur",
+              "away": "SS Lazio",
+              "score": "4–2",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078847"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861559,
+              "home": "Atlético Madrid",
+              "away": "Guangzhou FC",
+              "score": "1–2",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078906"
+            }
+          },
+          "recovery_text": "Tottenham Hotspur: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Tottenham Hotspur–SS Lazio 4–2; 2 giorni tra le due date. Atlético Madrid: ultimo incontro registrato il 18 ottobre in campionato, Atlético Madrid–Guangzhou FC 1–2; 4 giorni tra le due date. Atlético Madrid ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94078847,
+            "club": "Tottenham Hotspur",
+            "name": "Massimo Marianella",
+            "status": "trial",
+            "label": "Inviato in prova",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Fede! Qui al Tottenham sono in prova: mi sentivo pronto, poi mi hanno chiesto la formazione e ho controllato se il microfono fosse acceso. Meglio cominciare da come arrivano alla gara."
+        },
+        {
+          "id": 368861565,
+          "home": "Guangzhou FC",
+          "away": "Palmeiras",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/1521.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/300.png",
+          "home_manager": "Max Palace",
+          "away_manager": "Danilo FC 1908",
+          "home_table": {
+            "id": 94080273,
+            "name": "Guangzhou FC",
+            "played": 7,
+            "points": 13,
+            "gf": 12,
+            "ga": 12,
+            "position": 5
+          },
+          "away_table": {
+            "id": 94079067,
+            "name": "Palmeiras",
+            "played": 7,
+            "points": 5,
+            "gf": 6,
+            "ga": 15,
+            "position": 8
+          },
+          "reporters": [
+            {
+              "club_id": 94080273,
+              "club": "Guangzhou FC",
+              "name": "Stefania Pinna",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94079067,
+              "club": "Palmeiras",
+              "name": "Luca Cilli",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "Guangzhou guarda avanti",
+          "text": "Il Guangzhou è a quota tredici, a due punti dalla coppia Dortmund–Legia. Il Palmeiras arriva invece con cinque punti e sei gol segnati. I padroni di casa hanno l’occasione di restare agganciati alla parte alta, ma il loro bilancio di dodici gol fatti e dodici subiti impone attenzione a entrambe le fasi.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94080273",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861559,
+              "home": "Atlético Madrid",
+              "away": "Guangzhou FC",
+              "score": "1–2",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94080273"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861560,
+              "home": "Palmeiras",
+              "away": "Olympique Marseille",
+              "score": "0–3",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079067"
+            }
+          },
+          "recovery_text": "Guangzhou FC: ultimo incontro registrato il 18 ottobre in campionato, Atlético Madrid–Guangzhou FC 1–2; 4 giorni tra le due date. Palmeiras: ultimo incontro registrato il 18 ottobre in campionato, Palmeiras–Olympique Marseille 0–3; 4 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 4 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94080273,
+            "club": "Guangzhou FC",
+            "name": "Stefania Pinna",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Ale! Vi porto il punto da Guangzhou FC: vediamo come arrivano le due squadre a questo appuntamento."
+        },
+        {
+          "id": 368861566,
+          "home": "Olympique Marseille",
+          "away": "Legia Warszawa",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/330.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/651.png",
+          "home_manager": "Mathieu Pioche",
+          "away_manager": "Luciano Catalano",
+          "home_table": {
+            "id": 94079097,
+            "name": "Olympique Marseille",
+            "played": 7,
+            "points": 21,
+            "gf": 20,
+            "ga": 5,
+            "position": 1
+          },
+          "away_table": {
+            "id": 94079408,
+            "name": "Legia Warszawa",
+            "played": 7,
+            "points": 15,
+            "gf": 19,
+            "ga": 12,
+            "position": 3
+          },
+          "reporters": [
+            {
+              "club_id": 94079097,
+              "club": "Olympique Marseille",
+              "name": "Maurizio Compagnoni",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94079408,
+              "club": "Legia Warszawa",
+              "name": "Valentina Caruso",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away"
+            }
+          ],
+          "title": "Il Legia sfida il percorso perfetto",
+          "text": "Ventuno punti in sette gare: il Marsiglia fin qui non ha lasciato nulla agli avversari. Il Legia arriva a quindici e può ridurre il distacco a tre oppure vedere la capolista allontanarsi ancora. I francesi hanno subito soltanto cinque reti: ai polacchi serviranno precisione e pazienza, non soltanto slancio.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079097",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861560,
+              "home": "Palmeiras",
+              "away": "Olympique Marseille",
+              "score": "0–3",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079097"
+            },
+            "away": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216976,
+              "home": "Legia Warszawa",
+              "away": "Torino",
+              "score": "2–1",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079408"
+            }
+          },
+          "recovery_text": "Olympique Marseille: ultimo incontro registrato il 18 ottobre in campionato, Palmeiras–Olympique Marseille 0–3; 4 giorni tra le due date. Legia Warszawa: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Legia Warszawa–Torino 2–1; 2 giorni tra le due date. Olympique Marseille ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94079097,
+            "club": "Olympique Marseille",
+            "name": "Maurizio Compagnoni",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Ale! Vi porto il punto da Olympique Marseille: vediamo come arrivano le due squadre a questo appuntamento."
+        },
+        {
+          "id": 368861567,
+          "home": "SSC Napoli",
+          "away": "Shakhtar Donetsk",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/746.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/348.png",
+          "home_manager": "Rosario Giamundo",
+          "away_manager": "Armando De Giulio",
+          "home_table": {
+            "id": 94079501,
+            "name": "SSC Napoli",
+            "played": 7,
+            "points": 4,
+            "gf": 7,
+            "ga": 14,
+            "position": 9
+          },
+          "away_table": {
+            "id": 94079115,
+            "name": "Shakhtar Donetsk",
+            "played": 7,
+            "points": 13,
+            "gf": 22,
+            "ga": 18,
+            "position": 4
+          },
+          "reporters": [
+            {
+              "club_id": 94079501,
+              "club": "SSC Napoli",
+              "name": "Francesco Repice",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94079115,
+              "club": "Shakhtar Donetsk",
+              "name": "Alessandro Sugoni",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "Napoli cerca una risposta",
+          "text": "Il Napoli ha quattro punti e sette gol segnati; lo Shakhtar è a tredici con ventidue reti all’attivo. Gli ospiti hanno però subito diciotto gol: il divario in classifica non esclude spazi da sfruttare. Per il Napoli sarà essenziale non trasformare la necessità di reagire in una partita priva di equilibrio.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079501",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861561,
+              "home": "Legia Warszawa",
+              "away": "SSC Napoli",
+              "score": "2–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079501"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861562,
+              "home": "Shakhtar Donetsk",
+              "away": "Borussia Dortmund",
+              "score": "4–5",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079115"
+            }
+          },
+          "recovery_text": "SSC Napoli: ultimo incontro registrato il 18 ottobre in campionato, Legia Warszawa–SSC Napoli 2–0; 4 giorni tra le due date. Shakhtar Donetsk: ultimo incontro registrato il 18 ottobre in campionato, Shakhtar Donetsk–Borussia Dortmund 4–5; 4 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 4 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94079501,
+            "club": "SSC Napoli",
+            "name": "Francesco Repice",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Ale! Vi porto il punto da SSC Napoli: vediamo come arrivano le due squadre a questo appuntamento."
+        }
+      ]
+    },
+    {
+      "name": "Div 4",
+      "intro": [
+        "Chiudiamo con la Div 4: analizziamo la classifica, perché oggi si affrontano le prime due. Hertha a 18, Lazio a 16; dietro ci sono Flamengo a 12 e Campobasso a 11. Ecco tutte le posizioni prima del calcio d’inizio.",
+        "Fede, a Berlino il sorpasso è diretto: la Lazio vincendo salirebbe a 19 e lascerebbe l’Hertha a 18. Una vittoria dell’Hertha allargherebbe invece il margine a cinque punti, 21 contro 16; il pareggio conserverebbe i due punti di distanza. La Lazio ha subito sei gol contro i dieci dell’Hertha, ma entrambe vengono dalla coppa: servirà lucidità per tenere l’equilibrio. Alle loro spalle il Campobasso può superare il Flamengo vincendo a Kyiv se i brasiliani non vincono a Roma: 14 contro 13 o 12.",
+        "Ciao Fede, Roma–Flamengo vale anche la possibilità di un aggancio: vincendo, la Roma arriverebbe a 12 come i brasiliani, senza poter dare per certa la posizione a pari punti. Più sotto il River può superare l’América nello scontro diretto: 10 contro 9. Lo Schalke può salire a 11 vincendo a São Paulo, mentre la Dynamo può arrivare a 10 battendo il Campobasso. Da giocatore non inseguirei tutti i risultati in tempo reale: il modo migliore di sfruttare questa classifica corta è restare dentro la propria partita."
+      ],
+      "fixtures": [
+        {
+          "id": 368861653,
+          "home": "HERTHA BSC",
+          "away": "SS Lazio",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/404.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/111.png",
+          "home_manager": "Tommaso Mello",
+          "away_manager": "Alessandro Berardi",
+          "home_table": {
+            "id": 94079171,
+            "name": "HERTHA BSC",
+            "played": 7,
+            "points": 18,
+            "gf": 18,
+            "ga": 10,
+            "position": 1
+          },
+          "away_table": {
+            "id": 94078878,
+            "name": "SS Lazio",
+            "played": 7,
+            "points": 16,
+            "gf": 20,
+            "ga": 6,
+            "position": 2
+          },
+          "reporters": [
+            {
+              "club_id": 94079171,
+              "club": "HERTHA BSC",
+              "name": "Giorgia Cenni",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94078878,
+              "club": "SS Lazio",
+              "name": "Matteo Petrucci",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away"
+            }
+          ],
+          "title": "A Berlino c’è in palio la vetta",
+          "text": "Hertha prima a diciotto punti, Lazio seconda a sedici: è lo scontro diretto che può cambiare il comando della divisione. I biancocelesti hanno segnato venti reti e ne hanno subite sei; i berlinesi rispondono con diciotto gol fatti e dieci incassati. Il vantaggio in classifica e la solidità dei numeri ospiti rendono il confronto particolarmente aperto.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079171",
+          "recovery": {
+            "home": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216978,
+              "home": "HERTHA BSC",
+              "away": "Campobasso Calcio",
+              "score": "4–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079171"
+            },
+            "away": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216972,
+              "home": "Tottenham Hotspur",
+              "away": "SS Lazio",
+              "score": "4–2",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078878"
+            }
+          },
+          "recovery_text": "HERTHA BSC: ultimo incontro registrato il 20 ottobre in Coppa di Lega, HERTHA BSC–Campobasso Calcio 4–0; 2 giorni tra le due date. SS Lazio: ultimo incontro registrato il 20 ottobre in Coppa di Lega, Tottenham Hotspur–SS Lazio 4–2; 2 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 2 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94079171,
+            "club": "HERTHA BSC",
+            "name": "Giorgia Cenni",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Fede! Vi porto il punto da HERTHA BSC: vediamo come arrivano le due squadre a questo appuntamento."
+        },
+        {
+          "id": 368861654,
+          "home": "Dynamo Kyiv",
+          "away": "Campobasso Calcio",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/347.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/3874.png",
+          "home_manager": "Oleksandr Medvid",
+          "away_manager": "Simone Campanella",
+          "home_table": {
+            "id": 94079114,
+            "name": "Dynamo Kyiv",
+            "played": 7,
+            "points": 7,
+            "gf": 9,
+            "ga": 11,
+            "position": 8
+          },
+          "away_table": {
+            "id": 94082591,
+            "name": "Campobasso Calcio",
+            "played": 7,
+            "points": 11,
+            "gf": 17,
+            "ga": 13,
+            "position": 4
+          },
+          "reporters": [
+            {
+              "club_id": 94079114,
+              "club": "Dynamo Kyiv",
+              "name": "Marco Bovicelli",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home"
+            },
+            {
+              "club_id": 94082591,
+              "club": "Campobasso Calcio",
+              "name": "Valentina Ciarlante",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away"
+            }
+          ],
+          "title": "Campobasso, occasione per restare in alto",
+          "text": "Il Campobasso è quarto con undici punti e diciassette gol segnati. La Dynamo Kyiv, a sette, cerca un risultato che accorci le distanze: ha concesso undici reti, due meno degli avversari. Gli ospiti portano una produzione offensiva superiore, i padroni di casa devono trovare il modo di limitarla senza rinunciare a costruire.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079114",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861648,
+              "home": "SS Lazio",
+              "away": "Dynamo Kyiv",
+              "score": "2–2",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079114"
+            },
+            "away": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216978,
+              "home": "HERTHA BSC",
+              "away": "Campobasso Calcio",
+              "score": "4–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94082591"
+            }
+          },
+          "recovery_text": "Dynamo Kyiv: ultimo incontro registrato il 18 ottobre in campionato, SS Lazio–Dynamo Kyiv 2–2; 4 giorni tra le due date. Campobasso Calcio: ultimo incontro registrato il 20 ottobre in Coppa di Lega, HERTHA BSC–Campobasso Calcio 4–0; 2 giorni tra le due date. Dynamo Kyiv ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94079114,
+            "club": "Dynamo Kyiv",
+            "name": "Marco Bovicelli",
+            "status": "trial",
+            "label": "Inviato in prova",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Strama! Sono in prova a Kyiv e mi sto ancora ambientando: se mi chiedi una soffiata, al massimo ti dico da che parte tira il vento. Vediamo intanto gli impegni precedenti."
+        },
+        {
+          "id": 368861655,
+          "home": "AS Roma",
+          "away": "CR Flamengo",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/123.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/294.png",
+          "home_manager": "Pep Buitre",
+          "away_manager": "Igor Zanotto",
+          "home_table": {
+            "id": 94078890,
+            "name": "AS Roma",
+            "played": 7,
+            "points": 9,
+            "gf": 8,
+            "ga": 7,
+            "position": 5
+          },
+          "away_table": {
+            "id": 94079061,
+            "name": "CR Flamengo",
+            "played": 7,
+            "points": 12,
+            "gf": 16,
+            "ga": 9,
+            "position": 3
+          },
+          "reporters": [
+            {
+              "club_id": 94078890,
+              "club": "AS Roma",
+              "name": "Paolo Assogna",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94079061,
+              "club": "CR Flamengo",
+              "name": "Peppe Di Stefano",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "Roma–Flamengo, tre punti di distanza",
+          "text": "La Roma ha nove punti, il Flamengo dodici. I giallorossi hanno incassato sette reti ma ne hanno segnate otto; i brasiliani hanno già trovato sedici gol. Il confronto può misurare la tenuta della Roma contro un attacco produttivo e la capacità del Flamengo di non lasciare spazi mentre cerca il vantaggio.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078890",
+          "recovery": {
+            "home": {
+              "date": "2026-10-20",
+              "days_between": 2,
+              "competition": "leaguecup",
+              "is_cup": true,
+              "fixture_id": 369216977,
+              "home": "AS Roma",
+              "away": "AEK Athens",
+              "score": "2–2",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94078890"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861650,
+              "home": "CR Flamengo",
+              "away": "São Paulo FC",
+              "score": "2–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079061"
+            }
+          },
+          "recovery_text": "AS Roma: ultimo incontro registrato il 20 ottobre in Coppa di Lega, AS Roma–AEK Athens 2–2; 2 giorni tra le due date. CR Flamengo: ultimo incontro registrato il 18 ottobre in campionato, CR Flamengo–São Paulo FC 2–0; 4 giorni tra le due date. CR Flamengo ha 2 giorni in più tra gli incontri registrati: un possibile vantaggio nella preparazione, non una garanzia di maggiore freschezza.",
+          "home_reporter": {
+            "club_id": 94078890,
+            "club": "AS Roma",
+            "name": "Paolo Assogna",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Fede! Vi porto il punto da AS Roma: vediamo come arrivano le due squadre a questo appuntamento."
+        },
+        {
+          "id": 368861656,
+          "home": "São Paulo FC",
+          "away": "FC Schalke 04",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/306.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/398.png",
+          "home_manager": "Attilio Bonnici",
+          "away_manager": "Francesco Rossi",
+          "home_table": {
+            "id": 94079073,
+            "name": "São Paulo FC",
+            "played": 7,
+            "points": 1,
+            "gf": 6,
+            "ga": 19,
+            "position": 10
+          },
+          "away_table": {
+            "id": 94079165,
+            "name": "FC Schalke 04",
+            "played": 7,
+            "points": 8,
+            "gf": 12,
+            "ga": 16,
+            "position": 7
+          },
+          "reporters": [
+            {
+              "club_id": 94079073,
+              "club": "São Paulo FC",
+              "name": "Marina Presello",
+              "status": "trial",
+              "label": "Inviata in prova",
+              "side": "home"
+            },
+            {
+              "club_id": 94079165,
+              "club": "FC Schalke 04",
+              "name": "Sarah Castellana",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away"
+            }
+          ],
+          "title": "Schalke, una trasferta da interpretare",
+          "text": "Lo Schalke parte da otto punti e affronta un São Paulo fermo a uno. I tedeschi hanno segnato dodici reti ma ne hanno subite sedici: numeri che sconsigliano di leggere la gara soltanto attraverso la classifica. Ai brasiliani, con sei gol fatti e diciannove subiti, serve una prestazione più solida per provare a ripartire.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079073",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861650,
+              "home": "CR Flamengo",
+              "away": "São Paulo FC",
+              "score": "2–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079073"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861651,
+              "home": "FC Schalke 04",
+              "away": "River Plate",
+              "score": "2–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079165"
+            }
+          },
+          "recovery_text": "São Paulo FC: ultimo incontro registrato il 18 ottobre in campionato, CR Flamengo–São Paulo FC 2–0; 4 giorni tra le due date. FC Schalke 04: ultimo incontro registrato il 18 ottobre in campionato, FC Schalke 04–River Plate 2–0; 4 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 4 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94079073,
+            "club": "São Paulo FC",
+            "name": "Marina Presello",
+            "status": "trial",
+            "label": "Inviata in prova",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Ale! In prova a São Paulo: ho appena capito dove siamo e già mi chiedete chi gioca. Dammi il tempo di conoscere la squadra; intanto mettiamo in ordine il percorso verso la partita."
+        },
+        {
+          "id": 368861657,
+          "home": "River Plate",
+          "away": "Club América",
+          "time": "22:00",
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/282.png",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/439.png",
+          "home_manager": "Marco Catalozzo",
+          "away_manager": "Emanuele Delli Calici",
+          "home_table": {
+            "id": 94079049,
+            "name": "River Plate",
+            "played": 7,
+            "points": 7,
+            "gf": 5,
+            "ga": 19,
+            "position": 9
+          },
+          "away_table": {
+            "id": 94079202,
+            "name": "Club América",
+            "played": 7,
+            "points": 9,
+            "gf": 11,
+            "ga": 12,
+            "position": 6
+          },
+          "reporters": [
+            {
+              "club_id": 94079049,
+              "club": "River Plate",
+              "name": "Stefano Borghi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home"
+            },
+            {
+              "club_id": 94079202,
+              "club": "Club América",
+              "name": "Filippo Benincampi",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away"
+            }
+          ],
+          "title": "River e América, la distanza è colmabile",
+          "text": "Due punti separano River Plate e Club América: sette contro nove. Il River ha segnato soltanto cinque reti, mentre i messicani sono a undici. Per gli argentini il tema è costruire una minaccia più continua; per gli ospiti, sfruttare il vantaggio offensivo senza offrire agli avversari la possibilità di ritrovare fiducia.",
+          "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079049",
+          "recovery": {
+            "home": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861651,
+              "home": "FC Schalke 04",
+              "away": "River Plate",
+              "score": "2–0",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079049"
+            },
+            "away": {
+              "date": "2026-10-18",
+              "days_between": 4,
+              "competition": "league",
+              "is_cup": false,
+              "fixture_id": 368861652,
+              "home": "Club América",
+              "away": "HERTHA BSC",
+              "score": "2–4",
+              "source": "https://www.italianmastersclub.it/nexus/teams/matches.php?world=GW001&sm_club=94079202"
+            }
+          },
+          "recovery_text": "River Plate: ultimo incontro registrato il 18 ottobre in campionato, FC Schalke 04–River Plate 2–0; 4 giorni tra le due date. Club América: ultimo incontro registrato il 18 ottobre in campionato, Club América–HERTHA BSC 2–4; 4 giorni tra le due date. Le due squadre hanno lo stesso intervallo di calendario: 4 giorni. La gestione dei ritmi dipenderà anche dai minuti effettivamente giocati dai singoli.",
+          "home_reporter": {
+            "club_id": 94079049,
+            "club": "River Plate",
+            "name": "Stefano Borghi",
+            "status": "confirmed",
+            "label": "Assegnazione confermata",
+            "side": "home"
+          },
+          "reporter_intro": "Ciao Fede! Vi porto il punto da River Plate: vediamo come arrivano le due squadre a questo appuntamento."
+        }
+      ]
+    }
+  ],
+  "closing": "Scegliete la divisione per approfondire le partite del turno. Appuntamento alle 14:00 con Daytime per mercato, trattative e approfondimenti; dopo le gare, Final Whistle con risultati e analisi. Buona giornata da Federica Zille, Andrea Stramaccioni e Alessandro Florenzi.",
+  "recovery_checked_at": "2026-10-22T07:41:56.083Z",
+  "assignments": {
+    "effective_from": "2026-10-22",
+    "items": [
+      {
+        "club_id": 94078889,
+        "club": "AS Reggina 1914",
+        "name": "Eleonora Incardona",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079171,
+        "club": "HERTHA BSC",
+        "name": "Giorgia Cenni",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079408,
+        "club": "Legia Warszawa",
+        "name": "Valentina Caruso",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079188,
+        "club": "Celtic",
+        "name": "Nicola Roggero",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94078906,
+        "club": "Atlético Madrid",
+        "name": "Giancarlo Marocchi",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94078878,
+        "club": "SS Lazio",
+        "name": "Matteo Petrucci",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94080273,
+        "club": "Guangzhou FC",
+        "name": "Stefania Pinna",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079501,
+        "club": "SSC Napoli",
+        "name": "Francesco Repice",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94078863,
+        "club": "Atalanta BC",
+        "name": "Massimo Nebuloni",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079159,
+        "club": "Borussia Dortmund",
+        "name": "Federica Lodi",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079037,
+        "club": "Boca Juniors",
+        "name": "Veronica Brunati",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94078892,
+        "club": "Sampdoria",
+        "name": "Gianluca Di Marzio",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079165,
+        "club": "FC Schalke 04",
+        "name": "Sarah Castellana",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079117,
+        "club": "Fenerbahçe SK",
+        "name": "Anna Billò",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079172,
+        "club": "1. FC Kaiserslautern",
+        "name": "Giorgia Rossi",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94078890,
+        "club": "AS Roma",
+        "name": "Paolo Assogna",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94082591,
+        "club": "Campobasso Calcio",
+        "name": "Valentina Ciarlante",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079049,
+        "club": "River Plate",
+        "name": "Stefano Borghi",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079097,
+        "club": "Olympique Marseille",
+        "name": "Maurizio Compagnoni",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94078939,
+        "club": "Valencia CF",
+        "name": "Vanessa Leonardi",
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
+      },
+      {
+        "club_id": 94079182,
+        "club": "TSV 1860 München",
+        "name": "Pietro Nicolodi",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94078981,
+        "club": "Académica de Coimbra",
+        "name": "Antonio Nucera",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94079139,
+        "club": "AEK Athens",
+        "name": "Gianluigi Bagnulo",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94078865,
+        "club": "Bologna FC",
+        "name": "Francesco Cosatti",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94079202,
+        "club": "Club América",
+        "name": "Filippo Benincampi",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94079161,
+        "club": "Dynamo Dresden",
+        "name": "Dario Massara",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94079114,
+        "club": "Dynamo Kyiv",
+        "name": "Marco Bovicelli",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94079162,
+        "club": "Eintracht Frankfurt",
+        "name": "Matteo Barzaghi",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94078959,
+        "club": "Feyenoord",
+        "name": "Riccardo Gentile",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94079061,
+        "club": "CR Flamengo",
+        "name": "Peppe Di Stefano",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94078875,
+        "club": "Genoa CFC",
+        "name": "Riccardo Re",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94078884,
+        "club": "Palermo FC",
+        "name": "Bruno Palermo",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94079067,
+        "club": "Palmeiras",
+        "name": "Luca Cilli",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94078885,
+        "club": "Parma Calcio 1913",
+        "name": "Marco Nosotti",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94079148,
+        "club": "FK Partizan",
+        "name": "Giovanni Guardalà",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94079073,
+        "club": "São Paulo FC",
+        "name": "Marina Presello",
+        "status": "trial",
+        "label": "Inviata in prova"
+      },
+      {
+        "club_id": 94079115,
+        "club": "Shakhtar Donetsk",
+        "name": "Alessandro Sugoni",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94078843,
+        "club": "Sunderland",
+        "name": "Valentina Mariani",
+        "status": "trial",
+        "label": "Inviata in prova"
+      },
+      {
+        "club_id": 94078895,
+        "club": "Torino",
+        "name": "Paolo Aghemo",
+        "status": "trial",
+        "label": "Inviato in prova"
+      },
+      {
+        "club_id": 94078847,
+        "club": "Tottenham Hotspur",
+        "name": "Massimo Marianella",
+        "status": "trial",
+        "label": "Inviato in prova"
+      }
+    ]
+  },
+  "reporter_portraits": {
+    "Anna Billò": {
+      "image": "assets/reporter-anna-billo.webp",
+      "source": "Foto fornita dall’utente"
+    },
+    "Veronica Brunati": {
+      "image": "assets/reporter-veronica-brunati.webp",
+      "source": "Foto fornita dall’utente"
+    },
+    "Federica Lodi": {
+      "image": "assets/reporter-federica-lodi.webp",
+      "source": "Foto fornita dall’utente"
+    },
+    "Antonio Nucera": {
+      "image": "assets/reporter-antonio-nucera.webp",
+      "source": "https://net-storage-auto.tcccdn.com/storage/tuttoreggina.com/img_notizie/thumb3/50/5088eb6511e51807ad6e07d851c64e1c-11191-oooz0000.jpeg"
+    },
+    "Massimo Marianella": {
+      "image": "assets/reporter-massimo-marianella.webp",
+      "source": "https://sport.sky.it/autore/massimo-marianella"
+    },
+    "Stefania Pinna": {
+      "image": "assets/reporter-stefania-pinna.webp",
+      "source": "https://libropossibile.com/site/assets/files/1153/stefania_pinna.400x400.jpg"
+    },
+    "Stefano Borghi": {
+      "image": "assets/reporter-stefano-borghi.webp",
+      "source": "https://www.offside.community/wp-content/uploads/2019/05/2.jpg"
+    },
+    "Eleonora Incardona": {
+      "image": "assets/reporter-eleonora-incardona.webp",
+      "source": "https://tg24.sky.it/assets/images/ff78156a467b2256f1a4327f163fa4b5dadeb5b9/skytg24/it/spettacolo/2025/02/18/eleonora-incardona-foto/eleonora_incardona1.jpg?im=Resize,width=600"
+    },
+    "Bruno Palermo": {
+      "image": "assets/reporter-bruno-palermo.webp",
+      "source": "https://sport.sky.it/calcio/2026/06/14/calcio-integrazione-accoglienza-torneo-crotone"
+    },
+    "Marina Presello": {
+      "image": "assets/reporter-marina-presello.webp",
+      "source": "https://www.pesavento.com/web/wp-content/uploads/2019/02/MarinaPresello_SkySport.jpg"
+    },
+    "Marco Nosotti": {
+      "image": "assets/reporter-marco-nosotti.webp",
+      "source": "https://sport.sky.it/assets/images/archive/sezioni/sport/mondiali_calcio/2010/05/17/marco_nosotti.jpg?im=Resize,width=565"
+    },
+    "Paolo Assogna": {
+      "image": "assets/reporter-paolo-assogna.webp",
+      "source": "https://sport.sky.it/autore/paolo-assogna"
+    },
+    "Francesco Repice": {
+      "image": "assets/reporter-francesco-repice.webp",
+      "source": "https://www.aquinocresce.it/home/wp-content/uploads/2026/07/IMG-20260712-WA0022.jpg"
+    },
+    "Giorgia Cenni": {
+      "image": "assets/reporter-giorgia-cenni.webp",
+      "source": "https://www.vanityfair.it/sport/partite-eventi/2021/08/31/lo-sport-ve-lo-raccontano-le-donne"
+    },
+    "Maurizio Compagnoni": {
+      "image": "assets/reporter-maurizio-compagnoni.webp",
+      "source": "https://sport.sky.it/autore/maurizio-compagnoni"
+    },
+    "Nicola Roggero": {
+      "image": "assets/reporter-nicola-roggero.webp",
+      "source": "https://sport.sky.it/autore/nicola-roggero"
+    },
+    "Dario Massara": {
+      "image": "assets/reporter-dario-massara.webp",
+      "source": "https://sport.sky.it/autore/dario-massara"
+    },
+    "Paolo Aghemo": {
+      "image": "assets/reporter-paolo-aghemo.webp",
+      "source": "https://sport.sky.it/autore/paolo-aghemo"
+    },
+    "Riccardo Gentile": {
+      "image": "assets/reporter-riccardo-gentile.webp",
+      "source": "https://sport.sky.it/autore/riccardo-gentile"
+    },
+    "Marco Bovicelli": {
+      "image": "assets/reporter-marco-bovicelli.webp",
+      "source": "https://interclubpavia.eu/2018/08/09/bovicelli-per-candreva-difficile-lasciare-linter-keita-comunque-obiettivo/"
+    }
+  }
+}

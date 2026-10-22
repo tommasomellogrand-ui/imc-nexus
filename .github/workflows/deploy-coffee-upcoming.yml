@@ -1,0 +1,40 @@
+name: Publish upcoming Coffee Time editions only
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['coffee-release/**', '.github/workflows/deploy-coffee-upcoming.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate syntax and prepare mobile checks
+        run: |
+          node --check coffee-release/coffee-upcoming.js
+          node --check coffee-release/programme-tabs.js
+          python3 -m py_compile coffee-release/deploy.py coffee-release/build.py
+          npm install --prefix /tmp/daytime-qa playwright@1.56.1 --fetch-timeout=30000 --fetch-retries=1
+      - name: Test proposed editions before publishing
+        run: PREVIEW=1 CHROME_BIN="$(command -v google-chrome)" node coffee-release/verify.cjs
+      - name: Publish exact scoped files with baseline protection
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 coffee-release/deploy.py
+      - name: Verify actual public editions and mobile navigation
+        run: CHROME_BIN="$(command -v google-chrome)" node coffee-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coffee-upcoming-mobile
+          path: /tmp/coffee-next-mobile.png
+          retention-days: 7

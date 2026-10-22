@@ -1,0 +1,65 @@
+{
+  "world": "GW001",
+  "editions": [
+    {
+      "date": "2026-10-25",
+      "day": 9,
+      "file": "2026-10-25-coffee.json",
+      "matches": 20
+    },
+    {
+      "date": "2026-10-29",
+      "day": 10,
+      "file": "2026-10-29-coffee.json",
+      "matches": 20
+    },
+    {
+      "date": "2026-11-01",
+      "day": 11,
+      "file": "2026-11-01-coffee.json",
+      "matches": 20
+    },
+    {
+      "date": "2026-11-05",
+      "day": 12,
+      "file": "2026-11-05-coffee.json",
+      "matches": 20
+    },
+    {
+      "date": "2026-11-08",
+      "day": 13,
+      "file": "2026-11-08-coffee.json",
+      "matches": 20
+    },
+    {
+      "date": "2026-11-12",
+      "day": 14,
+      "file": "2026-11-12-coffee.json",
+      "matches": 20
+    },
+    {
+      "date": "2026-11-15",
+      "day": 15,
+      "file": "2026-11-15-coffee.json",
+      "matches": 20
+    },
+    {
+      "date": "2026-11-19",
+      "day": 16,
+      "file": "2026-11-19-coffee.json",
+      "matches": 20
+    },
+    {
+      "date": "2026-11-22",
+      "day": 17,
+      "file": "2026-11-22-coffee.json",
+      "matches": 20
+    },
+    {
+      "date": "2026-11-26",
+      "day": 18,
+      "file": "2026-11-26-coffee.json",
+      "matches": 20
+    }
+  ]
+}
