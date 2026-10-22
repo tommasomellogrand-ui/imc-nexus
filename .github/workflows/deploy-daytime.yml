@@ -1,0 +1,38 @@
+name: Deploy Daytime only to Aruba
+on:
+  push:
+    branches: [main]
+    paths: ['alltoplayfor-release/**', '.github/workflows/deploy-daytime.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Daytime
+        run: |
+          node --check alltoplayfor-release/daytime.js
+          python3 -m py_compile alltoplayfor-release/deploy.py
+      - name: Deploy only reviewed Daytime files
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 alltoplayfor-release/deploy.py
+      - name: Verify public files
+        run: |
+          python3 - <<'PY'
+          import os,urllib.request
+          from pathlib import Path
+          root=Path('alltoplayfor-release')
+          for name in ['index.html','daytime.js','daytime.css']+['assets/'+p.name for p in (root/'assets').glob('daytime-*.jpg')]:
+              url='https://www.italianmastersclub.it/nexus/alltoplayfor/'+name+'?verify='+os.environ['GITHUB_SHA']
+              data=urllib.request.urlopen(url,timeout=30).read()
+              if data!=(root/name).read_bytes():raise SystemExit('Public mismatch: '+name)
+          print('All Daytime files match public production.')
+          PY
