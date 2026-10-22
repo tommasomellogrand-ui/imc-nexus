@@ -3,3 +3,20 @@
 #panel-daytime .daytime-portrait{display:block;width:88px;height:88px;border:2px solid #c5aa66;border-radius:50%;overflow:hidden;flex-shrink:0}#panel-daytime .daytime-portrait img{display:block;width:100%;height:100%;border:0;border-radius:0}#panel-daytime .daytime-portrait[data-person=luca-marchegiani] img{transform:scale(1.48);object-position:center 38%}@media(max-width:480px){#panel-daytime .daytime-portrait{width:76px;height:76px}}
 
 #panel-daytime .daytime-speaker{flex-direction:column;text-align:center;justify-content:center}#panel-daytime .daytime-speaker>div{width:100%}#panel-daytime .daytime-portrait{margin:0 auto}
+/* Market edition 22 October: styles scoped to this edition only. */
+.daytime-market-edition .market-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:20px 0}
+.daytime-market-edition .market-summary-item{display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid #dbe3ef;border-radius:14px;background:#fff;color:#082b63;text-decoration:none;min-height:44px;overflow-wrap:anywhere}
+.daytime-market-edition .market-summary-item span{font-size:13px;color:#526277}.daytime-market-edition .market-summary-item:focus-visible{outline:3px solid #b48b35;outline-offset:3px}
+.daytime-market-edition .market-cards{display:grid;gap:28px;margin:24px 0}
+.daytime-market-edition .market-player-card{border:1px solid #d4deeb;border-top:4px solid #c39d45;border-radius:20px;overflow:hidden;background:#fff;scroll-margin-top:20px}
+.daytime-market-edition .market-player-header{padding:24px 18px;text-align:center;background:linear-gradient(#f6f8fc,#fff)}
+.daytime-market-edition .market-official{color:#236547;font-weight:800;font-size:12px;letter-spacing:.08em}
+.daytime-market-edition .market-player-photo{display:block;width:120px;height:140px;object-fit:contain;object-position:center;margin:16px auto;background:#fff;border-radius:14px}
+.daytime-market-edition .market-player-header h3{font-size:24px;color:#082b63;margin:12px 0 8px}.daytime-market-edition .market-price{font-size:21px;font-weight:800;color:#87651b}
+.daytime-market-edition .market-route{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);gap:12px;align-items:center;max-width:480px;margin:20px auto 0}
+.daytime-market-edition .market-club{display:flex;align-items:center;flex-direction:column;gap:8px;min-width:0}.daytime-market-edition .market-club strong{overflow-wrap:anywhere;font-size:14px}.daytime-market-edition .market-club-logo{width:60px;height:60px;object-fit:contain}.daytime-market-edition .market-arrow{font-size:27px;color:#a58132}
+.daytime-market-edition .market-speech{margin:0;padding:22px;border:0;border-top:1px solid #e3e8f0;border-radius:0;box-shadow:none}
+.daytime-market-edition .market-speech .daytime-speaker{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}.daytime-market-edition .market-person{width:88px;height:88px;object-fit:cover;object-position:center;border-radius:50%;margin:auto}.daytime-market-edition .market-speech h4{margin:6px 0 0;color:#082b63;font-size:17px}.daytime-market-edition .market-speech header p{margin:0;color:#65758a;font-size:12px}.daytime-market-edition .market-speech>p{line-height:1.7;margin:16px 0 0}
+@media(max-width:520px){.daytime-market-edition .market-summary{grid-template-columns:1fr}.daytime-market-edition .market-speech{padding:20px 16px}.daytime-market-edition .market-player-header{padding:22px 14px}.daytime-market-edition .market-route{gap:8px}}
+
+.daytime-market-edition .market-sources{display:flex;flex-wrap:wrap;gap:10px;padding:16px;border-top:1px solid #dbe3ef}.daytime-market-edition .market-sources a{display:flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid #dbe3ef;border-radius:9px;color:#082b63;font-size:13px}.daytime-market-edition .market-codex-role{font-size:13px;color:#526277}

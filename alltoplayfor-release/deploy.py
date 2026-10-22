@@ -14,7 +14,7 @@ def read(name):
     b=io.BytesIO();ftp.retrbinary('RETR '+name,b.write);return b.getvalue()
 for name in ['index.html','programme-tabs.js','coffee.js','coffee.css','programme-tabs.css','style.css','daytime.js','daytime.css']:
     if read(name)!=(ROOT/'baseline'/name).read_bytes():raise SystemExit('Production changed; deploy stopped before writing: '+name)
-files=['daytime.js']
+files=['daytime.js','daytime.css']+['assets/'+p.name for p in (ROOT/'assets').glob('market-*') if p.name!='market-club-2782.png']
 # Refuse to overwrite a new file created by someone else since inspection.
 for directory in ['', 'assets']:
     names=ftp.nlst(directory or '.')

@@ -21,6 +21,10 @@ jobs:
         run: |
           npm install --prefix /tmp/daytime-qa playwright@1.56.1
           /tmp/daytime-qa/node_modules/.bin/playwright install --with-deps webkit
+      - name: Verify proposed market before publishing
+        env:
+          PREVIEW: "1"
+        run: node alltoplayfor-release/verify-market.cjs
       - name: Deploy only reviewed Daytime files
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
@@ -34,7 +38,7 @@ jobs:
           import os,urllib.request
           from pathlib import Path
           root=Path('alltoplayfor-release')
-          for name in ['index.html','daytime.js','daytime.css']+['assets/'+p.name for p in (root/'assets').glob('daytime-*.jpg')]:
+          for name in ['index.html','daytime.js','daytime.css']+['assets/'+p.name for p in (root/'assets').glob('daytime-*.jpg')]+['assets/'+p.name for p in (root/'assets').glob('market-*') if p.name!='market-club-2782.png']:
               url='https://www.italianmastersclub.it/nexus/alltoplayfor/'+name+'?verify='+os.environ['GITHUB_SHA']
               data=urllib.request.urlopen(url,timeout=30).read()
               if data!=(root/name).read_bytes():raise SystemExit('Public mismatch: '+name)

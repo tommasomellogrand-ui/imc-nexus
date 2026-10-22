@@ -1,0 +1,2181 @@
+{
+  "checked_at": "2026-10-22",
+  "source": "IMC Nexus production GW001",
+  "players": [
+    {
+      "id": 108663,
+      "name": "Oliveira Vanderson",
+      "position": "D,CD,CC(Dx)",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=108663"
+    },
+    {
+      "id": 129663,
+      "name": "Brajan Gruda",
+      "position": "CO,A(DxC)",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=129663"
+    },
+    {
+      "id": 114318,
+      "name": "Hugo Cuenca",
+      "position": "CO(DxC),A(Dx)",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=114318"
+    },
+    {
+      "id": 119987,
+      "name": "Krisztián Lisztes",
+      "position": "CO,A(DxSxC)",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=119987"
+    },
+    {
+      "id": 127815,
+      "name": "Ilyes Housni",
+      "position": "A(C)",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=127815"
+    },
+    {
+      "id": 126062,
+      "name": "Dinis Rodrigues",
+      "position": "A(C)",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=126062"
+    },
+    {
+      "id": 104176,
+      "name": "Jeppe Kjær",
+      "position": "CC(C),CO(DxSxC)",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=104176"
+    },
+    {
+      "id": 58170,
+      "name": "Marco Sportiello",
+      "position": "PT",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=58170"
+    },
+    {
+      "id": 163507,
+      "name": "Rafael Quintas",
+      "position": "CD,CC(C)",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=163507"
+    },
+    {
+      "id": 157613,
+      "name": "Reigan Heskey",
+      "position": "CO,A(DxSx)",
+      "source": "https://www.italianmastersclub.it/nexus/players/profile.php?world=GW001&player=157613"
+    }
+  ],
+  "rosters": {
+    "94079171": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94079171",
+      "generated_at": "2026-10-22T14:40:14+00:00",
+      "active": [
+        {
+          "id": 101780,
+          "name": "Michael OLISE",
+          "position": "CO(DxC),A(Dx)"
+        },
+        {
+          "id": 64152,
+          "name": "Piotr ZIELIŃSKI",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 155660,
+          "name": "Vasilije KOSTOV",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 157608,
+          "name": "Harry HOWELL",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 59500,
+          "name": "Raphaël GUERREIRO",
+          "position": "D,CD(Sx),CC,CO(SxC)"
+        },
+        {
+          "id": 51887,
+          "name": "Iñigo MARTÍNEZ",
+          "position": "D(C)"
+        },
+        {
+          "id": 81994,
+          "name": "Andrade RICHARLISON",
+          "position": "CO(DxSx),A(DxSxC)"
+        },
+        {
+          "id": 104514,
+          "name": "Florian WIRTZ",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 97514,
+          "name": "Aurélien TCHOUAMENI",
+          "position": "D,CD,CC(C)"
+        },
+        {
+          "id": 76517,
+          "name": "Ollie WATKINS",
+          "position": "A(C)"
+        },
+        {
+          "id": 104807,
+          "name": "Nick WOLTEMADE",
+          "position": "CO,A(C)"
+        },
+        {
+          "id": 96383,
+          "name": "Matvey SAFONOV",
+          "position": "PT"
+        },
+        {
+          "id": 104701,
+          "name": "Nuno MENDES",
+          "position": "D,CD,CC(Sx)"
+        },
+        {
+          "id": 99086,
+          "name": "William SALIBA",
+          "position": "D(C)"
+        },
+        {
+          "id": 120840,
+          "name": "Hugo LARSSON",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 119238,
+          "name": "Alejandro GARNACHO",
+          "position": "CO(DxSxC),A(DxSx)"
+        },
+        {
+          "id": 94633,
+          "name": "Gleison BREMER",
+          "position": "D(C)"
+        },
+        {
+          "id": 34893,
+          "name": "Robert LEWANDOWSKI",
+          "position": "A(C)"
+        },
+        {
+          "id": 74306,
+          "name": "Lucas HERNÁNDEZ",
+          "position": "D(SxC)"
+        },
+        {
+          "id": 81915,
+          "name": "Tyler ADAMS",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 94601,
+          "name": "Edon ZHEGROVA",
+          "position": "CO,A(DxSx)"
+        },
+        {
+          "id": 141117,
+          "name": "Agustín RUBERTO",
+          "position": "A(C)"
+        },
+        {
+          "id": 123665,
+          "name": "Dan GORE",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 149623,
+          "name": "Daniel MESONERO",
+          "position": "CC(C),CO(DxC)"
+        },
+        {
+          "id": 95517,
+          "name": "Daniel MUÑOZ",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 140551,
+          "name": "Fran GONZÁLEZ",
+          "position": "PT"
+        },
+        {
+          "id": 137606,
+          "name": "Gabriel MOSCARDO",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 128540,
+          "name": "Kevin ZEROLI",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 142091,
+          "name": "Lewis KOUMAS",
+          "position": "CO(DxSx),A(DxSxC)"
+        },
+        {
+          "id": 112637,
+          "name": "Lovro ZVONAREK",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 139064,
+          "name": "Omari KELLYMAN",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 150470,
+          "name": "Pierce CHARLES",
+          "position": "PT"
+        },
+        {
+          "id": 111609,
+          "name": "Trai HUME",
+          "position": "D(DxSxC),CD,CC(DxSx)"
+        },
+        {
+          "id": 164537,
+          "name": "Tylel TATI",
+          "position": "D(SxC)"
+        },
+        {
+          "id": 133513,
+          "name": "Unai HERNÁNDEZ",
+          "position": "CC(C),CO(SxC)"
+        }
+      ]
+    },
+    "94079099": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94079099",
+      "generated_at": "2026-10-22T14:40:53+00:00",
+      "active": [
+        {
+          "id": 42088,
+          "name": "L HRÁDECKÝ",
+          "position": null
+        },
+        {
+          "id": 137888,
+          "name": "S SANÉ",
+          "position": null
+        },
+        {
+          "id": 102266,
+          "name": "M SALISU",
+          "position": null
+        },
+        {
+          "id": 59391,
+          "name": "Eric DIER",
+          "position": "D(C)"
+        },
+        {
+          "id": 155298,
+          "name": "Aladji BAMBA",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 123016,
+          "name": "Mamadou COULIBALY",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 97233,
+          "name": "J TEZE",
+          "position": null
+        },
+        {
+          "id": 52519,
+          "name": "P POGBA",
+          "position": null
+        },
+        {
+          "id": 118999,
+          "name": "Mika BIERETH",
+          "position": "A(C)"
+        },
+        {
+          "id": 64125,
+          "name": "T MINAMINO",
+          "position": null
+        },
+        {
+          "id": 89686,
+          "name": "P KÖHN",
+          "position": null
+        },
+        {
+          "id": 88465,
+          "name": "Radoslaw MAJECKI",
+          "position": "PT"
+        },
+        {
+          "id": 112994,
+          "name": "Flávio NAZINHO",
+          "position": "D,CD,CC(Sx)"
+        },
+        {
+          "id": 131446,
+          "name": "E DIOP",
+          "position": null
+        },
+        {
+          "id": 130056,
+          "name": "Stanis IDUMBO",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 144818,
+          "name": "L MICHAL",
+          "position": null
+        },
+        {
+          "id": 76072,
+          "name": "Aleksandr GOLOVIN",
+          "position": "CC(C),CO(SxC)"
+        },
+        {
+          "id": 100306,
+          "name": "Folarin BALOGUN",
+          "position": "A(C)"
+        },
+        {
+          "id": 108663,
+          "name": "Oliveira VANDERSON",
+          "position": "D,CD,CC(Dx)"
+        }
+      ]
+    },
+    "94078779": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94078779",
+      "generated_at": "2026-10-22T14:40:49+00:00",
+      "active": [
+        {
+          "id": 102170,
+          "name": "João COSTINHA",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 95241,
+          "name": "P STRUIJK",
+          "position": null
+        },
+        {
+          "id": 81480,
+          "name": "Olivier BOSCAGLI",
+          "position": "D(SxC),CD(C)"
+        },
+        {
+          "id": 121048,
+          "name": "Facundo BUONANOTTE",
+          "position": "CC,CO(DxSxC)"
+        },
+        {
+          "id": 127066,
+          "name": "Diego GÓMEZ",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 102324,
+          "name": "Georginio RUTTER",
+          "position": "CO,A(DxC)"
+        },
+        {
+          "id": 108835,
+          "name": "Kaoru MITOMA",
+          "position": "CO,A(Sx)"
+        },
+        {
+          "id": 44665,
+          "name": "Jason STEELE",
+          "position": "PT"
+        },
+        {
+          "id": 118694,
+          "name": "Evan FERGUSON",
+          "position": "A(C)"
+        },
+        {
+          "id": 117490,
+          "name": "E CASHIN",
+          "position": null
+        },
+        {
+          "id": 133549,
+          "name": "I OSMAN",
+          "position": null
+        },
+        {
+          "id": 126432,
+          "name": "A COZIER-DUBERRY",
+          "position": null
+        },
+        {
+          "id": 104937,
+          "name": "Michael SVOBODA",
+          "position": "D(C)"
+        },
+        {
+          "id": 107193,
+          "name": "Mats WIEFFER",
+          "position": "D(Dx),CD,CC(DxC)"
+        },
+        {
+          "id": 114366,
+          "name": "Femi AZEEZ",
+          "position": "CC,CO(DxSx)"
+        },
+        {
+          "id": 129683,
+          "name": "James BEADLE",
+          "position": "PT"
+        },
+        {
+          "id": 144192,
+          "name": "S KEOGH",
+          "position": null
+        }
+      ]
+    },
+    "94078890": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94078890",
+      "generated_at": "2026-10-22T14:40:14+00:00",
+      "active": [
+        {
+          "id": 61102,
+          "name": "Emiliano MARTÍNEZ",
+          "position": "PT"
+        },
+        {
+          "id": 19587,
+          "name": "Dušan TADIĆ",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 113845,
+          "name": "Valentín BARCO",
+          "position": "D,CD(Sx),CC,CO(SxC)"
+        },
+        {
+          "id": 117462,
+          "name": "Felipe ENDRICK",
+          "position": "CO(Dx),A(DxC)"
+        },
+        {
+          "id": 136465,
+          "name": "Can UZUN",
+          "position": "CO,A(SxC)"
+        },
+        {
+          "id": 114316,
+          "name": "Jobe BELLINGHAM",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 129663,
+          "name": "Brajan GRUDA",
+          "position": "CO,A(DxC)"
+        },
+        {
+          "id": 101125,
+          "name": "Eduardo CAMAVINGA",
+          "position": "D(Sx),CD,CC(SxC)"
+        },
+        {
+          "id": 149452,
+          "name": "Alessandro LONGONI",
+          "position": "PT"
+        },
+        {
+          "id": 103281,
+          "name": "Xavi SIMONS",
+          "position": "CO(DxSxC),A(DxSx)"
+        },
+        {
+          "id": 97662,
+          "name": "Reece JAMES",
+          "position": "D(Dx),CD,CC(DxC)"
+        },
+        {
+          "id": 120987,
+          "name": "Lucas BERALDO",
+          "position": "D(SxC),CD(C)"
+        },
+        {
+          "id": 64398,
+          "name": "Gerard MORENO",
+          "position": "CO(Dx),A(DxC)"
+        },
+        {
+          "id": 129408,
+          "name": "Jorrel HATO",
+          "position": "D(SxC),CD(Sx)"
+        },
+        {
+          "id": 97458,
+          "name": "Joško GVARDIOL",
+          "position": "D(SxC),CD(Sx)"
+        },
+        {
+          "id": 90167,
+          "name": "Min-Jae KIM",
+          "position": "D(C)"
+        },
+        {
+          "id": 55862,
+          "name": "Florian THAUVIN",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 119476,
+          "name": "Milos KERKEZ",
+          "position": "D,CD,CC(Sx)"
+        },
+        {
+          "id": 78086,
+          "name": "Fabián RUIZ",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 101341,
+          "name": "Benjamin SESKO",
+          "position": "A(C)"
+        },
+        {
+          "id": 18338,
+          "name": "Thiago SILVA",
+          "position": "D(C)"
+        },
+        {
+          "id": 141315,
+          "name": "Alberto COSTA",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 167335,
+          "name": "Adil HAMDANI",
+          "position": "CO,A(SxC)"
+        },
+        {
+          "id": 174059,
+          "name": "Asane SOW",
+          "position": "CO(DxSxC)"
+        },
+        {
+          "id": 165374,
+          "name": "Daniel BANJAQUI",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 124631,
+          "name": "Derry SCHERHANT",
+          "position": "CO(DxSx),A(DxSxC)"
+        },
+        {
+          "id": 162172,
+          "name": "Djibril COULIBALY",
+          "position": "CC(C)"
+        },
+        {
+          "id": 116573,
+          "name": "Ezechiel BANZUZI",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 155027,
+          "name": "Flávio GONÇALVES",
+          "position": "CO(DxSxC),A(DxSx)"
+        },
+        {
+          "id": 159042,
+          "name": "Hamza ABDELKARIM",
+          "position": "A(C)"
+        },
+        {
+          "id": 139925,
+          "name": "Ibrahima BA",
+          "position": "D(C)"
+        },
+        {
+          "id": 174401,
+          "name": "Kaïl BOUDACHE",
+          "position": "CO(Dx),A(DxC)"
+        },
+        {
+          "id": 142164,
+          "name": "Malick YALCOUYÉ",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 164467,
+          "name": "Mathieu NGUEFACK",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 119466,
+          "name": "Nestory IRANKUNDA",
+          "position": "CO(DxSx),A(DxSxC)"
+        },
+        {
+          "id": 150341,
+          "name": "Noahkai BANKS",
+          "position": "D(C)"
+        },
+        {
+          "id": 137375,
+          "name": "Shea LACEY",
+          "position": "CO(DxC),A(Dx)"
+        }
+      ]
+    },
+    "94078892": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94078892",
+      "generated_at": "2026-10-22T14:40:09+00:00",
+      "active": [
+        {
+          "id": 91599,
+          "name": "Josep MARTÍNEZ",
+          "position": "PT"
+        },
+        {
+          "id": 86085,
+          "name": "Achraf HAKIMI",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 104580,
+          "name": "Hugo EKITIKÉ",
+          "position": "A(C)"
+        },
+        {
+          "id": 90068,
+          "name": "Vinícius JÚNIOR",
+          "position": "CO(Sx),A(SxC)"
+        },
+        {
+          "id": 137517,
+          "name": "Leon AVDULLAHU",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 102857,
+          "name": "Ferreira VITINHA",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 78694,
+          "name": "Federico DIMARCO",
+          "position": "D(SxC),CD,CC(Sx)"
+        },
+        {
+          "id": 95236,
+          "name": "Alexis MAC ALLISTER",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 104266,
+          "name": "Moisés CAICEDO",
+          "position": "D(Dx),CD,CC(C)"
+        },
+        {
+          "id": 149883,
+          "name": "Sean STEUR",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 118879,
+          "name": "França WESLEY",
+          "position": "D,CD,CC(DxSx)"
+        },
+        {
+          "id": 88949,
+          "name": "Alessandro BASTONI",
+          "position": "D(C)"
+        },
+        {
+          "id": 99607,
+          "name": "Bukayo SAKA",
+          "position": "CC,CO(Dx)"
+        },
+        {
+          "id": 101806,
+          "name": "James HILL",
+          "position": "D(DxC)"
+        },
+        {
+          "id": 88658,
+          "name": "Robin KOCH",
+          "position": "D(C)"
+        },
+        {
+          "id": 115744,
+          "name": "Roméo LAVIA",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 118136,
+          "name": "Franjo IVANOVIĆ",
+          "position": "CO,A(C)"
+        },
+        {
+          "id": 15177,
+          "name": "Olivier GIROUD",
+          "position": "A(C)"
+        },
+        {
+          "id": 115132,
+          "name": "Andy DIOUF",
+          "position": "CC,CO(DxC)"
+        },
+        {
+          "id": 143334,
+          "name": "Gustavo VARELA",
+          "position": "A(C)"
+        },
+        {
+          "id": 125528,
+          "name": "Noah RAVEYRE",
+          "position": "PT"
+        },
+        {
+          "id": 125315,
+          "name": "Pablo PAGIS",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 165777,
+          "name": "Simone CINQUEGRANO",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 123570,
+          "name": "Niko TAKAHASHI",
+          "position": "D(SxC),CD(Sx)"
+        },
+        {
+          "id": 151753,
+          "name": "Eddy KOUADIO",
+          "position": "D(C)"
+        },
+        {
+          "id": 108531,
+          "name": "Chaka TRAORÈ",
+          "position": "CO(DxSxC),A(DxSx)"
+        },
+        {
+          "id": 113747,
+          "name": "Charlie SETFORD",
+          "position": "PT"
+        },
+        {
+          "id": 163381,
+          "name": "Eirik GRANAAS",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 176756,
+          "name": "Federico CROCI",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 131589,
+          "name": "Filip SIDKLEV",
+          "position": "PT"
+        },
+        {
+          "id": 166729,
+          "name": "Floyd SAMBA",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 140157,
+          "name": "James MCCONNELL",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 96114,
+          "name": "Joe SCALLY",
+          "position": "D(DxC),CD,CC(Dx)"
+        },
+        {
+          "id": 117949,
+          "name": "Kyriani SABBE",
+          "position": "D,CD,CC(DxSx)"
+        },
+        {
+          "id": 109104,
+          "name": "Nikolaos BOTIS",
+          "position": "PT"
+        },
+        {
+          "id": 115124,
+          "name": "Oussama TARGHALLINE",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 151758,
+          "name": "Shumaira MHEUKA",
+          "position": "A(C)"
+        }
+      ]
+    },
+    "94078896": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94078896",
+      "generated_at": "2026-10-22T14:40:49+00:00",
+      "active": [
+        {
+          "id": 114318,
+          "name": "Hugo CUENCA",
+          "position": "CO(DxC),A(Dx)"
+        }
+      ]
+    },
+    "94079161": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94079161",
+      "generated_at": "2026-10-22T14:40:09+00:00",
+      "active": [
+        {
+          "id": 82209,
+          "name": "Gianluigi DONNARUMMA",
+          "position": "PT"
+        },
+        {
+          "id": 101303,
+          "name": "Nico SCHLOTTERBECK",
+          "position": "D(SxC)"
+        },
+        {
+          "id": 82312,
+          "name": "Dayot UPAMECANO",
+          "position": "D(C)"
+        },
+        {
+          "id": 86903,
+          "name": "Cristian ROMERO",
+          "position": "D(C)"
+        },
+        {
+          "id": 99179,
+          "name": "Óscar MINGUEZA",
+          "position": "D(DxSxC),CD,CC(DxSx)"
+        },
+        {
+          "id": 107765,
+          "name": "Riccardo CALAFIORI",
+          "position": "D(SxC),CD,CC(Sx)"
+        },
+        {
+          "id": 52849,
+          "name": "Paulo DYBALA",
+          "position": "CO,A(DxC)"
+        },
+        {
+          "id": 94642,
+          "name": "Bruno GUIMARÃES",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 101244,
+          "name": "Gonçalo RAMOS",
+          "position": "A(C)"
+        },
+        {
+          "id": 103187,
+          "name": "Johnny CARDOSO",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 110769,
+          "name": "Giuliano SIMEONE",
+          "position": "CO(DxSx),A(DxSxC)"
+        },
+        {
+          "id": 110596,
+          "name": "Isak HIEN",
+          "position": "D(C)"
+        },
+        {
+          "id": 97582,
+          "name": "Kang-In LEE",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 103287,
+          "name": "Yan COUTO",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 113904,
+          "name": "Mateo PELLEGRINO",
+          "position": "A(C)"
+        },
+        {
+          "id": 117976,
+          "name": "Jordan BOS",
+          "position": "D,CD,CC,CO(Sx)"
+        },
+        {
+          "id": 91278,
+          "name": "Pedro NETO",
+          "position": "CC,CO(DxSx),A(DxSxC)"
+        },
+        {
+          "id": 88385,
+          "name": "Trent ALEXANDER-ARNOLD",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 104825,
+          "name": "Omar MARMOUSH",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 82275,
+          "name": "Frenkie DE JONG",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 141913,
+          "name": "Albert NAVARRO",
+          "position": "D(SxC),CD,CC(Sx)"
+        },
+        {
+          "id": 126037,
+          "name": "Momodou Lamin SONKO",
+          "position": "CO(DxSx),A(DxSxC)"
+        },
+        {
+          "id": 151392,
+          "name": "Lautaro RIVERO",
+          "position": "D(SxC)"
+        },
+        {
+          "id": 153491,
+          "name": "Arthur GABRIEL",
+          "position": "D,CD,CC(Sx)"
+        },
+        {
+          "id": 136885,
+          "name": "George ABBOTT",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 124396,
+          "name": "Jaden SLORY",
+          "position": "CO,A(DxSx)"
+        },
+        {
+          "id": 126340,
+          "name": "Jamie DONLEY",
+          "position": "CO,A(C)"
+        },
+        {
+          "id": 132139,
+          "name": "Jan ZIOLKOWSKI",
+          "position": "D(C)"
+        },
+        {
+          "id": 170397,
+          "name": "Jocelin TA BI",
+          "position": "CO(DxSxC),A(DxSx)"
+        },
+        {
+          "id": 151406,
+          "name": "Josué REINATTI",
+          "position": "PT"
+        },
+        {
+          "id": 121286,
+          "name": "Martin GEORGIEV",
+          "position": "D(C)"
+        },
+        {
+          "id": 141963,
+          "name": "Rayane BELAID",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 136612,
+          "name": "Riccardo PAGANO",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 152118,
+          "name": "Santiago LENCINA",
+          "position": "CO(DxSxC)"
+        },
+        {
+          "id": 143960,
+          "name": "Tyrese HALL",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 114262,
+          "name": "Zidan SERTDEMIR",
+          "position": "CC,CO(C)"
+        }
+      ]
+    },
+    "94083456": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94083456",
+      "generated_at": "2026-10-22T14:40:49+00:00",
+      "active": [
+        {
+          "id": 119987,
+          "name": "Krisztián LISZTES",
+          "position": "CO,A(DxSxC)"
+        }
+      ]
+    },
+    "94079101": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94079101",
+      "generated_at": "2026-10-22T14:40:53+00:00",
+      "active": [
+        {
+          "id": 127815,
+          "name": "Ilyes HOUSNI",
+          "position": "A(C)"
+        }
+      ]
+    },
+    "94079172": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94079172",
+      "generated_at": "2026-10-22T14:40:09+00:00",
+      "active": [
+        {
+          "id": 139751,
+          "name": "Pau CUBARSÍ",
+          "position": "D(C)"
+        },
+        {
+          "id": 128879,
+          "name": "Willian ESTÊVÃO",
+          "position": "CO(DxC),A(Dx)"
+        },
+        {
+          "id": 114680,
+          "name": "Hayden HACKNEY",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 83844,
+          "name": "Alexander ISAK",
+          "position": "CO(Sx),A(SxC)"
+        },
+        {
+          "id": 155171,
+          "name": "Lennart KARL",
+          "position": "CO(DxC)"
+        },
+        {
+          "id": 151474,
+          "name": "Ibrahim MBAYE",
+          "position": "CO,A(DxSx)"
+        },
+        {
+          "id": 124735,
+          "name": "Antonio VERGARA",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 139611,
+          "name": "Marc BERNAL",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 130786,
+          "name": "Arthur ATTA",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 101738,
+          "name": "Amar DEDIĆ",
+          "position": "D(DxSxC),CD,CC(DxSx)"
+        },
+        {
+          "id": 117285,
+          "name": "Archie GRAY",
+          "position": "D(DxSxC),CD,CC(C)"
+        },
+        {
+          "id": 151779,
+          "name": "Harrison ARMSTRONG",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 98346,
+          "name": "Maxence LACROIX",
+          "position": "D(C)"
+        },
+        {
+          "id": 99728,
+          "name": "James GARNER",
+          "position": "D(Dx),CD,CC(DxC)"
+        },
+        {
+          "id": 107357,
+          "name": "Yehor YARMOLYUK",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 99273,
+          "name": "Karim ADEYEMI",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 105431,
+          "name": "Gabri VEIGA",
+          "position": "CC(C),CO(SxC)"
+        },
+        {
+          "id": 116809,
+          "name": "Antonín KINSKÝ",
+          "position": "PT"
+        },
+        {
+          "id": 112974,
+          "name": "Nathan NGOY",
+          "position": "D(DxC)"
+        },
+        {
+          "id": 105242,
+          "name": "Lukas HORNICEK",
+          "position": "PT"
+        },
+        {
+          "id": 84760,
+          "name": "Antonee ROBINSON",
+          "position": "D,CD,CC(Sx)"
+        },
+        {
+          "id": 117357,
+          "name": "Tarik MUHAREMOVIĆ",
+          "position": "D(C)"
+        },
+        {
+          "id": 153357,
+          "name": "Younes EBNOUTALIB",
+          "position": "A(C)"
+        },
+        {
+          "id": 141473,
+          "name": "Jannik SCHUSTER",
+          "position": "D(C)"
+        },
+        {
+          "id": 172743,
+          "name": "Aaron MAYOL",
+          "position": "CC(C)"
+        },
+        {
+          "id": 156401,
+          "name": "Allan OYIRWOTH",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 139417,
+          "name": "Gjivai ZECHIËL",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 164002,
+          "name": "Ifeanyi NDUKWE",
+          "position": "D(C)"
+        },
+        {
+          "id": 155039,
+          "name": "Jacobo ORTEGA",
+          "position": "A(C)"
+        },
+        {
+          "id": 104176,
+          "name": "Jeppe KJÆR",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 166801,
+          "name": "Jeremiaha MALUZE",
+          "position": "D,CD(C)"
+        },
+        {
+          "id": 145417,
+          "name": "Keita KOSUGI",
+          "position": "D,CD,CC(Sx)"
+        },
+        {
+          "id": 176735,
+          "name": "Marc SANTOS",
+          "position": "D,CD,CC,CO(Sx)"
+        },
+        {
+          "id": 164899,
+          "name": "Montrell CULBREATH",
+          "position": "CO,A(DxC)"
+        },
+        {
+          "id": 85672,
+          "name": "Nahuel MOLINA",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 141340,
+          "name": "Trey NYONI",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 167004,
+          "name": "Zadok YOHANNA",
+          "position": "D,CD(Sx),CC,CO(DxSx)"
+        }
+      ]
+    },
+    "94082072": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94082072",
+      "generated_at": "2026-10-22T14:40:49+00:00",
+      "active": [
+        {
+          "id": 126062,
+          "name": "Dinis RODRIGUES",
+          "position": "A(C)"
+        }
+      ]
+    },
+    "94080196": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94080196",
+      "generated_at": "2026-10-22T14:40:49+00:00",
+      "active": []
+    },
+    "94079115": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94079115",
+      "generated_at": "2026-10-22T14:40:14+00:00",
+      "active": [
+        {
+          "id": 78609,
+          "name": "Alex MERET",
+          "position": "PT"
+        },
+        {
+          "id": 99895,
+          "name": "Strahinja PAVLOVIĆ",
+          "position": "D(C)"
+        },
+        {
+          "id": 82178,
+          "name": "Hernández RODRI",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 121204,
+          "name": "Warren ZAÏRE-EMERY",
+          "position": "D(Dx),CD,CC(DxC)"
+        },
+        {
+          "id": 85388,
+          "name": "Theo HERNÁNDEZ",
+          "position": "D(SxC),CD,CC(Sx)"
+        },
+        {
+          "id": 105024,
+          "name": "Jamie LEWELING",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 64598,
+          "name": "Bruno FERNANDES",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 67798,
+          "name": "Mario PAŠALIĆ",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 141301,
+          "name": "Geovany QUENDA",
+          "position": "CC,CO(DxSx)"
+        },
+        {
+          "id": 87889,
+          "name": "Jean-Philippe MATETA",
+          "position": "A(C)"
+        },
+        {
+          "id": 93335,
+          "name": "Danilho DOEKHI",
+          "position": "D(C)"
+        },
+        {
+          "id": 74186,
+          "name": "Nikola VLAŠIĆ",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 68027,
+          "name": "Jonathan TAH",
+          "position": "D(C)"
+        },
+        {
+          "id": 64154,
+          "name": "Alessio ROMAGNOLI",
+          "position": "D(C)"
+        },
+        {
+          "id": 98514,
+          "name": "Ryan GRAVENBERCH",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 37180,
+          "name": "Stephan EL SHAARAWY",
+          "position": "CC(DxSx),CO(DxSxC)"
+        },
+        {
+          "id": 97268,
+          "name": "Pedro GONÇALVES",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 138699,
+          "name": "Vasilije ADŽIĆ",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 53337,
+          "name": "Raúl JIMÉNEZ",
+          "position": "A(C)"
+        },
+        {
+          "id": 167994,
+          "name": "Alessio BARALLA",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 165718,
+          "name": "Ali DEMIRBILEK",
+          "position": "CO,A(DxSx)"
+        },
+        {
+          "id": 132597,
+          "name": "Alphadjo CISSÈ",
+          "position": "CO,A(SxC)"
+        },
+        {
+          "id": 117032,
+          "name": "Antonio RAIMONDO",
+          "position": "A(C)"
+        },
+        {
+          "id": 172605,
+          "name": "Chec Bebel DOUMBIA",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 165445,
+          "name": "Giuseppe FORTE",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 166371,
+          "name": "Jaume DURÁ",
+          "position": "CO(C)"
+        },
+        {
+          "id": 154005,
+          "name": "Jay ROBINSON",
+          "position": "CO,A(DxSxC)"
+        },
+        {
+          "id": 163127,
+          "name": "Louis PAGE",
+          "position": "CD,CC,CO(C)"
+        },
+        {
+          "id": 162439,
+          "name": "Niklas HILDEBRANDT",
+          "position": "A(C)"
+        },
+        {
+          "id": 175470,
+          "name": "Riccardo CASSANO",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 141298,
+          "name": "Robin THILAND-HERARD",
+          "position": "CO(DxSx),A(DxSxC)"
+        },
+        {
+          "id": 172472,
+          "name": "Rodrigo GAMÓN",
+          "position": "D,CD,CC(Dx),CO(DxSx)"
+        },
+        {
+          "id": 151291,
+          "name": "Vyacheslav SURKIS",
+          "position": "PT"
+        }
+      ]
+    },
+    "94078864": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94078864",
+      "generated_at": "2026-10-22T14:40:49+00:00",
+      "active": [
+        {
+          "id": 58170,
+          "name": "Marco SPORTIELLO",
+          "position": "PT"
+        },
+        {
+          "id": 113738,
+          "name": "Tommaso BALDANZI",
+          "position": "CO,A(DxC)"
+        }
+      ]
+    },
+    "94078906": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94078906",
+      "generated_at": "2026-10-22T14:40:14+00:00",
+      "active": [
+        {
+          "id": 137578,
+          "name": "Fermín LÓPEZ",
+          "position": "CC(C),CO(DxSxC)"
+        },
+        {
+          "id": 110049,
+          "name": "Alejandro BALDE",
+          "position": "D,CD,CC(Sx)"
+        },
+        {
+          "id": 124781,
+          "name": "Joel ORDÓÑEZ",
+          "position": "D(DxC)"
+        },
+        {
+          "id": 127043,
+          "name": "Ousmane DIOMANDÉ",
+          "position": "D(C)"
+        },
+        {
+          "id": 120321,
+          "name": "Mario MARTÍN",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 99631,
+          "name": "João PEDRO",
+          "position": "CO,A(SxC)"
+        },
+        {
+          "id": 149708,
+          "name": "Oskar PIETUSZEWSKI",
+          "position": "CO(DxSxC),A(DxSx)"
+        },
+        {
+          "id": 105625,
+          "name": "Jamie GITTENS",
+          "position": "CO,A(DxSx)"
+        },
+        {
+          "id": 129988,
+          "name": "Abdukodir KHUSANOV",
+          "position": "D(DxC)"
+        },
+        {
+          "id": 119511,
+          "name": "Cristhian MOSQUERA",
+          "position": "D(DxC)"
+        },
+        {
+          "id": 120134,
+          "name": "Iván FRESNEDA",
+          "position": "D,CD,CC(Dx)"
+        },
+        {
+          "id": 128227,
+          "name": "Álex VALLE",
+          "position": "D,CD,CC(Sx)"
+        },
+        {
+          "id": 155063,
+          "name": "Jan VIRGILI",
+          "position": "CO,A(DxSx)"
+        },
+        {
+          "id": 150291,
+          "name": "Chema ANDRÉS",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 137275,
+          "name": "Sergi DOMÍNGUEZ",
+          "position": "D(DxC)"
+        },
+        {
+          "id": 128020,
+          "name": "Ewen JAOUEN",
+          "position": "PT"
+        },
+        {
+          "id": 152098,
+          "name": "Dayann METHALIE",
+          "position": "D(SxC),CD,CC(Sx)"
+        },
+        {
+          "id": 122900,
+          "name": "Guillaume RESTES",
+          "position": "PT"
+        },
+        {
+          "id": 164465,
+          "name": "Thiago PITARCH",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 149145,
+          "name": "Adin LICINA",
+          "position": "CO(DxSxC)"
+        },
+        {
+          "id": 141111,
+          "name": "Andrés CUENCA",
+          "position": "D(C)"
+        },
+        {
+          "id": 163772,
+          "name": "Cassiano KIALA",
+          "position": "D(C)"
+        },
+        {
+          "id": 156187,
+          "name": "Djylian N'GUESSAN",
+          "position": "A(C)"
+        },
+        {
+          "id": 172304,
+          "name": "Erblin OSMANI",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 155931,
+          "name": "Jude TERRY",
+          "position": "CC,CO(C)"
+        },
+        {
+          "id": 176477,
+          "name": "Léo LEMAÎTRE",
+          "position": "D(SxC)"
+        },
+        {
+          "id": 172034,
+          "name": "Leonard PRESCOTT",
+          "position": "PT"
+        },
+        {
+          "id": 155342,
+          "name": "Lucá WILLIAMS-BARNETT",
+          "position": "CO(DxSxC)"
+        },
+        {
+          "id": 171395,
+          "name": "Lushendry MARTES",
+          "position": "D(DxC)"
+        },
+        {
+          "id": 163178,
+          "name": "Marli SALMON",
+          "position": "D(DxC)"
+        },
+        {
+          "id": 156633,
+          "name": "Mirza CATOVIĆ",
+          "position": "D,CD,CC(C)"
+        },
+        {
+          "id": 143496,
+          "name": "Nathan DE CAT",
+          "position": "CD,CC(C)"
+        },
+        {
+          "id": 155023,
+          "name": "Salvador BLOPA",
+          "position": "D,CD,CC,CO(Dx)"
+        },
+        {
+          "id": 138866,
+          "name": "Samu AGHEHOWA",
+          "position": "A(C)"
+        },
+        {
+          "id": 159636,
+          "name": "Tino KUSANOVIĆ",
+          "position": "CO(DxSx),A(DxSxC)"
+        },
+        {
+          "id": 177222,
+          "name": "Tornike KVARATSKHELIA",
+          "position": "CO,A(DxSx)"
+        },
+        {
+          "id": 150468,
+          "name": "Cavan SULLIVAN",
+          "position": "CO(DxSxC)"
+        }
+      ]
+    },
+    "94078985": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94078985",
+      "generated_at": "2026-10-22T14:40:49+00:00",
+      "active": [
+        {
+          "id": 69803,
+          "name": "Fredrik AURSNES",
+          "position": "D,CD,CO(DxSx),CC(DxSxC)"
+        },
+        {
+          "id": 163507,
+          "name": "Rafael QUINTAS",
+          "position": "CD,CC(C)"
+        }
+      ]
+    },
+    "94079152": {
+      "source": "https://www.italianmastersclub.it/nexus/teams/roster.php?world=GW001&sm_club=94079152",
+      "generated_at": "2026-10-22T14:40:49+00:00",
+      "active": [
+        {
+          "id": 157613,
+          "name": "Reigan HESKEY",
+          "position": "CO,A(DxSx)"
+        }
+      ]
+    }
+  },
+  "prior_transfers": {
+    "transfers-94079115": {
+      "source": "https://www.italianmastersclub.it/nexus/transfers/index.php?world=GW001&sm_club=94079115",
+      "rows": [
+        {
+          "player_id": 58170,
+          "player_name": "M.SPORTIELLO",
+          "club_from": "Shakhtar Donetsk",
+          "club_to": "SSC Bari",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 151291,
+          "player_name": "V.SURKIS",
+          "club_from": "Svincolato",
+          "club_to": "Shakhtar Donetsk",
+          "normalized_transfer_date": "2026-10-17"
+        },
+        {
+          "player_id": 141298,
+          "player_name": "R.THILAND-HERARD",
+          "club_from": "Svincolato",
+          "club_to": "Shakhtar Donetsk",
+          "normalized_transfer_date": "2026-10-14"
+        },
+        {
+          "player_id": 175470,
+          "player_name": "R.CASSANO",
+          "club_from": "Como 1907",
+          "club_to": "Shakhtar Donetsk",
+          "normalized_transfer_date": "2026-10-14"
+        },
+        {
+          "player_id": 167994,
+          "player_name": "A.BARALLA",
+          "club_from": "Empoli",
+          "club_to": "Shakhtar Donetsk",
+          "normalized_transfer_date": "2026-10-14"
+        },
+        {
+          "player_id": 172472,
+          "player_name": "R.GAMÓN",
+          "club_from": "Svincolato",
+          "club_to": "Shakhtar Donetsk",
+          "normalized_transfer_date": "2026-10-13"
+        },
+        {
+          "player_id": 131568,
+          "player_name": "S.OLDERHEIM",
+          "club_from": "Shakhtar Donetsk",
+          "club_to": "Stabaek IF",
+          "normalized_transfer_date": "2026-10-12"
+        },
+        {
+          "player_id": 166820,
+          "player_name": "V.VLADIMIROV",
+          "club_from": "Shakhtar Donetsk",
+          "club_to": "AC Milan",
+          "normalized_transfer_date": "2026-10-12"
+        },
+        {
+          "player_id": 53337,
+          "player_name": "R.JIMÉNEZ",
+          "club_from": "Wolverhampton Wanderers",
+          "club_to": "Shakhtar Donetsk",
+          "normalized_transfer_date": "2026-10-11"
+        },
+        {
+          "player_id": 68177,
+          "player_name": "G.SIMEONE",
+          "club_from": "Shakhtar Donetsk",
+          "club_to": "US Livorno",
+          "normalized_transfer_date": "2026-10-09"
+        }
+      ]
+    },
+    "transfers-94079161": {
+      "source": "https://www.italianmastersclub.it/nexus/transfers/index.php?world=GW001&sm_club=94079161",
+      "rows": [
+        {
+          "player_id": 119987,
+          "player_name": "K.LISZTES",
+          "club_from": "Dynamo Dresden",
+          "club_to": "Bonner SC",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 136612,
+          "player_name": "R.PAGANO",
+          "club_from": "Svincolato",
+          "club_to": "Dynamo Dresden",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 124396,
+          "player_name": "J.SLORY",
+          "club_from": "Svincolato",
+          "club_to": "Dynamo Dresden",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 170397,
+          "player_name": "J.TA BI",
+          "club_from": "Svincolato",
+          "club_to": "Dynamo Dresden",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 152118,
+          "player_name": "S.LENCINA",
+          "club_from": "Svincolato",
+          "club_to": "Dynamo Dresden",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 143960,
+          "player_name": "T.HALL",
+          "club_from": "Svincolato",
+          "club_to": "Dynamo Dresden",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 109123,
+          "player_name": "S.SHORETIRE",
+          "club_from": "Dynamo Dresden",
+          "club_to": "PAOK",
+          "normalized_transfer_date": "2026-10-19"
+        },
+        {
+          "player_id": 150246,
+          "player_name": "F.BORDON",
+          "club_from": "Dynamo Dresden",
+          "club_to": "Clube do Remo",
+          "normalized_transfer_date": "2026-10-19"
+        },
+        {
+          "player_id": 120374,
+          "player_name": "S.VOS",
+          "club_from": "Dynamo Dresden",
+          "club_to": "AC Milan",
+          "normalized_transfer_date": "2026-10-19"
+        },
+        {
+          "player_id": 150727,
+          "player_name": "I.LUQUE",
+          "club_from": "Dynamo Dresden",
+          "club_to": "Real Racing Club",
+          "normalized_transfer_date": "2026-10-19"
+        }
+      ]
+    },
+    "transfers-94079171": {
+      "source": "https://www.italianmastersclub.it/nexus/transfers/index.php?world=GW001&sm_club=94079171",
+      "rows": [
+        {
+          "player_id": 111609,
+          "player_name": "T.HUME",
+          "club_from": "Middlesbrough",
+          "club_to": "Hertha BSC",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 95517,
+          "player_name": "D.MUÑOZ",
+          "club_from": "Campobasso Calcio",
+          "club_to": "Hertha BSC",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 108663,
+          "player_name": "O.VANDERSON",
+          "club_from": "Hertha BSC",
+          "club_to": "AS Monaco",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 129562,
+          "player_name": "K.PÁEZ",
+          "club_from": "Hertha BSC",
+          "club_to": "Chelsea",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 153303,
+          "player_name": "H.GRAY",
+          "club_from": "Hertha BSC",
+          "club_to": "Leeds United",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 142007,
+          "player_name": "M.ALLEYNE",
+          "club_from": "Hertha BSC",
+          "club_to": "Manchester City",
+          "normalized_transfer_date": "2026-10-17"
+        },
+        {
+          "player_id": 46258,
+          "player_name": "F.ACERBI",
+          "club_from": "Hertha BSC",
+          "club_to": "Internazionale",
+          "normalized_transfer_date": "2026-10-17"
+        },
+        {
+          "player_id": 142091,
+          "player_name": "L.KOUMAS",
+          "club_from": "Liverpool",
+          "club_to": "Hertha BSC",
+          "normalized_transfer_date": "2026-10-14"
+        },
+        {
+          "player_id": 140551,
+          "player_name": "F.GONZÁLEZ",
+          "club_from": "Sevilla FC",
+          "club_to": "Hertha BSC",
+          "normalized_transfer_date": "2026-10-14"
+        },
+        {
+          "player_id": 112637,
+          "player_name": "L.ZVONAREK",
+          "club_from": "Bayern München",
+          "club_to": "Hertha BSC",
+          "normalized_transfer_date": "2026-10-14"
+        }
+      ]
+    },
+    "transfers-94078892": {
+      "source": "https://www.italianmastersclub.it/nexus/transfers/index.php?world=GW001&sm_club=94078892",
+      "rows": [
+        {
+          "player_id": 115124,
+          "player_name": "O.TARGHALLINE",
+          "club_from": "Svincolato",
+          "club_to": "Sampdoria",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 96114,
+          "player_name": "J.SCALLY",
+          "club_from": "Borussia Mönchengladbach",
+          "club_to": "Sampdoria",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 117949,
+          "player_name": "K.SABBE",
+          "club_from": "Club Brugge KV",
+          "club_to": "Sampdoria",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 113747,
+          "player_name": "C.SETFORD",
+          "club_from": "Ajax",
+          "club_to": "Sampdoria",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 157613,
+          "player_name": "R.HESKEY",
+          "club_from": "Sampdoria",
+          "club_to": "1. FC Köln",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 127815,
+          "player_name": "I.HOUSNI",
+          "club_from": "Sampdoria",
+          "club_to": "AS Nancy Lorraine",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 114318,
+          "player_name": "H.CUENCA",
+          "club_from": "Sampdoria",
+          "club_to": "FC Treviso",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 124939,
+          "player_name": "C.AKPA",
+          "club_from": "Sampdoria",
+          "club_to": "AJ Auxerre",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 113714,
+          "player_name": "J.RIJKHOFF",
+          "club_from": "Sampdoria",
+          "club_to": "Ajax",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 124583,
+          "player_name": "A.GIAY",
+          "club_from": "Sampdoria",
+          "club_to": "CA Colón",
+          "normalized_transfer_date": "2026-10-19"
+        }
+      ]
+    },
+    "transfers-94078906": {
+      "source": "https://www.italianmastersclub.it/nexus/transfers/index.php?world=GW001&sm_club=94078906",
+      "rows": [
+        {
+          "player_id": 163507,
+          "player_name": "R.QUINTAS",
+          "club_from": "Atlético Madrid",
+          "club_to": "SL Benfica",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 85672,
+          "player_name": "N.MOLINA",
+          "club_from": "Atlético Madrid",
+          "club_to": "1. FC Kaiserslautern",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 138866,
+          "player_name": "S.AGHEHOWA",
+          "club_from": "Campobasso Calcio",
+          "club_to": "Atlético Madrid",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 120046,
+          "player_name": "S.CARDONA",
+          "club_from": "Atlético Madrid",
+          "club_to": "Villarreal CF",
+          "normalized_transfer_date": "2026-10-19"
+        },
+        {
+          "player_id": 149145,
+          "player_name": "A.LICINA",
+          "club_from": "AS Roma",
+          "club_to": "Atlético Madrid",
+          "normalized_transfer_date": "2026-10-14"
+        },
+        {
+          "player_id": 164465,
+          "player_name": "T.PITARCH",
+          "club_from": "Palermo FC",
+          "club_to": "Atlético Madrid",
+          "normalized_transfer_date": "2026-10-10"
+        },
+        {
+          "player_id": 120600,
+          "player_name": "P.BARRIOS",
+          "club_from": "Atlético Madrid",
+          "club_to": "Palermo FC",
+          "normalized_transfer_date": "2026-10-10"
+        },
+        {
+          "player_id": 177222,
+          "player_name": "T.KVARATSKHELIA",
+          "club_from": "Dinamo Tbilisi",
+          "club_to": "Atlético Madrid",
+          "normalized_transfer_date": "2026-10-09"
+        },
+        {
+          "player_id": 115098,
+          "player_name": "J.AGIRREZABALA",
+          "club_from": "Atlético Madrid",
+          "club_to": "Real Racing Club",
+          "normalized_transfer_date": "2026-10-03"
+        },
+        {
+          "player_id": 163178,
+          "player_name": "M.SALMON",
+          "club_from": "Campobasso Calcio",
+          "club_to": "Atlético Madrid",
+          "normalized_transfer_date": "2026-09-26"
+        }
+      ]
+    },
+    "transfers-94078890": {
+      "source": "https://www.italianmastersclub.it/nexus/transfers/index.php?world=GW001&sm_club=94078890",
+      "rows": [
+        {
+          "player_id": 129663,
+          "player_name": "B.GRUDA",
+          "club_from": "Brighton & Hove Albion",
+          "club_to": "AS Roma",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 154981,
+          "player_name": "O.NAASEI",
+          "club_from": "AS Roma",
+          "club_to": "Real Madrid",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 45648,
+          "player_name": "N.GUDELJ",
+          "club_from": "AS Roma",
+          "club_to": "Getafe CF",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 42405,
+          "player_name": "B.ANDRÉ",
+          "club_from": "AS Roma",
+          "club_to": "Lille OSC",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 149145,
+          "player_name": "A.LICINA",
+          "club_from": "AS Roma",
+          "club_to": "Atlético Madrid",
+          "normalized_transfer_date": "2026-10-14"
+        },
+        {
+          "player_id": 18338,
+          "player_name": "T.SILVA",
+          "club_from": "Athletic Club",
+          "club_to": "AS Roma",
+          "normalized_transfer_date": "2026-10-10"
+        },
+        {
+          "player_id": 149448,
+          "player_name": "S.LONTANI",
+          "club_from": "AS Roma",
+          "club_to": "AS Giana Erminio",
+          "normalized_transfer_date": "2026-10-04"
+        },
+        {
+          "player_id": 119466,
+          "player_name": "N.IRANKUNDA",
+          "club_from": "Sporting CP",
+          "club_to": "AS Roma",
+          "normalized_transfer_date": "2026-10-02"
+        },
+        {
+          "player_id": 170386,
+          "player_name": "M.MOUT",
+          "club_from": "AS Roma",
+          "club_to": "AC Monza",
+          "normalized_transfer_date": "2026-09-24"
+        },
+        {
+          "player_id": 174401,
+          "player_name": "K.BOUDACHE",
+          "club_from": "Olympique Lyonnais",
+          "club_to": "AS Roma",
+          "normalized_transfer_date": "2026-09-21"
+        }
+      ]
+    },
+    "transfers-94079172": {
+      "source": "https://www.italianmastersclub.it/nexus/transfers/index.php?world=GW001&sm_club=94079172",
+      "rows": [
+        {
+          "player_id": 104176,
+          "player_name": "J.KJÆR",
+          "club_from": "Mjällby AIF",
+          "club_to": "1. FC Kaiserslautern",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 126062,
+          "player_name": "D.RODRIGUES",
+          "club_from": "1. FC Kaiserslautern",
+          "club_to": "ASD Tuttocuoio",
+          "normalized_transfer_date": "2026-10-21"
+        },
+        {
+          "player_id": 85672,
+          "player_name": "N.MOLINA",
+          "club_from": "Atlético Madrid",
+          "club_to": "1. FC Kaiserslautern",
+          "normalized_transfer_date": "2026-10-20"
+        },
+        {
+          "player_id": 139417,
+          "player_name": "G.ZECHIËL",
+          "club_from": "FC Groningen",
+          "club_to": "1. FC Kaiserslautern",
+          "normalized_transfer_date": "2026-10-19"
+        },
+        {
+          "player_id": 155043,
+          "player_name": "V.VALDEPEÑAS",
+          "club_from": "1. FC Kaiserslautern",
+          "club_to": "ACF Fiorentina",
+          "normalized_transfer_date": "2026-10-19"
+        },
+        {
+          "player_id": 136259,
+          "player_name": "K.DIGTYAR",
+          "club_from": "1. FC Kaiserslautern",
+          "club_to": "Metalist Kharkiv",
+          "normalized_transfer_date": "2026-10-19"
+        },
+        {
+          "player_id": 141340,
+          "player_name": "T.NYONI",
+          "club_from": "Liverpool",
+          "club_to": "1. FC Kaiserslautern",
+          "normalized_transfer_date": "2026-10-18"
+        },
+        {
+          "player_id": 128538,
+          "player_name": "L.NAVA",
+          "club_from": "1. FC Kaiserslautern",
+          "club_to": "US Cremonese",
+          "normalized_transfer_date": "2026-10-16"
+        },
+        {
+          "player_id": 164002,
+          "player_name": "I.NDUKWE",
+          "club_from": "Liverpool",
+          "club_to": "1. FC Kaiserslautern",
+          "normalized_transfer_date": "2026-10-14"
+        },
+        {
+          "player_id": 117357,
+          "player_name": "T.MUHAREMOVIĆ",
+          "club_from": "Leeds United",
+          "club_to": "1. FC Kaiserslautern",
+          "normalized_transfer_date": "2026-10-12"
+        }
+      ]
+    }
+  }
+}
