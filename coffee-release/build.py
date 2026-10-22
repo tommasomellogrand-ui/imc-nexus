@@ -48,6 +48,7 @@ for day in days:
             out['fixtures'].append(item)
         assert len(out['fixtures'])==5
         edition['divisions'].append(out)
+    for key in ['opening','portraits','cast','reporter_portraits']: edition.pop(key,None)
     name=raw['date']+'-coffee.json'
     (ROOT/name).write_text(json.dumps(edition,ensure_ascii=False,indent=2)+'\n')
     manifest.append({'date':raw['date'],'day':raw['day'],'file':name,'matches':20})

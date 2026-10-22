@@ -1,37 +1,6 @@
 {
   "world": "GW001",
   "season": 2,
-  "cast": [
-    [
-      "Federica Zille",
-      "Conduzione"
-    ],
-    [
-      "Andrea Stramaccioni",
-      "Analisi tattica"
-    ],
-    [
-      "Alessandro Florenzi",
-      "Il punto di vista del calciatore"
-    ]
-  ],
-  "portraits": [
-    {
-      "name": "Federica Zille",
-      "image": "assets/coffee-zille.webp",
-      "source": "https://overtimefestival.it/federica-zille/"
-    },
-    {
-      "name": "Andrea Stramaccioni",
-      "image": "assets/coffee-stramaccioni.webp",
-      "source": "https://www.fcinternews.it/copertina/stramaccioni-allo-stadium-la-vittoria-dell-interismo-ecco-perche-dopo-il-derby-dissi-e-vostro-alla-curva-nord-337458"
-    },
-    {
-      "name": "Alessandro Florenzi",
-      "image": "assets/coffee-florenzi.webp",
-      "source": "https://sport.sky.it/calcio/serie-a/2025/08/27/alessandro-florenzi-ritiro-calcio-video"
-    }
-  ],
   "assignments": {
     "effective_from": "2026-10-22",
     "items": [
@@ -317,99 +286,12 @@
       }
     ]
   },
-  "reporter_portraits": {
-    "Anna Billò": {
-      "image": "assets/reporter-anna-billo.webp",
-      "source": "Foto fornita dall’utente"
-    },
-    "Veronica Brunati": {
-      "image": "assets/reporter-veronica-brunati.webp",
-      "source": "Foto fornita dall’utente"
-    },
-    "Federica Lodi": {
-      "image": "assets/reporter-federica-lodi.webp",
-      "source": "Foto fornita dall’utente"
-    },
-    "Antonio Nucera": {
-      "image": "assets/reporter-antonio-nucera.webp",
-      "source": "https://net-storage-auto.tcccdn.com/storage/tuttoreggina.com/img_notizie/thumb3/50/5088eb6511e51807ad6e07d851c64e1c-11191-oooz0000.jpeg"
-    },
-    "Massimo Marianella": {
-      "image": "assets/reporter-massimo-marianella.webp",
-      "source": "https://sport.sky.it/autore/massimo-marianella"
-    },
-    "Stefania Pinna": {
-      "image": "assets/reporter-stefania-pinna.webp",
-      "source": "https://libropossibile.com/site/assets/files/1153/stefania_pinna.400x400.jpg"
-    },
-    "Stefano Borghi": {
-      "image": "assets/reporter-stefano-borghi.webp",
-      "source": "https://www.offside.community/wp-content/uploads/2019/05/2.jpg"
-    },
-    "Eleonora Incardona": {
-      "image": "assets/reporter-eleonora-incardona.webp",
-      "source": "https://tg24.sky.it/assets/images/ff78156a467b2256f1a4327f163fa4b5dadeb5b9/skytg24/it/spettacolo/2025/02/18/eleonora-incardona-foto/eleonora_incardona1.jpg?im=Resize,width=600"
-    },
-    "Bruno Palermo": {
-      "image": "assets/reporter-bruno-palermo.webp",
-      "source": "https://sport.sky.it/calcio/2026/06/14/calcio-integrazione-accoglienza-torneo-crotone"
-    },
-    "Marina Presello": {
-      "image": "assets/reporter-marina-presello.webp",
-      "source": "https://www.pesavento.com/web/wp-content/uploads/2019/02/MarinaPresello_SkySport.jpg"
-    },
-    "Marco Nosotti": {
-      "image": "assets/reporter-marco-nosotti.webp",
-      "source": "https://sport.sky.it/assets/images/archive/sezioni/sport/mondiali_calcio/2010/05/17/marco_nosotti.jpg?im=Resize,width=565"
-    },
-    "Paolo Assogna": {
-      "image": "assets/reporter-paolo-assogna.webp",
-      "source": "https://sport.sky.it/autore/paolo-assogna"
-    },
-    "Francesco Repice": {
-      "image": "assets/reporter-francesco-repice.webp",
-      "source": "https://www.aquinocresce.it/home/wp-content/uploads/2026/07/IMG-20260712-WA0022.jpg"
-    },
-    "Giorgia Cenni": {
-      "image": "assets/reporter-giorgia-cenni.webp",
-      "source": "https://www.vanityfair.it/sport/partite-eventi/2021/08/31/lo-sport-ve-lo-raccontano-le-donne"
-    },
-    "Maurizio Compagnoni": {
-      "image": "assets/reporter-maurizio-compagnoni.webp",
-      "source": "https://sport.sky.it/autore/maurizio-compagnoni"
-    },
-    "Nicola Roggero": {
-      "image": "assets/reporter-nicola-roggero.webp",
-      "source": "https://sport.sky.it/autore/nicola-roggero"
-    },
-    "Dario Massara": {
-      "image": "assets/reporter-dario-massara.webp",
-      "source": "https://sport.sky.it/autore/dario-massara"
-    },
-    "Paolo Aghemo": {
-      "image": "assets/reporter-paolo-aghemo.webp",
-      "source": "https://sport.sky.it/autore/paolo-aghemo"
-    },
-    "Riccardo Gentile": {
-      "image": "assets/reporter-riccardo-gentile.webp",
-      "source": "https://sport.sky.it/autore/riccardo-gentile"
-    },
-    "Marco Bovicelli": {
-      "image": "assets/reporter-marco-bovicelli.webp",
-      "source": "https://interclubpavia.eu/2018/08/09/bovicelli-per-candreva-difficile-lasciare-linter-keita-comunque-obiettivo/"
-    }
-  },
   "date": "2026-11-05",
   "day": 12,
   "title": "Coffee Time · Il prossimo turno",
   "mode": "schedule-preview",
   "source": "https://www.italianmastersclub.it/nexus/matchday/data.php?world=GW001&season=2&day=12",
   "checked_at": "2026-10-22T19:38:35.157297+00:00",
-  "opening": [
-    "Benvenuti a Coffee Time. Prepariamo la giornata 12: venti partite nelle quattro divisioni di GW001. Questo è il programma del 2026-11-05, ricavato dalle Schedule Nexus.",
-    "Partiamo dagli abbinamenti, con le squadre di casa e quelle in trasferta. L’analisi tecnica del turno richiede dati aggiornati: non anticipiamo classifiche, formazioni o risultati futuri.",
-    "Seguiamo ogni incontro con gli inviati già assegnati ai club. Qui trovate l’agenda del turno; eventuali variazioni successive del calendario richiederanno un aggiornamento."
-  ],
   "divisions": [
     {
       "name": "Div 1",

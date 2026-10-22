@@ -6,15 +6,15 @@ date, home/away IDs and time against BOTH club schedules before generating data.
 Sources are the existing Nexus matchday and teams/matches endpoints. Portraits,
 cast and confirmed/trial reporter assignments are retained from the October 22 edition.
 
-These are calendar previews, not future match-day analyses. They deliberately omit
+These are schedule-only previews for Coffee Time AND Final Whistle, without any studio or reporter dialogue. They deliberately omit
 future standings, line-ups, results and manager assignments that might change.
-The 22:00 override in the October 22 edition is NOT applied to other dates.
+Editorial text will be prepared edition by edition using then-current standings and results. The 22:00 override in the October 22 edition is NOT applied to other dates.
 International/cup fixtures are outside this first league-only batch.
 This release does not install a recurrent content-generation task.
 
 `coffee-upcoming.js` renders only dates in the manifest; the original Coffee script
 and October 22 JSON are unchanged. The only existing files deployed are index.html
-(versioned new assets) and programme-tabs.js (extend the date selector range).
+(versioned new assets), programme-tabs.js (extend the date selector range), and final-whistle.js (suppress dialogue ONLY for the new schedule-preview editions).
 The new dated JSON also satisfies Final Whistle's existing fixture contract.
 
 Deployment uses configured Aruba FTPS secrets, production baseline checks,

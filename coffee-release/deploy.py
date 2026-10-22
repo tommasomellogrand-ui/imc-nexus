@@ -16,7 +16,7 @@ def read(name):
 def put(name,data):
     ftp.storbinary('STOR '+name,io.BytesIO(data))
     if read(name)!=data:raise RuntimeError('FTPS verification failed: '+name)
-for name in ['index.html','programme-tabs.js']:
+for name in ['index.html','programme-tabs.js','final-whistle.js']:
     if read(name)!=(ROOT/'baseline'/name).read_bytes():raise SystemExit('Production changed: '+name)
 if read('2026-10-22-coffee.json')!=(ROOT/'evidence/2026-10-22-coffee.json').read_bytes():raise SystemExit('Current Coffee edition changed')
 for name in names:
@@ -26,16 +26,16 @@ for name in names:
     else:
         if old!=(ROOT/name).read_bytes():raise SystemExit('Existing file differs: '+name)
 for name in names:put(name,(ROOT/name).read_bytes())
-for name in ['programme-tabs.js','index.html']:
+for name in ['final-whistle.js','programme-tabs.js','index.html']:
     if read(name)!=(ROOT/'baseline'/name).read_bytes():raise SystemExit('Integration changed during upload: '+name)
     put(name+'.pre-coffee-'+os.environ['GITHUB_SHA'][:12],(ROOT/'baseline'/name).read_bytes())
 try:
-    for name in ['programme-tabs.js','index.html']:put(name,(ROOT/name).read_bytes())
+    for name in ['final-whistle.js','programme-tabs.js','index.html']:put(name,(ROOT/name).read_bytes())
 except Exception:
-    for name in ['programme-tabs.js','index.html']:put(name,(ROOT/'baseline'/name).read_bytes())
+    for name in ['final-whistle.js','programme-tabs.js','index.html']:put(name,(ROOT/'baseline'/name).read_bytes())
     raise
 ftp.quit()
-for name in names+['programme-tabs.js','index.html']:
+for name in names+['final-whistle.js','programme-tabs.js','index.html']:
     req=urllib.request.Request('https://www.italianmastersclub.it/nexus/alltoplayfor/'+name+'?verify='+os.environ['GITHUB_SHA'],headers={'Cache-Control':'no-cache'})
     if urllib.request.urlopen(req,timeout=30).read()!=(ROOT/name).read_bytes():raise SystemExit('Public mismatch: '+name)
 print('PASS: all published files verified over FTPS and public HTTPS, cache bypassed.')
