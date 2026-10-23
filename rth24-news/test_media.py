@@ -4,6 +4,15 @@ from unittest.mock import patch
 from PIL import Image
 import media
 class MediaTests(unittest.TestCase):
+ def test_crest_uses_nexus_cache_without_external_download(self):
+  buf=io.BytesIO();Image.new('RGB',(4,4)).save(buf,format='PNG');data=buf.getvalue()
+  with patch.object(media,'download',return_value=data) as fetch:
+   self.assertEqual(media.source_image({'source_url':'https://cdn.soccerwiki.org/images/logos/clubs/128.png'},'torino-v1.png','news-id'),data)
+   fetch.assert_called_once_with(media.PUBLIC+'crest-cache-v1.php?id=128')
+ def test_errors_identify_news_and_filename(self):
+  with patch.object(media,'download',side_effect=ValueError('HTTP 503')):
+   with self.assertRaisesRegex(ValueError,'news-id; image torino-v1.png'):
+    media.source_image({'source_url':'https://cdn.soccerwiki.org/images/logos/clubs/128.png'},'torino-v1.png','news-id')
  def test_upload_waits_then_preserves_original(self):
   buf=io.BytesIO();Image.new('RGB',(4,4)).save(buf,format='JPEG');data=buf.getvalue()
   with tempfile.TemporaryDirectory() as d,patch.object(media,'ROOT',Path(d)):

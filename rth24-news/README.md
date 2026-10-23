@@ -22,6 +22,8 @@ Questo percorso vale identicamente per News generali e News club. Per gli stemmi
 Questi comandi autorizzano la pubblicazione senza una seconda conferma. Non inventare fatti. Mantieni integralmente il testo e usa l'immagine originale. Nessun “Leggi tutto”. Foto nel terzo sinistro, testo nei due terzi destri; senza foto testo a larghezza intera.
 
 ## Immagini: non è necessario inviare binari a GitHub
+
+Gli stemmi SoccerWiki con URL verificato `https://cdn.soccerwiki.org/images/logos/clubs/ID.png` vengono recuperati automaticamente tramite la cache persistente Nexus, limitata agli ID presenti nelle notizie approvate. Non caricarli a mano e non cambiare ID per tentativi. Il sistema riusa prima i file locali e le copie pubblicate, poi la cache; ritenta automaticamente gli errori di rete. I messaggi di errore indicano ID della notizia, nome dell'immagine, host e tipo/numero dell'errore HTTP senza esporre i link firmati. Se anche la fonte originale è indisponibile, la pubblicazione resta bloccata: nessuna foto o stemma viene inventato o omesso.
 Il runner può scaricare l'immagine originale dal suo URL HTTPS. Il commit della chat può essere SOLO TESTO.
 1. Se l'immagine è già in `rth24-news/assets/` oppure nell'archivio pubblico, riusa il suo nome esatto.
 2. Per un nuovo allegato, usa uno strumento disponibile che restituisca il suo URL di download firmato. Se disponibile OpenAI Library, individua il file esatto e usa `prepare_materialize`: negli ambienti senza workspace restituisce un URL firmato. Usa esclusivamente l'URL restituito, mai URL costruiti da file_id, link sandbox o link di download ChatGPT che richiedono login.

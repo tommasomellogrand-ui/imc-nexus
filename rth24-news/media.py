@@ -1,5 +1,5 @@
 """Resolve authorized image URLs on the runner, then retain immutable public copies."""
-import hashlib,io,json,re,urllib.request,urllib.parse
+import hashlib,io,json,re,time,urllib.request,urllib.parse,urllib.error
 from pathlib import Path
 from PIL import Image
 ROOT=Path(__file__).parent
@@ -24,12 +24,30 @@ class Redirect(urllib.request.HTTPRedirectHandler):
   checked_url(newurl);return super().redirect_request(req,fp,code,msg,headers,newurl)
 def download(url):
  checked_url(url)
+ for attempt in range(3):
+  try:
+   with urllib.request.build_opener(Redirect).open(urllib.request.Request(url,headers={'Cache-Control':'no-cache','User-Agent':'IMC-Nexus/1.0'}),timeout=30) as response:
+    data=response.read(MAX_BYTES+1)
+   if len(data)>MAX_BYTES:raise ValueError('Image exceeds 12 MB')
+   return data
+  except (urllib.error.URLError,TimeoutError,OSError) as e:
+   reason='HTTP '+str(e.code) if isinstance(e,urllib.error.HTTPError) else type(e).__name__
+   if attempt<2:time.sleep(attempt+1)
+ raise ValueError('Download failed from '+urllib.parse.urlsplit(url).hostname+' ('+reason+', 3 attempts)') from None
+
+def source_image(obj,name,item_id):
+ url=obj.get('source_url')
+ if not url:raise ValueError('News '+item_id+': missing image '+name)
+ match=re.fullmatch(r'https://cdn\.soccerwiki\.org/images/logos/clubs/([1-9][0-9]{0,7})\.png',url)
+ if match:
+  try:
+   data=download(PUBLIC+'crest-cache-v1.php?id='+match[1]);inspect(data,name)
+   print('MEDIA',item_id,name,'resolved through persistent Nexus crest cache')
+   return data
+  except ValueError as e:print('MEDIA',item_id,name,'Nexus cache unavailable:',str(e))
  try:
-  with urllib.request.build_opener(Redirect).open(urllib.request.Request(url,headers={'Cache-Control':'no-cache'}),timeout=45) as response:
-   data=response.read(MAX_BYTES+1)
- except Exception:raise ValueError('Image download failed or URL expired; refresh the download URL') from None
- if len(data)>MAX_BYTES:raise ValueError('Image exceeds 12 MB')
- return data
+  data=download(url);inspect(data,name);return data
+ except Exception as e:raise ValueError('News '+item_id+'; image '+name+'; '+str(e)) from None
 
 def inspect(data,name):
  with Image.open(io.BytesIO(data)) as img:
@@ -65,8 +83,7 @@ def prepare(items):
      data=download(PUBLIC+name);digest=inspect(data,name)
      if not previous[0].get('sha256') or digest!=previous[0]['sha256']:raise ValueError('Published image checksum mismatch')
     else:
-     if not obj.get('source_url'):raise ValueError('Missing image download URL: '+name)
-     data=download(obj['source_url']);inspect(data,name)
+     data=source_image(obj,name,item.get('id','unknown'))
     target.parent.mkdir(exist_ok=True);target.write_bytes(data)
    digest=inspect(target.read_bytes(),name)
    if obj.get('sha256') and obj['sha256']!=digest:raise ValueError('Image checksum mismatch')

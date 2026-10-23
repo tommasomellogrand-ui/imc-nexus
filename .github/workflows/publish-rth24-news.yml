@@ -29,6 +29,14 @@ jobs:
           python3 programmes-release/build.py
           node --check rth24-news/feed.js
           npm install --prefix /tmp/rth24-news-qa playwright@1.56.1
+          php -l rth24-news/crest-cache-v1.php
+      - name: Prepare persistent club crest cache
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 rth24-news/install_media_cache.py
       - name: Validate news
         run: python3 rth24-news/build.py
       - name: Test rendering with preview-only news
