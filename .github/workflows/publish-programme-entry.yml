@@ -1,8 +1,5 @@
 name: Publish programme entry and horizontal banners
 on:
-  push:
-    branches: [main]
-    paths: ["entry-release/**"]
   workflow_dispatch:
 permissions:
   contents: read
