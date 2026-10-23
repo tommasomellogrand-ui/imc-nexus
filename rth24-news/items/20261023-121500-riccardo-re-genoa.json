@@ -1,16 +1,18 @@
 {
   "id": "20261023-121500-riccardo-re-genoa",
-  "published_at": "2026-10-23T10:30:15.121Z",
-  "title": "Riccardo Re confermato inviato del Genoa",
-  "text": "Riccardo Re confermato come inviato per il Genoa",
+  "published_at": "2026-10-23T10:11:00+02:00",
+  "title": "Riccardo Re, ufficiale la conferma come inviato IMC del Genoa",
+  "text": "GENOA | ALL TO PLAY FOR\nRicostruzione narrativa: non dichiarazioni reali.\n\nRiccardo Re è ufficialmente confermato come inviato di ALL TO PLAY FOR al seguito del Genoa nel GW001 | Road To History.\n\nLa nomina arriva al termine di un divertente scambio di messaggi con il direttore Tommaso Mello. Re chiede se l'assegnazione sia definitiva o se debba ancora affrontare un provino. La risposta non lascia dubbi: sarà lui a seguire i rossoblù.\n\nTra battute sull'abbonamento a Marassi e sul ritorno a Genova, l'inviato festeggia la conferma e si prepara ai prossimi collegamenti.\n\nNella foto, Riccardo Re con l'allenatore del Genoa allo stadio Luigi Ferraris.\n\nBenvenuto nella squadra di ALL TO PLAY FOR! 🔴🔵",
   "image": {
-    "file": "riccardo-re-genoa-v1.jpg",
-    "alt": "Riccardo Re"
+    "file": "20261023-101100-riccardo-re-genoa-v2.jpeg",
+    "alt": "Riccardo Re con microfono IMC accanto all'allenatore del Genoa allo stadio Luigi Ferraris",
+    "upload_name": "0305C536-44BA-496A-A922-3C4CDA7DDD3F.jpeg"
   },
   "teams": [
     {
-      "name": "Genoa",
-      "logo": "genoa-v1.png"
+      "name": "Genoa CFC",
+      "logo": "genoa-v1.png",
+      "source_url": "https://cdn.soccerwiki.org/images/logos/clubs/108.png"
     }
   ]
 }
