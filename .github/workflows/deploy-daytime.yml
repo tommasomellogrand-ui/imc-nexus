@@ -1,9 +1,6 @@
 name: Deploy Daytime only to Aruba
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['alltoplayfor-release/**', '.github/workflows/deploy-daytime.yml']
 permissions:
   contents: read
 concurrency:
