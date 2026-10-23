@@ -1,9 +1,6 @@
 name: Publish ALL TO PLAY FOR programme pages
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['programmes-release/**', '.github/workflows/publish-programme-pages.yml']
 permissions:
   contents: read
 concurrency:
