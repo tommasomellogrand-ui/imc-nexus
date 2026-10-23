@@ -27,8 +27,8 @@ def banner(p):
 disclosure='<p class="series-disclosure">Serie di finzione ispirata a persone reali e ai dati Nexus. Scene e dialoghi sono ricostruzioni narrative, non dichiarazioni o partecipazioni reali.</p>'
 cards=''.join(f'<a class="programme-card card-{p}" href="{BASE}{p}/"><img src="assets/{catalog[p]["banner"]}" alt="" width="2048" height="683"><span>{catalog[p]["name"]} <b aria-hidden="true">→</b></span></a>' for p in ['rth-24','coffee-time','daytime','final-whistle'])
 cards+=f'<a class="programme-card card-diretta-gol" href="{BASE}diretta-gol/"><img src="assets/diretta-gol-v1.webp" alt="" width="2048" height="683"><span>Diretta Gol <b aria-hidden="true">→</b></span></a>'
-home='<header class="programme-heading"><h1 class="sr-only">ALL TO PLAY FOR</h1><img class="section-banner" src="assets/all-to-play-for-brand-v1.webp" alt="ALL TO PLAY FOR" width="2048" height="683"></header><section class="programme-grid" aria-label="I cinque programmi">'+cards+'</section>'
-home_html=shell('ALL TO PLAY FOR','',home,styles=['home-layout.css?v=20261023-grid1'],attrs='data-programme="home"')
+home='<header class="programme-heading"><h1 class="sr-only">ALL TO PLAY FOR</h1><img class="section-banner" src="assets/all-to-play-for-brand-v1.webp" alt="ALL TO PLAY FOR" width="2048" height="683"></header><section class="series-intro"><h2>Benvenuti in ALL TO PLAY FOR</h2><p>I programmi di approfondimento di Road To History: notizie, mercato, storie dai campi e il racconto delle partite. Scegli il tuo programma ed entra nel mondo GW001.</p></section><section class="programme-grid" aria-label="I cinque programmi">'+cards+'</section>'
+home_html=shell('ALL TO PLAY FOR','',home,styles=['home-layout-v2.css?v=20261023-entry1'],attrs='data-programme="home"')
 home_html=re.sub(r'<nav class="series-breadcrumb".*?</nav>','',home_html)
 save('index.html',home_html)
 live_content='<header class="programme-heading"><h1 class="sr-only">Diretta Gol</h1><img class="section-banner" src="assets/diretta-gol-v1.webp" alt="ALL TO PLAY FOR | Diretta Gol" width="2048" height="683"></header><p class="replay-note">Replay della giornata: gol ed eventi dei Match Report caricati su Nexus.</p><form class="replay-select"><label>Stagione <select id="replay-season" aria-label="Stagione"></select></label><label>Giornata <select id="replay-day" aria-label="Giornata"></select></label></form><p id="replay-status" role="status">Caricamento giornate…</p><iframe id="replay-frame" title="Diretta Gol · Replay della giornata" style="width:100%;height:1100px;border:0" loading="lazy"></iframe>'
@@ -81,7 +81,7 @@ before="if(update){const u=new URL(location.href);if(selected)u.searchParams.set
 after="if(update){location.assign('/nexus/alltoplayfor/daytime/'+(selected?selected+'/':''));return}"
 assert before in s;s=s.replace(before,after)
 save('daytime-pages.js',s)
-for name in ['programmes.css','programmes.js','home-layout.css','diretta-gol.js']:shutil.copyfile(ROOT/name,OUT/name)
+for name in ['programmes.css','programmes.js','home-layout.css','home-layout-v2.css','diretta-gol.js']:shutil.copyfile(ROOT/name,OUT/name)
 (OUT/'assets').mkdir(exist_ok=True)
 shutil.copyfile(ROOT/'rth-24-v1.webp',OUT/'assets/rth-24-v1.webp')
 save('programmes-catalog.json',json.dumps(catalog,ensure_ascii=False))
