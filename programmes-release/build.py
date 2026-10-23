@@ -42,7 +42,14 @@ def make(p,rubric=None,date=None):
     content=banner(p);scripts=[];styles=[]
     if rubric:content+='<p class="programme-return">'+link('daytime/','← Tutto Daytime')+'</p>'
     if p=='rth-24':
-        content+='<section class="news-waiting"><h2>Le notizie di Road To History</h2><p>Il notiziario RTH 24 è in preparazione.</p></section>'
+        content+='<section class="rth-intro"><h2>Benvenuti in Road To History 24</h2><p>Il programma di informazione e approfondimento di Road To History. Risultati, prossime partite e mercato: le flash news del mondo GW001, tutte in un unico spazio.</p></section><section class="rth-flash"><h2>Flash News</h2><nav class="rth-tabs" role="tablist" aria-label="Flash News">'
+        for key,label in [('risultati','Risultati'),('prossime-partite','Prossime partite'),('mercato','Mercato')]:
+            content+=f'<button type="button" role="tab" id="rth-tab-{key}" aria-controls="rth-panel-{key}" aria-selected="{str(key=="risultati").lower()}" tabindex="{0 if key=="risultati" else -1}">{label}</button>'
+        content+='</nav>'
+        for key,label in [('risultati','Risultati'),('prossime-partite','Prossime partite'),('mercato','Mercato')]:
+            content+=f'<section role="tabpanel" class="rth-panel" id="rth-panel-{key}" aria-labelledby="rth-tab-{key}" tabindex="0"'+(' hidden' if key!='risultati' else '')+f'><h3>{label}</h3><p>Non ci sono ancora flash news in questa sezione.</p></section>'
+        content+='</section>'
+        scripts+=['rth24-tabs.js?v=1'];styles+=['rth24.css?v=1']
     else:
         if entry['editions']:
             content+='<div class="edition-heading"><p>'+('Edizione del ' if date else 'Ultima edizione · ')+date_label(selected)+'</p>'
@@ -81,7 +88,7 @@ before="if(update){const u=new URL(location.href);if(selected)u.searchParams.set
 after="if(update){location.assign('/nexus/alltoplayfor/daytime/'+(selected?selected+'/':''));return}"
 assert before in s;s=s.replace(before,after)
 save('daytime-pages.js',s)
-for name in ['programmes.css','programmes.js','home-layout.css','home-layout-v2.css','diretta-gol.js']:shutil.copyfile(ROOT/name,OUT/name)
+for name in ['programmes.css','programmes.js','home-layout.css','home-layout-v2.css','diretta-gol.js','rth24-tabs.js','rth24.css']:shutil.copyfile(ROOT/name,OUT/name)
 (OUT/'assets').mkdir(exist_ok=True)
 shutil.copyfile(ROOT/'rth-24-v1.webp',OUT/'assets/rth-24-v1.webp')
 save('programmes-catalog.json',json.dumps(catalog,ensure_ascii=False))

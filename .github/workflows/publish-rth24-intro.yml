@@ -1,0 +1,37 @@
+name: Publish RTH24 introduction and tabs
+on:
+  push:
+    branches: [main]
+    paths: ["rth24-release/**"]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python3 programmes-release/build.py
+          node --check programmes-release/rth24-tabs.js
+          npm install --prefix /tmp/entry-qa playwright@1.56.1
+      - name: Preview navigation and mobile
+        run: NODE_PATH=/tmp/entry-qa/node_modules CHROME_BIN="$(command -v google-chrome)" PREVIEW=1 node rth24-release/verify.cjs
+      - name: Publish three reviewed files
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 rth24-release/deploy.py
+      - name: Verify public navigation and images
+        run: NODE_PATH=/tmp/entry-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node rth24-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rth24-intro-review
+          path: /tmp/rth24-*.png
