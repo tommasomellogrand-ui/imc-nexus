@@ -35,3 +35,14 @@ Il flusso è configurato su GitHub. La chat deve avere strumenti e permessi di s
 ## Controlli tecnici
 
 L'installer confronta la pagina con la produzione verificata. Le esecuzioni successive mantengono pagina e renderer identici, aggiornano solo `flash-news.json`, impediscono la cancellazione di ID già pubblicati e conservano una copia del precedente archivio. La concorrenza è serializzata con gli altri deploy Nexus; il checkout usa l'ultimo main per includere tutte le notizie disponibili.
+
+### Foto e stemmi (facoltativi)
+La notizia breve resta interamente visibile: foto nel terzo sinistro, testo nei due terzi destri anche su iPhone. Non aggiungere “Leggi tutto”. Senza foto il testo occupa tutto il box.
+Aggiungere al JSON, mantenendo gli altri campi:
+```json
+"image": {"file": "nome-foto-v1.jpg", "alt": "Descrizione della foto"},
+"teams": [{"name": "Genoa", "logo": "genoa-v1.png"}]
+```
+Caricare i file binari originali in `rth24-news/assets/` nello stesso commit del JSON. Usare solo foto fornite o verificate e stemmi verificati da Nexus. Nomi minuscoli, numeri e trattini, estensione jpg/jpeg/png/webp. Non sovrascrivere asset esistenti: usare un nome versione nuovo. Se la chat non può caricare l’allegato binario, segnalarlo prima della pubblicazione; non inventare URL. Non duplicare una notizia per aggiungere la foto: aggiornare il suo JSON esistente preservando ID, data e testo.
+
+Verificare il workflow push con `GET /repos/tommasomellogrand-ui/imc-nexus/actions/runs?head_sha=COMMIT`. Gli strumenti limitati alle esecuzioni PR possono non mostrare questo workflow. Dichiarare online solo dopo workflow riuscito e controllo del contenuto pubblico.
