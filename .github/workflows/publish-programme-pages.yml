@@ -1,8 +1,5 @@
 name: Publish ALL TO PLAY FOR programme pages
 on:
-  push:
-    branches: [main]
-    paths: ["programmes-release/home-layout.css"]
   workflow_dispatch:
 permissions:
   contents: read
