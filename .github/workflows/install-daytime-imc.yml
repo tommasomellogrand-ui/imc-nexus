@@ -1,9 +1,6 @@
 name: Install DAYTIME read-only IMC link
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['daytime-imc-release/**', '.github/workflows/install-daytime-imc.yml']
 permissions:
   contents: read
 concurrency:
