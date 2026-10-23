@@ -1,1 +1,1 @@
-Install the empty Flash News archive and renderer. No test news in production.
+Image URL ingestion for general and club news, v3

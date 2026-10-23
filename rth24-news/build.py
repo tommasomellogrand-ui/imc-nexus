@@ -1,6 +1,7 @@
 import json,re,os
 from pathlib import Path
 from datetime import datetime
+from media import prepare
 R=Path(__file__).parent
 
 def validate(item):
@@ -9,12 +10,12 @@ def validate(item):
   assert isinstance(name,str) and re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name),'Invalid asset filename'
   assert (R/'assets'/name).is_file(),'Missing image: '+name
  if 'image' in item:
-  assert set(item['image'])=={'file','alt'} and isinstance(item['image']['alt'],str) and item['image']['alt'].strip()
+  assert {'file','alt'}<=set(item['image'])<={'file','alt','sha256'} and isinstance(item['image']['alt'],str) and item['image']['alt'].strip()
   asset(item['image']['file'])
  if 'teams' in item:
   assert isinstance(item['teams'],list) and len(item['teams'])<=10
   for team in item['teams']:
-   assert set(team)=={'name','logo'} and isinstance(team['name'],str) and team['name'].strip()
+   assert {'name','logo'}<=set(team)<={'name','logo','sha256'} and isinstance(team['name'],str) and team['name'].strip()
    asset(team['logo'])
  assert re.fullmatch(r'[a-z0-9][a-z0-9-]{2,119}',item['id']),'Invalid ID'
  assert isinstance(item['title'],str) and 1<=len(item['title'].strip())<=200,'Invalid title'
@@ -25,7 +26,7 @@ def validate(item):
 def build():
  items=[]
  for p in sorted((R/'items').glob('*.json')):
-  item=json.loads(p.read_text());validate(item);assert p.stem==item['id'],'Filename must match id';items.append(item)
+  item=json.loads(p.read_text());prepare([item]);validate(item);assert p.stem==item['id'],'Filename must match id';items.append(item)
  assert len({x['id'] for x in items})==len(items),'Duplicate ID'
  items.sort(key=lambda x:(validate(x),x['id']),reverse=True)
  out=R/'dist';out.mkdir(exist_ok=True)

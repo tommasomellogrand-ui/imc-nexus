@@ -1,0 +1,28 @@
+import io,tempfile,unittest,json
+from pathlib import Path
+from unittest.mock import patch
+from PIL import Image
+import media
+class MediaTests(unittest.TestCase):
+ def test_hosts(self):
+  for url in ['http://localhost/a.jpg','https://127.0.0.1/a','https://example.com/a','https://cdn.soccerwiki.org.evil.test/a']:
+   with self.assertRaises(ValueError):media.checked_url(url)
+ def test_original_bytes_retained_and_expiry_independent(self):
+  buf=io.BytesIO();Image.new('RGB',(4,4)).save(buf,format='JPEG');data=buf.getvalue()
+  with tempfile.TemporaryDirectory() as d,patch.object(media,'ROOT',Path(d)):
+   item={'image':{'file':'test-v1.jpg','alt':'Test','source_url':'https://cdn.soccerwiki.org/test.jpg'}}
+   with patch.object(media,'download',side_effect=[b'{"items":[]}',data]):media.prepare([item])
+   self.assertNotIn('source_url',item['image']);self.assertEqual((Path(d)/'assets/test-v1.jpg').read_bytes(),data)
+   (Path(d)/'assets/test-v1.jpg').unlink()
+   with patch.object(media,'download',side_effect=[json.dumps({'items':[item]}).encode(),data]) as fetch:
+    media.prepare([item]);self.assertEqual(fetch.call_args.args[0],media.PUBLIC+'test-v1.jpg')
+ def test_reject_html(self):
+  with self.assertRaises(Exception):media.inspect(b'<html>error</html>','a.jpg')
+if __name__=='__main__':unittest.main()
+
+class PublicDownloadTest(unittest.TestCase):
+ @unittest.skipUnless(__import__('os').environ.get('GITHUB_ACTIONS')=='true','Real network check runs on deployment runner')
+ def test_real_download(self):
+  data=media.download(media.PUBLIC+'riccardo-re-genoa-v1.jpg')
+  self.assertEqual(data,(media.ROOT/'assets/riccardo-re-genoa-v1.jpg').read_bytes())
+  media.inspect(data,'riccardo-re-genoa-v1.jpg')
