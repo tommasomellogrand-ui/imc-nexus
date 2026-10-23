@@ -1,8 +1,5 @@
 name: Publish RTH24 introduction and tabs
 on:
-  push:
-    branches: [main]
-    paths: ["rth24-release/**"]
   workflow_dispatch:
 permissions:
   contents: read
