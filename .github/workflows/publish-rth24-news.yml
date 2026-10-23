@@ -1,0 +1,49 @@
+name: Publish RTH24 Flash News
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'rth24-news/items/*.json'
+      - 'rth24-news/install.txt'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Build current archive and page
+        run: |
+          echo "DEPLOY_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          python3 programmes-release/build.py
+          node --check rth24-news/feed.js
+          npm install --prefix /tmp/rth24-news-qa playwright@1.56.1
+      - name: Validate news
+        run: python3 rth24-news/build.py
+      - name: Test rendering with preview-only news
+        run: NODE_PATH=/tmp/rth24-news-qa/node_modules CHROME_BIN="$(command -v google-chrome)" PREVIEW=1 node rth24-news/verify.cjs
+      - name: Publish only RTH24 Flash News
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 rth24-news/deploy.py
+      - name: Verify news visible on public RTH24
+        run: |
+          NODE_PATH=/tmp/rth24-news-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node rth24-news/verify.cjs
+          cat rth24-news/dist/receipt.json >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rth24-news-publication
+          path: |
+            rth24-news/dist/receipt.json
+            /tmp/rth24-news-*.png

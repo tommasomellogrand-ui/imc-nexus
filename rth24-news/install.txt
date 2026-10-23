@@ -1,0 +1,1 @@
+Install the empty Flash News archive and renderer. No test news in production.
