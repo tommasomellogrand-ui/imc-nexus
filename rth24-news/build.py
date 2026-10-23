@@ -6,7 +6,7 @@ R=Path(__file__).parent
 
 def validate(item):
  assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category'},'Invalid fields'
- assert item.get('category','flash') in ('flash','club'),'Invalid category'
+ assert item.get('category','flash') in ('flash','club','market'),'Invalid category'
  def asset(name):
   assert isinstance(name,str) and re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name),'Invalid asset filename'
   assert (R/'assets'/name).is_file(),'Missing image: '+name

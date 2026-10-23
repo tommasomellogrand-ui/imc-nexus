@@ -77,3 +77,6 @@ Solo Flash News di RTH24. Nessun collegamento a feed sportivi automatici. Le tab
 
 ### Grafica v4
 Data e ora sono esterne alla card. Fascia blu con icona, foto a sinistra (1/3), logo e nome squadra e titolo a destra (2/3), linea oro e testo integrale sotto. Font Inter. Il campo opzionale `category` accetta `flash` (predefinito) o `club` per la fascia NEWS DAL CLUB. Usare `club` soltanto per contributi provenienti dal club, non per ogni notizia che cita una squadra.
+
+### Filtri v5
+Ultim’ora mostra tutte le notizie. Categoria `club`: Club News; `flash` (default): Flash News; `market`: Calciomercato. Impostare la categoria in base alla rubrica richiesta da Tom; non dedurla dalla sola presenza di una squadra. Data e ora sono nella fascia del box a destra.

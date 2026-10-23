@@ -1,1 +1,1 @@
-RTH24 v4: external timestamps, news ribbon, team identities and full-width article.
+RTH24 v5: four category filters and timestamps inside card ribbon.

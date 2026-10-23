@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-#rth-panel-flash-news{padding:0;border:0;border-radius:0;background:transparent;text-align:left;margin-top:26px}
+body[data-programme="rth-24"] .rth-panel{padding:0;border:0;border-radius:0;background:transparent;text-align:left;margin-top:26px}
 .rth-news-list{display:grid;gap:28px;text-align:left;font-family:Inter,sans-serif}
 .rth-news-entry{min-width:0}
 .rth-news-entry>time{display:block;margin:0 0 9px 4px;font:500 12px/1.5 Inter,sans-serif;color:#637086}
@@ -19,3 +19,5 @@
 .rth-news-logo{width:28px;height:30px;object-fit:contain;flex-shrink:0}
 .rth-news-list>p{text-align:center}
 @media(max-width:600px){.rth-news-body{padding:16px 13px}.rth-news-card h3{font-size:18px}.rth-news-content{padding:18px}.rth-news-card p{font-size:15px!important}.rth-news-media{padding:12px 0 12px 12px}.rth-news-photo{max-height:170px}.rth-news-team{font-size:12px}.rth-news-ribbon{padding:9px 13px}}
+
+.rth-news-ribbon time{margin-left:auto;flex-shrink:0;text-align:right;letter-spacing:0;font:500 10px/1.4 Inter,sans-serif;color:#e3e9f2}.rth-news-ribbon{flex-wrap:wrap;gap:6px}.rth-news-entry[hidden],.rth-news-empty[hidden]{display:none!important}
