@@ -74,3 +74,6 @@ Se il link della foto è scaduto prima del primo deploy, aggiorna solo source_ur
 
 ## Ambito
 Solo Flash News di RTH24. Nessun collegamento a feed sportivi automatici. Le tab Risultati, Prossime partite e Mercato restano scollegate. Non modificare Coffee Time, Daytime, Final Whistle o altre sezioni.
+
+### Grafica v4
+Data e ora sono esterne alla card. Fascia blu con icona, foto a sinistra (1/3), logo e nome squadra e titolo a destra (2/3), linea oro e testo integrale sotto. Font Inter. Il campo opzionale `category` accetta `flash` (predefinito) o `club` per la fascia NEWS DAL CLUB. Usare `club` soltanto per contributi provenienti dal club, non per ogni notizia che cita una squadra.

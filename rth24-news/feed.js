@@ -7,13 +7,14 @@ async function load(){try{
 const response=await fetch('/nexus/alltoplayfor/rth-24/flash-news.json',{cache:'no-store'});if(!response.ok)throw Error();
 const data=await response.json();if(data.version!==1||!Array.isArray(data.items))throw Error();list.replaceChildren();
 for(const item of [...data.items].sort((a,b)=>Date.parse(b.published_at)-Date.parse(a.published_at)||b.id.localeCompare(a.id))){
+ const entry=el('div',null,'rth-news-entry');
  const card=el('article',null,'rth-news-card');card.id='news-'+item.id;card.dataset.newsId=item.id;
  const header=el('div',null,'rth-news-header'),body=el('div',null,'rth-news-body');
  if(item.image){const img=picture(item.image.file,item.image.alt,'rth-news-photo');if(img){card.classList.add('has-photo');const media=el('div',null,'rth-news-media');media.append(img);header.append(media)}}
- const time=el('time',new Intl.DateTimeFormat('it-IT',{dateStyle:'long',timeStyle:'short',timeZone:'Europe/Rome'}).format(new Date(item.published_at)));time.dateTime=item.published_at;body.append(time);
+ const time=el('time',new Intl.DateTimeFormat('it-IT',{dateStyle:'long',timeStyle:'short',timeZone:'Europe/Rome'}).format(new Date(item.published_at)));time.dateTime=item.published_at;entry.append(time);
  if(item.teams?.length){const teams=el('div',null,'rth-news-teams');for(const team of item.teams){const badge=el('span',null,'rth-news-team'),logo=picture(team.logo,'Stemma '+team.name,'rth-news-logo');if(logo)badge.append(logo);badge.append(el('span',team.name));teams.append(badge)}body.append(teams)}
  body.append(el('h3',item.title));header.append(body);
- const content=el('div',null,'rth-news-content');content.append(el('p',item.text));card.append(header,content);list.append(card);
+ const content=el('div',null,'rth-news-content');content.append(el('p',item.text));const ribbon=el('div',null,'rth-news-ribbon'),icon=el('span','ϟ','rth-news-icon');icon.setAttribute('aria-hidden','true');ribbon.append(icon,el('span',item.category==='club'?'NEWS DAL CLUB':'FLASH NEWS'));card.append(ribbon,header,content);entry.append(card);list.append(entry);
 }
 if(!data.items.length)list.append(el('p','Non ci sono ancora flash news in questa sezione.'));panel.dataset.feedState='ready';panel.dataset.feedRevision=data.revision||'';
 }catch(e){list.replaceChildren(el('p','Flash News temporaneamente non disponibili. Riprova.'));const retry=el('button','Riprova');retry.type='button';retry.addEventListener('click',load);list.append(retry);panel.dataset.feedState='error'}}load();})();

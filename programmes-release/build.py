@@ -49,7 +49,7 @@ def make(p,rubric=None,date=None):
         for key,label in [('flash-news','Flash News'),('risultati','Risultati'),('prossime-partite','Prossime partite'),('mercato','Mercato')]:
             content+=f'<section role="tabpanel" class="rth-panel" id="rth-panel-{key}" aria-labelledby="rth-tab-{key}" tabindex="0"'+(' hidden' if key!='flash-news' else '')+f'><h3>{label}</h3><p>Non ci sono ancora flash news in questa sezione.</p></section>'
         content+='</section>'
-        scripts+=['rth24-tabs.js?v=2','rth-24/feed-v3.js'];styles+=['rth24.css?v=2','rth-24/feed-v3.css']
+        scripts+=['rth24-tabs.js?v=2','rth-24/feed-v4.js'];styles+=['rth24.css?v=2','rth-24/feed-v4.css']
     else:
         if entry['editions']:
             content+='<div class="edition-heading"><p>'+('Edizione del ' if date else 'Ultima edizione · ')+date_label(selected)+'</p>'

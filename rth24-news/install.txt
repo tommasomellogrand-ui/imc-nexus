@@ -1,1 +1,1 @@
-Automatic persistent club crest cache, retries and image-specific diagnostics.
+RTH24 v4: external timestamps, news ribbon, team identities and full-width article.
