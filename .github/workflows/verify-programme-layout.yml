@@ -1,0 +1,21 @@
+name: Verify programme layout images
+on:
+  push:
+    branches: [main]
+    paths: ["programmes-release/verify.cjs"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install --prefix /tmp/programmes-qa playwright@1.56.1
+      - run: NODE_PATH=/tmp/programmes-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node programmes-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: programme-layout-images
+          path: /tmp/programme-*.png
