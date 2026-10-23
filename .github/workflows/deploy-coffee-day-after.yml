@@ -1,0 +1,33 @@
+name: Publish Coffee Time 23 October
+on:
+  push:
+    branches: [main]
+    paths: ['coffee-today/**', '.github/workflows/deploy-coffee-day-after.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check edition and mobile preview
+        run: |
+          node --check coffee-today/coffee-day-after.js
+          python3 -m py_compile coffee-today/deploy.py
+          npm install --prefix /tmp/coffee-qa playwright@1.56.1
+          curl -fsS --max-time 30 https://www.italianmastersclub.it/nexus/alltoplayfor/ -o /tmp/live-index.html
+          NODE_PATH=/tmp/coffee-qa/node_modules PREVIEW=1 CHROME_BIN="$(command -v google-chrome)" node coffee-today/verify.cjs
+      - name: Publish scoped Coffee Time edition
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 coffee-today/deploy.py
+      - name: Verify live edition
+        run: NODE_PATH=/tmp/coffee-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node coffee-today/verify.cjs

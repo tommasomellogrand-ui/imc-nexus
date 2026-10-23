@@ -1,0 +1,847 @@
+{
+  "cast": [
+    [
+      "Federica Zille",
+      "Conduzione"
+    ],
+    [
+      "Andrea Stramaccioni",
+      "Analisi tattica"
+    ],
+    [
+      "Alessandro Florenzi",
+      "Il punto di vista del calciatore"
+    ]
+  ],
+  "portraits": [
+    {
+      "name": "Federica Zille",
+      "image": "assets/coffee-zille.webp",
+      "source": "https://overtimefestival.it/federica-zille/"
+    },
+    {
+      "name": "Andrea Stramaccioni",
+      "image": "assets/coffee-stramaccioni.webp",
+      "source": "https://www.fcinternews.it/copertina/stramaccioni-allo-stadium-la-vittoria-dell-interismo-ecco-perche-dopo-il-derby-dissi-e-vostro-alla-curva-nord-337458"
+    },
+    {
+      "name": "Alessandro Florenzi",
+      "image": "assets/coffee-florenzi.webp",
+      "source": "https://sport.sky.it/calcio/serie-a/2025/08/27/alessandro-florenzi-ritiro-calcio-video"
+    }
+  ],
+  "reporter_portraits": {
+    "Anna Billò": {
+      "image": "assets/reporter-anna-billo.webp",
+      "source": "Foto fornita dall’utente"
+    },
+    "Veronica Brunati": {
+      "image": "assets/reporter-veronica-brunati.webp",
+      "source": "Foto fornita dall’utente"
+    },
+    "Federica Lodi": {
+      "image": "assets/reporter-federica-lodi.webp",
+      "source": "Foto fornita dall’utente"
+    },
+    "Antonio Nucera": {
+      "image": "assets/reporter-antonio-nucera.webp",
+      "source": "https://net-storage-auto.tcccdn.com/storage/tuttoreggina.com/img_notizie/thumb3/50/5088eb6511e51807ad6e07d851c64e1c-11191-oooz0000.jpeg"
+    },
+    "Massimo Marianella": {
+      "image": "assets/reporter-massimo-marianella.webp",
+      "source": "https://sport.sky.it/autore/massimo-marianella"
+    },
+    "Stefania Pinna": {
+      "image": "assets/reporter-stefania-pinna.webp",
+      "source": "https://libropossibile.com/site/assets/files/1153/stefania_pinna.400x400.jpg"
+    },
+    "Stefano Borghi": {
+      "image": "assets/reporter-stefano-borghi.webp",
+      "source": "https://www.offside.community/wp-content/uploads/2019/05/2.jpg"
+    },
+    "Eleonora Incardona": {
+      "image": "assets/reporter-eleonora-incardona.webp",
+      "source": "https://tg24.sky.it/assets/images/ff78156a467b2256f1a4327f163fa4b5dadeb5b9/skytg24/it/spettacolo/2025/02/18/eleonora-incardona-foto/eleonora_incardona1.jpg?im=Resize,width=600"
+    },
+    "Bruno Palermo": {
+      "image": "assets/reporter-bruno-palermo.webp",
+      "source": "https://sport.sky.it/calcio/2026/06/14/calcio-integrazione-accoglienza-torneo-crotone"
+    },
+    "Marina Presello": {
+      "image": "assets/reporter-marina-presello.webp",
+      "source": "https://www.pesavento.com/web/wp-content/uploads/2019/02/MarinaPresello_SkySport.jpg"
+    },
+    "Marco Nosotti": {
+      "image": "assets/reporter-marco-nosotti.webp",
+      "source": "https://sport.sky.it/assets/images/archive/sezioni/sport/mondiali_calcio/2010/05/17/marco_nosotti.jpg?im=Resize,width=565"
+    },
+    "Paolo Assogna": {
+      "image": "assets/reporter-paolo-assogna.webp",
+      "source": "https://sport.sky.it/autore/paolo-assogna"
+    },
+    "Francesco Repice": {
+      "image": "assets/reporter-francesco-repice.webp",
+      "source": "https://www.aquinocresce.it/home/wp-content/uploads/2026/07/IMG-20260712-WA0022.jpg"
+    },
+    "Giorgia Cenni": {
+      "image": "assets/reporter-giorgia-cenni.webp",
+      "source": "https://www.vanityfair.it/sport/partite-eventi/2021/08/31/lo-sport-ve-lo-raccontano-le-donne"
+    },
+    "Maurizio Compagnoni": {
+      "image": "assets/reporter-maurizio-compagnoni.webp",
+      "source": "https://sport.sky.it/autore/maurizio-compagnoni"
+    },
+    "Nicola Roggero": {
+      "image": "assets/reporter-nicola-roggero.webp",
+      "source": "https://sport.sky.it/autore/nicola-roggero"
+    },
+    "Dario Massara": {
+      "image": "assets/reporter-dario-massara.webp",
+      "source": "https://sport.sky.it/autore/dario-massara"
+    },
+    "Paolo Aghemo": {
+      "image": "assets/reporter-paolo-aghemo.webp",
+      "source": "https://sport.sky.it/autore/paolo-aghemo"
+    },
+    "Riccardo Gentile": {
+      "image": "assets/reporter-riccardo-gentile.webp",
+      "source": "https://sport.sky.it/autore/riccardo-gentile"
+    },
+    "Marco Bovicelli": {
+      "image": "assets/reporter-marco-bovicelli.webp",
+      "source": "https://interclubpavia.eu/2018/08/09/bovicelli-per-candreva-difficile-lasciare-linter-keita-comunque-obiettivo/"
+    }
+  },
+  "date": "2026-10-23",
+  "title": "Il giorno dopo, con l’Europa all’orizzonte",
+  "opening": [
+    "Buongiorno e benvenuti a Coffee Time! Ripartiamo dai campi di ieri: venti partite, quaranta squadre e parecchie storie da riprendere con i nostri inviati. Poi guarderemo a stasera, perché comincia l’IMC Europa League. Con me Andrea Stramaccioni e Alessandro Florenzi.",
+    "Il Torino continua a inseguire il Monaco 1860, il Bologna passa a Rotterdam e in quarta divisione arrivano vittorie esterne pesanti. Guardiamo cosa lascia ogni partita, senza fermarci soltanto al risultato.",
+    "E per chi torna in campo stasera bisogna voltare pagina subito. Chi ha vinto vuole ripetersi, chi ha perso ha già un’occasione per reagire. Cominciamo il nostro giro."
+  ],
+  "bridge": [
+    "Questo il nostro giro sui quaranta club. Strama, adesso quattordici squadre cambiano subito competizione: da dove comincia la preparazione?",
+    "Dal nuovo avversario. Il Monaco viene da tre gol a Palermo, ma il Tottenham presenta un’altra sfida. Roma e Marsiglia devono confermarsi; Napoli e Dynamo Kyiv cercano invece una risposta dopo aver incassato rispettivamente tre e quattro reti. E poi c’è Reggina–Genoa: stessi avversari di ieri, una nuova competizione.",
+    "La rivincita immediata è una situazione particolare. La Reggina deve evitare la fretta di riscattarsi, il Genoa non può pensare di avere già la soluzione. Si riparte tutti da zero punti."
+  ],
+  "divisions": [
+    {
+      "name": "Div 1",
+      "fixtures": [
+        {
+          "id": 368861387,
+          "home": "Torino",
+          "away": "Atalanta BC",
+          "score": "2–0",
+          "reports": [
+            {
+              "club_id": 94078895,
+              "club": "Torino",
+              "name": "Paolo Aghemo",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Il 2–0 all’Atalanta porta il Torino a 18 punti. Murillo e Zubkov firmano una vittoria senza gol subiti: la rincorsa continua, ma il Monaco non concede terreno."
+            },
+            {
+              "club_id": 94078863,
+              "club": "Atalanta BC",
+              "name": "Massimo Nebuloni",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "L’Atalanta resta a sette punti. A Torino non trova il gol e incassa una rete per tempo: il prossimo passo deve essere ritrovare incisività, oltre ai punti."
+            }
+          ]
+        },
+        {
+          "id": 368861386,
+          "home": "AS Reggina 1914",
+          "away": "Genoa CFC",
+          "score": "0–1",
+          "reports": [
+            {
+              "club_id": 94078889,
+              "club": "AS Reggina 1914",
+              "name": "Eleonora Incardona",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Lo 0–1 contro il Genoa lascia la Reggina a cinque punti. Stasera arriva subito lo stesso avversario, stavolta in Europa League: una possibilità immediata per cambiare il finale."
+            },
+            {
+              "club_id": 94078875,
+              "club": "Genoa CFC",
+              "name": "Riccardo Re",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Vlahović decide al 66’: il Genoa vince lo scontro tra due squadre che partivano appaiate e sale a otto punti. Ora deve affrontare nuovamente la Reggina senza dare nulla per acquisito."
+            }
+          ]
+        },
+        {
+          "id": 368861385,
+          "home": "Palermo FC",
+          "away": "TSV 1860 München",
+          "score": "0–3",
+          "reports": [
+            {
+              "club_id": 94078884,
+              "club": "Palermo FC",
+              "name": "Bruno Palermo",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Tre gol subiti e nessuno segnato contro la capolista. Il Palermo resta a due punti; l’esordio europeo con il Fenerbahçe offre un nuovo punto di partenza dopo una serata difficile."
+            },
+            {
+              "club_id": 94079182,
+              "club": "TSV 1860 München",
+              "name": "Pietro Nicolodi",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Senesi, Torres e McGinn firmano il 3–0 di Palermo. Il Monaco sale a venti punti e conserva due lunghezze sul Torino: stasera porta questa fiducia nella trasferta contro il Tottenham."
+            }
+          ]
+        },
+        {
+          "id": 368861384,
+          "home": "Parma Calcio 1913",
+          "away": "AEK Athens",
+          "score": "0–2",
+          "reports": [
+            {
+              "club_id": 94078885,
+              "club": "Parma Calcio 1913",
+              "name": "Marco Nosotti",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Il Parma perde 0–2 e rimane a sette punti. L’AEK costruisce il vantaggio già prima dell’intervallo: una partenza che pesa sul risultato e su cui lavorare."
+            },
+            {
+              "club_id": 94079139,
+              "club": "AEK Athens",
+              "name": "Gianluigi Bagnulo",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Pavlidis e Zakaria chiudono il conto nel primo tempo. L’AEK sale a tredici punti, raggiunge la Sampdoria e si presenta all’appuntamento con il Boca con una vittoria esterna alle spalle."
+            }
+          ]
+        },
+        {
+          "id": 368861383,
+          "home": "Dynamo Dresden",
+          "away": "Sampdoria",
+          "score": "1–1",
+          "reports": [
+            {
+              "club_id": 94079161,
+              "club": "Dynamo Dresden",
+              "name": "Dario Massara",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "L’1–1 lascia la Dynamo a undici punti. Sfuma l’occasione di superare la Sampdoria: il distacco resta di due lunghezze."
+            },
+            {
+              "club_id": 94078892,
+              "club": "Sampdoria",
+              "name": "Gianluca Di Marzio",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "La Samp esce da Dresda con un punto e sale a tredici. Tiene dietro l’avversaria diretta, ma viene raggiunta dall’AEK: la corsa resta strettissima."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Div 2",
+      "fixtures": [
+        {
+          "id": 368861477,
+          "home": "Feyenoord",
+          "away": "Bologna FC",
+          "score": "2–3",
+          "reports": [
+            {
+              "club_id": 94078959,
+              "club": "Feyenoord",
+              "name": "Riccardo Gentile",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Due gol non bastano: il Bologna passa 3–2. Il Feyenoord deve ritrovare equilibrio rapidamente, perché stasera lo aspetta l’Hertha nell’esordio europeo."
+            },
+            {
+              "club_id": 94078865,
+              "club": "Bologna FC",
+              "name": "Francesco Cosatti",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Segnare tre volte in trasferta e portare via la vittoria da Rotterdam è il dato forte della serata. Restano due reti incassate, ma il Bologna torna con tre punti preziosi."
+            }
+          ]
+        },
+        {
+          "id": 368861476,
+          "home": "Boca Juniors",
+          "away": "Valencia CF",
+          "score": "1–3",
+          "reports": [
+            {
+              "club_id": 94079037,
+              "club": "Boca Juniors",
+              "name": "Veronica Brunati",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il Valencia passa 3–1 alla Bombonera. Il Boca deve lasciarsi alle spalle la sconfitta e preparare la risposta contro un AEK che arriva da una vittoria senza subire gol."
+            },
+            {
+              "club_id": 94078939,
+              "club": "Valencia CF",
+              "name": "Vanessa Leonardi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Tre reti in casa del Boca e una vittoria esterna netta. Per il Valencia è una serata da valorizzare: il passo successivo sarà dare continuità a questo risultato."
+            }
+          ]
+        },
+        {
+          "id": 368861475,
+          "home": "Fenerbahçe SK",
+          "away": "1. FC Kaiserslautern",
+          "score": "0–0",
+          "reports": [
+            {
+              "club_id": 94079117,
+              "club": "Fenerbahçe SK",
+              "name": "Anna Billò",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Lo 0–0 con il Kaiserslautern lascia una porta inviolata, ma anche un attacco senza reti. Contro il Palermo servirà aggiungere qualcosa davanti per trasformare l’equilibrio in vittoria."
+            },
+            {
+              "club_id": 94079172,
+              "club": "1. FC Kaiserslautern",
+              "name": "Giorgia Rossi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Un punto in trasferta senza concedere gol. Il Kaiserslautern riparte dalla tenuta mostrata sul campo del Fenerbahçe, cercando maggiore incisività offensiva."
+            }
+          ]
+        },
+        {
+          "id": 368861474,
+          "home": "Celtic",
+          "away": "FK Partizan",
+          "score": "1–0",
+          "reports": [
+            {
+              "club_id": 94079188,
+              "club": "Celtic",
+              "name": "Nicola Roggero",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Anderson all’80’ decide una partita rimasta sullo zero a zero a lungo. Il Celtic trova il gol che trasforma un possibile pareggio in tre punti."
+            },
+            {
+              "club_id": 94079148,
+              "club": "FK Partizan",
+              "name": "Giovanni Guardalà",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "La sconfitta arriva per una rete negli ultimi dieci minuti. Il Partizan torna senza punti: pesa soprattutto non essere riuscito a trovare una risposta offensiva."
+            }
+          ]
+        },
+        {
+          "id": 368861473,
+          "home": "Académica de Coimbra",
+          "away": "Eintracht Frankfurt",
+          "score": "1–2",
+          "reports": [
+            {
+              "club_id": 94078981,
+              "club": "Académica de Coimbra",
+              "name": "Antonio Nucera",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "L’Eintracht passa 2–1 a Coimbra. Le tre reti arrivano tra il 69’ e il 79’: è in quei dieci minuti che si concentra il risultato della serata."
+            },
+            {
+              "club_id": 94079162,
+              "club": "Eintracht Frankfurt",
+              "name": "Matteo Barzaghi",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Una vittoria di misura fuori casa: l’Eintracht esce dal finale movimentato con tre punti. Un risultato che premia la capacità di trovare due gol nella fase decisiva."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Div 3",
+      "fixtures": [
+        {
+          "id": 368861567,
+          "home": "SSC Napoli",
+          "away": "Shakhtar Donetsk",
+          "score": "2–3",
+          "reports": [
+            {
+              "club_id": 94079501,
+              "club": "SSC Napoli",
+              "name": "Francesco Repice",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il Napoli segna due volte ma perde 3–2 contro lo Shakhtar. Stasera arriva la Roma: la priorità è evitare che un’altra partita ricca di gol finisca nuovamente dalla parte sbagliata."
+            },
+            {
+              "club_id": 94079115,
+              "club": "Shakhtar Donetsk",
+              "name": "Alessandro Sugoni",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Tre gol a Napoli e una vittoria esterna. La doppietta di Leweling è tra i fatti centrali della serata: lo Shakhtar porta a casa una partita combattuta."
+            }
+          ]
+        },
+        {
+          "id": 368861566,
+          "home": "Olympique Marseille",
+          "away": "Legia Warszawa",
+          "score": "2–1",
+          "reports": [
+            {
+              "club_id": 94079097,
+              "club": "Olympique Marseille",
+              "name": "Maurizio Compagnoni",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il 2–1 sul Legia permette al Marsiglia di avvicinarsi all’Europa League con una vittoria. Stasera contro la Dynamo Kyiv l’obiettivo sarà confermarsi."
+            },
+            {
+              "club_id": 94079408,
+              "club": "Legia Warszawa",
+              "name": "Valentina Caruso",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Il Legia segna a Marsiglia, ma torna senza punti. La sconfitta di misura lascia una distanza piccola nel punteggio, che adesso va colmata sul campo."
+            }
+          ]
+        },
+        {
+          "id": 368861565,
+          "home": "Guangzhou FC",
+          "away": "Palmeiras",
+          "score": "2–1",
+          "reports": [
+            {
+              "club_id": 94080273,
+              "club": "Guangzhou FC",
+              "name": "Stefania Pinna",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il Guangzhou supera 2–1 il Palmeiras. Tre punti conquistati in una gara rimasta aperta fino al finale: una vittoria da cui ripartire."
+            },
+            {
+              "club_id": 94079067,
+              "club": "Palmeiras",
+              "name": "Luca Cilli",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Il Palmeiras perde di misura in Cina. Un gol segnato non basta a evitare la sconfitta: serve trasformare le partite equilibrate in risultati utili."
+            }
+          ]
+        },
+        {
+          "id": 368861564,
+          "home": "Tottenham Hotspur",
+          "away": "Atlético Madrid",
+          "score": "2–2",
+          "reports": [
+            {
+              "club_id": 94078847,
+              "club": "Tottenham Hotspur",
+              "name": "Massimo Marianella",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Il 2–2 con l’Atlético lascia un punto e due reti subite. Stasera il livello dell’attenzione dovrà salire: arriva il Monaco 1860, reduce dal 3–0 di Palermo."
+            },
+            {
+              "club_id": 94078906,
+              "club": "Atlético Madrid",
+              "name": "Giancarlo Marocchi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Due gol in trasferta valgono un pareggio. L’Atlético esce da Londra con un punto, ma anche con il tema di come proteggere meglio il proprio risultato."
+            }
+          ]
+        },
+        {
+          "id": 368861563,
+          "home": "Borussia Dortmund",
+          "away": "Sunderland",
+          "score": "3–0",
+          "reports": [
+            {
+              "club_id": 94079159,
+              "club": "Borussia Dortmund",
+              "name": "Federica Lodi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Rrahmani, Raphinha e Tielemans firmano il 3–0. Il Borussia distribuisce i gol lungo la partita e chiude senza subirne: una serata positiva su entrambi i fronti."
+            },
+            {
+              "club_id": 94078843,
+              "club": "Sunderland",
+              "name": "Valentina Mariani",
+              "status": "trial",
+              "label": "Inviata in prova",
+              "side": "away",
+              "text": "Tre reti incassate e nessuna segnata a Dortmund. Per il Sunderland il lavoro riguarda entrambi i reparti: contenere meglio l’avversario e ritrovare pericolosità."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Div 4",
+      "fixtures": [
+        {
+          "id": 368861657,
+          "home": "River Plate",
+          "away": "Club América",
+          "score": "1–4",
+          "reports": [
+            {
+              "club_id": 94079049,
+              "club": "River Plate",
+              "name": "Stefano Borghi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il Club América passa 4–1. Per il River è una sconfitta pesante in casa: il primo tema è ritrovare equilibrio dopo quattro gol subiti."
+            },
+            {
+              "club_id": 94079202,
+              "club": "Club América",
+              "name": "Filippo Benincampi",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Quattro gol sul campo del River e una vittoria larga. Il Club América torna da questa trasferta con un risultato importante anche per la fiducia."
+            }
+          ]
+        },
+        {
+          "id": 368861656,
+          "home": "São Paulo FC",
+          "away": "FC Schalke 04",
+          "score": "1–2",
+          "reports": [
+            {
+              "club_id": 94079073,
+              "club": "São Paulo FC",
+              "name": "Marina Presello",
+              "status": "trial",
+              "label": "Inviata in prova",
+              "side": "home",
+              "text": "Lo Schalke passa 2–1. Il São Paulo resta a un gol dall’avversario nel risultato finale, ma perde l’occasione di raccogliere punti in casa."
+            },
+            {
+              "club_id": 94079165,
+              "club": "FC Schalke 04",
+              "name": "Sarah Castellana",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Una vittoria esterna di misura per lo Schalke. Segnare due volte a São Paulo basta per tornare con tre punti e preparare il prossimo impegno con maggiore fiducia."
+            }
+          ]
+        },
+        {
+          "id": 368861655,
+          "home": "AS Roma",
+          "away": "CR Flamengo",
+          "score": "3–1",
+          "reports": [
+            {
+              "club_id": 94078890,
+              "club": "AS Roma",
+              "name": "Paolo Assogna",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "La Roma batte il Flamengo 3–1. Stasera ritrova subito il campo contro il Napoli: l’esordio europeo arriva dopo una prova offensiva da tre reti."
+            },
+            {
+              "club_id": 94079061,
+              "club": "CR Flamengo",
+              "name": "Peppe Di Stefano",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Il Flamengo perde a Roma, segnando una sola volta a fronte di tre gol subiti. Serve ridurre il divario tra ciò che produce davanti e ciò che concede."
+            }
+          ]
+        },
+        {
+          "id": 368861654,
+          "home": "Dynamo Kyiv",
+          "away": "Campobasso Calcio",
+          "score": "2–4",
+          "reports": [
+            {
+              "club_id": 94079114,
+              "club": "Dynamo Kyiv",
+              "name": "Marco Bovicelli",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Il Campobasso passa 4–2. Alla Dynamo non bastano due reti: stasera a Marsiglia dovrà soprattutto evitare di concedere un’altra partita così aperta."
+            },
+            {
+              "club_id": 94082591,
+              "club": "Campobasso Calcio",
+              "name": "Valentina Ciarlante",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Quattro gol fuori casa e tre punti da Kyiv. È una vittoria che valorizza l’attacco; le due reti subite restano il dettaglio da correggere per dare solidità al percorso."
+            }
+          ]
+        },
+        {
+          "id": 368861653,
+          "home": "HERTHA BSC",
+          "away": "SS Lazio",
+          "score": "0–0",
+          "reports": [
+            {
+              "club_id": 94079171,
+              "club": "HERTHA BSC",
+              "name": "Giorgia Cenni",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Con la Lazio finisce 0–0. L’Hertha chiude senza subire gol, ma non trova quello decisivo: stasera contro il Feyenoord servirà sbloccare anche l’attacco."
+            },
+            {
+              "club_id": 94078878,
+              "club": "SS Lazio",
+              "name": "Matteo Petrucci",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Un punto a Berlino e porta inviolata. La Lazio esce dallo scontro con l’Hertha senza concedere reti: un risultato da cui ripartire cercando maggiore efficacia davanti."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "europa": [
+    {
+      "sm_fixture_id": "GW001-EL-20261023-1",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Tottenham",
+      "home_sm_club_id": "94078847",
+      "home_sm_team_id": "94078847",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/80.png",
+      "home_imc_manager_id": "MNG023",
+      "home_imc_manager_name": "Max Zanoni",
+      "away_name": "1860 München",
+      "away_sm_club_id": "94079182",
+      "away_sm_team_id": "94079182",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/415.png",
+      "away_imc_manager_id": "MNG015",
+      "away_imc_manager_name": "Marco Fioretti",
+      "text": "Il pareggio degli Spurs con l’Atlético incontra la fiducia del Monaco dopo il successo di Palermo."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-2",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Hertha Berlino",
+      "home_sm_club_id": "94079171",
+      "home_sm_team_id": "94079171",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/404.png",
+      "home_imc_manager_id": "MNG001",
+      "home_imc_manager_name": "Tommaso Mello",
+      "away_name": "Feyenoord",
+      "away_sm_club_id": "94078959",
+      "away_sm_team_id": "94078959",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/192.png",
+      "away_imc_manager_id": "MNG017",
+      "away_imc_manager_name": "Ringhio Gattuso",
+      "text": "I berlinesi cercano il gol dopo lo 0–0; gli olandesi una risposta al 2–3 contro il Bologna."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-3",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Napoli",
+      "home_sm_club_id": "94079501",
+      "home_sm_team_id": "94079501",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/746.png",
+      "home_imc_manager_id": "MNG041",
+      "home_imc_manager_name": "Rosario Giamundo",
+      "away_name": "Roma",
+      "away_sm_club_id": "94078890",
+      "away_sm_team_id": "94078890",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/123.png",
+      "away_imc_manager_id": "MNG006",
+      "away_imc_manager_name": "Pep Buitre",
+      "text": "Il Napoli vuole reagire, la Roma dare continuità al successo sul Flamengo."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-4",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Fenerbahçe",
+      "home_sm_club_id": "94079117",
+      "home_sm_team_id": "94079117",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/350.png",
+      "home_imc_manager_id": "MNG007",
+      "home_imc_manager_name": "Vincenzo Martorano",
+      "away_name": "Palermo",
+      "away_sm_club_id": "94078884",
+      "away_sm_team_id": "94078884",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/117.png",
+      "away_imc_manager_id": "MNG029",
+      "away_imc_manager_name": "Al Zubeidi",
+      "text": "Entrambe arrivano senza aver segnato ieri: l’esordio offre subito una possibilità di sbloccarsi."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-5",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Olympique Marseille",
+      "home_sm_club_id": "94079097",
+      "home_sm_team_id": "94079097",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/330.png",
+      "home_imc_manager_id": "MNG040",
+      "home_imc_manager_name": "Mathieu Pioche",
+      "away_name": "Dynamo Kyiv",
+      "away_sm_club_id": "94079114",
+      "away_sm_team_id": "94079114",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/347.png",
+      "away_imc_manager_id": "MNG022",
+      "away_imc_manager_name": "Oleksandr Medvid",
+      "text": "Il Marsiglia arriva dal successo sul Legia; la Dynamo deve ricompattarsi dopo i quattro gol subiti."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-6",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "AEK Athens",
+      "home_sm_club_id": "94079139",
+      "home_sm_team_id": "94079139",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/372.png",
+      "home_imc_manager_id": "MNG026",
+      "home_imc_manager_name": "Clemente Liggi",
+      "away_name": "Boca Juniors",
+      "away_sm_club_id": "94079037",
+      "away_sm_team_id": "94079037",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/270.png",
+      "away_imc_manager_id": "MNG009",
+      "away_imc_manager_name": "Luca Nudo",
+      "text": "Fiducia per i greci dopo Parma, voglia di riscatto per il Boca dopo il Valencia."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-7",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Reggina",
+      "home_sm_club_id": "94078889",
+      "home_sm_team_id": "94078889",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/122.png",
+      "home_imc_manager_id": "MNG016",
+      "home_imc_manager_name": "Saverio Cordiano",
+      "away_name": "Genoa",
+      "away_sm_club_id": "94078875",
+      "away_sm_team_id": "94078875",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/108.png",
+      "away_imc_manager_id": "MNG013",
+      "away_imc_manager_name": "Giovanni Cabrioli",
+      "text": "Si ritrovano subito dopo lo 0–1 deciso da Vlahović: stasera comincia un’altra storia."
+    }
+  ],
+  "closing": "Il caffè di oggi ci ha portato dai risultati di ieri al debutto europeo di stasera. Per gli approfondimenti dell’IMC Europa League, appuntamento con Daytime. Da Federica, Andrea e Alessandro è tutto: buon calcio a tutti!"
+}
