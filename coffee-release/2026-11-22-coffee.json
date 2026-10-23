@@ -2,7 +2,7 @@
   "world": "GW001",
   "season": 2,
   "assignments": {
-    "effective_from": "2026-10-22",
+    "effective_from": "2026-10-23",
     "items": [
       {
         "club_id": 94078889,
@@ -148,8 +148,8 @@
         "club_id": 94079182,
         "club": "TSV 1860 München",
         "name": "Pietro Nicolodi",
-        "status": "trial",
-        "label": "Inviato in prova"
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
       },
       {
         "club_id": 94078981,
@@ -197,8 +197,8 @@
         "club_id": 94079162,
         "club": "Eintracht Frankfurt",
         "name": "Matteo Barzaghi",
-        "status": "trial",
-        "label": "Inviato in prova"
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
       },
       {
         "club_id": 94078959,
@@ -218,8 +218,8 @@
         "club_id": 94078875,
         "club": "Genoa CFC",
         "name": "Riccardo Re",
-        "status": "trial",
-        "label": "Inviato in prova"
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
       },
       {
         "club_id": 94078884,
@@ -239,8 +239,8 @@
         "club_id": 94078885,
         "club": "Parma Calcio 1913",
         "name": "Marco Nosotti",
-        "status": "trial",
-        "label": "Inviato in prova"
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
       },
       {
         "club_id": 94079148,
@@ -274,8 +274,8 @@
         "club_id": 94078895,
         "club": "Torino",
         "name": "Paolo Aghemo",
-        "status": "trial",
-        "label": "Inviato in prova"
+        "status": "confirmed",
+        "label": "Assegnazione confermata"
       },
       {
         "club_id": 94078847,
@@ -352,8 +352,8 @@
               "club_id": 94078885,
               "club": "Parma Calcio 1913",
               "name": "Marco Nosotti",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "away"
             }
           ],
@@ -381,8 +381,8 @@
               "club_id": 94079182,
               "club": "TSV 1860 München",
               "name": "Pietro Nicolodi",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "home"
             },
             {
@@ -418,8 +418,8 @@
               "club_id": 94078875,
               "club": "Genoa CFC",
               "name": "Riccardo Re",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "home"
             },
             {
@@ -463,8 +463,8 @@
               "club_id": 94078895,
               "club": "Torino",
               "name": "Paolo Aghemo",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "away"
             }
           ],
@@ -497,8 +497,8 @@
               "club_id": 94079162,
               "club": "Eintracht Frankfurt",
               "name": "Matteo Barzaghi",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "home"
             },
             {

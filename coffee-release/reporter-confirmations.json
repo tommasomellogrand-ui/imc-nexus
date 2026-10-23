@@ -1,0 +1,11 @@
+{
+  "world": "GW001",
+  "effective_from": "2026-10-23",
+  "items": [
+    {"club_id": 94078875, "name": "Riccardo Re"},
+    {"club_id": 94079182, "name": "Pietro Nicolodi"},
+    {"club_id": 94079162, "name": "Matteo Barzaghi"},
+    {"club_id": 94078895, "name": "Paolo Aghemo"},
+    {"club_id": 94078885, "name": "Marco Nosotti"}
+  ]
+}

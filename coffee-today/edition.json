@@ -218,8 +218,8 @@
               "club_id": 94078895,
               "club": "Torino",
               "name": "Paolo Aghemo",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "home",
               "text": "Il 2–0 all’Atalanta porta il Torino a 18 punti. Murillo e Zubkov firmano una vittoria senza gol subiti: la rincorsa continua, ma il Monaco non concede terreno."
             },
@@ -302,8 +302,8 @@
               "club_id": 94078875,
               "club": "Genoa CFC",
               "name": "Riccardo Re",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "away",
               "text": "Vlahović decide al 66’: il Genoa vince lo scontro tra due squadre che partivano appaiate e sale a otto punti. Ora deve affrontare nuovamente la Reggina senza dare nulla per acquisito."
             }
@@ -370,8 +370,8 @@
               "club_id": 94079182,
               "club": "TSV 1860 München",
               "name": "Pietro Nicolodi",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "away",
               "text": "Senesi, Torres e McGinn firmano il 3–0 di Palermo. Il Monaco sale a venti punti e conserva due lunghezze sul Torino: stasera porta questa fiducia nella trasferta contro il Tottenham."
             }
@@ -443,8 +443,8 @@
               "club_id": 94078885,
               "club": "Parma Calcio 1913",
               "name": "Marco Nosotti",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "home",
               "text": "Il Parma perde 0–2 e rimane a sette punti. L’AEK costruisce il vantaggio già prima dell’intervallo: una partenza che pesa sul risultato e su cui lavorare."
             },
@@ -1022,8 +1022,8 @@
               "club_id": 94079162,
               "club": "Eintracht Frankfurt",
               "name": "Matteo Barzaghi",
-              "status": "trial",
-              "label": "Inviato in prova",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
               "side": "away",
               "text": "Una vittoria di misura fuori casa: l’Eintracht esce dal finale movimentato con tre punti. Un risultato che premia la capacità di trovare due gol nella fase decisiva."
             }

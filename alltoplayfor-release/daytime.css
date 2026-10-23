@@ -20,3 +20,9 @@
 @media(max-width:520px){.daytime-market-edition .market-summary{grid-template-columns:1fr}.daytime-market-edition .market-speech{padding:20px 16px}.daytime-market-edition .market-player-header{padding:22px 14px}.daytime-market-edition .market-route{gap:8px}}
 
 .daytime-market-edition .market-sources{display:flex;flex-wrap:wrap;gap:10px;padding:16px;border-top:1px solid #dbe3ef}.daytime-market-edition .market-sources a{display:flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid #dbe3ef;border-radius:9px;color:#082b63;font-size:13px}.daytime-market-edition .market-codex-role{font-size:13px;color:#526277}
+/* Two permanent rows: editorial desks, then the three IMC competitions. */
+#panel-daytime .daytime-tabs{grid-template-columns:repeat(6,minmax(0,1fr))}
+#panel-daytime .daytime-tabs button{grid-column:span 2}
+#panel-daytime .daytime-tabs button[data-competition=flash-news],
+#panel-daytime .daytime-tabs button[data-competition=mercato]{grid-column:span 3}
+#panel-daytime [data-competition=flash-news]{--competition:#245c83}

@@ -1,10 +1,22 @@
 """Capture verified Nexus schedules and generate future league calendar editions."""
-import json, subprocess, concurrent.futures, datetime
+import json, subprocess, concurrent.futures, datetime, copy
 from pathlib import Path
 ROOT = Path(__file__).parent
 BASE = 'https://www.italianmastersclub.it/nexus/'
 old = json.loads((ROOT/'evidence/2026-10-22-coffee.json').read_text())
 assign = {r['club_id']:r for r in old['assignments']['items']}
+confirmations = json.loads((ROOT/'reporter-confirmations.json').read_text())
+assert confirmations['world'] == old['world']
+def assignments_on(date):
+    assignments = copy.deepcopy(old['assignments'])
+    if date >= confirmations['effective_from']:
+        by_club = {r['club_id']: r for r in assignments['items']}
+        for item in confirmations['items']:
+            reporter = by_club[item['club_id']]
+            assert reporter['name'] == item['name'], 'Reporter assignment changed'
+            reporter.update(status='confirmed', label='Assegnazione confermata')
+        assignments['effective_from'] = confirmations['effective_from']
+    return assignments
 def fetch(url):
     return json.loads(subprocess.check_output(['curl','--retry','2','--max-time','45','-fsSL',url]))
 def club(cid):
@@ -22,6 +34,8 @@ for day in days:
     raw=fetch(url)
     assert raw['ok'] and raw['date']==day['date'] and len(raw['divisions'])==4
     edition={k:old[k] for k in ['world','season','cast','portraits','assignments','reporter_portraits']}
+    edition['assignments'] = assignments_on(raw['date'])
+    edition_assign = {r['club_id']: r for r in edition['assignments']['items']}
     edition.update(date=raw['date'],day=raw['day'],title='Coffee Time · Il prossimo turno',mode='schedule-preview',source=url,
         checked_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),
         opening=[f"Benvenuti a Coffee Time. Prepariamo la giornata {raw['day']}: venti partite nelle quattro divisioni di GW001. Questo è il programma del {raw['date']}, ricavato dalle Schedule Nexus.",
@@ -44,7 +58,7 @@ for day in days:
             for side,clubid in [('home',cid),('away',aid)]:
                 item[side]=f[side+'_name'];item[side+'_logo']=f[side+'_logo_url']
                 item[side+'_table']={'id':clubid,'name':f[side+'_name']}
-                item['reporters'].append(dict(assign[clubid],side=side))
+                item['reporters'].append(dict(edition_assign[clubid],side=side))
             out['fixtures'].append(item)
         assert len(out['fixtures'])==5
         edition['divisions'].append(out)
