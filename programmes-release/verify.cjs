@@ -18,7 +18,7 @@ const base='https://www.italianmastersclub.it/nexus/alltoplayfor/';
  await open('daytime/europa/');await page.locator('.daytime-imc-controls').waitFor();assert(await page.locator('#daytime-section-europa').isVisible());
  await open('final-whistle/');await page.waitForFunction(()=>document.querySelectorAll('.fw-match').length===20);
  await open('final-whistle/2026-10-20/');await page.locator('.pm-opening').waitFor();assert.equal(await page.locator('.pm-match').count(),8);
- await open('?section=daytime&daytime=mercato&date=2026-10-22');await page.waitForURL('**/daytime/mercato/2026-10-22/');assert(await page.locator('.daytime-market-edition').isVisible());
+ await page.goto(base+'?section=daytime&daytime=mercato&date=2026-10-22',{waitUntil:'domcontentloaded'});await page.waitForURL('**/daytime/mercato/2026-10-22/');await page.locator('.daytime-market-edition').waitFor();await page.waitForLoadState('domcontentloaded');assert.equal(await page.locator('.atpf-pages input[type=date]:visible,.atpf-pages select:visible').count(),0);await page.waitForFunction(()=>document.documentElement.scrollWidth<=innerWidth+1);
  await open('');await page.setViewportSize({width:375,height:812});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await page.screenshot({path:'/tmp/programme-home-mobile.png',fullPage:true});
  await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:'/tmp/programme-home-desktop.png',fullPage:true});assert.deepEqual(errors,[]);
  console.log('PASS '+(process.env.PREVIEW?'PREVIEW':'PUBLIC')+': four programme pages, RTH24 banner, archive URLs, Coffee Time 22/23, Final Whistle 20/22, market and live IMC, legacy links, no date selectors/future previews, mobile and desktop');
