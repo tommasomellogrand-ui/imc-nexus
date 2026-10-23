@@ -21,13 +21,18 @@ def shell(title,path,content,scripts=(),styles=(),attrs=''):
     head=''.join(f'<link rel="stylesheet" href="{f}">' for f in css)
     nav='<nav class="programme-links" aria-label="Programmi">'+''.join(f'<a href="{BASE}{p}/"'+(' aria-current="page"' if path.split('/')[0]==p else '')+'>'+catalog[p]['name']+'</a>' for p in ['rth-24','coffee-time','daytime','final-whistle'])+'</nav>'
     tags=''.join(f'<script defer src="{s}"></script>' for s in ['/nexus/assets/navigation.js']+list(scripts)+['programmes.js?v='+version])
-    return f'<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="{BASE}"><title>{escape(title)} | ALL TO PLAY FOR</title><link rel="canonical" href="https://www.italianmastersclub.it{BASE}{path}">{head}</head><body {attrs}><main class="atpf-pages"><nav class="series-breadcrumb" aria-label="Percorso">{link("","ALL TO PLAY FOR")}<span> / </span><span>{escape(title)}</span></nav>{nav}{content}<footer>ALL TO PLAY FOR · ROAD TO HISTORY · GW001</footer></main>{tags}</body></html>'
+    return f'<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="{BASE}"><title>{escape(title)} | ALL TO PLAY FOR</title><link rel="canonical" href="https://www.italianmastersclub.it{BASE}{path}">{head}</head><body {attrs}><main class="atpf-pages"><nav class="series-breadcrumb" aria-label="Percorso">{link("","ALL TO PLAY FOR")}<span> / </span><span>{escape(title)}</span></nav>{nav if path else ''}{content}<footer>ALL TO PLAY FOR · ROAD TO HISTORY · GW001</footer></main>{tags}</body></html>'
 def banner(p):
     return f'<header class="programme-heading"><h1 class="sr-only">{catalog[p]["name"]}</h1><img class="section-banner" src="assets/{catalog[p]["banner"]}" alt="ALL TO PLAY FOR | {catalog[p]["name"]}" width="2048" height="683" fetchpriority="high"></header>'
 disclosure='<p class="series-disclosure">Serie di finzione ispirata a persone reali e ai dati Nexus. Scene e dialoghi sono ricostruzioni narrative, non dichiarazioni o partecipazioni reali.</p>'
-cards=''.join(f'<a class="programme-card" href="{BASE}{p}/"><img src="assets/{catalog[p]["banner"]}" alt="{catalog[p]["name"]}" width="2048" height="683"><span>Apri {catalog[p]["name"]} →</span></a>' for p in ['rth-24','coffee-time','daytime','final-whistle'])
-home='<header class="programme-heading"><h1 class="sr-only">ALL TO PLAY FOR</h1><img class="section-banner" src="assets/all-to-play-for-brand-v1.webp" alt="ALL TO PLAY FOR" width="2048" height="683"></header><section class="programme-grid" aria-label="I quattro programmi">'+cards+'</section>'
-save('index.html',shell('ALL TO PLAY FOR','',home,attrs='data-programme="home"'))
+cards=''.join(f'<a class="programme-card card-{p}" href="{BASE}{p}/"><img src="assets/{catalog[p]["banner"]}" alt="" width="2048" height="683"><span>{catalog[p]["name"]} <b aria-hidden="true">→</b></span></a>' for p in ['rth-24','coffee-time','daytime','final-whistle'])
+cards+=f'<a class="programme-card card-diretta-gol" href="{BASE}diretta-gol/"><img src="assets/diretta-gol-v1.webp" alt="" width="2048" height="683"><span>Diretta Gol <b aria-hidden="true">→</b></span></a>'
+home='<header class="programme-heading"><h1 class="sr-only">ALL TO PLAY FOR</h1><img class="section-banner" src="assets/all-to-play-for-brand-v1.webp" alt="ALL TO PLAY FOR" width="2048" height="683"></header><section class="programme-grid" aria-label="I cinque programmi">'+cards+'</section>'
+home_html=shell('ALL TO PLAY FOR','',home,styles=['home-layout.css?v=20261023-grid1'],attrs='data-programme="home"')
+home_html=re.sub(r'<nav class="series-breadcrumb".*?</nav>','',home_html)
+save('index.html',home_html)
+live_content='<header class="programme-heading"><h1 class="sr-only">Diretta Gol</h1><img class="section-banner" src="assets/diretta-gol-v1.webp" alt="ALL TO PLAY FOR | Diretta Gol" width="2048" height="683"></header><p class="replay-note">Replay della giornata: gol ed eventi dei Match Report caricati su Nexus.</p><form class="replay-select"><label>Stagione <select id="replay-season" aria-label="Stagione"></select></label><label>Giornata <select id="replay-day" aria-label="Giornata"></select></label></form><p id="replay-status" role="status">Caricamento giornate…</p><iframe id="replay-frame" title="Diretta Gol · Replay della giornata" style="width:100%;height:1100px;border:0" loading="lazy"></iframe>'
+save('diretta-gol/index.html',shell('Diretta Gol','diretta-gol/',live_content,scripts=['diretta-gol.js?v=1'],styles=['home-layout.css?v=20261023-grid1'],attrs='data-programme="diretta-gol"'))
 legacy='<div hidden id="legacy-support"><button id="prev"></button><button id="next"></button><button id="today"></button><div id="tabs"></div><div id="directory"></div><div id="reader"></div></div>'
 def make(p,rubric=None,date=None):
     program=catalog[p];entry=program['rubrics'][rubric] if rubric else program
@@ -76,8 +81,10 @@ before="if(update){const u=new URL(location.href);if(selected)u.searchParams.set
 after="if(update){location.assign('/nexus/alltoplayfor/daytime/'+(selected?selected+'/':''));return}"
 assert before in s;s=s.replace(before,after)
 save('daytime-pages.js',s)
-for name in ['programmes.css','programmes.js']:shutil.copyfile(ROOT/name,OUT/name)
+for name in ['programmes.css','programmes.js','home-layout.css','diretta-gol.js']:shutil.copyfile(ROOT/name,OUT/name)
 (OUT/'assets').mkdir(exist_ok=True)
 shutil.copyfile(ROOT/'rth-24-v1.webp',OUT/'assets/rth-24-v1.webp')
 save('programmes-catalog.json',json.dumps(catalog,ensure_ascii=False))
 print('Built',len(list(OUT.rglob('index.html'))),'pages')
+
+shutil.copyfile(ROOT/'diretta-gol-v1.webp',OUT/'assets/diretta-gol-v1.webp')

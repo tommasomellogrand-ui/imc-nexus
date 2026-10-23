@@ -1,0 +1,6 @@
+body[data-programme=home] .programme-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+body[data-programme=home] .card-rth-24,body[data-programme=home] .card-diretta-gol{grid-column:1/-1}
+body[data-programme=home] .programme-heading{margin-top:16px}
+body[data-programme=home] .programme-card span{display:flex;justify-content:center;align-items:center;gap:8px;min-height:52px;padding:12px 6px}
+.replay-select{display:flex;flex-wrap:wrap;gap:16px}.replay-select label{display:grid;gap:6px;font-weight:700}.replay-select select{min-height:44px;padding:8px;border:1px solid #c9d1de;border-radius:8px;background:white;color:#14213b;font:inherit}.replay-note{padding:16px;background:#fff;border-left:3px solid #bda063;border-radius:8px}
+@media(max-width:600px){body[data-programme=home] .programme-grid{gap:8px}body[data-programme=home] .programme-card{border-radius:10px}body[data-programme=home] .programme-card span{font-size:13px;min-height:50px;line-height:1.2;gap:0;padding:8px 3px}body[data-programme=home] .programme-card span b{display:none}body[data-programme=home] .programme-card:not(.card-rth-24):not(.card-diretta-gol) img{aspect-ratio:1/1;object-fit:contain;object-position:center}body[data-programme=home] .card-rth-24 span,body[data-programme=home] .card-diretta-gol span{font-size:16px;min-height:44px}}
