@@ -1,0 +1,39 @@
+name: Publish ALL TO PLAY FOR programme pages
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['programmes-release/**', '.github/workflows/publish-programme-pages.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and validate
+        run: |
+          python3 programmes-release/build.py
+          node --check programmes-release/dist/daytime-pages.js
+          node --check programmes-release/programmes.js
+          npm install --prefix /tmp/programmes-qa playwright@1.56.1
+      - name: Preview mobile navigation and existing editions
+        run: NODE_PATH=/tmp/programmes-qa/node_modules CHROME_BIN="$(command -v google-chrome)" PREVIEW=1 node programmes-release/verify.cjs
+      - name: Publish programme pages to Aruba
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 programmes-release/deploy.py
+      - name: Verify actual public programme pages
+        run: NODE_PATH=/tmp/programmes-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node programmes-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: programme-pages-review
+          path: /tmp/programme-*.png

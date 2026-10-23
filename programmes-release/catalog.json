@@ -1,0 +1,12 @@
+{
+  "coffee-time": {"name":"Coffee Time","banner":"coffee-time-v1.webp","latest":"2026-10-23","editions":["2026-10-23","2026-10-22"]},
+  "daytime": {"name":"Daytime","banner":"daytime-v1.webp","latest":"2026-10-23","editions":[],"rubrics":{
+    "flash-news":{"name":"Flash News","latest":"2026-10-23","editions":[]},
+    "mercato":{"name":"Il Mercato Scotta","latest":"2026-10-22","editions":["2026-10-22"]},
+    "champions":{"name":"La Regina d’Europa","latest":"2026-10-23","editions":[]},
+    "europa":{"name":"Notti d’Europa","latest":"2026-10-23","editions":["2026-10-23"]},
+    "conference":{"name":"Tutto da Giocare","latest":"2026-10-23","editions":[]}
+  }},
+  "final-whistle":{"name":"Final Whistle","banner":"final-whistle-v1.webp","latest":"2026-10-22","editions":["2026-10-22","2026-10-20"]},
+  "rth-24":{"name":"RTH 24","banner":"rth-24-v1.webp","latest":null,"editions":[]}
+}
