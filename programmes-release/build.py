@@ -43,13 +43,13 @@ def make(p,rubric=None,date=None):
     if rubric:content+='<p class="programme-return">'+link('daytime/','← Tutto Daytime')+'</p>'
     if p=='rth-24':
         content+='<section class="rth-intro"><h2>Benvenuti in Road To History 24</h2><p>Il programma di informazione e approfondimento di Road To History. Risultati, prossime partite e mercato: le flash news del mondo GW001, tutte in un unico spazio.</p></section><section class="rth-flash"><h2>Flash News</h2><nav class="rth-tabs" role="tablist" aria-label="Flash News">'
-        for key,label in [('risultati','Risultati'),('prossime-partite','Prossime partite'),('mercato','Mercato')]:
-            content+=f'<button type="button" role="tab" id="rth-tab-{key}" aria-controls="rth-panel-{key}" aria-selected="{str(key=="risultati").lower()}" tabindex="{0 if key=="risultati" else -1}">{label}</button>'
+        for key,label in [('flash-news','Flash News'),('risultati','Risultati'),('prossime-partite','Prossime partite'),('mercato','Mercato')]:
+            content+=f'<button type="button" role="tab" id="rth-tab-{key}" aria-controls="rth-panel-{key}" aria-selected="{str(key=="flash-news").lower()}" tabindex="{0 if key=="flash-news" else -1}">{label}</button>'
         content+='</nav>'
-        for key,label in [('risultati','Risultati'),('prossime-partite','Prossime partite'),('mercato','Mercato')]:
-            content+=f'<section role="tabpanel" class="rth-panel" id="rth-panel-{key}" aria-labelledby="rth-tab-{key}" tabindex="0"'+(' hidden' if key!='risultati' else '')+f'><h3>{label}</h3><p>Non ci sono ancora flash news in questa sezione.</p></section>'
+        for key,label in [('flash-news','Flash News'),('risultati','Risultati'),('prossime-partite','Prossime partite'),('mercato','Mercato')]:
+            content+=f'<section role="tabpanel" class="rth-panel" id="rth-panel-{key}" aria-labelledby="rth-tab-{key}" tabindex="0"'+(' hidden' if key!='flash-news' else '')+f'><h3>{label}</h3><p>Non ci sono ancora flash news in questa sezione.</p></section>'
         content+='</section>'
-        scripts+=['rth24-tabs.js?v=1'];styles+=['rth24.css?v=1']
+        scripts+=['rth24-tabs.js?v=2'];styles+=['rth24.css?v=2']
     else:
         if entry['editions']:
             content+='<div class="edition-heading"><p>'+('Edizione del ' if date else 'Ultima edizione · ')+date_label(selected)+'</p>'
