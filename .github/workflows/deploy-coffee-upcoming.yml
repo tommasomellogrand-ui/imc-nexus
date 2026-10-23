@@ -1,9 +1,6 @@
 name: Publish upcoming Coffee Time editions only
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['coffee-release/**', '.github/workflows/deploy-coffee-upcoming.yml']
 permissions:
   contents: read
 concurrency:

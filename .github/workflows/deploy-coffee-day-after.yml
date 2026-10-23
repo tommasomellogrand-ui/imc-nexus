@@ -1,8 +1,5 @@
 name: Publish Coffee Time 23 October
 on:
-  push:
-    branches: [main]
-    paths: ['coffee-today/**', '.github/workflows/deploy-coffee-day-after.yml']
   workflow_dispatch:
 permissions:
   contents: read

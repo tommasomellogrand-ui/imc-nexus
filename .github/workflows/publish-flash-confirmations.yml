@@ -1,0 +1,40 @@
+name: Publish DAYTIME Flash News and reporter confirmations
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['flash-release/**', '.github/workflows/publish-flash-confirmations.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare checks
+        run: |
+          node --check alltoplayfor-release/daytime.js
+          python3 -m py_compile flash-release/deploy.py coffee-release/build.py
+          npm install --prefix /tmp/flash-qa playwright@1.56.1
+      - name: Check proposed page on mobile and desktop
+        run: NODE_PATH=/tmp/flash-qa/node_modules CHROME_BIN="$(command -v google-chrome)" PREVIEW=1 node flash-release/verify.cjs
+      - name: Publish reviewed files to Aruba
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 flash-release/deploy.py
+      - name: Check actual public page
+        run: NODE_PATH=/tmp/flash-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node flash-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flash-news-mobile
+          path: /tmp/flash-*.png
