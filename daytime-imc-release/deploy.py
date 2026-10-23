@@ -15,22 +15,18 @@ def read(name):
 def put(name,data):
     ftp.storbinary('STOR '+name,io.BytesIO(data))
     if read(name)!=data:raise RuntimeError('Read-back failed: '+name)
-for name in ['daytime.js','index.html']:
+names=['daytime-imc.css','daytime-imc.js','index.html']
+for name in names+['daytime.js']:
     if read(name)!=(ROOT/'baseline'/name).read_bytes():raise SystemExit('Production changed: '+name)
-for name in ['daytime-imc.js','daytime-imc.css']:
-    try:current=read(name)
-    except error_perm as e:
-        if not str(e).startswith('550'):raise
-    else:
-        if current!=(ROOT/name).read_bytes():raise SystemExit('Unexpected existing asset: '+name)
-for name in ['daytime-imc.js','daytime-imc.css']:put(name,(ROOT/name).read_bytes())
-old=(ROOT/'baseline/index.html').read_bytes()
-if read('index.html')!=old:raise SystemExit('Index changed during upload')
-put('index.pre-daytime-imc-'+os.environ['GITHUB_SHA'][:12]+'.html',old)
-try:put('index.html',(ROOT/'index.html').read_bytes())
+for name in names:
+    put(name+'.pre-rounds-'+os.environ['GITHUB_SHA'][:12],(ROOT/'baseline'/name).read_bytes())
+try:
+    for name in names:
+        if read(name)!=(ROOT/'baseline'/name).read_bytes():raise RuntimeError('Production changed during upload: '+name)
+        put(name,(ROOT/name).read_bytes())
 except Exception:
-    put('index.html',old);raise
-if read('daytime.js')!=(ROOT/'baseline/daytime.js').read_bytes():raise SystemExit('Existing DAYTIME changed')
+    for name in names:put(name,(ROOT/'baseline'/name).read_bytes())
+    raise
 ftp.quit()
 for name in ['index.html','daytime-imc.js','daytime-imc.css']:
     request=urllib.request.Request('https://www.italianmastersclub.it/nexus/alltoplayfor/'+name+'?verify='+os.environ['GITHUB_SHA'],headers={'Cache-Control':'no-cache'})
