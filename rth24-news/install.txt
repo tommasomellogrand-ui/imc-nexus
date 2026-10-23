@@ -1,1 +1,1 @@
-Image URL ingestion v3; original Fenerbahce photo ready for News club.
+News photo upload handoff: stage news, upload original, publish automatically.

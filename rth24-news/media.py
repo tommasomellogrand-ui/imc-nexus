@@ -6,6 +6,14 @@ ROOT=Path(__file__).parent
 PUBLIC='https://www.italianmastersclub.it/nexus/alltoplayfor/rth-24/'
 MAX_BYTES=12*1024*1024
 
+def pending_upload(item):
+ image=item.get('image',{})
+ name=image.get('upload_name')
+ if name is None:return False
+ if not isinstance(name,str) or not name or Path(name).name!=name or name in {'.','..'} or '\\' in name:
+  raise ValueError('Upload must be an exact filename without directories')
+ return not (ROOT/'uploads'/name).is_file()
+
 def checked_url(url):
  p=urllib.parse.urlsplit(url);h=p.hostname or ''
  allowed=h in {'www.italianmastersclub.it','cdn.soccerwiki.org','raw.githubusercontent.com'} or h.endswith('.oaiusercontent.com') or (h.startswith(('oaisdmntpr','oaisdsorpr')) and h.endswith('.blob.core.windows.net')) or (h.startswith('oaisdmntpr') and h.endswith('.amazonaws.com'))
@@ -41,6 +49,14 @@ def prepare(items):
    name=obj[key]
    if not re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name):raise ValueError('Invalid asset name')
    target=ROOT/'assets'/name
+   if 'upload_name' in obj:
+    if pending_upload(item):raise ValueError('Original photo not uploaded yet')
+    data=(ROOT/'uploads'/obj['upload_name']).read_bytes()
+    if len(data)>MAX_BYTES:raise ValueError('Image exceeds 12 MB')
+    inspect(data,name)
+    if target.exists() and target.read_bytes()!=data:raise ValueError('Use a new image filename; existing asset differs')
+    target.parent.mkdir(exist_ok=True);target.write_bytes(data)
+    obj.pop('upload_name')
    if not target.exists():
     if remote is None:
      remote=json.loads(download(PUBLIC+'flash-news.json'))

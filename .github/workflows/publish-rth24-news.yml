@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'rth24-news/items/*.json'
+      - 'rth24-news/uploads/**'
+      - 'rth24-news/assets/**'
       - 'rth24-news/install.txt'
   workflow_dispatch:
 permissions:

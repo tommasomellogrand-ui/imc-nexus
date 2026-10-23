@@ -2,6 +2,20 @@
 Repository `tommasomellogrand-ui/imc-nexus`, branch `main`.
 Pagina: https://www.italianmastersclub.it/nexus/alltoplayfor/rth-24/
 
+## Percorso garantito senza Work quando la chat non può trasferire allegati
+
+La chat può creare il JSON testuale; Tom carica la foto originale con l'interfaccia GitHub autenticata. Nessun passaggio da Work. Non presentare questo percorso come trasferimento automatico dell'allegato dalla chat: richiede un caricamento da parte di Tom.
+
+1. Concorda il testo con Tom. Con `News` o `News club` è autorizzato. Leggi l'esatto nome dell'allegato, senza indovinarlo. Conserva l'estensione reale dei byte (JPEG: .jpg/.jpeg; PNG: .png; WebP: .webp).
+2. Crea il normale JSON della notizia e aggiungi a `image` il campo `upload_name`, uguale al nome originale, ad esempio `{"file":"20261023-140000-notizia-v1.jpg","alt":"Descrizione fornita","upload_name":"IMG_1234.jpeg"}`. `file` è il nome normalizzato e univoco su Nexus; `upload_name` ammette spazi e maiuscole, ma nessuna directory. Non usare source_url insieme a upload_name.
+3. Prima controlla `rth24-news/uploads/`: il nome originale non deve appartenere a una foto precedente diversa. In caso di collisione usa un nuovo nome e dillo chiaramente a Tom. Non sostituire fotografie già usate.
+4. Crea il commit JSON su main. Il workflow indica `WAITING FOR PHOTO (not published)` e conserva le notizie già pubblicate. Questa non è ancora una pubblicazione: non dire Online.
+5. Dai a Tom questo link cliccabile: https://github.com/tommasomellogrand-ui/imc-nexus/upload/main/rth24-news/uploads . Digli solo: «Seleziona la foto originale e premi Commit changes su main». È necessario essere autenticato su GitHub con accesso al repository. Nessun token o password in chat.
+6. Il caricamento della foto avvia automaticamente il workflow: risolve la notizia in attesa, verifica l'immagine, la copia su Nexus, pubblica testo e foto. Non serve un nuovo commit JSON né tornare a Work.
+7. Per confermare Online, controlla l'ultima esecuzione avviata dal caricamento e la ricevuta pubblica: deve includere l'ID della notizia. Se il nome caricato differisce da upload_name, correggi solo upload_name nel JSON esistente. Non duplicare la news.
+
+Questo percorso vale identicamente per News generali e News club. Per gli stemmi preferisci i file già presenti in assets o nel feed pubblico: evita download esterni non necessari. La foto di Istanbul è già disponibile; non ricaricarla.
+
 ## Comandi di Tom
 - **News** + testo, eventuale foto e ora: pubblica una Flash News generale.
 - **News club** + testo, foto e ora: pubblica un contributo dal club, individuando la squadra dal testo e dal contesto. Non chiedere a Tom di compilare moduli o ripetere il club se è chiaro.

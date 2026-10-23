@@ -4,6 +4,18 @@ from unittest.mock import patch
 from PIL import Image
 import media
 class MediaTests(unittest.TestCase):
+ def test_upload_waits_then_preserves_original(self):
+  buf=io.BytesIO();Image.new('RGB',(4,4)).save(buf,format='JPEG');data=buf.getvalue()
+  with tempfile.TemporaryDirectory() as d,patch.object(media,'ROOT',Path(d)):
+   item={'image':{'file':'upload-v1.jpg','alt':'Test','upload_name':'IMG_1234 (1).jpeg'}}
+   self.assertTrue(media.pending_upload(item))
+   (Path(d)/'uploads').mkdir();(Path(d)/'uploads/IMG_1234 (1).jpeg').write_bytes(data)
+   self.assertFalse(media.pending_upload(item))
+   media.prepare([item])
+   self.assertNotIn('upload_name',item['image'])
+   self.assertEqual((Path(d)/'assets/upload-v1.jpg').read_bytes(),data)
+ def test_upload_rejects_path_traversal(self):
+  with self.assertRaises(ValueError):media.pending_upload({'image':{'upload_name':'../secret'}})
  def test_hosts(self):
   for url in ['http://localhost/a.jpg','https://127.0.0.1/a','https://example.com/a','https://cdn.soccerwiki.org.evil.test/a']:
    with self.assertRaises(ValueError):media.checked_url(url)

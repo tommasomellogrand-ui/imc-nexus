@@ -1,7 +1,7 @@
 import json,re,os
 from pathlib import Path
 from datetime import datetime
-from media import prepare
+from media import prepare,pending_upload
 R=Path(__file__).parent
 
 def validate(item):
@@ -26,7 +26,10 @@ def validate(item):
 def build():
  items=[]
  for p in sorted((R/'items').glob('*.json')):
-  item=json.loads(p.read_text());prepare([item]);validate(item);assert p.stem==item['id'],'Filename must match id';items.append(item)
+  item=json.loads(p.read_text())
+  if pending_upload(item):
+   print('WAITING FOR PHOTO (not published):',p.stem);continue
+  prepare([item]);validate(item);assert p.stem==item['id'],'Filename must match id';items.append(item)
  assert len({x['id'] for x in items})==len(items),'Duplicate ID'
  items.sort(key=lambda x:(validate(x),x['id']),reverse=True)
  out=R/'dist';out.mkdir(exist_ok=True)
