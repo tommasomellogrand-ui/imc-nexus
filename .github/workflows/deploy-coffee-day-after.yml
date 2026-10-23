@@ -31,3 +31,8 @@ jobs:
         run: python3 coffee-today/deploy.py
       - name: Verify live edition
         run: NODE_PATH=/tmp/coffee-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node coffee-today/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coffee-design-review
+          path: /tmp/coffee-*.png

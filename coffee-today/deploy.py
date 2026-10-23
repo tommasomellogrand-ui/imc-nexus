@@ -1,4 +1,4 @@
-import io,os,ssl,urllib.request
+import io,os,ssl,urllib.request,re
 from pathlib import Path
 from ftplib import FTP_TLS
 p=Path(__file__).parent
@@ -10,10 +10,11 @@ def read(n):
  b=io.BytesIO();ftp.retrbinary('RETR '+n,b.write);return b.getvalue()
 def put(n,b):
  ftp.storbinary('STOR '+n,io.BytesIO(b));assert read(n)==b,n
-old=read('index.html');marker=b'<script src="coffee-day-after.js?v=20261023" defer></script>'
+old=read('index.html');marker=b'<script src="coffee-day-after.js?v=20261023-design2" defer></script>'
 assert old.count(b'</body>')==1
-new=old if marker in old else old.replace(b'</body>',marker+b'</body>')
-files={'2026-10-23-coffee-editorial.json':(p/'edition.json').read_bytes(),'coffee-day-after.js':(p/'coffee-day-after.js').read_bytes()}
+new=re.sub(rb'<script src="coffee-day-after\.js[^"]*" defer></script>',marker,old) if b'<script src="coffee-day-after.js' in old else old.replace(b'</body>',marker+b'</body>')
+files={'2026-10-23-coffee-editorial.json':(p/'edition.json').read_bytes(),'coffee-day-after.js':(p/'coffee-day-after.js').read_bytes(),'coffee-day-after.css':(p/'coffee-day-after.css').read_bytes()}
+for image in (p/'assets').glob('dayafter-*'):files['assets/'+image.name]=image.read_bytes()
 for n,b in files.items():put(n,b)
 assert read('index.html')==old,'Concurrent production edit'
 put('index.html.pre-coffee-day-after-'+os.environ['GITHUB_SHA'][:12],old)
