@@ -1,0 +1,39 @@
+name: Install DAYTIME read-only IMC link
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['daytime-imc-release/**', '.github/workflows/install-daytime-imc.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare checks
+        run: |
+          node --check daytime-imc-release/daytime-imc.js
+          python3 -m py_compile daytime-imc-release/deploy.py
+          npm install --prefix /tmp/daytime-qa playwright@1.56.1 --fetch-timeout=30000 --fetch-retries=1
+      - name: Verify adapter against live IMC before installation
+        run: PREVIEW=1 CHROME_BIN="$(command -v google-chrome)" node daytime-imc-release/verify.cjs
+      - name: Install adapter only
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 daytime-imc-release/deploy.py
+      - name: Verify public DAYTIME against live IMC
+        run: CHROME_BIN="$(command -v google-chrome)" node daytime-imc-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daytime-imc-mobile
+          path: /tmp/daytime-imc-mobile.png
+          retention-days: 7
