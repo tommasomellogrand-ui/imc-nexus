@@ -1,1 +1,1 @@
-News photo upload handoff: stage news, upload original, publish automatically.
+Flash News layout v3: photo and title header, full-width article text, Inter.
