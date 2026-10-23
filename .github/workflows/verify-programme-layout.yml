@@ -1,8 +1,5 @@
 name: Verify programme layout images
 on:
-  push:
-    branches: [main]
-    paths: ["programmes-release/verify.cjs"]
   workflow_dispatch:
 permissions:
   contents: read
