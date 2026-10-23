@@ -10,8 +10,7 @@
   "teams": [
     {
       "name": "Fenerbahçe SK",
-      "logo": "fenerbahce-v1.png",
-      "source_url": "https://cdn.soccerwiki.org/images/logos/clubs/350.png"
+      "logo": "fenerbahce-v1.png"
     }
   ]
 }
