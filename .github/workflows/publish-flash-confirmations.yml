@@ -1,9 +1,6 @@
 name: Publish DAYTIME Flash News and reporter confirmations
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['flash-release/**', '.github/workflows/publish-flash-confirmations.yml']
 permissions:
   contents: read
 concurrency:
