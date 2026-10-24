@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - name: Inspect configuration structure without credentials
+      - name: Count database objects without changing data
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
           ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
@@ -18,22 +18,29 @@ jobs:
           ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
         run: |
           python3 - <<'PY'
-          import os,ssl,io,re
-          from ftplib import FTP_TLS
+          import os,ssl,io,json,secrets,hashlib,time,urllib.request
+          from ftplib import FTP_TLS,error_perm
           host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
           raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
           domain=host[4:] if host.startswith('ftp.') else host
           root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
           ctx=ssl.create_default_context();ctx.check_hostname=False
-          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p()
-          for path in [root+'/core/bootstrap.php',root+'/__imc_private_gateway/config.php','/www.'+domain+'/__imc_private_gateway/config.php']:
-              try:
-                  b=io.BytesIO();f.retrbinary('RETR '+path,b.write);s=b.getvalue().decode()
-                  print('FILE',path)
-                  print('ARRAY_KEYS',sorted(set(re.findall(r"['\"]([a-zA-Z_][a-zA-Z_0-9]*)['\"]\s*=>",s))))
-                  print('DATABASE_NAMES',sorted(set(re.findall(r'Sql[0-9]+_[0-9]+',s))))
-                  print('INCLUDES',re.findall(r"(?:require|include)(?:_once)?\s*\(?([^;]+)",s))
-              except Exception:
-                  print('FILE_UNAVAILABLE',path)
-          f.quit()
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root)
+          token=secrets.token_hex(32)
+          name='imc-db-inspect-'+secrets.token_hex(16)+'.php'
+          php="<?php\nini_set('display_errors','0'); error_reporting(0);\nif (time()>EXPIRES || !hash_equals('TOKENHASH',hash('sha256',$_SERVER['HTTP_X_IMC_INSPECT']??''))) {http_response_code(404);exit;}\n@unlink(__FILE__);\nheader('Content-Type: application/json'); header('Cache-Control: no-store');\ntry {\n$c=require dirname(__DIR__).'/__imc_private_gateway/config.php';\n$connections=[];\nfunction walkConfig($a,$parent=[]) {\n global $connections;\n if(!is_array($a)) return;\n foreach(['host','port','user','pass'] as $key) if(isset($a[$key])&&!is_array($a[$key])) $parent[$key]=$a[$key];\n if(isset($parent['host'],$parent['user'],$parent['pass'])) $connections[hash('sha256',json_encode($parent))]=$parent;\n foreach($a as $v) if(is_array($v)) walkConfig($v,$parent);\n}\nwalkConfig($c);\n$out=[];$errors=0;\nforeach($connections as $a) {\n try {\n $p=new PDO('mysql:host='.$a['host'].';port='.($a['port']??3306).';charset=utf8mb4',$a['user'],$a['pass'],[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_TIMEOUT=>10]);\n foreach($p->query('SHOW DATABASES')->fetchAll(PDO::FETCH_COLUMN) as $db) {\n if(!preg_match('/^Sql[0-9]+_[0-9]+$/i',$db)) continue;\n $tables=$p->query('SHOW FULL TABLES FROM `'.$db.'`')->fetchAll(PDO::FETCH_NUM);\n $s=$p->prepare('SELECT COUNT(*) FROM information_schema.ROUTINES WHERE ROUTINE_SCHEMA=?');$s->execute([$db]);$r=(int)$s->fetchColumn();\n $s=$p->prepare('SELECT COUNT(*) FROM information_schema.EVENTS WHERE EVENT_SCHEMA=?');$s->execute([$db]);$e=(int)$s->fetchColumn();\n $out[$db]=['database'=>$db,'tables_and_views'=>count($tables),'routines'=>$r,'events'=>$e];\n }\n }catch(Throwable $e){$errors++;}\n}\nksort($out);echo json_encode(['databases'=>array_values($out),'connection_errors'=>$errors]);\n}catch(Throwable $e){http_response_code(500);echo '{\"error\":\"inspection_failed\"}';}\n"
+          php=php.replace('TOKENHASH',hashlib.sha256(token.encode()).hexdigest()).replace('EXPIRES',str(int(time.time())+120))
+          try:
+              f.storbinary('STOR '+name,io.BytesIO(php.encode()))
+              request=urllib.request.Request('https://www.italianmastersclub.it/nexus/'+name,headers={'X-IMC-Inspect':token})
+              with urllib.request.urlopen(request,timeout=60) as response: result=json.load(response)
+              assert result.get('databases'), 'No databases inspected'
+              print(json.dumps(result,indent=2))
+          finally:
+              try: f.delete(name)
+              except error_perm: pass
+              assert name not in [x.rsplit('/',1)[-1] for x in f.nlst()], 'Temporary diagnostic cleanup failed'
+              print('TEMPORARY_DIAGNOSTIC_REMOVED')
+              f.quit()
+          
           PY
