@@ -16,6 +16,7 @@ try:ftp.mkd('coffee-time/2026-10-24')
 except Exception:
  ftp.cwd('coffee-time/2026-10-24');ftp.cwd(remote)
 files={'coffee-nations-20261024.css':(p/'coffee-nations-20261024.css').read_bytes(),'coffee-nations-20261024.js':(p/'coffee-nations-20261024.js').read_bytes(),'coffee-time/2026-10-24/index.html':(p/'edition.html').read_bytes()}
+for image in p.glob('coffee-*.jpg'):files[image.name]=image.read_bytes()
 for n,b in files.items():
  if n=='coffee-time/2026-10-24/index.html':put(n+'.pre-redesign-'+os.environ['GITHUB_SHA'][:12],read(n))
  put(n,b)

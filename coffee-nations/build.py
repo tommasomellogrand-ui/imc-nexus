@@ -21,7 +21,9 @@ def name(id):
  n=nations[str(id)]['name'];return translations.get(n,n)
 def flag(id):return '<img class="flag" src="'+e(nations[str(id)]['image_url'])+'" alt="">'
 def speech(n,role,text,img=None):
+ img=img or {'Paolo Di Canio':'coffee-di-canio.jpg','Beppe Bergomi':'coffee-bergomi.jpg','Esteban Cambiasso':'coffee-cambiasso.jpg'}.get(n)
  image='<img src="'+e(img)+'" alt="'+e(n)+'">' if img else '<span class="initials">'+''.join(x[0] for x in n.split())+'</span>'
+ if n in ['Paolo Di Canio','Beppe Bergomi','Esteban Cambiasso']: image='<span class="cast-photo">'+image+'</span>'
  return '<article class="voice"><header>'+image+'<div><strong>'+e(n)+'</strong><small>'+e(role)+'</small></div></header><p>'+e(text)+'</p></article>'
 notes=[
 'La Francia vince anche in Giamaica e resta a punteggio pieno: 12 punti e sette di vantaggio sulla Turchia. Lo 0–0 tra Turchia e Romania lascia aperta la corsa alle sue spalle.',
@@ -97,8 +99,8 @@ body+=speech('Federica Zille','Ci ritroviamo domattina','Il giro delle nazionali
 assert report_count==32
 source=Path('/tmp/coffee-live.html').read_text();source=source.replace('23 ottobre 2026</p>','24 ottobre 2026</p>').replace('value="2026-10-23"','value="2026-10-24"').replace('href="/nexus/alltoplayfor/coffee-time/2026-10-23/">Apri','href="/nexus/alltoplayfor/coffee-time/2026-10-24/">Apri')
 source=re.sub(r'<section id="panel-coffee-time">.*?</section>','<section id="panel-coffee-time">'+body+'</section>',source)
-source=re.sub(r'<script defer src="coffee-day-after[^>]+></script>','<script defer src="coffee-nations-20261024.js?v=2"></script>',source)
-source=source.replace('</head>','<link rel="stylesheet" href="coffee-nations-20261024.css?v=2"></head>')
+source=re.sub(r'<script defer src="coffee-day-after[^>]+></script>','<script defer src="coffee-nations-20261024.js?v=3"></script>',source)
+source=source.replace('</head>','<link rel="stylesheet" href="coffee-nations-20261024.css?v=3"></head>')
 source=source.replace('<nav aria-label="Archivio Coffee Time">','<nav aria-label="Archivio Coffee Time"><a class="archive-link" href="/nexus/alltoplayfor/coffee-time/2026-10-24/">24 ottobre 2026</a>')
 (O/'latest.html').write_text(source)
 archive=source.replace('data-edition=""','data-edition="2026-10-24"').replace('Ultima edizione · 24 ottobre','Edizione del 24 ottobre').replace('href="https://www.italianmastersclub.it/nexus/alltoplayfor/coffee-time/"','href="https://www.italianmastersclub.it/nexus/alltoplayfor/coffee-time/2026-10-24/"').replace('href="/nexus/alltoplayfor/coffee-time/2026-10-24/">Apri la pagina di questa edizione','href="/nexus/alltoplayfor/coffee-time/">Torna all’ultima edizione')
