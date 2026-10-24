@@ -1,0 +1,39 @@
+name: Inspect Aruba database availability
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/inspect-aruba-databases.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Inspect configuration structure without credentials
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,re
+          from ftplib import FTP_TLS
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p()
+          for path in [root+'/core/bootstrap.php',root+'/__imc_private_gateway/config.php','/www.'+domain+'/__imc_private_gateway/config.php']:
+              try:
+                  b=io.BytesIO();f.retrbinary('RETR '+path,b.write);s=b.getvalue().decode()
+                  print('FILE',path)
+                  print('ARRAY_KEYS',sorted(set(re.findall(r"['\"]([a-zA-Z_][a-zA-Z_0-9]*)['\"]\s*=>",s))))
+                  print('DATABASE_NAMES',sorted(set(re.findall(r'Sql[0-9]+_[0-9]+',s))))
+                  print('INCLUDES',re.findall(r"(?:require|include)(?:_once)?\s*\(?([^;]+)",s))
+              except Exception:
+                  print('FILE_UNAVAILABLE',path)
+          f.quit()
+          PY
