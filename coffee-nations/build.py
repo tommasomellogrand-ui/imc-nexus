@@ -84,7 +84,7 @@ for i,g in enumerate(groups):
    if rep:
     photo=old['reporter_portraits'].get(rep['name'],{}).get('image')
     question,answer=dialogues[id]
-    context=f"{name(id)} è {table['position']}ª nel girone con {table['points']} punti: {table['won']} vittorie, {table['drawn']} pareggi e {table['lost']} sconfitte."
+    context=f"{name(id)} è {table['position']}ª nel girone con {table['points']} punti: {table['won']} {'vittoria' if table['won']==1 else 'vittorie'}, {table['drawn']} {'pareggio' if table['drawn']==1 else 'pareggi'} e {table['lost']} {'sconfitta' if table['lost']==1 else 'sconfitte'}."
     body+='<section class="touchline"><p class="segment-label">IL CAFFÈ CON IL MISTER</p>'+speech(rep['name'],name(id)+' · Il punto dal campo',text+' '+context,photo)
     body+='<div class="interview"><span class="interview-label">UNA DOMANDA, UNA RISPOSTA · DIALOGO NARRATIVO</span>'+speech(rep['name'],'La domanda',question,photo)+speech(r[side+'_imc_manager_name'],'CT '+name(id)+' · La risposta',answer)+'</div></section>'
    else:body+='<div class="team-summary"><h4>'+e(name(id))+'</h4><p>'+e(text)+'</p></div>'
