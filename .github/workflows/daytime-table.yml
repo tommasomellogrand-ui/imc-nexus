@@ -1,0 +1,49 @@
+name: Publish DayTime standings and complete results
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/daytime-table.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node --check daytime-table-release/daytime-imc.js
+      - name: Install verified adapter
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,hashlib,urllib.request
+          from pathlib import Path
+          from ftplib import FTP_TLS
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/');domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root+'/alltoplayfor')
+          def read(n):
+           b=io.BytesIO();f.retrbinary('RETR '+n,b.write);return b.getvalue()
+          name='daytime-imc.js';old=read(name);new=Path('daytime-table-release/daytime-imc.js').read_bytes()
+          assert hashlib.sha256(old).hexdigest()=='db3c1e6652e456f35cb266255a44164f9892113c92303cca3ad394210ecd75cd' or old==new
+          f.storbinary('STOR '+name+'.backup-'+os.environ['GITHUB_SHA'][:12],io.BytesIO(old))
+          f.storbinary('STOR '+name+'.tmp',io.BytesIO(new));assert read(name+'.tmp')==new
+          assert read(name)==old
+          f.rename(name+'.tmp',name);assert read(name)==new;f.quit()
+          assert urllib.request.urlopen('https://www.italianmastersclub.it/nexus/alltoplayfor/daytime-imc.js?v='+os.environ['GITHUB_SHA'],timeout=30).read()==new
+          PY
+      - name: Verify mobile standings and full history
+        run: |
+          npm install --prefix /tmp/qa playwright@1.56.1
+          node <<'JS'
+          const {chromium}=require('/tmp/qa/node_modules/playwright');
+          (async()=>{const b=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});const p=await b.newPage({viewport:{width:390,height:844}});await p.goto('https://www.italianmastersclub.it/nexus/alltoplayfor/?section=daytime&daytime=europa&date=2026-10-25');const root=p.locator('#daytime-section-europa .daytime-imc');await root.locator('table').waitFor();if(await root.locator('tbody tr').count()!==14)throw Error('standings');if(await root.locator('[data-status=result]').count()!==14)throw Error('history');if(await root.locator('[data-status=schedule]').count()!==7)throw Error('schedule');if(!await root.locator('tbody tr').first().textContent().then(x=>x.includes('Hertha')))throw Error('leader');await p.locator('#date').fill('2026-10-24');await p.locator('#date').dispatchEvent('change');await p.waitForTimeout(2500);if(await root.locator('[data-status=result]').count()!==14)throw Error('date filter');console.log('PASS standings first, 14 results across dates, 7 upcoming fixtures, mobile');await b.close()})().catch(e=>{console.error(e);process.exit(1)});
+          JS
