@@ -16,7 +16,9 @@ try:ftp.mkd('coffee-time/2026-10-24')
 except Exception:
  ftp.cwd('coffee-time/2026-10-24');ftp.cwd(remote)
 files={'coffee-nations-20261024.css':(p/'coffee-nations-20261024.css').read_bytes(),'coffee-nations-20261024.js':(p/'coffee-nations-20261024.js').read_bytes(),'coffee-time/2026-10-24/index.html':(p/'edition.html').read_bytes()}
-for n,b in files.items():put(n,b)
+for n,b in files.items():
+ if n=='coffee-time/2026-10-24/index.html':put(n+'.pre-redesign-'+os.environ['GITHUB_SHA'][:12],read(n))
+ put(n,b)
 assert read('coffee-time/index.html')==old
 assert read('programmes-catalog.json')==catold
 put('coffee-time/index.html.pre-nations-'+os.environ['GITHUB_SHA'][:12],old)

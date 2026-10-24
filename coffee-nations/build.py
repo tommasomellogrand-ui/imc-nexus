@@ -3,6 +3,7 @@ from pathlib import Path
 from html import escape as e
 P=Path(__file__).parent; E=P/'evidence'; O=P/'dist';O.mkdir(exist_ok=True)
 def read(n):return json.loads((E/(n+'.json')).read_text())
+dialogues=json.loads((P/'dialogues.json').read_text())
 results=read('results')['rows'];groups=read('standings')['groups'];nations={str(r['world_id']):r for r in read('nations')['rows']};clubs=read('clubs')['rows']
 old=json.loads(Path('coffee-today/edition.json').read_text()); reps={str(r['club_id']):r for d in old['divisions'] for f in d['fixtures'] for r in f['reports']}
 by_manager={c['manager']['manager_id']:reps[str(c['world_id'])] for c in clubs if c.get('manager') and str(c['world_id']) in reps}
@@ -56,7 +57,7 @@ for i,g in enumerate(groups):
  for r in matches:
   mr=read(str(r['sm_fixture_id'])).get('row');assert mr and mr['match_date']=='2026-10-23' and mr['home_score']==r['home_score'] and mr['away_score']==r['away_score'];report_count+=1
   st=json.loads(mr['team_stats_json']);players=json.loads(mr['players_json']);mvp=next((p for p in players if p.get('man_of_match')),None)
-  h=name(r['home_sm_club_id']);a=name(r['away_sm_club_id']);body+='<article class="cn-match"><div class="scoreboard">'
+  h=name(r['home_sm_club_id']);a=name(r['away_sm_club_id']);body+='<article class="cn-match"><p class="match-kicker">DAL CAMPO · IL GIORNO DOPO</p><div class="scoreboard">'
   for side in ['home','away']:
    id=r[side+'_sm_club_id'];manager=r.get(side+'_imc_manager_name') or '';body+='<div>'+flag(id)+'<strong>'+e(name(id))+'</strong><small>'+e(manager)+'</small></div>'
    if side=='home':body+='<b class="score">'+str(r['home_score'])+'–'+str(r['away_score'])+'</b>'
@@ -69,7 +70,11 @@ for i,g in enumerate(groups):
    scorers=[p for p in players if p.get('team_side')==side and p.get('goals',0)>0]
    if scorers:text+='A segno '+', '.join(p['player_name']+' ('+str(p['goals'])+')' for p in scorers)+'.'
    if rep:
-    photo=old['reporter_portraits'].get(rep['name'],{}).get('image');body+=speech(rep['name'],name(id)+' · CT '+r[side+'_imc_manager_name'],text,photo)
+    photo=old['reporter_portraits'].get(rep['name'],{}).get('image')
+    question,answer=dialogues[id]
+    context=f"{name(id)} è {table['position']}ª nel girone con {table['points']} punti: {table['won']} vittorie, {table['drawn']} pareggi e {table['lost']} sconfitte."
+    body+='<section class="touchline"><p class="segment-label">IL CAFFÈ CON IL MISTER</p>'+speech(rep['name'],name(id)+' · Il punto dal campo',text+' '+context,photo)
+    body+='<div class="interview"><span class="interview-label">UNA DOMANDA, UNA RISPOSTA · DIALOGO NARRATIVO</span>'+speech(rep['name'],'La domanda',question,photo)+speech(r[side+'_imc_manager_name'],'CT '+name(id)+' · La risposta',answer)+'</div></section>'
    else:body+='<div class="team-summary"><h4>'+e(name(id))+'</h4><p>'+e(text)+'</p></div>'
   if mvp:body+='<p class="mvp">Migliore in campo: <strong>'+e(mvp['player_name'])+'</strong> · voto '+e(str(mvp.get('rating','—')))+'</p>'
   body+='<details><summary>I numeri della partita</summary><table class="stats"><tbody>'
@@ -80,8 +85,8 @@ body+=speech('Federica Zille','Ci ritroviamo domattina','Il giro delle nazionali
 assert report_count==32
 source=Path('/tmp/coffee-live.html').read_text();source=source.replace('23 ottobre 2026</p>','24 ottobre 2026</p>').replace('value="2026-10-23"','value="2026-10-24"').replace('href="/nexus/alltoplayfor/coffee-time/2026-10-23/">Apri','href="/nexus/alltoplayfor/coffee-time/2026-10-24/">Apri')
 source=re.sub(r'<section id="panel-coffee-time">.*?</section>','<section id="panel-coffee-time">'+body+'</section>',source)
-source=re.sub(r'<script defer src="coffee-day-after[^>]+></script>','<script defer src="coffee-nations-20261024.js"></script>',source)
-source=source.replace('</head>','<link rel="stylesheet" href="coffee-nations-20261024.css"></head>')
+source=re.sub(r'<script defer src="coffee-day-after[^>]+></script>','<script defer src="coffee-nations-20261024.js?v=2"></script>',source)
+source=source.replace('</head>','<link rel="stylesheet" href="coffee-nations-20261024.css?v=2"></head>')
 source=source.replace('<nav aria-label="Archivio Coffee Time">','<nav aria-label="Archivio Coffee Time"><a class="archive-link" href="/nexus/alltoplayfor/coffee-time/2026-10-24/">24 ottobre 2026</a>')
 (O/'latest.html').write_text(source)
 archive=source.replace('data-edition=""','data-edition="2026-10-24"').replace('Ultima edizione · 24 ottobre','Edizione del 24 ottobre').replace('href="https://www.italianmastersclub.it/nexus/alltoplayfor/coffee-time/"','href="https://www.italianmastersclub.it/nexus/alltoplayfor/coffee-time/2026-10-24/"').replace('href="/nexus/alltoplayfor/coffee-time/2026-10-24/">Apri la pagina di questa edizione','href="/nexus/alltoplayfor/coffee-time/">Torna all’ultima edizione')
