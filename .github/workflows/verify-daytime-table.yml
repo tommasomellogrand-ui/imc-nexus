@@ -1,0 +1,18 @@
+name: Verify DayTime complete history
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verify-daytime-table.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify mobile standings and full history
+        run: |
+          npm install --prefix /tmp/qa playwright@1.56.1
+          node <<'JS'
+          const {chromium}=require('/tmp/qa/node_modules/playwright');
+          (async()=>{const b=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});const p=await b.newPage({viewport:{width:390,height:844}});await p.goto('https://www.italianmastersclub.it/nexus/alltoplayfor/?section=daytime&daytime=europa&date=2026-10-25');const root=p.locator('#daytime-section-europa .daytime-imc');await root.locator('table').waitFor();if(await root.locator('tbody tr').count()!==14)throw Error('standings');if(await root.locator('[data-status=result]').count()!==14)throw Error('history');if(!await root.locator('tbody tr').first().textContent().then(x=>x.includes('Hertha')))throw Error('leader');await p.locator('#date').fill('2026-10-24');await p.locator('#date').dispatchEvent('change');await p.waitForTimeout(2500);if(await root.locator('[data-status=result]').count()!==14)throw Error('date filter');console.log('PASS standings first, 14 results across dates, 7 upcoming fixtures, mobile');await b.close()})().catch(e=>{console.error(e);process.exit(1)});
+          JS
