@@ -34,7 +34,7 @@ jobs:
           def read(n):
            b=io.BytesIO();f.retrbinary('RETR '+n,b.write);return b.getvalue()
           old=read('daytime-imc.js');new=Path('europa-banner-release/daytime-imc.js').read_bytes()
-          assert hashlib.sha256(old).hexdigest()=='31bbeb25f851ae3b447d62fb6975622dab079a087422bd5311e05f43d663eaea' or old==new
+          assert hashlib.sha256(old).hexdigest()=='6d7dbbb00e7e59cd034c518cca7d25b2a0574113fe9c7a91ceb7e01a96fd5168' or old==new
           image=Path('europa-banner-release/imc-europa-banner.webp').read_bytes()
           f.storbinary('STOR assets/imc-europa-banner.webp',io.BytesIO(image));assert read('assets/imc-europa-banner.webp')==image
           f.storbinary('STOR daytime-imc.js.backup-'+os.environ['GITHUB_SHA'][:12],io.BytesIO(old))
