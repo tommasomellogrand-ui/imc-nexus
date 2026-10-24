@@ -64,11 +64,23 @@ for i,g in enumerate(groups):
   body+='</div><p class="scorers">'+e(' · '.join(str(x['minute'])+'′ '+x['player_name']+(' (aut.)' if x.get('own_goal') else '') for x in st.get('scorers',[])))+'</p>'
   for side,other in [('home','away'),('away','home')]:
    id=str(r[side+'_sm_club_id']);gf=r[side+'_score'];ga=r[other+'_score'];table=next(x for x in rows if x['team_id']==id);rep=by_manager.get(r.get(side+'_imc_manager_id'));s=st.get(side,{})
-   text=name(id)+(' conquista tre punti' if gf>ga else 'aggiunge un punto' if gf==ga else 'chiude senza punti')+' e si ritrova a '+str(table['points'])+' nel girone. '
-   text+=f"Il bilancio della partita è di {gf} gol fatti e {ga} subiti. "
-   if 'total_shots' in s and 'shots_on_target' in s:text+=f"Produce {s['total_shots']} tiri, {s['shots_on_target']} nello specchio. "
+   rival=name(r[other+'_sm_club_id']); own=st.get(side,{}); opp=st.get(other,{})
+   if gf>ga:
+    text=f"{name(id)} supera {rival} {gf}–{ga}. "
+    text+=('Una vittoria larga, da accompagnare però alla stessa attenzione nelle prossime uscite. ' if gf-ga>=3 else 'Tre punti preziosi in una partita che non lascia spazio per considerare scontato il risultato. ' if gf-ga==1 else 'Due gol di margine e una vittoria che dà peso al cammino nel girone. ')
+   elif gf==ga:
+    text=f"{name(id)} divide i punti con {rival}: {gf}–{ga}. "
+    text+=('Il tabellino resta vuoto: una porta inviolata da conservare, ma anche il gol da ritrovare per cambiare passo. ' if gf==0 else 'Segnare tre volte non basta per vincere: il risultato mette al centro del confronto l’equilibrio tra ciò che si costruisce e ciò che si concede. ' if gf>=3 else 'Un punto che va letto insieme alla corsa delle rivali, senza confondere il pareggio con una giornata priva di conseguenze. ')
+   else:
+    text=f"{name(id)} cede {gf}–{ga} a {rival}. "
+    text+=('Il margine è minimo, ma la classifica non fa sconti: resta una partita dalla quale cercare una risposta, senza fermarsi al dispiacere. ' if ga-gf==1 else 'Il punteggio impone una riflessione: servono risposte davanti e maggiore tenuta quando la partita si complica. ')
+   if 'total_shots' in own and 'shots_on_target' in own:
+    text+=f"Le conclusioni sono {own['total_shots']}, di cui {own['shots_on_target']} nello specchio"
+    if 'shots_on_target' in opp: text+=f", contro le {opp['shots_on_target']} nello specchio dell’avversaria"
+    text+='. '
    scorers=[p for p in players if p.get('team_side')==side and p.get('goals',0)>0]
-   if scorers:text+='A segno '+', '.join(p['player_name']+' ('+str(p['goals'])+')' for p in scorers)+'.'
+   if scorers:text+='Il contributo al gol arriva da '+', '.join(p['player_name']+(' (doppietta)' if p['goals']==2 else ' (tripletta)' if p['goals']==3 else ' ('+str(p['goals'])+' gol)' if p['goals']>3 else '') for p in scorers)+'. '
+   text+=f"La classifica ora dice {table['points']} punti."
    if rep:
     photo=old['reporter_portraits'].get(rep['name'],{}).get('image')
     question,answer=dialogues[id]
