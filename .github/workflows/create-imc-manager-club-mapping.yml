@@ -1,0 +1,46 @@
+name: Create IMC Manager Club Mapping
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/create-imc-manager-club-mapping.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Create and verify eight-column club mapping table
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,json,secrets,hashlib,time,urllib.request
+          from ftplib import FTP_TLS,error_perm
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root)
+          token=secrets.token_hex(32)
+          name='imc-db-inspect-'+secrets.token_hex(16)+'.php'
+          php="<?php\nini_set('display_errors','0');error_reporting(0);\nif($_SERVER['REQUEST_METHOD']!=='POST'||time()>EXPIRES||!hash_equals('TOKENHASH',hash('sha256',$_SERVER['HTTP_X_IMC_INSPECT']??''))){http_response_code(404);exit;}\n@unlink(__FILE__);\nheader('Content-Type: application/json');header('Cache-Control: no-store');\ntry{\n$c=require dirname(__DIR__).'/__imc_private_gateway/config.php';\n$a=$c['db'];\n$p=new PDO('mysql:host='.$a['host'].';port='.($a['port']??3306).';dbname=Sql1956795_4;charset=utf8mb4',$a['user'],$a['pass'],[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_TIMEOUT=>10]);\nif($p->query('SELECT DATABASE()')->fetchColumn()!=='Sql1956795_4')throw new Exception('Wrong database');\n$before=$p->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN);\n$name='IMC Manager Club Mapping';\nif(!in_array($name,$before,true)){\n if(count($before)!==0)throw new Exception('Database no longer empty');\n $p->exec(\"CREATE TABLE `IMC Manager Club Mapping` (\n `nome_ufficiale_club` VARCHAR(255) NOT NULL,\n `nazione` VARCHAR(100) NOT NULL,\n `citta` VARCHAR(150) NULL,\n `anno_fondazione` SMALLINT UNSIGNED NULL,\n `nome_stadio` VARCHAR(255) NULL,\n `capienza_stadio` INT UNSIGNED NULL,\n `serie_girone_attuali` VARCHAR(255) NULL,\n `rosa_attuale` LONGTEXT NULL COMMENT 'Giocatori tesserati per il club; elenco strutturato da popolare'\n ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci\");\n}\n$cols=$p->query('SHOW COLUMNS FROM `IMC Manager Club Mapping`')->fetchAll(PDO::FETCH_ASSOC);\n$expected=['nome_ufficiale_club','nazione','citta','anno_fondazione','nome_stadio','capienza_stadio','serie_girone_attuali','rosa_attuale'];\nif(array_column($cols,'Field')!==$expected)throw new Exception('Schema mismatch');\necho json_encode(['ok'=>true,'database'=>'Sql1956795_4','table'=>$name,'columns'=>$cols,'rows'=>(int)$p->query('SELECT COUNT(*) FROM `IMC Manager Club Mapping`')->fetchColumn()]);\n}catch(Throwable $e){http_response_code(500);echo json_encode(['ok'=>false,'error_code'=>$e->getCode()]);}\n"
+          php=php.replace('TOKENHASH',hashlib.sha256(token.encode()).hexdigest()).replace('EXPIRES',str(int(time.time())+120))
+          try:
+              f.storbinary('STOR '+name,io.BytesIO(php.encode()))
+              request=urllib.request.Request('https://www.italianmastersclub.it/nexus/'+name,headers={'X-IMC-Inspect':token},data=b'',method='POST')
+              with urllib.request.urlopen(request,timeout=60) as response: result=json.load(response)
+              assert result.get('ok') is True and len(result['columns'])==8
+              print(json.dumps(result,indent=2))
+          finally:
+              try: f.delete(name)
+              except error_perm: pass
+              assert name not in [x.rsplit('/',1)[-1] for x in f.nlst()], 'Temporary diagnostic cleanup failed'
+              print('TEMPORARY_DIAGNOSTIC_REMOVED')
+              f.quit()
+          
+          PY
