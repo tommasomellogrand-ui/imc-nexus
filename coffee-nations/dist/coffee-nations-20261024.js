@@ -1,0 +1,1 @@
+(()=>{const buttons=[...document.querySelectorAll('.cn-tabs button')];function choose(i){buttons.forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));document.querySelectorAll('.cn-group').forEach((g,j)=>g.hidden=i!==j)}buttons.forEach((b,i)=>b.addEventListener('click',()=>choose(i)));})();
