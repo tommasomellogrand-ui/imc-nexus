@@ -34,14 +34,14 @@ jobs:
           def read(n):
            b=io.BytesIO();f.retrbinary('RETR '+n,b.write);return b.getvalue()
           old=read('daytime-imc.js');new=Path('europa-banner-release/daytime-imc.js').read_bytes()
-          assert hashlib.sha256(old).hexdigest()=='b3d7a8140bfd82ca511af76655207c4789ebd855ed6e8e9d155c33dcb7636565' or old==new
-          image=Path('europa-banner-release/imc-europa-banner.webp').read_bytes()
-          f.storbinary('STOR assets/imc-europa-banner.webp',io.BytesIO(image));assert read('assets/imc-europa-banner.webp')==image
+          assert hashlib.sha256(old).hexdigest()=='031549cb3ee586370b39ce52a20d038ef66306c4d6e3953e6e724adb72f5b4b6' or old==new
+          image=Path('europa-banner-release/rth-europa-banner.webp').read_bytes()
+          f.storbinary('STOR assets/rth-europa-banner.webp',io.BytesIO(image));assert read('assets/rth-europa-banner.webp')==image
           f.storbinary('STOR daytime-imc.js.backup-'+os.environ['GITHUB_SHA'][:12],io.BytesIO(old))
           assert read('daytime-imc.js')==old
           f.storbinary('STOR daytime-imc.js.tmp',io.BytesIO(new));assert read('daytime-imc.js.tmp')==new
           f.rename('daytime-imc.js.tmp','daytime-imc.js');assert read('daytime-imc.js')==new;f.quit()
-          for path,data in [('daytime-imc.js',new),('assets/imc-europa-banner.webp',image)]:
+          for path,data in [('daytime-imc.js',new),('assets/rth-europa-banner.webp',image)]:
            assert urllib.request.urlopen('https://www.italianmastersclub.it/nexus/alltoplayfor/'+path+'?v='+os.environ['GITHUB_SHA'],timeout=30).read()==data
           PY
       - name: Verify Europa mobile page
