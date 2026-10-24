@@ -102,6 +102,10 @@ source=re.sub(r'<section id="panel-coffee-time">.*?</section>','<section id="pan
 source=re.sub(r'<script defer src="coffee-day-after[^>]+></script>','<script defer src="coffee-nations-20261024.js?v=3"></script>',source)
 source=source.replace('</head>','<link rel="stylesheet" href="coffee-nations-20261024.css?v=3"></head>')
 source=source.replace('<nav aria-label="Archivio Coffee Time">','<nav aria-label="Archivio Coffee Time"><a class="archive-link" href="/nexus/alltoplayfor/coffee-time/2026-10-24/">24 ottobre 2026</a>')
+# Coffee Time has its own banner and dated editorial title.
+source=re.sub(r'<nav class="series-breadcrumb".*?</nav>','',source)
+source=re.sub(r'<nav class="programme-links".*?</nav>','',source)
+source=re.sub(r'<div class="edition-heading">.*?</div>','',source)
 (O/'latest.html').write_text(source)
 archive=source.replace('data-edition=""','data-edition="2026-10-24"').replace('Ultima edizione · 24 ottobre','Edizione del 24 ottobre').replace('href="https://www.italianmastersclub.it/nexus/alltoplayfor/coffee-time/"','href="https://www.italianmastersclub.it/nexus/alltoplayfor/coffee-time/2026-10-24/"').replace('href="/nexus/alltoplayfor/coffee-time/2026-10-24/">Apri la pagina di questa edizione','href="/nexus/alltoplayfor/coffee-time/">Torna all’ultima edizione')
 (O/'edition.html').write_text(archive)
