@@ -1,0 +1,50 @@
+# Sources: Lega B squadre (2026-10-24), RSSSF foundation dates, official club histories.
+# Stadium locations: direttaserieb.it/squadre; published capacities: en.wikipedia.org/wiki/2026–27_Serie_B.
+# Padova: Il Mattino 2026-05-12, 11671 operational places; Avellino stadium current homologated seats 11688.
+# Arezzo and Ascoli capacities NULL pending resolution of conflicting current figures.
+name: Seed Serie B 2026-27 club mapping
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/seed-imc-serie-b-2026-27.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Load twenty clubs and verify all eight columns
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,json,secrets,hashlib,time,urllib.request
+          from ftplib import FTP_TLS,error_perm
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root)
+          token=secrets.token_hex(32)
+          name='imc-db-inspect-'+secrets.token_hex(16)+'.php'
+          php="<?php\nini_set('display_errors','0');error_reporting(0);\nif($_SERVER['REQUEST_METHOD']!=='POST'||time()>EXPIRES||!hash_equals('TOKENHASH',hash('sha256',$_SERVER['HTTP_X_IMC_INSPECT']??''))){http_response_code(404);exit;}\n@unlink(__FILE__);header('Content-Type: application/json');header('Cache-Control: no-store');\ntry{\n$c=require dirname(__DIR__).'/__imc_private_gateway/config.php';$a=$c['db'];\n$p=new PDO('mysql:host='.$a['host'].';port='.($a['port']??3306).';dbname=Sql1956795_4;charset=utf8mb4',$a['user'],$a['pass'],[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_TIMEOUT=>10]);\nif($p->query('SELECT DATABASE()')->fetchColumn()!=='Sql1956795_4')throw new Exception('Wrong database');\nif((int)$p->query(\"SELECT GET_LOCK('imc_manager_club_mapping_seed',10)\")->fetchColumn()!==1)throw new Exception('Lock unavailable');\n$old=['nome_ufficiale_club','nazione','citta','anno_fondazione','nome_stadio','capienza_stadio','serie_girone_attuali'];\n$expected=array_merge(array_slice($old,0,6),['serie_attuale','girone']);\n$cols=$p->query('SHOW COLUMNS FROM `IMC Manager Club Mapping`')->fetchAll(PDO::FETCH_ASSOC);\n$count=(int)$p->query(\"SELECT COUNT(*) FROM `IMC Manager Club Mapping` WHERE serie_attuale='Serie B'\")->fetchColumn();\n\n$cols=$p->query('SHOW COLUMNS FROM `IMC Manager Club Mapping`')->fetchAll(PDO::FETCH_ASSOC);\nif(array_column($cols,'Field')!==$expected)throw new Exception('Schema mismatch');\n$rows=json_decode('[[\"S.S. Arezzo\",\"Italia\",\"Arezzo\",1923,\"Città di Arezzo\",null,\"Serie B\",\"Unico\"],[\"Ascoli Calcio 1898 FC\",\"Italia\",\"Ascoli Piceno\",1898,\"Cino e Lillo Del Duca\",null,\"Serie B\",\"Unico\"],[\"U.S. Avellino 1912\",\"Italia\",\"Avellino\",1912,\"Partenio-Adriano Lombardi\",11688,\"Serie B\",\"Unico\"],[\"Benevento Calcio\",\"Italia\",\"Benevento\",1929,\"Ciro Vigorito\",16867,\"Serie B\",\"Unico\"],[\"Carrarese Calcio 1908\",\"Italia\",\"Carrara\",1908,\"Dei Marmi\",4194,\"Serie B\",\"Unico\"],[\"U.S. Catanzaro\",\"Italia\",\"Catanzaro\",1928,\"Nicola Ceravolo\",14650,\"Serie B\",\"Unico\"],[\"Cesena FC\",\"Italia\",\"Cesena\",1940,\"Orogel Stadium - Dino Manuzzi\",20194,\"Serie B\",\"Unico\"],[\"U.S. Cremonese\",\"Italia\",\"Cremona\",1903,\"Giovanni Zini\",20641,\"Serie B\",\"Unico\"],[\"Empoli FC\",\"Italia\",\"Empoli\",1920,\"Carlo Castellani - Computer Gross Arena\",16284,\"Serie B\",\"Unico\"],[\"Hellas Verona\",\"Italia\",\"Verona\",1903,\"Marc\\'Antonio Bentegodi\",39211,\"Serie B\",\"Unico\"],[\"S.S. Juve Stabia\",\"Italia\",\"Castellammare di Stabia\",1907,\"Romeo Menti\",7642,\"Serie B\",\"Unico\"],[\"Mantova 1911\",\"Italia\",\"Mantova\",1911,\"Danilo Martelli - Pata Stadium\",14884,\"Serie B\",\"Unico\"],[\"Modena FC\",\"Italia\",\"Modena\",1912,\"Alberto Braglia\",21151,\"Serie B\",\"Unico\"],[\"Calcio Padova\",\"Italia\",\"Padova\",1910,\"Euganeo\",11671,\"Serie B\",\"Unico\"],[\"Palermo FC\",\"Italia\",\"Palermo\",1900,\"Renzo Barbera\",36365,\"Serie B\",\"Unico\"],[\"Pisa Sporting Club\",\"Italia\",\"Pisa\",1909,\"Arena Garibaldi - Romeo Anconetani\",12508,\"Serie B\",\"Unico\"],[\"U.C. Sampdoria\",\"Italia\",\"Genova\",1946,\"Luigi Ferraris\",33205,\"Serie B\",\"Unico\"],[\"FC Südtirol\",\"Italia\",\"Bolzano\",1995,\"Marco Druso\",5539,\"Serie B\",\"Unico\"],[\"L.R. Vicenza\",\"Italia\",\"Vicenza\",1902,\"Romeo Menti\",12000,\"Serie B\",\"Unico\"],[\"Virtus Entella\",\"Italia\",\"Chiavari\",1914,\"Comunale di Chiavari\",5535,\"Serie B\",\"Unico\"]]',true,512,JSON_THROW_ON_ERROR);\n$p->beginTransaction();\n$before=$p->query(\"SELECT * FROM `IMC Manager Club Mapping` WHERE serie_attuale<>'Serie B' ORDER BY nome_ufficiale_club\")->fetchAll(PDO::FETCH_ASSOC);\n$inserted=0;\nif($count===0){\n$s=$p->prepare('INSERT INTO `IMC Manager Club Mapping` (`'.implode('`,`',$expected).'`) VALUES (?,?,?,?,?,?,?,?)');\nforeach($rows as $row){$s->execute($row);$inserted++;}\n}\n$actual=$p->query(\"SELECT * FROM `IMC Manager Club Mapping` WHERE serie_attuale='Serie B'\")->fetchAll(PDO::FETCH_NUM);\n$normalize=function($items){$out=[];foreach($items as $row){$out[]=array_map('strval',$row);}usort($out,function($a,$b){return strcmp($a[0],$b[0]);});return $out;};\nif($normalize($actual)!==$normalize($rows))throw new Exception('Readback mismatch');\nif($before!==$p->query(\"SELECT * FROM `IMC Manager Club Mapping` WHERE serie_attuale<>'Serie B' ORDER BY nome_ufficiale_club\")->fetchAll(PDO::FETCH_ASSOC))throw new Exception('Existing rows changed');\n$p->commit();\n$actual=$p->query(\"SELECT * FROM `IMC Manager Club Mapping` WHERE serie_attuale='Serie B' ORDER BY nome_ufficiale_club\")->fetchAll(PDO::FETCH_ASSOC);\nif(count($actual)!==20)throw new Exception('Final count mismatch');\n$p->query(\"SELECT RELEASE_LOCK('imc_manager_club_mapping_seed')\");\necho json_encode(['ok'=>true,'database'=>'Sql1956795_4','table'=>'IMC Manager Club Mapping','season'=>'2026/27','columns'=>$expected,'inserted'=>$inserted,'row_count'=>count($actual),'total_rows'=>(int)$p->query('SELECT COUNT(*) FROM `IMC Manager Club Mapping`')->fetchColumn(),'records'=>$actual]);\n}catch(Throwable $e){if(isset($p)&&$p->inTransaction())$p->rollBack();http_response_code(500);echo json_encode(['ok'=>false,'error_code'=>$e->getCode()]);}\n"
+          php=php.replace('TOKENHASH',hashlib.sha256(token.encode()).hexdigest()).replace('EXPIRES',str(int(time.time())+120))
+          try:
+              f.storbinary('STOR '+name,io.BytesIO(php.encode()))
+              request=urllib.request.Request('https://www.italianmastersclub.it/nexus/'+name,headers={'X-IMC-Inspect':token},data=b'',method='POST')
+              with urllib.request.urlopen(request,timeout=60) as response: result=json.load(response)
+              assert result.get('ok') is True and len(result['columns'])==8 and result['row_count']==20
+              print(json.dumps(result,indent=2))
+          finally:
+              try: f.delete(name)
+              except error_perm: pass
+              assert name not in [x.rsplit('/',1)[-1] for x in f.nlst()], 'Temporary diagnostic cleanup failed'
+              print('TEMPORARY_DIAGNOSTIC_REMOVED')
+              f.quit()
+          
+          PY
