@@ -1,14 +1,14 @@
 (()=>{'use strict';
  const panel=document.getElementById('panel-daytime'),date=document.getElementById('date');if(!panel||!date)return;
  const keys={champions:'GW001_IMC_CHAMPIONS_LEAGUE',europa:'GW001_IMC_EUROPA_LEAGUE',conference:'GW001_IMC_CONFERENCE_LEAGUE'};
+ const roots=new Map();let generation=0,controller;
+ const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!=null)n.textContent=text;if(cls)n.className=cls;return n};
  const styling=el('style');styling.textContent=`
 body.imc-europa-only .atpf-pages>.series-breadcrumb,body.imc-europa-only .atpf-pages>.programme-links,body.imc-europa-only .atpf-pages>.programme-heading,body.imc-europa-only .atpf-pages>.programme-return,body.imc-europa-only .atpf-pages>.edition-heading,body.imc-europa-only .atpf-pages>.series-disclosure,body.imc-europa-only .atpf-pages>.edition-archive,body.imc-europa-only .daytime-tabs,body.imc-europa-only .daytime-back,body.imc-europa-only .daytime-edition-status,body.imc-europa-only #daytime-section-europa>p,body.imc-europa-only #daytime-section-europa>h2{display:none!important}
 body.imc-europa-only .atpf-pages,body.imc-europa-only #panel-daytime,body.imc-europa-only .daytime-root,body.imc-europa-only .daytime-details,body.imc-europa-only #daytime-section-europa,body.imc-europa-only #daytime-section-europa>.daytime-imc{margin-top:0!important;padding-top:0!important}
 .imc-europa-banner{display:block;width:100%;height:auto;object-fit:contain;border-radius:12px;margin:0 0 20px}.daytime-imc-table{max-width:100%}
 `;document.head.append(styling);
  if(document.body.dataset.rubric==='europa')document.body.classList.add('imc-europa-only');
- const roots=new Map();let generation=0,controller;
- const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!=null)n.textContent=text;if(cls)n.className=cls;return n};
  const selected=()=>panel.querySelector('.daytime-tabs [aria-selected=true]')?.dataset.competition;
  for(const id of Object.keys(keys)){const section=document.getElementById('daytime-section-'+id);if(!section)continue;section.querySelector('.daytime-awaiting')?.remove();const box=el('div',null,'daytime-imc');box.setAttribute('aria-live','polite');section.append(box);roots.set(id,box)}
  function label(){const id=selected();if(!keys[id])return;const n=panel.querySelector('.daytime-edition-status');if(n)n.textContent=new Intl.DateTimeFormat('it-IT',{dateStyle:'long',timeZone:'UTC'}).format(new Date(date.value+'T12:00:00Z'))+' · Competizioni IMC';}
