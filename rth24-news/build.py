@@ -5,8 +5,10 @@ from media import prepare,pending_upload
 R=Path(__file__).parent
 
 def validate(item):
- assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category'},'Invalid fields'
+ assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category','club_ids'},'Invalid fields'
  assert item.get('category','flash') in ('flash','club','market'),'Invalid category'
+ if 'club_ids' in item:
+  assert isinstance(item['club_ids'],list) and len(item['club_ids'])<=40 and all(isinstance(x,str) and x.isdigit() for x in item['club_ids']),'Invalid club IDs'
  def asset(name):
   assert isinstance(name,str) and re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name),'Invalid asset filename'
   assert (R/'assets'/name).is_file(),'Missing image: '+name
@@ -16,8 +18,8 @@ def validate(item):
  if 'teams' in item:
   assert isinstance(item['teams'],list) and len(item['teams'])<=10
   for team in item['teams']:
-   assert {'name','logo'}<=set(team)<={'name','logo','sha256'} and isinstance(team['name'],str) and team['name'].strip()
-   asset(team['logo'])
+   assert {'name'}<=set(team)<={'name','logo','sha256'} and isinstance(team['name'],str) and team['name'].strip()
+   if 'logo' in team:asset(team['logo'])
  assert re.fullmatch(r'[a-z0-9][a-z0-9-]{2,119}',item['id']),'Invalid ID'
  assert isinstance(item['title'],str) and 1<=len(item['title'].strip())<=200,'Invalid title'
  assert isinstance(item['text'],str) and 1<=len(item['text'].strip())<=20000,'Invalid text'

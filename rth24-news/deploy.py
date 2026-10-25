@@ -3,6 +3,7 @@ from pathlib import Path
 from ftplib import FTP_TLS,error_perm,error_temp
 R=Path(__file__).parent
 files={'feed-v5.js':(R/'feed.js').read_bytes(),'feed-v5.css':(R/'feed.css').read_bytes(),'flash-news.json':(R/'dist/flash-news.json').read_bytes(),'index.html':(R.parent/'programmes-release/dist/rth-24/index.html').read_bytes()}
+if os.environ.get('RTH24_DATA_ONLY')=='1':files={'flash-news.json':files['flash-news.json']}
 files={**{p.name:p.read_bytes() for p in sorted((R/'assets').iterdir())},**files}
 host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','');raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/');domain=host[4:] if host.startswith('ftp.') else host
 remote=(raw if raw.startswith('/www.') else f'/www.{domain}{raw}')+'/alltoplayfor/rth-24'
@@ -35,7 +36,7 @@ for n,b in files.items():
   assert {x['id'] for x in prior['items']}<={x['id'] for x in new['items']},'Refusing to delete published news'
 # Save previous payload and page before any write. All writes stay in RTH24.
 for n in ['flash-news.json','index.html']:
- if original[n] is not None and original[n]!=files[n]:put(n+'.before-'+os.environ['DEPLOY_SHA'][:12],original[n])
+ if n in files and original[n] is not None and original[n]!=files[n]:put(n+'.before-'+os.environ['DEPLOY_SHA'][:12],original[n])
 written=[]
 try:
  for n,b in files.items():

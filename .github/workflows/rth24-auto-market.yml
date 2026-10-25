@@ -1,0 +1,86 @@
+name: RTH24 Automatic Transfer News
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'rth24-news/automation/**'
+      - '.github/workflows/rth24-auto-market.yml'
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Test market rules
+        run: |
+          python3 -m pip install Pillow==11.3.0
+          python3 -m unittest discover -s rth24-news/automation -p test_generate.py
+          php -l rth24-news/automation/export.php
+      - name: Read certified transfers and prepare news
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 rth24-news/automation/export.py
+      - name: Build current archive and page
+        run: |
+          echo "DEPLOY_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          python3 -m pip install Pillow==11.3.0
+          python3 -m unittest discover -s rth24-news -p test_media.py
+          python3 programmes-release/build.py
+          node --check rth24-news/feed.js
+          npm install --prefix /tmp/rth24-news-qa playwright@1.56.1
+          php -l rth24-news/crest-cache-v1.php
+      - name: Prepare persistent club crest cache
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 rth24-news/install_media_cache.py
+      - name: Validate news
+        run: python3 rth24-news/build.py
+      - name: Test rendering with preview-only news
+        run: NODE_PATH=/tmp/rth24-news-qa/node_modules CHROME_BIN="$(command -v google-chrome)" PREVIEW=1 node rth24-news/verify.cjs
+      - name: Persist news and duplicate registry
+        run: |
+          git config user.name "RTH24 News Bot"
+          git config user.email "rth24-bot@users.noreply.github.com"
+          git add rth24-news/items rth24-news/assets rth24-news/automation/ledger.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish certified GW001 market news"
+            git push origin HEAD:main
+          fi
+          echo "DEPLOY_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Update feed revision after commit
+        run: python3 rth24-news/build.py
+      - name: Publish only RTH24 Flash News
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: RTH24_DATA_ONLY=1 python3 rth24-news/deploy.py
+      - name: Verify news visible on public RTH24
+        run: |
+          NODE_PATH=/tmp/rth24-news-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node rth24-news/verify.cjs
+          cat rth24-news/dist/receipt.json >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rth24-auto-market-publication
+          path: |
+            rth24-news/automation/runtime/report.json
+            rth24-news/dist/receipt.json
+            /tmp/rth24-news-*.png

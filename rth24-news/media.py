@@ -62,7 +62,7 @@ def prepare(items):
  for item in items:
   refs=[]
   if 'image' in item:refs.append((item['image'],'file'))
-  refs += [(t,'logo') for t in item.get('teams',[])]
+  refs += [(t,'logo') for t in item.get('teams',[]) if t.get('logo')]
   for obj,key in refs:
    name=obj[key]
    if not re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name):raise ValueError('Invalid asset name')

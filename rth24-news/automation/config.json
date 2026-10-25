@@ -1,0 +1,8 @@
+{
+  "world": "GW001",
+  "baseline_imported_at": "2026-10-22 08:06:30",
+  "baseline_transfer_date": "2026-10-21",
+  "rating_threshold": 90,
+  "cash_threshold_eur_exclusive": 10000000,
+  "baseline_note": "All rows inspected before activation were CERTIFIED; latest import 22 October. Include subsequent imports, including those arriving during setup. Never announce historical dates through 21 October."
+}
