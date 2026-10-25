@@ -9,7 +9,8 @@ def public(p):return urllib.request.urlopen(base+p+'?verify='+os.environ['GITHUB
 assert hashlib.sha256(public('matchday/live.js')).hexdigest()==baseline['engine'],'Engine changed since review'
 host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','');raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/');domain=host[4:] if host.startswith('ftp.') else host
 remote=(raw if raw.startswith('/www.') else f'/www.{domain}{raw}')+'/alltoplayfor'
-ftp=FTP_TLS(context=ssl.create_default_context());ftp.connect(host,21,timeout=40);ftp.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);ftp.prot_p();ftp.cwd(remote)
+ctx=ssl.create_default_context();ctx.check_hostname=False
+ftp=FTP_TLS(context=ctx);ftp.connect(host,21,timeout=40);ftp.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);ftp.prot_p();ftp.cwd(remote)
 def read(n):
  b=io.BytesIO();ftp.retrbinary('RETR '+n,b.write);return b.getvalue()
 def put(n,b):
