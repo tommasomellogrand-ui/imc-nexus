@@ -1,6 +1,6 @@
 # GW001 certified transfers → RTH24
 
-Workflow `RTH24 Automatic Transfer News`, scheduled at :07/:22/:37/:52 each hour (GitHub may delay scheduled starts), also manual and on automation source changes. Shared production deployment lock with the manual news workflow.
+Workflow `RTH24 Automatic Transfer News`, scheduled every five minutes (GitHub may delay scheduled starts), also manual and on automation source changes. Shared production deployment lock with the manual news workflow.
 
 Read-only snapshot from Aruba `Sql1956795_3.GW001_IMC_Transfers`, normalized Codex and Core mappings. The temporary export is token-protected, expires in five minutes, accepts only fixed read queries or bounded SoccerWiki image downloads, and is removed in finally. Database secrets never leave the server.
 

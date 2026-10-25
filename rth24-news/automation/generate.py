@@ -43,6 +43,9 @@ def manager(snapshot,club_id,day):
  return next(iter(names))
 
 def asset(url,prefix):
+ cached=sorted((R/'assets').glob(prefix+'-*'))
+ if cached:
+  inspect(cached[-1].read_bytes(),cached[-1].name);return cached[-1].name
  if not url:raise ValueError('Missing verified image URL')
  if url.startswith('//'):url='https:'+url
  if url.startswith('/nexus/'):url='https://www.italianmastersclub.it'+url

@@ -6,7 +6,7 @@ on:
       - 'rth24-news/automation/**'
       - '.github/workflows/rth24-auto-market.yml'
   schedule:
-    - cron: '7,22,37,52 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
