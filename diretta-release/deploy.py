@@ -2,7 +2,7 @@ import hashlib,io,json,os,ssl,urllib.request
 from pathlib import Path
 from ftplib import FTP_TLS,error_perm
 R=Path(__file__).parent; baseline=json.loads((R/'baseline.json').read_text())
-files={n:(R/n).read_bytes() for n in ['diretta-gol-v2.js','diretta-gol-v2.css','diretta-embed-v2.css']}
+files={n:(R/n).read_bytes() for n in ['diretta-gol-v3.js','diretta-gol-v3.css','diretta-embed-v3.css']}
 files['diretta-gol/index.html']=(R.parent/'programmes-release/dist/diretta-gol/index.html').read_bytes()
 base='https://www.italianmastersclub.it/nexus/'
 def public(p):return urllib.request.urlopen(base+p+'?verify='+os.environ['GITHUB_SHA'],timeout=45).read()

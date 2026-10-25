@@ -32,7 +32,7 @@ home_html=shell('ALL TO PLAY FOR','',home,styles=['home-layout-v2.css?v=20261023
 home_html=re.sub(r'<nav class="series-breadcrumb".*?</nav>','',home_html)
 save('index.html',home_html)
 live_content='<header class="programme-heading"><h1 class="sr-only">Diretta Gol</h1><img class="section-banner" src="assets/diretta-gol-v1.webp" alt="ALL TO PLAY FOR | Diretta Gol" width="2048" height="683"></header><p class="dg-intro">Tutte le emozioni di Road To History: segui il tabellone e rivivi gol ed eventi della giornata.</p><section class="dg-daybar"><div><span class="dg-kicker">REPLAY DELLA GIORNATA</span><h2 id="dg-day-label">Caricamento giornata…</h2></div><details id="dg-picker"><summary>Cambia giornata</summary><form class="replay-select"><label>Stagione <select id="replay-season" aria-label="Stagione"></select></label><label>Giornata <select id="replay-day" aria-label="Giornata"></select></label></form></details></section><p id="replay-status" role="status">Caricamento giornate…</p><iframe id="replay-frame" title="Diretta Gol · Replay della giornata" scrolling="no"></iframe>'
-live_page=shell('Diretta Gol','diretta-gol/',live_content,scripts=['diretta-gol-v2.js'],styles=['diretta-gol-v2.css'],attrs='data-programme="diretta-gol"')
+live_page=shell('Diretta Gol','diretta-gol/',live_content,scripts=['diretta-gol-v3.js'],styles=['diretta-gol-v3.css'],attrs='data-programme="diretta-gol"')
 live_page=re.sub(r'<nav class="programme-links".*?</nav>','',live_page)
 live_page=re.sub(r'<nav class="series-breadcrumb".*?</nav>','<a class="dg-back" href="/nexus/alltoplayfor/">← All To Play For</a>',live_page)
 save('diretta-gol/index.html',live_page)
@@ -99,4 +99,4 @@ print('Built',len(list(OUT.rglob('index.html'))),'pages')
 
 shutil.copyfile(ROOT/'diretta-gol-v1.webp',OUT/'assets/diretta-gol-v1.webp')
 
-for name in ["diretta-gol-v2.js","diretta-gol-v2.css","diretta-embed-v2.css"]:shutil.copyfile(REPO/"diretta-release"/name,OUT/name)
+for name in ["diretta-gol-v3.js","diretta-gol-v3.css","diretta-embed-v3.css"]:shutil.copyfile(REPO/"diretta-release"/name,OUT/name)
