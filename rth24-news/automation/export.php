@@ -20,11 +20,20 @@ $p=new PDO('mysql:host='.$a['host'].';port='.($a['port']??3306).';dbname=Sql1956
 $p->exec('SET TRANSACTION READ ONLY');$p->beginTransaction();
 $rows=$p->query("SELECT * FROM GW001_IMC_Transfers WHERE imported_at > '2026-10-22 08:06:30' ORDER BY imported_at,imc_transfer_number")->fetchAll(PDO::FETCH_ASSOC);
 $clubs=$p->query("SELECT m.`SM World Club ID` club_id,m.`Club Name` name,c.image_url,c.image_file FROM Sql1956795_1.`IMC Game World Club Mapping` m LEFT JOIN Sql1956795_1.`IMC Club Codex Global` c ON c.id=m.`SM Club ID` WHERE m.`Game World`='GW001'")->fetchAll(PDO::FETCH_ASSOC);
-$managers=$p->query("SELECT team_id,full_name,start_date,end_date FROM Sql1956795_1.`IMC Manager Assignment Global` WHERE game_world_id='GW001' AND assignment_type='club'")->fetchAll(PDO::FETCH_ASSOC);
+$managers=$p->query("SELECT manager_id,team_id,full_name,start_date,end_date FROM Sql1956795_1.`IMC Manager Assignment Global` WHERE game_world_id='GW001' AND assignment_type='club'")->fetchAll(PDO::FETCH_ASSOC);
+// Resolve external club crests only by exact Codex names; active GW001 IDs remain separate.
+$transferClubs=[];$names=[];
+foreach($rows as $r){foreach(['club_from','club_to'] as $key){if(!empty($r[$key]))$names[$r[$key]]=true;}}
+if($names){
+ $stmt=$p->prepare("SELECT id,name,image_url,image_file FROM Sql1956795_1.`IMC Club Codex Global` WHERE name IN (".implode(',',array_fill(0,count($names),'?')).")");
+ $stmt->execute(array_keys($names));$matches=[];
+ foreach($stmt->fetchAll(PDO::FETCH_ASSOC) as $c){$matches[trim($c['name'])][]=$c;}
+ foreach($matches as $name=>$cs){if(count($cs)===1)$transferClubs[$name]=$cs[0];}
+}
 $players=[];$ids=[];
 foreach($rows as $r){$ids[(int)$r['player_id']]=true;foreach(json_decode($r['normalized_exchange_players']?:$r['exchange_players']?:'[]',true)?:[] as $x){if(isset($x['player_id']))$ids[(int)$x['player_id']]=true;}}
 foreach(array_chunk(array_keys($ids),100) as $chunk){$in=implode(',',array_map('intval',$chunk));
 $ps=$p->query("SELECT g.id player_id,TRIM(CONCAT_WS(' ',g.forename,g.surname)) full_name,g.image_file,g.image_url,c.rating,c.position,c.market_value,c.imported_at FROM Sql1956795_1.`IMC Player Codex Global` g LEFT JOIN GW001_IMC_Player_Codex c ON c.player_id=g.id WHERE g.id IN ($in) ORDER BY c.imported_at DESC")->fetchAll(PDO::FETCH_ASSOC);foreach($ps as $pr){if(!isset($players[$pr['player_id']]))$players[$pr['player_id']]=$pr;}}
 $summary=$p->query('SELECT COUNT(*) total,MAX(imported_at) latest_import FROM GW001_IMC_Transfers')->fetch(PDO::FETCH_ASSOC);
-$p->commit();echo json_encode(['world'=>'GW001','rows'=>$rows,'clubs'=>$clubs,'managers'=>$managers,'players'=>(object)$players,'summary'=>$summary],JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR);
+$p->commit();echo json_encode(['world'=>'GW001','rows'=>$rows,'clubs'=>$clubs,'managers'=>$managers,'transfer_clubs'=>(object)$transferClubs,'players'=>(object)$players,'summary'=>$summary],JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR);
 }catch(Throwable $e){http_response_code(500);echo json_encode(['error'=>'transfer_export_failed','code'=>$e->getCode()]);}

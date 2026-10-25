@@ -36,11 +36,14 @@ def eligible(row,cfg):
 def participants(row,clubs):
  return list(dict.fromkeys(str(row.get(k)) for k in ['to_sm_world_club_id','from_sm_world_club_id'] if str(row.get(k)) in clubs))
 
-def manager(snapshot,club_id,day):
+def manager_record(snapshot,club_id,day):
  rows=[m for m in snapshot['managers'] if str(m['team_id'])==club_id and str(m.get('start_date') or '')<=day and (not m.get('end_date') or str(m['end_date'])>=day)]
- names={m['full_name'] for m in rows if m.get('full_name')}
- if len(names)!=1:raise ValueError('Missing or ambiguous manager for '+club_id)
- return next(iter(names))
+ identities={(m.get('manager_id'),m['full_name']) for m in rows if m.get('full_name')}
+ if len(identities)!=1:raise ValueError('Missing or ambiguous manager for '+club_id)
+ return rows[0]
+
+def manager(snapshot,club_id,day):
+ return manager_record(snapshot,club_id,day)['full_name']
 
 def asset(url,prefix):
  cached=sorted((R/'assets').glob(prefix+'-*'))
@@ -84,6 +87,28 @@ def editorial(name,fr,to,amount,day,names,loan):
   text=f'{to} annuncia l’arrivo di {name}'+(' in prestito' if loan else '')+f'. Il giocatore lascia {fr}: operazione da {cost}.'
  return title,text,{'from':fr,'to':to,'formula':formula,'amount':cost,'date':day}
 
+def optional_asset(url,prefix):
+ try:return asset(url,prefix)
+ except Exception as e:
+  print('MEDIA RETRY',prefix,type(e).__name__);return None
+
+def portrait(kind,name,identity=None):
+ refs=json.loads((A/'portraits.json').read_text()).get(kind,{})
+ ref=refs.get(identity if kind=='managers' else name,{})
+ if kind=='managers' and ref.get('name')!=name:return None
+ if not ref.get('url'):return None
+ prefix='news-person-'+hashlib.sha256((kind+str(identity or name)).encode()).hexdigest()[:16]
+ photo=optional_asset(ref['url'],prefix)
+ return {'file':photo,'alt':name} if photo else None
+
+def media_complete(items):
+ first=items[0]
+ if not first.get('image') or not all(t.get('logo') for t in first.get('teams',[])):return False
+ t=first.get('transfer',{})
+ for side in ['from','to']:
+  if t.get(side,'').casefold() not in ('svincolato','free agent') and not t.get(side+'_logo'):return False
+ return all(c.get('reporter_image') and c.get('manager_image') for item in items for c in item.get('coverage',[]))
+
 def news(row,snapshot,reporters,now,media=True):
  clubs={str(x['club_id']):x for x in snapshot['clubs']};players=snapshot['players'];pid=str(row['player_id']);p=players.get(pid,{})
  name=display_name(p.get('full_name') or row.get('player_name') or '')
@@ -106,10 +131,6 @@ def news(row,snapshot,reporters,now,media=True):
  title,text,transfer=editorial(name,fr,to,amount,day,names,loan)
  item={'id':nid,'published_at':now,'title':title,'text':text,'category':'market','club_ids':ids,'teams':[], 'transfer':transfer,'editorial_version':3}
  if media:
-  def optional_asset(url,prefix):
-   try:return asset(url,prefix)
-   except Exception as e:
-    print('MEDIA RETRY',prefix,type(e).__name__);return None
   url=p.get('image_url') or row.get('player_image') or ('https://cdn.soccerwiki.org/images/player/'+p['image_file'] if p.get('image_file') else None)
   photo=optional_asset(url,'market-player-'+pid)
   if photo:item['image']={'file':photo,'alt':name}
@@ -117,6 +138,14 @@ def news(row,snapshot,reporters,now,media=True):
    c=clubs[cid];url=c.get('image_url') or ('https://www.italianmastersclub.it/nexus/assets/clubs/'+c['image_file'] if c.get('image_file') else None)
    logo=optional_asset(url,'market-club-'+cid)
    item['teams'].append({'name':c['name'],**({'logo':logo} if logo else {})})
+  for side,field,label in [('from','from_sm_world_club_id',fr),('to','to_sm_world_club_id',to)]:
+   cid=str(row.get(field));c=clubs.get(cid) or {n.casefold():v for n,v in snapshot.get('transfer_clubs',{}).items()}.get(label.casefold())
+   if not c:continue
+   prefix='market-club-'+cid if cid in clubs else 'market-global-club-'+str(c['id'])
+   url=c.get('image_url') or ('https://cdn.soccerwiki.org/images/logos/clubs/'+c['image_file'] if c.get('image_file') else None)
+   logo=optional_asset(url,prefix)
+   if logo:item['transfer'][side+'_logo']=logo
+
  rating=p.get('rating') if p.get('rating') is not None else row.get('player_rating')
  rating=int(rating) if rating is not None else None
  money=cash(amount)
@@ -144,7 +173,13 @@ def news(row,snapshot,reporters,now,media=True):
     else:
      question=f'{name} proseguirà con {to}.'+profile+' Mister, come affrontate il lavoro dopo questa partenza?'
      answer=f'Salutiamo {name} e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.'
-    coverage.append({'club':clubs[cid]['name'],'reporter':reporter,'manager':boss,'question':question,'answer':answer})
+    connection={'club':clubs[cid]['name'],'reporter':reporter,'manager':boss,'question':question,'answer':answer}
+    if media:
+     reporter_photo=portrait('reporters',reporter)
+     manager_photo=portrait('managers',boss,manager_record(snapshot,cid,day).get('manager_id'))
+     if reporter_photo:connection['reporter_image']=reporter_photo
+     if manager_photo:connection['manager_image']=manager_photo
+    coverage.append(connection)
     paragraphs += [f'{reporter} · Inviato {clubs[cid]["name"]}\n«{question}»',f'{boss} · Manager {clubs[cid]["name"]}\n«{answer}»']
    club={**item,'id':nid+'-club','category':'club','title':f'{name}: il punto dai due club' if len(ids)==2 else f'{name}: il punto con {coverage[0]["reporter"]} e {coverage[0]["manager"]}','text':'\n\n'.join(paragraphs),'coverage':coverage}
    result.append(club)
@@ -169,10 +204,10 @@ def main():
  for key,(_,row) in sorted(seen.items()):
   if key in conflicts:pending.append({'event':key,'reason':'Conflicting certified duplicates'});continue
   base=R/'items'/('gw001-market-'+key+'.json');club=R/'items'/('gw001-market-'+key+'-club.json')
-  if base.exists() and ledger.get(key,{}).get('complete') and ledger.get(key,{}).get('media_complete') and ledger.get(key,{}).get('editorial_version')==3:continue
+  if base.exists() and ledger.get(key,{}).get('complete') and ledger.get(key,{}).get('media_complete') and ledger.get(key,{}).get('editorial_version')==3 and ledger.get(key,{}).get('media_version')==1:continue
   try:
    items,reason=news(row,snap,reporters,now,media=True)
-   ledger[key]={'editorial_version':3,'complete':not bool(reason),'media_complete':bool(items[0].get('image')) and all(t.get('logo') for t in items[0]['teams']),'transfer_number':row.get('imc_transfer_number'),'normalized_date':row['normalized_transfer_date']}
+   ledger[key]={'editorial_version':3,'complete':not bool(reason),'media_version':1,'media_complete':media_complete(items),'transfer_number':row.get('imc_transfer_number'),'normalized_date':row['normalized_transfer_date']}
    if reason:pending.append({'event':key,'reason':reason})
    for item in items:
     path=R/'items'/(item['id']+'.json')
@@ -184,6 +219,13 @@ def main():
      if item.get('image'):previous['image']=item['image']
      for i,t in enumerate(item.get('teams',[])):
       if t.get('logo') and i<len(previous.get('teams',[])):previous['teams'][i]['logo']=t['logo']
+     for field in ['from_logo','to_logo']:
+      if item.get('transfer',{}).get(field):previous.setdefault('transfer',{})[field]=item['transfer'][field]
+     for connection in previous.get('coverage',[]):
+      for fresh in item.get('coverage',[]):
+       if connection['club']==fresh['club']:
+        for kind in ['reporter','manager']:
+         if connection[kind]==fresh[kind] and fresh.get(kind+'_image'):connection[kind+'_image']=fresh[kind+'_image']
      item=previous
      if json.loads(path.read_text())==item:continue
     path.write_text(json.dumps(item,ensure_ascii=False,indent=2)+'\n');created.append(item['id'])

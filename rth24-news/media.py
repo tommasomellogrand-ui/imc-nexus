@@ -63,6 +63,7 @@ def prepare(items):
   refs=[]
   if 'image' in item:refs.append((item['image'],'file'))
   refs += [(t,'logo') for t in item.get('teams',[]) if t.get('logo')]
+  refs += [(c[key],'file') for c in item.get('coverage',[]) for key in ['reporter_image','manager_image'] if c.get(key)]
   for obj,key in refs:
    name=obj[key]
    if not re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name):raise ValueError('Invalid asset name')
@@ -78,7 +79,7 @@ def prepare(items):
    if not target.exists():
     if remote is None:
      remote=json.loads(download(PUBLIC+'flash-news.json'))
-    previous=[ref for news in remote['items'] for ref in ([news['image']] if 'image' in news else [])+news.get('teams',[]) if ref.get('file',ref.get('logo'))==name]
+    previous=[ref for news in remote['items'] for ref in ([news['image']] if 'image' in news else [])+news.get('teams',[])+[c[k] for c in news.get('coverage',[]) for k in ['reporter_image','manager_image'] if c.get(k)] if ref.get('file',ref.get('logo'))==name]
     if previous:
      data=download(PUBLIC+name);digest=inspect(data,name)
      if not previous[0].get('sha256') or digest!=previous[0]['sha256']:raise ValueError('Published image checksum mismatch')

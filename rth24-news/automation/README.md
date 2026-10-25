@@ -18,3 +18,6 @@ A missing/unavailable photo or crest NEVER blocks a news item. Publish names/tex
 
 ## Standard editoriale v3
 Le notizie automatiche conservano ID e orario originali. `transfer` espone percorso, formula, corrispettivo e data certificati; `coverage` separa i collegamenti ai club. I nomi dei giocatori non sono tutti maiuscoli. Una sola nota di finzione precede ogni Club News. Ruolo e rating vengono dal Codex; non si attribuiscono motivazioni di mercato o esuberi senza dati di rosa verificati. Il registro `editorial_version: 3` applica una sola volta il nuovo standard alle notizie automatiche esistenti. I contributi manuali non vengono riscritti.
+
+## Foto e stemmi
+Il riepilogo trasferimento usa `from_logo` e `to_logo`: la squadra esterna può avere uno stemma senza entrare nei filtri riservati ai 40 club attivi. Le foto `reporter_image` e `manager_image` affiancano ogni intervento. Le associazioni verificate sono in `portraits.json`: inviati per nome, manager per ID e nome corrispondente, con incarico valido alla data del trasferimento. Una foto mancante non blocca la news né viene sostituita con un altro volto. Aggiungendo una foto verificata al registro, il controllo successivo completa automaticamente le notizie ancora prive di media. Al 25 ottobre manca una fonte verificata per Simone Campanella (MNG033).

@@ -11,17 +11,25 @@ def validate(item):
   assert isinstance(item['club_ids'],list) and len(item['club_ids'])<=40 and all(isinstance(x,str) and x.isdigit() for x in item['club_ids']),'Invalid club IDs'
  if 'editorial_version' in item:assert item['editorial_version'] in (2,3)
  if 'transfer' in item:
-  t=item['transfer'];assert isinstance(t,dict) and set(t)=={'from','to','formula','amount','date'}
+  t=item['transfer'];assert isinstance(t,dict) and {'from','to','formula','amount','date'}<=set(t)<={'from','to','formula','amount','date','from_logo','to_logo'}
   assert all(isinstance(v,str) and 0<len(v)<=1000 for v in t.values())
   datetime.strptime(t['date'],'%Y-%m-%d')
  if 'coverage' in item:
   assert item.get('category')=='club' and isinstance(item['coverage'],list) and 1<=len(item['coverage'])<=2
   for c in item['coverage']:
-   assert set(c)=={'club','reporter','manager','question','answer'}
-   assert all(isinstance(v,str) and 0<len(v)<=3000 for v in c.values())
+   assert {'club','reporter','manager','question','answer'}<=set(c)<={'club','reporter','manager','question','answer','reporter_image','manager_image'}
+   assert all(isinstance(v,str) and 0<len(v)<=3000 for k,v in c.items() if k not in ('reporter_image','manager_image'))
  def asset(name):
   assert isinstance(name,str) and re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name),'Invalid asset filename'
   assert (R/'assets'/name).is_file(),'Missing image: '+name
+ for logo in ['from_logo','to_logo']:
+  if item.get('transfer',{}).get(logo):asset(item['transfer'][logo])
+ for c in item.get('coverage',[]):
+  for key in ['reporter_image','manager_image']:
+   if key in c:
+    photo=c[key];assert {'file','alt'}<=set(photo)<={'file','alt','sha256'}
+    assert isinstance(photo['alt'],str) and photo['alt']==c[key.replace('_image','')]
+    asset(photo['file'])
  if 'image' in item:
   assert {'file','alt'}<=set(item['image'])<={'file','alt','sha256'} and isinstance(item['image']['alt'],str) and item['image']['alt'].strip()
   asset(item['image']['file'])

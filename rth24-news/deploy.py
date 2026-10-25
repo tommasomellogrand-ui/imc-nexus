@@ -2,7 +2,7 @@ import hashlib,io,json,os,ssl,time,urllib.request
 from pathlib import Path
 from ftplib import FTP_TLS,error_perm,error_temp
 R=Path(__file__).parent
-files={'feed-v6.js':(R/'feed.js').read_bytes(),'feed-v6.css':(R/'feed.css').read_bytes(),'flash-news.json':(R/'dist/flash-news.json').read_bytes(),'index.html':(R.parent/'programmes-release/dist/rth-24/index.html').read_bytes()}
+files={'feed-v7.js':(R/'feed.js').read_bytes(),'feed-v7.css':(R/'feed.css').read_bytes(),'flash-news.json':(R/'dist/flash-news.json').read_bytes(),'index.html':(R.parent/'programmes-release/dist/rth-24/index.html').read_bytes()}
 if os.environ.get('RTH24_DATA_ONLY')=='1':files={'flash-news.json':files['flash-news.json']}
 files={**{p.name:p.read_bytes() for p in sorted((R/'assets').iterdir())},**files}
 host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','');raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/');domain=host[4:] if host.startswith('ftp.') else host

@@ -7,6 +7,17 @@ class GenerateTests(unittest.TestCase):
   self.s={'players':{},'clubs':[{'club_id':10,'name':'Away'},{'club_id':20,'name':'Home'}],'managers':[{'team_id':10,'full_name':'Manager A','start_date':'2026-01-01','end_date':None},{'team_id':20,'full_name':'Manager B','start_date':'2026-01-01','end_date':None}]}
   self.reporters={'10':{'name':'Reporter A'},'20':{'name':'Reporter B'}}
  def make(self):return news(self.r,self.s,self.reporters,'2026-10-25T10:00:00+01:00',False)
+ def test_crest_sides_and_speaker_identity(self):
+  self.r['player_rating']=90
+  self.s['managers'][0]['manager_id']='MNG-A';self.s['managers'][1]['manager_id']='MNG-B'
+  def photo(kind,name,identity=None):return {'file':'person.jpg','alt':name}
+  with patch('generate.asset',return_value='verified.png'),patch('generate.portrait',side_effect=photo) as portraits:
+   items,_=news(self.r,self.s,self.reporters,'2026-10-25T10:00:00+01:00',True)
+  self.assertEqual(items[0]['transfer']['from_logo'],'verified.png')
+  self.assertEqual(items[0]['transfer']['to_logo'],'verified.png')
+  self.assertEqual(items[1]['coverage'][0]['reporter_image']['alt'],'Reporter B')
+  self.assertEqual(items[1]['coverage'][0]['manager_image']['alt'],'Manager B')
+  portraits.assert_any_call('managers','Manager B','MNG-B')
  def test_editorial_format(self):
   self.assertEqual(money_label('10M'),'10 milioni di euro')
   self.assertEqual(money_label('16.0M'),'16 milioni di euro')
