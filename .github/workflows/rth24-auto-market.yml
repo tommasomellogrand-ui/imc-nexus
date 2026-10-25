@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - 'rth24-news/automation/**'
+      - 'rth24-news/feed.js'
+      - 'rth24-news/feed.css'
+      - 'rth24-news/verify.cjs'
       - '.github/workflows/rth24-auto-market.yml'
   schedule:
     - cron: '*/5 * * * *'
