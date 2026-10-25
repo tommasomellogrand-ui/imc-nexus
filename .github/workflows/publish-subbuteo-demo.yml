@@ -1,0 +1,33 @@
+name: Publish GW011 Subbuteo Demo
+on:
+  push:
+    branches: [main]
+    paths: ['subbuteo-demo-release/**','.github/workflows/publish-subbuteo-demo.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          node --check subbuteo-demo-release/demo-programme-v1.js
+          npm install --prefix /tmp/sd-qa playwright@1.56.1
+      - name: Publish GW011 presentation
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 subbuteo-demo-release/deploy.py
+      - name: Verify public layout and world isolation
+        run: NODE_PATH=/tmp/sd-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node subbuteo-demo-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: subbuteo-demo-layout
+          path: /tmp/subbuteo-demo-*.png
