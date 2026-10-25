@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-f8ca1b9c8c8c431e320b792a",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Albert NAVARRO al Gimnástica Torrelavega: trasferimento ufficiale",
-  "text": "Albert NAVARRO passa dal Dynamo Dresden al Gimnástica Torrelavega.\n\nCorrispettivo registrato: 2.4M.\nData del trasferimento: 23/10/2026.",
+  "title": "Gimnástica Torrelavega: ufficiale l’arrivo di Albert Navarro",
+  "text": "Gimnástica Torrelavega annuncia l’arrivo di Albert Navarro. Il giocatore lascia Dynamo Dresden: operazione da 2,4 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94079161"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-141913-1af3191a5edc6ef3.png",
-    "alt": "Albert NAVARRO"
-  }
+    "alt": "Albert Navarro"
+  },
+  "transfer": {
+    "from": "Dynamo Dresden",
+    "to": "Gimnástica Torrelavega",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-23"
+  },
+  "editorial_version": 2
 }

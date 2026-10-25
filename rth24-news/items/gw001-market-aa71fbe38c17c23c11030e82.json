@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-aa71fbe38c17c23c11030e82",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Jayden ONIA SEKE al 1. FC Kaiserslautern: trasferimento ufficiale",
-  "text": "Jayden ONIA SEKE passa dal RSC Anderlecht al 1. FC Kaiserslautern.\n\nCorrispettivo registrato: 401k.\nData del trasferimento: 23/10/2026.",
+  "title": "1. FC Kaiserslautern: ufficiale l’arrivo di Jayden Onia Seke",
+  "text": "1. FC Kaiserslautern annuncia l’arrivo di Jayden Onia Seke. Il giocatore lascia RSC Anderlecht: operazione da 401.000 euro.",
   "category": "market",
   "club_ids": [
     "94079172"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-151453-65ca364021959334.png",
-    "alt": "Jayden ONIA SEKE"
-  }
+    "alt": "Jayden Onia Seke"
+  },
+  "transfer": {
+    "from": "RSC Anderlecht",
+    "to": "1. FC Kaiserslautern",
+    "formula": "Trasferimento definitivo",
+    "amount": "401.000 euro",
+    "date": "2026-10-23"
+  },
+  "editorial_version": 2
 }

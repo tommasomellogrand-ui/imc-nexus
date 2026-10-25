@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-a9c39347a3d6d11873ae6362",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Samuel UNSÖLD al Celtic: trasferimento ufficiale",
-  "text": "Samuel UNSÖLD passa dal Stuttgarter Kickers al Celtic.\n\nCorrispettivo registrato: 381k.\nData del trasferimento: 23/10/2026.",
+  "title": "Celtic: ufficiale l’arrivo di Samuel Unsöld",
+  "text": "Celtic annuncia l’arrivo di Samuel Unsöld. Il giocatore lascia Stuttgarter Kickers: operazione da 381.000 euro.",
   "category": "market",
   "club_ids": [
     "94079188"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-149238-4fd3aa687e42089d.png",
-    "alt": "Samuel UNSÖLD"
-  }
+    "alt": "Samuel Unsöld"
+  },
+  "transfer": {
+    "from": "Stuttgarter Kickers",
+    "to": "Celtic",
+    "formula": "Trasferimento definitivo",
+    "amount": "381.000 euro",
+    "date": "2026-10-23"
+  },
+  "editorial_version": 2
 }

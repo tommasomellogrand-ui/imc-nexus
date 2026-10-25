@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-5850c3f676d6a27420b64307",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Ármin PÉCSI al Palermo FC: trasferimento ufficiale",
-  "text": "Ármin PÉCSI passa dal Liverpool al Palermo FC.\n\nCorrispettivo registrato: 2.4M.\nData del trasferimento: 24/10/2026.",
+  "title": "Palermo FC: ufficiale l’arrivo di Ármin Pécsi",
+  "text": "Palermo FC annuncia l’arrivo di Ármin Pécsi. Il giocatore lascia Liverpool: operazione da 2,4 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94078884"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-130678-15e1ca2496893f48.png",
-    "alt": "Ármin PÉCSI"
-  }
+    "alt": "Ármin Pécsi"
+  },
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Palermo FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-24"
+  },
+  "editorial_version": 2
 }

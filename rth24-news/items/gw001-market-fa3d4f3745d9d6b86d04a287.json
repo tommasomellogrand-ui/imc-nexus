@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-fa3d4f3745d9d6b86d04a287",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Gonçalo BORGES al Dynamo Dresden: trasferimento ufficiale",
-  "text": "Gonçalo BORGES passa dal Svincolato al Dynamo Dresden.\n\nCorrispettivo registrato: 1.9M.\nData del trasferimento: 24/10/2026.",
+  "title": "Dynamo Dresden: ufficiale l’arrivo di Gonçalo Borges",
+  "text": "Dynamo Dresden annuncia l’arrivo di Gonçalo Borges, proveniente dalla lista degli svincolati. Operazione da 1,9 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94079161"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-112533-a3d64803545b9c16.png",
-    "alt": "Gonçalo BORGES"
-  }
+    "alt": "Gonçalo Borges"
+  },
+  "transfer": {
+    "from": "Svincolato",
+    "to": "Dynamo Dresden",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,9 milioni di euro",
+    "date": "2026-10-24"
+  },
+  "editorial_version": 2
 }

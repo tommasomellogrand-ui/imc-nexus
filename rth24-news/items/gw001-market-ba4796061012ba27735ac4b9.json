@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-ba4796061012ba27735ac4b9",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Pierre-Emile HOJBJERG al Hertha BSC: trasferimento ufficiale",
-  "text": "Pierre-Emile HOJBJERG passa dal Paris FC al Hertha BSC.\n\nCorrispettivo registrato: 7.9M.\nData del trasferimento: 23/10/2026.",
+  "title": "Hertha BSC: ufficiale l’arrivo di Pierre-Emile Hojbjerg",
+  "text": "Hertha BSC annuncia l’arrivo di Pierre-Emile Hojbjerg. Il giocatore lascia Paris FC: operazione da 7,9 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94079171"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-60112-b6b0aee5ab14b655.png",
-    "alt": "Pierre-Emile HOJBJERG"
-  }
+    "alt": "Pierre-Emile Hojbjerg"
+  },
+  "transfer": {
+    "from": "Paris FC",
+    "to": "Hertha BSC",
+    "formula": "Trasferimento definitivo",
+    "amount": "7,9 milioni di euro",
+    "date": "2026-10-23"
+  },
+  "editorial_version": 2
 }

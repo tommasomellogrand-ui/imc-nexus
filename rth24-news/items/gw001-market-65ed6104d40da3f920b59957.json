@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-65ed6104d40da3f920b59957",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Santiago RAMOS MINGO al Dynamo Dresden: trasferimento ufficiale",
-  "text": "Santiago RAMOS MINGO passa dal Svincolato al Dynamo Dresden.\n\nCorrispettivo registrato: 3.0M.\nData del trasferimento: 24/10/2026.",
+  "title": "Dynamo Dresden: ufficiale l’arrivo di Santiago Ramos Mingo",
+  "text": "Dynamo Dresden annuncia l’arrivo di Santiago Ramos Mingo, proveniente dalla lista degli svincolati. Operazione da 3 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94079161"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-103958-ad596c1efb506e75.png",
-    "alt": "Santiago RAMOS MINGO"
-  }
+    "alt": "Santiago Ramos Mingo"
+  },
+  "transfer": {
+    "from": "Svincolato",
+    "to": "Dynamo Dresden",
+    "formula": "Trasferimento definitivo",
+    "amount": "3 milioni di euro",
+    "date": "2026-10-24"
+  },
+  "editorial_version": 2
 }

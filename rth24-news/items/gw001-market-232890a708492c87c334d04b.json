@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-232890a708492c87c334d04b",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Marco PELLEGRINO al Dynamo Dresden: trasferimento ufficiale",
-  "text": "Marco PELLEGRINO passa dal Svincolato al Dynamo Dresden.\n\nCorrispettivo registrato: 1.5M.\nData del trasferimento: 24/10/2026.",
+  "title": "Dynamo Dresden: ufficiale l’arrivo di Marco Pellegrino",
+  "text": "Dynamo Dresden annuncia l’arrivo di Marco Pellegrino, proveniente dalla lista degli svincolati. Operazione da 1,5 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94079161"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-135346-783cffbfce8d97dc.png",
-    "alt": "Marco PELLEGRINO"
-  }
+    "alt": "Marco Pellegrino"
+  },
+  "transfer": {
+    "from": "Svincolato",
+    "to": "Dynamo Dresden",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,5 milioni di euro",
+    "date": "2026-10-24"
+  },
+  "editorial_version": 2
 }

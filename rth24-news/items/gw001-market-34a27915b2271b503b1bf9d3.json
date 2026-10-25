@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-34a27915b2271b503b1bf9d3",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Enrique HERRERO al Palermo FC: trasferimento ufficiale",
-  "text": "Enrique HERRERO passa dal Algeciras CF al Palermo FC.\n\nCorrispettivo registrato: 635k.\nData del trasferimento: 24/10/2026.",
+  "title": "Palermo FC: ufficiale l’arrivo di Enrique Herrero",
+  "text": "Palermo FC annuncia l’arrivo di Enrique Herrero. Il giocatore lascia Algeciras CF: operazione da 635.000 euro.",
   "category": "market",
   "club_ids": [
     "94078884"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-114365-c390bb9657e62851.png",
-    "alt": "Enrique HERRERO"
-  }
+    "alt": "Enrique Herrero"
+  },
+  "transfer": {
+    "from": "Algeciras CF",
+    "to": "Palermo FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "635.000 euro",
+    "date": "2026-10-24"
+  },
+  "editorial_version": 2
 }

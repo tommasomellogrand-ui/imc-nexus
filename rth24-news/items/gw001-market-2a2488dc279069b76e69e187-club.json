@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-2a2488dc279069b76e69e187-club",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Rúben NEVES: il punto da Campobasso",
-  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nRúben NEVES passa dal Al Hilal SFC al Campobasso Calcio.\n\nCorrispettivo registrato: 16.0M.\nData del trasferimento: 23/10/2026.\n\nValentina Ciarlante · Inviato Campobasso\n«Rúben NEVES arriva dal Al Hilal SFC. Mister, quale sarà il primo passo?»\n\nSimone Campanella · Manager Campobasso\n«Il primo passo sarà lavorare insieme al gruppo. Impiego e inserimento vanno valutati sul campo, senza anticipare gerarchie.»",
+  "title": "Rúben Neves: il punto con Valentina Ciarlante e Simone Campanella",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nCampobasso Calcio annuncia l’arrivo di Rúben Neves. Il giocatore lascia Al Hilal SFC: operazione da 16 milioni di euro.\n\nValentina Ciarlante · Inviato Campobasso\n«L’accordo per Rúben Neves è da 16 milioni di euro. Nel Codex il ruolo è CD,CC(C). Il rating è 91. Mister, come accompagnerà il suo ingresso nel gruppo?»\n\nSimone Campanella · Manager Campobasso\n«Con Rúben Neves cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»",
   "category": "club",
   "club_ids": [
     "94082591"
@@ -15,6 +15,23 @@
   ],
   "image": {
     "file": "market-player-74545-aa589e3f5378c74a.png",
-    "alt": "Rúben NEVES"
-  }
+    "alt": "Rúben Neves"
+  },
+  "transfer": {
+    "from": "Al Hilal SFC",
+    "to": "Campobasso Calcio",
+    "formula": "Trasferimento definitivo",
+    "amount": "16 milioni di euro",
+    "date": "2026-10-23"
+  },
+  "coverage": [
+    {
+      "club": "Campobasso",
+      "reporter": "Valentina Ciarlante",
+      "manager": "Simone Campanella",
+      "question": "L’accordo per Rúben Neves è da 16 milioni di euro. Nel Codex il ruolo è CD,CC(C). Il rating è 91. Mister, come accompagnerà il suo ingresso nel gruppo?",
+      "answer": "Con Rúben Neves cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare."
+    }
+  ],
+  "editorial_version": 2
 }

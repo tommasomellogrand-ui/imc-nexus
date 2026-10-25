@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-8d1002d0feecd96ff8da90c5",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Jamie DONLEY al Bristol Rovers: trasferimento ufficiale",
-  "text": "Jamie DONLEY passa dal Dynamo Dresden al Bristol Rovers.\n\nCorrispettivo registrato: 4.1M.\nData del trasferimento: 23/10/2026.",
+  "title": "Bristol Rovers: ufficiale l’arrivo di Jamie Donley",
+  "text": "Bristol Rovers annuncia l’arrivo di Jamie Donley. Il giocatore lascia Dynamo Dresden: operazione da 4,1 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94079161"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-126340-2c3e9d3256e0bda8.png",
-    "alt": "Jamie DONLEY"
-  }
+    "alt": "Jamie Donley"
+  },
+  "transfer": {
+    "from": "Dynamo Dresden",
+    "to": "Bristol Rovers",
+    "formula": "Trasferimento definitivo",
+    "amount": "4,1 milioni di euro",
+    "date": "2026-10-23"
+  },
+  "editorial_version": 2
 }

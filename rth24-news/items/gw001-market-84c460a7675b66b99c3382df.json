@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-84c460a7675b66b99c3382df",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Caoimhín KELLEHER al Sampdoria: trasferimento ufficiale",
-  "text": "Caoimhín KELLEHER passa dal Brentford al Sampdoria.\n\nCorrispettivo registrato: 10.0M.\nData del trasferimento: 23/10/2026.",
+  "title": "Sampdoria: ufficiale l’arrivo di Caoimhín Kelleher",
+  "text": "Sampdoria annuncia l’arrivo di Caoimhín Kelleher. Il giocatore lascia Brentford: operazione da 10 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94078892"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-99336-88a510ffb282e41c.png",
-    "alt": "Caoimhín KELLEHER"
-  }
+    "alt": "Caoimhín Kelleher"
+  },
+  "transfer": {
+    "from": "Brentford",
+    "to": "Sampdoria",
+    "formula": "Trasferimento definitivo",
+    "amount": "10 milioni di euro",
+    "date": "2026-10-23"
+  },
+  "editorial_version": 2
 }

@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-b99601765b651a1e95f66192",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Max THOMPSON al Palermo FC: trasferimento ufficiale",
-  "text": "Max THOMPSON passa dal Hartlepool United al Palermo FC.\n\nCorrispettivo registrato: 1.1M.\nData del trasferimento: 24/10/2026.",
+  "title": "Palermo FC: ufficiale l’arrivo di Max Thompson",
+  "text": "Palermo FC annuncia l’arrivo di Max Thompson. Il giocatore lascia Hartlepool United: operazione da 1,1 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94078884"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-138757-69241bb2f0243759.png",
-    "alt": "Max THOMPSON"
-  }
+    "alt": "Max Thompson"
+  },
+  "transfer": {
+    "from": "Hartlepool United",
+    "to": "Palermo FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,1 milioni di euro",
+    "date": "2026-10-24"
+  },
+  "editorial_version": 2
 }

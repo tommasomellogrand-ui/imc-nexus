@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-1db47b2ad15c7293899c24f9",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Edu SÁNCHEZ al CD Extremadura: trasferimento ufficiale",
-  "text": "Edu SÁNCHEZ passa dal Celtic al CD Extremadura.\n\nCorrispettivo registrato: 4.0M.\nData del trasferimento: 22/10/2026.",
+  "title": "CD Extremadura: ufficiale l’arrivo di Edu Sánchez",
+  "text": "CD Extremadura annuncia l’arrivo di Edu Sánchez. Il giocatore lascia Celtic: operazione da 4 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94079188"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-138773-47438a2c68a7e78c.png",
-    "alt": "Edu SÁNCHEZ"
-  }
+    "alt": "Edu Sánchez"
+  },
+  "transfer": {
+    "from": "Celtic",
+    "to": "CD Extremadura",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-10-22"
+  },
+  "editorial_version": 2
 }

@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-2a2488dc279069b76e69e187",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Rúben NEVES al Campobasso Calcio: trasferimento ufficiale",
-  "text": "Rúben NEVES passa dal Al Hilal SFC al Campobasso Calcio.\n\nCorrispettivo registrato: 16.0M.\nData del trasferimento: 23/10/2026.",
+  "title": "Campobasso Calcio: ufficiale l’arrivo di Rúben Neves",
+  "text": "Campobasso Calcio annuncia l’arrivo di Rúben Neves. Il giocatore lascia Al Hilal SFC: operazione da 16 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94082591"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-74545-aa589e3f5378c74a.png",
-    "alt": "Rúben NEVES"
-  }
+    "alt": "Rúben Neves"
+  },
+  "transfer": {
+    "from": "Al Hilal SFC",
+    "to": "Campobasso Calcio",
+    "formula": "Trasferimento definitivo",
+    "amount": "16 milioni di euro",
+    "date": "2026-10-23"
+  },
+  "editorial_version": 2
 }

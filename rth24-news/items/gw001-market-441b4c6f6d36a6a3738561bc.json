@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-441b4c6f6d36a6a3738561bc",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Iker GIL al Real Madrid: trasferimento ufficiale",
-  "text": "Iker GIL passa dal Celtic al Real Madrid.\n\nCorrispettivo registrato: 4.0M.\nData del trasferimento: 22/10/2026.",
+  "title": "Real Madrid: ufficiale l’arrivo di Iker Gil",
+  "text": "Real Madrid annuncia l’arrivo di Iker Gil. Il giocatore lascia Celtic: operazione da 4 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94079188"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-149510-3676c33a38c4c313.png",
-    "alt": "Iker GIL"
-  }
+    "alt": "Iker Gil"
+  },
+  "transfer": {
+    "from": "Celtic",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-10-22"
+  },
+  "editorial_version": 2
 }

@@ -1,8 +1,8 @@
 {
   "id": "gw001-market-314d0d68b38be84b27d5ab39",
   "published_at": "2026-10-25T09:57:36+01:00",
-  "title": "Filip STANKOVIĆ al Sampdoria: trasferimento ufficiale",
-  "text": "Filip STANKOVIĆ passa dal Venezia FC al Sampdoria.\n\nCorrispettivo registrato: 2.4M.\nData del trasferimento: 22/10/2026.",
+  "title": "Sampdoria: ufficiale l’arrivo di Filip Stanković",
+  "text": "Sampdoria annuncia l’arrivo di Filip Stanković. Il giocatore lascia Venezia FC: operazione da 2,4 milioni di euro.",
   "category": "market",
   "club_ids": [
     "94078892"
@@ -15,6 +15,14 @@
   ],
   "image": {
     "file": "market-player-105473-7c21b33703e3b3e7.png",
-    "alt": "Filip STANKOVIĆ"
-  }
+    "alt": "Filip Stanković"
+  },
+  "transfer": {
+    "from": "Venezia FC",
+    "to": "Sampdoria",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-22"
+  },
+  "editorial_version": 2
 }
