@@ -96,9 +96,14 @@ def portrait(kind,name,identity=None):
  refs=json.loads((A/'portraits.json').read_text()).get(kind,{})
  ref=refs.get(identity if kind=='managers' else name,{})
  if kind=='managers' and ref.get('name')!=name:return None
- if not ref.get('url'):return None
+ if not ref.get('url') and not ref.get('repo_file'):return None
  prefix='news-person-'+hashlib.sha256((kind+str(identity or name)).encode()).hexdigest()[:16]
- photo=optional_asset(ref['url'],prefix)
+ if ref.get('repo_file'):
+  source=(R.parent/ref['repo_file']).resolve()
+  if not source.is_relative_to(R.parent.resolve()) or not source.is_file():return None
+  data=source.read_bytes();photo=prefix+'-'+hashlib.sha256(data).hexdigest()[:16]+source.suffix.lower()
+  inspect(data,photo);(R/'assets'/photo).write_bytes(data)
+ else:photo=optional_asset(ref['url'],prefix)
  return {'file':photo,'alt':name} if photo else None
 
 def media_complete(items):

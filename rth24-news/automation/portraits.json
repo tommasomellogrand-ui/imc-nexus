@@ -164,7 +164,7 @@
   "managers": {
     "MNG001": {
       "name": "Tommaso Mello",
-      "url": "https://www.italianmastersclub.it/nexus/assets/manager-mng001.jpeg"
+      "repo_file": "nexus/assets/manager-mng001.jpeg"
     }
   }
 }
