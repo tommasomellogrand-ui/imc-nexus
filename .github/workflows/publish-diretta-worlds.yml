@@ -1,0 +1,40 @@
+name: Publish Diretta Gol GW009 GW010 GW011
+on:
+  push:
+    branches: [main]
+    paths: ['diretta-worlds-release/site/**','diretta-worlds-release/deploy.py','diretta-worlds-release/verify.cjs','diretta-worlds-release/home-index.html','.github/workflows/publish-diretta-worlds.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+      ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+      ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+      ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate cloned source
+        run: |
+          for file in diretta-worlds-release/site/*.php; do php -l "$file"; done
+          for file in diretta-worlds-release/site/*.js; do node --check "$file"; done
+          npm install --prefix /tmp/dw-qa playwright@1.56.1
+      - name: Publish isolated replay pages
+        run: python3 diretta-worlds-release/deploy.py site
+      - name: Verify three worlds before adding home banners
+        run: NODE_PATH=/tmp/dw-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node diretta-worlds-release/verify.cjs
+      - name: Add banners above IMC Match Day
+        run: python3 diretta-worlds-release/deploy.py home
+      - name: Verify home links and replay pages
+        run: NODE_PATH=/tmp/dw-qa/node_modules CHROME_BIN="$(command -v google-chrome)" CHECK_HOME=1 node diretta-worlds-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: diretta-worlds-verification
+          path: /tmp/world-diretta-*
