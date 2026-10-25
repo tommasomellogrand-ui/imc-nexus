@@ -1,7 +1,7 @@
 import io,os,ssl,urllib.request,json,hashlib
 from pathlib import Path
 from ftplib import FTP_TLS,error_perm
-R=Path(__file__).parent;files={n:(R/n).read_bytes() for n in ['figurines-v1.js','figurines-v1.css','index.html','demo-gw011.html']}
+R=Path(__file__).parent;files={n:(R/n).read_bytes() for n in ['figurines-v2.js','figurines-v1.css','index.html','demo-gw011.html']}
 host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','');raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/');domain=host[4:] if host.startswith('ftp.') else host
 ctx=ssl.create_default_context();ctx.check_hostname=False
 f=FTP_TLS(context=ctx);f.connect(host,21,timeout=40);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd((raw if raw.startswith('/www.') else f'/www.{domain}{raw}')+'/diretta-gol')
