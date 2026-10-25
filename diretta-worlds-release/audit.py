@@ -6,7 +6,7 @@ remote=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
 ctx=ssl.create_default_context();ctx.check_hostname=False
 f=FTP_TLS(context=ctx);f.connect(host,21,timeout=40);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(remote)
 out=Path('/tmp/diretta-source');out.mkdir(exist_ok=True)
-files=['matchday/data.php','matchday/live.js','matchday/live.html','index.html','assets/home.js']
+files=['matchday/data.php','matchday/engine.php','matchday/identity.php','matchday/live.js','matchday/live.html','index.html','assets/home.js']
 manifest={}
 for name in files:
  b=io.BytesIO();f.retrbinary('RETR '+name,b.write);content=b.getvalue();dest=out/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(content);manifest[name]=hashlib.sha256(content).hexdigest()
