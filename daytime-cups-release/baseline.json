@@ -1,10 +1,15 @@
 {
-  "daytime/index.html": "483deba8f75acd77c99dbf358f6ea95fa3c51b80785ffae20e3e636201346b0a",
-  "daytime/champions/index.html": "7dab737249fe0f2c623f2d8d09ca5e02464fb0e57ac45c6f755965bca912d7fd",
-  "daytime/mercato/index.html": "f299c6f79e5127deffad63752bc7c5c4d4b405029bee1af5fabb9205000c74f0",
-  "daytime/europa/index.html": "790fa2fcc3ef7b706db1f3be4edbcae647abf20b6ea8f85be72afbd736282664",
-  "daytime/flash-news/index.html": "607c80cf1f6da629f913a1a9284099d5adafe08bcc9e8b71d4fb7883641561ba",
-  "daytime/conference/index.html": "d4f776c0bc9ae0d4e64052a4b19d0279d63c42979b77b1778e52f33e6dc2b06b",
-  "daytime/mercato/2026-10-22/index.html": "a29a43c84d51e11c8b75c90d98e75e02ceaa468f9fc88f2387c6737c2c20e4f3",
-  "daytime/europa/2026-10-23/index.html": "a44d5a6e3ba9aa456b5b749bcbdfb3b94d654a7f98c089a0ba80b0f57efa02d3"
+  "daytime-cups-v1.js": "6cc6a5063072788e34ff2ac80281659b46980a3b7c4afe32423abc951770e5b6",
+  "daytime-cups-v1.css": "69abdaecaa089e7b51cf48e6da2b51c0d22fac69f8ef10c4c829f7b26074a966",
+  "assets/rth-champions-imc.webp": "9e28bf33f7c1f0ec77e4e1310ef01c9c8152da779a5aac49c0229f057d493046",
+  "assets/rth-conference-imc.webp": "d6353bad26f7bcaa9e6f9e601f501f2a64fa1282efc0ea428c19e1fbe6b9f1d8",
+  "assets/rth-europa-imc.webp": "f8615b5d94ee9f36f8a1ab8f85308bacdae852fc39d1648c30a41864c8a98166",
+  "daytime/index.html": "aec385eb6f3d404ade078118e7f6e114d7b50d8def1b6b7176419d00e9b4ecdc",
+  "daytime/champions/index.html": "6c770afac751c56da844d32bd2c649a5aad3cdf3304491ad430cee5eb2e7d2ef",
+  "daytime/mercato/index.html": "4d79aeb0dd10327d9a00d0ebb4b5a99ac958a87897d81643bac961abbdb2c192",
+  "daytime/europa/index.html": "efa1a92c324231e9bc73e888d40319aa9d32330a7a8719864f8a0b926473c40e",
+  "daytime/flash-news/index.html": "568096c373f4ab3fee6c8d0f62695c99d7bccd0c9b95633d492382bab511e9af",
+  "daytime/conference/index.html": "3daf8f027422daab0c8049c8782724cebd95de68fba77682a99156839492175c",
+  "daytime/mercato/2026-10-22/index.html": "4d79aeb0dd10327d9a00d0ebb4b5a99ac958a87897d81643bac961abbdb2c192",
+  "daytime/europa/2026-10-23/index.html": "efa1a92c324231e9bc73e888d40319aa9d32330a7a8719864f8a0b926473c40e"
 }
