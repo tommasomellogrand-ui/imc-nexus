@@ -1,0 +1,2447 @@
+{
+  "cast": [
+    [
+      "Federica Zille",
+      "Conduzione"
+    ],
+    [
+      "Andrea Stramaccioni",
+      "Analisi tattica"
+    ],
+    [
+      "Alessandro Florenzi",
+      "Il punto di vista del calciatore"
+    ]
+  ],
+  "portraits": [
+    {
+      "name": "Federica Zille",
+      "image": "assets/coffee-zille.webp",
+      "source": "https://overtimefestival.it/federica-zille/"
+    },
+    {
+      "name": "Andrea Stramaccioni",
+      "image": "assets/coffee-stramaccioni.webp",
+      "source": "https://www.fcinternews.it/copertina/stramaccioni-allo-stadium-la-vittoria-dell-interismo-ecco-perche-dopo-il-derby-dissi-e-vostro-alla-curva-nord-337458"
+    },
+    {
+      "name": "Alessandro Florenzi",
+      "image": "assets/coffee-florenzi.webp",
+      "source": "https://sport.sky.it/calcio/serie-a/2025/08/27/alessandro-florenzi-ritiro-calcio-video"
+    }
+  ],
+  "reporter_portraits": {
+    "Anna Billò": {
+      "image": "assets/reporter-anna-billo.webp",
+      "source": "Foto fornita dall’utente"
+    },
+    "Veronica Brunati": {
+      "image": "assets/reporter-veronica-brunati.webp",
+      "source": "Foto fornita dall’utente"
+    },
+    "Federica Lodi": {
+      "image": "assets/reporter-federica-lodi.webp",
+      "source": "Foto fornita dall’utente"
+    },
+    "Antonio Nucera": {
+      "image": "assets/reporter-antonio-nucera.webp",
+      "source": "https://net-storage-auto.tcccdn.com/storage/tuttoreggina.com/img_notizie/thumb3/50/5088eb6511e51807ad6e07d851c64e1c-11191-oooz0000.jpeg"
+    },
+    "Massimo Marianella": {
+      "image": "assets/reporter-massimo-marianella.webp",
+      "source": "https://sport.sky.it/autore/massimo-marianella"
+    },
+    "Stefania Pinna": {
+      "image": "assets/reporter-stefania-pinna.webp",
+      "source": "https://libropossibile.com/site/assets/files/1153/stefania_pinna.400x400.jpg"
+    },
+    "Stefano Borghi": {
+      "image": "assets/reporter-stefano-borghi.webp",
+      "source": "https://www.offside.community/wp-content/uploads/2019/05/2.jpg"
+    },
+    "Eleonora Incardona": {
+      "image": "assets/reporter-eleonora-incardona.webp",
+      "source": "https://tg24.sky.it/assets/images/ff78156a467b2256f1a4327f163fa4b5dadeb5b9/skytg24/it/spettacolo/2025/02/18/eleonora-incardona-foto/eleonora_incardona1.jpg?im=Resize,width=600"
+    },
+    "Bruno Palermo": {
+      "image": "assets/reporter-bruno-palermo.webp",
+      "source": "https://sport.sky.it/calcio/2026/06/14/calcio-integrazione-accoglienza-torneo-crotone"
+    },
+    "Marina Presello": {
+      "image": "assets/reporter-marina-presello.webp",
+      "source": "https://www.pesavento.com/web/wp-content/uploads/2019/02/MarinaPresello_SkySport.jpg"
+    },
+    "Marco Nosotti": {
+      "image": "assets/reporter-marco-nosotti.webp",
+      "source": "https://sport.sky.it/assets/images/archive/sezioni/sport/mondiali_calcio/2010/05/17/marco_nosotti.jpg?im=Resize,width=565"
+    },
+    "Paolo Assogna": {
+      "image": "assets/reporter-paolo-assogna.webp",
+      "source": "https://sport.sky.it/autore/paolo-assogna"
+    },
+    "Francesco Repice": {
+      "image": "assets/reporter-francesco-repice.webp",
+      "source": "https://www.aquinocresce.it/home/wp-content/uploads/2026/07/IMG-20260712-WA0022.jpg"
+    },
+    "Giorgia Cenni": {
+      "image": "assets/reporter-giorgia-cenni.webp",
+      "source": "https://www.vanityfair.it/sport/partite-eventi/2021/08/31/lo-sport-ve-lo-raccontano-le-donne"
+    },
+    "Maurizio Compagnoni": {
+      "image": "assets/reporter-maurizio-compagnoni.webp",
+      "source": "https://sport.sky.it/autore/maurizio-compagnoni"
+    },
+    "Nicola Roggero": {
+      "image": "assets/reporter-nicola-roggero.webp",
+      "source": "https://sport.sky.it/autore/nicola-roggero"
+    },
+    "Dario Massara": {
+      "image": "assets/reporter-dario-massara.webp",
+      "source": "https://sport.sky.it/autore/dario-massara"
+    },
+    "Paolo Aghemo": {
+      "image": "assets/reporter-paolo-aghemo.webp",
+      "source": "https://sport.sky.it/autore/paolo-aghemo"
+    },
+    "Riccardo Gentile": {
+      "image": "assets/reporter-riccardo-gentile.webp",
+      "source": "https://sport.sky.it/autore/riccardo-gentile"
+    },
+    "Marco Bovicelli": {
+      "image": "assets/reporter-marco-bovicelli.webp",
+      "source": "https://interclubpavia.eu/2018/08/09/bovicelli-per-candreva-difficile-lasciare-linter-keita-comunque-obiettivo/"
+    },
+    "Massimo Nebuloni": {
+      "image": "assets/dayafter-massimo-nebuloni.jpg",
+      "source": "https://sport.sky.it/assets/images/12d1a1c20d75b54e54ec90a3dac0477480517579/skysport/configurations/authors/inviati-sky/massimiliano-nebuloni/nebuloni_foto.jpg?im=Resize,width=226"
+    },
+    "Riccardo Re": {
+      "image": "assets/dayafter-riccardo-re.jpg",
+      "source": "https://sport.sky.it/assets/images/7c09a29e576d3c91cb9da85023729cdc552ade09/skysport/configurations/authors/inviati-sky/riccardo-re/riccardo_re_ok.jpg?im=Resize,width=226"
+    },
+    "Pietro Nicolodi": {
+      "image": "assets/dayafter-pietro-nicolodi.jpg",
+      "source": "https://sport.sky.it/assets/images/archive/sezioni/sport/olimpiadi/2009/10/27/foto_giornalisti_olimpici_pietro_nicolodi_738.jpg?im=Resize,width=565"
+    },
+    "Gianluigi Bagnulo": {
+      "image": "assets/dayafter-gianluigi-bagnulo.jpg",
+      "source": "https://static.sky.it/editorialimages/2a5f53d6c3a326442a8f49e1eef51ff9d45321c5/skysport/configurations/authors/inviati-sky/gianluigi-bagnulo/bagnu.jpg?im=Resize,width=226"
+    },
+    "Gianluca Di Marzio": {
+      "image": "assets/dayafter-gianluca-di-marzio.jpg",
+      "source": "https://sport.sky.it/assets/images/026adbc91f8bbc13f2abbe067754b86e9de486b6/skysport/configurations/authors/calciomercato/gianluca-di-marzio/gianluca_di_marzio_ok.jpg?im=Resize,width=226"
+    },
+    "Francesco Cosatti": {
+      "image": "assets/dayafter-francesco-cosatti.jpg",
+      "source": "https://sport.sky.it/assets/images/0ab13b6e7797451da256c13733c2d0ea37c33186/skysport/configurations/authors/inviati-sky/francesco-cosatti/cosatti.jpg?im=Resize,width=226"
+    },
+    "Vanessa Leonardi": {
+      "image": "assets/dayafter-vanessa-leonardi.jpg",
+      "source": "https://static.express.de/__images/2024/04/19/1432397d-22e5-4af2-aa33-75ead00290c7.jpeg?fm=jpeg&q=70&q=75&rect=0%2C0%2C4000%2C2250&s=70794a0f9e508aa2485b0109815c2be2&w=2000"
+    },
+    "Giorgia Rossi": {
+      "image": "assets/dayafter-giorgia-rossi.jpg",
+      "source": "https://staticfanpage.akamaized.net/wp-content/uploads/sites/16/2021/07/giorgia-rossi-3.jpg"
+    },
+    "Giovanni Guardalà": {
+      "image": "assets/dayafter-giovanni-guardala.jpg",
+      "source": "https://static.sky.it/editorialimages/7120a7925aa2f3ca61a5bf22ad0d98274165e9e9/skysport/configurations/authors/inviati-sky/giovanni-guardala/gauardala.jpg?im=Resize,width=226"
+    },
+    "Matteo Barzaghi": {
+      "image": "assets/dayafter-matteo-barzaghi.jpg",
+      "source": "https://sport.sky.it/assets/images/bafb1be221b98fe2722b696d5e12895a37be5fa0/skysport/configurations/authors/inviati-sky/matteo-barzaghi/barza.jpg?im=Resize,width=226"
+    },
+    "Alessandro Sugoni": {
+      "image": "assets/dayafter-alessandro-sugoni.jpg",
+      "source": "https://static.sky.it/editorialimages/ce796d4445093c0cabc7c17fd8d557164945b591/skysport/configurations/authors/calcio/alessandro-sugoni/sugoni_firma.jpg?im=Resize,width=226"
+    },
+    "Valentina Caruso": {
+      "image": "assets/dayafter-valentina-caruso.jpg",
+      "source": "https://storage.googleapis.com/milleunadonna_media/%2FmediaMille%2F2058407_9c547161e7.jpg"
+    },
+    "Luca Cilli": {
+      "image": "assets/dayafter-luca-cilli.jpg",
+      "source": "https://slyvi-tstorage.fra1.cdn.digitaloceanspaces.com/l119003824328_tml376533137153_399781418197_1664096814549957.jpg"
+    },
+    "Giancarlo Marocchi": {
+      "image": "assets/dayafter-giancarlo-marocchi.jpg",
+      "source": "https://www.italianmastersclub.it/nexus/alltoplayfor/assets/market-reporter-marocchi.jpg"
+    },
+    "Valentina Mariani": {
+      "image": "assets/dayafter-valentina-mariani.jpg",
+      "source": "https://static.sky.it/editorialimages/68c4b71eca76f910ff39a9c170c8b12a4f0846bd/skysport/configurations/authors/conduttori/valentina-mariani/valentina_mariani_ok.jpg?im=Resize,width=226"
+    },
+    "Filippo Benincampi": {
+      "image": "assets/dayafter-filippo-benincampi.jpg",
+      "source": "https://muckrack.com/filippo-benincampi"
+    },
+    "Sarah Castellana": {
+      "image": "assets/dayafter-sarah-castellana.jpg",
+      "source": "https://pbs.twimg.com/profile_images/1885720433955069952/5yt8tHFQ.jpg"
+    },
+    "Peppe Di Stefano": {
+      "image": "assets/dayafter-peppe-di-stefano.jpg",
+      "source": "https://sport.sky.it/assets/images/7770262470317ee79ca9e5d5b7a7aab7b5617db3/skysport/configurations/authors/inviati-sky/peppe-di-stefano/di_stefano.jpg?im=Resize,width=226"
+    },
+    "Valentina Ciarlante": {
+      "image": "assets/dayafter-valentina-ciarlante.jpg",
+      "source": "https://www.fnsi.it/upload/70/70efdf2ec9b086079795c442636b55fb/0c24839a01368146f2a4f364ecf6a8bd.jpg"
+    },
+    "Matteo Petrucci": {
+      "image": "assets/dayafter-matteo-petrucci.jpg",
+      "source": "https://sport.sky.it/assets/images/4e7e812aa4f05041ed7347872f4a67ea88d1beb8/skysport/it/calcio/coppa-italia/video/2026/04/20/1091587_1776682153593_thumb_494.0000001_1776682841178.jpg?im=Resize,width=600"
+    }
+  },
+  "date": "2026-10-23",
+  "title": "Il giorno dopo, con l’Europa all’orizzonte",
+  "opening": [
+    "Buongiorno e benvenuti a Coffee Time! Ripartiamo dai campi di ieri: venti partite, quaranta squadre e parecchie storie da riprendere con i nostri inviati. Poi guarderemo a stasera, perché comincia l’IMC Europa League. Con me Andrea Stramaccioni e Alessandro Florenzi.",
+    "Il Torino continua a inseguire il Monaco 1860, il Bologna passa a Rotterdam e in quarta divisione arrivano vittorie esterne pesanti. Guardiamo cosa lascia ogni partita, senza fermarci soltanto al risultato.",
+    "E per chi torna in campo stasera bisogna voltare pagina subito. Chi ha vinto vuole ripetersi, chi ha perso ha già un’occasione per reagire. Cominciamo il nostro giro."
+  ],
+  "bridge": [
+    "Questo il nostro giro sui quaranta club. Strama, adesso quattordici squadre cambiano subito competizione: da dove comincia la preparazione?",
+    "Dal nuovo avversario. Il Monaco viene da tre gol a Palermo, ma il Tottenham presenta un’altra sfida. Roma e Marsiglia devono confermarsi; Napoli e Dynamo Kyiv cercano invece una risposta dopo aver incassato rispettivamente tre e quattro reti. E poi c’è Reggina–Genoa: stessi avversari di ieri, una nuova competizione.",
+    "La rivincita immediata è una situazione particolare. La Reggina deve evitare la fretta di riscattarsi, il Genoa non può pensare di avere già la soluzione. Si riparte tutti da zero punti."
+  ],
+  "divisions": [
+    {
+      "name": "Divisione 1",
+      "fixtures": [
+        {
+          "id": 368861387,
+          "home": "Torino",
+          "away": "Atalanta BC",
+          "score": "2–0",
+          "reports": [
+            {
+              "club_id": 94078895,
+              "club": "Torino",
+              "name": "Paolo Aghemo",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Il 2–0 all’Atalanta porta il Torino a 18 punti. Murillo e Zubkov firmano una vittoria senza gol subiti: la rincorsa continua, ma il Monaco non concede terreno."
+            },
+            {
+              "club_id": 94078863,
+              "club": "Atalanta BC",
+              "name": "Massimo Nebuloni",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "L’Atalanta resta a sette punti. A Torino non trova il gol e incassa una rete per tempo: il prossimo passo deve essere ritrovare incisività, oltre ai punti."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 8,
+              "red_cards": 1,
+              "team_name": "Atalanta BC",
+              "possession": 40,
+              "sm_team_id": 94078863,
+              "total_shots": 6,
+              "yellow_cards": 1,
+              "shots_on_target": 2
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Torino",
+              "possession": 60,
+              "sm_team_id": 94078895,
+              "total_shots": 18,
+              "yellow_cards": 0,
+              "shots_on_target": 4
+            },
+            "scorers": [
+              {
+                "minute": 14,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "MURILLO",
+                "sm_player_id": 132713
+              },
+              {
+                "minute": 58,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "ZUBKOV",
+                "sm_player_id": 81321
+              }
+            ]
+          },
+          "stadium": "Stadio Olimpico di Torino",
+          "attendance": 36020,
+          "mvp": {
+            "name": "L MARTÍNEZ",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/128.png",
+          "home_manager": "Federico Bonzi",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/96.png",
+          "away_manager": "Matteo Giovi",
+          "summary": "Torino–Atalanta BC termina 2–0. Torino conclude di più: 18 tiri contro 6. I tiri nello specchio sono 4 a 2. Migliore in campo L MARTÍNEZ, voto 9."
+        },
+        {
+          "id": 368861386,
+          "home": "AS Reggina 1914",
+          "away": "Genoa CFC",
+          "score": "0–1",
+          "reports": [
+            {
+              "club_id": 94078889,
+              "club": "AS Reggina 1914",
+              "name": "Eleonora Incardona",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Lo 0–1 contro il Genoa lascia la Reggina a cinque punti. Stasera arriva subito lo stesso avversario, stavolta in Europa League: una possibilità immediata per cambiare il finale."
+            },
+            {
+              "club_id": 94078875,
+              "club": "Genoa CFC",
+              "name": "Riccardo Re",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Vlahović decide al 66’: il Genoa vince lo scontro tra due squadre che partivano appaiate e sale a otto punti. Ora deve affrontare nuovamente la Reggina senza dare nulla per acquisito."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 3,
+              "red_cards": 0,
+              "team_name": "Genoa CFC",
+              "possession": 57,
+              "sm_team_id": 94078875,
+              "total_shots": 11,
+              "yellow_cards": 1,
+              "shots_on_target": 2
+            },
+            "home": {
+              "corners": 7,
+              "red_cards": 0,
+              "team_name": "AS Reggina 1914",
+              "possession": 43,
+              "sm_team_id": 94078889,
+              "total_shots": 8,
+              "yellow_cards": 1,
+              "shots_on_target": 3
+            },
+            "scorers": [
+              {
+                "minute": 66,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "VLAHOVIĆ",
+                "sm_player_id": 84966
+              }
+            ]
+          },
+          "stadium": "Oreste Granillo",
+          "attendance": 21072,
+          "mvp": {
+            "name": "D VLAHOVIĆ",
+            "rating": 8
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/122.png",
+          "home_manager": "Saverio Cordiano",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/108.png",
+          "away_manager": "GIOVANNI CABRIOLI",
+          "summary": "AS Reggina 1914–Genoa CFC termina 0–1. Genoa CFC conclude di più: 11 tiri contro 8. I tiri nello specchio sono 3 a 2. Migliore in campo D VLAHOVIĆ, voto 8."
+        },
+        {
+          "id": 368861385,
+          "home": "Palermo FC",
+          "away": "TSV 1860 München",
+          "score": "0–3",
+          "reports": [
+            {
+              "club_id": 94078884,
+              "club": "Palermo FC",
+              "name": "Bruno Palermo",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Tre gol subiti e nessuno segnato contro la capolista. Il Palermo resta a due punti; l’esordio europeo con il Fenerbahçe offre un nuovo punto di partenza dopo una serata difficile."
+            },
+            {
+              "club_id": 94079182,
+              "club": "TSV 1860 München",
+              "name": "Pietro Nicolodi",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Senesi, Torres e McGinn firmano il 3–0 di Palermo. Il Monaco sale a venti punti e conserva due lunghezze sul Torino: stasera porta questa fiducia nella trasferta contro il Tottenham."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 4,
+              "red_cards": 0,
+              "team_name": "TSV 1860 München",
+              "possession": 55,
+              "sm_team_id": 94079182,
+              "total_shots": 14,
+              "yellow_cards": 2,
+              "shots_on_target": 7
+            },
+            "home": {
+              "corners": 7,
+              "red_cards": 0,
+              "team_name": "Palermo FC",
+              "possession": 45,
+              "sm_team_id": 94078884,
+              "total_shots": 8,
+              "yellow_cards": 3,
+              "shots_on_target": 1
+            },
+            "scorers": [
+              {
+                "minute": 14,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "SENESI",
+                "sm_player_id": 85541
+              },
+              {
+                "minute": 27,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "TORRES",
+                "sm_player_id": 93445
+              },
+              {
+                "minute": 60,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "MCGINN",
+                "sm_player_id": 63650
+              }
+            ]
+          },
+          "stadium": "Renzo Barbera",
+          "attendance": 18363,
+          "mvp": {
+            "name": "F TORRES",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/117.png",
+          "home_manager": "Al Zubeidi",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/415.png",
+          "away_manager": "Marco Fioretti",
+          "summary": "Palermo FC–TSV 1860 München termina 0–3. TSV 1860 München conclude di più: 14 tiri contro 8. I tiri nello specchio sono 1 a 7. Migliore in campo F TORRES, voto 9."
+        },
+        {
+          "id": 368861384,
+          "home": "Parma Calcio 1913",
+          "away": "AEK Athens",
+          "score": "0–2",
+          "reports": [
+            {
+              "club_id": 94078885,
+              "club": "Parma Calcio 1913",
+              "name": "Marco Nosotti",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Il Parma perde 0–2 e rimane a sette punti. L’AEK costruisce il vantaggio già prima dell’intervallo: una partenza che pesa sul risultato e su cui lavorare."
+            },
+            {
+              "club_id": 94079139,
+              "club": "AEK Athens",
+              "name": "Gianluigi Bagnulo",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Pavlidis e Zakaria chiudono il conto nel primo tempo. L’AEK sale a tredici punti, raggiunge la Sampdoria e si presenta all’appuntamento con il Boca con una vittoria esterna alle spalle."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 3,
+              "red_cards": 0,
+              "team_name": "AEK Athens",
+              "possession": 58,
+              "sm_team_id": 94079139,
+              "total_shots": 18,
+              "yellow_cards": 2,
+              "shots_on_target": 7
+            },
+            "home": {
+              "corners": 7,
+              "red_cards": 0,
+              "team_name": "Parma Calcio 1913",
+              "possession": 42,
+              "sm_team_id": 94078885,
+              "total_shots": 8,
+              "yellow_cards": 1,
+              "shots_on_target": 0
+            },
+            "scorers": [
+              {
+                "minute": 14,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "PAVLIDIS",
+                "sm_player_id": 88668
+              },
+              {
+                "minute": 39,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "ZAKARIA",
+                "sm_player_id": 83294
+              }
+            ]
+          },
+          "stadium": "Ennio Tardini",
+          "attendance": 20868,
+          "mvp": {
+            "name": "V PAVLIDIS",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/118.png",
+          "home_manager": "Lauro Crasti",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/372.png",
+          "away_manager": "Clemente Liggi",
+          "summary": "Parma Calcio 1913–AEK Athens termina 0–2. AEK Athens conclude di più: 18 tiri contro 8. I tiri nello specchio sono 0 a 7. Migliore in campo V PAVLIDIS, voto 9."
+        },
+        {
+          "id": 368861383,
+          "home": "Dynamo Dresden",
+          "away": "Sampdoria",
+          "score": "1–1",
+          "reports": [
+            {
+              "club_id": 94079161,
+              "club": "Dynamo Dresden",
+              "name": "Dario Massara",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "L’1–1 lascia la Dynamo a undici punti. Sfuma l’occasione di superare la Sampdoria: il distacco resta di due lunghezze."
+            },
+            {
+              "club_id": 94078892,
+              "club": "Sampdoria",
+              "name": "Gianluca Di Marzio",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "La Samp esce da Dresda con un punto e sale a tredici. Tiene dietro l’avversaria diretta, ma viene raggiunta dall’AEK: la corsa resta strettissima."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Sampdoria",
+              "possession": 51,
+              "sm_team_id": 94078892,
+              "total_shots": 6,
+              "yellow_cards": 2,
+              "shots_on_target": 2
+            },
+            "home": {
+              "corners": 9,
+              "red_cards": 0,
+              "team_name": "Dynamo Dresden",
+              "possession": 49,
+              "sm_team_id": 94079161,
+              "total_shots": 11,
+              "yellow_cards": 1,
+              "shots_on_target": 4
+            },
+            "scorers": [
+              {
+                "minute": 9,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "SIMEONE",
+                "sm_player_id": 110769
+              },
+              {
+                "minute": 82,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "LAVIA",
+                "sm_player_id": 115744
+              }
+            ]
+          },
+          "stadium": "Stadion Dresden",
+          "attendance": 42022,
+          "mvp": {
+            "name": "G SIMEONE",
+            "rating": 8
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/394.png",
+          "home_manager": "Matteo S",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/125.png",
+          "away_manager": "Mattia Bertonati",
+          "summary": "Dynamo Dresden–Sampdoria termina 1–1. Dynamo Dresden conclude di più: 11 tiri contro 6. I tiri nello specchio sono 4 a 2. Migliore in campo G SIMEONE, voto 8."
+        }
+      ],
+      "standings": [
+        {
+          "id": 94079182,
+          "name": "TSV 1860 München",
+          "played": 8,
+          "points": 20,
+          "gf": 21,
+          "ga": 10,
+          "position": 1,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/415.png"
+        },
+        {
+          "id": 94078895,
+          "name": "Torino",
+          "played": 8,
+          "points": 18,
+          "gf": 13,
+          "ga": 4,
+          "position": 2,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/128.png"
+        },
+        {
+          "id": 94079139,
+          "name": "AEK Athens",
+          "played": 8,
+          "points": 13,
+          "gf": 11,
+          "ga": 6,
+          "position": 3,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/372.png"
+        },
+        {
+          "id": 94078892,
+          "name": "Sampdoria",
+          "played": 8,
+          "points": 13,
+          "gf": 10,
+          "ga": 10,
+          "position": 4,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/125.png"
+        },
+        {
+          "id": 94079161,
+          "name": "Dynamo Dresden",
+          "played": 8,
+          "points": 11,
+          "gf": 9,
+          "ga": 7,
+          "position": 5,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/394.png"
+        },
+        {
+          "id": 94078875,
+          "name": "Genoa CFC",
+          "played": 8,
+          "points": 8,
+          "gf": 9,
+          "ga": 12,
+          "position": 6,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/108.png"
+        },
+        {
+          "id": 94078885,
+          "name": "Parma Calcio 1913",
+          "played": 8,
+          "points": 7,
+          "gf": 6,
+          "ga": 8,
+          "position": 7,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/118.png"
+        },
+        {
+          "id": 94078863,
+          "name": "Atalanta BC",
+          "played": 8,
+          "points": 7,
+          "gf": 7,
+          "ga": 11,
+          "position": 8,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/96.png"
+        },
+        {
+          "id": 94078889,
+          "name": "AS Reggina 1914",
+          "played": 8,
+          "points": 5,
+          "gf": 5,
+          "ga": 14,
+          "position": 9,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/122.png"
+        },
+        {
+          "id": 94078884,
+          "name": "Palermo FC",
+          "played": 8,
+          "points": 2,
+          "gf": 8,
+          "ga": 17,
+          "position": 10,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/117.png"
+        }
+      ]
+    },
+    {
+      "name": "Divisione 2",
+      "fixtures": [
+        {
+          "id": 368861477,
+          "home": "Feyenoord",
+          "away": "Bologna FC",
+          "score": "2–3",
+          "reports": [
+            {
+              "club_id": 94078959,
+              "club": "Feyenoord",
+              "name": "Riccardo Gentile",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Due gol non bastano: il Bologna passa 3–2. Il Feyenoord deve ritrovare equilibrio rapidamente, perché stasera lo aspetta l’Hertha nell’esordio europeo."
+            },
+            {
+              "club_id": 94078865,
+              "club": "Bologna FC",
+              "name": "Francesco Cosatti",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Segnare tre volte in trasferta e portare via la vittoria da Rotterdam è il dato forte della serata. Restano due reti incassate, ma il Bologna torna con tre punti preziosi."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 4,
+              "red_cards": 0,
+              "team_name": "Bologna FC",
+              "possession": 71,
+              "sm_team_id": 94078865,
+              "total_shots": 28,
+              "yellow_cards": 1,
+              "shots_on_target": 12
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Feyenoord",
+              "possession": 29,
+              "sm_team_id": 94078959,
+              "total_shots": 5,
+              "yellow_cards": 0,
+              "shots_on_target": 2
+            },
+            "scorers": [
+              {
+                "minute": 6,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "ABE",
+                "sm_player_id": 175211
+              },
+              {
+                "minute": 65,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "BEUKEMA",
+                "sm_player_id": 107212
+              },
+              {
+                "minute": 25,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "PALMER",
+                "sm_player_id": 105942
+              },
+              {
+                "minute": 56,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "VALVERDE",
+                "sm_player_id": 81249
+              },
+              {
+                "minute": 75,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "ANGUISSA",
+                "sm_player_id": 82677
+              }
+            ]
+          },
+          "stadium": "De Kuip",
+          "attendance": 42781,
+          "mvp": {
+            "name": "F VALVERDE",
+            "rating": 10
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/192.png",
+          "home_manager": "Ringhio Gattuso",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/98.png",
+          "away_manager": "Fabio Ferrini",
+          "summary": "Feyenoord–Bologna FC termina 2–3. Bologna FC conclude di più: 28 tiri contro 5. I tiri nello specchio sono 2 a 12. Migliore in campo F VALVERDE, voto 10."
+        },
+        {
+          "id": 368861476,
+          "home": "Boca Juniors",
+          "away": "Valencia CF",
+          "score": "1–3",
+          "reports": [
+            {
+              "club_id": 94079037,
+              "club": "Boca Juniors",
+              "name": "Veronica Brunati",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il Valencia passa 3–1 alla Bombonera. Il Boca deve lasciarsi alle spalle la sconfitta e preparare la risposta contro un AEK che arriva da una vittoria senza subire gol."
+            },
+            {
+              "club_id": 94078939,
+              "club": "Valencia CF",
+              "name": "Vanessa Leonardi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Tre reti in casa del Boca e una vittoria esterna netta. Per il Valencia è una serata da valorizzare: il passo successivo sarà dare continuità a questo risultato."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 4,
+              "red_cards": 0,
+              "team_name": "Valencia CF",
+              "possession": 56,
+              "sm_team_id": 94078939,
+              "total_shots": 13,
+              "yellow_cards": 0,
+              "shots_on_target": 5
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Boca Juniors",
+              "possession": 44,
+              "sm_team_id": 94079037,
+              "total_shots": 8,
+              "yellow_cards": 2,
+              "shots_on_target": 1
+            },
+            "scorers": [
+              {
+                "minute": 5,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "HAVERTZ",
+                "sm_player_id": 88054
+              },
+              {
+                "minute": 4,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "SALAH",
+                "sm_player_id": 52690
+              },
+              {
+                "minute": 27,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "CAN",
+                "sm_player_id": 52438
+              },
+              {
+                "minute": 36,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "CAN",
+                "sm_player_id": 52438
+              }
+            ]
+          },
+          "stadium": "La Bombonera",
+          "attendance": 44667,
+          "mvp": {
+            "name": "M SALAH",
+            "rating": 10
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/270.png",
+          "home_manager": "luca nudo",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/172.png",
+          "away_manager": "Giovanni Iodice",
+          "summary": "Boca Juniors–Valencia CF termina 1–3. Valencia CF conclude di più: 13 tiri contro 8. I tiri nello specchio sono 1 a 5. Migliore in campo M SALAH, voto 10."
+        },
+        {
+          "id": 368861475,
+          "home": "Fenerbahçe SK",
+          "away": "1. FC Kaiserslautern",
+          "score": "0–0",
+          "reports": [
+            {
+              "club_id": 94079117,
+              "club": "Fenerbahçe SK",
+              "name": "Anna Billò",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Lo 0–0 con il Kaiserslautern lascia una porta inviolata, ma anche un attacco senza reti. Contro il Palermo servirà aggiungere qualcosa davanti per trasformare l’equilibrio in vittoria."
+            },
+            {
+              "club_id": 94079172,
+              "club": "1. FC Kaiserslautern",
+              "name": "Giorgia Rossi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Un punto in trasferta senza concedere gol. Il Kaiserslautern riparte dalla tenuta mostrata sul campo del Fenerbahçe, cercando maggiore incisività offensiva."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 6,
+              "red_cards": 1,
+              "team_name": "1. FC Kaiserslautern",
+              "possession": 51,
+              "sm_team_id": 94079172,
+              "total_shots": 14,
+              "yellow_cards": 0,
+              "shots_on_target": 4
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Fenerbahçe SK",
+              "possession": 49,
+              "sm_team_id": 94079117,
+              "total_shots": 14,
+              "yellow_cards": 0,
+              "shots_on_target": 7
+            },
+            "scorers": []
+          },
+          "stadium": "Şükrü Saracoğlu Stadium",
+          "attendance": 47249,
+          "mvp": {
+            "name": "L HORNICEK",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/350.png",
+          "home_manager": "Vincenzo Martorano",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/405.png",
+          "away_manager": "Vardan Minasyan",
+          "summary": "Fenerbahçe SK–1. FC Kaiserslautern termina 0–0. Stesso numero di conclusioni: 14 per parte. I tiri nello specchio sono 7 a 4. Migliore in campo L HORNICEK, voto 9."
+        },
+        {
+          "id": 368861474,
+          "home": "Celtic",
+          "away": "FK Partizan",
+          "score": "1–0",
+          "reports": [
+            {
+              "club_id": 94079188,
+              "club": "Celtic",
+              "name": "Nicola Roggero",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Anderson all’80’ decide una partita rimasta sullo zero a zero a lungo. Il Celtic trova il gol che trasforma un possibile pareggio in tre punti."
+            },
+            {
+              "club_id": 94079148,
+              "club": "FK Partizan",
+              "name": "Giovanni Guardalà",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "La sconfitta arriva per una rete negli ultimi dieci minuti. Il Partizan torna senza punti: pesa soprattutto non essere riuscito a trovare una risposta offensiva."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 5,
+              "red_cards": 0,
+              "team_name": "FK Partizan",
+              "possession": 38,
+              "sm_team_id": 94079148,
+              "total_shots": 7,
+              "yellow_cards": 2,
+              "shots_on_target": 2
+            },
+            "home": {
+              "corners": 7,
+              "red_cards": 0,
+              "team_name": "Celtic",
+              "possession": 62,
+              "sm_team_id": 94079188,
+              "total_shots": 21,
+              "yellow_cards": 1,
+              "shots_on_target": 14
+            },
+            "scorers": [
+              {
+                "minute": 80,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "ANDERSON",
+                "sm_player_id": 107890
+              }
+            ]
+          },
+          "stadium": "Celtic Park",
+          "attendance": 65330,
+          "mvp": {
+            "name": "Y SOMMER",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/421.png",
+          "home_manager": "Sir Simone",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/381.png",
+          "away_manager": "Tommaso Prisco",
+          "summary": "Celtic–FK Partizan termina 1–0. Celtic conclude di più: 21 tiri contro 7. I tiri nello specchio sono 14 a 2. Migliore in campo Y SOMMER, voto 9."
+        },
+        {
+          "id": 368861473,
+          "home": "Académica de Coimbra",
+          "away": "Eintracht Frankfurt",
+          "score": "1–2",
+          "reports": [
+            {
+              "club_id": 94078981,
+              "club": "Académica de Coimbra",
+              "name": "Antonio Nucera",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "L’Eintracht passa 2–1 a Coimbra. Le tre reti arrivano tra il 69’ e il 79’: è in quei dieci minuti che si concentra il risultato della serata."
+            },
+            {
+              "club_id": 94079162,
+              "club": "Eintracht Frankfurt",
+              "name": "Matteo Barzaghi",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Una vittoria di misura fuori casa: l’Eintracht esce dal finale movimentato con tre punti. Un risultato che premia la capacità di trovare due gol nella fase decisiva."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 4,
+              "red_cards": 0,
+              "team_name": "Eintracht Frankfurt",
+              "possession": 64,
+              "sm_team_id": 94079162,
+              "total_shots": 25,
+              "yellow_cards": 3,
+              "shots_on_target": 11
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Académica de Coimbra",
+              "possession": 36,
+              "sm_team_id": 94078981,
+              "total_shots": 7,
+              "yellow_cards": 0,
+              "shots_on_target": 1
+            },
+            "scorers": [
+              {
+                "minute": 69,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "RONALDO",
+                "sm_player_id": 1131
+              },
+              {
+                "minute": 72,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "DÍAZ",
+                "sm_player_id": 95525
+              },
+              {
+                "minute": 79,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "MIKAUTADZE",
+                "sm_player_id": 109701
+              }
+            ]
+          },
+          "stadium": "Estádio Cidade de Coimbra",
+          "attendance": 21544,
+          "mvp": {
+            "name": "G MIKAUTADZE",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/214.png",
+          "home_manager": "Nick Keyen",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/395.png",
+          "away_manager": "Nicolae Sasarman",
+          "summary": "Académica de Coimbra–Eintracht Frankfurt termina 1–2. Eintracht Frankfurt conclude di più: 25 tiri contro 7. I tiri nello specchio sono 1 a 11. Migliore in campo G MIKAUTADZE, voto 9."
+        }
+      ],
+      "standings": [
+        {
+          "id": 94079188,
+          "name": "Celtic",
+          "played": 8,
+          "points": 21,
+          "gf": 20,
+          "ga": 4,
+          "position": 1,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/421.png"
+        },
+        {
+          "id": 94078865,
+          "name": "Bologna FC",
+          "played": 8,
+          "points": 20,
+          "gf": 22,
+          "ga": 8,
+          "position": 2,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/98.png"
+        },
+        {
+          "id": 94078939,
+          "name": "Valencia CF",
+          "played": 8,
+          "points": 15,
+          "gf": 23,
+          "ga": 16,
+          "position": 3,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/172.png"
+        },
+        {
+          "id": 94079172,
+          "name": "1. FC Kaiserslautern",
+          "played": 8,
+          "points": 14,
+          "gf": 21,
+          "ga": 9,
+          "position": 4,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/405.png"
+        },
+        {
+          "id": 94079117,
+          "name": "Fenerbahçe SK",
+          "played": 8,
+          "points": 13,
+          "gf": 8,
+          "ga": 8,
+          "position": 5,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/350.png"
+        },
+        {
+          "id": 94079037,
+          "name": "Boca Juniors",
+          "played": 8,
+          "points": 12,
+          "gf": 13,
+          "ga": 15,
+          "position": 6,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/270.png"
+        },
+        {
+          "id": 94079162,
+          "name": "Eintracht Frankfurt",
+          "played": 8,
+          "points": 8,
+          "gf": 12,
+          "ga": 14,
+          "position": 7,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/395.png"
+        },
+        {
+          "id": 94078981,
+          "name": "Académica de Coimbra",
+          "played": 8,
+          "points": 5,
+          "gf": 10,
+          "ga": 20,
+          "position": 8,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/214.png"
+        },
+        {
+          "id": 94079148,
+          "name": "FK Partizan",
+          "played": 8,
+          "points": 4,
+          "gf": 9,
+          "ga": 21,
+          "position": 9,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/381.png"
+        },
+        {
+          "id": 94078959,
+          "name": "Feyenoord",
+          "played": 8,
+          "points": 1,
+          "gf": 4,
+          "ga": 27,
+          "position": 10,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/192.png"
+        }
+      ]
+    },
+    {
+      "name": "Divisione 3",
+      "fixtures": [
+        {
+          "id": 368861567,
+          "home": "SSC Napoli",
+          "away": "Shakhtar Donetsk",
+          "score": "2–3",
+          "reports": [
+            {
+              "club_id": 94079501,
+              "club": "SSC Napoli",
+              "name": "Francesco Repice",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il Napoli segna due volte ma perde 3–2 contro lo Shakhtar. Stasera arriva la Roma: la priorità è evitare che un’altra partita ricca di gol finisca nuovamente dalla parte sbagliata."
+            },
+            {
+              "club_id": 94079115,
+              "club": "Shakhtar Donetsk",
+              "name": "Alessandro Sugoni",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Tre gol a Napoli e una vittoria esterna. La doppietta di Leweling è tra i fatti centrali della serata: lo Shakhtar porta a casa una partita combattuta."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 5,
+              "red_cards": 0,
+              "team_name": "Shakhtar Donetsk",
+              "possession": 52,
+              "sm_team_id": 94079115,
+              "total_shots": 20,
+              "yellow_cards": 2,
+              "shots_on_target": 6
+            },
+            "home": {
+              "corners": 7,
+              "red_cards": 0,
+              "team_name": "SSC Napoli",
+              "possession": 48,
+              "sm_team_id": 94079501,
+              "total_shots": 18,
+              "yellow_cards": 1,
+              "shots_on_target": 8
+            },
+            "scorers": [
+              {
+                "minute": 57,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "SÁ",
+                "sm_player_id": 125120
+              },
+              {
+                "minute": 62,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "SOULÉ",
+                "sm_player_id": 103221
+              },
+              {
+                "minute": 1,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "HERNÁNDEZ",
+                "sm_player_id": 85388
+              },
+              {
+                "minute": 40,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "LEWELING",
+                "sm_player_id": 105024
+              },
+              {
+                "minute": 68,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "LEWELING",
+                "sm_player_id": 105024
+              }
+            ]
+          },
+          "stadium": "Stadio Diego Armando Maradona",
+          "attendance": 46472,
+          "mvp": {
+            "name": "A MERET",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/746.png",
+          "home_manager": "Rosario Giamundo",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/348.png",
+          "away_manager": "Armando De Giulio",
+          "summary": "SSC Napoli–Shakhtar Donetsk termina 2–3. Shakhtar Donetsk conclude di più: 20 tiri contro 18. I tiri nello specchio sono 8 a 6. Migliore in campo A MERET, voto 9."
+        },
+        {
+          "id": 368861566,
+          "home": "Olympique Marseille",
+          "away": "Legia Warszawa",
+          "score": "2–1",
+          "reports": [
+            {
+              "club_id": 94079097,
+              "club": "Olympique Marseille",
+              "name": "Maurizio Compagnoni",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il 2–1 sul Legia permette al Marsiglia di avvicinarsi all’Europa League con una vittoria. Stasera contro la Dynamo Kyiv l’obiettivo sarà confermarsi."
+            },
+            {
+              "club_id": 94079408,
+              "club": "Legia Warszawa",
+              "name": "Valentina Caruso",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Il Legia segna a Marsiglia, ma torna senza punti. La sconfitta di misura lascia una distanza piccola nel punteggio, che adesso va colmata sul campo."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 5,
+              "red_cards": 0,
+              "team_name": "Legia Warszawa",
+              "possession": 55,
+              "sm_team_id": 94079408,
+              "total_shots": 15,
+              "yellow_cards": 3,
+              "shots_on_target": 8
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Olympique Marseille",
+              "possession": 45,
+              "sm_team_id": 94079097,
+              "total_shots": 8,
+              "yellow_cards": 1,
+              "shots_on_target": 3
+            },
+            "scorers": [
+              {
+                "minute": 5,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "SARR",
+                "sm_player_id": 87576
+              },
+              {
+                "minute": 72,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "PAZ",
+                "sm_player_id": 121044
+              },
+              {
+                "minute": 19,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "GRIEZMANN",
+                "sm_player_id": 41780
+              }
+            ]
+          },
+          "stadium": "Vélodrome",
+          "attendance": 69561,
+          "mvp": {
+            "name": "A ONANA",
+            "rating": 10
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/330.png",
+          "home_manager": "Mathieu Pioche",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/651.png",
+          "away_manager": "Luciano Catalano",
+          "summary": "Olympique Marseille–Legia Warszawa termina 2–1. Legia Warszawa conclude di più: 15 tiri contro 8. I tiri nello specchio sono 3 a 8. Migliore in campo A ONANA, voto 10."
+        },
+        {
+          "id": 368861565,
+          "home": "Guangzhou FC",
+          "away": "Palmeiras",
+          "score": "2–1",
+          "reports": [
+            {
+              "club_id": 94080273,
+              "club": "Guangzhou FC",
+              "name": "Stefania Pinna",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il Guangzhou supera 2–1 il Palmeiras. Tre punti conquistati in una gara rimasta aperta fino al finale: una vittoria da cui ripartire."
+            },
+            {
+              "club_id": 94079067,
+              "club": "Palmeiras",
+              "name": "Luca Cilli",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Il Palmeiras perde di misura in Cina. Un gol segnato non basta a evitare la sconfitta: serve trasformare le partite equilibrate in risultati utili."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 5,
+              "red_cards": 2,
+              "team_name": "Palmeiras",
+              "possession": 53,
+              "sm_team_id": 94079067,
+              "total_shots": 10,
+              "yellow_cards": 2,
+              "shots_on_target": 4
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Guangzhou FC",
+              "possession": 47,
+              "sm_team_id": 94080273,
+              "total_shots": 16,
+              "yellow_cards": 0,
+              "shots_on_target": 7
+            },
+            "scorers": [
+              {
+                "minute": 52,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "CVETKOVIĆ",
+                "sm_player_id": 139348
+              },
+              {
+                "minute": 89,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "CHALOBAH",
+                "sm_player_id": 90926
+              },
+              {
+                "minute": 6,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "DIOMANDE",
+                "sm_player_id": 161076
+              }
+            ]
+          },
+          "stadium": "Tianhe Stadium",
+          "attendance": 52775,
+          "mvp": {
+            "name": "M CVETKOVIĆ",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/1521.png",
+          "home_manager": "MAX PALACE",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/300.png",
+          "away_manager": "Danilo Il calcio è la mia droga.",
+          "summary": "Guangzhou FC–Palmeiras termina 2–1. Guangzhou FC conclude di più: 16 tiri contro 10. I tiri nello specchio sono 7 a 4. Migliore in campo M CVETKOVIĆ, voto 9."
+        },
+        {
+          "id": 368861564,
+          "home": "Tottenham Hotspur",
+          "away": "Atlético Madrid",
+          "score": "2–2",
+          "reports": [
+            {
+              "club_id": 94078847,
+              "club": "Tottenham Hotspur",
+              "name": "Massimo Marianella",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Il 2–2 con l’Atlético lascia un punto e due reti subite. Stasera il livello dell’attenzione dovrà salire: arriva il Monaco 1860, reduce dal 3–0 di Palermo."
+            },
+            {
+              "club_id": 94078906,
+              "club": "Atlético Madrid",
+              "name": "Giancarlo Marocchi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Due gol in trasferta valgono un pareggio. L’Atlético esce da Londra con un punto, ma anche con il tema di come proteggere meglio il proprio risultato."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Atlético Madrid",
+              "possession": 44,
+              "sm_team_id": 94078906,
+              "total_shots": 9,
+              "yellow_cards": 0,
+              "shots_on_target": 4
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 1,
+              "team_name": "Tottenham Hotspur",
+              "possession": 56,
+              "sm_team_id": 94078847,
+              "total_shots": 13,
+              "yellow_cards": 2,
+              "shots_on_target": 8
+            },
+            "scorers": [
+              {
+                "minute": 22,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "ZACCAGNI",
+                "sm_player_id": 73620
+              },
+              {
+                "minute": 60,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "ASENSIO",
+                "sm_player_id": 71047
+              },
+              {
+                "minute": 63,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "PEDRO",
+                "sm_player_id": 99631
+              },
+              {
+                "minute": 85,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "KHUSANOV",
+                "sm_player_id": 129988
+              }
+            ]
+          },
+          "stadium": "Tottenham Hotspur Stadium",
+          "attendance": 58990,
+          "mvp": {
+            "name": "M ZACCAGNI",
+            "rating": 10
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/80.png",
+          "home_manager": "Max Zanoni",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/139.png",
+          "away_manager": "Giuseppe Trovato",
+          "summary": "Tottenham Hotspur–Atlético Madrid termina 2–2. Tottenham Hotspur conclude di più: 13 tiri contro 9. I tiri nello specchio sono 8 a 4. Migliore in campo M ZACCAGNI, voto 10."
+        },
+        {
+          "id": 368861563,
+          "home": "Borussia Dortmund",
+          "away": "Sunderland",
+          "score": "3–0",
+          "reports": [
+            {
+              "club_id": 94079159,
+              "club": "Borussia Dortmund",
+              "name": "Federica Lodi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Rrahmani, Raphinha e Tielemans firmano il 3–0. Il Borussia distribuisce i gol lungo la partita e chiude senza subirne: una serata positiva su entrambi i fronti."
+            },
+            {
+              "club_id": 94078843,
+              "club": "Sunderland",
+              "name": "Valentina Mariani",
+              "status": "trial",
+              "label": "Inviata in prova",
+              "side": "away",
+              "text": "Tre reti incassate e nessuna segnata a Dortmund. Per il Sunderland il lavoro riguarda entrambi i reparti: contenere meglio l’avversario e ritrovare pericolosità."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 5,
+              "red_cards": 0,
+              "team_name": "Sunderland",
+              "possession": 46,
+              "sm_team_id": 94078843,
+              "total_shots": 13,
+              "yellow_cards": 1,
+              "shots_on_target": 6
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Borussia Dortmund",
+              "possession": 54,
+              "sm_team_id": 94079159,
+              "total_shots": 18,
+              "yellow_cards": 1,
+              "shots_on_target": 10
+            },
+            "scorers": [
+              {
+                "minute": 8,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "RRAHMANI",
+                "sm_player_id": 81783
+              },
+              {
+                "minute": 53,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "RAPHINHA",
+                "sm_player_id": 87870
+              },
+              {
+                "minute": 83,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "TIELEMANS",
+                "sm_player_id": 67729
+              }
+            ]
+          },
+          "stadium": "Signal Iduna Park",
+          "attendance": 86325,
+          "mvp": {
+            "name": "B RAPHINHA",
+            "rating": 10
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/392.png",
+          "home_manager": "Giorgio Grugni",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/76.png",
+          "away_manager": "Lorenzo Errico",
+          "summary": "Borussia Dortmund–Sunderland termina 3–0. Borussia Dortmund conclude di più: 18 tiri contro 13. I tiri nello specchio sono 10 a 6. Migliore in campo B RAPHINHA, voto 10."
+        }
+      ],
+      "standings": [
+        {
+          "id": 94079097,
+          "name": "Olympique Marseille",
+          "played": 8,
+          "points": 24,
+          "gf": 22,
+          "ga": 6,
+          "position": 1,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/330.png"
+        },
+        {
+          "id": 94079159,
+          "name": "Borussia Dortmund",
+          "played": 8,
+          "points": 18,
+          "gf": 25,
+          "ga": 15,
+          "position": 2,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/392.png"
+        },
+        {
+          "id": 94079115,
+          "name": "Shakhtar Donetsk",
+          "played": 8,
+          "points": 16,
+          "gf": 25,
+          "ga": 20,
+          "position": 3,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/348.png"
+        },
+        {
+          "id": 94080273,
+          "name": "Guangzhou FC",
+          "played": 8,
+          "points": 16,
+          "gf": 14,
+          "ga": 13,
+          "position": 4,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/1521.png"
+        },
+        {
+          "id": 94079408,
+          "name": "Legia Warszawa",
+          "played": 8,
+          "points": 15,
+          "gf": 20,
+          "ga": 14,
+          "position": 5,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/651.png"
+        },
+        {
+          "id": 94078847,
+          "name": "Tottenham Hotspur",
+          "played": 8,
+          "points": 8,
+          "gf": 17,
+          "ga": 22,
+          "position": 6,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/80.png"
+        },
+        {
+          "id": 94078843,
+          "name": "Sunderland",
+          "played": 8,
+          "points": 5,
+          "gf": 13,
+          "ga": 20,
+          "position": 7,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/76.png"
+        },
+        {
+          "id": 94079067,
+          "name": "Palmeiras",
+          "played": 8,
+          "points": 5,
+          "gf": 7,
+          "ga": 17,
+          "position": 8,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/300.png"
+        },
+        {
+          "id": 94078906,
+          "name": "Atlético Madrid",
+          "played": 8,
+          "points": 4,
+          "gf": 12,
+          "ga": 20,
+          "position": 9,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/139.png"
+        },
+        {
+          "id": 94079501,
+          "name": "SSC Napoli",
+          "played": 8,
+          "points": 4,
+          "gf": 9,
+          "ga": 17,
+          "position": 10,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/746.png"
+        }
+      ]
+    },
+    {
+      "name": "Divisione 4",
+      "fixtures": [
+        {
+          "id": 368861657,
+          "home": "River Plate",
+          "away": "Club América",
+          "score": "1–4",
+          "reports": [
+            {
+              "club_id": 94079049,
+              "club": "River Plate",
+              "name": "Stefano Borghi",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Il Club América passa 4–1. Per il River è una sconfitta pesante in casa: il primo tema è ritrovare equilibrio dopo quattro gol subiti."
+            },
+            {
+              "club_id": 94079202,
+              "club": "Club América",
+              "name": "Filippo Benincampi",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Quattro gol sul campo del River e una vittoria larga. Il Club América torna da questa trasferta con un risultato importante anche per la fiducia."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 3,
+              "red_cards": 0,
+              "team_name": "Club América",
+              "possession": 59,
+              "sm_team_id": 94079202,
+              "total_shots": 17,
+              "yellow_cards": 1,
+              "shots_on_target": 7
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "River Plate",
+              "possession": 41,
+              "sm_team_id": 94079049,
+              "total_shots": 10,
+              "yellow_cards": 1,
+              "shots_on_target": 4
+            },
+            "scorers": [
+              {
+                "minute": 71,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "ALLAN",
+                "sm_player_id": 149946
+              },
+              {
+                "minute": 22,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "FÉLIX",
+                "sm_player_id": 89761
+              },
+              {
+                "minute": 58,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "FÉLIX",
+                "sm_player_id": 89761
+              },
+              {
+                "minute": 37,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "MAINOO",
+                "sm_player_id": 124453
+              },
+              {
+                "minute": 64,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "WILLIAMS",
+                "sm_player_id": 108912
+              }
+            ]
+          },
+          "stadium": "Estadio Monumental",
+          "attendance": 43060,
+          "mvp": {
+            "name": "J FÉLIX",
+            "rating": 10
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/282.png",
+          "home_manager": "Marco Calatozzo",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/439.png",
+          "away_manager": "Emanuele Delli calici",
+          "summary": "River Plate–Club América termina 1–4. Club América conclude di più: 17 tiri contro 10. I tiri nello specchio sono 4 a 7. Migliore in campo J FÉLIX, voto 10."
+        },
+        {
+          "id": 368861656,
+          "home": "São Paulo FC",
+          "away": "FC Schalke 04",
+          "score": "1–2",
+          "reports": [
+            {
+              "club_id": 94079073,
+              "club": "São Paulo FC",
+              "name": "Marina Presello",
+              "status": "trial",
+              "label": "Inviata in prova",
+              "side": "home",
+              "text": "Lo Schalke passa 2–1. Il São Paulo resta a un gol dall’avversario nel risultato finale, ma perde l’occasione di raccogliere punti in casa."
+            },
+            {
+              "club_id": 94079165,
+              "club": "FC Schalke 04",
+              "name": "Sarah Castellana",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Una vittoria esterna di misura per lo Schalke. Segnare due volte a São Paulo basta per tornare con tre punti e preparare il prossimo impegno con maggiore fiducia."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 5,
+              "red_cards": 0,
+              "team_name": "FC Schalke 04",
+              "possession": 50,
+              "sm_team_id": 94079165,
+              "total_shots": 9,
+              "yellow_cards": 0,
+              "shots_on_target": 4
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "São Paulo FC",
+              "possession": 50,
+              "sm_team_id": 94079073,
+              "total_shots": 8,
+              "yellow_cards": 0,
+              "shots_on_target": 3
+            },
+            "scorers": [
+              {
+                "minute": 78,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "LEÃO",
+                "sm_player_id": 93302
+              },
+              {
+                "minute": 13,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "BISCHOF",
+                "sm_player_id": 114277
+              },
+              {
+                "minute": 51,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "GREENWOOD",
+                "sm_player_id": 99639
+              }
+            ]
+          },
+          "stadium": "Morumbi",
+          "attendance": 51472,
+          "mvp": {
+            "name": "M GREENWOOD",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/306.png",
+          "home_manager": "Attilio Bonnici",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/398.png",
+          "away_manager": "Francesco Rossi",
+          "summary": "São Paulo FC–FC Schalke 04 termina 1–2. FC Schalke 04 conclude di più: 9 tiri contro 8. I tiri nello specchio sono 3 a 4. Migliore in campo M GREENWOOD, voto 9."
+        },
+        {
+          "id": 368861655,
+          "home": "AS Roma",
+          "away": "CR Flamengo",
+          "score": "3–1",
+          "reports": [
+            {
+              "club_id": 94078890,
+              "club": "AS Roma",
+              "name": "Paolo Assogna",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "La Roma batte il Flamengo 3–1. Stasera ritrova subito il campo contro il Napoli: l’esordio europeo arriva dopo una prova offensiva da tre reti."
+            },
+            {
+              "club_id": 94079061,
+              "club": "CR Flamengo",
+              "name": "Peppe Di Stefano",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "away",
+              "text": "Il Flamengo perde a Roma, segnando una sola volta a fronte di tre gol subiti. Serve ridurre il divario tra ciò che produce davanti e ciò che concede."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 5,
+              "red_cards": 0,
+              "team_name": "CR Flamengo",
+              "possession": 40,
+              "sm_team_id": 94079061,
+              "total_shots": 8,
+              "yellow_cards": 1,
+              "shots_on_target": 2
+            },
+            "home": {
+              "corners": 8,
+              "red_cards": 1,
+              "team_name": "AS Roma",
+              "possession": 60,
+              "sm_team_id": 94078890,
+              "total_shots": 18,
+              "yellow_cards": 2,
+              "shots_on_target": 10
+            },
+            "scorers": [
+              {
+                "minute": 13,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "SESKO",
+                "sm_player_id": 101341
+              },
+              {
+                "minute": 62,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "SIMONS",
+                "sm_player_id": 103281
+              },
+              {
+                "minute": 88,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "ENDRICK",
+                "sm_player_id": 117462
+              },
+              {
+                "minute": 24,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "NUSA",
+                "sm_player_id": 113618
+              }
+            ]
+          },
+          "stadium": "Stadio Olimpico",
+          "attendance": 63063,
+          "mvp": {
+            "name": "X SIMONS",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/123.png",
+          "home_manager": "Pep Buitre",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/294.png",
+          "away_manager": "igor zanotto",
+          "summary": "AS Roma–CR Flamengo termina 3–1. AS Roma conclude di più: 18 tiri contro 8. I tiri nello specchio sono 10 a 2. Migliore in campo X SIMONS, voto 9."
+        },
+        {
+          "id": 368861654,
+          "home": "Dynamo Kyiv",
+          "away": "Campobasso Calcio",
+          "score": "2–4",
+          "reports": [
+            {
+              "club_id": 94079114,
+              "club": "Dynamo Kyiv",
+              "name": "Marco Bovicelli",
+              "status": "trial",
+              "label": "Inviato in prova",
+              "side": "home",
+              "text": "Il Campobasso passa 4–2. Alla Dynamo non bastano due reti: stasera a Marsiglia dovrà soprattutto evitare di concedere un’altra partita così aperta."
+            },
+            {
+              "club_id": 94082591,
+              "club": "Campobasso Calcio",
+              "name": "Valentina Ciarlante",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Quattro gol fuori casa e tre punti da Kyiv. È una vittoria che valorizza l’attacco; le due reti subite restano il dettaglio da correggere per dare solidità al percorso."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 5,
+              "red_cards": 0,
+              "team_name": "Campobasso Calcio",
+              "possession": 42,
+              "sm_team_id": 94082591,
+              "total_shots": 12,
+              "yellow_cards": 0,
+              "shots_on_target": 5
+            },
+            "home": {
+              "corners": 6,
+              "red_cards": 0,
+              "team_name": "Dynamo Kyiv",
+              "possession": 58,
+              "sm_team_id": 94079114,
+              "total_shots": 15,
+              "yellow_cards": 2,
+              "shots_on_target": 5
+            },
+            "scorers": [
+              {
+                "minute": 27,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "SCHADE",
+                "sm_player_id": 114274
+              },
+              {
+                "minute": 79,
+                "own_goal": 0,
+                "team_side": "home",
+                "player_name": "BELLINGHAM",
+                "sm_player_id": 101902
+              },
+              {
+                "minute": 16,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "ROGERS",
+                "sm_player_id": 100000
+              },
+              {
+                "minute": 47,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "ROGERS",
+                "sm_player_id": 100000
+              },
+              {
+                "minute": 89,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "ROGERS",
+                "sm_player_id": 100000
+              },
+              {
+                "minute": 31,
+                "own_goal": 0,
+                "team_side": "away",
+                "player_name": "DAMSGAARD",
+                "sm_player_id": 97863
+              }
+            ]
+          },
+          "stadium": "Olimpiysky NSC",
+          "attendance": 31913,
+          "mvp": {
+            "name": "M ROGERS",
+            "rating": 10
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/347.png",
+          "home_manager": "Oleksandr Medvid",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/3874.png",
+          "away_manager": "Simone Campanella",
+          "summary": "Dynamo Kyiv–Campobasso Calcio termina 2–4. Dynamo Kyiv conclude di più: 15 tiri contro 12. I tiri nello specchio sono 5 a 5. Migliore in campo M ROGERS, voto 10."
+        },
+        {
+          "id": 368861653,
+          "home": "HERTHA BSC",
+          "away": "SS Lazio",
+          "score": "0–0",
+          "reports": [
+            {
+              "club_id": 94079171,
+              "club": "HERTHA BSC",
+              "name": "Giorgia Cenni",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "home",
+              "text": "Con la Lazio finisce 0–0. L’Hertha chiude senza subire gol, ma non trova quello decisivo: stasera contro il Feyenoord servirà sbloccare anche l’attacco."
+            },
+            {
+              "club_id": 94078878,
+              "club": "SS Lazio",
+              "name": "Matteo Petrucci",
+              "status": "confirmed",
+              "label": "Assegnazione confermata",
+              "side": "away",
+              "text": "Un punto a Berlino e porta inviolata. La Lazio esce dallo scontro con l’Hertha senza concedere reti: un risultato da cui ripartire cercando maggiore efficacia davanti."
+            }
+          ],
+          "stats": {
+            "away": {
+              "corners": 3,
+              "red_cards": 0,
+              "team_name": "SS Lazio",
+              "possession": 50,
+              "sm_team_id": 94078878,
+              "total_shots": 15,
+              "yellow_cards": 2,
+              "shots_on_target": 6
+            },
+            "home": {
+              "corners": 7,
+              "red_cards": 0,
+              "team_name": "Hertha BSC",
+              "possession": 50,
+              "sm_team_id": 94079171,
+              "total_shots": 13,
+              "yellow_cards": 0,
+              "shots_on_target": 7
+            },
+            "scorers": []
+          },
+          "stadium": "Olympiastadion",
+          "attendance": 68433,
+          "mvp": {
+            "name": "K MBAPPÉ",
+            "rating": 9
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/404.png",
+          "home_manager": "Tommaso Mello",
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/111.png",
+          "away_manager": "Alessandro Berardi",
+          "summary": "HERTHA BSC–SS Lazio termina 0–0. SS Lazio conclude di più: 15 tiri contro 13. I tiri nello specchio sono 7 a 6. Migliore in campo K MBAPPÉ, voto 9."
+        }
+      ],
+      "standings": [
+        {
+          "id": 94079171,
+          "name": "HERTHA BSC",
+          "played": 8,
+          "points": 19,
+          "gf": 18,
+          "ga": 10,
+          "position": 1,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/404.png"
+        },
+        {
+          "id": 94078878,
+          "name": "SS Lazio",
+          "played": 8,
+          "points": 17,
+          "gf": 20,
+          "ga": 6,
+          "position": 2,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/111.png"
+        },
+        {
+          "id": 94082591,
+          "name": "Campobasso Calcio",
+          "played": 8,
+          "points": 14,
+          "gf": 21,
+          "ga": 15,
+          "position": 3,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/3874.png"
+        },
+        {
+          "id": 94079061,
+          "name": "CR Flamengo",
+          "played": 8,
+          "points": 12,
+          "gf": 17,
+          "ga": 12,
+          "position": 4,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/294.png"
+        },
+        {
+          "id": 94078890,
+          "name": "AS Roma",
+          "played": 8,
+          "points": 12,
+          "gf": 11,
+          "ga": 8,
+          "position": 5,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/123.png"
+        },
+        {
+          "id": 94079202,
+          "name": "Club América",
+          "played": 8,
+          "points": 12,
+          "gf": 15,
+          "ga": 13,
+          "position": 6,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/439.png"
+        },
+        {
+          "id": 94079165,
+          "name": "FC Schalke 04",
+          "played": 8,
+          "points": 11,
+          "gf": 14,
+          "ga": 17,
+          "position": 7,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/398.png"
+        },
+        {
+          "id": 94079114,
+          "name": "Dynamo Kyiv",
+          "played": 8,
+          "points": 7,
+          "gf": 11,
+          "ga": 15,
+          "position": 8,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/347.png"
+        },
+        {
+          "id": 94079049,
+          "name": "River Plate",
+          "played": 8,
+          "points": 7,
+          "gf": 6,
+          "ga": 23,
+          "position": 9,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/282.png"
+        },
+        {
+          "id": 94079073,
+          "name": "São Paulo FC",
+          "played": 8,
+          "points": 1,
+          "gf": 7,
+          "ga": 21,
+          "position": 10,
+          "logo": "https://cdn.soccerwiki.org/images/logos/clubs/306.png"
+        }
+      ]
+    }
+  ],
+  "europa": [
+    {
+      "sm_fixture_id": "GW001-EL-20261023-1",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Tottenham",
+      "home_sm_club_id": "94078847",
+      "home_sm_team_id": "94078847",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/80.png",
+      "home_imc_manager_id": "MNG023",
+      "home_imc_manager_name": "Max Zanoni",
+      "away_name": "1860 München",
+      "away_sm_club_id": "94079182",
+      "away_sm_team_id": "94079182",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/415.png",
+      "away_imc_manager_id": "MNG015",
+      "away_imc_manager_name": "Marco Fioretti",
+      "text": "Il pareggio degli Spurs con l’Atlético incontra la fiducia del Monaco dopo il successo di Palermo."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-2",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Hertha Berlino",
+      "home_sm_club_id": "94079171",
+      "home_sm_team_id": "94079171",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/404.png",
+      "home_imc_manager_id": "MNG001",
+      "home_imc_manager_name": "Tommaso Mello",
+      "away_name": "Feyenoord",
+      "away_sm_club_id": "94078959",
+      "away_sm_team_id": "94078959",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/192.png",
+      "away_imc_manager_id": "MNG017",
+      "away_imc_manager_name": "Ringhio Gattuso",
+      "text": "I berlinesi cercano il gol dopo lo 0–0; gli olandesi una risposta al 2–3 contro il Bologna."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-3",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Napoli",
+      "home_sm_club_id": "94079501",
+      "home_sm_team_id": "94079501",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/746.png",
+      "home_imc_manager_id": "MNG041",
+      "home_imc_manager_name": "Rosario Giamundo",
+      "away_name": "Roma",
+      "away_sm_club_id": "94078890",
+      "away_sm_team_id": "94078890",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/123.png",
+      "away_imc_manager_id": "MNG006",
+      "away_imc_manager_name": "Pep Buitre",
+      "text": "Il Napoli vuole reagire, la Roma dare continuità al successo sul Flamengo."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-4",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Fenerbahçe",
+      "home_sm_club_id": "94079117",
+      "home_sm_team_id": "94079117",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/350.png",
+      "home_imc_manager_id": "MNG007",
+      "home_imc_manager_name": "Vincenzo Martorano",
+      "away_name": "Palermo",
+      "away_sm_club_id": "94078884",
+      "away_sm_team_id": "94078884",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/117.png",
+      "away_imc_manager_id": "MNG029",
+      "away_imc_manager_name": "Al Zubeidi",
+      "text": "Entrambe arrivano senza aver segnato ieri: l’esordio offre subito una possibilità di sbloccarsi."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-5",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Olympique Marseille",
+      "home_sm_club_id": "94079097",
+      "home_sm_team_id": "94079097",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/330.png",
+      "home_imc_manager_id": "MNG040",
+      "home_imc_manager_name": "Mathieu Pioche",
+      "away_name": "Dynamo Kyiv",
+      "away_sm_club_id": "94079114",
+      "away_sm_team_id": "94079114",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/347.png",
+      "away_imc_manager_id": "MNG022",
+      "away_imc_manager_name": "Oleksandr Medvid",
+      "text": "Il Marsiglia arriva dal successo sul Legia; la Dynamo deve ricompattarsi dopo i quattro gol subiti."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-6",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "AEK Athens",
+      "home_sm_club_id": "94079139",
+      "home_sm_team_id": "94079139",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/372.png",
+      "home_imc_manager_id": "MNG026",
+      "home_imc_manager_name": "Clemente Liggi",
+      "away_name": "Boca Juniors",
+      "away_sm_club_id": "94079037",
+      "away_sm_team_id": "94079037",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/270.png",
+      "away_imc_manager_id": "MNG009",
+      "away_imc_manager_name": "Luca Nudo",
+      "text": "Fiducia per i greci dopo Parma, voglia di riscatto per il Boca dopo il Valencia."
+    },
+    {
+      "sm_fixture_id": "GW001-EL-20261023-7",
+      "match_date": "2026-10-23",
+      "match_time": "20:00",
+      "competition_round": "1",
+      "competition_stage": "",
+      "competition_group_name": "",
+      "sm_action": "league",
+      "home_score": null,
+      "away_score": null,
+      "competition_key": "GW001_IMC_EUROPA_LEAGUE",
+      "home_name": "Reggina",
+      "home_sm_club_id": "94078889",
+      "home_sm_team_id": "94078889",
+      "home_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/122.png",
+      "home_imc_manager_id": "MNG016",
+      "home_imc_manager_name": "Saverio Cordiano",
+      "away_name": "Genoa",
+      "away_sm_club_id": "94078875",
+      "away_sm_team_id": "94078875",
+      "away_logo_url": "https://cdn.soccerwiki.org/images/logos/clubs/108.png",
+      "away_imc_manager_id": "MNG013",
+      "away_imc_manager_name": "Giovanni Cabrioli",
+      "text": "Si ritrovano subito dopo lo 0–1 deciso da Vlahović: stasera comincia un’altra storia."
+    }
+  ],
+  "closing": "Il caffè di oggi ci ha portato dai risultati di ieri al debutto europeo di stasera. Per gli approfondimenti dell’IMC Europa League, appuntamento con Daytime. Da Federica, Andrea e Alessandro è tutto: buon calcio a tutti!",
+  "standings_label": "Classifica dopo l’8ª giornata · 22 ottobre 2026"
+}
