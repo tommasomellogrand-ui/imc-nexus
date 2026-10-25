@@ -1,0 +1,28 @@
+name: Refresh Final Whistle layout and current day
+on:
+  push:
+    branches: [main]
+    paths: ['finalwhistle-refresh/**', '.github/workflows/finalwhistle-refresh.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: node --check finalwhistle-refresh/final-whistle.js
+      - name: Publish
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 finalwhistle-refresh/deploy.py
+      - name: Check mobile and current Coffee fixtures
+        run: |
+          npm install --prefix /tmp/fwqa playwright@1.56.1
+          node finalwhistle-refresh/verify.cjs
