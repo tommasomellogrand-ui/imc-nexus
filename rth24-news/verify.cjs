@@ -15,7 +15,7 @@ await p.waitForFunction(()=>[...document.querySelectorAll('.rth-club-options img
 await p.setViewportSize({width:390,height:850});const bounds=await dialog.boundingBox();assert(bounds.x>=0&&bounds.width<=390&&bounds.y>=0&&bounds.y+bounds.height<=851);
 await p.screenshot({path:'/tmp/rth24-news-club-filter-open.png'});
 await p.locator('.rth-club-search').fill('fenerbahce');assert.equal(await p.locator('.rth-club-option').count(),1);assert((await p.locator('.rth-club-option').textContent()).includes('Fenerbahçe'));
-await p.locator('.rth-club-search').fill('zzzz-no-club');assert(await p.locator('.rth-club-no-results').isVisible());await p.keyboard.press('Escape');assert(!(await dialog.isVisible()));assert.equal(await p.locator(':focus').getAttribute('id'),'rth-club-trigger');
+await p.locator('.rth-club-search').fill('zzzz-no-club');assert(await p.locator('.rth-club-no-results').isVisible());await p.keyboard.press('Escape');await dialog.waitFor({state:'hidden'});assert(!(await dialog.isVisible()));assert.equal(await p.locator(':focus').getAttribute('id'),'rth-club-trigger');
 const hertha=data.clubs.find(c=>c.name==='Hertha Berlino');await pick(hertha.id);
 assert.deepEqual(await visibleIDs(),expected.filter(x=>x.club_ids?.includes(hertha.id)).map(x=>x.id));
 for(const [key,cat] of [['mercato','market'],['club','club'],['flash-news','flash']]){await p.locator('#rth-tab-'+key).click();assert((await trigger.textContent()).includes(hertha.name));assert.deepEqual(await visibleIDs(),expected.filter(x=>x.club_ids?.includes(hertha.id)&&(x.category||'flash')===cat).map(x=>x.id))}
