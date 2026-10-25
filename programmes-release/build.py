@@ -42,7 +42,7 @@ def make(p,rubric=None,date=None):
     content=banner(p);scripts=[];styles=[]
     if rubric:content+='<p class="programme-return">'+link('daytime/','← Tutto Daytime')+'</p>'
     if p=='rth-24':
-        content+='<section class="rth-intro"><h2>Benvenuti in Road To History 24</h2><p>Il programma di informazione e approfondimento di Road To History. Risultati, prossime partite e mercato: le flash news del mondo GW001, tutte in un unico spazio.</p></section><section class="rth-flash"><h2>Flash News</h2><nav class="rth-tabs" role="tablist" aria-label="Flash News">'
+        content+='<section class="rth-intro"><h2>Benvenuti in Road To History 24</h2><p>Il programma di informazione e approfondimento di Road To History. Risultati, prossime partite e mercato: le flash news del mondo GW001, tutte in un unico spazio.</p></section><section class="rth-flash"><nav class="rth-tabs" role="tablist" aria-label="Flash News">'
         for key,label in [('ultimora','Ultim’ora'),('club','Club News'),('flash-news','Flash News'),('mercato','Calciomercato')]:
             content+=f'<button type="button" role="tab" id="rth-tab-{key}" aria-controls="rth-panel-{key}" aria-selected="{str(key=="ultimora").lower()}" tabindex="{0 if key=="ultimora" else -1}">{label}</button>'
         content+='</nav>'

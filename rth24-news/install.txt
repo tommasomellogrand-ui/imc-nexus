@@ -1,1 +1,1 @@
-RTH24 v5: four category filters and timestamps inside card ribbon.
+RTH24: remove redundant Flash News heading above category tabs.
