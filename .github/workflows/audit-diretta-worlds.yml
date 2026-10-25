@@ -1,0 +1,23 @@
+name: Read Diretta Gol production source
+on:
+  push:
+    branches: [main]
+    paths: ['diretta-worlds-release/audit.py','.github/workflows/audit-diretta-worlds.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 diretta-worlds-release/audit.py
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: diretta-production-source
+          path: /tmp/diretta-source
+          retention-days: 1
