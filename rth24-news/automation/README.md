@@ -21,3 +21,5 @@ Le notizie automatiche conservano ID e orario originali. `transfer` espone perco
 
 ## Foto e stemmi
 Il riepilogo trasferimento usa `from_logo` e `to_logo`: la squadra esterna può avere uno stemma senza entrare nei filtri riservati ai 40 club attivi. Le foto `reporter_image` e `manager_image` affiancano ogni intervento. Le associazioni verificate sono in `portraits.json`: inviati per nome, manager per ID e nome corrispondente, con incarico valido alla data del trasferimento. Una foto mancante non blocca la news né viene sostituita con un altro volto. Aggiungendo una foto verificata al registro, il controllo successivo completa automaticamente le notizie ancora prive di media. Al 25 ottobre manca una fonte verificata per Simone Campanella (MNG033).
+
+La miniatura di Giorgia Cenni mantiene il soggetto sulla destra della fotografia originale, senza modificare il file.
