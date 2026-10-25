@@ -2,7 +2,7 @@
   "id": "gw001-market-ba4796061012ba27735ac4b9-club",
   "published_at": "2026-10-25T09:57:36+01:00",
   "title": "Pierre-Emile Hojbjerg: il punto con Giorgia Cenni e Tommaso Mello",
-  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nHertha BSC annuncia l’arrivo di Pierre-Emile Hojbjerg. Il giocatore lascia Paris FC: operazione da 7,9 milioni di euro.\n\nGiorgia Cenni · Inviato Hertha Berlino\n«È ufficiale l’arrivo di Pierre-Emile Hojbjerg da Paris FC. Nel Codex il ruolo è CD,CC(C). Il rating è 90. Mister, come comincia il suo inserimento?»\n\nTommaso Mello · Manager Hertha Berlino\n«Con Pierre-Emile Hojbjerg cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nHertha BSC annuncia l’arrivo di Pierre-Emile Hojbjerg. Il giocatore lascia Paris FC: operazione da 7,9 milioni di euro.\n\nGiorgia Cenni · Inviato Hertha Berlino\n«È ufficiale l’arrivo di Pierre-Emile Hojbjerg da Paris FC. Un centrocampista difensivo e centrale con rating 90. Mister, come comincia il suo inserimento?»\n\nTommaso Mello · Manager Hertha Berlino\n«Con Pierre-Emile Hojbjerg cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»",
   "category": "club",
   "club_ids": [
     "94079171"
@@ -29,9 +29,9 @@
       "club": "Hertha Berlino",
       "reporter": "Giorgia Cenni",
       "manager": "Tommaso Mello",
-      "question": "È ufficiale l’arrivo di Pierre-Emile Hojbjerg da Paris FC. Nel Codex il ruolo è CD,CC(C). Il rating è 90. Mister, come comincia il suo inserimento?",
+      "question": "È ufficiale l’arrivo di Pierre-Emile Hojbjerg da Paris FC. Un centrocampista difensivo e centrale con rating 90. Mister, come comincia il suo inserimento?",
       "answer": "Con Pierre-Emile Hojbjerg cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare."
     }
   ],
-  "editorial_version": 2
+  "editorial_version": 3
 }
