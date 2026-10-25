@@ -9,7 +9,7 @@ def validate(item):
  assert item.get('category','flash') in ('flash','club','market'),'Invalid category'
  if 'club_ids' in item:
   assert isinstance(item['club_ids'],list) and len(item['club_ids'])<=40 and all(isinstance(x,str) and x.isdigit() for x in item['club_ids']),'Invalid club IDs'
- if 'editorial_version' in item:assert item['editorial_version']==2
+ if 'editorial_version' in item:assert item['editorial_version'] in (2,3)
  if 'transfer' in item:
   t=item['transfer'];assert isinstance(t,dict) and set(t)=={'from','to','formula','amount','date'}
   assert all(isinstance(v,str) and 0<len(v)<=1000 for v in t.values())

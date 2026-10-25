@@ -16,5 +16,5 @@ A missing/unavailable photo or crest NEVER blocks a news item. Publish names/tex
 
 `runtime/report.json` and the public receipt are workflow artifacts. The workflow tests rules, builds/validates, tests the mobile preview, commits generated items, publishes only the RTH24 data/assets (not other programmes or HTML), and verifies the public feed and four tabs.
 
-## Standard editoriale v2
-Le notizie automatiche conservano ID e orario originali. `transfer` espone percorso, formula, corrispettivo e data certificati; `coverage` separa i collegamenti ai club. I nomi dei giocatori non sono tutti maiuscoli. Una sola nota di finzione precede ogni Club News. Ruolo e rating vengono dal Codex; non si attribuiscono motivazioni di mercato o esuberi senza dati di rosa verificati. Il registro `editorial_version: 2` applica una sola volta il nuovo standard alle notizie automatiche esistenti. I contributi manuali non vengono riscritti.
+## Standard editoriale v3
+Le notizie automatiche conservano ID e orario originali. `transfer` espone percorso, formula, corrispettivo e data certificati; `coverage` separa i collegamenti ai club. I nomi dei giocatori non sono tutti maiuscoli. Una sola nota di finzione precede ogni Club News. Ruolo e rating vengono dal Codex; non si attribuiscono motivazioni di mercato o esuberi senza dati di rosa verificati. Il registro `editorial_version: 3` applica una sola volta il nuovo standard alle notizie automatiche esistenti. I contributi manuali non vengono riscritti.

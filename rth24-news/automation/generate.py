@@ -104,7 +104,7 @@ def news(row,snapshot,reporters,now,media=True):
  if status and status not in ('completed','complete','concluso','conclusa','official','ufficiale','transfer','trasferimento','loan','prestito'):raise ValueError('Unsupported transfer status '+status)
  loan=status in ('loan','prestito') or 'prestito' in amount.casefold() or 'loan' in amount.casefold()
  title,text,transfer=editorial(name,fr,to,amount,day,names,loan)
- item={'id':nid,'published_at':now,'title':title,'text':text,'category':'market','club_ids':ids,'teams':[], 'transfer':transfer,'editorial_version':2}
+ item={'id':nid,'published_at':now,'title':title,'text':text,'category':'market','club_ids':ids,'teams':[], 'transfer':transfer,'editorial_version':3}
  if media:
   def optional_asset(url,prefix):
    try:return asset(url,prefix)
@@ -130,7 +130,9 @@ def news(row,snapshot,reporters,now,media=True):
    for cid in ids:
     reporter=reporters[cid]['name'];boss=manager(snapshot,cid,day);buy=cid==str(row.get('to_sm_world_club_id'))
     role=p.get('position') or row.get('player_position')
-    profile=(f' Nel Codex il ruolo è {role}.' if role else '')+(f' Il rating è {rating}.' if rating is not None else '')
+    role_label={'CD,CC(C)':'centrocampista difensivo e centrale','CC(C)':'centrocampista centrale','CD(C)':'centrocampista difensivo','P':'portiere','GK':'portiere','D(C)':'difensore centrale','A(C)':'attaccante centrale'}.get(str(role))
+    profile=(f' Un {role_label}' if role_label else ' Un giocatore')+(f' con rating {rating}.' if rating is not None else '.')
+    if not role_label and rating is None:profile=''
     if exchange:
      incoming=name if buy else ', '.join(names);outgoing=', '.join(names) if buy else name
      question=f'Per {clubs[cid]["name"]} arrivano {incoming} e partono {outgoing}. Mister, come accompagniamo questo cambiamento?'
@@ -167,16 +169,16 @@ def main():
  for key,(_,row) in sorted(seen.items()):
   if key in conflicts:pending.append({'event':key,'reason':'Conflicting certified duplicates'});continue
   base=R/'items'/('gw001-market-'+key+'.json');club=R/'items'/('gw001-market-'+key+'-club.json')
-  if base.exists() and ledger.get(key,{}).get('complete') and ledger.get(key,{}).get('media_complete') and ledger.get(key,{}).get('editorial_version')==2:continue
+  if base.exists() and ledger.get(key,{}).get('complete') and ledger.get(key,{}).get('media_complete') and ledger.get(key,{}).get('editorial_version')==3:continue
   try:
    items,reason=news(row,snap,reporters,now,media=True)
-   ledger[key]={'editorial_version':2,'complete':not bool(reason),'media_complete':bool(items[0].get('image')) and all(t.get('logo') for t in items[0]['teams']),'transfer_number':row.get('imc_transfer_number'),'normalized_date':row['normalized_transfer_date']}
+   ledger[key]={'editorial_version':3,'complete':not bool(reason),'media_complete':bool(items[0].get('image')) and all(t.get('logo') for t in items[0]['teams']),'transfer_number':row.get('imc_transfer_number'),'normalized_date':row['normalized_transfer_date']}
    if reason:pending.append({'event':key,'reason':reason})
    for item in items:
     path=R/'items'/(item['id']+'.json')
     if path.exists():
      previous=json.loads(path.read_text())
-     if previous.get('editorial_version',1)<2:
+     if previous.get('editorial_version',1)<3:
       for field in ['title','text','transfer','coverage','editorial_version']:
        if field in item:previous[field]=item[field]
      if item.get('image'):previous['image']=item['image']
