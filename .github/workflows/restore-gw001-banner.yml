@@ -1,0 +1,71 @@
+name: Restore GW001 ALL TO PLAY FOR home banner
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/restore-gw001-banner.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore only home banner and refresh script version
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import hashlib,io,os,re,ssl,urllib.request
+          from pathlib import Path
+          from ftplib import FTP_TLS
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          ftp=FTP_TLS(context=ctx);ftp.connect(host,21,timeout=30);ftp.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);ftp.prot_p();ftp.cwd(root)
+          def read(n):
+              b=io.BytesIO();ftp.retrbinary('RETR '+n,b.write);return b.getvalue()
+          def put(n,b):
+              ftp.storbinary('STOR '+n,io.BytesIO(b));assert read(n)==b
+          old=read('assets/home.js');index=read('index.html')
+          new=Path('entry-release/home.js').read_bytes()
+          assert old==new or hashlib.sha256(old).hexdigest()=='5df142eaf79d15b7d06eb676f5842d53bf0bc35f7354f5852182af174919bd73','Home changed; review required'
+          updated,count=re.subn(rb'assets/home\.js\?v=[^"\s]+',b'assets/home.js?v=20261025-atpf-restored',index)
+          assert count==1
+          assert len(read('alltoplayfor/assets/all-to-play-for-brand-v1.webp'))>1000
+          for name,data in [('assets/home.js',old),('index.html',index)]:
+              put(name+'.before-banner-'+os.environ['GITHUB_SHA'][:12],data)
+          try:
+              assert read('assets/home.js')==old and read('index.html')==index
+              put('assets/home.js',new);put('index.html',updated)
+          except Exception:
+              put('assets/home.js',old);put('index.html',index);raise
+          ftp.quit()
+          for name,data in [('assets/home.js',new),('index.html',updated)]:
+              req=urllib.request.Request('https://www.italianmastersclub.it/nexus/'+name+'?verify='+os.environ['GITHUB_SHA'],headers={'Cache-Control':'no-cache'})
+              assert urllib.request.urlopen(req,timeout=45).read()==data
+          print('PASS: banner restored; only home.js and its script version changed')
+          PY
+      - name: Verify rendered GW001 banner
+        run: |
+          npm install --prefix /tmp/banner-qa playwright@1.56.1
+          NODE_PATH=/tmp/banner-qa/node_modules node <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{const b=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true});try{
+          const p=await b.newPage({viewport:{width:390,height:844}});
+          await p.goto('https://www.italianmastersclub.it/nexus/?world=GW001',{waitUntil:'domcontentloaded'});
+          const a=p.locator('.atpf-home-entry a');await a.waitFor();
+          if(await a.getAttribute('href')!='/nexus/alltoplayfor/')throw Error('Wrong link');
+          await p.waitForFunction(()=>{const i=document.querySelector('.atpf-home-entry img');return i&&i.complete&&i.naturalWidth>0});
+          if(await p.locator('#home-content h2').filter({hasText:'The Club'}).count())throw Error('Legacy block present');
+          console.log('PASS: mobile banner loaded, link correct, The Club removed');
+          }finally{await b.close()}})().catch(e=>{console.error(e);process.exit(1)});
+          JS
