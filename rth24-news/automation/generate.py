@@ -59,9 +59,34 @@ def asset(url,prefix):
  p.write_bytes(data)
  return name
 
+def display_name(value):
+ # Preserve mixed-case spelling; remove only the database's all-caps style.
+ return ' '.join(word.title() if word.isupper() else word for word in str(value).split())
+
+def money_label(amount):
+ value=cash(amount)
+ if value is None:return str(amount)
+ if value>=1000000:
+  return format((value/1000000).normalize(),'f').replace('.',',')+' milioni di euro'
+ return f'{value:,.0f}'.replace(',','.')+' euro'
+
+def editorial(name,fr,to,amount,day,names,loan):
+ formula='Prestito' if loan else 'Scambio con contropartite' if names else 'Trasferimento definitivo'
+ cost=money_label(amount)
+ if names:cost+=' + '+', '.join(names)
+ title=f'{name}, ufficiale: '+('prestito a ' if loan else '')+to
+ if not loan:title=f'{to}: ufficiale l’arrivo di {name}'
+ if fr.casefold() in ('svincolato','free agent'):
+  text=f'{to} annuncia l’arrivo di {name}, proveniente dalla lista degli svincolati. Operazione da {cost}.'
+ elif names:
+  text=f'{to} e {fr} chiudono l’accordo per {name}. Operazione da {money_label(amount)}, con '+', '.join(names)+f' nel percorso inverso verso {fr}.'
+ else:
+  text=f'{to} annuncia l’arrivo di {name}'+(' in prestito' if loan else '')+f'. Il giocatore lascia {fr}: operazione da {cost}.'
+ return title,text,{'from':fr,'to':to,'formula':formula,'amount':cost,'date':day}
+
 def news(row,snapshot,reporters,now,media=True):
  clubs={str(x['club_id']):x for x in snapshot['clubs']};players=snapshot['players'];pid=str(row['player_id']);p=players.get(pid,{})
- name=str(p.get('full_name') or row.get('player_name') or '').strip()
+ name=display_name(p.get('full_name') or row.get('player_name') or '')
  fr=str(row.get('club_from') or '').strip();to=str(row.get('club_to') or '').strip();amount=str(row.get('amount_text') or '').strip()
  if not all([name,fr,to,amount]):raise ValueError('Incomplete transfer facts')
  day=str(row['normalized_transfer_date']);date.fromisoformat(day)
@@ -73,17 +98,13 @@ def news(row,snapshot,reporters,now,media=True):
   xp=players.get(str(x.get('player_id')),{})
   n=xp.get('full_name') or x.get('player_name') or x.get('name')
   if not n:raise ValueError('Exchange player without identity')
-  names.append(str(n))
+  names.append(display_name(n))
  ids=participants(row,clubs);key=fingerprint(row);nid='gw001-market-'+key
  status=str(row.get('status') or '').casefold()
  if status and status not in ('completed','complete','concluso','conclusa','official','ufficiale','transfer','trasferimento','loan','prestito'):raise ValueError('Unsupported transfer status '+status)
  loan=status in ('loan','prestito') or 'prestito' in amount.casefold() or 'loan' in amount.casefold()
- title=f'{name} al {to}'+(': prestito' if loan else ': trasferimento ufficiale')
- text=f'{name} passa dal {fr} al {to}'+(' in prestito.' if loan else '.')
- text+='\n\n'+('Operazione con scambio. ' if exchange else '')+'Corrispettivo registrato: '+amount+'.'
- if exchange:text+='\nContropartite verso '+fr+': '+', '.join(names)+'.'
- text+='\nData del trasferimento: '+date.fromisoformat(day).strftime('%d/%m/%Y')+'.'
- item={'id':nid,'published_at':now,'title':title,'text':text,'category':'market','club_ids':ids,'teams':[]}
+ title,text,transfer=editorial(name,fr,to,amount,day,names,loan)
+ item={'id':nid,'published_at':now,'title':title,'text':text,'category':'market','club_ids':ids,'teams':[], 'transfer':transfer,'editorial_version':2}
  if media:
   def optional_asset(url,prefix):
    try:return asset(url,prefix)
@@ -104,21 +125,26 @@ def news(row,snapshot,reporters,now,media=True):
  result=[item];pending=None
  if qualifies and ids:
   try:
-   paragraphs=['Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.',text]
+   disclosure='Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.'
+   paragraphs=[disclosure,text];coverage=[]
    for cid in ids:
     reporter=reporters[cid]['name'];boss=manager(snapshot,cid,day);buy=cid==str(row.get('to_sm_world_club_id'))
+    role=p.get('position') or row.get('player_position')
+    profile=(f' Nel Codex il ruolo è {role}.' if role else '')+(f' Il rating è {rating}.' if rating is not None else '')
     if exchange:
      incoming=name if buy else ', '.join(names);outgoing=', '.join(names) if buy else name
      question=f'Per {clubs[cid]["name"]} arrivano {incoming} e partono {outgoing}. Mister, come accompagniamo questo cambiamento?'
      answer=f'Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.'
     elif buy:
-     question=f'{name} arriva dal {fr}. Mister, quale sarà il primo passo?'
-     answer='Il primo passo sarà lavorare insieme al gruppo. Impiego e inserimento vanno valutati sul campo, senza anticipare gerarchie.'
+     question=f'È ufficiale l’arrivo di {name} da {fr}.'+profile+' Mister, come comincia il suo inserimento?'
+     if money is not None and money>10000000:question=f'L’accordo per {name} è da {money_label(amount)}.'+profile+' Mister, come accompagnerà il suo ingresso nel gruppo?'
+     answer=f'Con {name} cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.'
     else:
-     question=f'{name} passa al {to}. Mister, da dove si riparte dopo questa uscita?'
-     answer='Si riparte dal lavoro con la rosa a disposizione. Questa operazione, da sola, non annuncia altri acquisti né definisce le prossime scelte.'
+     question=f'{name} proseguirà con {to}.'+profile+' Mister, come affrontate il lavoro dopo questa partenza?'
+     answer=f'Salutiamo {name} e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.'
+    coverage.append({'club':clubs[cid]['name'],'reporter':reporter,'manager':boss,'question':question,'answer':answer})
     paragraphs += [f'{reporter} · Inviato {clubs[cid]["name"]}\n«{question}»',f'{boss} · Manager {clubs[cid]["name"]}\n«{answer}»']
-   club={**item,'id':nid+'-club','category':'club','title':f'{name}: la parola ai club' if len(ids)==2 else f'{name}: il punto da {clubs[ids[0]]["name"]}','text':'\n\n'.join(paragraphs)}
+   club={**item,'id':nid+'-club','category':'club','title':f'{name}: il punto dai due club' if len(ids)==2 else f'{name}: il punto con {coverage[0]["reporter"]} e {coverage[0]["manager"]}','text':'\n\n'.join(paragraphs),'coverage':coverage}
    result.append(club)
   except (ValueError,KeyError) as e:pending='Club News: '+str(e)
  elif not qualifies and (rating is None or money is None or exchange):
@@ -141,15 +167,18 @@ def main():
  for key,(_,row) in sorted(seen.items()):
   if key in conflicts:pending.append({'event':key,'reason':'Conflicting certified duplicates'});continue
   base=R/'items'/('gw001-market-'+key+'.json');club=R/'items'/('gw001-market-'+key+'-club.json')
-  if base.exists() and ledger.get(key,{}).get('complete') and ledger.get(key,{}).get('media_complete'):continue
+  if base.exists() and ledger.get(key,{}).get('complete') and ledger.get(key,{}).get('media_complete') and ledger.get(key,{}).get('editorial_version')==2:continue
   try:
    items,reason=news(row,snap,reporters,now,media=True)
-   ledger[key]={'complete':not bool(reason),'media_complete':bool(items[0].get('image')) and all(t.get('logo') for t in items[0]['teams']),'transfer_number':row.get('imc_transfer_number'),'normalized_date':row['normalized_transfer_date']}
+   ledger[key]={'editorial_version':2,'complete':not bool(reason),'media_complete':bool(items[0].get('image')) and all(t.get('logo') for t in items[0]['teams']),'transfer_number':row.get('imc_transfer_number'),'normalized_date':row['normalized_transfer_date']}
    if reason:pending.append({'event':key,'reason':reason})
    for item in items:
     path=R/'items'/(item['id']+'.json')
     if path.exists():
      previous=json.loads(path.read_text())
+     if previous.get('editorial_version',1)<2:
+      for field in ['title','text','transfer','coverage','editorial_version']:
+       if field in item:previous[field]=item[field]
      if item.get('image'):previous['image']=item['image']
      for i,t in enumerate(item.get('teams',[])):
       if t.get('logo') and i<len(previous.get('teams',[])):previous['teams'][i]['logo']=t['logo']

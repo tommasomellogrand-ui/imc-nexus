@@ -71,7 +71,7 @@ jobs:
           ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
           ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
           ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
-        run: RTH24_DATA_ONLY=1 python3 rth24-news/deploy.py
+        run: python3 rth24-news/deploy.py
       - name: Verify news visible on public RTH24
         run: |
           NODE_PATH=/tmp/rth24-news-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node rth24-news/verify.cjs

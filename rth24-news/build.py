@@ -5,10 +5,20 @@ from media import prepare,pending_upload
 R=Path(__file__).parent
 
 def validate(item):
- assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category','club_ids'},'Invalid fields'
+ assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category','club_ids','transfer','coverage','editorial_version'},'Invalid fields'
  assert item.get('category','flash') in ('flash','club','market'),'Invalid category'
  if 'club_ids' in item:
   assert isinstance(item['club_ids'],list) and len(item['club_ids'])<=40 and all(isinstance(x,str) and x.isdigit() for x in item['club_ids']),'Invalid club IDs'
+ if 'editorial_version' in item:assert item['editorial_version']==2
+ if 'transfer' in item:
+  t=item['transfer'];assert isinstance(t,dict) and set(t)=={'from','to','formula','amount','date'}
+  assert all(isinstance(v,str) and 0<len(v)<=1000 for v in t.values())
+  datetime.strptime(t['date'],'%Y-%m-%d')
+ if 'coverage' in item:
+  assert item.get('category')=='club' and isinstance(item['coverage'],list) and 1<=len(item['coverage'])<=2
+  for c in item['coverage']:
+   assert set(c)=={'club','reporter','manager','question','answer'}
+   assert all(isinstance(v,str) and 0<len(v)<=3000 for v in c.values())
  def asset(name):
   assert isinstance(name,str) and re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name),'Invalid asset filename'
   assert (R/'assets'/name).is_file(),'Missing image: '+name

@@ -1,12 +1,23 @@
 import unittest,copy
 from unittest.mock import patch
-from generate import eligible,fingerprint,news,cash
+from generate import eligible,fingerprint,news,cash,money_label,display_name
 class GenerateTests(unittest.TestCase):
  def setUp(self):
   self.r={'player_id':1,'player_name':'Test Player','club_from':'Away','club_to':'Home','from_sm_world_club_id':10,'to_sm_world_club_id':20,'normalization_status':'CERTIFIED','normalized_transfer_date':'2026-10-25','imported_at':'2026-10-25 08:00:00','amount_text':'10M','player_rating':89,'normalized_exchange_players':[]}
   self.s={'players':{},'clubs':[{'club_id':10,'name':'Away'},{'club_id':20,'name':'Home'}],'managers':[{'team_id':10,'full_name':'Manager A','start_date':'2026-01-01','end_date':None},{'team_id':20,'full_name':'Manager B','start_date':'2026-01-01','end_date':None}]}
   self.reporters={'10':{'name':'Reporter A'},'20':{'name':'Reporter B'}}
  def make(self):return news(self.r,self.s,self.reporters,'2026-10-25T10:00:00+01:00',False)
+ def test_editorial_format(self):
+  self.assertEqual(money_label('10M'),'10 milioni di euro')
+  self.assertEqual(money_label('16.0M'),'16 milioni di euro')
+  self.assertEqual(money_label('630K'),'630.000 euro')
+  self.assertEqual(display_name('Pierre-Emile HOJBJERG'),'Pierre-Emile Hojbjerg')
+  self.r['player_rating']=90
+  items,_=self.make()
+  self.assertEqual(items[0]['transfer']['from'],'Away')
+  self.assertNotIn('Corrispettivo registrato',items[0]['text'])
+  self.assertEqual(len(items[1]['coverage']),2)
+  self.assertEqual(items[1]['coverage'][0]['manager'],'Manager B')
  def test_missing_image_does_not_block(self):
   with patch('generate.asset',side_effect=ValueError('unavailable')):
    items,_=news(self.r,self.s,self.reporters,'2026-10-25T10:00:00+01:00',True)

@@ -19,7 +19,23 @@ for(const item of [...data.items].sort((a,b)=>Date.parse(b.published_at)-Date.pa
  const time=el('time',new Intl.DateTimeFormat('it-IT',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Rome'}).format(new Date(item.published_at)));time.dateTime=item.published_at;
  if(item.teams?.length){const teams=el('div',null,'rth-news-teams');for(const team of item.teams){const badge=el('span',null,'rth-news-team'),logo=picture(team.logo,'Stemma '+team.name,'rth-news-logo');if(logo)badge.append(logo);badge.append(el('span',team.name));teams.append(badge)}body.append(teams)}
  body.append(el('h3',item.title));header.append(body);
- const content=el('div',null,'rth-news-content');content.append(el('p',item.text));const ribbon=el('div',null,'rth-news-ribbon'),icon=el('span','ϟ','rth-news-icon');icon.setAttribute('aria-hidden','true');ribbon.append(icon,el('span',item.category==='club'?'CLUB NEWS':item.category==='market'?'CALCIOMERCATO':'FLASH NEWS'),time);card.append(ribbon,header,content);entry.append(card);list.append(entry);
+ const content=el('div',null,'rth-news-content');
+ if(item.coverage?.length){
+  const intro=item.text.split('\n\n').slice(0,2);content.append(el('p',intro[0],'rth-news-disclosure'),el('p',intro[1],'rth-news-intro'));
+  for(const c of item.coverage){
+   const section=el('section',null,'rth-news-connection');section.append(el('h4','Dal club · '+c.club));
+   for(const [name,role,text] of [[c.reporter,'In collegamento · '+c.club,c.question],[c.manager,'Manager · '+c.club,c.answer]]){
+    const turn=el('div',null,'rth-news-turn');const speaker=el('div',null,'rth-news-speaker');speaker.append(el('strong',name),el('span',role));turn.append(speaker,el('p','«'+text+'»'));section.append(turn);
+   }content.append(section);
+  }
+ }else{content.append(el('p',item.text))}
+ const ribbon=el('div',null,'rth-news-ribbon'),icon=el('span',item.category==='market'?'↔':item.category==='club'?'◉':'ϟ','rth-news-icon');icon.setAttribute('aria-hidden','true');
+ ribbon.append(icon,el('span',item.category==='club'?'CLUB NEWS':item.category==='market'?'CALCIOMERCATO':'FLASH NEWS'),time);card.append(ribbon,header);
+ if(item.transfer){
+  const summary=el('div',null,'rth-news-transfer');summary.append(el('div',item.transfer.from+' → '+item.transfer.to,'rth-news-route'));
+  const facts=el('dl',null,'rth-news-facts');for(const [label,value] of [['Formula',item.transfer.formula],['Operazione',item.transfer.amount],['Conclusa il',new Intl.DateTimeFormat('it-IT',{day:'2-digit',month:'2-digit',year:'numeric',timeZone:'UTC'}).format(new Date(item.transfer.date+'T12:00:00Z'))]]){const fact=el('div');fact.append(el('dt',label),el('dd',value));facts.append(fact)}summary.append(facts);card.append(summary);
+ }
+ card.append(content);entry.append(card);list.append(entry);
 }
 filter();for(const p of document.querySelectorAll('.rth-panel')){p.dataset.feedState='ready';p.dataset.feedRevision=data.revision||'';}
 }catch(e){list.replaceChildren(el('p','Flash News temporaneamente non disponibili. Riprova.'));const retry=el('button','Riprova');retry.type='button';retry.addEventListener('click',load);list.append(retry);panel.dataset.feedState='error'}}load();})();
