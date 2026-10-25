@@ -22,7 +22,9 @@
     "to": "CD Extremadura",
     "formula": "Trasferimento definitivo",
     "amount": "4 milioni di euro",
-    "date": "2026-10-22"
+    "date": "2026-10-22",
+    "from_logo": "market-club-94079188-5d487794c122a9b8.png",
+    "to_logo": "market-global-club-7108-d0e423f4c1a53e44.png"
   },
   "editorial_version": 3
 }

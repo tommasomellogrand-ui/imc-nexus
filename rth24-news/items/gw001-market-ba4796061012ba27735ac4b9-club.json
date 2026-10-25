@@ -22,7 +22,9 @@
     "to": "Hertha BSC",
     "formula": "Trasferimento definitivo",
     "amount": "7,9 milioni di euro",
-    "date": "2026-10-23"
+    "date": "2026-10-23",
+    "from_logo": "market-global-club-1692-4b0cdbce9bad7bc5.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
   },
   "coverage": [
     {
@@ -30,7 +32,11 @@
       "reporter": "Giorgia Cenni",
       "manager": "Tommaso Mello",
       "question": "È ufficiale l’arrivo di Pierre-Emile Hojbjerg da Paris FC. Un centrocampista difensivo e centrale con rating 90. Mister, come comincia il suo inserimento?",
-      "answer": "Con Pierre-Emile Hojbjerg cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare."
+      "answer": "Con Pierre-Emile Hojbjerg cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.",
+      "reporter_image": {
+        "file": "news-person-4137ea9a27b84df3-245eb515441d2502.webp",
+        "alt": "Giorgia Cenni"
+      }
     }
   ],
   "editorial_version": 3

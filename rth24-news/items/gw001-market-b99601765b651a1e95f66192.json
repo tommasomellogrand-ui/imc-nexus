@@ -22,7 +22,9 @@
     "to": "Palermo FC",
     "formula": "Trasferimento definitivo",
     "amount": "1,1 milioni di euro",
-    "date": "2026-10-24"
+    "date": "2026-10-24",
+    "from_logo": "market-global-club-35-6673f2ae8d248bf9.png",
+    "to_logo": "market-club-94078884-25823d0fe372f873.png"
   },
   "editorial_version": 3
 }

@@ -22,7 +22,9 @@
     "to": "Sampdoria",
     "formula": "Trasferimento definitivo",
     "amount": "10 milioni di euro",
-    "date": "2026-10-23"
+    "date": "2026-10-23",
+    "from_logo": "market-global-club-11-a75a71421fb97b6e.png",
+    "to_logo": "market-club-94078892-f5bfd12f94cf0bcf.png"
   },
   "editorial_version": 3
 }

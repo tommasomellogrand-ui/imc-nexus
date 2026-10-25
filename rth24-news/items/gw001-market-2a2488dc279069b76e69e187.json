@@ -22,7 +22,9 @@
     "to": "Campobasso Calcio",
     "formula": "Trasferimento definitivo",
     "amount": "16 milioni di euro",
-    "date": "2026-10-23"
+    "date": "2026-10-23",
+    "from_logo": "market-global-club-625-29c8178d4d3cb23f.png",
+    "to_logo": "market-club-94082591-b2f2c10c6d3b1b6c.png"
   },
   "editorial_version": 3
 }

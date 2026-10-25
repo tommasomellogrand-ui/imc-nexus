@@ -22,7 +22,9 @@
     "to": "Bristol Rovers",
     "formula": "Trasferimento definitivo",
     "amount": "4,1 milioni di euro",
-    "date": "2026-10-23"
+    "date": "2026-10-23",
+    "from_logo": "market-club-94079161-2215dbdfe461abd9.png",
+    "to_logo": "market-global-club-14-2d8c1d3b71c2f4ee.png"
   },
   "editorial_version": 3
 }

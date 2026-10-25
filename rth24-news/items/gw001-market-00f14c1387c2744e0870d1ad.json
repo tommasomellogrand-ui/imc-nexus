@@ -18,7 +18,9 @@
     "to": "1. FC Nürnberg",
     "formula": "Trasferimento definitivo",
     "amount": "600.000 euro",
-    "date": "2026-10-22"
+    "date": "2026-10-22",
+    "from_logo": "market-club-94078906-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-386-8331ed3589402003.png"
   },
   "editorial_version": 3
 }

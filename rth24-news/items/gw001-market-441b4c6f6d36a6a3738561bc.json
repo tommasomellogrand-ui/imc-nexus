@@ -22,7 +22,9 @@
     "to": "Real Madrid",
     "formula": "Trasferimento definitivo",
     "amount": "4 milioni di euro",
-    "date": "2026-10-22"
+    "date": "2026-10-22",
+    "from_logo": "market-club-94079188-5d487794c122a9b8.png",
+    "to_logo": "market-global-club-163-7ef177340849aadc.png"
   },
   "editorial_version": 3
 }

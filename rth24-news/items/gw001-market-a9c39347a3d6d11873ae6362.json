@@ -22,7 +22,9 @@
     "to": "Celtic",
     "formula": "Trasferimento definitivo",
     "amount": "381.000 euro",
-    "date": "2026-10-23"
+    "date": "2026-10-23",
+    "from_logo": "market-global-club-787-a2f4909553b0d88c.png",
+    "to_logo": "market-club-94079188-5d487794c122a9b8.png"
   },
   "editorial_version": 3
 }
