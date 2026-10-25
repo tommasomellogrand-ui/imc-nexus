@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          node --check subbuteo-diretta-release/subbuteo-v2.js
+          node --check subbuteo-diretta-release/subbuteo-v3.js
           npm install --prefix /tmp/sd-qa playwright@1.56.1
       - name: Publish GW011 presentation
         env:

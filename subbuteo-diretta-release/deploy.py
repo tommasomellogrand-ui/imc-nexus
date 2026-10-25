@@ -2,7 +2,7 @@ import os,ssl,io,json,hashlib,urllib.request
 from pathlib import Path
 from ftplib import FTP_TLS,error_perm
 R=Path(__file__).parent;baseline=json.loads((R/'baseline.json').read_text())
-files={ 'diretta-gol/'+n:(R/n).read_bytes() for n in ['subbuteo-v2.js','subbuteo-v1.css','subbuteo-embed-v1.css']}
+files={ 'diretta-gol/'+n:(R/n).read_bytes() for n in ['subbuteo-v3.js','subbuteo-v1.css','subbuteo-embed-v1.css']}
 files.update({'diretta-gol/index.html':(R/'page.html').read_bytes(),'index.html':(R/'home.html').read_bytes()})
 host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','');raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/');domain=host[4:] if host.startswith('ftp.') else host
 remote=raw if raw.startswith('/www.') else f'/www.{domain}{raw}';ctx=ssl.create_default_context();ctx.check_hostname=False
