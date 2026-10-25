@@ -1,0 +1,38 @@
+name: Publish DayTime RTH cups
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/daytime-cups.yml', 'daytime-cups-release/**']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate scripts
+        run: |
+          node --check daytime-cups-release/daytime-cups-v1.js
+          python3 -m py_compile daytime-cups-release/build.py daytime-cups-release/deploy.py
+      - name: Verify desktop and mobile before publication
+        run: |
+          npm install --prefix /tmp/daytime-qa playwright@1.56.1
+          node daytime-cups-release/verify.cjs
+      - name: Publish reviewed DayTime pages
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 daytime-cups-release/deploy.py
+      - name: Verify live sections
+        run: node daytime-cups-release/verify.cjs --live
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daytime-cups-review
+          path: /tmp/daytime-*.png
