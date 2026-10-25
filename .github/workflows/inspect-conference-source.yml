@@ -1,0 +1,33 @@
+name: Inspect IMC competition data source
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/inspect-conference-source.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read competition data structure
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,re
+          from ftplib import FTP_TLS
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root+'/competitions')
+          b=io.BytesIO();f.retrbinary('RETR imc-cups.php',b.write)
+          s=b.getvalue().decode()
+          for line in s.splitlines():
+              if not re.search(r'password|secret|token|DB_PASS|username',line,re.I): print(line)
+          f.quit()
+          PY
