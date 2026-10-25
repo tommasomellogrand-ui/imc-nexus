@@ -38,6 +38,7 @@ jobs:
           echo "DEPLOY_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           python3 -m pip install Pillow==11.3.0
           python3 -m unittest discover -s rth24-news -p test_media.py
+          python3 -m unittest discover -s rth24-news -p test_filters.py
           python3 programmes-release/build.py
           node --check rth24-news/feed.js
           npm install --prefix /tmp/rth24-news-qa playwright@1.56.1

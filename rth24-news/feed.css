@@ -64,3 +64,24 @@ body[data-programme="rth-24"] .rth-panel{padding:0;border:0;border-radius:0;back
 @media(max-width:600px){.rth-news-route{gap:7px;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr)}.rth-news-route-club{gap:7px;font-size:12px}.rth-news-route-logo{width:29px;height:34px}.rth-news-avatar{width:54px;height:62px}}
 
 .rth-news-avatar[alt="Giorgia Cenni"]{object-position:right center}
+
+.rth-club-filter{display:grid;gap:8px;margin:14px 0 0;font-family:Inter,sans-serif}
+.rth-club-trigger{display:flex;align-items:center;gap:10px;width:100%;min-height:50px;padding:10px 14px;background:#fff;border:1px solid #cbd6e4;border-radius:12px;font:600 14px/1.4 Inter,sans-serif;text-align:left;color:#11233e;cursor:pointer}
+.rth-club-chevron{margin-left:auto;font-size:22px}.rth-club-logo{width:28px;height:30px;object-fit:contain;flex-shrink:0}
+.rth-club-reset{justify-self:end;border:0;background:none;text-decoration:underline;color:#52647b;font:500 12px/1.5 Inter,sans-serif;cursor:pointer;padding:3px 0}
+.rth-club-dialog{position:fixed;inset:auto 0 0;margin:0 auto;width:min(100%,560px);max-width:100%;max-height:84vh;max-height:84dvh;border:0;border-radius:22px 22px 0 0;padding:0;background:#fff;color:#11233e;box-shadow:0 -12px 50px #11233e20;font-family:Inter,sans-serif;box-sizing:border-box;overflow:hidden}
+.rth-club-dialog[open]{display:flex;flex-direction:column}.rth-club-dialog::backdrop{background:#08172a80}
+.rth-club-dialog-head{position:relative;flex-shrink:0;padding:12px 20px 16px;background:#fff}
+.rth-club-handle{width:40px;height:4px;border-radius:8px;background:#cbd2dc;margin:0 auto 18px}
+.rth-club-dialog h2{margin:0 44px 6px 0;font:700 23px/1.3 Inter,sans-serif;text-align:left;color:#11233e}
+.rth-club-dialog-head>p{margin:0 0 18px;font:400 13px/1.5 Inter,sans-serif;color:#6c788a;text-align:left}
+.rth-club-close{position:absolute;right:12px;top:29px;width:44px;height:44px;border:0;background:transparent;color:#11233e;font:300 30px/1 Inter,sans-serif;cursor:pointer}
+.rth-club-search{box-sizing:border-box;width:100%;min-height:46px;border:1px solid #e3e9f0;border-radius:10px;background:#f2f5f9;padding:11px 14px;color:#11233e;font:400 16px/1.4 Inter,sans-serif}
+.rth-club-options{overflow-y:auto;overscroll-behavior:contain;min-height:0;padding:0 20px max(18px,env(safe-area-inset-bottom));-webkit-overflow-scrolling:touch}
+.rth-club-option{display:flex;align-items:center;gap:12px;width:100%;min-height:58px;padding:11px 0;border:0;border-bottom:1px solid #e7ecf2;background:#fff;text-align:left;color:#11233e;font:500 15px/1.4 Inter,sans-serif;cursor:pointer}
+.rth-club-option[aria-pressed=true]{color:#11233e;font-weight:700}.rth-club-check{margin-left:auto;width:21px;height:21px;border:1px solid #9da9b7;border-radius:50%;flex-shrink:0;text-align:center;font-size:14px;line-height:21px}
+.rth-club-option[aria-pressed=true] .rth-club-check{background:#c6a24f;border-color:#c6a24f;color:#11233e}
+.rth-club-all-icon{width:28px;font-size:27px;text-align:center;flex-shrink:0}.rth-club-no-results{padding:5px 20px 24px;color:#6c788a;font:400 14px/1.5 Inter,sans-serif}
+.rth-club-trigger:focus-visible,.rth-club-option:focus-visible,.rth-club-close:focus-visible,.rth-club-reset:focus-visible,.rth-club-search:focus-visible{outline:3px solid #c6a24f;outline-offset:2px}
+.rth-club-filter[hidden],.rth-club-reset[hidden],.rth-club-no-results[hidden]{display:none!important}
+@media(min-width:700px){.rth-club-dialog{inset:0;margin:auto;border-radius:20px;max-height:75vh}.rth-club-filter{max-width:560px}.rth-club-handle{display:none}.rth-club-dialog-head{padding-top:24px}.rth-club-close{top:17px}}

@@ -45,15 +45,27 @@ def validate(item):
  return d.timestamp()
 
 def build():
+ clubs=json.loads((R/'automation/clubs.json').read_text())
+ assert len(clubs)==40 and len({c['id'] for c in clubs})==40,'Expected 40 active GW001 clubs'
+ names={}
+ for club in clubs:
+  for name in [club['name'],*club.get('aliases',[])]:
+   key=name.strip().casefold();assert key not in names or names[key]==club['id'];names[key]=club['id']
+  prepare([{'id':'club-filter-'+club['id'],'teams':[club]}])
+ active_ids={c['id'] for c in clubs}
  items=[]
  for p in sorted((R/'items').glob('*.json')):
   item=json.loads(p.read_text())
   if pending_upload(item):
    print('WAITING FOR PHOTO (not published):',p.stem);continue
-  prepare([item]);validate(item);assert p.stem==item['id'],'Filename must match id';items.append(item)
+  prepare([item]);validate(item)
+  tagged=list(dict.fromkeys(item.get('club_ids',[])+[names[t['name'].strip().casefold()] for t in item.get('teams',[]) if t['name'].strip().casefold() in names]))
+  assert set(tagged)<=active_ids,'Unknown active club ID in '+item['id']
+  item['club_ids']=tagged
+  assert p.stem==item['id'],'Filename must match id';items.append(item)
  assert len({x['id'] for x in items})==len(items),'Duplicate ID'
  items.sort(key=lambda x:(validate(x),x['id']),reverse=True)
  out=R/'dist';out.mkdir(exist_ok=True)
- (out/'flash-news.json').write_text(json.dumps({'version':1,'revision':os.environ.get('DEPLOY_SHA','preview'),'items':items},ensure_ascii=False,indent=2)+'\n')
+ (out/'flash-news.json').write_text(json.dumps({'version':1,'revision':os.environ.get('DEPLOY_SHA','preview'),'items':items,'clubs':[{k:c[k] for k in ['id','name','logo']} for c in clubs]},ensure_ascii=False,indent=2)+'\n')
  print('Validated',len(items),'Flash News')
 if __name__=='__main__':build()
