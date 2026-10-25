@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-314d0d68b38be84b27d5ab39",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Filip STANKOVIĆ al Sampdoria: trasferimento ufficiale",
+  "text": "Filip STANKOVIĆ passa dal Venezia FC al Sampdoria.\n\nCorrispettivo registrato: 2.4M.\nData del trasferimento: 22/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94078892"
+  ],
+  "teams": [
+    {
+      "name": "Sampdoria",
+      "logo": "market-club-94078892-f5bfd12f94cf0bcf.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-105473-7c21b33703e3b3e7.png",
+    "alt": "Filip STANKOVIĆ"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "gw001-market-00f14c1387c2744e0870d1ad",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Tino KUSANOVIĆ al 1. FC Nürnberg: trasferimento ufficiale",
+  "text": "Tino KUSANOVIĆ passa dal Atlético Madrid al 1. FC Nürnberg.\n\nCorrispettivo registrato: 600k.\nData del trasferimento: 22/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94078906"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    }
+  ]
+}

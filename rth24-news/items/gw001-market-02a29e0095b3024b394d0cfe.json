@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-02a29e0095b3024b394d0cfe",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Kojo PEPRAH OPPONG al Dynamo Dresden: trasferimento ufficiale",
+  "text": "Kojo PEPRAH OPPONG passa dal Svincolato al Dynamo Dresden.\n\nCorrispettivo registrato: 2.2M.\nData del trasferimento: 24/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-132611-79167a4dbeb36ecc.png",
+    "alt": "Kojo PEPRAH OPPONG"
+  }
+}

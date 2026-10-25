@@ -1,1 +1,140 @@
-{}
+{
+  "00f14c1387c2744e0870d1ad": {
+    "complete": true,
+    "media_complete": false,
+    "transfer_number": 283,
+    "normalized_date": "2026-10-22"
+  },
+  "02a29e0095b3024b394d0cfe": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 274,
+    "normalized_date": "2026-10-24"
+  },
+  "1a381bda743111801347c84d": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 282,
+    "normalized_date": "2026-10-22"
+  },
+  "1db47b2ad15c7293899c24f9": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 287,
+    "normalized_date": "2026-10-22"
+  },
+  "232890a708492c87c334d04b": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 275,
+    "normalized_date": "2026-10-24"
+  },
+  "2a2488dc279069b76e69e187": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 281,
+    "normalized_date": "2026-10-23"
+  },
+  "314d0d68b38be84b27d5ab39": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 270,
+    "normalized_date": "2026-10-22"
+  },
+  "34a27915b2271b503b1bf9d3": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 290,
+    "normalized_date": "2026-10-24"
+  },
+  "392c260d6fee037ad2c93fc0": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 272,
+    "normalized_date": "2026-10-24"
+  },
+  "441b4c6f6d36a6a3738561bc": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 284,
+    "normalized_date": "2026-10-22"
+  },
+  "45a162c236b3b1fb31d653a2": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 291,
+    "normalized_date": "2026-10-24"
+  },
+  "5850c3f676d6a27420b64307": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 289,
+    "normalized_date": "2026-10-24"
+  },
+  "65ed6104d40da3f920b59957": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 276,
+    "normalized_date": "2026-10-24"
+  },
+  "67ba480a633824a5bdb663a2": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 271,
+    "normalized_date": "2026-10-24"
+  },
+  "84c460a7675b66b99c3382df": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 280,
+    "normalized_date": "2026-10-23"
+  },
+  "8d1002d0feecd96ff8da90c5": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 285,
+    "normalized_date": "2026-10-23"
+  },
+  "a0020c2a5cb5125101697dad": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 292,
+    "normalized_date": "2026-10-24"
+  },
+  "a9c39347a3d6d11873ae6362": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 279,
+    "normalized_date": "2026-10-23"
+  },
+  "aa71fbe38c17c23c11030e82": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 277,
+    "normalized_date": "2026-10-23"
+  },
+  "b99601765b651a1e95f66192": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 288,
+    "normalized_date": "2026-10-24"
+  },
+  "ba4796061012ba27735ac4b9": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 278,
+    "normalized_date": "2026-10-23"
+  },
+  "f8ca1b9c8c8c431e320b792a": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 286,
+    "normalized_date": "2026-10-23"
+  },
+  "fa3d4f3745d9d6b86d04a287": {
+    "complete": true,
+    "media_complete": true,
+    "transfer_number": 273,
+    "normalized_date": "2026-10-24"
+  }
+}

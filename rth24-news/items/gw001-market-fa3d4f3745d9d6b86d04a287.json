@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-fa3d4f3745d9d6b86d04a287",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Gonçalo BORGES al Dynamo Dresden: trasferimento ufficiale",
+  "text": "Gonçalo BORGES passa dal Svincolato al Dynamo Dresden.\n\nCorrispettivo registrato: 1.9M.\nData del trasferimento: 24/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-112533-a3d64803545b9c16.png",
+    "alt": "Gonçalo BORGES"
+  }
+}

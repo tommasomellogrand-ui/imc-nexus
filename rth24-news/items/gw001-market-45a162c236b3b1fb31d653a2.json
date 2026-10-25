@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-45a162c236b3b1fb31d653a2",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Joan ANAYA al Palermo FC: trasferimento ufficiale",
+  "text": "Joan ANAYA passa dal UE Sant Andreu al Palermo FC.\n\nCorrispettivo registrato: 894k.\nData del trasferimento: 24/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94078884"
+  ],
+  "teams": [
+    {
+      "name": "Palermo",
+      "logo": "market-club-94078884-25823d0fe372f873.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-143577-a89ccf1f0f9b6809.png",
+    "alt": "Joan ANAYA"
+  }
+}

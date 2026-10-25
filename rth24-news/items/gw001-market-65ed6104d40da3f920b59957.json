@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-65ed6104d40da3f920b59957",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Santiago RAMOS MINGO al Dynamo Dresden: trasferimento ufficiale",
+  "text": "Santiago RAMOS MINGO passa dal Svincolato al Dynamo Dresden.\n\nCorrispettivo registrato: 3.0M.\nData del trasferimento: 24/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-103958-ad596c1efb506e75.png",
+    "alt": "Santiago RAMOS MINGO"
+  }
+}

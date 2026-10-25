@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-392c260d6fee037ad2c93fc0",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Jacob ONDREJKA al Dynamo Dresden: trasferimento ufficiale",
+  "text": "Jacob ONDREJKA passa dal Svincolato al Dynamo Dresden.\n\nCorrispettivo registrato: 1.8M.\nData del trasferimento: 24/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-106717-60ca188490ff34ce.png",
+    "alt": "Jacob ONDREJKA"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-1a381bda743111801347c84d",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Jude TERRY al Los Angeles FC: trasferimento ufficiale",
+  "text": "Jude TERRY passa dal Atlético Madrid al Los Angeles FC.\n\nCorrispettivo registrato: 618k.\nData del trasferimento: 22/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94078906"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-155931-9f06ed556f6ea69f.png",
+    "alt": "Jude TERRY"
+  }
+}

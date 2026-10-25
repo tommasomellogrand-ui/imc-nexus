@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-f8ca1b9c8c8c431e320b792a",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Albert NAVARRO al Gimnástica Torrelavega: trasferimento ufficiale",
+  "text": "Albert NAVARRO passa dal Dynamo Dresden al Gimnástica Torrelavega.\n\nCorrispettivo registrato: 2.4M.\nData del trasferimento: 23/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-141913-1af3191a5edc6ef3.png",
+    "alt": "Albert NAVARRO"
+  }
+}

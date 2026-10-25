@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-232890a708492c87c334d04b",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Marco PELLEGRINO al Dynamo Dresden: trasferimento ufficiale",
+  "text": "Marco PELLEGRINO passa dal Svincolato al Dynamo Dresden.\n\nCorrispettivo registrato: 1.5M.\nData del trasferimento: 24/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-135346-783cffbfce8d97dc.png",
+    "alt": "Marco PELLEGRINO"
+  }
+}

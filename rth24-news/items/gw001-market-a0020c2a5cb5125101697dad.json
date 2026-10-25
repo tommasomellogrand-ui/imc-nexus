@@ -1,0 +1,20 @@
+{
+  "id": "gw001-market-a0020c2a5cb5125101697dad",
+  "published_at": "2026-10-25T09:57:36+01:00",
+  "title": "Dani RODRÍGUEZ al Palermo FC: trasferimento ufficiale",
+  "text": "Dani RODRÍGUEZ passa dal Dinamo Zagreb al Palermo FC.\n\nCorrispettivo registrato: 2.4M.\nData del trasferimento: 24/10/2026.",
+  "category": "market",
+  "club_ids": [
+    "94078884"
+  ],
+  "teams": [
+    {
+      "name": "Palermo",
+      "logo": "market-club-94078884-25823d0fe372f873.png"
+    }
+  ],
+  "image": {
+    "file": "market-player-121012-8b3c88cea3de17cd.png",
+    "alt": "Dani RODRÍGUEZ"
+  }
+}
