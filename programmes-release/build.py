@@ -31,8 +31,11 @@ home='<header class="programme-heading"><h1 class="sr-only">ALL TO PLAY FOR</h1>
 home_html=shell('ALL TO PLAY FOR','',home,styles=['home-layout-v2.css?v=20261023-entry1'],attrs='data-programme="home"')
 home_html=re.sub(r'<nav class="series-breadcrumb".*?</nav>','',home_html)
 save('index.html',home_html)
-live_content='<header class="programme-heading"><h1 class="sr-only">Diretta Gol</h1><img class="section-banner" src="assets/diretta-gol-v1.webp" alt="ALL TO PLAY FOR | Diretta Gol" width="2048" height="683"></header><p class="replay-note">Replay della giornata: gol ed eventi dei Match Report caricati su Nexus.</p><form class="replay-select"><label>Stagione <select id="replay-season" aria-label="Stagione"></select></label><label>Giornata <select id="replay-day" aria-label="Giornata"></select></label></form><p id="replay-status" role="status">Caricamento giornate…</p><iframe id="replay-frame" title="Diretta Gol · Replay della giornata" style="width:100%;height:1100px;border:0" loading="lazy"></iframe>'
-save('diretta-gol/index.html',shell('Diretta Gol','diretta-gol/',live_content,scripts=['diretta-gol.js?v=1'],styles=['home-layout.css?v=20261023-grid1'],attrs='data-programme="diretta-gol"'))
+live_content='<header class="programme-heading"><h1 class="sr-only">Diretta Gol</h1><img class="section-banner" src="assets/diretta-gol-v1.webp" alt="ALL TO PLAY FOR | Diretta Gol" width="2048" height="683"></header><p class="dg-intro">Tutte le emozioni di Road To History: segui il tabellone e rivivi gol ed eventi della giornata.</p><section class="dg-daybar"><div><span class="dg-kicker">REPLAY DELLA GIORNATA</span><h2 id="dg-day-label">Caricamento giornata…</h2></div><details id="dg-picker"><summary>Cambia giornata</summary><form class="replay-select"><label>Stagione <select id="replay-season" aria-label="Stagione"></select></label><label>Giornata <select id="replay-day" aria-label="Giornata"></select></label></form></details></section><p id="replay-status" role="status">Caricamento giornate…</p><iframe id="replay-frame" title="Diretta Gol · Replay della giornata" scrolling="no"></iframe>'
+live_page=shell('Diretta Gol','diretta-gol/',live_content,scripts=['diretta-gol-v2.js'],styles=['diretta-gol-v2.css'],attrs='data-programme="diretta-gol"')
+live_page=re.sub(r'<nav class="programme-links".*?</nav>','',live_page)
+live_page=re.sub(r'<nav class="series-breadcrumb".*?</nav>','<a class="dg-back" href="/nexus/alltoplayfor/">← All To Play For</a>',live_page)
+save('diretta-gol/index.html',live_page)
 legacy='<div hidden id="legacy-support"><button id="prev"></button><button id="next"></button><button id="today"></button><div id="tabs"></div><div id="directory"></div><div id="reader"></div></div>'
 def make(p,rubric=None,date=None):
     program=catalog[p];entry=program['rubrics'][rubric] if rubric else program
@@ -95,3 +98,5 @@ save('programmes-catalog.json',json.dumps(catalog,ensure_ascii=False))
 print('Built',len(list(OUT.rglob('index.html'))),'pages')
 
 shutil.copyfile(ROOT/'diretta-gol-v1.webp',OUT/'assets/diretta-gol-v1.webp')
+
+for name in ["diretta-gol-v2.js","diretta-gol-v2.css","diretta-embed-v2.css"]:shutil.copyfile(REPO/"diretta-release"/name,OUT/name)

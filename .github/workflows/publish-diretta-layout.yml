@@ -1,0 +1,37 @@
+name: Publish Diretta Gol presentation
+on:
+  push:
+    branches: [main]
+    paths: ['diretta-release/**', '.github/workflows/publish-diretta-layout.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python3 programmes-release/build.py
+          node --check diretta-release/diretta-gol-v2.js
+          npm install --prefix /tmp/diretta-qa playwright@1.56.1
+      - name: Preview mobile and replay controls
+        run: NODE_PATH=/tmp/diretta-qa/node_modules CHROME_BIN="$(command -v google-chrome)" PREVIEW=1 node diretta-release/verify.cjs
+      - name: Publish presentation only
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 diretta-release/deploy.py
+      - name: Verify public mobile and replay controls
+        run: NODE_PATH=/tmp/diretta-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node diretta-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: diretta-gol-layout
+          path: /tmp/diretta-*.png
