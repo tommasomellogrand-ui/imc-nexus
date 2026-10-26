@@ -17,6 +17,10 @@ protected={n:read(n) for n in ['diretta-gol/index.html','diretta-gol/live.js','d
 try:f.mkd('il-panno-verde')
 except error_perm as e:assert str(e).startswith('550')
 files={p.name:p.read_bytes() for p in (R/'site').iterdir() if p.is_file()}
+# Preserve the successor market page when already deployed from this repository.
+successor=R.parent/'panno-verde-market/index.html'
+if successor.exists() and read('il-panno-verde/index.html')==successor.read_bytes():
+ files['index.html']=successor.read_bytes()
 existing={}
 for n,b in files.items():
  try:old=read('il-panno-verde/'+n)
