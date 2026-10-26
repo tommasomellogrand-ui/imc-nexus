@@ -2,7 +2,7 @@ const {chromium}=require('playwright');
 (async()=>{const b=await chromium.launch({executablePath:process.env.CHROME_BIN||undefined,headless:true,args:['--no-sandbox']});try{
 const p=await b.newPage({viewport:{width:393,height:852},deviceScaleFactor:1});
 await p.goto('https://www.italianmastersclub.it/nexus/il-panno-verde/?world=GW011&tab=market',{waitUntil:'networkidle'});
-await p.waitForSelector('[data-feed-state="ready"]',{timeout:30000});
+await p.waitForSelector('[data-feed-state="ready"]:not([hidden])',{timeout:30000});
 const data=await p.evaluate(async()=>{const r=await fetch('/nexus/il-panno-verde/flash-news.json',{cache:'no-store'});return r.json()});
 if(data.world!=='GW011'||data.clubs.length!==20)throw Error('Wrong world/club registry');
 const ids=new Set(data.clubs.map(c=>c.id));for(const n of data.items){if(n.id.startsWith('gw001-')||n.club_ids.some(id=>!ids.has(id)))throw Error('Cross-world news');}
