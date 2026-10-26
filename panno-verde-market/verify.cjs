@@ -44,6 +44,12 @@ for(const item of divisionPosts){
 await p.waitForFunction(()=>[...document.querySelectorAll('.pv-division-logo')].every(i=>i.complete&&i.naturalWidth>0));
 if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Flash News mobile overflow');
 await p.screenshot({path:'/tmp/panno-verde-flash-mobile.png',fullPage:true});
+await p.locator('#rth-tab-club').click();
+const clubTV=p.locator('[data-news-id="gw011-club-liverpool-tv-20261026-0650"]');
+if(!await clubTV.isVisible()||await clubTV.locator('time').getAttribute('datetime')!=='2026-10-26T06:50:00+01:00')throw Error('Liverpool Club TV missing or wrong time');
+if(!(await clubTV.innerText()).includes('@Cataluc82')||!(await clubTV.innerText()).includes('Ho speso tutto in attacco e a centrocampo'))throw Error('Liverpool quotes missing');
+if(!(await clubTV.locator('.rth-news-photo').getAttribute('src')).includes('liverpool-club-tv-20261026.jpeg'))throw Error('Wrong Club TV image');
+await p.screenshot({path:'/tmp/panno-verde-club-mobile.png',fullPage:true});
 await p.locator('#rth-tab-ultimora').click();
 await p.screenshot({path:'/tmp/panno-verde-market-mobile.png',fullPage:false});
 console.log(JSON.stringify({verified:true,mode:'public',world:data.world,revision:data.revision,items:data.items.length,marketOperations:market.length,marketPhotos:market.filter(i=>i.image).length,divisionFlashNews:divisionPosts.length,postMatchInterviews:posts.length,playerPhotos:posts.reduce((n,p)=>n+p.interview.filter(q=>q.player?.image).length,0),clubs:data.clubs.length,pendingClubNews:!data.items.some(i=>i.category==='club')}));
