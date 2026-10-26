@@ -1,0 +1,30 @@
+{
+  "id": "gw011-flash-barcelona-centro-mercato-20261026",
+  "published_at": "2026-10-26T14:00:15+01:00",
+  "category": "flash",
+  "title": "Barcellona al centro del mercato, trattative in corso",
+  "text": "Dopo la prima giornata, il mercato del GW011 si infiamma. Il Barcellona è al centro degli intrecci con Chelsea e Paris Saint-Germain: le trattative sono in corso, ma sui dettagli resta il massimo riserbo.\n\nNessun nome, nessuna cifra e nessun accordo da annunciare: per ora i riflettori sono puntati sui blaugrana. Il Panno Verde seguirà gli sviluppi.",
+  "club_ids": [
+    "93399640",
+    "93399521",
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    },
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    },
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "image": {
+    "file": "barcelona-centro-mercato-20261026.webp",
+    "alt": "Barcellona al centro degli intrecci di mercato con Chelsea e Paris Saint-Germain, in stile Subbuteo."
+  }
+}
