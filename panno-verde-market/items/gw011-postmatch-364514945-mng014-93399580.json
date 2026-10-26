@@ -23,7 +23,16 @@
     "opponent": "Borussia Dortmund",
     "match_date": "2026-10-25",
     "result": "Tottenham Hotspur 1–2 Borussia Dortmund",
-    "source_hash": "c215e3da01ac459e66498b5c28f42316f758886f015929b734b7e4a73a434c98"
+    "source_hash": "c215e3da01ac459e66498b5c28f42316f758886f015929b734b7e4a73a434c98",
+    "home": "Tottenham Hotspur",
+    "away": "Borussia Dortmund",
+    "home_score": "1",
+    "away_score": "2",
+    "home_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "away_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "division": "1",
+    "round": "1",
+    "competition_label": "DIVISIONE 1 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Guirassy al minuto 83 ha fissato il risultato. Come legge quel finale?",
-      "answer": "La rete al minuto 83 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone."
+      "answer": "La rete al minuto 83 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "71005",
+        "name": "Guirassy",
+        "image": {
+          "file": "postmatch-player-71005-51cb25b5541fa797.png",
+          "alt": "Guirassy"
+        }
+      }
     },
     {
       "question": "D Vlahović è il migliore in campo del report: cosa sottolinea della sua prova?",
-      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "84966",
+        "name": "D Vlahović",
+        "image": {
+          "file": "postmatch-player-84966-f549178506d5169d.png",
+          "alt": "D Vlahović"
+        }
+      }
     },
     {
       "question": "2 tiri nello specchio su 12, contro 3 degli avversari: cosa le dice questo dato?",

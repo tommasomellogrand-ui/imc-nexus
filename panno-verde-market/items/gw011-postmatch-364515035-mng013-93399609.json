@@ -23,7 +23,16 @@
     "opponent": "Barcelona",
     "match_date": "2026-10-25",
     "result": "Barcelona 4–0 Internazionale",
-    "source_hash": "cd5bcaff3e406cc949219d18f07dbf86ae1bf381092e00c901dc472a58e03334"
+    "source_hash": "cd5bcaff3e406cc949219d18f07dbf86ae1bf381092e00c901dc472a58e03334",
+    "home": "Barcelona",
+    "away": "Internazionale",
+    "home_score": "4",
+    "away_score": "0",
+    "home_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "away_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Cubarsí al minuto 73 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 73 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 73 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "139751",
+        "name": "Cubarsí",
+        "image": {
+          "file": "postmatch-player-139751-5786ba8b5f3d175f.png",
+          "alt": "Cubarsí"
+        }
+      }
     },
     {
       "question": "F Dimarco ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
-      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra."
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "78694",
+        "name": "F Dimarco",
+        "image": {
+          "file": "postmatch-player-78694-807f9e7b257cb2f3.png",
+          "alt": "F Dimarco"
+        }
+      }
     },
     {
       "question": "1 tiri nello specchio su 10, contro 7 degli avversari: cosa le dice questo dato?",

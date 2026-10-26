@@ -23,7 +23,16 @@
     "opponent": "Real Madrid",
     "match_date": "2026-10-25",
     "result": "Arsenal 1–1 Real Madrid",
-    "source_hash": "b692d0e90d1ea663111426907782201c1b3d73e6e28765735b1bd7cdb84359a3"
+    "source_hash": "b692d0e90d1ea663111426907782201c1b3d73e6e28765735b1bd7cdb84359a3",
+    "home": "Arsenal",
+    "away": "Real Madrid",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93399501-33ef41943a141618.png",
+    "away_logo": "market-club-93399663-7ef177340849aadc.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Júnior al minuto 70 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 70 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 70 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "90068",
+        "name": "Júnior",
+        "image": {
+          "file": "postmatch-player-90068-0c68f020ff599bc4.png",
+          "alt": "Júnior"
+        }
+      }
     },
     {
       "question": "D Raya è il migliore in campo del report: cosa sottolinea della sua prova?",
-      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "76101",
+        "name": "D Raya",
+        "image": {
+          "file": "postmatch-player-76101-4bc1e5a299a62aee.png",
+          "alt": "D Raya"
+        }
+      }
     },
     {
       "question": "3 tiri nello specchio su 7, contro 6 degli avversari: cosa le dice questo dato?",

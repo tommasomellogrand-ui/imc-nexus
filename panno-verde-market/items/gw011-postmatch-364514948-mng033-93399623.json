@@ -23,7 +23,16 @@
     "opponent": "SSC Napoli",
     "match_date": "2026-10-25",
     "result": "SSC Napoli 2–3 AS Roma",
-    "source_hash": "7f5c146ff037fbb48350b4bda8dd2a06044f21f7152a55f3bdd58d69eecc69f4"
+    "source_hash": "7f5c146ff037fbb48350b4bda8dd2a06044f21f7152a55f3bdd58d69eecc69f4",
+    "home": "SSC Napoli",
+    "away": "AS Roma",
+    "home_score": "2",
+    "away_score": "3",
+    "home_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "away_logo": "market-club-93399623-4f2820912276f496.png",
+    "division": "1",
+    "round": "1",
+    "competition_label": "DIVISIONE 1 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Neres al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "89363",
+        "name": "Neres",
+        "image": {
+          "file": "postmatch-player-89363-89ec241b3b653828.png",
+          "alt": "Neres"
+        }
+      }
     },
     {
       "question": "Jonathan David è il migliore in campo del report: cosa sottolinea della sua prova?",
-      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "98250",
+        "name": "Jonathan David",
+        "image": {
+          "file": "postmatch-player-98250-c8f960b3ac0dadcf.png",
+          "alt": "Jonathan David"
+        }
+      }
     },
     {
       "question": "5 tiri nello specchio su 15, contro 5 degli avversari: cosa le dice questo dato?",

@@ -23,7 +23,16 @@
     "opponent": "Como 1907",
     "match_date": "2026-10-25",
     "result": "Como 1907 1–2 Atalanta BC",
-    "source_hash": "a629fcad4025011a08032b0c015fb5d2e95e05bd0ed8ef96cf624557cb317a3e"
+    "source_hash": "a629fcad4025011a08032b0c015fb5d2e95e05bd0ed8ef96cf624557cb317a3e",
+    "home": "Como 1907",
+    "away": "Atalanta BC",
+    "home_score": "1",
+    "away_score": "2",
+    "home_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "away_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "division": "1",
+    "round": "1",
+    "competition_label": "DIVISIONE 1 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "Il rosso a M Soulé al minuto 62 quanto pesa nella lettura della gara?",
-      "answer": "Dal minuto 62 abbiamo dovuto affrontare un’espulsione. La vittoria resta un risultato importante anche per questo, ma il cartellino è un episodio da analizzare separatamente."
+      "answer": "Dal minuto 62 abbiamo dovuto affrontare un’espulsione. La vittoria resta un risultato importante anche per questo, ma il cartellino è un episodio da analizzare separatamente.",
+      "player": {
+        "id": "103221",
+        "name": "M Soulé",
+        "image": {
+          "file": "postmatch-player-103221-ba60322884e5c0b1.png",
+          "alt": "M Soulé"
+        }
+      }
     },
     {
       "question": "M Soulé ha segnato un gol: quanto conta il suo contributo?",
-      "answer": "Il suo gol è un fatto concreto della nostra partita. Il report gli assegna anche 1 assist. Un contributo importante al risultato positivo."
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Il report gli assegna anche 1 assist. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "103221",
+        "name": "M Soulé",
+        "image": {
+          "file": "postmatch-player-103221-ba60322884e5c0b1.png",
+          "alt": "M Soulé"
+        }
+      }
     },
     {
       "question": "3 tiri nello specchio su 5, contro 6 degli avversari: cosa le dice questo dato?",

@@ -23,7 +23,16 @@
     "opponent": "Juventus",
     "match_date": "2026-10-25",
     "result": "Juventus 3–3 SL Benfica",
-    "source_hash": "3f35a60e57b122b9ae797a6eea09ead8ce376fae2caaa34492680e2daf480eec"
+    "source_hash": "3f35a60e57b122b9ae797a6eea09ead8ce376fae2caaa34492680e2daf480eec",
+    "home": "Juventus",
+    "away": "SL Benfica",
+    "home_score": "3",
+    "away_score": "3",
+    "home_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "away_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "division": "1",
+    "round": "1",
+    "competition_label": "DIVISIONE 1 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Williams al minuto 86 ha fissato il risultato. Come legge quel finale?",
-      "answer": "La rete al minuto 86 ci ha tolto la vittoria. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone."
+      "answer": "La rete al minuto 86 ci ha tolto la vittoria. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "108912",
+        "name": "Williams",
+        "image": {
+          "file": "postmatch-player-108912-698086d336ccd548.png",
+          "alt": "Williams"
+        }
+      }
     },
     {
       "question": "J Ordóñez ha segnato un gol: quanto conta il suo contributo?",
-      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo."
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "124781",
+        "name": "J Ordóñez",
+        "image": {
+          "file": "postmatch-player-124781-dafce13eca19afaa.png",
+          "alt": "J Ordóñez"
+        }
+      }
     },
     {
       "question": "4 tiri nello specchio su 13, contro 8 degli avversari: cosa le dice questo dato?",

@@ -23,7 +23,16 @@
     "opponent": "SL Benfica",
     "match_date": "2026-10-25",
     "result": "Juventus 3–3 SL Benfica",
-    "source_hash": "fff8f89b0aec944b2294e362e7cafb34b6dec15bf8da4c5769fa9c8ff3b6a438"
+    "source_hash": "fff8f89b0aec944b2294e362e7cafb34b6dec15bf8da4c5769fa9c8ff3b6a438",
+    "home": "Juventus",
+    "away": "SL Benfica",
+    "home_score": "3",
+    "away_score": "3",
+    "home_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "away_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "division": "1",
+    "round": "1",
+    "competition_label": "DIVISIONE 1 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Williams al minuto 86 ha fissato il risultato. Come legge quel finale?",
-      "answer": "Quel gol al minuto 86 ha avuto un peso concreto: ci ha permesso di pareggiare. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima."
+      "answer": "Quel gol al minuto 86 ha avuto un peso concreto: ci ha permesso di pareggiare. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "108912",
+        "name": "Williams",
+        "image": {
+          "file": "postmatch-player-108912-698086d336ccd548.png",
+          "alt": "Williams"
+        }
+      }
     },
     {
       "question": "Nico Williams è il migliore in campo del report: cosa sottolinea della sua prova?",
-      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 2 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 2 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "108912",
+        "name": "Nico Williams",
+        "image": {
+          "file": "postmatch-player-108912-698086d336ccd548.png",
+          "alt": "Nico Williams"
+        }
+      }
     },
     {
       "question": "8 tiri nello specchio su 18, contro 4 degli avversari: cosa le dice questo dato?",

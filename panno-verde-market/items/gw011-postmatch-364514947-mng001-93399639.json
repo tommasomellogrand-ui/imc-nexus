@@ -23,7 +23,16 @@
     "opponent": "AC Milan",
     "match_date": "2026-10-25",
     "result": "AC Milan 0–1 Atlético Madrid",
-    "source_hash": "de12625f4de76629a4562d1d93e36e9ebbaa1cc0aabc70aa03a09ef518754096"
+    "source_hash": "de12625f4de76629a4562d1d93e36e9ebbaa1cc0aabc70aa03a09ef518754096",
+    "home": "AC Milan",
+    "away": "Atlético Madrid",
+    "home_score": "0",
+    "away_score": "1",
+    "home_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "away_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "division": "1",
+    "round": "1",
+    "competition_label": "DIVISIONE 1 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Torres al minuto 40 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 40 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 40 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "93445",
+        "name": "Torres",
+        "image": {
+          "file": "postmatch-player-93445-d53bafd32c3d7d06.png",
+          "alt": "Torres"
+        }
+      }
     },
     {
       "question": "Ferrán Torres è il migliore in campo del report: cosa sottolinea della sua prova?",
-      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "93445",
+        "name": "Ferrán Torres",
+        "image": {
+          "file": "postmatch-player-93445-d53bafd32c3d7d06.png",
+          "alt": "Ferrán Torres"
+        }
+      }
     },
     {
       "question": "6 tiri nello specchio su 12, contro 4 degli avversari: cosa le dice questo dato?",

@@ -23,7 +23,16 @@
     "opponent": "Manchester United",
     "match_date": "2026-10-25",
     "result": "Bayern München 1–1 Manchester United",
-    "source_hash": "373297e9c9721f4a70c4d7c6878d970fcd8dd62bb571f731dba125606584080d"
+    "source_hash": "373297e9c9721f4a70c4d7c6878d970fcd8dd62bb571f731dba125606584080d",
+    "home": "Bayern München",
+    "away": "Manchester United",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "away_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Mainoo al minuto 87 ha fissato il risultato. Come legge quel finale?",
-      "answer": "La rete al minuto 87 ci ha tolto la vittoria. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone."
+      "answer": "La rete al minuto 87 ci ha tolto la vittoria. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "124453",
+        "name": "Mainoo",
+        "image": {
+          "file": "postmatch-player-124453-4f97f3eaecdce6af.png",
+          "alt": "Mainoo"
+        }
+      }
     },
     {
       "question": "Harry Kane è il migliore in campo del report: cosa sottolinea della sua prova?",
-      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "49590",
+        "name": "Harry Kane",
+        "image": {
+          "file": "postmatch-player-49590-054cc3a44c1de611.png",
+          "alt": "Harry Kane"
+        }
+      }
     },
     {
       "question": "9 tiri nello specchio su 16, contro 3 degli avversari: cosa le dice questo dato?",

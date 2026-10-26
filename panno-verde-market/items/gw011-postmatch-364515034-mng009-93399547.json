@@ -23,7 +23,16 @@
     "opponent": "Chelsea",
     "match_date": "2026-10-25",
     "result": "Manchester City 1–1 Chelsea",
-    "source_hash": "6b9578a07dc3445f901f5c76678158b7a16d97ccca3d61b305e28a4da2c3a7f2"
+    "source_hash": "6b9578a07dc3445f901f5c76678158b7a16d97ccca3d61b305e28a4da2c3a7f2",
+    "home": "Manchester City",
+    "away": "Chelsea",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93399547-198e9921b709c50d.png",
+    "away_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Semenyo al minuto 20 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 20 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 20 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "97113",
+        "name": "Semenyo",
+        "image": {
+          "file": "postmatch-player-97113-ac40188989cdbac3.png",
+          "alt": "Semenyo"
+        }
+      }
     },
     {
       "question": "A Semenyo ha segnato un gol: quanto conta il suo contributo?",
-      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo."
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "97113",
+        "name": "A Semenyo",
+        "image": {
+          "file": "postmatch-player-97113-ac40188989cdbac3.png",
+          "alt": "A Semenyo"
+        }
+      }
     },
     {
       "question": "6 tiri nello specchio su 11, contro 7 degli avversari: cosa le dice questo dato?",

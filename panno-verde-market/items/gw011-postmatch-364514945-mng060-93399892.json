@@ -23,7 +23,16 @@
     "opponent": "Tottenham Hotspur",
     "match_date": "2026-10-25",
     "result": "Tottenham Hotspur 1–2 Borussia Dortmund",
-    "source_hash": "ac1b8a74abded95311e631603c22eb17196e79204e6a528a4ea1a0871baae3ec"
+    "source_hash": "ac1b8a74abded95311e631603c22eb17196e79204e6a528a4ea1a0871baae3ec",
+    "home": "Tottenham Hotspur",
+    "away": "Borussia Dortmund",
+    "home_score": "1",
+    "away_score": "2",
+    "home_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "away_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "division": "1",
+    "round": "1",
+    "competition_label": "DIVISIONE 1 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Guirassy al minuto 83 ha fissato il risultato. Come legge quel finale?",
-      "answer": "Quel gol al minuto 83 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima."
+      "answer": "Quel gol al minuto 83 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "71005",
+        "name": "Guirassy",
+        "image": {
+          "file": "postmatch-player-71005-51cb25b5541fa797.png",
+          "alt": "Guirassy"
+        }
+      }
     },
     {
       "question": "Serhou Guirassy ha segnato un gol: quanto conta il suo contributo?",
-      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo."
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "71005",
+        "name": "Serhou Guirassy",
+        "image": {
+          "file": "postmatch-player-71005-51cb25b5541fa797.png",
+          "alt": "Serhou Guirassy"
+        }
+      }
     },
     {
       "question": "3 tiri nello specchio su 12, contro 2 degli avversari: cosa le dice questo dato?",

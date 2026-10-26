@@ -23,7 +23,16 @@
     "opponent": "Internazionale",
     "match_date": "2026-10-25",
     "result": "Barcelona 4–0 Internazionale",
-    "source_hash": "456b463a0b65bc603c23ae5bf87b35ce9b734e7b9e2d2bad489cd20ac0649764"
+    "source_hash": "456b463a0b65bc603c23ae5bf87b35ce9b734e7b9e2d2bad489cd20ac0649764",
+    "home": "Barcelona",
+    "away": "Internazionale",
+    "home_score": "4",
+    "away_score": "0",
+    "home_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "away_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Cubarsí al minuto 73 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 73 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 73 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "139751",
+        "name": "Cubarsí",
+        "image": {
+          "file": "postmatch-player-139751-5786ba8b5f3d175f.png",
+          "alt": "Cubarsí"
+        }
+      }
     },
     {
       "question": "Lionel Messi è il migliore in campo del report: cosa sottolinea della sua prova?",
-      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "2772",
+        "name": "Lionel Messi",
+        "image": {
+          "file": "postmatch-player-2772-3b9b190e3a3340a4.png",
+          "alt": "Lionel Messi"
+        }
+      }
     },
     {
       "question": "7 tiri nello specchio su 15, contro 1 degli avversari: cosa le dice questo dato?",

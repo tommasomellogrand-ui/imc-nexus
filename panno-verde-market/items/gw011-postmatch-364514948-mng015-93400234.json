@@ -23,7 +23,16 @@
     "opponent": "AS Roma",
     "match_date": "2026-10-25",
     "result": "SSC Napoli 2–3 AS Roma",
-    "source_hash": "9bf85b9c96a3da73c7e8d1473b4151c3ef44403ee19d52f799efb4ba2b23b33b"
+    "source_hash": "9bf85b9c96a3da73c7e8d1473b4151c3ef44403ee19d52f799efb4ba2b23b33b",
+    "home": "SSC Napoli",
+    "away": "AS Roma",
+    "home_score": "2",
+    "away_score": "3",
+    "home_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "away_logo": "market-club-93399623-4f2820912276f496.png",
+    "division": "1",
+    "round": "1",
+    "competition_label": "DIVISIONE 1 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Neres al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "89363",
+        "name": "Neres",
+        "image": {
+          "file": "postmatch-player-89363-89ec241b3b653828.png",
+          "alt": "Neres"
+        }
+      }
     },
     {
       "question": "Carlos Romero ha segnato un gol: quanto conta il suo contributo?",
-      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto."
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "130178",
+        "name": "Carlos Romero",
+        "image": {
+          "file": "postmatch-player-130178-9cb1b5ad38400cb6.png",
+          "alt": "Carlos Romero"
+        }
+      }
     },
     {
       "question": "5 tiri nello specchio su 18, contro 5 degli avversari: cosa le dice questo dato?",

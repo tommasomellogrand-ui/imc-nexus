@@ -23,7 +23,16 @@
     "opponent": "Liverpool",
     "match_date": "2026-10-25",
     "result": "Paris Saint-Germain 2–1 Liverpool",
-    "source_hash": "e4f664c899786b23e562f2a55bd7d981fe9e5965d852b4f1b6f8525ac71b5319"
+    "source_hash": "e4f664c899786b23e562f2a55bd7d981fe9e5965d852b4f1b6f8525ac71b5319",
+    "home": "Paris Saint-Germain",
+    "away": "Liverpool",
+    "home_score": "2",
+    "away_score": "1",
+    "home_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "away_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Doué al minuto 86 ha fissato il risultato. Come legge quel finale?",
-      "answer": "Quel gol al minuto 86 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima."
+      "answer": "Quel gol al minuto 86 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "123912",
+        "name": "Doué",
+        "image": {
+          "file": "postmatch-player-123912-8984005753af08f9.png",
+          "alt": "Doué"
+        }
+      }
     },
     {
       "question": "D Doué è il migliore in campo del report: cosa sottolinea della sua prova?",
-      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "123912",
+        "name": "D Doué",
+        "image": {
+          "file": "postmatch-player-123912-8984005753af08f9.png",
+          "alt": "D Doué"
+        }
+      }
     },
     {
       "question": "6 tiri nello specchio su 14, contro 3 degli avversari: cosa le dice questo dato?",

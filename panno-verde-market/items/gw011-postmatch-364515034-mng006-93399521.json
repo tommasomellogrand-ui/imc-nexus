@@ -23,7 +23,16 @@
     "opponent": "Manchester City",
     "match_date": "2026-10-25",
     "result": "Manchester City 1–1 Chelsea",
-    "source_hash": "008ba953df0338aa083b81956a52e2d5155326d608bb9dc96a42b5a46b2d2550"
+    "source_hash": "008ba953df0338aa083b81956a52e2d5155326d608bb9dc96a42b5a46b2d2550",
+    "home": "Manchester City",
+    "away": "Chelsea",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93399547-198e9921b709c50d.png",
+    "away_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Semenyo al minuto 20 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 20 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 20 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "97113",
+        "name": "Semenyo",
+        "image": {
+          "file": "postmatch-player-97113-ac40188989cdbac3.png",
+          "alt": "Semenyo"
+        }
+      }
     },
     {
       "question": "M Rashford è il migliore in campo del report: cosa sottolinea della sua prova?",
-      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "84384",
+        "name": "M Rashford",
+        "image": {
+          "file": "postmatch-player-84384-f0d89b95997ed3b0.png",
+          "alt": "M Rashford"
+        }
+      }
     },
     {
       "question": "7 tiri nello specchio su 17, contro 6 degli avversari: cosa le dice questo dato?",

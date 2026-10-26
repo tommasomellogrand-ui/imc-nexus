@@ -23,7 +23,16 @@
     "opponent": "Atlético Madrid",
     "match_date": "2026-10-25",
     "result": "AC Milan 0–1 Atlético Madrid",
-    "source_hash": "9481fc36d390fc2631a30b4d74139ba1284b8ba5b5c34af887ae2a0d52c4cb28"
+    "source_hash": "9481fc36d390fc2631a30b4d74139ba1284b8ba5b5c34af887ae2a0d52c4cb28",
+    "home": "AC Milan",
+    "away": "Atlético Madrid",
+    "home_score": "0",
+    "away_score": "1",
+    "home_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "away_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "division": "1",
+    "round": "1",
+    "competition_label": "DIVISIONE 1 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Torres al minuto 40 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 40 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 40 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "93445",
+        "name": "Torres",
+        "image": {
+          "file": "postmatch-player-93445-d53bafd32c3d7d06.png",
+          "alt": "Torres"
+        }
+      }
     },
     {
       "question": "M Maignan ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
-      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra."
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "68131",
+        "name": "M Maignan",
+        "image": {
+          "file": "postmatch-player-68131-9611fd3af4da83f2.png",
+          "alt": "M Maignan"
+        }
+      }
     },
     {
       "question": "4 tiri nello specchio su 11, contro 6 degli avversari: cosa le dice questo dato?",

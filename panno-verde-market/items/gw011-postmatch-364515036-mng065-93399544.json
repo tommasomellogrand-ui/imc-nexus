@@ -23,7 +23,16 @@
     "opponent": "Paris Saint-Germain",
     "match_date": "2026-10-25",
     "result": "Paris Saint-Germain 2–1 Liverpool",
-    "source_hash": "aab4104a10c86bf5b4b9606249848c12f6c7524eb060bbcc3d3a0e14761bcbf9"
+    "source_hash": "aab4104a10c86bf5b4b9606249848c12f6c7524eb060bbcc3d3a0e14761bcbf9",
+    "home": "Paris Saint-Germain",
+    "away": "Liverpool",
+    "home_score": "2",
+    "away_score": "1",
+    "home_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "away_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Doué al minuto 86 ha fissato il risultato. Come legge quel finale?",
-      "answer": "La rete al minuto 86 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone."
+      "answer": "La rete al minuto 86 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "123912",
+        "name": "Doué",
+        "image": {
+          "file": "postmatch-player-123912-8984005753af08f9.png",
+          "alt": "Doué"
+        }
+      }
     },
     {
       "question": "Cole Palmer ha segnato un gol: quanto conta il suo contributo?",
-      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto."
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "105942",
+        "name": "Cole Palmer",
+        "image": {
+          "file": "postmatch-player-105942-20f15040568e54ee.png",
+          "alt": "Cole Palmer"
+        }
+      }
     },
     {
       "question": "3 tiri nello specchio su 10, contro 6 degli avversari: cosa le dice questo dato?",

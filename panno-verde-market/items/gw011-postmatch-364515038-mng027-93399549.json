@@ -23,7 +23,16 @@
     "opponent": "Bayern München",
     "match_date": "2026-10-25",
     "result": "Bayern München 1–1 Manchester United",
-    "source_hash": "eb9fe10ad11e8a9e31f5605ca9b05a50b3b5a945b7a449c692caf1894447741b"
+    "source_hash": "eb9fe10ad11e8a9e31f5605ca9b05a50b3b5a945b7a449c692caf1894447741b",
+    "home": "Bayern München",
+    "away": "Manchester United",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "away_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Mainoo al minuto 87 ha fissato il risultato. Come legge quel finale?",
-      "answer": "Quel gol al minuto 87 ha avuto un peso concreto: ci ha permesso di pareggiare. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima."
+      "answer": "Quel gol al minuto 87 ha avuto un peso concreto: ci ha permesso di pareggiare. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "124453",
+        "name": "Mainoo",
+        "image": {
+          "file": "postmatch-player-124453-4f97f3eaecdce6af.png",
+          "alt": "Mainoo"
+        }
+      }
     },
     {
       "question": "K Mainoo ha segnato un gol: quanto conta il suo contributo?",
-      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo."
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "124453",
+        "name": "K Mainoo",
+        "image": {
+          "file": "postmatch-player-124453-4f97f3eaecdce6af.png",
+          "alt": "K Mainoo"
+        }
+      }
     },
     {
       "question": "3 tiri nello specchio su 9, contro 9 degli avversari: cosa le dice questo dato?",

@@ -23,7 +23,16 @@
     "opponent": "Arsenal",
     "match_date": "2026-10-25",
     "result": "Arsenal 1–1 Real Madrid",
-    "source_hash": "2a6c2759594b552a07a1abd6a187b2b1f74108548a005cf1435c499a5e0a06a7"
+    "source_hash": "2a6c2759594b552a07a1abd6a187b2b1f74108548a005cf1435c499a5e0a06a7",
+    "home": "Arsenal",
+    "away": "Real Madrid",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93399501-33ef41943a141618.png",
+    "away_logo": "market-club-93399663-7ef177340849aadc.png",
+    "division": "2",
+    "round": "1",
+    "competition_label": "DIVISIONE 2 · GIORNATA 1"
   },
   "interview": [
     {
@@ -36,11 +45,27 @@
     },
     {
       "question": "La rete di Júnior al minuto 70 ha fissato il risultato. Quanto ha inciso questo episodio?",
-      "answer": "Dopo il gol al minuto 70 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+      "answer": "Dopo il gol al minuto 70 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "90068",
+        "name": "Júnior",
+        "image": {
+          "file": "postmatch-player-90068-0c68f020ff599bc4.png",
+          "alt": "Júnior"
+        }
+      }
     },
     {
       "question": "V Júnior ha segnato un gol: quanto conta il suo contributo?",
-      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo."
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "90068",
+        "name": "V Júnior",
+        "image": {
+          "file": "postmatch-player-90068-0c68f020ff599bc4.png",
+          "alt": "V Júnior"
+        }
+      }
     },
     {
       "question": "6 tiri nello specchio su 12, contro 3 degli avversari: cosa le dice questo dato?",
