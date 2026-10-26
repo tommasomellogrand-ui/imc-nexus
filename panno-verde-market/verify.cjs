@@ -6,6 +6,7 @@ await p.waitForSelector('[data-feed-state="ready"]:not([hidden])',{timeout:12000
 const data=await p.evaluate(async()=>{const r=await fetch('/nexus/il-panno-verde/flash-news.json',{cache:'no-store'});return r.json()});
 if(data.world!=='GW011'||data.clubs.length!==20)throw Error('Wrong world/club registry');
 const market=data.items.filter(i=>i.category==='market');if(!market.length)throw Error('Market archive missing');if(new Set(market.map(i=>i.id)).size!==market.length)throw Error('Duplicate market news');
+for(const item of market){if(item.published_at.slice(0,10)!==item.transfer.date)throw Error('Market date must match operation');const expected=item.transfer.date.split('-').reverse().join('/');const shown=await p.locator('[data-news-id="'+item.id+'"] time').innerText();if(shown!==expected)throw Error('Wrong market date display: '+shown);}
 const ids=new Set(data.clubs.map(c=>c.id));for(const n of data.items){if(n.id.startsWith('gw001-')||n.club_ids.some(id=>!ids.has(id)))throw Error('Cross-world news');}
 if(await p.locator('[role=tab]').count()!==5)throw Error('Missing tabs');
 for(const key of ['flash-news','post-match','club','mercato','ultimora']){await p.locator('#rth-tab-'+key).click();if(await p.locator('#rth-tab-'+key).getAttribute('aria-selected')!=='true')throw Error('Tab failed');}

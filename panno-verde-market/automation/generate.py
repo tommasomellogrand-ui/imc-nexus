@@ -134,7 +134,7 @@ def news(row,snapshot,reporters,now,media=True):
  if status and status not in ('completed','complete','concluso','conclusa','official','ufficiale','transfer','trasferimento','loan','prestito'):raise ValueError('Unsupported transfer status '+status)
  loan=status in ('loan','prestito') or 'prestito' in amount.casefold() or 'loan' in amount.casefold()
  title,text,transfer=editorial(name,fr,to,amount,day,names,loan)
- item={'id':nid,'published_at':now,'title':title,'text':text,'category':'market','club_ids':ids,'teams':[], 'transfer':transfer,'editorial_version':3}
+ item={'id':nid,'published_at':datetime.fromisoformat(day).replace(tzinfo=ZoneInfo('Europe/Rome')).isoformat(timespec='seconds'),'title':title,'text':text,'category':'market','club_ids':ids,'teams':[], 'transfer':transfer,'editorial_version':3}
  if media:
   url=p.get('image_url') or row.get('player_image') or ('https://cdn.soccerwiki.org/images/player/'+p['image_file'] if p.get('image_file') else None)
   photo=optional_asset(url,'market-player-'+pid)
@@ -196,6 +196,14 @@ def news(row,snapshot,reporters,now,media=True):
 def main():
  snap=json.loads((A/'runtime/snapshot.json').read_text());cfg=json.loads((A/'config.json').read_text());reporters=json.loads((A/'reporters.json').read_text())
  assert snap['world']=='GW011' and len({str(x['club_id']) for x in snap['clubs']})==20
+ # Repair archive timestamps even for operations already marked complete.
+ for path in (R/'items').glob('gw011-market-*.json'):
+  previous=json.loads(path.read_text())
+  if previous.get('category')!='market':continue
+  stamp=datetime.fromisoformat(previous['transfer']['date']).replace(tzinfo=ZoneInfo('Europe/Rome')).isoformat(timespec='seconds')
+  if previous['published_at']!=stamp:
+   previous['published_at']=stamp
+   path.write_text(json.dumps(previous,ensure_ascii=False,indent=2)+'\n')
  ledger_path=A/'ledger.json';ledger=json.loads(ledger_path.read_text()) if ledger_path.exists() else {}
  now=datetime.now(ZoneInfo('Europe/Rome')).isoformat(timespec='seconds');pending=[];created=[];seen={};conflicts=set()
  for row in snap['rows']:
@@ -218,6 +226,7 @@ def main():
     path=R/'items'/(item['id']+'.json')
     if path.exists():
      previous=json.loads(path.read_text())
+     if item['category']=='market':previous['published_at']=item['published_at']
      if previous.get('editorial_version',1)<3:
       for field in ['title','text','transfer','coverage','editorial_version']:
        if field in item:previous[field]=item[field]

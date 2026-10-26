@@ -18,6 +18,10 @@ class GenerateTests(unittest.TestCase):
   self.assertEqual(items[1]['coverage'][0]['reporter_image']['alt'],'Reporter B')
   self.assertEqual(items[1]['coverage'][0]['manager_image']['alt'],'Manager B')
   portraits.assert_any_call('managers','Manager B','MNG-B')
+ def test_operation_date_not_upload_date(self):
+  self.r['normalized_transfer_date']='2026-10-16'
+  items,_=news(self.r,self.s,self.reporters,'2026-10-26T12:00:00+01:00',False)
+  self.assertEqual(items[0]['published_at'],'2026-10-16T00:00:00+02:00')
  def test_editorial_format(self):
   self.assertEqual(money_label('10M'),'10 milioni di euro')
   self.assertEqual(money_label('16.0M'),'16 milioni di euro')

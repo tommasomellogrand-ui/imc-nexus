@@ -36,7 +36,7 @@ for(const item of [...data.items].sort((a,b)=>Date.parse(b.published_at)-Date.pa
  const card=el('article',null,'rth-news-card');card.id='news-'+item.id;card.dataset.newsId=item.id;card.dataset.category=category(item);
  const header=el('div',null,'rth-news-header'),body=el('div',null,'rth-news-body');
  if(item.image){const img=picture(item.image.file,item.image.alt,'rth-news-photo');if(img){card.classList.add('has-photo');const media=el('div',null,'rth-news-media');media.append(img);header.append(media)}}
- const time=el('time',new Intl.DateTimeFormat('it-IT',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Rome'}).format(new Date(item.published_at)));time.dateTime=item.published_at;
+ const time=el('time',new Intl.DateTimeFormat('it-IT',{day:'2-digit',month:'2-digit',year:'numeric',...(item.category==='market'?{}:{hour:'2-digit',minute:'2-digit'}),timeZone:'Europe/Rome'}).format(new Date(item.published_at)));time.dateTime=item.published_at;
  if(item.teams?.length){const teams=el('div',null,'rth-news-teams');for(const team of item.teams){const badge=el('span',null,'rth-news-team'),logo=picture(team.logo,'Stemma '+team.name,'rth-news-logo');if(logo)badge.append(logo);badge.append(el('span',team.name));teams.append(badge)}body.append(teams)}
  body.append(el('h3',item.title));header.append(body);
  const content=el('div',null,'rth-news-content');
