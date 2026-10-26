@@ -1,0 +1,21 @@
+name: Verify Panno Verde Layout
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verify-panno-verde-layout.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install --prefix /tmp/sd-qa playwright@1.56.1
+      - run: NODE_PATH=/tmp/sd-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node panno-verde-release/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: panno-verde-layout
+          path: /tmp/panno-verde-*.png
