@@ -30,11 +30,14 @@ if($names){
  foreach($stmt->fetchAll(PDO::FETCH_ASSOC) as $c){$matches[trim($c['name'])][]=$c;}
  foreach($matches as $name=>$cs){if(count($cs)===1)$transferClubs[$name]=$cs[0];}
 }
+$matches=$p->query("SELECT r.*,m.players_json,m.team_stats_json,m.events_json FROM GW011_IMC_Results r LEFT JOIN GW011_IMC_Match_Report m ON m.game_world_id=r.game_world_id AND m.sm_fixture_id=r.sm_fixture_id WHERE r.game_world_id='GW011' AND r.match_date>='2026-10-25' AND r.match_date<=CURDATE() ORDER BY r.match_date,r.sm_fixture_id")->fetchAll(PDO::FETCH_ASSOC);
+$matchdays=$p->query("SELECT DISTINCT imc_season,competition_key,match_date FROM GW011_IMC_Results WHERE game_world_id='GW011' AND sm_action='league' UNION SELECT DISTINCT imc_season,competition_key,match_date FROM GW011_IMC_Schedule WHERE game_world_id='GW011' AND sm_action='league'")->fetchAll(PDO::FETCH_ASSOC);
 $players=[];$ids=[];
+foreach($matches as $match){foreach(json_decode($match['players_json']?:'[]',true)?:[] as $player){if(!empty($player['sm_player_id']))$ids[(int)$player['sm_player_id']]=true;}}
+
 foreach($rows as $r){$ids[(int)$r['player_id']]=true;foreach(json_decode($r['normalized_exchange_players']?:$r['exchange_players']?:'[]',true)?:[] as $x){if(isset($x['player_id']))$ids[(int)$x['player_id']]=true;}}
 foreach(array_chunk(array_keys($ids),100) as $chunk){$in=implode(',',array_map('intval',$chunk));
 $ps=$p->query("SELECT g.id player_id,TRIM(CONCAT_WS(' ',g.forename,g.surname)) full_name,g.image_file,g.image_url,c.rating,c.position,c.market_value,c.imported_at FROM Sql1956795_1.`IMC Player Codex Global` g LEFT JOIN GW011_IMC_Player_Codex c ON c.player_id=g.id WHERE g.id IN ($in) ORDER BY c.imported_at DESC")->fetchAll(PDO::FETCH_ASSOC);foreach($ps as $pr){if(!isset($players[$pr['player_id']]))$players[$pr['player_id']]=$pr;}}
 $summary=$p->query('SELECT COUNT(*) total,MAX(imported_at) latest_import FROM GW011_IMC_Transfers')->fetch(PDO::FETCH_ASSOC);
-$matches=$p->query("SELECT r.*,m.players_json,m.team_stats_json,m.events_json FROM GW011_IMC_Results r LEFT JOIN GW011_IMC_Match_Report m ON m.game_world_id=r.game_world_id AND m.sm_fixture_id=r.sm_fixture_id WHERE r.game_world_id='GW011' AND r.match_date>='2026-10-25' AND r.match_date<=CURDATE() ORDER BY r.match_date,r.sm_fixture_id")->fetchAll(PDO::FETCH_ASSOC);
-$p->commit();echo json_encode(['matches'=>$matches,'world'=>'GW011','rows'=>$rows,'clubs'=>$clubs,'managers'=>$managers,'transfer_clubs'=>(object)$transferClubs,'players'=>(object)$players,'summary'=>$summary],JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR);
+$p->commit();echo json_encode(['matchdays'=>$matchdays,'matches'=>$matches,'world'=>'GW011','rows'=>$rows,'clubs'=>$clubs,'managers'=>$managers,'transfer_clubs'=>(object)$transferClubs,'players'=>(object)$players,'summary'=>$summary],JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR);
 }catch(Throwable $e){http_response_code(500);echo json_encode(['error'=>'transfer_export_failed','code'=>$e->getCode()]);}

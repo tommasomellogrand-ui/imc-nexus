@@ -17,13 +17,14 @@ def validate(item):
  if 'post_match' in item or 'interview' in item:
   assert item.get('category')=='post-match'
   pm=item['post_match'];assert pm['world']=='GW011' and pm['club_id'] in item['club_ids']
-  assert set(pm)=={'world','fixture_id','manager_id','manager','club_id','club','opponent','match_date','result','source_hash'}
+  assert {'world','fixture_id','manager_id','manager','club_id','club','opponent','match_date','result','source_hash'}<=set(pm)<={'world','fixture_id','manager_id','manager','club_id','club','opponent','match_date','result','source_hash','home','away','home_score','away_score','home_logo','away_logo','division','round','competition_label'}
   assert all(isinstance(v,str) and v for v in pm.values())
   assert re.fullmatch(r'MNG[0-9]+',pm['manager_id'])
   datetime.strptime(pm['match_date'],'%Y-%m-%d')
   assert len(item['interview'])==5 and len({q['question'] for q in item['interview']})==5
   for qa in item['interview']:
-   assert set(qa)=={'question','answer'} and all(isinstance(v,str) and 0<len(v)<=3000 for v in qa.values())
+   assert {'question','answer'}<=set(qa)<={'question','answer','player'} and all(isinstance(qa[k],str) and 0<len(qa[k])<=3000 for k in ['question','answer'])
+   if 'player' in qa:assert {'id','name'}<=set(qa['player'])<={'id','name','image'} and qa['player']['id'].isdigit()
  if 'coverage' in item:
   assert item.get('category')=='club' and isinstance(item['coverage'],list) and 1<=len(item['coverage'])<=2
   for c in item['coverage']:
@@ -32,6 +33,12 @@ def validate(item):
  def asset(name):
   assert isinstance(name,str) and re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name),'Invalid asset filename'
   assert (R/'assets'/name).is_file(),'Missing image: '+name
+ for key in ['home_logo','away_logo']:
+  if item.get('post_match',{}).get(key):asset(item['post_match'][key])
+ for qa in item.get('interview',[]):
+  photo=qa.get('player',{}).get('image')
+  if photo:
+   assert photo['alt']==qa['player']['name'];asset(photo['file'])
  for logo in ['from_logo','to_logo']:
   if item.get('transfer',{}).get(logo):asset(item['transfer'][logo])
  for c in item.get('coverage',[]):

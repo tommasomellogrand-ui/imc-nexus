@@ -17,9 +17,18 @@ const posts=data.items.filter(i=>i.category==='post-match'&&i.post_match.match_d
 if(posts.length!==20||new Set(posts.map(i=>i.post_match.manager_id)).size!==20)throw Error('Expected 20 manager interviews for 25 October');
 for(const item of posts){if(item.interview.length!==5)throw Error('Expected five answers');const card=p.locator('[data-news-id="'+item.id+'"]');if(await card.locator('.pv-interview-turn').count()!==5)throw Error('Interview rendering');}
 if(await p.locator('.rth-news-entry:not([hidden])').count()!==data.items.filter(i=>i.category==='post-match').length)throw Error('Post Match filtering');
+for(const item of posts){
+ const pm=item.post_match;if(pm.round!=='1'||!['1','2'].includes(pm.division))throw Error('Wrong division/round');
+ const card=p.locator('[data-news-id="'+item.id+'"]');
+ if(await card.locator('.pv-score-logo').count()!==2)throw Error('Both club crests required');
+ if(await card.locator('.pv-competition').innerText()!==`DIVISIONE ${pm.division} · GIORNATA 1`)throw Error('Competition heading');
+ for(const [i,qa] of item.interview.entries()){if(qa.player){if(!qa.player.image)throw Error('Missing player photo '+qa.player.id);const turn=card.locator('.pv-interview-turn').nth(i);if(await turn.locator('.pv-player-photo').count()!==1)throw Error('Player photo missing from turn');const ratio=await turn.evaluate(n=>n.querySelector('.pv-player-media').getBoundingClientRect().width/n.getBoundingClientRect().width);if(Math.abs(ratio-.25)>.01)throw Error('Player column must be one quarter');}}
+}
+await p.waitForFunction(()=>[...document.querySelectorAll('.pv-score-logo,.pv-player-photo')].every(i=>i.complete&&i.naturalWidth>0));
+if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Post Match mobile overflow');
 await p.screenshot({path:'/tmp/panno-verde-postmatch-mobile.png',fullPage:true});
 await p.locator('#rth-tab-ultimora').click();
 if(await p.locator('.rth-news-entry:not([hidden])').count()!==data.items.length)throw Error('Wall must contain every category');
 await p.screenshot({path:'/tmp/panno-verde-market-mobile.png',fullPage:true});
-console.log(JSON.stringify({verified:true,mode:'public',world:data.world,revision:data.revision,items:data.items.length,postMatchInterviews:posts.length,clubs:data.clubs.length,pendingClubNews:!data.items.some(i=>i.category==='club')}));
+console.log(JSON.stringify({verified:true,mode:'public',world:data.world,revision:data.revision,items:data.items.length,postMatchInterviews:posts.length,playerPhotos:posts.reduce((n,p)=>n+p.interview.filter(q=>q.player?.image).length,0),clubs:data.clubs.length,pendingClubNews:!data.items.some(i=>i.category==='club')}));
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exit(1)});
