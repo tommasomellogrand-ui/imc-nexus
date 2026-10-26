@@ -1,8 +1,8 @@
 {
   "world": "GW011",
-  "baseline_imported_at": "2026-10-26 00:00:00",
-  "baseline_transfer_date": "2026-10-25",
+  "baseline_imported_at": "1900-01-01 00:00:00",
+  "baseline_transfer_date": "1900-01-01",
   "rating_threshold": 90,
   "cash_threshold_eur_exclusive": 10000000,
-  "baseline_note": "Launch edition 26 October 2026: publish newly imported certified operations dated from 26 October. Historical reimports remain excluded."
+  "baseline_note": "Tom requested the complete GW011 transfer repository on 26 October 2026. Include all certified historical operations and future imports; deduplicate by operation identity."
 }

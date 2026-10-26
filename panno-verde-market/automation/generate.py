@@ -236,7 +236,8 @@ def main():
     path.write_text(json.dumps(item,ensure_ascii=False,indent=2)+'\n');created.append(item['id'])
   except Exception as e:pending.append({'event':key,'reason':str(e)[:250]})
  ledger_path.write_text(json.dumps(ledger,ensure_ascii=False,indent=2)+'\n')
- report={'checked_at':now,'source':snap['summary'],'eligible_operations':len(seen),'created':created,'pending':pending,'active_club_count':20}
+ unpublished=[{'event':key,'transfer_number':row.get('imc_transfer_number')} for key,(_,row) in seen.items() if not (R/'items'/('gw011-market-'+key+'.json')).exists()]
+ report={'source_rows':len(snap['rows']),'published_market_operations':len(seen)-len(unpublished),'unpublished_operations':unpublished,'checked_at':now,'source':snap['summary'],'eligible_operations':len(seen),'created':created,'pending':pending,'active_club_count':20}
  (A/'runtime/report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps(report,ensure_ascii=False))
  if os.environ.get('GITHUB_STEP_SUMMARY'):

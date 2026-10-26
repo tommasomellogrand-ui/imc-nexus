@@ -1,5 +1,6 @@
 """Publish GW011 only, preserving prior news and checking concurrent edits."""
 import hashlib,io,json,os,ssl,urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from ftplib import FTP_TLS,error_perm
 R=Path(__file__).parent
@@ -39,7 +40,9 @@ except Exception:
   if old[n] is not None:put(n,old[n])
  raise
 finally:f.quit()
-for n,b in files.items():
+def verify_public(entry):
+ n,b=entry
  u='https://www.italianmastersclub.it/nexus/il-panno-verde/'+n+'?verify='+os.environ['DEPLOY_SHA']
  assert urllib.request.urlopen(u,timeout=45).read()==b,'Public mismatch: '+n
+with ThreadPoolExecutor(max_workers=8) as pool:list(pool.map(verify_public,files.items()))
 print('PASS: public GW011 page, news and media match committed source')

@@ -38,6 +38,10 @@ try:
   if logo:club['logo']=logo
   clubs.append(club)
  (R/'clubs.json').write_text(json.dumps(clubs,ensure_ascii=False,indent=2)+'\n')
+ from collections import Counter
+ print('TRANSFER_SOURCE',json.dumps({'rows':len(data['rows']),'normalization':dict(Counter(str(r.get('normalization_status')) for r in data['rows'])),'statuses':dict(Counter(str(r.get('status')) for r in data['rows']))},ensure_ascii=False))
+ import prefetch
+ prefetch.run(data,cfg)
  generate.main()
  import postmatch
  postmatch.main(data)

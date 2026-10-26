@@ -1,10 +1,11 @@
 const {chromium}=require('playwright');
 (async()=>{const b=await chromium.launch({executablePath:process.env.CHROME_BIN||undefined,headless:true,args:['--no-sandbox']});try{
 const p=await b.newPage({viewport:{width:393,height:852},deviceScaleFactor:1});
-await p.goto('https://www.italianmastersclub.it/nexus/il-panno-verde/?world=GW011&tab=market',{waitUntil:'networkidle'});
-await p.waitForSelector('[data-feed-state="ready"]:not([hidden])',{timeout:30000});
+await p.goto('https://www.italianmastersclub.it/nexus/il-panno-verde/?world=GW011&tab=market',{waitUntil:'networkidle',timeout:120000});
+await p.waitForSelector('[data-feed-state="ready"]:not([hidden])',{timeout:120000});
 const data=await p.evaluate(async()=>{const r=await fetch('/nexus/il-panno-verde/flash-news.json',{cache:'no-store'});return r.json()});
 if(data.world!=='GW011'||data.clubs.length!==20)throw Error('Wrong world/club registry');
+const market=data.items.filter(i=>i.category==='market');if(!market.length)throw Error('Market archive missing');if(new Set(market.map(i=>i.id)).size!==market.length)throw Error('Duplicate market news');
 const ids=new Set(data.clubs.map(c=>c.id));for(const n of data.items){if(n.id.startsWith('gw001-')||n.club_ids.some(id=>!ids.has(id)))throw Error('Cross-world news');}
 if(await p.locator('[role=tab]').count()!==5)throw Error('Missing tabs');
 for(const key of ['flash-news','post-match','club','mercato','ultimora']){await p.locator('#rth-tab-'+key).click();if(await p.locator('#rth-tab-'+key).getAttribute('aria-selected')!=='true')throw Error('Tab failed');}
@@ -43,6 +44,6 @@ await p.waitForFunction(()=>[...document.querySelectorAll('.pv-division-logo')].
 if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Flash News mobile overflow');
 await p.screenshot({path:'/tmp/panno-verde-flash-mobile.png',fullPage:true});
 await p.locator('#rth-tab-ultimora').click();
-await p.screenshot({path:'/tmp/panno-verde-market-mobile.png',fullPage:true});
-console.log(JSON.stringify({verified:true,mode:'public',world:data.world,revision:data.revision,items:data.items.length,divisionFlashNews:divisionPosts.length,postMatchInterviews:posts.length,playerPhotos:posts.reduce((n,p)=>n+p.interview.filter(q=>q.player?.image).length,0),clubs:data.clubs.length,pendingClubNews:!data.items.some(i=>i.category==='club')}));
+await p.screenshot({path:'/tmp/panno-verde-market-mobile.png',fullPage:false});
+console.log(JSON.stringify({verified:true,mode:'public',world:data.world,revision:data.revision,items:data.items.length,marketOperations:market.length,marketPhotos:market.filter(i=>i.image).length,divisionFlashNews:divisionPosts.length,postMatchInterviews:posts.length,playerPhotos:posts.reduce((n,p)=>n+p.interview.filter(q=>q.player?.image).length,0),clubs:data.clubs.length,pendingClubNews:!data.items.some(i=>i.category==='club')}));
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exit(1)});

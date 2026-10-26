@@ -9,3 +9,6 @@ Notizie manuali: `items/<id>.json`, stesso contratto RTH24, sempre con club_ids 
 
 ## Post Match automatico
 Dal 25 ottobre 2026, il controllo ogni cinque minuti legge Results e Match Report completi GW011 e genera un articolo per partita + manager + club. Le assegnazioni sono risolte alla data della gara; assenze o ambiguità vengono segnalate senza inventare un allenatore. Due domande fisse, tre sui fatti del report, cinque risposte simulate con nota esplicita. Correzioni rigenerano lo stesso ID mantenendo l'ora di pubblicazione. Report incompleti (formazioni, statistiche, gol) restano in attesa. Le foto vengono usate solo se associate a identità verificate. La verifica pubblica controlla le venti interviste iniziali del 25 ottobre, i cinque scambi per articolo e la presenza in The Fick Wall.
+
+## Archivio mercato completo
+Dal 26 ottobre, su richiesta di Tom, il Mercato include tutte le operazioni certificate del repository GW011, anche precedenti al lancio. Rimangono le date certificate della conclusione e gli ID stabili. Lo stesso evento reimportato non crea una nuova notizia. I record non certificati o incompleti vengono segnalati per verifica; non sono trasformati in fatti inventati. Il download parallelo riusa foto originali e stemmi verificati.
