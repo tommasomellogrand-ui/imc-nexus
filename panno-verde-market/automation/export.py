@@ -39,7 +39,8 @@ try:
   clubs.append(club)
  (R/'clubs.json').write_text(json.dumps(clubs,ensure_ascii=False,indent=2)+'\n')
  generate.main()
- print('POSTMATCH_INSPECT',json.dumps({'clubs':data['clubs'],'managers':data['managers'],'matches':data.get('matches',[])},ensure_ascii=False))
+ import postmatch
+ postmatch.main(data)
 finally:
  try:f.delete(name)
  except error_perm:pass

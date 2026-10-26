@@ -5,7 +5,7 @@ from media import prepare,pending_upload
 R=Path(__file__).parent
 
 def validate(item):
- assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category','club_ids','transfer','coverage','editorial_version'},'Invalid fields'
+ assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category','club_ids','transfer','coverage','editorial_version','interview','post_match'},'Invalid fields'
  assert item.get('category','flash') in ('flash','club','market','post-match'),'Invalid category'
  if 'club_ids' in item:
   assert isinstance(item['club_ids'],list) and len(item['club_ids'])<=40 and all(isinstance(x,str) and x.isdigit() for x in item['club_ids']),'Invalid club IDs'
@@ -14,6 +14,16 @@ def validate(item):
   t=item['transfer'];assert isinstance(t,dict) and {'from','to','formula','amount','date'}<=set(t)<={'from','to','formula','amount','date','from_logo','to_logo'}
   assert all(isinstance(v,str) and 0<len(v)<=1000 for v in t.values())
   datetime.strptime(t['date'],'%Y-%m-%d')
+ if 'post_match' in item or 'interview' in item:
+  assert item.get('category')=='post-match'
+  pm=item['post_match'];assert pm['world']=='GW011' and pm['club_id'] in item['club_ids']
+  assert set(pm)=={'world','fixture_id','manager_id','manager','club_id','club','opponent','match_date','result','source_hash'}
+  assert all(isinstance(v,str) and v for v in pm.values())
+  assert re.fullmatch(r'MNG[0-9]+',pm['manager_id'])
+  datetime.strptime(pm['match_date'],'%Y-%m-%d')
+  assert len(item['interview'])==5 and len({q['question'] for q in item['interview']})==5
+  for qa in item['interview']:
+   assert set(qa)=={'question','answer'} and all(isinstance(v,str) and 0<len(v)<=3000 for v in qa.values())
  if 'coverage' in item:
   assert item.get('category')=='club' and isinstance(item['coverage'],list) and 1<=len(item['coverage'])<=2
   for c in item['coverage']:

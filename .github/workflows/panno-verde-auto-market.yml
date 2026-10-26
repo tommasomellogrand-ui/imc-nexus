@@ -22,7 +22,7 @@ jobs:
       - name: Validate the same certified market rules as GW001
         run: |
           python3 -m pip install Pillow==11.3.0
-          python3 -m unittest discover -s panno-verde-market/automation -p test_generate.py
+          python3 -m unittest discover -s panno-verde-market/automation -p "test_*.py"
           php -l panno-verde-market/automation/export.php
           node --check panno-verde-market/feed.js
           npm install --prefix /tmp/pv-market-qa playwright@1.56.1
@@ -62,4 +62,6 @@ jobs:
           name: panno-verde-market-publication
           path: |
             panno-verde-market/automation/runtime/report.json
+            panno-verde-market/automation/runtime/postmatch-report.json
             /tmp/panno-verde-market-mobile.png
+            /tmp/panno-verde-postmatch-mobile.png

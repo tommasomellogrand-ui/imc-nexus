@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364514948-mng033-93399623",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Simone Campanella · Il post partita di AS Roma",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nSSC Napoli 2–3 AS Roma · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514948",
+    "manager_id": "MNG033",
+    "manager": "Simone Campanella",
+    "club_id": "93399623",
+    "club": "AS Roma",
+    "opponent": "SSC Napoli",
+    "match_date": "2026-10-25",
+    "result": "SSC Napoli 2–3 AS Roma",
+    "source_hash": "7f5c146ff037fbb48350b4bda8dd2a06044f21f7152a55f3bdd58d69eecc69f4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 42% di possesso e 15 tiri, contro 18 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Neres al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+    },
+    {
+      "question": "Jonathan David è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+    },
+    {
+      "question": "5 tiri nello specchio su 15, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 5 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

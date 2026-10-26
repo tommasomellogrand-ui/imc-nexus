@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364515035-mng013-93399609",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Giovanni Cabrioli · Il post partita di Internazionale",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBarcelona 4–0 Internazionale · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515035",
+    "manager_id": "MNG013",
+    "manager": "Giovanni Cabrioli",
+    "club_id": "93399609",
+    "club": "Internazionale",
+    "opponent": "Barcelona",
+    "match_date": "2026-10-25",
+    "result": "Barcelona 4–0 Internazionale",
+    "source_hash": "cd5bcaff3e406cc949219d18f07dbf86ae1bf381092e00c901dc472a58e03334"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-4 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 37% di possesso e 10 tiri, contro 15 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Cubarsí al minuto 73 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 73 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+    },
+    {
+      "question": "F Dimarco ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra."
+    },
+    {
+      "question": "1 tiri nello specchio su 10, contro 7 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 1 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

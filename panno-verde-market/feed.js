@@ -40,7 +40,10 @@ for(const item of [...data.items].sort((a,b)=>Date.parse(b.published_at)-Date.pa
  if(item.teams?.length){const teams=el('div',null,'rth-news-teams');for(const team of item.teams){const badge=el('span',null,'rth-news-team'),logo=picture(team.logo,'Stemma '+team.name,'rth-news-logo');if(logo)badge.append(logo);badge.append(el('span',team.name));teams.append(badge)}body.append(teams)}
  body.append(el('h3',item.title));header.append(body);
  const content=el('div',null,'rth-news-content');
- if(item.coverage?.length){
+ if(item.interview?.length){
+  content.append(el('p',item.text.split('\n\n')[0],'rth-news-disclosure'),el('p',item.post_match.result+' · '+item.post_match.match_date.split('-').reverse().join('/'),'rth-news-intro'));
+  for(const [i,qa] of item.interview.entries()){const section=el('section',null,'pv-interview-turn');section.append(el('h4',(i+1)+'. '+qa.question),el('p','«'+qa.answer+'»'));content.append(section)}
+ }else if(item.coverage?.length){
   const intro=item.text.split('\n\n').slice(0,2);content.append(el('p',intro[0],'rth-news-disclosure'),el('p',intro[1],'rth-news-intro'));
   for(const c of item.coverage){
    const section=el('section',null,'rth-news-connection');section.append(el('h4','Dal club · '+c.club));

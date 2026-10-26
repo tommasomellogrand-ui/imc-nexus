@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364515038-mng027-93399549",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Danilo FC 1908 · Il post partita di Manchester United",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBayern München 1–1 Manchester United · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515038",
+    "manager_id": "MNG027",
+    "manager": "Danilo FC 1908",
+    "club_id": "93399549",
+    "club": "Manchester United",
+    "opponent": "Bayern München",
+    "match_date": "2026-10-25",
+    "result": "Bayern München 1–1 Manchester United",
+    "source_hash": "eb9fe10ad11e8a9e31f5605ca9b05a50b3b5a945b7a449c692caf1894447741b"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 40% di possesso e 9 tiri, contro 16 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Mainoo al minuto 87 ha fissato il risultato. Come legge quel finale?",
+      "answer": "Quel gol al minuto 87 ha avuto un peso concreto: ci ha permesso di pareggiare. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima."
+    },
+    {
+      "question": "K Mainoo ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo."
+    },
+    {
+      "question": "3 tiri nello specchio su 9, contro 9 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 9 volte contro le nostre 3. Il risultato premia la nostra concretezza, ma concedere meno conclusioni pulite rimane importante."
+    }
+  ]
+}

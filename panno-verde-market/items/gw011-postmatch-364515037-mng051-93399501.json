@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364515037-mng051-93399501",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Luciano Tana · Il post partita di Arsenal",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nArsenal 1–1 Real Madrid · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515037",
+    "manager_id": "MNG051",
+    "manager": "Luciano Tana",
+    "club_id": "93399501",
+    "club": "Arsenal",
+    "opponent": "Real Madrid",
+    "match_date": "2026-10-25",
+    "result": "Arsenal 1–1 Real Madrid",
+    "source_hash": "b692d0e90d1ea663111426907782201c1b3d73e6e28765735b1bd7cdb84359a3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 45% di possesso e 7 tiri, contro 12 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Júnior al minuto 70 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 70 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+    },
+    {
+      "question": "D Raya è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+    },
+    {
+      "question": "3 tiri nello specchio su 7, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 6 volte contro le nostre 3. Il risultato premia la nostra concretezza, ma concedere meno conclusioni pulite rimane importante."
+    }
+  ]
+}

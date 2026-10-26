@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364514945-mng014-93399580",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Giovanni Iodice · Il post partita di Tottenham Hotspur",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nTottenham Hotspur 1–2 Borussia Dortmund · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399580"
+  ],
+  "teams": [
+    {
+      "name": "Tottenham Hotspur",
+      "logo": "market-club-93399580-b520b61ef4469d37.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514945",
+    "manager_id": "MNG014",
+    "manager": "Giovanni Iodice",
+    "club_id": "93399580",
+    "club": "Tottenham Hotspur",
+    "opponent": "Borussia Dortmund",
+    "match_date": "2026-10-25",
+    "result": "Tottenham Hotspur 1–2 Borussia Dortmund",
+    "source_hash": "c215e3da01ac459e66498b5c28f42316f758886f015929b734b7e4a73a434c98"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 54% di possesso e 12 tiri, contro 12 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Guirassy al minuto 83 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 83 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone."
+    },
+    {
+      "question": "D Vlahović è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+    },
+    {
+      "question": "2 tiri nello specchio su 12, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 3 volte contro le nostre 2. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

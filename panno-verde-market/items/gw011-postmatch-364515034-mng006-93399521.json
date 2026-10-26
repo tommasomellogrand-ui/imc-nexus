@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364515034-mng006-93399521",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Pep Buitre · Il post partita di Chelsea",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester City 1–1 Chelsea · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515034",
+    "manager_id": "MNG006",
+    "manager": "Pep Buitre",
+    "club_id": "93399521",
+    "club": "Chelsea",
+    "opponent": "Manchester City",
+    "match_date": "2026-10-25",
+    "result": "Manchester City 1–1 Chelsea",
+    "source_hash": "008ba953df0338aa083b81956a52e2d5155326d608bb9dc96a42b5a46b2d2550"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 57% di possesso e 17 tiri, contro 11 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Semenyo al minuto 20 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 20 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+    },
+    {
+      "question": "M Rashford è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+    },
+    {
+      "question": "7 tiri nello specchio su 17, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Con 7 conclusioni nello specchio e 1 gol, il tema è convertire meglio quello che produciamo. Il dato non racconta da solo la difficoltà di ogni tiro, ma indica bene dove concentrare la nostra analisi."
+    }
+  ]
+}

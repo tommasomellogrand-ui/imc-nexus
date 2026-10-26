@@ -12,6 +12,14 @@ if(JSON.stringify(await p.locator('.rth-tabs [role=tab]').allTextContents())!==J
 await p.locator('#rth-club-trigger').click();if(await p.locator('.rth-club-option').count()!==21)throw Error('Club picker');await p.locator('.rth-club-close').click();
 if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Mobile horizontal overflow');
 const missing=await p.locator('.rth-news-card img').evaluateAll(imgs=>imgs.filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src));if(missing.length)throw Error('Missing media '+missing.length);
+await p.locator('#rth-tab-post-match').click();
+const posts=data.items.filter(i=>i.category==='post-match'&&i.post_match.match_date==='2026-10-25');
+if(posts.length!==20||new Set(posts.map(i=>i.post_match.manager_id)).size!==20)throw Error('Expected 20 manager interviews for 25 October');
+for(const item of posts){if(item.interview.length!==5)throw Error('Expected five answers');const card=p.locator('[data-news-id="'+item.id+'"]');if(await card.locator('.pv-interview-turn').count()!==5)throw Error('Interview rendering');}
+if(await p.locator('.rth-news-entry:not([hidden])').count()!==data.items.filter(i=>i.category==='post-match').length)throw Error('Post Match filtering');
+await p.screenshot({path:'/tmp/panno-verde-postmatch-mobile.png',fullPage:true});
+await p.locator('#rth-tab-ultimora').click();
+if(await p.locator('.rth-news-entry:not([hidden])').count()!==data.items.length)throw Error('Wall must contain every category');
 await p.screenshot({path:'/tmp/panno-verde-market-mobile.png',fullPage:true});
-console.log(JSON.stringify({verified:true,mode:'public',world:data.world,revision:data.revision,items:data.items.length,clubs:data.clubs.length,pendingClubNews:!data.items.some(i=>i.category==='club')}));
+console.log(JSON.stringify({verified:true,mode:'public',world:data.world,revision:data.revision,items:data.items.length,postMatchInterviews:posts.length,clubs:data.clubs.length,pendingClubNews:!data.items.some(i=>i.category==='club')}));
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exit(1)});

@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364514946-mng052-93399596",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Carlo Colombo · Il post partita di Atalanta BC",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nComo 1907 1–2 Atalanta BC · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514946",
+    "manager_id": "MNG052",
+    "manager": "Carlo Colombo",
+    "club_id": "93399596",
+    "club": "Atalanta BC",
+    "opponent": "Como 1907",
+    "match_date": "2026-10-25",
+    "result": "Como 1907 1–2 Atalanta BC",
+    "source_hash": "a629fcad4025011a08032b0c015fb5d2e95e05bd0ed8ef96cf624557cb317a3e"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 2-1 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 36% di possesso e 5 tiri, contro 15 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "Il rosso a M Soulé al minuto 62 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 62 abbiamo dovuto affrontare un’espulsione. La vittoria resta un risultato importante anche per questo, ma il cartellino è un episodio da analizzare separatamente."
+    },
+    {
+      "question": "M Soulé ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Il report gli assegna anche 1 assist. Un contributo importante al risultato positivo."
+    },
+    {
+      "question": "3 tiri nello specchio su 5, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo segnato 2 gol con 3 conclusioni nello specchio: oggi siamo stati efficaci. È un merito, ma per dare continuità ai risultati serve anche aumentare la produzione offensiva."
+    }
+  ]
+}

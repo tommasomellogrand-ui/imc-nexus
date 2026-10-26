@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364515036-mng065-93399544",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Carlo Ancelotti · Il post partita di Liverpool",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nParis Saint-Germain 2–1 Liverpool · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515036",
+    "manager_id": "MNG065",
+    "manager": "Carlo Ancelotti",
+    "club_id": "93399544",
+    "club": "Liverpool",
+    "opponent": "Paris Saint-Germain",
+    "match_date": "2026-10-25",
+    "result": "Paris Saint-Germain 2–1 Liverpool",
+    "source_hash": "aab4104a10c86bf5b4b9606249848c12f6c7524eb060bbcc3d3a0e14761bcbf9"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 50% di possesso e 10 tiri, contro 14 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Doué al minuto 86 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 86 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone."
+    },
+    {
+      "question": "Cole Palmer ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto."
+    },
+    {
+      "question": "3 tiri nello specchio su 10, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 6 volte contro le nostre 3. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364514948-mng015-93400234",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Marco Fioretti · Il post partita di SSC Napoli",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nSSC Napoli 2–3 AS Roma · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514948",
+    "manager_id": "MNG015",
+    "manager": "Marco Fioretti",
+    "club_id": "93400234",
+    "club": "SSC Napoli",
+    "opponent": "AS Roma",
+    "match_date": "2026-10-25",
+    "result": "SSC Napoli 2–3 AS Roma",
+    "source_hash": "9bf85b9c96a3da73c7e8d1473b4151c3ef44403ee19d52f799efb4ba2b23b33b"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 58% di possesso e 18 tiri, contro 15 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Neres al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+    },
+    {
+      "question": "Carlos Romero ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto."
+    },
+    {
+      "question": "5 tiri nello specchio su 18, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 5 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

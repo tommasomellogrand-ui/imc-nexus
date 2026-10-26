@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364515037-mng039-93399663",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Attilio Bonnici · Il post partita di Real Madrid",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nArsenal 1–1 Real Madrid · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515037",
+    "manager_id": "MNG039",
+    "manager": "Attilio Bonnici",
+    "club_id": "93399663",
+    "club": "Real Madrid",
+    "opponent": "Arsenal",
+    "match_date": "2026-10-25",
+    "result": "Arsenal 1–1 Real Madrid",
+    "source_hash": "2a6c2759594b552a07a1abd6a187b2b1f74108548a005cf1435c499a5e0a06a7"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 55% di possesso e 12 tiri, contro 7 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Júnior al minuto 70 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 70 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita."
+    },
+    {
+      "question": "V Júnior ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo."
+    },
+    {
+      "question": "6 tiri nello specchio su 12, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Con 6 conclusioni nello specchio e 1 gol, il tema è convertire meglio quello che produciamo. Il dato non racconta da solo la difficoltà di ogni tiro, ma indica bene dove concentrare la nostra analisi."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364514944-mng008-93399610",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Giorgio Grugni · Il post partita di Juventus",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nJuventus 3–3 SL Benfica · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514944",
+    "manager_id": "MNG008",
+    "manager": "Giorgio Grugni",
+    "club_id": "93399610",
+    "club": "Juventus",
+    "opponent": "SL Benfica",
+    "match_date": "2026-10-25",
+    "result": "Juventus 3–3 SL Benfica",
+    "source_hash": "fff8f89b0aec944b2294e362e7cafb34b6dec15bf8da4c5769fa9c8ff3b6a438"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 3-3 ci lascia un punto. Con 6 gol complessivi ci sono cose buone davanti e altre da correggere nella protezione della porta."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 57% di possesso e 18 tiri, contro 13 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Williams al minuto 86 ha fissato il risultato. Come legge quel finale?",
+      "answer": "Quel gol al minuto 86 ha avuto un peso concreto: ci ha permesso di pareggiare. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima."
+    },
+    {
+      "question": "Nico Williams è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 2 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+    },
+    {
+      "question": "8 tiri nello specchio su 18, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 8 volte e segnato 3 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

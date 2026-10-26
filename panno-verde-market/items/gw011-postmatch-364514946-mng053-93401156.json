@@ -1,0 +1,50 @@
+{
+  "id": "gw011-postmatch-364514946-mng053-93401156",
+  "published_at": "2026-10-26T08:09:50+01:00",
+  "title": "Chicco Belin · Il post partita di Como 1907",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nComo 1907 1–2 Atalanta BC · 25/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514946",
+    "manager_id": "MNG053",
+    "manager": "Chicco Belin",
+    "club_id": "93401156",
+    "club": "Como 1907",
+    "opponent": "Atalanta BC",
+    "match_date": "2026-10-25",
+    "result": "Como 1907 1–2 Atalanta BC",
+    "source_hash": "996bafb0445329a06a231bd5bfc8a67e3d9cb7f596a0af3992acca6588fa52ae"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 64% di possesso e 15 tiri, contro 5 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "Il rosso a M Soulé al minuto 62 quanto pesa nella lettura della gara?",
+      "answer": "L’espulsione avversaria al minuto 62 è un dato importante. Non siamo riusciti a tradurla nel risultato che cercavamo: il vantaggio numerico non sostituisce la qualità delle conclusioni."
+    },
+    {
+      "question": "N Jackson è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra."
+    },
+    {
+      "question": "6 tiri nello specchio su 15, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Con 6 conclusioni nello specchio e 1 gol, il tema è convertire meglio quello che produciamo. Il dato non racconta da solo la difficoltà di ogni tiro, ma indica bene dove concentrare la nostra analisi."
+    }
+  ]
+}
