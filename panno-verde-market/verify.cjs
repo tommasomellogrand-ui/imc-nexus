@@ -29,6 +29,20 @@ if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw
 await p.screenshot({path:'/tmp/panno-verde-postmatch-mobile.png',fullPage:true});
 await p.locator('#rth-tab-ultimora').click();
 if(await p.locator('.rth-news-entry:not([hidden])').count()!==data.items.length)throw Error('Wall must contain every category');
+const divisionPosts=data.items.filter(i=>i.division_news?.date==='2026-10-25');
+if(divisionPosts.length!==4)throw Error('Expected four division Flash News');
+await p.locator('#rth-tab-flash-news').click();
+for(const item of divisionPosts){
+ if(item.category!=='flash'||item.published_at!=='2026-10-25T22:00:00+01:00')throw Error('Wrong Flash News time/category');
+ const card=p.locator('[data-news-id="'+item.id+'"]');if(!await card.isVisible())throw Error('Flash news hidden');
+ if(await card.locator('.pv-team-manager').count()!==10||await card.locator('.pv-division-logo').count()!==10)throw Error('Ten club badges and manager names required');
+ if(item.division_news.kind==='results'&&await card.locator('.pv-result-row').count()!==5)throw Error('Five results required');
+ if(item.division_news.kind==='standings'&&await card.locator('tbody tr').count()!==10)throw Error('Ten standings rows required');
+}
+await p.waitForFunction(()=>[...document.querySelectorAll('.pv-division-logo')].every(i=>i.complete&&i.naturalWidth>0));
+if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Flash News mobile overflow');
+await p.screenshot({path:'/tmp/panno-verde-flash-mobile.png',fullPage:true});
+await p.locator('#rth-tab-ultimora').click();
 await p.screenshot({path:'/tmp/panno-verde-market-mobile.png',fullPage:true});
-console.log(JSON.stringify({verified:true,mode:'public',world:data.world,revision:data.revision,items:data.items.length,postMatchInterviews:posts.length,playerPhotos:posts.reduce((n,p)=>n+p.interview.filter(q=>q.player?.image).length,0),clubs:data.clubs.length,pendingClubNews:!data.items.some(i=>i.category==='club')}));
+console.log(JSON.stringify({verified:true,mode:'public',world:data.world,revision:data.revision,items:data.items.length,divisionFlashNews:divisionPosts.length,postMatchInterviews:posts.length,playerPhotos:posts.reduce((n,p)=>n+p.interview.filter(q=>q.player?.image).length,0),clubs:data.clubs.length,pendingClubNews:!data.items.some(i=>i.category==='club')}));
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exit(1)});

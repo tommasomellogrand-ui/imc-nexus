@@ -5,7 +5,7 @@ from media import prepare,pending_upload
 R=Path(__file__).parent
 
 def validate(item):
- assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category','club_ids','transfer','coverage','editorial_version','interview','post_match'},'Invalid fields'
+ assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category','club_ids','transfer','coverage','editorial_version','interview','post_match','division_news'},'Invalid fields'
  assert item.get('category','flash') in ('flash','club','market','post-match'),'Invalid category'
  if 'club_ids' in item:
   assert isinstance(item['club_ids'],list) and len(item['club_ids'])<=40 and all(isinstance(x,str) and x.isdigit() for x in item['club_ids']),'Invalid club IDs'
@@ -33,6 +33,23 @@ def validate(item):
  def asset(name):
   assert isinstance(name,str) and re.fullmatch(r'[a-z0-9][a-z0-9-]*\.(jpg|jpeg|png|webp)',name),'Invalid asset filename'
   assert (R/'assets'/name).is_file(),'Missing image: '+name
+ if 'division_news' in item:
+  d=item['division_news'];assert item['category']=='flash' and d['world']=='GW011' and d['division'] in ('1','2') and isinstance(d['round'],int) and d['round']>0
+  datetime.strptime(d['date'],'%Y-%m-%d')
+  assert d['kind'] in ('results','standings')
+  teams=[]
+  if d['kind']=='results':
+   assert len(d['fixtures'])==5
+   for f in d['fixtures']:
+    assert all(isinstance(f[k],int) and f[k]>=0 for k in ['home_score','away_score'])
+    teams.extend([f['home'],f['away']])
+  else:
+   assert len(d['standings'])==10;teams=d['standings']
+   assert [t['position'] for t in teams]==list(range(1,11))
+   for t in teams:assert t['points']==3*t['won']+t['drawn'] and t['gd']==t['gf']-t['ga'] and t['played']==t['won']+t['drawn']+t['lost']
+  assert {t['id'] for t in teams}==set(item['club_ids']) and len(teams)==10
+  for team in teams:
+   assert team['name'] and team['manager'] and re.fullmatch('MNG[0-9]+',team['manager_id']);asset(team['logo'])
  for key in ['home_logo','away_logo']:
   if item.get('post_match',{}).get(key):asset(item['post_match'][key])
  for qa in item.get('interview',[]):

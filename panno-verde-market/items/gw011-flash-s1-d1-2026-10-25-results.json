@@ -1,0 +1,124 @@
+{
+  "id": "gw011-flash-s1-d1-2026-10-25-results",
+  "published_at": "2026-10-25T22:00:00+01:00",
+  "title": "Divisione 1 · Risultati della 1ª giornata",
+  "text": "Tutti i risultati della giornata.",
+  "category": "flash",
+  "club_ids": [
+    "93399580",
+    "93399596",
+    "93399610",
+    "93399615",
+    "93399623",
+    "93399639",
+    "93399718",
+    "93399892",
+    "93400234",
+    "93401156"
+  ],
+  "division_news": {
+    "world": "GW011",
+    "kind": "results",
+    "season": "1",
+    "division": "1",
+    "round": 1,
+    "date": "2026-10-25",
+    "fixtures": [
+      {
+        "fixture_id": "364514944",
+        "home": {
+          "id": "93399610",
+          "name": "Juventus",
+          "logo": "market-club-93399610-324c3f0e48728abe.png",
+          "manager": "Giorgio Grugni",
+          "manager_id": "MNG008"
+        },
+        "away": {
+          "id": "93399718",
+          "name": "SL Benfica",
+          "logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+          "manager": "Vincenzo Martorano",
+          "manager_id": "MNG007"
+        },
+        "home_score": 3,
+        "away_score": 3
+      },
+      {
+        "fixture_id": "364514945",
+        "home": {
+          "id": "93399580",
+          "name": "Tottenham Hotspur",
+          "logo": "market-club-93399580-b520b61ef4469d37.png",
+          "manager": "Giovanni Iodice",
+          "manager_id": "MNG014"
+        },
+        "away": {
+          "id": "93399892",
+          "name": "Borussia Dortmund",
+          "logo": "market-club-93399892-d15d77a60b17db2f.png",
+          "manager": "Cosimo Lonoce",
+          "manager_id": "MNG060"
+        },
+        "home_score": 1,
+        "away_score": 2
+      },
+      {
+        "fixture_id": "364514946",
+        "home": {
+          "id": "93401156",
+          "name": "Como 1907",
+          "logo": "market-club-93401156-3677d3c02dbbefef.png",
+          "manager": "Chicco Belin",
+          "manager_id": "MNG053"
+        },
+        "away": {
+          "id": "93399596",
+          "name": "Atalanta BC",
+          "logo": "market-club-93399596-85e2afd4c411f080.png",
+          "manager": "Carlo Colombo",
+          "manager_id": "MNG052"
+        },
+        "home_score": 1,
+        "away_score": 2
+      },
+      {
+        "fixture_id": "364514947",
+        "home": {
+          "id": "93399615",
+          "name": "AC Milan",
+          "logo": "market-club-93399615-cf09cc84369c6535.png",
+          "manager": "Saverio Cordiano",
+          "manager_id": "MNG016"
+        },
+        "away": {
+          "id": "93399639",
+          "name": "Atlético Madrid",
+          "logo": "market-club-93399639-e209a6007dbb920b.png",
+          "manager": "Tommaso Mello",
+          "manager_id": "MNG001"
+        },
+        "home_score": 0,
+        "away_score": 1
+      },
+      {
+        "fixture_id": "364514948",
+        "home": {
+          "id": "93400234",
+          "name": "SSC Napoli",
+          "logo": "market-club-93400234-082aae3f75dc21ec.png",
+          "manager": "Marco Fioretti",
+          "manager_id": "MNG015"
+        },
+        "away": {
+          "id": "93399623",
+          "name": "AS Roma",
+          "logo": "market-club-93399623-4f2820912276f496.png",
+          "manager": "Simone Campanella",
+          "manager_id": "MNG033"
+        },
+        "home_score": 2,
+        "away_score": 3
+      }
+    ]
+  }
+}

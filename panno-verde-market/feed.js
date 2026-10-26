@@ -40,7 +40,17 @@ for(const item of [...data.items].sort((a,b)=>Date.parse(b.published_at)-Date.pa
  if(item.teams?.length){const teams=el('div',null,'rth-news-teams');for(const team of item.teams){const badge=el('span',null,'rth-news-team'),logo=picture(team.logo,'Stemma '+team.name,'rth-news-logo');if(logo)badge.append(logo);badge.append(el('span',team.name));teams.append(badge)}body.append(teams)}
  body.append(el('h3',item.title));header.append(body);
  const content=el('div',null,'rth-news-content');
- if(item.interview?.length){
+ if(item.division_news){
+  const d=item.division_news;
+  const teamNode=(team,compact=false)=>{const box=el('div',null,compact?'pv-table-team':'pv-result-team');const img=picture(team.logo,'Stemma '+team.name,'pv-division-logo');if(img)box.append(img);const names=el('div',null,'pv-team-names');names.append(el('strong',team.name),el('small',team.manager,'pv-team-manager'));box.append(names);return box};
+  if(d.kind==='results'){
+   const fixtures=el('div',null,'pv-results-list');for(const f of d.fixtures){const row=el('div',null,'pv-result-row');row.append(teamNode(f.home),el('strong',f.home_score+' – '+f.away_score,'pv-result-score'),teamNode(f.away));fixtures.append(row)}content.append(fixtures)
+  }else{
+   const table=el('table',null,'pv-standings');table.setAttribute('aria-label','Classifica Divisione '+d.division+' dopo la giornata '+d.round);
+   const thead=el('thead'),tr=el('tr');for(const label of ['#','Squadra','Pt','G','DR','GF–GS']){const th=el('th',label);th.scope='col';tr.append(th)}thead.append(tr);table.append(thead);const tbody=el('tbody');
+   for(const team of d.standings){const row=el('tr');row.append(el('td',team.position));const cell=el('th');cell.scope='row';cell.append(teamNode(team,true));row.append(cell);for(const value of [team.points,team.played,(team.gd>0?'+':'')+team.gd,team.gf+'–'+team.ga])row.append(el('td',value));tbody.append(row)}table.append(tbody);content.append(table,el('p','G: giocate · DR: differenza reti · GF–GS: gol fatti e subiti.','pv-table-note'))
+  }
+ }else if(item.interview?.length){
   content.append(el('p',item.text.split('\n\n')[0],'rth-news-disclosure'));
   for(const [i,qa] of item.interview.entries()){
    const section=el('section',null,'pv-interview-turn'),copy=el('div',null,'pv-interview-copy');

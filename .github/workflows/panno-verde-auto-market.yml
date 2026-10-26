@@ -65,3 +65,4 @@ jobs:
             panno-verde-market/automation/runtime/postmatch-report.json
             /tmp/panno-verde-market-mobile.png
             /tmp/panno-verde-postmatch-mobile.png
+            /tmp/panno-verde-flash-mobile.png

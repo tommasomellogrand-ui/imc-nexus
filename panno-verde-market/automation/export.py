@@ -41,6 +41,8 @@ try:
  generate.main()
  import postmatch
  postmatch.main(data)
+ import division_news
+ division_news.main(data)
 finally:
  try:f.delete(name)
  except error_perm:pass
