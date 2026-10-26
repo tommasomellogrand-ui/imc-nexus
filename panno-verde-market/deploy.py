@@ -4,7 +4,7 @@ from pathlib import Path
 from ftplib import FTP_TLS,error_perm
 R=Path(__file__).parent
 files={p.name:p.read_bytes() for p in (R/'assets').iterdir() if p.is_file() and not p.name.startswith('.')}
-files.update({'market-feed-v1.js':(R/'feed.js').read_bytes(),'market-feed-v1.css':(R/'feed.css').read_bytes(),'flash-news.json':(R/'dist/flash-news.json').read_bytes(),'index.html':(R/'index.html').read_bytes()})
+files.update({'market-feed-v2.js':(R/'feed.js').read_bytes(),'market-feed-v2.css':(R/'feed.css').read_bytes(),'flash-news.json':(R/'dist/flash-news.json').read_bytes(),'index.html':(R/'index.html').read_bytes()})
 host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','');raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/');domain=host[4:] if host.startswith('ftp.') else host
 remote=(raw if raw.startswith('/www.') else f'/www.{domain}{raw}')+'/il-panno-verde'
 ctx=ssl.create_default_context();ctx.check_hostname=False

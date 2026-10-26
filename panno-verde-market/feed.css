@@ -85,3 +85,5 @@ body[data-programme="rth-24"] .rth-panel{padding:0;border:0;border-radius:0;back
 .rth-club-trigger:focus-visible,.rth-club-option:focus-visible,.rth-club-close:focus-visible,.rth-club-reset:focus-visible,.rth-club-search:focus-visible{outline:3px solid #c6a24f;outline-offset:2px}
 .rth-club-filter[hidden],.rth-club-reset[hidden],.rth-club-no-results[hidden]{display:none!important}
 @media(min-width:700px){.rth-club-dialog{inset:0;margin:auto;border-radius:20px;max-height:75vh}.rth-club-filter{max-width:560px}.rth-club-handle{display:none}.rth-club-dialog-head{padding-top:24px}.rth-club-close{top:17px}}
+
+.pv-wall-button{display:block;width:100%;min-height:72px;margin:0 0 12px;padding:18px;border:1px solid #bda063;border-bottom:4px solid #bda063;border-radius:12px;background:white;color:#14213b;font:800 clamp(22px,4vw,30px)/1.2 Inter,system-ui,sans-serif;cursor:pointer}.pv-wall-button[aria-selected=true]{background:#14213b;color:white}.pv-wall-button:focus-visible{outline:3px solid #d2aa51;outline-offset:3px}

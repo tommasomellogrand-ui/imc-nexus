@@ -6,7 +6,7 @@ R=Path(__file__).parent
 
 def validate(item):
  assert {'id','published_at','title','text'}<=set(item)<={'id','published_at','title','text','image','teams','category','club_ids','transfer','coverage','editorial_version'},'Invalid fields'
- assert item.get('category','flash') in ('flash','club','market'),'Invalid category'
+ assert item.get('category','flash') in ('flash','club','market','post-match'),'Invalid category'
  if 'club_ids' in item:
   assert isinstance(item['club_ids'],list) and len(item['club_ids'])<=40 and all(isinstance(x,str) and x.isdigit() for x in item['club_ids']),'Invalid club IDs'
  if 'editorial_version' in item:assert item['editorial_version'] in (2,3)
