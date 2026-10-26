@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-c80102f422506b5e0fe6b460",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Paris Saint-Germain: ufficiale l’arrivo di Massimo Pessina",
+  "text": "Paris Saint-Germain e Bologna FC chiudono l’accordo per Massimo Pessina. Operazione da 5,7 milioni di euro, con Renato Marin nel percorso inverso verso Bologna FC.",
+  "category": "market",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "Paris Saint-Germain",
+    "formula": "Scambio con contropartite",
+    "amount": "5,7 milioni di euro + Renato Marin",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-98-1c269c6755cb7fdb.png",
+    "to_logo": "market-club-93399838-3eef9082b1e66395.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-151673-12a32eb1e1ccf5e1.png",
+    "alt": "Massimo Pessina"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e66a21f47278618fa72888c1",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "SSC Napoli: ufficiale l’arrivo di Mikel Jauregizar",
+  "text": "SSC Napoli annuncia l’arrivo di Mikel Jauregizar. Il giocatore lascia Athletic Club: operazione da 18,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "Athletic Club",
+    "to": "SSC Napoli",
+    "formula": "Trasferimento definitivo",
+    "amount": "18,4 milioni di euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-138-d1267d0040357da1.png",
+    "to_logo": "market-club-93400234-082aae3f75dc21ec.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-143368-1cd5907fc50ad3e5.png",
+    "alt": "Mikel Jauregizar"
+  }
+}

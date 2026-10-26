@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d4927233c972da8c3928752c",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Jarrod Bowen",
+  "text": "Manchester City annuncia l’arrivo di Jarrod Bowen. Il giocatore lascia West Ham United: operazione da 18,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "West Ham United",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "18,3 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-85-c016bd02007f9e26.png",
+    "to_logo": "market-club-93399547-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-73249-502c85294687dfa1.png",
+    "alt": "Jarrod Bowen"
+  }
+}

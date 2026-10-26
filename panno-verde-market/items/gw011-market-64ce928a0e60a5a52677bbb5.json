@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-64ce928a0e60a5a52677bbb5",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Arsenal: ufficiale l’arrivo di Jahmai Simpson-Pusey",
+  "text": "Arsenal e 1. FC Köln chiudono l’accordo per Jahmai Simpson-Pusey. Operazione da 4,1 milioni di euro, con Igor Tyjon, Louis Zecevic-John nel percorso inverso verso 1. FC Köln.",
+  "category": "market",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "transfer": {
+    "from": "1. FC Köln",
+    "to": "Arsenal",
+    "formula": "Scambio con contropartite",
+    "amount": "4,1 milioni di euro + Igor Tyjon, Louis Zecevic-John",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-385-128f63848ba68d21.png",
+    "to_logo": "market-club-93399501-33ef41943a141618.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-142084-11ec9b468f54bd0b.png",
+    "alt": "Jahmai Simpson-Pusey"
+  }
+}

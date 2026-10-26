@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e1f69467d4971d164b4761d5",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Rafael Leão",
+  "text": "Manchester City annuncia l’arrivo di Rafael Leão. Il giocatore lascia Galatasaray SK: operazione da 39,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Galatasaray SK",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "39,1 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-351-e42d9b78ea0438c3.png",
+    "to_logo": "market-club-93399547-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-93302-a883b24aece0f10f.png",
+    "alt": "Rafael Leão"
+  }
+}

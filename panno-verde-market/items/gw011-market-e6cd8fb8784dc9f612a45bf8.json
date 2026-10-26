@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-e6cd8fb8784dc9f612a45bf8",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Borussia Dortmund: ufficiale l’arrivo di Mika Wallentowitz",
+  "text": "Borussia Dortmund annuncia l’arrivo di Mika Wallentowitz. Il giocatore lascia FC Schalke 04: operazione da 463.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Schalke 04",
+    "to": "Borussia Dortmund",
+    "formula": "Trasferimento definitivo",
+    "amount": "463.000 euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-398-d56cd8525522ab1e.png",
+    "to_logo": "market-club-93399892-d15d77a60b17db2f.png"
+  },
+  "editorial_version": 3
+}

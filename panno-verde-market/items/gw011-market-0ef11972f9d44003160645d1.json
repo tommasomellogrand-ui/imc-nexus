@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-0ef11972f9d44003160645d1",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Paris Saint-Germain: ufficiale l’arrivo di Stephan Zagadou",
+  "text": "Paris Saint-Germain e Le Havre AC chiudono l’accordo per Stephan Zagadou. Operazione da 3,8 milioni di euro, con Rayan Abo El Nay nel percorso inverso verso Le Havre AC.",
+  "category": "market",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "transfer": {
+    "from": "Le Havre AC",
+    "to": "Paris Saint-Germain",
+    "formula": "Scambio con contropartite",
+    "amount": "3,8 milioni di euro + Rayan Abo El Nay",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-325-7f1d323a76d7b77f.png",
+    "to_logo": "market-club-93399838-3eef9082b1e66395.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-161286-e9cd1e591e464c8c.png",
+    "alt": "Stephan Zagadou"
+  }
+}

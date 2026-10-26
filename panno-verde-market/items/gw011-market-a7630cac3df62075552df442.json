@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a7630cac3df62075552df442",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Chelsea: ufficiale l’arrivo di Yassir Zabiri",
+  "text": "Chelsea annuncia l’arrivo di Yassir Zabiri. Il giocatore lascia Stade Rennais: operazione da 3,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Stade Rennais",
+    "to": "Chelsea",
+    "formula": "Trasferimento definitivo",
+    "amount": "3,2 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-340-e233b7cc8b6a8321.png",
+    "to_logo": "market-club-93399521-6694aaf8610a7f9b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-145056-5248d765f6b57c9f.png",
+    "alt": "Yassir Zabiri"
+  }
+}

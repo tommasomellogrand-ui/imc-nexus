@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-fbd4568451b652fe7855c8fa",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Issa Doumbia",
+  "text": "Como 1907 e Sporting CP chiudono l’accordo per Issa Doumbia. Operazione da 15,1 milioni di euro, con Maxence Caqueret nel percorso inverso verso Sporting CP.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Sporting CP",
+    "to": "Como 1907",
+    "formula": "Scambio con contropartite",
+    "amount": "15,1 milioni di euro + Maxence Caqueret",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-246-69379aab49a3507e.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-119632-98553c60613299ce.png",
+    "alt": "Issa Doumbia"
+  }
+}

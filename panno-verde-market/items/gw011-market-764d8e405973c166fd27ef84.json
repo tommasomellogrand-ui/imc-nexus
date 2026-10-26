@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-764d8e405973c166fd27ef84",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Chelsea: ufficiale l’arrivo di Vitor Rayan",
+  "text": "Chelsea e AFC Bournemouth chiudono l’accordo per Vitor Rayan. Operazione da 62 milioni di euro, con Filip Jorgensen, Gabriel Slonina nel percorso inverso verso AFC Bournemouth.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "AFC Bournemouth",
+    "to": "Chelsea",
+    "formula": "Scambio con contropartite",
+    "amount": "62 milioni di euro + Filip Jorgensen, Gabriel Slonina",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-9-f7be2ed5fdd0e218.png",
+    "to_logo": "market-club-93399521-6694aaf8610a7f9b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-135556-0a660e3758193681.png",
+    "alt": "Vitor Rayan"
+  }
+}

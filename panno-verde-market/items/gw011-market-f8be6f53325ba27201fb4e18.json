@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f8be6f53325ba27201fb4e18",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Will Lankshear",
+  "text": "Atlético Madrid annuncia l’arrivo di Will Lankshear. Il giocatore lascia Middlesbrough: operazione da 3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Middlesbrough",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "3 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-50-6c3c8d8fd6cdea28.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-144810-4ac5427f7613db28.png",
+    "alt": "Will Lankshear"
+  }
+}

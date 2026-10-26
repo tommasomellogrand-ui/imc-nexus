@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-eaeffafa32d4d3c2505859e5",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Juventus: ufficiale l’arrivo di Edmond Tapsoba",
+  "text": "Juventus annuncia l’arrivo di Edmond Tapsoba. Il giocatore lascia Bayer Leverkusen: operazione da 18,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayer Leverkusen",
+    "to": "Juventus",
+    "formula": "Trasferimento definitivo",
+    "amount": "18,2 milioni di euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-390-0910c20d52ededca.png",
+    "to_logo": "market-club-93399610-324c3f0e48728abe.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-101763-a5eb06bc7a884855.png",
+    "alt": "Edmond Tapsoba"
+  }
+}

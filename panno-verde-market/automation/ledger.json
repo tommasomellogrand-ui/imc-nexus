@@ -1,1 +1,2858 @@
-{}
+{
+  "007f19db5f5240d887c7efe4": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 90,
+    "normalized_date": "2026-10-18"
+  },
+  "0251eab785e5bb12d0c26a33": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 318,
+    "normalized_date": "2026-10-23"
+  },
+  "02a38e95f4e290e93d9c2459": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 9,
+    "normalized_date": "2026-10-18"
+  },
+  "02a61dc0080347ed837b9257": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 181,
+    "normalized_date": "2026-10-19"
+  },
+  "02d02d07d59674052ac678c2": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 24,
+    "normalized_date": "2026-10-18"
+  },
+  "02e88767de766ec437b453b7": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 217,
+    "normalized_date": "2026-10-19"
+  },
+  "02eed82da6b0f0925354b9c8": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 180,
+    "normalized_date": "2026-10-19"
+  },
+  "0301b865342a6406405700a7": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 31,
+    "normalized_date": "2026-10-18"
+  },
+  "032a685b8d380c40c6a70334": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 187,
+    "normalized_date": "2026-10-19"
+  },
+  "04cd47ecece463042441e217": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 47,
+    "normalized_date": "2026-10-18"
+  },
+  "06fb347cc7e4018767a7254d": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 202,
+    "normalized_date": "2026-10-19"
+  },
+  "077923ab4a7beaf4d10cb7dc": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 8,
+    "normalized_date": "2026-10-18"
+  },
+  "078bb23ce4486cca091bc289": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 134,
+    "normalized_date": "2026-10-18"
+  },
+  "0907848f1758229223ac8973": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 68,
+    "normalized_date": "2026-10-18"
+  },
+  "097237825467768a8cb73301": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 329,
+    "normalized_date": "2026-10-21"
+  },
+  "09d49bdc7b0a1c30d31795e6": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 14,
+    "normalized_date": "2026-10-18"
+  },
+  "0a490a9d6a9f4c2dfb3030dc": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 2,
+    "normalized_date": "2026-10-18"
+  },
+  "0a53c32b986f8a69f1d9a5b6": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 348,
+    "normalized_date": "2026-10-21"
+  },
+  "0a75fe77241e3bed7579c7d2": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 321,
+    "normalized_date": "2026-10-22"
+  },
+  "0aad27b04add9d2f8ad7ee36": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 96,
+    "normalized_date": "2026-10-18"
+  },
+  "0b63d89d9f83a25a37a9a81f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 355,
+    "normalized_date": "2026-10-25"
+  },
+  "0ca972f2a7796e6ce90791bf": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 182,
+    "normalized_date": "2026-10-19"
+  },
+  "0cac874150db8a489a9c10f3": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 303,
+    "normalized_date": "2026-10-20"
+  },
+  "0cb63f0857b241a614f841c0": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 224,
+    "normalized_date": "2026-10-19"
+  },
+  "0ce86001ed238467df526699": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 265,
+    "normalized_date": "2026-10-19"
+  },
+  "0cef44836be6eaa3221816b1": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 340,
+    "normalized_date": "2026-10-21"
+  },
+  "0e4dc6f6bdc612f776b6a168": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 55,
+    "normalized_date": "2026-10-18"
+  },
+  "0e59699e5ec1f6103146ef48": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 131,
+    "normalized_date": "2026-10-18"
+  },
+  "0ef11972f9d44003160645d1": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 239,
+    "normalized_date": "2026-10-19"
+  },
+  "0f9a8a07671d82a0c0c0fc49": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 220,
+    "normalized_date": "2026-10-18"
+  },
+  "0fd177ba5da3c11ce080ad06": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 53,
+    "normalized_date": "2026-10-18"
+  },
+  "1068a40a6298d79e0aaac7f4": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 167,
+    "normalized_date": "2026-10-18"
+  },
+  "1073649c2b66b451ed1973ab": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 80,
+    "normalized_date": "2026-10-18"
+  },
+  "10946e26f6fba07495111811": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 219,
+    "normalized_date": "2026-10-19"
+  },
+  "10dce90667933fb2ecfc811f": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 310,
+    "normalized_date": "2026-10-20"
+  },
+  "1119f86877a63c486c3da7b4": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 67,
+    "normalized_date": "2026-10-18"
+  },
+  "116552ecf973b8f7318f4243": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 58,
+    "normalized_date": "2026-10-18"
+  },
+  "125c86561c1983168c688e46": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 44,
+    "normalized_date": "2026-10-17"
+  },
+  "12c6290f158d9970b5a6bfa1": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 54,
+    "normalized_date": "2026-10-18"
+  },
+  "1496a53b27fd4e20de0bbbac": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 349,
+    "normalized_date": "2026-10-21"
+  },
+  "14e09d34fb190d9ab8430c60": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 172,
+    "normalized_date": "2026-10-19"
+  },
+  "15ccdf2822f515ecfeb17afc": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 346,
+    "normalized_date": "2026-10-21"
+  },
+  "1710d1532f751f0219c4576b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 320,
+    "normalized_date": "2026-10-23"
+  },
+  "188bc43f5e5710761a501432": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 233,
+    "normalized_date": "2026-10-19"
+  },
+  "1a06e953ad0a559a0196a6e3": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 282,
+    "normalized_date": "2026-10-18"
+  },
+  "1b09c955fc259abaa3e53e8d": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 118,
+    "normalized_date": "2026-10-16"
+  },
+  "1fb56f4ed550822bcb2c6445": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 300,
+    "normalized_date": "2026-10-20"
+  },
+  "203b4fc350422531843e4b3b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 203,
+    "normalized_date": "2026-10-19"
+  },
+  "21451211185227ea014623d5": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 214,
+    "normalized_date": "2026-10-19"
+  },
+  "2349f02096fd464c149349a7": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 20,
+    "normalized_date": "2026-10-18"
+  },
+  "235e578957b2426cdbd179bc": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 42,
+    "normalized_date": "2026-10-18"
+  },
+  "23fd2c3b7013a60e0cf0777d": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 5,
+    "normalized_date": "2026-10-18"
+  },
+  "2408c86c69e3fe32bd90c5d5": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 223,
+    "normalized_date": "2026-10-19"
+  },
+  "24a70968a8b44d5b4a1d6738": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 115,
+    "normalized_date": "2026-10-18"
+  },
+  "24e3a5093446778077587be5": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 23,
+    "normalized_date": "2026-10-18"
+  },
+  "25b2b707a2c54b2d29973965": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 297,
+    "normalized_date": "2026-10-20"
+  },
+  "25dd0aec5cea6dce4cdbc73d": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 78,
+    "normalized_date": "2026-10-18"
+  },
+  "2788da8a8a9363a7d28cca95": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 354,
+    "normalized_date": "2026-10-25"
+  },
+  "27dc071a68e46407f5b1f7d3": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 235,
+    "normalized_date": "2026-10-19"
+  },
+  "288254c42ecd573d3d8dae6b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 99,
+    "normalized_date": "2026-10-18"
+  },
+  "2ad615ece0b0b776dcdb30ad": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 66,
+    "normalized_date": "2026-10-18"
+  },
+  "2cac181f0721056695d0cbf9": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 188,
+    "normalized_date": "2026-10-19"
+  },
+  "2f2cc128f728eb31d411e95f": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 275,
+    "normalized_date": "2026-10-18"
+  },
+  "2fcee4fc19afc80c51481c13": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 60,
+    "normalized_date": "2026-10-18"
+  },
+  "30b2f28ee1fea156a4864593": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 328,
+    "normalized_date": "2026-10-21"
+  },
+  "30d854d0951bd874fd878beb": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 43,
+    "normalized_date": "2026-10-18"
+  },
+  "31fb1bdaf8ce3fc5a9f2c051": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 137,
+    "normalized_date": "2026-10-18"
+  },
+  "330ff0ce611aa357fb75b56e": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 256,
+    "normalized_date": "2026-10-18"
+  },
+  "34ac0e8cee9ff31c72403c28": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 216,
+    "normalized_date": "2026-10-19"
+  },
+  "34e24f7e1d8374a2a5c42b3f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 79,
+    "normalized_date": "2026-10-18"
+  },
+  "361bf0c07ac217abb0cf5f89": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 3,
+    "normalized_date": "2026-10-18"
+  },
+  "37eb957e3702df02b500756a": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 292,
+    "normalized_date": "2026-10-20"
+  },
+  "38825dcf07cfd4b165c31db8": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 344,
+    "normalized_date": "2026-10-21"
+  },
+  "38c74388db48b431ff1dd010": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 230,
+    "normalized_date": "2026-10-19"
+  },
+  "3b6f80b72e08eb50ad74d2ee": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 301,
+    "normalized_date": "2026-10-20"
+  },
+  "3c99afe08e3e3ee894b5a3b6": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 74,
+    "normalized_date": "2026-10-18"
+  },
+  "3cd7cbbc0c00f767afd6b077": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 274,
+    "normalized_date": "2026-10-18"
+  },
+  "3d9941b4a4cfeef90f480137": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 141,
+    "normalized_date": "2026-10-18"
+  },
+  "3df17b5981bc6c4bd717d687": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 57,
+    "normalized_date": "2026-10-18"
+  },
+  "3e26e4450d616c50b6cb6f42": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 106,
+    "normalized_date": "2026-10-18"
+  },
+  "3e295e97af148195cb086510": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 178,
+    "normalized_date": "2026-10-19"
+  },
+  "3e4530482a24997574deb43c": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 255,
+    "normalized_date": "2026-10-18"
+  },
+  "3e81344eeba8ef9850dc4a1b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 21,
+    "normalized_date": "2026-10-18"
+  },
+  "3e9fe67877cdd2147002efee": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 315,
+    "normalized_date": "2026-10-23"
+  },
+  "3fd84ac4460c2804587f5459": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 160,
+    "normalized_date": "2026-10-18"
+  },
+  "402991e4574672e4c09f811d": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 93,
+    "normalized_date": "2026-10-18"
+  },
+  "42cb195f1696e067dd301f44": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 347,
+    "normalized_date": "2026-10-21"
+  },
+  "450c31c417bf98082a41d1ee": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 237,
+    "normalized_date": "2026-10-19"
+  },
+  "46898f81b8c578a129edbfcc": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 244,
+    "normalized_date": "2026-10-19"
+  },
+  "472bb45586a927624876322d": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 342,
+    "normalized_date": "2026-10-21"
+  },
+  "47aed0fb228637c351c1ac99": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 288,
+    "normalized_date": "2026-10-20"
+  },
+  "4837386b7de4c41241b3d172": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 35,
+    "normalized_date": "2026-10-18"
+  },
+  "491bdab7618c81e253ff7d2b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 280,
+    "normalized_date": "2026-10-18"
+  },
+  "49e98bacebe987c2eca08952": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 81,
+    "normalized_date": "2026-10-18"
+  },
+  "4c48a3f1672a691c490a2225": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 191,
+    "normalized_date": "2026-10-19"
+  },
+  "4dad6c9430d54784685ceac5": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 295,
+    "normalized_date": "2026-10-20"
+  },
+  "4e46b5b45d7a6373d989b350": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 84,
+    "normalized_date": "2026-10-18"
+  },
+  "4f3ff7dc61a6ebf0847c7a85": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 38,
+    "normalized_date": "2026-10-18"
+  },
+  "4f9ed77b7e8250425d88f65e": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 135,
+    "normalized_date": "2026-10-18"
+  },
+  "508572993edf0c58e385c2b3": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 248,
+    "normalized_date": "2026-10-18"
+  },
+  "527361e0ed9f777072e260d3": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 120,
+    "normalized_date": "2026-10-16"
+  },
+  "53fe41766c7b8c52a299c160": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 247,
+    "normalized_date": "2026-10-19"
+  },
+  "54363198a0eb3ce6f645ae58": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 260,
+    "normalized_date": "2026-10-18"
+  },
+  "54711fe01566875631d585b7": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 155,
+    "normalized_date": "2026-10-18"
+  },
+  "5481e5fb385c361f17bbe444": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 200,
+    "normalized_date": "2026-10-19"
+  },
+  "5618fab8d1cbe0f41bd30562": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 311,
+    "normalized_date": "2026-10-20"
+  },
+  "564f4a3efa12c496f0d767be": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 210,
+    "normalized_date": "2026-10-19"
+  },
+  "587177e35b604496a6bd8f5e": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 142,
+    "normalized_date": "2026-10-18"
+  },
+  "5c4f1981a17d074c3c039fb6": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 126,
+    "normalized_date": "2026-10-18"
+  },
+  "5d4dd86e0c0a94d46ac8b78b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 250,
+    "normalized_date": "2026-10-18"
+  },
+  "5d6521718a7f3bfc6b9e0b8b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 357,
+    "normalized_date": "2026-10-24"
+  },
+  "5e2a3305ffab776529050ed6": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 246,
+    "normalized_date": "2026-10-19"
+  },
+  "5e823863b4c9f31630bec943": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 333,
+    "normalized_date": "2026-10-21"
+  },
+  "5e9aa3177cd79a02e8c5c7bd": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 221,
+    "normalized_date": "2026-10-19"
+  },
+  "609c9062312d80446d0dd622": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 87,
+    "normalized_date": "2026-10-18"
+  },
+  "60a0000a93ca6fed5bbadada": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 91,
+    "normalized_date": "2026-10-18"
+  },
+  "618bac10625570f19f28cc3f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 130,
+    "normalized_date": "2026-10-18"
+  },
+  "61944930af4be671c4c66ff5": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 46,
+    "normalized_date": "2026-10-18"
+  },
+  "63afa3e50e74cd3e62c15446": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 169,
+    "normalized_date": "2026-10-19"
+  },
+  "63beaaacd4bc30b5494e3845": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 72,
+    "normalized_date": "2026-10-18"
+  },
+  "645aeb2dab8875bb33ffcb02": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 341,
+    "normalized_date": "2026-10-21"
+  },
+  "64851f25b5a805ea064de325": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 225,
+    "normalized_date": "2026-10-19"
+  },
+  "64ce928a0e60a5a52677bbb5": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 249,
+    "normalized_date": "2026-10-18"
+  },
+  "6534ea914da4d97bca3e5e03": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 101,
+    "normalized_date": "2026-10-17"
+  },
+  "65fa4f56b01b700c3c3d7b5a": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 186,
+    "normalized_date": "2026-10-19"
+  },
+  "680e18a819e58ee9b7d846cc": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 296,
+    "normalized_date": "2026-10-20"
+  },
+  "68b7dd5e9658e8567f7be3da": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 331,
+    "normalized_date": "2026-10-23"
+  },
+  "68fa842cc58edb5b74ab2d8e": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 159,
+    "normalized_date": "2026-10-18"
+  },
+  "6a53687e4438346fac4705c0": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 107,
+    "normalized_date": "2026-10-18"
+  },
+  "6abe7c8550975076855a013b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 251,
+    "normalized_date": "2026-10-18"
+  },
+  "6b2878ad37ada0264f4d21a6": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 82,
+    "normalized_date": "2026-10-18"
+  },
+  "6ba84fc4769acaaceca2bd4e": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 83,
+    "normalized_date": "2026-10-18"
+  },
+  "6bc296cf0eeee259cb6252a1": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 323,
+    "normalized_date": "2026-10-22"
+  },
+  "6c5b4303d4697f75cc2f3d55": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 271,
+    "normalized_date": "2026-10-18"
+  },
+  "6c94404bae63b299afc40230": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 326,
+    "normalized_date": "2026-10-22"
+  },
+  "6cf428b5602f011a76b4e826": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 97,
+    "normalized_date": "2026-10-18"
+  },
+  "6dd1b327b0e4443a84018392": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 41,
+    "normalized_date": "2026-10-18"
+  },
+  "6f87b2f1399e939a049fc37d": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 356,
+    "normalized_date": "2026-10-24"
+  },
+  "700c20227a95c9c5298aade3": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 270,
+    "normalized_date": "2026-10-18"
+  },
+  "70f9523989eeabf8d295533c": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 11,
+    "normalized_date": "2026-10-18"
+  },
+  "71158b4948fb6d260812db00": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 77,
+    "normalized_date": "2026-10-18"
+  },
+  "7379c7dfb1c84093481285a0": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 140,
+    "normalized_date": "2026-10-18"
+  },
+  "7382919a4969ce22e8204ce8": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 158,
+    "normalized_date": "2026-10-18"
+  },
+  "73cd210d6fe29cc8efcfbf54": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 103,
+    "normalized_date": "2026-10-18"
+  },
+  "74190482ab5d5c32534906dd": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 65,
+    "normalized_date": "2026-10-18"
+  },
+  "747c8b50e5baea389d8fa6bd": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 238,
+    "normalized_date": "2026-10-19"
+  },
+  "747f4f131089fd263ced639f": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 281,
+    "normalized_date": "2026-10-18"
+  },
+  "74e4f023a1cde8177f73bbac": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 305,
+    "normalized_date": "2026-10-20"
+  },
+  "7507682299bbf9c5b42ac338": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 69,
+    "normalized_date": "2026-10-18"
+  },
+  "75141b10fb645281a8cc5c1b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 133,
+    "normalized_date": "2026-10-18"
+  },
+  "761494b62192cc0fe9d613e7": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 108,
+    "normalized_date": "2026-10-18"
+  },
+  "764d8e405973c166fd27ef84": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 197,
+    "normalized_date": "2026-10-19"
+  },
+  "7688b3bb5e0378f4c90459fc": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 353,
+    "normalized_date": "2026-10-25"
+  },
+  "77b52add3e9aaf6244e255a4": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 171,
+    "normalized_date": "2026-10-19"
+  },
+  "77fc29d5a5cbc46980943808": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 34,
+    "normalized_date": "2026-10-18"
+  },
+  "787bd6579d2589f1c38bf234": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 112,
+    "normalized_date": "2026-10-18"
+  },
+  "795d87e4da140702c6d4a13b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 212,
+    "normalized_date": "2026-10-18"
+  },
+  "7bb028cf61cf868e3e3b011b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 264,
+    "normalized_date": "2026-10-18"
+  },
+  "7d95434fbcabd1d6f22141fc": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 258,
+    "normalized_date": "2026-10-18"
+  },
+  "7da342e3ec1df35a6e1b7a47": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 173,
+    "normalized_date": "2026-10-19"
+  },
+  "7db0f9332fc3553d3214e2d2": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 351,
+    "normalized_date": "2026-10-21"
+  },
+  "7db98abb5839571ef4721a3e": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 102,
+    "normalized_date": "2026-10-18"
+  },
+  "7e3c6746f798b4a721d3771b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 290,
+    "normalized_date": "2026-10-20"
+  },
+  "7f6e59316e97602bd009337b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 304,
+    "normalized_date": "2026-10-20"
+  },
+  "7fc3e6fbe8761198c2f0d35e": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 162,
+    "normalized_date": "2026-10-18"
+  },
+  "80696d2b7aed61c5adb178c7": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 263,
+    "normalized_date": "2026-10-18"
+  },
+  "80b88e2b2a6ca8aeebe6c041": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 350,
+    "normalized_date": "2026-10-22"
+  },
+  "81159d1d1588067e709e358c": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 111,
+    "normalized_date": "2026-10-18"
+  },
+  "820fe4a6ed3aaa8bed807092": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 123,
+    "normalized_date": "2026-10-18"
+  },
+  "8291f4fde2baa6201e1c6cbd": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 113,
+    "normalized_date": "2026-10-18"
+  },
+  "8316d745ed7e59803cb2d251": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 76,
+    "normalized_date": "2026-10-18"
+  },
+  "831e33fa99dffbd3ec5b69a0": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 227,
+    "normalized_date": "2026-10-19"
+  },
+  "83ed3bda8e1be141cb8b52ea": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 242,
+    "normalized_date": "2026-10-19"
+  },
+  "8473849634b5641b0a62a416": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 273,
+    "normalized_date": "2026-10-18"
+  },
+  "8498dac4279513cda092382f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 30,
+    "normalized_date": "2026-10-18"
+  },
+  "84a446454190373cd3ae45c7": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 205,
+    "normalized_date": "2026-10-19"
+  },
+  "84b4abba92b5212b8fcd009e": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 231,
+    "normalized_date": "2026-10-19"
+  },
+  "8550d036d97c6fe9c9170c18": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 267,
+    "normalized_date": "2026-10-18"
+  },
+  "855eb0b866e2abdce680b8de": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 164,
+    "normalized_date": "2026-10-18"
+  },
+  "8588650fa406c96e3a7416ef": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 104,
+    "normalized_date": "2026-10-18"
+  },
+  "86bba56c16baa6d2a926173a": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 145,
+    "normalized_date": "2026-10-18"
+  },
+  "86dc1d99cfda38e815a3ba03": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 61,
+    "normalized_date": "2026-10-18"
+  },
+  "88a98a59407ec7f1f9c563f7": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 127,
+    "normalized_date": "2026-10-18"
+  },
+  "88eb199ada59a70b4c5df8b0": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 128,
+    "normalized_date": "2026-10-18"
+  },
+  "8b452159d31cc0921df9af0e": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 336,
+    "normalized_date": "2026-10-21"
+  },
+  "8dd0836003a2daae7754c5ac": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 177,
+    "normalized_date": "2026-10-19"
+  },
+  "8e03ba86628fbcdbff64ef8f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 62,
+    "normalized_date": "2026-10-18"
+  },
+  "8f539385d1a32bdf21e819da": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 345,
+    "normalized_date": "2026-10-22"
+  },
+  "8f584bb86eb7f73ce956e105": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 75,
+    "normalized_date": "2026-10-18"
+  },
+  "90acbcd131b7c6bbbb62d230": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 284,
+    "normalized_date": "2026-10-20"
+  },
+  "93cbd124ef8759249a04f348": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 146,
+    "normalized_date": "2026-10-18"
+  },
+  "946cab4ae4cbb6ef4249825f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 117,
+    "normalized_date": "2026-10-18"
+  },
+  "949415431fb3b29ecb2ea4bc": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 283,
+    "normalized_date": "2026-10-18"
+  },
+  "94bb90be22afbe36f49cc995": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 332,
+    "normalized_date": "2026-10-21"
+  },
+  "952856452ef188b06aef275a": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 52,
+    "normalized_date": "2026-10-18"
+  },
+  "9635931d29a2937db8198d2e": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 132,
+    "normalized_date": "2026-10-18"
+  },
+  "97191973456635b3022bcda5": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 124,
+    "normalized_date": "2026-10-18"
+  },
+  "97beab7104fddffdd8acbfad": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 114,
+    "normalized_date": "2026-10-18"
+  },
+  "98622b5881c47642afd61e3b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 277,
+    "normalized_date": "2026-10-18"
+  },
+  "99879dd759b73fad9174d916": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 236,
+    "normalized_date": "2026-10-19"
+  },
+  "99f4b10f4907205a17a1162e": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 56,
+    "normalized_date": "2026-10-18"
+  },
+  "99fc25f4d942fc4bfa7e4119": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 206,
+    "normalized_date": "2026-10-19"
+  },
+  "9a635b83b498e1630d0b9d32": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 129,
+    "normalized_date": "2026-10-18"
+  },
+  "9addfc06b7dd39265f0a264f": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 319,
+    "normalized_date": "2026-10-23"
+  },
+  "9b31eb8eb71da088209876aa": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 26,
+    "normalized_date": "2026-10-18"
+  },
+  "9b4631e47907d928b50197d8": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 33,
+    "normalized_date": "2026-10-18"
+  },
+  "9b9ab940f6fe83563d2e83fe": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 185,
+    "normalized_date": "2026-10-19"
+  },
+  "9b9e4cd7b51b4b1d711891b6": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 175,
+    "normalized_date": "2026-10-19"
+  },
+  "9bdffe88a85fe2b8a30dad06": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 190,
+    "normalized_date": "2026-10-19"
+  },
+  "9c4b0f9f28c4341f7b8d0da8": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 257,
+    "normalized_date": "2026-10-18"
+  },
+  "9c884d1cb8bbf13c6ccd6e24": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 17,
+    "normalized_date": "2026-10-18"
+  },
+  "9d95ccae454169886bb7253b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 85,
+    "normalized_date": "2026-10-18"
+  },
+  "9e1f755f2df94e3eb8c1253b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 88,
+    "normalized_date": "2026-10-18"
+  },
+  "9e33d09af6a74685ed18c58f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 116,
+    "normalized_date": "2026-10-18"
+  },
+  "9e81049cbb8e360e20431714": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 4,
+    "normalized_date": "2026-10-18"
+  },
+  "9eba53cbef5f16dfdb5ae749": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 154,
+    "normalized_date": "2026-10-18"
+  },
+  "9f33685fe851b01cffb79450": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 152,
+    "normalized_date": "2026-10-18"
+  },
+  "9f9d5dea3f30ded55ba6a712": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 73,
+    "normalized_date": "2026-10-18"
+  },
+  "a1d18294bcaef58c534ab2b1": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 299,
+    "normalized_date": "2026-10-20"
+  },
+  "a1dcea75c1f598f904efb856": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 209,
+    "normalized_date": "2026-10-19"
+  },
+  "a2098eab862af81502648e40": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 306,
+    "normalized_date": "2026-10-20"
+  },
+  "a21364fe9ca84fa78504aed6": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 317,
+    "normalized_date": "2026-10-23"
+  },
+  "a216424af189583483d2ee51": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 285,
+    "normalized_date": "2026-10-20"
+  },
+  "a2f4b2172c4146f9460dc793": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 308,
+    "normalized_date": "2026-10-20"
+  },
+  "a32955236e0b48383ec39e11": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 291,
+    "normalized_date": "2026-10-20"
+  },
+  "a4000864c170943e9bbcf384": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 278,
+    "normalized_date": "2026-10-18"
+  },
+  "a424be5bf653004c5f3bcd04": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 49,
+    "normalized_date": "2026-10-18"
+  },
+  "a4ec0a3033f5886a88e84257": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 272,
+    "normalized_date": "2026-10-18"
+  },
+  "a5018ef5af9eb744fe6547eb": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 50,
+    "normalized_date": "2026-10-18"
+  },
+  "a5d7368f71f7318b0fd56d32": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 229,
+    "normalized_date": "2026-10-19"
+  },
+  "a7630cac3df62075552df442": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 147,
+    "normalized_date": "2026-10-18"
+  },
+  "a77d476cafa7dbe191f5cdde": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 92,
+    "normalized_date": "2026-10-18"
+  },
+  "aa37ac4d0064c870825290cb": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 51,
+    "normalized_date": "2026-10-18"
+  },
+  "aa48902a540fc2dd1d176d69": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 240,
+    "normalized_date": "2026-10-19"
+  },
+  "aa705511f9576c87ca21c37b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 40,
+    "normalized_date": "2026-10-18"
+  },
+  "ab3c0b23a938dd05097b24b1": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 211,
+    "normalized_date": "2026-10-19"
+  },
+  "ac5c561049f0676b6dce156c": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 218,
+    "normalized_date": "2026-10-19"
+  },
+  "acaa066bf0051c80acaa209a": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 48,
+    "normalized_date": "2026-10-18"
+  },
+  "ad06d71002e68bfd6a5371e4": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 100,
+    "normalized_date": "2026-10-18"
+  },
+  "ad3eb07166684818608d5d94": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 156,
+    "normalized_date": "2026-10-18"
+  },
+  "ada7adae878eac2beba485a0": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 15,
+    "normalized_date": "2026-10-18"
+  },
+  "ae7cc6f0d502fd46f107cd45": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 262,
+    "normalized_date": "2026-10-18"
+  },
+  "aead8530d0a0d6e684641b64": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 157,
+    "normalized_date": "2026-10-18"
+  },
+  "af7e7cc1f369545fd03ec677": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 207,
+    "normalized_date": "2026-10-19"
+  },
+  "b0bccdf05bbd2d84aca6cb0f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 234,
+    "normalized_date": "2026-10-19"
+  },
+  "b2176477a32cc6d25e1f6687": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 13,
+    "normalized_date": "2026-10-17"
+  },
+  "b2847ada0e0e3c828f1ac62d": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 136,
+    "normalized_date": "2026-10-18"
+  },
+  "b2d42a3ef38bed2dd2392769": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 302,
+    "normalized_date": "2026-10-20"
+  },
+  "b35f748387922fa56a0be5d4": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 193,
+    "normalized_date": "2026-10-19"
+  },
+  "b3d50f772d05113adf546b67": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 343,
+    "normalized_date": "2026-10-21"
+  },
+  "b4348002074d1b2d7511d91d": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 6,
+    "normalized_date": "2026-10-18"
+  },
+  "b5bad00e394423437d09cb46": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 168,
+    "normalized_date": "2026-10-20"
+  },
+  "b645ce8605bad194dc6c2e22": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 213,
+    "normalized_date": "2026-10-19"
+  },
+  "b66402f1ece16d6082a88060": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 125,
+    "normalized_date": "2026-10-18"
+  },
+  "b725507549c1a1817d643b2a": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 151,
+    "normalized_date": "2026-10-18"
+  },
+  "b853d4a083982e67a2141b5c": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 45,
+    "normalized_date": "2026-10-18"
+  },
+  "bba3c5a7313c57572bd56c70": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 95,
+    "normalized_date": "2026-10-18"
+  },
+  "bc86b453163bf628762fd020": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 149,
+    "normalized_date": "2026-10-18"
+  },
+  "bd6a1bcccf743bf48189124f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 307,
+    "normalized_date": "2026-10-20"
+  },
+  "bfa812e524c9fd20b9b17305": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 183,
+    "normalized_date": "2026-10-19"
+  },
+  "c0f50257b07aac15f08cafb7": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 352,
+    "normalized_date": "2026-10-23"
+  },
+  "c1fd6594974d9f0c22f2b10b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 324,
+    "normalized_date": "2026-10-22"
+  },
+  "c202b8a6e4baab2f8ce3713e": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 196,
+    "normalized_date": "2026-10-19"
+  },
+  "c3146337073123a9dbeef6e0": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 22,
+    "normalized_date": "2026-10-18"
+  },
+  "c611c8863afe99ad0a909030": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 337,
+    "normalized_date": "2026-10-21"
+  },
+  "c69267327cabd9d77efb7490": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 163,
+    "normalized_date": "2026-10-18"
+  },
+  "c72e4ade2c93e4d10a0e10d5": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 286,
+    "normalized_date": "2026-10-20"
+  },
+  "c7e129a670cb44028791873c": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 119,
+    "normalized_date": "2026-10-17"
+  },
+  "c80102f422506b5e0fe6b460": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 243,
+    "normalized_date": "2026-10-19"
+  },
+  "c84660b7fa1b06f63bbbcee1": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 293,
+    "normalized_date": "2026-10-20"
+  },
+  "c8ae7c8cf74ea537604ff79f": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 276,
+    "normalized_date": "2026-10-18"
+  },
+  "c8cb693935bfba2e9680d7c8": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 63,
+    "normalized_date": "2026-10-18"
+  },
+  "c8dc33fcc22ede407d2d6fbe": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 7,
+    "normalized_date": "2026-10-18"
+  },
+  "c98f2f9758576f0c06f48faa": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 339,
+    "normalized_date": "2026-10-21"
+  },
+  "c9b8f7bcec465737ccc35e41": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 338,
+    "normalized_date": "2026-10-21"
+  },
+  "cb097eac8600859bcd2018d8": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 176,
+    "normalized_date": "2026-10-19"
+  },
+  "cb7e8b184c31a9f19dfb0627": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 192,
+    "normalized_date": "2026-10-19"
+  },
+  "cba3867df67271824dfba4c3": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 98,
+    "normalized_date": "2026-10-18"
+  },
+  "cc2266980a8fa44b46c58bc1": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 313,
+    "normalized_date": "2026-10-24"
+  },
+  "ce8601f2826cf39ea0ee5640": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 28,
+    "normalized_date": "2026-10-18"
+  },
+  "cedb003c9f369b9374294b9c": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 144,
+    "normalized_date": "2026-10-18"
+  },
+  "cf2a4c08a42c8e907259c6a1": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 259,
+    "normalized_date": "2026-10-18"
+  },
+  "cf3d0913393f98710568a705": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 241,
+    "normalized_date": "2026-10-19"
+  },
+  "cf76d4de03839d4460c61ddf": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 110,
+    "normalized_date": "2026-10-18"
+  },
+  "d04380b0330940bbd92ff6d5": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 109,
+    "normalized_date": "2026-10-18"
+  },
+  "d0482d2b0d9b3a49bbc6ccba": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 143,
+    "normalized_date": "2026-10-18"
+  },
+  "d0da67649ce4a6b686bea7df": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 71,
+    "normalized_date": "2026-10-18"
+  },
+  "d3afc466a2d620b84bc46618": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 16,
+    "normalized_date": "2026-10-18"
+  },
+  "d3faaf3737a8448593cd197c": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 334,
+    "normalized_date": "2026-10-21"
+  },
+  "d41b8608341ff2a3ceb87809": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 298,
+    "normalized_date": "2026-10-20"
+  },
+  "d450ce2ce29ab4f63247552e": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 161,
+    "normalized_date": "2026-10-18"
+  },
+  "d4927233c972da8c3928752c": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 12,
+    "normalized_date": "2026-10-18"
+  },
+  "d541f47a7b625ac18a8e70bb": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 25,
+    "normalized_date": "2026-10-18"
+  },
+  "d72a88cced0ed612046b17cc": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 279,
+    "normalized_date": "2026-10-18"
+  },
+  "d78a9cf5998128ffefdb8d0b": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 150,
+    "normalized_date": "2026-10-18"
+  },
+  "d7c5d6de71fba1e003939c0f": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 287,
+    "normalized_date": "2026-10-20"
+  },
+  "d9ea2e2210030cc73bb9f1d1": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 174,
+    "normalized_date": "2026-10-19"
+  },
+  "da945a96c33a2cbea961dbe9": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 199,
+    "normalized_date": "2026-10-19"
+  },
+  "db8eade5f5a328a28af3cdcb": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 153,
+    "normalized_date": "2026-10-18"
+  },
+  "dc78653a1b166b6301de19ba": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 330,
+    "normalized_date": "2026-10-21"
+  },
+  "dc7ab2918125497b9d046b46": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 325,
+    "normalized_date": "2026-10-22"
+  },
+  "dc814af42faba553efc78a51": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 226,
+    "normalized_date": "2026-10-19"
+  },
+  "ded17cb66af7cc7edc689c03": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 312,
+    "normalized_date": "2026-10-24"
+  },
+  "deff7266b7672b68f4d65570": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 201,
+    "normalized_date": "2026-10-19"
+  },
+  "dfd2b472231a1ce923d77571": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 289,
+    "normalized_date": "2026-10-20"
+  },
+  "e127141665ec0a930fc7381a": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 19,
+    "normalized_date": "2026-10-18"
+  },
+  "e1f69467d4971d164b4761d5": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 138,
+    "normalized_date": "2026-10-18"
+  },
+  "e202f572e5692b7fb8cf6dcf": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 121,
+    "normalized_date": "2026-10-16"
+  },
+  "e26d7dc1a7ebc7d9d1fbbf17": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 18,
+    "normalized_date": "2026-10-18"
+  },
+  "e366cf2eb9db3ba7735abddf": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 309,
+    "normalized_date": "2026-10-20"
+  },
+  "e41f45a455ab272dd0c4eeca": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 261,
+    "normalized_date": "2026-10-18"
+  },
+  "e4d3d0948cdd71bae56e5ee0": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 1,
+    "normalized_date": "2026-10-18"
+  },
+  "e526fdc1ad675d531fb15430": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 170,
+    "normalized_date": "2026-10-19"
+  },
+  "e55eccd671863f0b835e6494": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 27,
+    "normalized_date": "2026-10-18"
+  },
+  "e654b73d019c9d8acbd8709d": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 122,
+    "normalized_date": "2026-10-18"
+  },
+  "e66a21f47278618fa72888c1": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 208,
+    "normalized_date": "2026-10-19"
+  },
+  "e672bafd233700baa70e888e": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 327,
+    "normalized_date": "2026-10-22"
+  },
+  "e67e4943aef77ed1a3b6a860": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 148,
+    "normalized_date": "2026-10-18"
+  },
+  "e6cd8fb8784dc9f612a45bf8": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 139,
+    "normalized_date": "2026-10-18"
+  },
+  "e883f80ad75df0d6d2f162dc": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 232,
+    "normalized_date": "2026-10-19"
+  },
+  "e8dedc4a2ef9296ddf680f08": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 70,
+    "normalized_date": "2026-10-18"
+  },
+  "e9e89a6f9d1a81e365018b56": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 335,
+    "normalized_date": "2026-10-21"
+  },
+  "eac747e4ff5625b156b2b189": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 222,
+    "normalized_date": "2026-10-19"
+  },
+  "eaeffafa32d4d3c2505859e5": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 253,
+    "normalized_date": "2026-10-19"
+  },
+  "ecbaef5aa01f916bae2650d1": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": false,
+    "transfer_number": 10,
+    "normalized_date": "2026-10-18"
+  },
+  "edc227e54a2637a506511bda": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 245,
+    "normalized_date": "2026-10-18"
+  },
+  "ee13c00dec6d572bcb7067d0": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 268,
+    "normalized_date": "2026-10-18"
+  },
+  "efa48c7cd2a032e54c77121a": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 189,
+    "normalized_date": "2026-10-19"
+  },
+  "efd8b1f61df867ddbae863dc": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 59,
+    "normalized_date": "2026-10-18"
+  },
+  "f0f66169da85f52f3dbd70e9": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 228,
+    "normalized_date": "2026-10-18"
+  },
+  "f14a6023fb1d9448d6360931": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 322,
+    "normalized_date": "2026-10-22"
+  },
+  "f176e8f1818a314f19e137f9": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 215,
+    "normalized_date": "2026-10-19"
+  },
+  "f1a09c14ff03a68ec6af4827": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 86,
+    "normalized_date": "2026-10-18"
+  },
+  "f2bd148b9e71d089669885ce": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 37,
+    "normalized_date": "2026-10-17"
+  },
+  "f2c47cf0f1e504f64698a59e": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 94,
+    "normalized_date": "2026-10-18"
+  },
+  "f2f99214181fa1fafb1b70a0": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 266,
+    "normalized_date": "2026-10-18"
+  },
+  "f33fa187420919b641a0f9b6": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 32,
+    "normalized_date": "2026-10-18"
+  },
+  "f405321dcea90385f2a1fde6": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 29,
+    "normalized_date": "2026-10-18"
+  },
+  "f423816bcfc677460dc43b34": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 254,
+    "normalized_date": "2026-10-18"
+  },
+  "f4c17928f1dbd31ef002d1b6": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 314,
+    "normalized_date": "2026-10-23"
+  },
+  "f6316214beb262023bc6aa17": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 269,
+    "normalized_date": "2026-10-18"
+  },
+  "f65d8152aeaa7d620feb39a6": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 294,
+    "normalized_date": "2026-10-20"
+  },
+  "f70cb69eb4504c83cad7cfde": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 195,
+    "normalized_date": "2026-10-19"
+  },
+  "f74e8710da74d872e8fb8af8": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 89,
+    "normalized_date": "2026-10-18"
+  },
+  "f828ca7d95287f1cf67b51bb": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 64,
+    "normalized_date": "2026-10-18"
+  },
+  "f8be6f53325ba27201fb4e18": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 165,
+    "normalized_date": "2026-10-18"
+  },
+  "f8be963c7834188a00a14f21": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 184,
+    "normalized_date": "2026-10-19"
+  },
+  "f98f38dc57c7c418865d1983": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 166,
+    "normalized_date": "2026-10-18"
+  },
+  "f9c525c7b990530932bd7431": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 36,
+    "normalized_date": "2026-10-18"
+  },
+  "fa22ae46a96f4fc6d244403b": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 39,
+    "normalized_date": "2026-10-18"
+  },
+  "fb099842943b132cd43476a2": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 204,
+    "normalized_date": "2026-10-19"
+  },
+  "fbd4568451b652fe7855c8fa": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 105,
+    "normalized_date": "2026-10-18"
+  },
+  "fc21c02277221072f936c6ba": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 198,
+    "normalized_date": "2026-10-19"
+  },
+  "fc6515e1643f921949ea4f26": {
+    "editorial_version": 3,
+    "complete": true,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 316,
+    "normalized_date": "2026-10-23"
+  },
+  "fd22265f18910dc0198e0c1c": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 194,
+    "normalized_date": "2026-10-19"
+  },
+  "febd1e5879d3e39996ef268f": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 252,
+    "normalized_date": "2026-10-18"
+  },
+  "ffbb50c0dbb2dd50fe0533ed": {
+    "editorial_version": 3,
+    "complete": false,
+    "media_version": 1,
+    "media_complete": true,
+    "transfer_number": 179,
+    "normalized_date": "2026-10-19"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-88a98a59407ec7f1f9c563f7",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Chelsea: ufficiale l’arrivo di Can Uzun",
+  "text": "Chelsea annuncia l’arrivo di Can Uzun. Il giocatore lascia Eintracht Frankfurt: operazione da 15,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Eintracht Frankfurt",
+    "to": "Chelsea",
+    "formula": "Trasferimento definitivo",
+    "amount": "15,6 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-395-49b8a6c4cdaf88d1.png",
+    "to_logo": "market-club-93399521-6694aaf8610a7f9b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-136465-ad9b484413a466c8.png",
+    "alt": "Can Uzun"
+  }
+}

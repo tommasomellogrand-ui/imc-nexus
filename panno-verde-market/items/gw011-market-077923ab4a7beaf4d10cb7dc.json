@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-077923ab4a7beaf4d10cb7dc",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Tottenham Hotspur: ufficiale l’arrivo di Mikel Oyarzabal",
+  "text": "Tottenham Hotspur annuncia l’arrivo di Mikel Oyarzabal. Il giocatore lascia Real Sociedad: operazione da 50 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399580"
+  ],
+  "teams": [
+    {
+      "name": "Tottenham Hotspur",
+      "logo": "market-club-93399580-b520b61ef4469d37.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Sociedad",
+    "to": "Tottenham Hotspur",
+    "formula": "Trasferimento definitivo",
+    "amount": "50 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-165-2dcaa8ad5f0a7214.png",
+    "to_logo": "market-club-93399580-b520b61ef4469d37.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-84791-226f3f8e3e54c5d0.png",
+    "alt": "Mikel Oyarzabal"
+  }
+}

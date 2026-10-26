@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-9bdffe88a85fe2b8a30dad06",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Borussia Dortmund: ufficiale l’arrivo di Luis Fragozo",
+  "text": "Borussia Dortmund annuncia l’arrivo di Luis Fragozo. Il giocatore lascia CS Emelec: operazione da 385.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "CS Emelec",
+    "to": "Borussia Dortmund",
+    "formula": "Trasferimento definitivo",
+    "amount": "385.000 euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-886-9707740ea8d595fe.png",
+    "to_logo": "market-club-93399892-d15d77a60b17db2f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-163868-3a6e442e37e45c17.png",
+    "alt": "Luis Fragozo"
+  }
+}

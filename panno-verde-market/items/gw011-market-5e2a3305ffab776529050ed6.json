@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-5e2a3305ffab776529050ed6",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Aleksey Batrakov",
+  "text": "Atlético Madrid annuncia l’arrivo di Aleksey Batrakov. Il giocatore lascia Galatasaray SK: operazione da 13,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Galatasaray SK",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "13,8 milioni di euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-351-e42d9b78ea0438c3.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-146171-62e97031355ee4a8.png",
+    "alt": "Aleksey Batrakov"
+  }
+}

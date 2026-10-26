@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-02eed82da6b0f0925354b9c8",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Bayern München: ufficiale l’arrivo di Allan Oyirwoth",
+  "text": "Bayern München annuncia l’arrivo di Allan Oyirwoth. Il giocatore lascia New England Revolution: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "New England Revolution",
+    "to": "Bayern München",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-463-560592a9d8fa19fc.png",
+    "to_logo": "market-club-93399891-8f08c13f795eef24.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-156401-6d500bd19b4ba564.png",
+    "alt": "Allan Oyirwoth"
+  }
+}

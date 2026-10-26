@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-761494b62192cc0fe9d613e7",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Antonio Raimondo",
+  "text": "Como 1907 e Bologna FC chiudono l’accordo per Antonio Raimondo. Operazione da 35 milioni di euro, con Jayden Addai, Iván Azón nel percorso inverso verso Bologna FC.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "Como 1907",
+    "formula": "Scambio con contropartite",
+    "amount": "35 milioni di euro + Jayden Addai, Iván Azón",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-98-1c269c6755cb7fdb.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-117032-1110cc855f4178a3.png",
+    "alt": "Antonio Raimondo"
+  }
+}

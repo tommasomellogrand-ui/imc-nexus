@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-84b4abba92b5212b8fcd009e",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Jonathan David",
+  "text": "AS Roma annuncia l’arrivo di Jonathan David. Il giocatore lascia Juventus: operazione da 25 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399623",
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    },
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "AS Roma",
+    "formula": "Trasferimento definitivo",
+    "amount": "25 milioni di euro",
+    "date": "2026-10-19",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-club-93399623-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-98250-c8f960b3ac0dadcf.png",
+    "alt": "Jonathan David"
+  }
+}

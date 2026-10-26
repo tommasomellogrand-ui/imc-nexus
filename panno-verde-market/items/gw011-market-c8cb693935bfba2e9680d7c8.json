@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-c8cb693935bfba2e9680d7c8",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Nikola Milenković",
+  "text": "AS Roma annuncia l’arrivo di Nikola Milenković. Il giocatore lascia Nottingham Forest: operazione da 14 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "Nottingham Forest",
+    "to": "AS Roma",
+    "formula": "Trasferimento definitivo",
+    "amount": "14 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-55-0ab1079036a19b79.png",
+    "to_logo": "market-club-93399623-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-85730-4032735a6573671a.png",
+    "alt": "Nikola Milenković"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-820fe4a6ed3aaa8bed807092",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Paris Saint-Germain: ufficiale l’arrivo di Jan Oblak",
+  "text": "Paris Saint-Germain e Atlético Madrid chiudono l’accordo per Jan Oblak. Operazione da F.TORRES, con Ferrán Torres nel percorso inverso verso Atlético Madrid.",
+  "category": "market",
+  "club_ids": [
+    "93399838",
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    },
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Paris Saint-Germain",
+    "formula": "Scambio con contropartite",
+    "amount": "F.TORRES + Ferrán Torres",
+    "date": "2026-10-18",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-club-93399838-3eef9082b1e66395.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-41018-630a25c22a462ede.png",
+    "alt": "Jan Oblak"
+  }
+}

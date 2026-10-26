@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-86dc1d99cfda38e815a3ba03",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Joshua Nga Kana",
+  "text": "Manchester City annuncia l’arrivo di Joshua Nga Kana. Il giocatore lascia RSC Anderlecht: operazione da 380.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "RSC Anderlecht",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "380.000 euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-353-58aa7110d1b5c6d0.png",
+    "to_logo": "market-club-93399547-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-166721-090b664e9219a278.png",
+    "alt": "Joshua Nga Kana"
+  }
+}

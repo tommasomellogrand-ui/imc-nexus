@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f1a09c14ff03a68ec6af4827",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Barcelona: ufficiale l’arrivo di Zé Lucas",
+  "text": "Barcelona annuncia l’arrivo di Zé Lucas. Il giocatore lascia Cruzeiro EC: operazione da 10,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Cruzeiro EC",
+    "to": "Barcelona",
+    "formula": "Trasferimento definitivo",
+    "amount": "10,4 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-292-b81b3a5502b43e1c.png",
+    "to_logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-157746-fc3941dfdab8586f.png",
+    "alt": "Zé Lucas"
+  }
+}

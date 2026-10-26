@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-8588650fa406c96e3a7416ef",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Roberto Scaglione",
+  "text": "Como 1907 e Parma Calcio 1913 chiudono l’accordo per Roberto Scaglione. Operazione da 543.000 euro, con Federico Chinetti nel percorso inverso verso Parma Calcio 1913.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Parma Calcio 1913",
+    "to": "Como 1907",
+    "formula": "Scambio con contropartite",
+    "amount": "543.000 euro + Federico Chinetti",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-118-db04a231cfd87f3d.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162641-23b7421dd2fe9fa9.png",
+    "alt": "Roberto Scaglione"
+  }
+}

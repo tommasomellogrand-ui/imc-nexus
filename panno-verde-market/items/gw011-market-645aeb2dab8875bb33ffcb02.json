@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-645aeb2dab8875bb33ffcb02",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Arsenal: ufficiale l’arrivo di Tyler Dibling",
+  "text": "Arsenal e Everton chiudono l’accordo per Tyler Dibling. Operazione da 7 milioni di euro, con Axel Donczew, Maalik Hashi nel percorso inverso verso Everton.",
+  "category": "market",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "transfer": {
+    "from": "Everton",
+    "to": "Arsenal",
+    "formula": "Scambio con contropartite",
+    "amount": "7 milioni di euro + Axel Donczew, Maalik Hashi",
+    "date": "2026-10-21",
+    "from_logo": "market-global-club-31-fe258fc7debc69ac.png",
+    "to_logo": "market-club-93399501-33ef41943a141618.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-144483-a5299266a07a119d.png",
+    "alt": "Tyler Dibling"
+  }
+}

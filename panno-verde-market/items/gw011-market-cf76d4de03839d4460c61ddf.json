@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-cf76d4de03839d4460c61ddf",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Alberto Moleiro",
+  "text": "Como 1907 e Villarreal CF chiudono l’accordo per Alberto Moleiro. Operazione da 77 milioni di euro, con Alieu Fadera, Nicolas Kühn nel percorso inverso verso Villarreal CF.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Villarreal CF",
+    "to": "Como 1907",
+    "formula": "Scambio con contropartite",
+    "amount": "77 milioni di euro + Alieu Fadera, Nicolas Kühn",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-174-9ae90fcbe3960fb8.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-113352-0faee9eb8feca2f6.png",
+    "alt": "Alberto Moleiro"
+  }
+}

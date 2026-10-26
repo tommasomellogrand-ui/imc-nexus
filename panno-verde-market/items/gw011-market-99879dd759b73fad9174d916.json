@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-99879dd759b73fad9174d916",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester United: ufficiale l’arrivo di Artem Stepanov",
+  "text": "Manchester United annuncia l’arrivo di Artem Stepanov. Il giocatore lascia Bayer Leverkusen: operazione da 6,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayer Leverkusen",
+    "to": "Manchester United",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,4 milioni di euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-390-0910c20d52ededca.png",
+    "to_logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-152921-b48bccd2a3a529ce.png",
+    "alt": "Artem Stepanov"
+  }
+}

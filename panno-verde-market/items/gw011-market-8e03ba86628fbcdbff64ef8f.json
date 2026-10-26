@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-8e03ba86628fbcdbff64ef8f",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Robert Lewandowski",
+  "text": "Atlético Madrid annuncia l’arrivo di Robert Lewandowski. Il giocatore lascia Chicago Fire: operazione da 25 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chicago Fire",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "25 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-455-847c18e098a70545.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-34893-f427033a3965299f.png",
+    "alt": "Robert Lewandowski"
+  }
+}

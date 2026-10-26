@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e366cf2eb9db3ba7735abddf",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Liverpool: ufficiale l’arrivo di Ismaëlo Ganiou",
+  "text": "Liverpool annuncia l’arrivo di Ismaëlo Ganiou. Il giocatore lascia RC Lens: operazione da 4,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "RC Lens",
+    "to": "Liverpool",
+    "formula": "Trasferimento definitivo",
+    "amount": "4,6 milioni di euro",
+    "date": "2026-10-20",
+    "from_logo": "market-global-club-327-1bf65d77e454577e.png",
+    "to_logo": "market-club-93399544-56dfeac623d23b94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-136421-a943012aae7cd19a.png",
+    "alt": "Ismaëlo Ganiou"
+  }
+}

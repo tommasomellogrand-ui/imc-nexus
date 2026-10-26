@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-9e33d09af6a74685ed18c58f",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AC Milan: ufficiale l’arrivo di Matteo Ruggeri",
+  "text": "AC Milan e Aston Villa chiudono l’accordo per Matteo Ruggeri. Operazione da 10 milioni di euro, con Fikayo Tomori, Pervis Estupiñán nel percorso inverso verso Aston Villa.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "Aston Villa",
+    "to": "AC Milan",
+    "formula": "Scambio con contropartite",
+    "amount": "10 milioni di euro + Fikayo Tomori, Pervis Estupiñán",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-2-ae543f86d2922165.png",
+    "to_logo": "market-club-93399615-cf09cc84369c6535.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104420-1fd891948aa0f5e7.png",
+    "alt": "Matteo Ruggeri"
+  }
+}

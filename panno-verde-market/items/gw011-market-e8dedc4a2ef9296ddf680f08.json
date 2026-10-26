@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e8dedc4a2ef9296ddf680f08",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di Álex Jiménez",
+  "text": "Real Madrid annuncia l’arrivo di Álex Jiménez. Il giocatore lascia AFC Bournemouth: operazione da 10 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "AFC Bournemouth",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "10 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-9-f7be2ed5fdd0e218.png",
+    "to_logo": "market-club-93399663-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-133499-2ca5eaec9bb71523.png",
+    "alt": "Álex Jiménez"
+  }
+}

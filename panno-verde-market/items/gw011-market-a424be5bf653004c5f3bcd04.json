@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a424be5bf653004c5f3bcd04",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di Sergi Domínguez",
+  "text": "Real Madrid annuncia l’arrivo di Sergi Domínguez. Il giocatore lascia Dinamo Zagreb: operazione da 5 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Dinamo Zagreb",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "5 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-365-97658c413506eefc.png",
+    "to_logo": "market-club-93399663-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137275-8a3c4f2213cba71d.png",
+    "alt": "Sergi Domínguez"
+  }
+}

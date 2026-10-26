@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-1068a40a6298d79e0aaac7f4",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AC Milan: ufficiale l’arrivo di Elia Caprile",
+  "text": "AC Milan annuncia l’arrivo di Elia Caprile. Il giocatore lascia Cagliari: operazione da 6,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "Cagliari",
+    "to": "AC Milan",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,1 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-100-53579bad11d7e045.png",
+    "to_logo": "market-club-93399615-cf09cc84369c6535.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-102216-a88414106408b5d5.png",
+    "alt": "Elia Caprile"
+  }
+}

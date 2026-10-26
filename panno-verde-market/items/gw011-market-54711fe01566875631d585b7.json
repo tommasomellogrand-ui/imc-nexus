@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-54711fe01566875631d585b7",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Dani Vivian",
+  "text": "Manchester City annuncia l’arrivo di Dani Vivian. Il giocatore lascia Athletic Club: operazione da 18,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Athletic Club",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "18,3 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-138-d1267d0040357da1.png",
+    "to_logo": "market-club-93399547-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104910-7ee0bb710ae02a94.png",
+    "alt": "Dani Vivian"
+  }
+}

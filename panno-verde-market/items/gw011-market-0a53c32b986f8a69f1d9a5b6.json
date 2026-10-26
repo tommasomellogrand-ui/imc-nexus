@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-0a53c32b986f8a69f1d9a5b6",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AC Milan: ufficiale l’arrivo di Andrea Pinamonti",
+  "text": "AC Milan annuncia l’arrivo di Andrea Pinamonti. Il giocatore lascia SS Lazio: operazione da 7,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "SS Lazio",
+    "to": "AC Milan",
+    "formula": "Trasferimento definitivo",
+    "amount": "7,1 milioni di euro",
+    "date": "2026-10-21",
+    "from_logo": "market-global-club-111-b054346a661b8b49.png",
+    "to_logo": "market-club-93399615-cf09cc84369c6535.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-88924-bfdbb979f6ec5631.png",
+    "alt": "Andrea Pinamonti"
+  }
+}

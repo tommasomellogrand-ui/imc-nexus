@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-c8ae7c8cf74ea537604ff79f",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Barcelona: ufficiale l’arrivo di Lushendry Martes",
+  "text": "Barcelona annuncia l’arrivo di Lushendry Martes. Il giocatore lascia Sparta Rotterdam: operazione da 364.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Sparta Rotterdam",
+    "to": "Barcelona",
+    "formula": "Trasferimento definitivo",
+    "amount": "364.000 euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-206-b29eaa6d839f3232.png",
+    "to_logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+  },
+  "editorial_version": 3
+}

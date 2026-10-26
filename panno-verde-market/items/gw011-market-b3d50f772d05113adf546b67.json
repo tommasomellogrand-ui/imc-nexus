@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-b3d50f772d05113adf546b67",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "SSC Napoli: ufficiale l’arrivo di Héctor Fort",
+  "text": "SSC Napoli annuncia l’arrivo di Héctor Fort. Il giocatore lascia Real Sociedad: operazione da 2,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Sociedad",
+    "to": "SSC Napoli",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,9 milioni di euro",
+    "date": "2026-10-21",
+    "from_logo": "market-global-club-165-2dcaa8ad5f0a7214.png",
+    "to_logo": "market-club-93400234-082aae3f75dc21ec.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137256-8fa820aba8f996b2.png",
+    "alt": "Héctor Fort"
+  }
+}

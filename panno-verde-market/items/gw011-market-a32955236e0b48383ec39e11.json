@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a32955236e0b48383ec39e11",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Internazionale: ufficiale l’arrivo di Matthis Abline",
+  "text": "Internazionale annuncia l’arrivo di Matthis Abline. Il giocatore lascia AS Monaco: operazione da 12 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Monaco",
+    "to": "Internazionale",
+    "formula": "Trasferimento definitivo",
+    "amount": "12 milioni di euro",
+    "date": "2026-10-20",
+    "from_logo": "market-global-club-332-b5d98a0d961b0afb.png",
+    "to_logo": "market-club-93399609-c1b721033d1fc95e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-113212-11baf171fad45875.png",
+    "alt": "Matthis Abline"
+  }
+}

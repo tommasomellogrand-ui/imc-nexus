@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-af7e7cc1f369545fd03ec677",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Internazionale: ufficiale l’arrivo di Lorenzo Palmisani",
+  "text": "Internazionale e Frosinone Calcio chiudono l’accordo per Lorenzo Palmisani. Operazione da 7,8 milioni di euro, con Matteo Zamarian nel percorso inverso verso Frosinone Calcio.",
+  "category": "market",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Frosinone Calcio",
+    "to": "Internazionale",
+    "formula": "Scambio con contropartite",
+    "amount": "7,8 milioni di euro + Matteo Zamarian",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-858-d82127f6e94262ba.png",
+    "to_logo": "market-club-93399609-c1b721033d1fc95e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-138974-1fa3fe16991c8373.png",
+    "alt": "Lorenzo Palmisani"
+  }
+}

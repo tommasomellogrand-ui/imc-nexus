@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-527361e0ed9f777072e260d3",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Dávid Hancko",
+  "text": "Como 1907 annuncia l’arrivo di Dávid Hancko. Il giocatore lascia Atlético Madrid: operazione da 20 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156",
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    },
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Como 1907",
+    "formula": "Trasferimento definitivo",
+    "amount": "20 milioni di euro",
+    "date": "2026-10-16",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-94879-ba6429cb6daa28ee.png",
+    "alt": "Dávid Hancko"
+  }
+}

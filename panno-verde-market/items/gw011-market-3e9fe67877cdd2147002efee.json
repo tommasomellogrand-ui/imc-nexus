@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-3e9fe67877cdd2147002efee",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester United: ufficiale l’arrivo di Juan Cruz Meza",
+  "text": "Manchester United annuncia l’arrivo di Juan Cruz Meza. Il giocatore lascia River Plate: operazione da 2,7 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "River Plate",
+    "to": "Manchester United",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,7 milioni di euro",
+    "date": "2026-10-23",
+    "from_logo": "market-global-club-282-94608faa47bdcc94.png",
+    "to_logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-163952-6b5a848344486476.png",
+    "alt": "Juan Cruz Meza"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-77fc29d5a5cbc46980943808",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Juventus: ufficiale l’arrivo di Víctor Osimhen",
+  "text": "Juventus e Galatasaray SK chiudono l’accordo per Víctor Osimhen. Operazione da 168,5 milioni di euro, con Teun Koopmeiners nel percorso inverso verso Galatasaray SK.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Galatasaray SK",
+    "to": "Juventus",
+    "formula": "Scambio con contropartite",
+    "amount": "168,5 milioni di euro + Teun Koopmeiners",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-351-e42d9b78ea0438c3.png",
+    "to_logo": "market-club-93399610-324c3f0e48728abe.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-84372-bf5cbfba7bd33766.png",
+    "alt": "Víctor Osimhen"
+  }
+}

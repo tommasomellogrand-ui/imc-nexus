@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-7bb028cf61cf868e3e3b011b",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di Víctor Valdepeñas",
+  "text": "Real Madrid annuncia l’arrivo di Víctor Valdepeñas. Il giocatore lascia ACF Fiorentina: operazione da 3,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "ACF Fiorentina",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "3,2 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-107-4c877773bc6839c8.png",
+    "to_logo": "market-club-93399663-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155043-4846f650c866a76e.png",
+    "alt": "Víctor Valdepeñas"
+  }
+}

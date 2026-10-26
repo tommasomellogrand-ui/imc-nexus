@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-83ed3bda8e1be141cb8b52ea",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Paris Saint-Germain: ufficiale l’arrivo di Moncef Zekri",
+  "text": "Paris Saint-Germain e Sporting CP chiudono l’accordo per Moncef Zekri. Operazione da 4,7 milioni di euro, con Arthur Vignaud nel percorso inverso verso Sporting CP.",
+  "category": "market",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "transfer": {
+    "from": "Sporting CP",
+    "to": "Paris Saint-Germain",
+    "formula": "Scambio con contropartite",
+    "amount": "4,7 milioni di euro + Arthur Vignaud",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-246-69379aab49a3507e.png",
+    "to_logo": "market-club-93399838-3eef9082b1e66395.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-161869-28e35f7e002a3e46.png",
+    "alt": "Moncef Zekri"
+  }
+}

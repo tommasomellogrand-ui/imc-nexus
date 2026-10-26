@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-7db0f9332fc3553d3214e2d2",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Liverpool: ufficiale l’arrivo di Gustavo Varela",
+  "text": "Liverpool annuncia l’arrivo di Gustavo Varela. Il giocatore lascia AC Monza: operazione da 3,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Monza",
+    "to": "Liverpool",
+    "formula": "Trasferimento definitivo",
+    "amount": "3,6 milioni di euro",
+    "date": "2026-10-21",
+    "from_logo": "market-global-club-867-e1074dd68cc7931a.png",
+    "to_logo": "market-club-93399544-56dfeac623d23b94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-143334-c516f5e16b5b5a15.png",
+    "alt": "Gustavo Varela"
+  }
+}

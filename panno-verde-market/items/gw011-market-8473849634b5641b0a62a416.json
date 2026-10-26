@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-8473849634b5641b0a62a416",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Barcelona: ufficiale l’arrivo di Jaydee Canvot",
+  "text": "Barcelona annuncia l’arrivo di Jaydee Canvot. Il giocatore lascia Crystal Palace: operazione da 8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Crystal Palace",
+    "to": "Barcelona",
+    "formula": "Trasferimento definitivo",
+    "amount": "8 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-27-600c1549f0634245.png",
+    "to_logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-153540-d131a6a2d24b54a3.png",
+    "alt": "Jaydee Canvot"
+  }
+}

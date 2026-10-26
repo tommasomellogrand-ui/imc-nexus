@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-0e4dc6f6bdc612f776b6a168",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Internazionale: ufficiale l’arrivo di Giorgi Kvernadze",
+  "text": "Internazionale e Frosinone Calcio chiudono l’accordo per Giorgi Kvernadze. Operazione da 18,4 milioni di euro, con Alain Taho, Yvan Maye nel percorso inverso verso Frosinone Calcio.",
+  "category": "market",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Frosinone Calcio",
+    "to": "Internazionale",
+    "formula": "Scambio con contropartite",
+    "amount": "18,4 milioni di euro + Alain Taho, Yvan Maye",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-858-d82127f6e94262ba.png",
+    "to_logo": "market-club-93399609-c1b721033d1fc95e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-134025-369b0efe3b0a75c8.png",
+    "alt": "Giorgi Kvernadze"
+  }
+}

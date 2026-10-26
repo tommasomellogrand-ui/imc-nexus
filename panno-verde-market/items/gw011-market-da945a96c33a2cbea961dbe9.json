@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-da945a96c33a2cbea961dbe9",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Eirik Granaas",
+  "text": "Manchester City annuncia l’arrivo di Eirik Granaas. Il giocatore lascia FC Porto: operazione da 429.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Porto",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "429.000 euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-224-2b9ad4a869c0dbef.png",
+    "to_logo": "market-club-93399547-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-163381-bd77963ba9697616.png",
+    "alt": "Eirik Granaas"
+  }
+}

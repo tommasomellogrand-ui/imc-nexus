@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-deff7266b7672b68f4d65570",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Nicolas Jackson",
+  "text": "Como 1907 e Aston Villa chiudono l’accordo per Nicolas Jackson. Operazione da 41,1 milioni di euro, con Noel Törnqvist, Alberto Dossena nel percorso inverso verso Aston Villa.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Aston Villa",
+    "to": "Como 1907",
+    "formula": "Scambio con contropartite",
+    "amount": "41,1 milioni di euro + Noel Törnqvist, Alberto Dossena",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-2-ae543f86d2922165.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-106073-4b05e9cd0db97618.png",
+    "alt": "Nicolas Jackson"
+  }
+}

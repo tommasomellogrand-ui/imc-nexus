@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-9b31eb8eb71da088209876aa",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Saba Kharebashvili",
+  "text": "Atlético Madrid annuncia l’arrivo di Saba Kharebashvili. Il giocatore lascia Istanbul Başakşehir: operazione da 725.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Istanbul Başakşehir",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "725.000 euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-1226-a601f937817aeaff.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149748-64a9173ec7ca8510.png",
+    "alt": "Saba Kharebashvili"
+  }
+}

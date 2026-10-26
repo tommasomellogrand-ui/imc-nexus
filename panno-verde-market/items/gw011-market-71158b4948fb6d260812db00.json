@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-71158b4948fb6d260812db00",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Liverpool: ufficiale l’arrivo di Josh King",
+  "text": "Liverpool annuncia l’arrivo di Josh King. Il giocatore lascia Fulham: operazione da 20 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Fulham",
+    "to": "Liverpool",
+    "formula": "Trasferimento definitivo",
+    "amount": "20 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-32-9710e42266ed0392.png",
+    "to_logo": "market-club-93399544-56dfeac623d23b94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-146125-f49b7f53ac7f23e6.png",
+    "alt": "Josh King"
+  }
+}

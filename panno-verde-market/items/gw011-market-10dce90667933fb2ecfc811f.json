@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-10dce90667933fb2ecfc811f",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Lorenzo Tosto",
+  "text": "AS Roma annuncia l’arrivo di Lorenzo Tosto. Il giocatore lascia Empoli: operazione da 423.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "Empoli",
+    "to": "AS Roma",
+    "formula": "Trasferimento definitivo",
+    "amount": "423.000 euro",
+    "date": "2026-10-20",
+    "from_logo": "market-global-club-106-11abd06d2e825ff9.png",
+    "to_logo": "market-club-93399623-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-154962-a006b177755f99e7.png",
+    "alt": "Lorenzo Tosto"
+  }
+}

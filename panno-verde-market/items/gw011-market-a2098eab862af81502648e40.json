@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-a2098eab862af81502648e40",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Liverpool: ufficiale l’arrivo di Pablo Barrios",
+  "text": "Liverpool e Atlético Madrid chiudono l’accordo per Pablo Barrios. Operazione da R.GRAVENBERCH, con Ryan Gravenberch nel percorso inverso verso Atlético Madrid.",
+  "category": "market",
+  "club_ids": [
+    "93399544",
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    },
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Liverpool",
+    "formula": "Scambio con contropartite",
+    "amount": "R.GRAVENBERCH + Ryan Gravenberch",
+    "date": "2026-10-20",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-club-93399544-56dfeac623d23b94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-120600-991ad817b1bc5bd6.png",
+    "alt": "Pablo Barrios"
+  }
+}

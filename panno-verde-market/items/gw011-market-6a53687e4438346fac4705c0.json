@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-6a53687e4438346fac4705c0",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Nicolò Tresoldi",
+  "text": "Como 1907 e Club Brugge KV chiudono l’accordo per Nicolò Tresoldi. Operazione da 75,4 milioni di euro, con Álvaro Morata, Ignace Van Der Brempt nel percorso inverso verso Club Brugge KV.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Club Brugge KV",
+    "to": "Como 1907",
+    "formula": "Scambio con contropartite",
+    "amount": "75,4 milioni di euro + Álvaro Morata, Ignace Van Der Brempt",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-354-752d7eac2967d7d4.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-124326-960ac822966a6f6d.png",
+    "alt": "Nicolò Tresoldi"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-1496a53b27fd4e20de0bbbac",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Joel Roca",
+  "text": "Como 1907 e Olympiacos chiudono l’accordo per Joel Roca. Operazione da 2 milioni di euro, con Emil Audero, Marc Oliver Kempf nel percorso inverso verso Olympiacos.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Olympiacos",
+    "to": "Como 1907",
+    "formula": "Scambio con contropartite",
+    "amount": "2 milioni di euro + Emil Audero, Marc Oliver Kempf",
+    "date": "2026-10-21",
+    "from_logo": "market-global-club-373-bdcc98ceff90b5ef.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-125039-bcd60a0b83a98c81.png",
+    "alt": "Joel Roca"
+  }
+}

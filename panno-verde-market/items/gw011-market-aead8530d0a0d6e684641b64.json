@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-aead8530d0a0d6e684641b64",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Mason Greenwood",
+  "text": "Manchester City annuncia l’arrivo di Mason Greenwood. Il giocatore lascia Fenerbahçe SK: operazione da 30,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Fenerbahçe SK",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "30,3 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-350-5538c7612289db66.png",
+    "to_logo": "market-club-93399547-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-99639-0f514039511eeedd.png",
+    "alt": "Mason Greenwood"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-7da342e3ec1df35a6e1b7a47",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Sergi Mayans",
+  "text": "Como 1907 annuncia l’arrivo di Sergi Mayans. Il giocatore lascia Barcelona: operazione da 140.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156",
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    },
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "Como 1907",
+    "formula": "Trasferimento definitivo",
+    "amount": "140.000 euro",
+    "date": "2026-10-19",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-174721-74961cb0dee6c1c4.png",
+    "alt": "Sergi Mayans"
+  }
+}

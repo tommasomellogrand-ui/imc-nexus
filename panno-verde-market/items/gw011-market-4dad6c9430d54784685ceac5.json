@@ -1,0 +1,29 @@
+{
+  "id": "gw011-market-4dad6c9430d54784685ceac5",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Sam Rak-Sakyi",
+  "text": "AS Roma annuncia l’arrivo di Sam Rak-Sakyi, proveniente dalla lista degli svincolati. Operazione da 450.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "Svincolato",
+    "to": "AS Roma",
+    "formula": "Trasferimento definitivo",
+    "amount": "450.000 euro",
+    "date": "2026-10-20",
+    "to_logo": "market-club-93399623-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137332-fb7fe4549e9861f8.png",
+    "alt": "Sam Rak-Sakyi"
+  }
+}

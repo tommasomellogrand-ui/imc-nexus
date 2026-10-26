@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e4d3d0948cdd71bae56e5ee0",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Liverpool: ufficiale l’arrivo di Jarell Quansah",
+  "text": "Liverpool annuncia l’arrivo di Jarell Quansah. Il giocatore lascia Bayer Leverkusen: operazione da 45 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayer Leverkusen",
+    "to": "Liverpool",
+    "formula": "Trasferimento definitivo",
+    "amount": "45 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-390-0910c20d52ededca.png",
+    "to_logo": "market-club-93399544-56dfeac623d23b94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-118091-e20b58fe0d377698.png",
+    "alt": "Jarell Quansah"
+  }
+}

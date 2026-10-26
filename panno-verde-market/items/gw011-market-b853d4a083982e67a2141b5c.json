@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-b853d4a083982e67a2141b5c",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di Aaron Bouwman",
+  "text": "Real Madrid annuncia l’arrivo di Aaron Bouwman. Il giocatore lascia Ajax: operazione da 15,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Ajax",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "15,4 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-180-9255d45308a5059b.png",
+    "to_logo": "market-club-93399663-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149881-642584617ac861b3.png",
+    "alt": "Aaron Bouwman"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-70f9523989eeabf8d295533c",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Nathan De Cat",
+  "text": "Atlético Madrid e TSG 1899 Hoffenheim chiudono l’accordo per Nathan De Cat. Operazione da 18 milioni di euro, con Thomas Lemar nel percorso inverso verso TSG 1899 Hoffenheim.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "TSG 1899 Hoffenheim",
+    "to": "Atlético Madrid",
+    "formula": "Scambio con contropartite",
+    "amount": "18 milioni di euro + Thomas Lemar",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-793-97184e7db9281e9b.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-143496-08112b844921e829.png",
+    "alt": "Nathan De Cat"
+  }
+}

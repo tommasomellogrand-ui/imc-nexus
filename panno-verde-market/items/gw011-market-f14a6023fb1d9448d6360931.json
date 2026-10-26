@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f14a6023fb1d9448d6360931",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester United: ufficiale l’arrivo di Tino Livramento",
+  "text": "Manchester United e Newcastle United chiudono l’accordo per Tino Livramento. Operazione da 70 milioni di euro, con Karl Darlow, Luke Shaw nel percorso inverso verso Newcastle United.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "Newcastle United",
+    "to": "Manchester United",
+    "formula": "Scambio con contropartite",
+    "amount": "70 milioni di euro + Karl Darlow, Luke Shaw",
+    "date": "2026-10-22",
+    "from_logo": "market-global-club-52-a525c0dcf1a414c0.png",
+    "to_logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-114238-55987618c2c64cff.png",
+    "alt": "Tino Livramento"
+  }
+}

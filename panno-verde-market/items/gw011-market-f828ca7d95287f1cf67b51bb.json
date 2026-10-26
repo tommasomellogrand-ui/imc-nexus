@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f828ca7d95287f1cf67b51bb",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Pau Torres",
+  "text": "AS Roma annuncia l’arrivo di Pau Torres. Il giocatore lascia Aston Villa: operazione da 18 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "Aston Villa",
+    "to": "AS Roma",
+    "formula": "Trasferimento definitivo",
+    "amount": "18 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-2-ae543f86d2922165.png",
+    "to_logo": "market-club-93399623-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-88450-19739c532f385dfc.png",
+    "alt": "Pau Torres"
+  }
+}

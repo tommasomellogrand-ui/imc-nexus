@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f176e8f1818a314f19e137f9",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di Otávio Costa",
+  "text": "Real Madrid annuncia l’arrivo di Otávio Costa. Il giocatore lascia Cruzeiro EC: operazione da 400.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Cruzeiro EC",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "400.000 euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-292-b81b3a5502b43e1c.png",
+    "to_logo": "market-club-93399663-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-156226-7327b0692f513edc.png",
+    "alt": "Otávio Costa"
+  }
+}

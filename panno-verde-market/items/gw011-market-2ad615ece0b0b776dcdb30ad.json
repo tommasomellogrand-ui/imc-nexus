@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-2ad615ece0b0b776dcdb30ad",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Borussia Dortmund: ufficiale l’arrivo di Konstantin Heide",
+  "text": "Borussia Dortmund annuncia l’arrivo di Konstantin Heide. Il giocatore lascia Hertha BSC: operazione da 400.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Hertha BSC",
+    "to": "Borussia Dortmund",
+    "formula": "Trasferimento definitivo",
+    "amount": "400.000 euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-404-73a89d10e84d6dcf.png",
+    "to_logo": "market-club-93399892-d15d77a60b17db2f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-142903-22a9579e00b49cb9.png",
+    "alt": "Konstantin Heide"
+  }
+}

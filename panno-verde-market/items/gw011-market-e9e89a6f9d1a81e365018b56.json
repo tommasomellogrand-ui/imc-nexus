@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e9e89a6f9d1a81e365018b56",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Borussia Dortmund: ufficiale l’arrivo di John Davis Meyer",
+  "text": "Borussia Dortmund annuncia l’arrivo di John Davis Meyer. Il giocatore lascia Karlsruher SC: operazione da 334.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Karlsruher SC",
+    "to": "Borussia Dortmund",
+    "formula": "Trasferimento definitivo",
+    "amount": "334.000 euro",
+    "date": "2026-10-21",
+    "from_logo": "market-global-club-406-152b258c11c525f0.png",
+    "to_logo": "market-club-93399892-d15d77a60b17db2f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-176757-577070685e3b05d4.png",
+    "alt": "John Davis Meyer"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-ee13c00dec6d572bcb7067d0",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di William Gomes",
+  "text": "Real Madrid annuncia l’arrivo di William Gomes. Il giocatore lascia FC Porto: operazione da 8,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Porto",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "8,1 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-224-2b9ad4a869c0dbef.png",
+    "to_logo": "market-club-93399663-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-141747-ca582dc4bd5177b4.png",
+    "alt": "William Gomes"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d0da67649ce4a6b686bea7df",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Arsenal: ufficiale l’arrivo di Gabriel Mec",
+  "text": "Arsenal annuncia l’arrivo di Gabriel Mec. Il giocatore lascia FC Porto: operazione da 3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Porto",
+    "to": "Arsenal",
+    "formula": "Trasferimento definitivo",
+    "amount": "3 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-224-2b9ad4a869c0dbef.png",
+    "to_logo": "market-club-93399501-33ef41943a141618.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-145946-ed4a40a6b5cf4c4a.png",
+    "alt": "Gabriel Mec"
+  }
+}

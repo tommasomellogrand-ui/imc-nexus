@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a1d18294bcaef58c534ab2b1",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Alarcón Isco",
+  "text": "Atlético Madrid annuncia l’arrivo di Alarcón Isco. Il giocatore lascia Real Betis: operazione da 4,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Betis",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "4,6 milioni di euro",
+    "date": "2026-10-20",
+    "from_logo": "market-global-club-162-506f86df89621802.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-45455-0d589910aa3ed292.png",
+    "alt": "Alarcón Isco"
+  }
+}

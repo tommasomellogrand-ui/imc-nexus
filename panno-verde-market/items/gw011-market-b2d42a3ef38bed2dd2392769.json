@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-b2d42a3ef38bed2dd2392769",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Paul Wanner",
+  "text": "Atlético Madrid annuncia l’arrivo di Paul Wanner. Il giocatore lascia PSV: operazione da 8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "PSV",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "8 milioni di euro",
+    "date": "2026-10-20",
+    "from_logo": "market-global-club-201-491f05363869d3f7.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-117449-fd226c5f83bdd4c1.png",
+    "alt": "Paul Wanner"
+  }
+}

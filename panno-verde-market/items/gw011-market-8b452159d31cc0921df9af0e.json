@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-8b452159d31cc0921df9af0e",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Borussia Dortmund: ufficiale l’arrivo di Dion Hofmeister",
+  "text": "Borussia Dortmund annuncia l’arrivo di Dion Hofmeister. Il giocatore lascia 1. FC Kaiserslautern: operazione da 337.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "1. FC Kaiserslautern",
+    "to": "Borussia Dortmund",
+    "formula": "Trasferimento definitivo",
+    "amount": "337.000 euro",
+    "date": "2026-10-21",
+    "from_logo": "market-global-club-405-bb34b981104b73b7.png",
+    "to_logo": "market-club-93399892-d15d77a60b17db2f.png"
+  },
+  "editorial_version": 3
+}

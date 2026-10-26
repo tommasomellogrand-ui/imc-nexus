@@ -1,0 +1,29 @@
+{
+  "id": "gw011-market-a5018ef5af9eb744fe6547eb",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di Chema Andrés",
+  "text": "Real Madrid annuncia l’arrivo di Chema Andrés. Il giocatore lascia Brighton & Hove Albion: operazione da 10 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Brighton & Hove Albion",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "10 milioni di euro",
+    "date": "2026-10-18",
+    "to_logo": "market-club-93399663-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150291-b4cb60061ed7c64b.png",
+    "alt": "Chema Andrés"
+  }
+}

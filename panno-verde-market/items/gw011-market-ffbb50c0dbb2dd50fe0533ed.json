@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-ffbb50c0dbb2dd50fe0533ed",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Paris Saint-Germain: ufficiale l’arrivo di Vasilije Novičić",
+  "text": "Paris Saint-Germain e FK IMT chiudono l’accordo per Vasilije Novičić. Operazione da 4,4 milioni di euro, con Naoufel El Hannach nel percorso inverso verso FK IMT.",
+  "category": "market",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "transfer": {
+    "from": "FK IMT",
+    "to": "Paris Saint-Germain",
+    "formula": "Scambio con contropartite",
+    "amount": "4,4 milioni di euro + Naoufel El Hannach",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-5553-c303a75865e23e80.png",
+    "to_logo": "market-club-93399838-3eef9082b1e66395.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-154028-c08ce64e562b2ecc.png",
+    "alt": "Vasilije Novičić"
+  }
+}

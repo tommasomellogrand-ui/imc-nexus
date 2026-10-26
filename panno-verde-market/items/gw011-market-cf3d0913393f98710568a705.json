@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-cf3d0913393f98710568a705",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Nathan Mbala",
+  "text": "Atlético Madrid annuncia l’arrivo di Nathan Mbala. Il giocatore lascia FC Metz: operazione da 647.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Metz",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "647.000 euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-331-3011318a971ab3ff.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-172604-c77a10285bf5a48b.png",
+    "alt": "Nathan Mbala"
+  }
+}

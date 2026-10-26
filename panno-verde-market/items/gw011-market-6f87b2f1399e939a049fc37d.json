@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-6f87b2f1399e939a049fc37d",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Borussia Dortmund: ufficiale l’arrivo di Louey Ben Farhat",
+  "text": "Borussia Dortmund annuncia l’arrivo di Louey Ben Farhat. Il giocatore lascia SC Freiburg: operazione da 2,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "SC Freiburg",
+    "to": "Borussia Dortmund",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,6 milioni di euro",
+    "date": "2026-10-24",
+    "from_logo": "market-global-club-411-834debe0e59df2d2.png",
+    "to_logo": "market-club-93399892-d15d77a60b17db2f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149331-af588d95f98a01ed.png",
+    "alt": "Louey Ben Farhat"
+  }
+}

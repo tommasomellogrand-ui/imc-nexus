@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-88eb199ada59a70b4c5df8b0",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Bayern München: ufficiale l’arrivo di Assan Ouedraogo",
+  "text": "Bayern München annuncia l’arrivo di Assan Ouedraogo. Il giocatore lascia RB Leipzig: operazione da 5,7 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "RB Leipzig",
+    "to": "Bayern München",
+    "formula": "Trasferimento definitivo",
+    "amount": "5,7 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-1657-182bc6d99b8abdaa.png",
+    "to_logo": "market-club-93399891-8f08c13f795eef24.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-128503-51fcbe88ed4e71b9.png",
+    "alt": "Assan Ouedraogo"
+  }
+}

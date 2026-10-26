@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-3b6f80b72e08eb50ad74d2ee",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester United: ufficiale l’arrivo di Christ Inao Oulaï",
+  "text": "Manchester United annuncia l’arrivo di Christ Inao Oulaï. Il giocatore lascia ACF Fiorentina: operazione da 8,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "ACF Fiorentina",
+    "to": "Manchester United",
+    "formula": "Trasferimento definitivo",
+    "amount": "8,1 milioni di euro",
+    "date": "2026-10-20",
+    "from_logo": "market-global-club-107-4c877773bc6839c8.png",
+    "to_logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-152296-30e41b5271a2541b.png",
+    "alt": "Christ Inao Oulaï"
+  }
+}

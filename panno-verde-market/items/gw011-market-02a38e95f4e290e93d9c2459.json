@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-02a38e95f4e290e93d9c2459",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Gilberto Mora",
+  "text": "Atlético Madrid e Club Tijuana chiudono l’accordo per Gilberto Mora. Operazione da 18,7 milioni di euro, con Carlos Martín nel percorso inverso verso Club Tijuana.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Club Tijuana",
+    "to": "Atlético Madrid",
+    "formula": "Scambio con contropartite",
+    "amount": "18,7 milioni di euro + Carlos Martín",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-1563-e7a028d6e198ad6e.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-152461-35901af5fda862e8.png",
+    "alt": "Gilberto Mora"
+  }
+}

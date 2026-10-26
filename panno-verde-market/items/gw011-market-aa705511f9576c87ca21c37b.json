@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-aa705511f9576c87ca21c37b",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Bayern München: ufficiale l’arrivo di Karim Coulibaly",
+  "text": "Bayern München annuncia l’arrivo di Karim Coulibaly. Il giocatore lascia RC Strasbourg Alsace: operazione da 17 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "RC Strasbourg Alsace",
+    "to": "Bayern München",
+    "formula": "Trasferimento definitivo",
+    "amount": "17 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-344-a12e6b429912aa20.png",
+    "to_logo": "market-club-93399891-8f08c13f795eef24.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-161273-b98cd9f14cb69cdb.png",
+    "alt": "Karim Coulibaly"
+  }
+}

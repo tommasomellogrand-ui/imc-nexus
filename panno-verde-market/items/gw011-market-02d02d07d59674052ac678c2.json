@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-02d02d07d59674052ac678c2",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Diego Mascardi",
+  "text": "Como 1907 annuncia l’arrivo di Diego Mascardi. Il giocatore lascia Torino: operazione da 478.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Torino",
+    "to": "Como 1907",
+    "formula": "Trasferimento definitivo",
+    "amount": "478.000 euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-128-f9a747eea863bc76.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-151790-c3a983784d07f056.png",
+    "alt": "Diego Mascardi"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-c7e129a670cb44028791873c",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Adrien Rabiot",
+  "text": "AS Roma e AC Milan chiudono l’accordo per Adrien Rabiot. Operazione da 20 milioni di euro, con Niccolò Pisilli nel percorso inverso verso AC Milan.",
+  "category": "market",
+  "club_ids": [
+    "93399623",
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    },
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "AS Roma",
+    "formula": "Scambio con contropartite",
+    "amount": "20 milioni di euro + Niccolò Pisilli",
+    "date": "2026-10-17",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-club-93399623-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-57953-a3063e4c957fda15.png",
+    "alt": "Adrien Rabiot"
+  }
+}

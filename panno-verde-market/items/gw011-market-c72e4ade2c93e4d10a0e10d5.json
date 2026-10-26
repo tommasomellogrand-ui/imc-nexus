@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-c72e4ade2c93e4d10a0e10d5",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Ebrima Tunkara",
+  "text": "Como 1907 annuncia l’arrivo di Ebrima Tunkara. Il giocatore lascia Barcelona: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156",
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    },
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "Como 1907",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-20",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-160043-a4c1043c5ebc8a21.png",
+    "alt": "Ebrima Tunkara"
+  }
+}

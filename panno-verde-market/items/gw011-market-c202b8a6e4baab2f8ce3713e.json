@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-c202b8a6e4baab2f8ce3713e",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester United: ufficiale l’arrivo di Mathys Niflore",
+  "text": "Manchester United annuncia l’arrivo di Mathys Niflore. Il giocatore lascia Toulouse FC: operazione da 1,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "Toulouse FC",
+    "to": "Manchester United",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,8 milioni di euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-345-0a1fa3cef3108929.png",
+    "to_logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-161281-734a34128d4a60b2.png",
+    "alt": "Mathys Niflore"
+  }
+}

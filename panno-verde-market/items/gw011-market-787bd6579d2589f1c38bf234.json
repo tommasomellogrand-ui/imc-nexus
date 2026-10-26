@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-787bd6579d2589f1c38bf234",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AC Milan: ufficiale l’arrivo di Michael Kayode",
+  "text": "AC Milan e Brentford chiudono l’accordo per Michael Kayode. Operazione da 12 milioni di euro, con Youssouf Fofana, Ardon Jashari nel percorso inverso verso Brentford.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "Brentford",
+    "to": "AC Milan",
+    "formula": "Scambio con contropartite",
+    "amount": "12 milioni di euro + Youssouf Fofana, Ardon Jashari",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-11-a75a71421fb97b6e.png",
+    "to_logo": "market-club-93399615-cf09cc84369c6535.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-129302-f0ede8e6a8b30032.png",
+    "alt": "Michael Kayode"
+  }
+}

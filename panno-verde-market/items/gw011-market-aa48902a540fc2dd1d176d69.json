@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-aa48902a540fc2dd1d176d69",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Paris Saint-Germain: ufficiale l’arrivo di August De Wannemacker",
+  "text": "Paris Saint-Germain e KRC Genk chiudono l’accordo per August De Wannemacker. Operazione da 3,6 milioni di euro, con Vainqueur Nzinga nel percorso inverso verso KRC Genk.",
+  "category": "market",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "transfer": {
+    "from": "KRC Genk",
+    "to": "Paris Saint-Germain",
+    "formula": "Scambio con contropartite",
+    "amount": "3,6 milioni di euro + Vainqueur Nzinga",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-355-522c8e37d6f69c46.png",
+    "to_logo": "market-club-93399838-3eef9082b1e66395.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-154627-5453a261be4f8152.png",
+    "alt": "August De Wannemacker"
+  }
+}

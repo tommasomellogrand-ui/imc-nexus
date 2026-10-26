@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f423816bcfc677460dc43b34",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Luca Koleosho",
+  "text": "Como 1907 annuncia l’arrivo di Luca Koleosho. Il giocatore lascia Paris FC: operazione da 6,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Paris FC",
+    "to": "Como 1907",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,6 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-1692-4b0cdbce9bad7bc5.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-122954-8359e92cf5f3cf3d.png",
+    "alt": "Luca Koleosho"
+  }
+}

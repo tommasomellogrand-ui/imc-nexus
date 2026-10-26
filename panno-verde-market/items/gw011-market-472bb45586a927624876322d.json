@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-472bb45586a927624876322d",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "SSC Napoli: ufficiale l’arrivo di Jean Mambuku",
+  "text": "SSC Napoli annuncia l’arrivo di Jean Mambuku. Il giocatore lascia Stade de Reims: operazione da 406.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "Stade de Reims",
+    "to": "SSC Napoli",
+    "formula": "Trasferimento definitivo",
+    "amount": "406.000 euro",
+    "date": "2026-10-21",
+    "from_logo": "market-global-club-339-40b7a50eae5a9aa7.png",
+    "to_logo": "market-club-93400234-082aae3f75dc21ec.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162544-fcdeeb2de4285dd6.png",
+    "alt": "Jean Mambuku"
+  }
+}

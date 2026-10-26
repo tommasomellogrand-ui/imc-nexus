@@ -1,0 +1,29 @@
+{
+  "id": "gw011-market-6dd1b327b0e4443a84018392",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Borussia Dortmund: ufficiale l’arrivo di Kurt Rüger",
+  "text": "Borussia Dortmund annuncia l’arrivo di Kurt Rüger, proveniente dalla lista degli svincolati. Operazione da 225.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Svincolato",
+    "to": "Borussia Dortmund",
+    "formula": "Trasferimento definitivo",
+    "amount": "225.000 euro",
+    "date": "2026-10-18",
+    "to_logo": "market-club-93399892-d15d77a60b17db2f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149236-7d52fa8dfbf27ea7.png",
+    "alt": "Kurt Rüger"
+  }
+}

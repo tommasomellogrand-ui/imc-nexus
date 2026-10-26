@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-450c31c417bf98082a41d1ee",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Paris Saint-Germain: ufficiale l’arrivo di Iago Machado",
+  "text": "Paris Saint-Germain annuncia l’arrivo di Iago Machado. Il giocatore lascia Corinthians: operazione da 418.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "transfer": {
+    "from": "Corinthians",
+    "to": "Paris Saint-Germain",
+    "formula": "Trasferimento definitivo",
+    "amount": "418.000 euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-290-6344f5e1f75d6ee5.png",
+    "to_logo": "market-club-93399838-3eef9082b1e66395.png"
+  },
+  "editorial_version": 3
+}

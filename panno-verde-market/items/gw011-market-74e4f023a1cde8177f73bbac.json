@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-74e4f023a1cde8177f73bbac",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Cristian Romero",
+  "text": "AS Roma e Atlético Madrid chiudono l’accordo per Cristian Romero. Operazione da 20 milioni di euro, con Donyell Malen nel percorso inverso verso Atlético Madrid.",
+  "category": "market",
+  "club_ids": [
+    "93399623",
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    },
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "AS Roma",
+    "formula": "Scambio con contropartite",
+    "amount": "20 milioni di euro + Donyell Malen",
+    "date": "2026-10-20",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-club-93399623-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-86903-4e6bf6c6d49dd483.png",
+    "alt": "Cristian Romero"
+  }
+}

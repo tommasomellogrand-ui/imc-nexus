@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-54363198a0eb3ce6f645ae58",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Bayern München: ufficiale l’arrivo di Leroy Sanè",
+  "text": "Bayern München annuncia l’arrivo di Leroy Sanè. Il giocatore lascia Galatasaray SK: operazione da 14,5 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Galatasaray SK",
+    "to": "Bayern München",
+    "formula": "Trasferimento definitivo",
+    "amount": "14,5 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-351-e42d9b78ea0438c3.png",
+    "to_logo": "market-club-93399891-8f08c13f795eef24.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-73265-d1399ca509ce94f1.png",
+    "alt": "Leroy Sanè"
+  }
+}

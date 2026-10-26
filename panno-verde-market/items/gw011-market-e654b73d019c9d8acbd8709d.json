@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-e654b73d019c9d8acbd8709d",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Mattia Mosconi",
+  "text": "Como 1907 annuncia l’arrivo di Mattia Mosconi. Il giocatore lascia Internazionale: operazione da 1,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156",
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    },
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Internazionale",
+    "to": "Como 1907",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,3 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149457-90e1fb2c35910e4d.png",
+    "alt": "Mattia Mosconi"
+  }
+}

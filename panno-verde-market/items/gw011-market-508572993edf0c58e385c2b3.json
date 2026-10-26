@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-508572993edf0c58e385c2b3",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Arsenal: ufficiale l’arrivo di Harrison Armstrong",
+  "text": "Arsenal e Everton chiudono l’accordo per Harrison Armstrong. Operazione da 5,6 milioni di euro, con Theo Julienne, Marcell Washington nel percorso inverso verso Everton.",
+  "category": "market",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "transfer": {
+    "from": "Everton",
+    "to": "Arsenal",
+    "formula": "Scambio con contropartite",
+    "amount": "5,6 milioni di euro + Theo Julienne, Marcell Washington",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-31-fe258fc7debc69ac.png",
+    "to_logo": "market-club-93399501-33ef41943a141618.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-151779-9515cf16a53e6401.png",
+    "alt": "Harrison Armstrong"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-fc21c02277221072f936c6ba",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Gabriel Rajkovic",
+  "text": "Manchester City annuncia l’arrivo di Gabriel Rajkovic. Il giocatore lascia Vålerenga IF: operazione da 402.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Vålerenga IF",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "402.000 euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-468-63136cf233a4fec2.png",
+    "to_logo": "market-club-93399547-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-171364-2891d3bbaa7afbee.png",
+    "alt": "Gabriel Rajkovic"
+  }
+}

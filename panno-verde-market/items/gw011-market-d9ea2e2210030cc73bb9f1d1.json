@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d9ea2e2210030cc73bb9f1d1",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Barcelona: ufficiale l’arrivo di Jan Virgili",
+  "text": "Barcelona annuncia l’arrivo di Jan Virgili. Il giocatore lascia Club Brugge KV: operazione da 15 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Club Brugge KV",
+    "to": "Barcelona",
+    "formula": "Trasferimento definitivo",
+    "amount": "15 milioni di euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-354-752d7eac2967d7d4.png",
+    "to_logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155063-7d9b2d4f4c276714.png",
+    "alt": "Jan Virgili"
+  }
+}

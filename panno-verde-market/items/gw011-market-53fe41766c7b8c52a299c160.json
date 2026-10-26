@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-53fe41766c7b8c52a299c160",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Internazionale: ufficiale l’arrivo di Pavel Šulc",
+  "text": "Internazionale e Olympique Lyonnais chiudono l’accordo per Pavel Šulc. Operazione da 9 milioni di euro, con Anas El Mahboubi, Manuel Pinotti nel percorso inverso verso Olympique Lyonnais.",
+  "category": "market",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Olympique Lyonnais",
+    "to": "Internazionale",
+    "formula": "Scambio con contropartite",
+    "amount": "9 milioni di euro + Anas El Mahboubi, Manuel Pinotti",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-329-5bc208de1c2e361e.png",
+    "to_logo": "market-club-93399609-c1b721033d1fc95e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-107572-7dd74b4ff8553233.png",
+    "alt": "Pavel Šulc"
+  }
+}

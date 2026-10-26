@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-7d95434fbcabd1d6f22141fc",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Moise Kean",
+  "text": "Manchester City annuncia l’arrivo di Moise Kean. Il giocatore lascia ACF Fiorentina: operazione da 25 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "ACF Fiorentina",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "25 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-global-club-107-4c877773bc6839c8.png",
+    "to_logo": "market-club-93399547-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-88229-bed0182e8ef80878.png",
+    "alt": "Moise Kean"
+  }
+}

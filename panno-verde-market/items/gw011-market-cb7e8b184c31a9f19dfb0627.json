@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-cb7e8b184c31a9f19dfb0627",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Borussia Dortmund: ufficiale l’arrivo di I.Jezić",
+  "text": "Borussia Dortmund annuncia l’arrivo di I.Jezić. Il giocatore lascia NK Osijek: operazione da 318.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "NK Osijek",
+    "to": "Borussia Dortmund",
+    "formula": "Trasferimento definitivo",
+    "amount": "318.000 euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-943-9fbded15ae83a094.png",
+    "to_logo": "market-club-93399892-d15d77a60b17db2f.png"
+  },
+  "editorial_version": 3
+}

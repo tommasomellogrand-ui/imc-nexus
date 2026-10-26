@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-a216424af189583483d2ee51",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Alexis Mac Allister",
+  "text": "Atlético Madrid e Liverpool chiudono l’accordo per Alexis Mac Allister. Operazione da J.ÁLVAREZ, con Julián Álvarez nel percorso inverso verso Liverpool.",
+  "category": "market",
+  "club_ids": [
+    "93399639",
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    },
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Atlético Madrid",
+    "formula": "Scambio con contropartite",
+    "amount": "J.ÁLVAREZ + Julián Álvarez",
+    "date": "2026-10-20",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-95236-17b98a7e9d7ba7eb.png",
+    "alt": "Alexis Mac Allister"
+  }
+}

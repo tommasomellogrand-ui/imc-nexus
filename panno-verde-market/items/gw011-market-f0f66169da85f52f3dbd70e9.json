@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-f0f66169da85f52f3dbd70e9",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Mike Penders",
+  "text": "Atlético Madrid annuncia l’arrivo di Mike Penders. Il giocatore lascia Chelsea: operazione da 18 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639",
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    },
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "18 milioni di euro",
+    "date": "2026-10-18",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-124280-f2bb68c3a651a753.png",
+    "alt": "Mike Penders"
+  }
+}

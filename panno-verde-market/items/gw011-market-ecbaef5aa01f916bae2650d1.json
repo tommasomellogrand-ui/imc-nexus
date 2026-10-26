@@ -1,0 +1,29 @@
+{
+  "id": "gw011-market-ecbaef5aa01f916bae2650d1",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Jack Hinshelwood",
+  "text": "Manchester City annuncia l’arrivo di Jack Hinshelwood. Il giocatore lascia Brighton & Hove Albion: operazione da 17 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Brighton & Hove Albion",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "17 milioni di euro",
+    "date": "2026-10-18",
+    "to_logo": "market-club-93399547-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-132367-532477e0fade833c.png",
+    "alt": "Jack Hinshelwood"
+  }
+}

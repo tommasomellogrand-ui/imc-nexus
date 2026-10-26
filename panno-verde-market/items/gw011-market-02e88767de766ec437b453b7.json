@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-02e88767de766ec437b453b7",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Borussia Dortmund: ufficiale l’arrivo di Maximilian Mittelstädt",
+  "text": "Borussia Dortmund annuncia l’arrivo di Maximilian Mittelstädt. Il giocatore lascia VfB Stuttgart: operazione da 12,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "VfB Stuttgart",
+    "to": "Borussia Dortmund",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,6 milioni di euro",
+    "date": "2026-10-19",
+    "from_logo": "market-global-club-417-5e411e18cc3b9f69.png",
+    "to_logo": "market-club-93399892-d15d77a60b17db2f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-82821-6f5bbd68b59a524c.png",
+    "alt": "Maximilian Mittelstädt"
+  }
+}

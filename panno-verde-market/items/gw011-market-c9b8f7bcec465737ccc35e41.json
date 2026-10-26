@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-c9b8f7bcec465737ccc35e41",
+  "published_at": "2026-10-26T08:45:53+01:00",
+  "title": "Chelsea: ufficiale l’arrivo di França Wesley",
+  "text": "Chelsea e AS Roma chiudono l’accordo per França Wesley. Operazione da M.PALESTRA + V.BARCO, con Marco Palestra, Valentín Barco nel percorso inverso verso AS Roma.",
+  "category": "market",
+  "club_ids": [
+    "93399521",
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    },
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "Chelsea",
+    "formula": "Scambio con contropartite",
+    "amount": "M.PALESTRA + V.BARCO + Marco Palestra, Valentín Barco",
+    "date": "2026-10-21",
+    "from_logo": "market-club-93399623-4f2820912276f496.png",
+    "to_logo": "market-club-93399521-6694aaf8610a7f9b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-118879-23b052b066790d23.png",
+    "alt": "França Wesley"
+  }
+}
