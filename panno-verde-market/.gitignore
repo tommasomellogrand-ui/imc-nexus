@@ -1,0 +1,4 @@
+dist/
+__pycache__/
+automation/runtime/
+automation/__pycache__/

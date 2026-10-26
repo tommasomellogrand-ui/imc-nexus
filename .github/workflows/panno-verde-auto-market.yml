@@ -1,0 +1,65 @@
+name: Il Panno Verde Automatic Transfer News
+on:
+  push:
+    branches: [main]
+    paths: ['panno-verde-market/**', '.github/workflows/panno-verde-auto-market.yml']
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Validate the same certified market rules as GW001
+        run: |
+          python3 -m pip install Pillow==11.3.0
+          python3 -m unittest discover -s panno-verde-market/automation -p test_generate.py
+          php -l panno-verde-market/automation/export.php
+          node --check panno-verde-market/feed.js
+          npm install --prefix /tmp/pv-market-qa playwright@1.56.1
+      - name: Read certified GW011 transfers and prepare news
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 panno-verde-market/automation/export.py
+      - name: Validate archive
+        run: python3 panno-verde-market/build.py
+      - name: Persist news and duplicate registry
+        run: |
+          git config user.name "Il Panno Verde News Bot"
+          git config user.email "panno-verde-bot@users.noreply.github.com"
+          git add panno-verde-market/items panno-verde-market/assets panno-verde-market/automation/clubs.json panno-verde-market/automation/ledger.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish certified GW011 market news"
+            git push origin HEAD:main
+          fi
+          echo "DEPLOY_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Build committed revision
+        run: python3 panno-verde-market/build.py
+      - name: Publish GW011 market
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 panno-verde-market/deploy.py
+      - name: Verify public GW011 market and filters
+        run: NODE_PATH=/tmp/pv-market-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node panno-verde-market/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: panno-verde-market-publication
+          path: |
+            panno-verde-market/automation/runtime/report.json
+            /tmp/panno-verde-market-mobile.png
