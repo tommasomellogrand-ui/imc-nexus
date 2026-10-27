@@ -10,6 +10,7 @@ on:
       - 'rth24-news/club_pages.py'
       - 'rth24-news/club-pages.css'
       - 'rth24-news/share.js'
+      - 'rth24-news/verify-sharing.cjs'
   workflow_dispatch:
 permissions:
   contents: read
