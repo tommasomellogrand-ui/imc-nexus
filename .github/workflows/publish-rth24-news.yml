@@ -7,6 +7,9 @@ on:
       - 'rth24-news/uploads/**'
       - 'rth24-news/assets/**'
       - 'rth24-news/install.txt'
+      - 'rth24-news/club_pages.py'
+      - 'rth24-news/club-pages.css'
+      - 'rth24-news/share.js'
   workflow_dispatch:
 permissions:
   contents: read
@@ -42,6 +45,8 @@ jobs:
         run: python3 rth24-news/build.py
       - name: Test rendering with preview-only news
         run: NODE_PATH=/tmp/rth24-news-qa/node_modules CHROME_BIN="$(command -v google-chrome)" PREVIEW=1 node rth24-news/verify.cjs
+      - name: Test Club News sharing before publication
+        run: NODE_PATH=/tmp/rth24-news-qa/node_modules CHROME_BIN="$(command -v google-chrome)" PREVIEW=1 node rth24-news/verify-sharing.cjs
       - name: Publish only RTH24 Flash News
         env:
           ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
@@ -52,6 +57,7 @@ jobs:
       - name: Verify news visible on public RTH24
         run: |
           NODE_PATH=/tmp/rth24-news-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node rth24-news/verify.cjs
+          NODE_PATH=/tmp/rth24-news-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node rth24-news/verify-sharing.cjs
           cat rth24-news/dist/receipt.json >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
@@ -60,3 +66,4 @@ jobs:
           path: |
             rth24-news/dist/receipt.json
             /tmp/rth24-news-*.png
+

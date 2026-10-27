@@ -1,4 +1,5 @@
 (()=>{'use strict';
+const sharing=document.createElement('script');sharing.src='/nexus/alltoplayfor/rth-24/share-v1.js';document.head.append(sharing);
 let panel=document.getElementById('rth-panel-ultimora');if(!panel)return;
 let active='ultimora',selectedClub='',clubs=[];const tabs=[...document.querySelectorAll('.rth-tabs [role=tab]')];
 const category=item=>item.category||'flash';
@@ -55,7 +56,16 @@ for(const item of [...data.items].sort((a,b)=>Date.parse(b.published_at)-Date.pa
   const summary=el('div',null,'rth-news-transfer');const route=el('div',null,'rth-news-route');for(const side of ['from','to']){if(side==='to')route.append(el('span','→','rth-news-route-arrow'));const club=el('div',null,'rth-news-route-club');const logo=picture(item.transfer[side+'_logo'],'Stemma '+item.transfer[side],'rth-news-route-logo');if(logo)club.append(logo);club.append(el('span',item.transfer[side]));route.append(club)}summary.append(route);
   const facts=el('dl',null,'rth-news-facts');for(const [label,value] of [['Formula',item.transfer.formula],['Operazione',item.transfer.amount],['Conclusa il',new Intl.DateTimeFormat('it-IT',{day:'2-digit',month:'2-digit',year:'numeric',timeZone:'UTC'}).format(new Date(item.transfer.date+'T12:00:00Z'))]]){const fact=el('div');fact.append(el('dt',label),el('dd',value));facts.append(fact)}summary.append(facts);card.append(summary);
  }
- card.append(content);entry.append(card);list.append(entry);
+ card.append(content);
+ if(category(item)==='club'){
+  const url='/nexus/alltoplayfor/rth-24/club-news/'+encodeURIComponent(item.id)+'/';
+  const actions=el('div',null,'rth-news-actions');actions.dataset.shareUrl=location.origin+url;actions.dataset.shareTitle=item.title;
+  const link=el('a','Apri la notizia');link.href=url;actions.append(link);
+  for(const [kind,label] of [['native','Condividi'],['copy','Copia link']]){const b=el('button',label);b.type='button';b.dataset.share=kind;actions.append(b)}
+  const status=el('span');status.setAttribute('role','status');status.setAttribute('aria-live','polite');const input=el('input');input.hidden=true;input.readOnly=true;input.setAttribute('aria-label','Link da copiare');actions.append(status,input);card.append(actions);
+ }
+ entry.append(card);list.append(entry);
 }
-filter();for(const p of document.querySelectorAll('.rth-panel')){p.dataset.feedState='ready';p.dataset.feedRevision=data.revision||'';}
+filter();function openHash(){if(!location.hash.startsWith('#news-'))return;const target=document.getElementById(location.hash.slice(1));if(!target)return;selectedClub='';updateClubButton();select(tabs.find(t=>t.id==='rth-tab-'+(target.closest('.rth-news-entry').dataset.category==='club'?'club':'ultimora')));requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));}openHash();window.addEventListener('hashchange',openHash);for(const p of document.querySelectorAll('.rth-panel')){p.dataset.feedState='ready';p.dataset.feedRevision=data.revision||'';}
 }catch(e){list.replaceChildren(el('p','Flash News temporaneamente non disponibili. Riprova.'));const retry=el('button','Riprova');retry.type='button';retry.addEventListener('click',load);list.append(retry);panel.dataset.feedState='error'}}load();})();
+

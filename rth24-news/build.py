@@ -67,5 +67,8 @@ def build():
  items.sort(key=lambda x:(validate(x),x['id']),reverse=True)
  out=R/'dist';out.mkdir(exist_ok=True)
  (out/'flash-news.json').write_text(json.dumps({'version':1,'revision':os.environ.get('DEPLOY_SHA','preview'),'items':items,'clubs':[{k:c[k] for k in ['id','name','logo']} for c in clubs]},ensure_ascii=False,indent=2)+'\n')
+ from club_pages import build_pages
+ build_pages(items,out)
  print('Validated',len(items),'Flash News')
 if __name__=='__main__':build()
+
