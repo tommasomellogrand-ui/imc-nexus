@@ -1,0 +1,32 @@
+name: Publish Final Whistle editorial interviews
+on:
+  push:
+    branches: [main]
+    paths: ['finalwhistle-editorial/**', '.github/workflows/finalwhistle-editorial.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate stories and report gating
+        run: |
+          python3 finalwhistle-editorial/build.py
+          node --check finalwhistle-editorial/final-whistle.js
+          node finalwhistle-editorial/test.cjs
+      - name: Publish editorial edition
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 finalwhistle-editorial/deploy.py
+      - name: Check all four matches on mobile and desktop
+        run: |
+          npm install --prefix /tmp/fwqa playwright@1.56.1
+          node finalwhistle-editorial/verify.cjs
