@@ -1,0 +1,35 @@
+name: Publish Final Whistle broadcast design
+on:
+  push:
+    branches: [main]
+    paths: ['finalwhistle-design/**', '.github/workflows/finalwhistle-design.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and verify narrative preservation
+        run: |
+          python3 finalwhistle-design/build.py
+          php -l finalwhistle-design/coffee-source-lib.php
+          node --check finalwhistle-design/design.js
+          node --check finalwhistle-design/final-whistle.js
+          node finalwhistle-design/test.cjs
+          npm install --prefix /tmp/fwqa playwright@1.56.1
+      - name: Preview mobile and desktop
+        run: PREVIEW=1 node finalwhistle-design/verify.cjs
+      - name: Publish scoped broadcast design
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 finalwhistle-design/deploy.py
+      - name: Verify production
+        run: node finalwhistle-design/verify.cjs
