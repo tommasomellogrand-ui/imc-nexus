@@ -1,0 +1,72 @@
+{
+  "id": "gw011-postmatch-364515466-mng004-93399838",
+  "published_at": "2026-10-27T23:42:01+01:00",
+  "title": "Luciano Catalano · Il post partita di Paris Saint-Germain",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nParis Saint-Germain 2–0 Nottingham Forest · 26/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515466",
+    "manager_id": "MNG004",
+    "manager": "Luciano Catalano",
+    "club_id": "93399838",
+    "club": "Paris Saint-Germain",
+    "opponent": "Nottingham Forest",
+    "match_date": "2026-10-26",
+    "result": "Paris Saint-Germain 2–0 Nottingham Forest",
+    "source_hash": "edc6fb9d077be64297ba12cecdeb8148feead6b9aa1704582a18f764b7ac749d",
+    "home": "Paris Saint-Germain",
+    "away": "Nottingham Forest",
+    "home_score": "2",
+    "away_score": "0",
+    "home_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "competition_label": "GIRONE B"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 2-0 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 63% di possesso e 16 tiri, contro 6 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Akliouche al minuto 63 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 63 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "117159",
+        "name": "Akliouche",
+        "image": {
+          "file": "postmatch-player-117159-91d6a52a80355dc9.png",
+          "alt": "Akliouche"
+        }
+      }
+    },
+    {
+      "question": "K Benzema è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "3884",
+        "name": "K Benzema",
+        "image": {
+          "file": "postmatch-player-3884-4232e69e38c71c53.png",
+          "alt": "K Benzema"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 16, contro 1 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 5 volte e segnato 2 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

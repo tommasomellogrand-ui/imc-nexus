@@ -1,0 +1,64 @@
+{
+  "id": "gw011-postmatch-364515491-mng048-93399640",
+  "published_at": "2026-10-27T23:42:01+01:00",
+  "title": "Giuseppe Trovato · Il post partita di Barcelona",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nVfB Stuttgart 0–0 Barcelona · 26/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515491",
+    "manager_id": "MNG048",
+    "manager": "Giuseppe Trovato",
+    "club_id": "93399640",
+    "club": "Barcelona",
+    "opponent": "VfB Stuttgart",
+    "match_date": "2026-10-26",
+    "result": "VfB Stuttgart 0–0 Barcelona",
+    "source_hash": "9f2f0344345782f546e1236c36499480b81c373324bcac4023510938b2fb3771",
+    "home": "VfB Stuttgart",
+    "away": "Barcelona",
+    "home_score": "0",
+    "away_score": "0",
+    "away_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "competition_label": "GIRONE B"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 0-0 è il risultato della gara. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 59% di possesso e 14 tiri, contro 11 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "Lo 0-0 mette in primo piano le due difese: che lettura ne dà?",
+      "answer": "La porta inviolata è un dato positivo, ma anche noi non abbiamo segnato. Devo tenere insieme questi due aspetti: protezione della nostra porta ed efficacia davanti."
+    },
+    {
+      "question": "J García ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Mi interessa valorizzare il suo contributo senza attribuire a un solo giocatore tutto il merito.",
+      "player": {
+        "id": "118586",
+        "name": "J García",
+        "image": {
+          "file": "postmatch-player-118586-ddfe93a4413a96c9.png",
+          "alt": "J García"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 14, contro 1 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 5 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}
