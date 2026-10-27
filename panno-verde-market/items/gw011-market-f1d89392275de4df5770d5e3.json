@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-f1d89392275de4df5770d5e3",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Paris Saint-Germain: ufficiale l’arrivo di Gonzalez Pedri",
+  "text": "Paris Saint-Germain e Barcelona chiudono l’accordo per Gonzalez Pedri. Operazione da 10 milioni di euro, con João Neves, Dro Fernández nel percorso inverso verso Barcelona.",
+  "category": "market",
+  "club_ids": [
+    "93399838",
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    },
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "Paris Saint-Germain",
+    "formula": "Scambio con contropartite",
+    "amount": "10 milioni di euro + João Neves, Dro Fernández",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-club-93399838-3eef9082b1e66395.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-102243-f10ce29416a95266.png",
+    "alt": "Gonzalez Pedri"
+  }
+}

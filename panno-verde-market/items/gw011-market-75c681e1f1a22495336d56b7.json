@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-75c681e1f1a22495336d56b7",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Bamber Bridge: ufficiale l’arrivo di Noah Adekoya",
+  "text": "Bamber Bridge annuncia l’arrivo di Noah Adekoya. Il giocatore lascia Liverpool: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Bamber Bridge",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-4055-dd9c25c12404d138.png"
+  },
+  "editorial_version": 3
+}

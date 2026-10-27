@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-050f79b7b46b93bea8a338db",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Bedford Town: ufficiale l’arrivo di Isaiah Dada-Mascoll",
+  "text": "Bedford Town annuncia l’arrivo di Isaiah Dada-Mascoll. Il giocatore lascia Manchester City: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Bedford Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-5009-3ee23bc4c42e1af6.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150075-b3a8e1244a53548a.png",
+    "alt": "Isaiah Dada-Mascoll"
+  }
+}

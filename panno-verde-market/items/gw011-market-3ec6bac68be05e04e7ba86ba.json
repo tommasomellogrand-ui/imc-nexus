@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-3ec6bac68be05e04e7ba86ba",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "GKS Jastrzebie: ufficiale l’arrivo di Justin Hoy",
+  "text": "GKS Jastrzebie annuncia l’arrivo di Justin Hoy. Il giocatore lascia Borussia Dortmund: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Borussia Dortmund",
+    "to": "GKS Jastrzebie",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "to_logo": "market-global-club-4866-4aeccf8a14e2febf.png"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-210508ba0b88bfd362aa2da0",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Albacete Balompié: ufficiale l’arrivo di Dani Martínez",
+  "text": "Albacete Balompié annuncia l’arrivo di Dani Martínez. Il giocatore lascia Atlético Madrid: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Albacete Balompié",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-136-55d3dd4ea5764ed9.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-138650-1cb6536b0207a35b.png",
+    "alt": "Dani Martínez"
+  }
+}

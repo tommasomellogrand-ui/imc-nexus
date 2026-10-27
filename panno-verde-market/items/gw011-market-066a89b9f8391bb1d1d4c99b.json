@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-066a89b9f8391bb1d1d4c99b",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "USD Ragusa: ufficiale l’arrivo di Léo Paul Bouyer",
+  "text": "USD Ragusa annuncia l’arrivo di Léo Paul Bouyer. Il giocatore lascia AC Milan: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "USD Ragusa",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-global-club-4511-e948af5391077b07.png"
+  },
+  "editorial_version": 3
+}

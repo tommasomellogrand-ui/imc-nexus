@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-9e24fa61ce0d61d10719c355",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "US Recanatese: ufficiale l’arrivo di Nicolò Milia",
+  "text": "US Recanatese annuncia l’arrivo di Nicolò Milia. Il giocatore lascia Juventus: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "US Recanatese",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-3923-148ca7a6eca31dd3.png"
+  },
+  "editorial_version": 3
+}

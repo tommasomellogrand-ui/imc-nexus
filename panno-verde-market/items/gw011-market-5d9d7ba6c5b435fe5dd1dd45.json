@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-5d9d7ba6c5b435fe5dd1dd45",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Scafatese Calcio 1922: ufficiale l’arrivo di Dinis Rodrigues",
+  "text": "Scafatese Calcio 1922 annuncia l’arrivo di Dinis Rodrigues. Il giocatore lascia SSC Napoli: operazione da 2,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Napoli",
+    "to": "Scafatese Calcio 1922",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,8 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "to_logo": "market-global-club-6615-cdac99d8e7a0ea00.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-126062-e65f0f636f87bac6.png",
+    "alt": "Dinis Rodrigues"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d5263d10d2a665584a39c723",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Oriental de Lisboa: ufficiale l’arrivo di João Fonseca",
+  "text": "Oriental de Lisboa annuncia l’arrivo di João Fonseca. Il giocatore lascia SL Benfica: operazione da 816.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399718"
+  ],
+  "teams": [
+    {
+      "name": "SL Benfica",
+      "logo": "market-club-93399718-cd9bbf9dc40287fc.png"
+    }
+  ],
+  "transfer": {
+    "from": "SL Benfica",
+    "to": "Oriental de Lisboa",
+    "formula": "Trasferimento definitivo",
+    "amount": "816.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "to_logo": "market-global-club-2957-3dcc252f5554ed66.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137882-21059549fe0e791c.png",
+    "alt": "João Fonseca"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-344dd99543621de4a3f4adad",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "USD Sestri Levante: ufficiale l’arrivo di Kristians Mezsargs",
+  "text": "USD Sestri Levante annuncia l’arrivo di Kristians Mezsargs. Il giocatore lascia Como 1907: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Como 1907",
+    "to": "USD Sestri Levante",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "to_logo": "market-global-club-4737-4f2c337fde51ecfe.png"
+  },
+  "editorial_version": 3
+}

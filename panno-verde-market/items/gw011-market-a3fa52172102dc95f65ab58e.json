@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-a3fa52172102dc95f65ab58e",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "ASD Calcio Ivrea: ufficiale l’arrivo di Yahya Idrissi",
+  "text": "ASD Calcio Ivrea annuncia l’arrivo di Yahya Idrissi. Il giocatore lascia AC Milan: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "ASD Calcio Ivrea",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-global-club-870-06b6840230adb78d.jpg"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-5d990c570c28ff5644527abc",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Stafford Rangers: ufficiale l’arrivo di Kiano Dyer",
+  "text": "Stafford Rangers annuncia l’arrivo di Kiano Dyer. Il giocatore lascia Chelsea: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Stafford Rangers",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-848-f879ccd8b1e04516.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-147078-c16bfb51df26c3d5.png",
+    "alt": "Kiano Dyer"
+  }
+}

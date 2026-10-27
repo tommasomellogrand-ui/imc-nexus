@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d8a8aa30089cd8409a9c77e5",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Dartford: ufficiale l’arrivo di Leo Black",
+  "text": "Dartford annuncia l’arrivo di Leo Black. Il giocatore lascia Chelsea: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Dartford",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-2039-02ec4f44e714031d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150100-2693e358ef85968d.png",
+    "alt": "Leo Black"
+  }
+}

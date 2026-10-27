@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-64f271a5dfd804cc015b7d8c",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Eastleigh FC: ufficiale l’arrivo di Samuel Martínez",
+  "text": "Eastleigh FC annuncia l’arrivo di Samuel Martínez. Il giocatore lascia Liverpool: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Eastleigh FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-3030-ff6bd0bcc13e9a13.png"
+  },
+  "editorial_version": 3
+}

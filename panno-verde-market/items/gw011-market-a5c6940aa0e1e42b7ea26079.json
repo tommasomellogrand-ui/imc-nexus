@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a5c6940aa0e1e42b7ea26079",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Sporting CP: ufficiale l’arrivo di Anatoliy Trubin",
+  "text": "Sporting CP annuncia l’arrivo di Anatoliy Trubin. Il giocatore lascia SL Benfica: operazione da 12,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399718"
+  ],
+  "teams": [
+    {
+      "name": "SL Benfica",
+      "logo": "market-club-93399718-cd9bbf9dc40287fc.png"
+    }
+  ],
+  "transfer": {
+    "from": "SL Benfica",
+    "to": "Sporting CP",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "to_logo": "market-global-club-246-69379aab49a3507e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-101084-f683c51ff567b769.png",
+    "alt": "Anatoliy Trubin"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-280c479ce2c7cc9b21ac0439",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Brindisi FC: ufficiale l’arrivo di Viana Seedorf",
+  "text": "Brindisi FC annuncia l’arrivo di Viana Seedorf. Il giocatore lascia AC Milan: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "Brindisi FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-global-club-6186-03359107094a5ced.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-166824-4c81f49e53744188.png",
+    "alt": "Viana Seedorf"
+  }
+}

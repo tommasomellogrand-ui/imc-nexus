@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-8f48c31fde2b043740e5a2bc",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "SSC Napoli: ufficiale l’arrivo di Leonardo Balerdi",
+  "text": "SSC Napoli annuncia l’arrivo di Leonardo Balerdi. Il giocatore lascia Olympique Marseille: operazione da 14 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "Olympique Marseille",
+    "to": "SSC Napoli",
+    "formula": "Trasferimento definitivo",
+    "amount": "14 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-global-club-330-2737b793931e2804.png",
+    "to_logo": "market-club-93400234-082aae3f75dc21ec.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-98873-bf17a6533d6b8d7e.png",
+    "alt": "Leonardo Balerdi"
+  }
+}

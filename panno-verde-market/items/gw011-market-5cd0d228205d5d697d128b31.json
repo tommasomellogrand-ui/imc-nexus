@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-5cd0d228205d5d697d128b31",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Lupa Roma: ufficiale l’arrivo di Simone Cat Berro",
+  "text": "Lupa Roma annuncia l’arrivo di Simone Cat Berro. Il giocatore lascia Juventus: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "Lupa Roma",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-3318-ba1a0ea01b88edf9.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-158372-7e24800e6727f4f6.png",
+    "alt": "Simone Cat Berro"
+  }
+}

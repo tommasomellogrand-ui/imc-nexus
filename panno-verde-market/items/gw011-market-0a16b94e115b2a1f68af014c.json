@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-0a16b94e115b2a1f68af014c",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Jahn Regensburg: ufficiale l’arrivo di Tarek Buchmann",
+  "text": "Jahn Regensburg annuncia l’arrivo di Tarek Buchmann. Il giocatore lascia Bayern München: operazione da 2,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "Jahn Regensburg",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,8 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-1437-0f3de51efcfaf96b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-128181-bcd12e549da74d7d.png",
+    "alt": "Tarek Buchmann"
+  }
+}

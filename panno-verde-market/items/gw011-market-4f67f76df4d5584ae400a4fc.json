@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-4f67f76df4d5584ae400a4fc",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Lille OSC: ufficiale l’arrivo di Lucas Chevalier",
+  "text": "Lille OSC annuncia l’arrivo di Lucas Chevalier. Il giocatore lascia Paris Saint-Germain: operazione da 24,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "transfer": {
+    "from": "Paris Saint-Germain",
+    "to": "Lille OSC",
+    "formula": "Trasferimento definitivo",
+    "amount": "24,4 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "to_logo": "market-global-club-432-7d068f0ffa01dfe4.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-106095-b882f21df3be0534.png",
+    "alt": "Lucas Chevalier"
+  }
+}

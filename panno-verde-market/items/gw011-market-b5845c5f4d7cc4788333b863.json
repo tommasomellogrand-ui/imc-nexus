@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-b5845c5f4d7cc4788333b863",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Tritium Calcio: ufficiale l’arrivo di Tommaso Avitabile",
+  "text": "Tritium Calcio annuncia l’arrivo di Tommaso Avitabile. Il giocatore lascia Internazionale: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Internazionale",
+    "to": "Tritium Calcio",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "to_logo": "market-global-club-1857-28ee5638c890e49b.png"
+  },
+  "editorial_version": 3
+}

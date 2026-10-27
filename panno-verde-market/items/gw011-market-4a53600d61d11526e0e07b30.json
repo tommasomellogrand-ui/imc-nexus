@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-4a53600d61d11526e0e07b30",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "USD Follonica Gavorrano: ufficiale l’arrivo di Damir Zukić",
+  "text": "USD Follonica Gavorrano annuncia l’arrivo di Damir Zukić. Il giocatore lascia AC Milan: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "USD Follonica Gavorrano",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-global-club-2766-85a130be3e9c30d3.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-152052-e2c71dd424d88b58.png",
+    "alt": "Damir Zukić"
+  }
+}

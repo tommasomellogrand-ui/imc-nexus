@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-775c2fd785c138ffc52726d9",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "CD Puerta Bonita: ufficiale l’arrivo di Nil Teixidor",
+  "text": "CD Puerta Bonita annuncia l’arrivo di Nil Teixidor. Il giocatore lascia Barcelona: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "CD Puerta Bonita",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-3026-194146bf5d0c5d0c.jpg"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162662-cc5ba2c62e2bb88c.png",
+    "alt": "Nil Teixidor"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-6e45a60d3cd88afd0a27dc79",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Burton Albion: ufficiale l’arrivo di Luke Mbete",
+  "text": "Burton Albion annuncia l’arrivo di Luke Mbete. Il giocatore lascia Manchester City: operazione da 400.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Burton Albion",
+    "formula": "Trasferimento definitivo",
+    "amount": "400.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-736-d385bef9a8864e94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-115741-9246ea32b83fc450.png",
+    "alt": "Luke Mbete"
+  }
+}

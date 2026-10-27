@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-db463962646485987691438d",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Farnborough FC: ufficiale l’arrivo di Harrison Bettoni",
+  "text": "Farnborough FC annuncia l’arrivo di Harrison Bettoni. Il giocatore lascia Chelsea: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Farnborough FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-3228-0d034e8e27cd0422.png"
+  },
+  "editorial_version": 3
+}

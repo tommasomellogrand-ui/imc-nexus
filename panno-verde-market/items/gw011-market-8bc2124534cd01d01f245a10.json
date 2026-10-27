@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-8bc2124534cd01d01f245a10",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "AGOVV Apeldoorn: ufficiale l’arrivo di Cheveyo Balentien",
+  "text": "AGOVV Apeldoorn annuncia l’arrivo di Cheveyo Balentien. Il giocatore lascia AC Milan: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "AGOVV Apeldoorn",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-global-club-178-5608b7f2a231b11b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-164769-2f2339b65b2bd04e.png",
+    "alt": "Cheveyo Balentien"
+  }
+}

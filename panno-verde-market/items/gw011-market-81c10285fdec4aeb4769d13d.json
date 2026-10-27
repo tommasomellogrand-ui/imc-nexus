@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-81c10285fdec4aeb4769d13d",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Palencia CF: ufficiale l’arrivo di Sergio Vinatea",
+  "text": "Palencia CF annuncia l’arrivo di Sergio Vinatea. Il giocatore lascia Atlético Madrid: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Palencia CF",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-4469-e49840ebf06e9037.png"
+  },
+  "editorial_version": 3
+}

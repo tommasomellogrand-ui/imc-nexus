@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-cf37b73529e77c834107e67c",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Wacker Burghausen: ufficiale l’arrivo di Deniz Ofli",
+  "text": "Wacker Burghausen annuncia l’arrivo di Deniz Ofli. Il giocatore lascia Bayern München: operazione da 2,5 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "Wacker Burghausen",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,5 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-484-16ee6da3aa556cc5.png"
+  },
+  "editorial_version": 3
+}

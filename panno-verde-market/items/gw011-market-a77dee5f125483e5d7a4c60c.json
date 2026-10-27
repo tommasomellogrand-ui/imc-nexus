@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-a77dee5f125483e5d7a4c60c",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Atlético Mancha Real: ufficiale l’arrivo di Joni Hernández",
+  "text": "Atlético Mancha Real annuncia l’arrivo di Joni Hernández. Il giocatore lascia Barcelona: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "Atlético Mancha Real",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-2674-7e2b7064bed3872f.png"
+  },
+  "editorial_version": 3
+}

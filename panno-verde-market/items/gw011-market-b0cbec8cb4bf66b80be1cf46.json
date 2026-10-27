@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-b0cbec8cb4bf66b80be1cf46",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Northampton Town: ufficiale l’arrivo di Teddy Sharman-Lowe",
+  "text": "Northampton Town annuncia l’arrivo di Teddy Sharman-Lowe. Il giocatore lascia Chelsea: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Northampton Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-53-53ad95eaca08fb0f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-105857-fb10a56a00ceeb1e.png",
+    "alt": "Teddy Sharman-Lowe"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d043f7eac0f64e871babbd6b",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "CD Tropezón: ufficiale l’arrivo di Rubén Gómez",
+  "text": "CD Tropezón annuncia l’arrivo di Rubén Gómez. Il giocatore lascia Atlético Madrid: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "CD Tropezón",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-2970-f466106381fe5622.jpg"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-167611-4f018844696fd7f9.png",
+    "alt": "Rubén Gómez"
+  }
+}

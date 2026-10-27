@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-6bac0caadc333069e86416a2",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Cosenza Calcio: ufficiale l’arrivo di Jan Żuberek",
+  "text": "Cosenza Calcio annuncia l’arrivo di Jan Żuberek. Il giocatore lascia Internazionale: operazione da 1,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Internazionale",
+    "to": "Cosenza Calcio",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,6 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "to_logo": "market-global-club-1582-f67826c01cb0389a.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-120245-4b1f6ea2e2296872.png",
+    "alt": "Jan Żuberek"
+  }
+}

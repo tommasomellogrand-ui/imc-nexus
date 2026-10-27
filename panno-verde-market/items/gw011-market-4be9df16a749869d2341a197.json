@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-4be9df16a749869d2341a197",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "ES Ben Aknoun: ufficiale l’arrivo di Elias Benkara",
+  "text": "ES Ben Aknoun annuncia l’arrivo di Elias Benkara. Il giocatore lascia Borussia Dortmund: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Borussia Dortmund",
+    "to": "ES Ben Aknoun",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "to_logo": "market-global-club-6400-ab4a679d49ce1be5.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155969-ac7ef4a0a01f756f.png",
+    "alt": "Elias Benkara"
+  }
+}

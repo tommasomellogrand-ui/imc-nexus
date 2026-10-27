@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e5f4a0a5815a2b696c5dd6b2",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Sestao River Club: ufficiale l’arrivo di Alex Campos",
+  "text": "Sestao River Club annuncia l’arrivo di Alex Campos. Il giocatore lascia Barcelona: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "Sestao River Club",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-2050-0b573cda890b5820.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162661-0317423320de7eec.png",
+    "alt": "Alex Campos"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-6861c1cdf231b07c75e20145",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "UC AlbinoLeffe: ufficiale l’arrivo di Ivan Smolčić",
+  "text": "UC AlbinoLeffe annuncia l’arrivo di Ivan Smolčić. Il giocatore lascia Como 1907: operazione da 2,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Como 1907",
+    "to": "UC AlbinoLeffe",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,9 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "to_logo": "market-global-club-93-68cf6812cc182680.jpg"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104004-b116cc6772dce87c.png",
+    "alt": "Ivan Smolčić"
+  }
+}

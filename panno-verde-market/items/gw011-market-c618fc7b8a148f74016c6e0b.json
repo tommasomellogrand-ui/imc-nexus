@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-c618fc7b8a148f74016c6e0b",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Kingstonian FC: ufficiale l’arrivo di Fred Heath",
+  "text": "Kingstonian FC annuncia l’arrivo di Fred Heath. Il giocatore lascia Manchester United: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester United",
+    "to": "Kingstonian FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "to_logo": "market-global-club-4098-b0191fabe93cd375.png"
+  },
+  "editorial_version": 3
+}

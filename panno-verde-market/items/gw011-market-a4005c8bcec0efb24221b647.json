@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a4005c8bcec0efb24221b647",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "FC Pro Vercelli: ufficiale l’arrivo di Mauro Vigorito",
+  "text": "FC Pro Vercelli annuncia l’arrivo di Mauro Vigorito. Il giocatore lascia Como 1907: operazione da 45.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Como 1907",
+    "to": "FC Pro Vercelli",
+    "formula": "Trasferimento definitivo",
+    "amount": "45.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "to_logo": "market-global-club-1874-ea48ae3d46272e90.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-51912-42f59c6af52c7031.png",
+    "alt": "Mauro Vigorito"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-42a59b251d83110764d851af",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Chelmsford City: ufficiale l’arrivo di Finlay Gorman",
+  "text": "Chelmsford City annuncia l’arrivo di Finlay Gorman. Il giocatore lascia Manchester City: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Chelmsford City",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-2857-2bcc7cd1d8917369.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-145894-a5b32c0b12e16d9b.png",
+    "alt": "Finlay Gorman"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-7ed69203a0bd5031bcddb016",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Boreham Wood: ufficiale l’arrivo di Lewi Richards",
+  "text": "Boreham Wood annuncia l’arrivo di Lewi Richards. Il giocatore lascia Chelsea: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Boreham Wood",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-2876-9ce8a613f2f5e528.png"
+  },
+  "editorial_version": 3
+}

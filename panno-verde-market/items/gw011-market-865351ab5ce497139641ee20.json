@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-865351ab5ce497139641ee20",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Athletic Club: ufficiale l’arrivo di Alexander Sorloth",
+  "text": "Athletic Club annuncia l’arrivo di Alexander Sorloth. Il giocatore lascia Atlético Madrid: operazione da 12,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Athletic Club",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,9 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-138-d1267d0040357da1.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-75126-0d3bd438ebb47625.png",
+    "alt": "Alexander Sorloth"
+  }
+}

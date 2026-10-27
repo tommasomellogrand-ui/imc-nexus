@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-bfa99b8c74fd49863d13b32a",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "USD Sestri Levante: ufficiale l’arrivo di Cristian Carrara",
+  "text": "USD Sestri Levante annuncia l’arrivo di Cristian Carrara. Il giocatore lascia Internazionale: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Internazionale",
+    "to": "USD Sestri Levante",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "to_logo": "market-global-club-4737-4f2c337fde51ecfe.png"
+  },
+  "editorial_version": 3
+}

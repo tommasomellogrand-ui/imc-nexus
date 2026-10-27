@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f72a25585f3e1a28834a3f12",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Barnsley: ufficiale l’arrivo di Tom Heaton",
+  "text": "Barnsley annuncia l’arrivo di Tom Heaton. Il giocatore lascia Manchester United: operazione da 48.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester United",
+    "to": "Barnsley",
+    "formula": "Trasferimento definitivo",
+    "amount": "48.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "to_logo": "market-global-club-3-16113a9c9f0e61ed.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-13566-a088a362bb481668.png",
+    "alt": "Tom Heaton"
+  }
+}

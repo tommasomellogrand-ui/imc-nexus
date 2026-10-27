@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-9a249c578979a053391bcc40",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Buxton FC: ufficiale l’arrivo di James Scanlon",
+  "text": "Buxton FC annuncia l’arrivo di James Scanlon. Il giocatore lascia Arsenal: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "transfer": {
+    "from": "Arsenal",
+    "to": "Buxton FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399501-33ef41943a141618.png",
+    "to_logo": "market-global-club-4062-484d7420d68260b0.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-145951-6ed4396ee29f23f5.png",
+    "alt": "James Scanlon"
+  }
+}

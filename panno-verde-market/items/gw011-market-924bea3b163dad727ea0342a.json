@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-924bea3b163dad727ea0342a",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Braintree Town: ufficiale l’arrivo di Victor Musa",
+  "text": "Braintree Town annuncia l’arrivo di Victor Musa. Il giocatore lascia Manchester United: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester United",
+    "to": "Braintree Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "to_logo": "market-global-club-1727-931607f8d92a6d4d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150153-3f844ccafca3314d.png",
+    "alt": "Victor Musa"
+  }
+}

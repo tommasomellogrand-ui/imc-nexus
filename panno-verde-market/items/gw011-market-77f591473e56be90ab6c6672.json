@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-77f591473e56be90ab6c6672",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Peterborough United: ufficiale l’arrivo di Lewis Koumas",
+  "text": "Peterborough United annuncia l’arrivo di Lewis Koumas. Il giocatore lascia Liverpool: operazione da 12,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Peterborough United",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-59-c3aa239715db3023.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-142091-f104360ced4f5a00.png",
+    "alt": "Lewis Koumas"
+  }
+}

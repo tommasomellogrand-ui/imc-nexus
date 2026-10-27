@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-1c96d0304f064f48274418d1",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "UD Socuéllamos: ufficiale l’arrivo di Taufik Seidu",
+  "text": "UD Socuéllamos annuncia l’arrivo di Taufik Seidu. Il giocatore lascia Atlético Madrid: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "UD Socuéllamos",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-3336-315155ad61684f8d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162668-0bc5a0d5007cbd01.png",
+    "alt": "Taufik Seidu"
+  }
+}

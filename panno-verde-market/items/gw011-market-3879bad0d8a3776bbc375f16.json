@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-3879bad0d8a3776bbc375f16",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Anadia FC: ufficiale l’arrivo di Francisco Silva",
+  "text": "Anadia FC annuncia l’arrivo di Francisco Silva. Il giocatore lascia SL Benfica: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399718"
+  ],
+  "teams": [
+    {
+      "name": "SL Benfica",
+      "logo": "market-club-93399718-cd9bbf9dc40287fc.png"
+    }
+  ],
+  "transfer": {
+    "from": "SL Benfica",
+    "to": "Anadia FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "to_logo": "market-global-club-3845-34b82b0080c3a77e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-165375-be01e0929e6cf3d9.png",
+    "alt": "Francisco Silva"
+  }
+}

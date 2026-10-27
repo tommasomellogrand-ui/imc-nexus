@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-fd9d8e3dcdd37be42c233ed4",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Sangiuliano City: ufficiale l’arrivo di El Hadji Malick Cissé",
+  "text": "Sangiuliano City annuncia l’arrivo di El Hadji Malick Cissé. Il giocatore lascia AC Milan: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "Sangiuliano City",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-global-club-5882-1d52f345024c5984.png"
+  },
+  "editorial_version": 3
+}

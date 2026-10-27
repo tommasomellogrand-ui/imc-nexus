@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-2220000ae19d918981b84366",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Nuneaton Borough: ufficiale l’arrivo di Sol Gordon",
+  "text": "Nuneaton Borough annuncia l’arrivo di Sol Gordon. Il giocatore lascia Chelsea: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Nuneaton Borough",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-2038-f1130220f6cd9dff.png"
+  },
+  "editorial_version": 3
+}

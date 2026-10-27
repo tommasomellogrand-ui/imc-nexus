@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-6c1ae4bb942650987773e85f",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Real Racing Club: ufficiale l’arrivo di Juan Musso",
+  "text": "Real Racing Club annuncia l’arrivo di Juan Musso. Il giocatore lascia Atlético Madrid: operazione da 7,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Real Racing Club",
+    "formula": "Trasferimento definitivo",
+    "amount": "7,3 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-161-1add97fc6acb4fd8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-80089-3f6e173564ce5808.png",
+    "alt": "Juan Musso"
+  }
+}

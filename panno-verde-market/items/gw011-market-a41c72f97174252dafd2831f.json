@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-a41c72f97174252dafd2831f",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Juventus: ufficiale l’arrivo di Samuel Wiafe",
+  "text": "Juventus annuncia l’arrivo di Samuel Wiafe. Il giocatore lascia Genoa CFC: operazione da 234.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Genoa CFC",
+    "to": "Juventus",
+    "formula": "Trasferimento definitivo",
+    "amount": "234.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-global-club-108-407a84eb046fe729.png",
+    "to_logo": "market-club-93399610-324c3f0e48728abe.png"
+  },
+  "editorial_version": 3
+}

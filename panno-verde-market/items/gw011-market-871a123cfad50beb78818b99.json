@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-871a123cfad50beb78818b99",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "SC Siracusa: ufficiale l’arrivo di Alessio Vacca",
+  "text": "SC Siracusa annuncia l’arrivo di Alessio Vacca. Il giocatore lascia Juventus: operazione da 2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "SC Siracusa",
+    "formula": "Trasferimento definitivo",
+    "amount": "2 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-1690-821351ce961e4036.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-151766-e6e34b16975066bd.png",
+    "alt": "Alessio Vacca"
+  }
+}

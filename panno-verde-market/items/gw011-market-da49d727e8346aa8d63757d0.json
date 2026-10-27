@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-da49d727e8346aa8d63757d0",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Luton Town: ufficiale l’arrivo di Kalvin Phillips",
+  "text": "Luton Town annuncia l’arrivo di Kalvin Phillips. Il giocatore lascia Manchester City: operazione da 2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Luton Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "2 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-45-85e10fa6ac631426.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-80933-f0bac3079bc74b19.png",
+    "alt": "Kalvin Phillips"
+  }
+}

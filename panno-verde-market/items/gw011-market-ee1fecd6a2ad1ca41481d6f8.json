@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-ee1fecd6a2ad1ca41481d6f8",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Leeds United: ufficiale l’arrivo di Elias Allan",
+  "text": "Leeds United annuncia l’arrivo di Elias Allan. Il giocatore lascia Manchester City: operazione da 12,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Leeds United",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-40-0aff0f56b89a02fe.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149946-dd566dc4b233b627.png",
+    "alt": "Elias Allan"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-503c0c3b5ee760f552322b75",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Norrby IF: ufficiale l’arrivo di Genesis Antwi",
+  "text": "Norrby IF annuncia l’arrivo di Genesis Antwi. Il giocatore lascia Chelsea: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Norrby IF",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-3572-5d62b58305665948.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150069-471d8a0825a51c5b.png",
+    "alt": "Genesis Antwi"
+  }
+}

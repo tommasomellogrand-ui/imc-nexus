@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-2833ea84ec01990ff40bfcf3",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Chievo Verona: ufficiale l’arrivo di Sankhoun Diawara",
+  "text": "Chievo Verona annuncia l’arrivo di Sankhoun Diawara. Il giocatore lascia AC Milan: operazione da 800.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "Chievo Verona",
+    "formula": "Trasferimento definitivo",
+    "amount": "800.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-global-club-104-e08940a113be3081.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162001-978eafe1280b17ef.png",
+    "alt": "Sankhoun Diawara"
+  }
+}

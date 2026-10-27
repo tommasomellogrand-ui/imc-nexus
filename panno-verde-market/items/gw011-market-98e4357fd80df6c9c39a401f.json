@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-98e4357fd80df6c9c39a401f",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Kickers Emden: ufficiale l’arrivo di Aristide Hentcho",
+  "text": "Kickers Emden annuncia l’arrivo di Aristide Hentcho. Il giocatore lascia Bayern München: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "Kickers Emden",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-1436-ff6499781a1b14be.png"
+  },
+  "editorial_version": 3
+}

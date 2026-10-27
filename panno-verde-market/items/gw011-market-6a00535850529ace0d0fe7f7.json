@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-6a00535850529ace0d0fe7f7",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Kickers Emden: ufficiale l’arrivo di Fadi Zarqelain",
+  "text": "Kickers Emden annuncia l’arrivo di Fadi Zarqelain. Il giocatore lascia Borussia Dortmund: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Borussia Dortmund",
+    "to": "Kickers Emden",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "to_logo": "market-global-club-1436-ff6499781a1b14be.png"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-a84484096c9f233551304bc1",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Real Forte: ufficiale l’arrivo di David Spinelli",
+  "text": "Real Forte annuncia l’arrivo di David Spinelli. Il giocatore lascia SSC Napoli: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Napoli",
+    "to": "Real Forte",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "to_logo": "market-global-club-5042-aa3e0c7d164cd34f.png"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-3754442524a2870ebf6fd5b2",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Amora FC: ufficiale l’arrivo di Gonçalo Da Silva",
+  "text": "Amora FC annuncia l’arrivo di Gonçalo Da Silva. Il giocatore lascia SL Benfica: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399718"
+  ],
+  "teams": [
+    {
+      "name": "SL Benfica",
+      "logo": "market-club-93399718-cd9bbf9dc40287fc.png"
+    }
+  ],
+  "transfer": {
+    "from": "SL Benfica",
+    "to": "Amora FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "to_logo": "market-global-club-5901-81509ac437033f17.png"
+  },
+  "editorial_version": 3
+}

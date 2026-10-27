@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-434ce72db5d6ae5119179d27",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "AS Martina Franca: ufficiale l’arrivo di Nikita Contini",
+  "text": "AS Martina Franca annuncia l’arrivo di Nikita Contini. Il giocatore lascia SSC Napoli: operazione da 362.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Napoli",
+    "to": "AS Martina Franca",
+    "formula": "Trasferimento definitivo",
+    "amount": "362.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "to_logo": "market-global-club-891-c41e42af52e72159.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-87800-4cfdac0d22c064b7.png",
+    "alt": "Nikita Contini"
+  }
+}

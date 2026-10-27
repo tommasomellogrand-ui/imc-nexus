@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-8b958a360247ac2bf3e194b3",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Virtus Entella: ufficiale l’arrivo di Devis Vásquez",
+  "text": "Virtus Entella annuncia l’arrivo di Devis Vásquez. Il giocatore lascia AS Roma: operazione da 1,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "Virtus Entella",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,9 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399623-4f2820912276f496.png",
+    "to_logo": "market-global-club-2189-0b493a9576b19cdc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-87520-ef6c474d33e6cee6.png",
+    "alt": "Devis Vásquez"
+  }
+}

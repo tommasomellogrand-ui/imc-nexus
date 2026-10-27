@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-bb200d2346afe8f739e8da73",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Audace Cerignola: ufficiale l’arrivo di Jonas Rouhi",
+  "text": "Audace Cerignola annuncia l’arrivo di Jonas Rouhi. Il giocatore lascia Juventus: operazione da 2,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "Audace Cerignola",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,8 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-5043-222aa452f3ff7f6b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-121861-8bcf4269d618f3bc.png",
+    "alt": "Jonas Rouhi"
+  }
+}

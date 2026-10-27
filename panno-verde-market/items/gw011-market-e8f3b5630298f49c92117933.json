@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e8f3b5630298f49c92117933",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Stoke City: ufficiale l’arrivo di Dário Essugo",
+  "text": "Stoke City annuncia l’arrivo di Dário Essugo. Il giocatore lascia Chelsea: operazione da 12,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Stoke City",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,6 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-75-ffe38499df15c6df.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-110072-ee8dadd6895ed993.png",
+    "alt": "Dário Essugo"
+  }
+}

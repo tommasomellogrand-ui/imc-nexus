@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-9c775e1527da34b99a6c8c27",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Hemel Hempstead Town: ufficiale l’arrivo di Mor Talla Ndiaye",
+  "text": "Hemel Hempstead Town annuncia l’arrivo di Mor Talla Ndiaye. Il giocatore lascia Liverpool: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Hemel Hempstead Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-3230-328ddc63c2c23301.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-170289-cce51216e6ef16f5.png",
+    "alt": "Mor Talla Ndiaye"
+  }
+}

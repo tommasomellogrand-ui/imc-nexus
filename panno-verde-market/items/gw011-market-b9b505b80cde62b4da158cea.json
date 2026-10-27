@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-b9b505b80cde62b4da158cea",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Sheffield Wednesday: ufficiale l’arrivo di Calvin Ramsay",
+  "text": "Sheffield Wednesday annuncia l’arrivo di Calvin Ramsay. Il giocatore lascia Liverpool: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Sheffield Wednesday",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-71-7c136fa0cd22afac.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-113207-804ad74bfeedda22.png",
+    "alt": "Calvin Ramsay"
+  }
+}

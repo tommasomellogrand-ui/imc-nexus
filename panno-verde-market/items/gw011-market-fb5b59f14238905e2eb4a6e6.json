@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-fb5b59f14238905e2eb4a6e6",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "UD Logroñés: ufficiale l’arrivo di Áron Yaakobishvili",
+  "text": "UD Logroñés annuncia l’arrivo di Áron Yaakobishvili. Il giocatore lascia Barcelona: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "UD Logroñés",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-1739-a54c09c26a639fe2.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-123571-dfc777a3fcfd503c.png",
+    "alt": "Áron Yaakobishvili"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-a71bd1186faf4a7b32d2da77",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "UD Somozas: ufficiale l’arrivo di Cristian Grant",
+  "text": "UD Somozas annuncia l’arrivo di Cristian Grant. Il giocatore lascia Atlético Madrid: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "UD Somozas",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-3331-0b52f0a00eaf4dac.png"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-488b2b5cc4851a89ed162372",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Colchester United: ufficiale l’arrivo di Jayden Danns",
+  "text": "Colchester United annuncia l’arrivo di Jayden Danns. Il giocatore lascia Liverpool: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Colchester United",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-24-6b78f7350d7db1f3.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-143683-7efca46272030b26.png",
+    "alt": "Jayden Danns"
+  }
+}

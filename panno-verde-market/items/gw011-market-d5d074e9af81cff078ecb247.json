@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d5d074e9af81cff078ecb247",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "UD Poblense: ufficiale l’arrivo di Hugo Humanes",
+  "text": "UD Poblense annuncia l’arrivo di Hugo Humanes. Il giocatore lascia Atlético Madrid: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "UD Poblense",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-5230-0032137a1553aef5.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-141619-a942baa1a00e9e05.png",
+    "alt": "Hugo Humanes"
+  }
+}

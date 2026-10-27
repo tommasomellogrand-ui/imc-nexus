@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-816f25d3e88c8137a991bcdb",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "SpVgg Bayreuth: ufficiale l’arrivo di Mussa Kaba",
+  "text": "SpVgg Bayreuth annuncia l’arrivo di Mussa Kaba. Il giocatore lascia Borussia Dortmund: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Borussia Dortmund",
+    "to": "SpVgg Bayreuth",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "to_logo": "market-global-club-3569-089b58b5128c7659.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-158344-238ec4dd56a5dd67.png",
+    "alt": "Mussa Kaba"
+  }
+}

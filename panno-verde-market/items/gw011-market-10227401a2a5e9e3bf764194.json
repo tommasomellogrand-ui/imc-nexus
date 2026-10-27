@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-10227401a2a5e9e3bf764194",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Dover Athletic: ufficiale l’arrivo di Kian Noble",
+  "text": "Dover Athletic annuncia l’arrivo di Kian Noble. Il giocatore lascia Manchester City: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Dover Athletic",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-3084-8636fe6a898c953b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-163101-818e1a951042b268.png",
+    "alt": "Kian Noble"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-0184aa15b543b586671c6b39",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "ZFC Meuselwitz: ufficiale l’arrivo di Leonard Ruland",
+  "text": "ZFC Meuselwitz annuncia l’arrivo di Leonard Ruland. Il giocatore lascia Bayern München: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "ZFC Meuselwitz",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-3562-8cdf99e9d5a823d1.jpg"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-1fd4d7134a689a327dabca7f",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Linares Deportivo: ufficiale l’arrivo di Álvaro Moreno",
+  "text": "Linares Deportivo annuncia l’arrivo di Álvaro Moreno. Il giocatore lascia Atlético Madrid: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Linares Deportivo",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-3948-1fb8aa94de469bc8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162671-8b627c4323586e29.png",
+    "alt": "Álvaro Moreno"
+  }
+}

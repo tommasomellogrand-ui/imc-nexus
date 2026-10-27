@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-5a18a6b2662484eb56c8b3c2",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "Warrington Town: ufficiale l’arrivo di Harvey Davies",
+  "text": "Warrington Town annuncia l’arrivo di Harvey Davies. Il giocatore lascia Liverpool: operazione da 240.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Warrington Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "240.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-4117-85d86e5754d8d346.jpg"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-128172-1381905636e4d646.png",
+    "alt": "Harvey Davies"
+  }
+}

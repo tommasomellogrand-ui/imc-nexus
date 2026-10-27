@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-921fd9c88bb7327ccc92b2de",
+  "published_at": "2026-10-26T00:00:00+01:00",
+  "title": "BSC Young Boys: ufficiale l’arrivo di Zachary Athekame",
+  "text": "BSC Young Boys annuncia l’arrivo di Zachary Athekame. Il giocatore lascia AC Milan: operazione da 8,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "BSC Young Boys",
+    "formula": "Trasferimento definitivo",
+    "amount": "8,1 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-global-club-535-fbbe1aefb9acce42.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-131245-bb8d57fa14267628.png",
+    "alt": "Zachary Athekame"
+  }
+}
