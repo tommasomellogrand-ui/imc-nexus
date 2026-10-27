@@ -1,0 +1,64 @@
+name: Apply Champions guest rules
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/champions-guest-rules.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Count database objects without changing data
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,json,secrets,hashlib,time,urllib.request
+          from ftplib import FTP_TLS,error_perm
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root)
+          import pathlib,subprocess
+          b=io.BytesIO();f.retrbinary('RETR competitions/imc-cups.php',b.write);before=b.getvalue();src=before.decode()
+          anchor="if(nexus_team_name_key($row[$side.'_name'])==='juventus')$id='guest-juventus';"
+          assert anchor in src,'Guest identity implementation changed'
+          src=src.replace(anchor,"if(in_array(nexus_team_name_key($row[$side.'_name']),['juventus','fcporto','newcastleunited'],true))$id='guest-'.nexus_team_name_key($row[$side.'_name']);")
+          src=src.replace("$t['team_id']==='guest-juventus'","in_array($t['team_id'],['guest-juventus','guest-fcporto','guest-newcastleunited'],true)")
+          src=src.replace("$id==='guest-juventus'","in_array($id,['guest-juventus','guest-fcporto','guest-newcastleunited'],true)")
+          anchor2="  $identity=implode('|',[$row['match_date'],$ids['home'],$ids['away']]);"
+          assert anchor2 in src
+          src=src.replace(anchor2,"""  if($finished){
+           $guestIds=['guest-juventus','guest-fcporto','guest-newcastleunited'];
+           $hg=in_array($ids['home'],$guestIds,true);$ag=in_array($ids['away'],$guestIds,true);
+           if($hg xor $ag){$row['home_score']=$hg?0:3;$row['away_score']=$ag?0:3;$row['result_status']='AWARDED';}
+          }
+          """+anchor2)
+          pathlib.Path('/tmp/cups.php').write_text(src);subprocess.run(['php','-l','/tmp/cups.php'],check=True)
+          f.storbinary('STOR competitions/imc-cups.php.backup-'+os.environ['GITHUB_SHA'][:12],io.BytesIO(before))
+          f.storbinary('STOR competitions/imc-cups.php',io.BytesIO(src.encode()))
+          try:
+              base='https://www.italianmastersclub.it/nexus/competitions/imc-cups.php?world=GW001&season=2&competition=GW001_IMC_CHAMPIONS_LEAGUE'
+              d=json.load(urllib.request.urlopen(base+'&mode=schedule',timeout=30))
+              assert d['ok'] and len(d['rows'])==6
+              guests=[]
+              for r in d['rows']:
+                  assert r['home_score'] is None and r['away_score'] is None
+                  for side in ['home','away']:
+                      if r[side+'_name'] in ['FC Porto','Newcastle United']:
+                          assert r[side+'_imc_manager_name']=='Guest';guests.append(r[side+'_name'])
+              assert len(guests)==2,guests
+              t=json.load(urllib.request.urlopen(base+'&mode=standings',timeout=30))
+              assert len(t['rows'])==12 and all(r['played']==0 for r in t['rows'])
+              print('PASS six fixtures; both guests; twelve teams with zero played')
+          except:
+              f.storbinary('STOR competitions/imc-cups.php',io.BytesIO(before));raise
+          finally:f.quit()
+          PY
