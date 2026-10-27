@@ -2,7 +2,8 @@ import hashlib,io,json,os,ssl,sys,urllib.request
 from pathlib import Path
 from ftplib import FTP_TLS,error_perm
 R=Path(__file__).parent;baseline=json.loads((R/'baseline.json').read_text());home=sys.argv[-1]=='home'
-files={'index.html':(R/'home-index.html').read_bytes()} if home else {'diretta-gol/'+p.name:p.read_bytes() for p in (R/'site').iterdir() if p.is_file()}
+if home: print('Home owned by imc-website'); sys.exit(0)
+files={} if home else {'diretta-gol/'+p.name:p.read_bytes() for p in (R/'site').iterdir() if p.is_file()}
 host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','');raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/');domain=host[4:] if host.startswith('ftp.') else host
 remote=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
 ctx=ssl.create_default_context();ctx.check_hostname=False
@@ -12,6 +13,7 @@ def read(n):
 def put(n,b):
  f.storbinary('STOR '+n,io.BytesIO(b));assert read(n)==b,'Read-back mismatch '+n
 for n,digest in baseline.items():
+ if n in {'index.html','assets/home.js'}:continue
  b=read(n)
  if n=='index.html' and b==(R/'home-index.html').read_bytes():continue
  assert hashlib.sha256(b).hexdigest()==digest,'Production changed since audit: '+n

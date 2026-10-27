@@ -4,6 +4,7 @@ from ftplib import FTP_TLS,error_perm
 R=Path(__file__).parent
 expected=json.loads((R/'baseline.json').read_text())
 files={'assets/home.js':(R/'home.js').read_bytes(),'index.html':(R/'index.html').read_bytes(),'alltoplayfor/home-layout-v2.css':(R.parent/'programmes-release/home-layout-v2.css').read_bytes(),'alltoplayfor/index.html':(R.parent/'programmes-release/dist/index.html').read_bytes()}
+files={k:v for k,v in files.items() if k not in {'index.html','assets/home.js'}}
 host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','');raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/');domain=host[4:] if host.startswith('ftp.') else host
 remote=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
 ctx=ssl.create_default_context();ctx.check_hostname=False
@@ -23,7 +24,7 @@ for n,old in original.items():
  if old is not None:put(n+'.before-'+os.environ['GITHUB_SHA'][:12],old)
 written=[]
 try:
- for n in ['alltoplayfor/home-layout-v2.css','assets/home.js','alltoplayfor/index.html','index.html']:
+ for n in files:
   if original[n] is not None:assert read(n)==original[n],'Concurrent change: '+n
   written.append(n);put(n,files[n])
 except Exception:

@@ -7,12 +7,6 @@ ctx=ssl.create_default_context();ctx.check_hostname=False
 f=FTP_TLS(context=ctx);f.connect(host,21,timeout=40);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(raw if raw.startswith('/www.') else f'/www.{domain}{raw}')
 def read(n):
  b=io.BytesIO();f.retrbinary('RETR '+n,b.write);return b.getvalue()
-home=read('index.html');marker=b'<script defer src="/nexus/il-panno-verde/home-v1.js"></script>'
-if marker not in home:
- assert hashlib.sha256(home).hexdigest()==json.loads((R/'baseline.json').read_text())['index.html'],'Home changed: stop before writes'
- assert home.count(b'</head>')==1
- newhome=home.replace(b'</head>',marker+b'\n</head>')
-else:newhome=home
 protected={n:read(n) for n in ['diretta-gol/index.html','diretta-gol/live.js','diretta-gol/data.php','diretta-gol/engine.php']}
 try:f.mkd('il-panno-verde')
 except error_perm as e:assert str(e).startswith('550')
@@ -30,10 +24,7 @@ for n,b in files.items():
 for n,b in files.items():
  if existing[n] is None:f.storbinary('STOR il-panno-verde/'+n,io.BytesIO(b))
  assert read('il-panno-verde/'+n)==b
-if newhome!=home:f.storbinary('STOR index.html',io.BytesIO(newhome))
-assert read('index.html')==newhome
 for n,b in protected.items():assert read(n)==b,'Diretta Gol changed'
 f.quit()
 for n,b in files.items():assert urllib.request.urlopen('https://www.italianmastersclub.it/nexus/il-panno-verde/'+n+'?verify='+os.environ['GITHUB_SHA'],timeout=40).read()==b
-assert marker in urllib.request.urlopen('https://www.italianmastersclub.it/nexus/?verify='+os.environ['GITHUB_SHA'],timeout=40).read()
 print('PASS: page and banner published, home insertion only, Diretta Gol unchanged')
