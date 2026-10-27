@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict');
+const {buildMatch,commentary}=require('./final-whistle.js');
+const f={id:'1',home:'A',away:'B',home_table:{id:10,points:8},away_table:{id:20,points:9},sm_action:'leaguecup',reporters:[]};
+const row={game_world_id:'GW001',sm_fixture_id:1,match_date:'2026-10-27',home_sm_club_id:10,away_sm_club_id:20,home_score:0,away_score:0,result_status:'COMPLETED',sm_action:'leaguecup'};
+assert.equal(buildMatch(f,row.match_date,null,null).row,null);
+assert.equal(buildMatch(f,row.match_date,{results:[row]},null).report,false);
+let m=buildMatch(f,row.match_date,{results:[row]},{ok:true,row:{...row,home_score:4,away_score:1,team_stats_json:'{}',players_json:'[]'}});
+assert(m.report);assert(m.conflict);assert.equal(m.row.home_score,4);assert(!JSON.stringify(commentary(m)).includes('punti'));
+m=buildMatch(f,row.match_date,null,{ok:true,row:{...row,penalty_home_score:5,penalty_away_score:4}});assert(JSON.stringify(commentary(m)).includes('Rigori: 5–4'));
+assert.equal(buildMatch(f,'2026-10-28',null,{ok:true,row}).row,null);
+assert.equal(buildMatch(f,row.match_date,null,{ok:true,row:{...row,home_sm_club_id:99}}).row,null);
+assert.equal(buildMatch(f,row.match_date,null,{ok:true,row:{...row,home_score:null}}).row,null);
+console.log('PASS pending → result → report, correction, cup/penalties, date and team isolation, null scores');

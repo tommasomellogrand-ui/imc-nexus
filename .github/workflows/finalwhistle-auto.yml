@@ -1,0 +1,34 @@
+name: Link Final Whistle automatically to Coffee Time
+on:
+  push:
+    branches: [main]
+    paths: ['finalwhistle-auto/**', '.github/workflows/finalwhistle-auto.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Coffee linkage and report transitions
+        run: |
+          php -l finalwhistle-auto/coffee-source.php
+          php -l finalwhistle-auto/coffee-source-lib.php
+          php finalwhistle-auto/test-source.php
+          node --check finalwhistle-auto/final-whistle.js
+          node finalwhistle-auto/test.cjs
+      - name: Publish scoped automatic linkage
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 finalwhistle-auto/deploy.py
+      - name: Verify waiting and imported reports on mobile
+        run: |
+          npm install --prefix /tmp/fwqa playwright@1.56.1
+          node finalwhistle-auto/verify.cjs
