@@ -1,0 +1,46 @@
+name: Import RTH cups into native Results
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/import-cup-native-results.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Count database objects without changing data
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,json,secrets,hashlib,time,urllib.request
+          from ftplib import FTP_TLS,error_perm
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root)
+          token=secrets.token_hex(32)
+          name='imc-db-inspect-'+secrets.token_hex(16)+'.php'
+          php="<?php\nini_set('display_errors','0');\nif(time()>EXPIRES||!hash_equals('TOKENHASH',hash('sha256',$_SERVER['HTTP_X_IMC_INSPECT']??''))){http_response_code(404);exit;}\n@unlink(__FILE__);require __DIR__.'/core/bootstrap.php';\ntry{\n$c=nexus_config();$p=nexus_db($c,nexus_target($c,'GW001'));$core=$c['db']['core'];\n$teams=['TOT'=>['94078847','Tottenham Hotspur'],'TSV'=>['94079182','TSV 1860 München'],'HER'=>['94079171','Hertha BSC'],'FEY'=>['94078959','Feyenoord'],'NAP'=>['94079501','SSC Napoli'],'ROM'=>['94078890','AS Roma'],'FEN'=>['94079117','Fenerbahçe SK'],'PAL'=>['94078884','Palermo FC'],'OM'=>['94079097','Olympique Marseille'],'KYI'=>['94079114','Dynamo Kyiv'],'AEK'=>['94079139','AEK Athens'],'BOC'=>['94079037','Boca Juniors'],'REG'=>['94078889','AS Reggina 1914'],'GEN'=>['94078875','Genoa CFC'],'PAR'=>['94079148','FK Partizan'],'GUA'=>['94080273','Guangzhou FC'],'CAM'=>['94082591','Campobasso Calcio'],'PRM'=>['94078885','Parma Calcio 1913'],'RIV'=>['94079049','River Plate'],'PMR'=>['94079067','Palmeiras'],'SUN'=>['94078843','Sunderland'],'SCH'=>['94079165','FC Schalke 04'],'ACA'=>['94078981','Académica de Coimbra'],'KAI'=>['94079172','1. FC Kaiserslautern'],'SAP'=>['94079073','São Paulo FC'],'JUV'=>[null,'Juventus'],'SHA'=>['94079115','Shakhtar Donetsk'],'FLA'=>['94079061','CR Flamengo']];\n$rounds=[\n['EUROPA',1,'2026-10-23','TOT TSV 0 1;HER FEY 4 1;NAP ROM 2 2;FEN PAL 1 1;OM KYI 1 1;AEK BOC 3 3;REG GEN 1 1'],\n['EUROPA',2,'2026-10-24','TSV HER 0 4;FEY NAP 0 1;ROM FEN 2 4;PAL OM 3 0;KYI AEK 1 1;BOC REG 1 0;GEN TOT 1 2'],\n['EUROPA',3,'2026-10-25','FEY TSV 2 3;ROM HER 2 3;PAL NAP 2 1;KYI FEN 0 0;BOC OM 2 1;GEN AEK 1 2;REG TOT 0 1'],\n['EUROPA',4,'2026-10-26','TOT FEY 3 0;TSV ROM 2 3;HER PAL 1 0;NAP KYI 2 0;FEN BOC 1 3;OM GEN 1 0;AEK REG 3 0'],\n['CONFERENCE',1,'2026-10-26','PAR GUA 0 2;CAM PRM 1 0;RIV PMR 1 0;SUN SCH 1 1;ACA KAI 1 0;SAP JUV 3 0;SHA FLA 1 2']];\n$p->beginTransaction();$inserted=0;\nforeach(['EUROPA'=>'RTH Europa League','CONFERENCE'=>'RTH Conference League'] as $slug=>$label){\n$key='GW001_IMC_'.$slug.'_LEAGUE';\n$t=\"`\".$core.\"`.`IMC Competition Nexus Mapping`\";\n$rows=nexus_rows($p,\"SELECT * FROM $t WHERE game_world_id=? AND competition_key=?\",['GW001',$key]);\nif(!$rows){$q=$p->prepare(\"INSERT INTO $t (game_world_id,world_type,competition_group,sm_action,competition_key,nexus_view) VALUES ('GW001','SINGLE','IMC','imc_custom',?,?)\");$q->execute([$key,$label]);}\n$t=\"`\".$core.\"`.`IMC Competition Codex Global`\";\n$rows=nexus_rows($p,\"SELECT * FROM $t WHERE game_world_id=? AND competition_key=?\",['GW001',$key]);\nif(!$rows){$q=$p->prepare(\"INSERT INTO $t (game_world_id,competition_key,sm_action,custom_competition,sm_action_group,teams_count,expected_match,is_sm_action) VALUES ('GW001',?,'imc_custom',?,'IMC',14,182,0)\");$q->execute([$key,$label]);}\n}\nforeach($rounds as [$slug,$round,$date,$matches]){\n$key='GW001_IMC_'.$slug.'_LEAGUE';\nforeach(explode(';',$matches) as $match){\n[$h,$a,$hs,$as]=explode(' ',$match);[$hid,$hn]=$teams[$h];[$aid,$an]=$teams[$a];\n$where='game_world_id=? AND imc_season=? AND competition_key=? AND match_date=? AND home_name=? AND away_name=?';\n$args=['GW001',2,$key,$date,$hn,$an];$existing=nexus_rows($p,\"SELECT * FROM GW001_IMC_Results WHERE $where FOR UPDATE\",$args);\nif(count($existing)>1)throw new RuntimeException('duplicate_existing');\nif($existing){if((int)$existing[0]['home_score']!=(int)$hs||(int)$existing[0]['away_score']!=(int)$as)throw new RuntimeException('score_conflict');continue;}\n$fp=hash('sha256',implode('|',$args));$q=$p->prepare(\"INSERT INTO GW001_IMC_Results (game_world_id,imc_season,competition_key,sm_action,competition_group,competition_round,match_date,home_sm_club_id,home_name,away_sm_club_id,away_name,home_score,away_score,result_status,fingerprint,imported_at) VALUES ('GW001',2,?,'imc_custom','IMC',?,?,?,?,?,?,?, ?,?,?,?,NOW())\");\n$q->execute([$key,(string)$round,$date,$hid,$hn,$aid,$an,(int)$hs,(int)$as,$a==='JUV'?'AWARDED':'COMPLETED',$fp]);$inserted++;\n}\n}\n$counts=nexus_rows($p,\"SELECT competition_key,COUNT(*) n,SUM(home_score+away_score) goals FROM GW001_IMC_Results WHERE game_world_id='GW001' AND imc_season=2 AND competition_key IN ('GW001_IMC_EUROPA_LEAGUE','GW001_IMC_CONFERENCE_LEAGUE') GROUP BY competition_key\");\nforeach($counts as $r){$expected=str_contains($r['competition_key'],'EUROPA')?28:7;if((int)$r['n']!==$expected)throw new RuntimeException('count_mismatch');}\nif(count($counts)!==2)throw new RuntimeException('missing_competition');\n$p->commit();nexus_out(['ok'=>true,'inserted'=>$inserted,'counts'=>$counts]);\n}catch(Throwable $e){if(isset($p)&&$p->inTransaction())$p->rollBack();nexus_out(['ok'=>false,'error'=>$e->getMessage()],500);}\n"
+          php=php.replace('TOKENHASH',hashlib.sha256(token.encode()).hexdigest()).replace('EXPIRES',str(int(time.time())+120))
+          try:
+              f.storbinary('STOR '+name,io.BytesIO(php.encode()))
+              request=urllib.request.Request('https://www.italianmastersclub.it/nexus/'+name,headers={'X-IMC-Inspect':token})
+              with urllib.request.urlopen(request,timeout=60) as response: result=json.load(response)
+              assert result.get('ok'),result
+              print(json.dumps(result,indent=2))
+          finally:
+              try: f.delete(name)
+              except error_perm: pass
+              assert name not in [x.rsplit('/',1)[-1] for x in f.nlst()], 'Temporary diagnostic cleanup failed'
+              print('TEMPORARY_DIAGNOSTIC_REMOVED')
+              f.quit()
+          
+          PY
