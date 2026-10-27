@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-92af511cc621afade3204c90",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "Boca Unidos: ufficiale l’arrivo di Milton Delgado",
+  "text": "Boca Unidos annuncia l’arrivo di Milton Delgado. Il giocatore lascia Fenerbahçe SK: operazione da 4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079117"
+  ],
+  "teams": [
+    {
+      "name": "Fenerbahçe",
+      "logo": "market-club-94079117-5538c7612289db66.png"
+    }
+  ],
+  "transfer": {
+    "from": "Fenerbahçe SK",
+    "to": "Boca Unidos",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-10-25",
+    "from_logo": "market-club-94079117-5538c7612289db66.png",
+    "to_logo": "market-global-club-1740-6997e7f94e0f7808.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-147800-191f8af7436a9608.png",
+    "alt": "Milton Delgado"
+  }
+}

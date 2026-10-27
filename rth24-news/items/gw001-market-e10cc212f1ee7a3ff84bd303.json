@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-e10cc212f1ee7a3ff84bd303",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "SV Darmstadt 98: ufficiale l’arrivo di Ayoube Amaimouni",
+  "text": "SV Darmstadt 98 annuncia l’arrivo di Ayoube Amaimouni. Il giocatore lascia Fenerbahçe SK: operazione da 6,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079117"
+  ],
+  "teams": [
+    {
+      "name": "Fenerbahçe",
+      "logo": "market-club-94079117-5538c7612289db66.png"
+    }
+  ],
+  "transfer": {
+    "from": "Fenerbahçe SK",
+    "to": "SV Darmstadt 98",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,3 milioni di euro",
+    "date": "2026-10-25",
+    "from_logo": "market-club-94079117-5538c7612289db66.png",
+    "to_logo": "market-global-club-1751-d4a68196faf616f2.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-158354-0f40940507beb270.png",
+    "alt": "Ayoube Amaimouni"
+  }
+}

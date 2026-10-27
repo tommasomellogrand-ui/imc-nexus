@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-4c20e215b225a85e427c901e",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "Fortuna Düsseldorf: ufficiale l’arrivo di Steven Van Der Sloot",
+  "text": "Fortuna Düsseldorf annuncia l’arrivo di Steven Van Der Sloot. Il giocatore lascia Olympique Marseille: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079097"
+  ],
+  "teams": [
+    {
+      "name": "Olympique Marseille",
+      "logo": "market-club-94079097-2737b793931e2804.png"
+    }
+  ],
+  "transfer": {
+    "from": "Olympique Marseille",
+    "to": "Fortuna Düsseldorf",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-25",
+    "from_logo": "market-club-94079097-2737b793931e2804.png",
+    "to_logo": "market-global-club-481-ce27bc9f66c86dfc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-112850-0342857c96fa2e35.png",
+    "alt": "Steven Van Der Sloot"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-1096d2801de83daf5d915b2c",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "Darlington: ufficiale l’arrivo di T.Proctor",
+  "text": "Darlington annuncia l’arrivo di T.Proctor. Il giocatore lascia SS Lazio: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "SS Lazio",
+    "to": "Darlington",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-94078878-b054346a661b8b49.png",
+    "to_logo": "market-global-club-28-c01994d438083049.png"
+  },
+  "editorial_version": 3
+}

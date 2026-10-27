@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-05bba123cf53a514fb12b9e8",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "Al Bidda SC: ufficiale l’arrivo di Filip Sidklev",
+  "text": "Al Bidda SC annuncia l’arrivo di Filip Sidklev. Il giocatore lascia Sampdoria: operazione da 2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078892"
+  ],
+  "teams": [
+    {
+      "name": "Sampdoria",
+      "logo": "market-club-94078892-f5bfd12f94cf0bcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Sampdoria",
+    "to": "Al Bidda SC",
+    "formula": "Trasferimento definitivo",
+    "amount": "2 milioni di euro",
+    "date": "2026-10-25",
+    "from_logo": "market-club-94078892-f5bfd12f94cf0bcf.png",
+    "to_logo": "market-global-club-6675-3e69349dc61757a6.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-131589-e6f6a438386cdc09.png",
+    "alt": "Filip Sidklev"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-c8dc6fc03b595cce8d2177fb",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "FC Zürich: ufficiale l’arrivo di Franz-Ethan Meichtry",
+  "text": "FC Zürich annuncia l’arrivo di Franz-Ethan Meichtry. Il giocatore lascia Dynamo Kyiv: operazione da 4,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079114"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Kyiv",
+      "logo": "market-club-94079114-2ca9b141413086ab.png"
+    }
+  ],
+  "transfer": {
+    "from": "Dynamo Kyiv",
+    "to": "FC Zürich",
+    "formula": "Trasferimento definitivo",
+    "amount": "4,1 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-club-94079114-2ca9b141413086ab.png",
+    "to_logo": "market-global-club-383-cc546f7476262a3b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162344-c99485cac9dbbc6b.png",
+    "alt": "Franz-Ethan Meichtry"
+  }
+}

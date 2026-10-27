@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-672e43bbf7f331df07c53cf9-club",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "Jarrod Bowen: il punto con Stefania Pinna e Max Palace",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nGuangzhou FC annuncia l’arrivo di Jarrod Bowen. Il giocatore lascia West Ham United: operazione da 15,3 milioni di euro.\n\nStefania Pinna · Inviato Guangzhou\n«L’accordo per Jarrod Bowen è da 15,3 milioni di euro. Un giocatore con rating 91. Mister, come accompagnerà il suo ingresso nel gruppo?»\n\nMax Palace · Manager Guangzhou\n«Con Jarrod Bowen cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»",
+  "category": "club",
+  "club_ids": [
+    "94080273"
+  ],
+  "teams": [
+    {
+      "name": "Guangzhou",
+      "logo": "market-club-94080273-6b8a372c9d81d3cc.png"
+    }
+  ],
+  "transfer": {
+    "from": "West Ham United",
+    "to": "Guangzhou FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "15,3 milioni di euro",
+    "date": "2026-10-26",
+    "from_logo": "market-global-club-85-c016bd02007f9e26.png",
+    "to_logo": "market-club-94080273-6b8a372c9d81d3cc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-73249-502c85294687dfa1.png",
+    "alt": "Jarrod Bowen"
+  },
+  "coverage": [
+    {
+      "club": "Guangzhou",
+      "reporter": "Stefania Pinna",
+      "manager": "Max Palace",
+      "question": "L’accordo per Jarrod Bowen è da 15,3 milioni di euro. Un giocatore con rating 91. Mister, come accompagnerà il suo ingresso nel gruppo?",
+      "answer": "Con Jarrod Bowen cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.",
+      "reporter_image": {
+        "file": "news-person-becd991ce8bb747d-9633ee432b8c6e8a.webp",
+        "alt": "Stefania Pinna"
+      }
+    }
+  ]
+}

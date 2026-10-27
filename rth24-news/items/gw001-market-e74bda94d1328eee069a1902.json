@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-e74bda94d1328eee069a1902",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "Lyngby BK: ufficiale l’arrivo di Zidan Sertdemir",
+  "text": "Lyngby BK annuncia l’arrivo di Zidan Sertdemir. Il giocatore lascia Dynamo Dresden: operazione da 6,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "transfer": {
+    "from": "Dynamo Dresden",
+    "to": "Lyngby BK",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,1 milioni di euro",
+    "date": "2026-10-25",
+    "from_logo": "market-club-94079161-2215dbdfe461abd9.png",
+    "to_logo": "market-global-club-1185-378f4bb1f1f16cb2.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-114262-09939b7872fb3635.png",
+    "alt": "Zidan Sertdemir"
+  }
+}

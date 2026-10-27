@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-362d670baf413b6984d60f56",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "Manchester United: ufficiale l’arrivo di Dan Gore",
+  "text": "Manchester United annuncia l’arrivo di Dan Gore. Il giocatore lascia Hertha BSC: operazione da 2,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Hertha BSC",
+    "to": "Manchester United",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,8 milioni di euro",
+    "date": "2026-10-25",
+    "from_logo": "market-club-94079171-73a89d10e84d6dcf.png",
+    "to_logo": "market-global-club-49-b4f80a2c76cdcb52.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-123665-41d2aec83a08ccce.png",
+    "alt": "Dan Gore"
+  }
+}

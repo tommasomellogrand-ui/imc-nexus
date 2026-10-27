@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-21ad902a2216b7919ad00572",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Dereck Moncada",
+  "text": "AS Roma annuncia l’arrivo di Dereck Moncada. Il giocatore lascia FC Lugano: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078890"
+  ],
+  "teams": [
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Lugano",
+    "to": "AS Roma",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-25",
+    "from_logo": "market-global-club-1730-e4d7fa7a62cf08fa.png",
+    "to_logo": "market-club-94078890-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-147343-489f790d84a7debe.png",
+    "alt": "Dereck Moncada"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-270b1a16936000087de46eb0",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "Celtic: ufficiale l’arrivo di Diego Callai",
+  "text": "Celtic annuncia l’arrivo di Diego Callai. Il giocatore lascia Sporting CP: operazione da 1,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079188"
+  ],
+  "teams": [
+    {
+      "name": "Celtic",
+      "logo": "market-club-94079188-5d487794c122a9b8.png"
+    }
+  ],
+  "transfer": {
+    "from": "Sporting CP",
+    "to": "Celtic",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,9 milioni di euro",
+    "date": "2026-10-25",
+    "from_logo": "market-global-club-246-69379aab49a3507e.png",
+    "to_logo": "market-club-94079188-5d487794c122a9b8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-120681-1c838f3f50ec892d.png",
+    "alt": "Diego Callai"
+  }
+}

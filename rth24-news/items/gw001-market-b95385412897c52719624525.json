@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-b95385412897c52719624525",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "Ituano FC: ufficiale l’arrivo di Pedro Ferreira",
+  "text": "Ituano FC annuncia l’arrivo di Pedro Ferreira. Il giocatore lascia Palmeiras: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079067"
+  ],
+  "teams": [
+    {
+      "name": "Palmeiras",
+      "logo": "market-club-94079067-783ffbc8320975c0.png"
+    }
+  ],
+  "transfer": {
+    "from": "Palmeiras",
+    "to": "Ituano FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-25",
+    "from_logo": "market-club-94079067-783ffbc8320975c0.png",
+    "to_logo": "market-global-club-2455-e6dbee69c04c405d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-159708-799f2343ffa04131.png",
+    "alt": "Pedro Ferreira"
+  }
+}

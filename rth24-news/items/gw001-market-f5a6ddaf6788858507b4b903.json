@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-f5a6ddaf6788858507b4b903",
+  "published_at": "2026-10-27T11:51:36+01:00",
+  "title": "KAA Gent: ufficiale l’arrivo di Momodou Lamin Sonko",
+  "text": "KAA Gent annuncia l’arrivo di Momodou Lamin Sonko. Il giocatore lascia Dynamo Dresden: operazione da 4,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "transfer": {
+    "from": "Dynamo Dresden",
+    "to": "KAA Gent",
+    "formula": "Trasferimento definitivo",
+    "amount": "4,1 milioni di euro",
+    "date": "2026-10-25",
+    "from_logo": "market-club-94079161-2215dbdfe461abd9.png",
+    "to_logo": "market-global-club-520-b7d7ae55bd886126.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-126037-6ddff97eab89271f.png",
+    "alt": "Momodou Lamin Sonko"
+  }
+}
