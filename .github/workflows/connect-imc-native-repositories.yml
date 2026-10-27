@@ -1,0 +1,69 @@
+name: Connect IMC cups to native Results and Schedule
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/connect-imc-native-repositories.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Count database objects without changing data
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,json,secrets,hashlib,time,urllib.request
+          from ftplib import FTP_TLS,error_perm
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root)
+          token=secrets.token_hex(32)
+          name='imc-db-inspect-'+secrets.token_hex(16)+'.php'
+          php="<?php if(time()>EXPIRES||!hash_equals('TOKENHASH',hash('sha256',$_SERVER['HTTP_X_IMC_INSPECT']??''))){http_response_code(404);exit;} @unlink(__FILE__);require __DIR__.'/core/bootstrap.php';\ntry{$c=nexus_config();$p=nexus_db($c,nexus_target($c,'GW001'));$p->beginTransaction();\n$sets=['EUROPA'=>[['AS Roma','Feyenoord'],['Palermo FC','TSV 1860 München'],['Dynamo Kyiv','Hertha BSC'],['Boca Juniors','SSC Napoli'],['Genoa CFC','Fenerbahçe SK'],['AS Reggina 1914','Olympique Marseille'],['AEK Athens','Tottenham Hotspur']],'CONFERENCE'=>[['Guangzhou FC','Campobasso Calcio'],['Parma Calcio 1913','River Plate'],['Palmeiras','Sunderland'],['FC Schalke 04','Académica de Coimbra'],['1. FC Kaiserslautern','São Paulo FC'],['Juventus','Shakhtar Donetsk'],['CR Flamengo','FK Partizan']]];\nforeach($sets as $slug=>$pairs){$key='GW001_IMC_'.$slug.'_LEAGUE';$teams=[];foreach(nexus_rows($p,'SELECT * FROM GW001_IMC_Results WHERE competition_key=? AND imc_season=2',[$key]) as $r)foreach(['home','away'] as $side)$teams[$r[$side.'_name']]=$r[$side.'_sm_club_id'];\nforeach($pairs as [$h,$a]){if(!array_key_exists($h,$teams)||!array_key_exists($a,$teams))throw new RuntimeException('unknown_team');\n$args=['GW001',2,$key,'2026-10-27',$h,$a];$where='game_world_id=? AND imc_season=? AND competition_key=? AND match_date=? AND home_name=? AND away_name=?';\n$rows=nexus_rows($p,'SELECT * FROM GW001_IMC_Schedule WHERE '.$where.' FOR UPDATE',$args);if(count($rows)>1)throw new RuntimeException('duplicate_schedule');\nif(!$rows){$q=$p->prepare(\"INSERT INTO GW001_IMC_Schedule (game_world_id,imc_season,competition_key,sm_action,competition_group,competition_round,match_date,match_time,home_sm_team_id,home_name,away_sm_team_id,away_name,fingerprint) VALUES ('GW001',2,?,'imc_custom','IMC',?,'2026-10-27','20:00',?,?,?,?,?)\");$q->execute([$key,$slug==='EUROPA'?'5':'2',$teams[$h],$h,$teams[$a],$a,hash('sha256',implode('|',$args))]);}\n}}$p->commit();nexus_out(['ok'=>true]);}catch(Throwable $e){if(isset($p)&&$p->inTransaction())$p->rollBack();nexus_out(['ok'=>false,'error'=>$e->getMessage()]);}"
+          php=php.replace('TOKENHASH',hashlib.sha256(token.encode()).hexdigest()).replace('EXPIRES',str(int(time.time())+120))
+          try:
+              f.storbinary('STOR '+name,io.BytesIO(php.encode()))
+              request=urllib.request.Request('https://www.italianmastersclub.it/nexus/'+name,headers={'X-IMC-Inspect':token})
+              with urllib.request.urlopen(request,timeout=60) as response: result=json.load(response)
+              assert result.get('ok'),result
+              print(json.dumps(result,indent=2))
+          finally:
+              try: f.delete(name)
+              except error_perm: pass
+              assert name not in [x.rsplit('/',1)[-1] for x in f.nlst()], 'Temporary diagnostic cleanup failed'
+              print('TEMPORARY_DIAGNOSTIC_REMOVED')
+              f.quit()
+          
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root+'/competitions')
+          def read(n):
+           b=io.BytesIO();f.retrbinary('RETR '+n,b.write);return b.getvalue()
+          api="<?php\ndeclare(strict_types=1);\nrequire dirname(__DIR__).'/core/bootstrap.php';\ntry {\n $gw=nexus_world($_GET['world']??'');$season=nexus_season($_GET['season']??null);$key=(string)($_GET['competition']??'');$mode=(string)($_GET['mode']??'schedule');\n $names=['GW001_IMC_CHAMPIONS_LEAGUE'=>'RTH Champions League','GW001_IMC_EUROPA_LEAGUE'=>'RTH Europa League','GW001_IMC_CONFERENCE_LEAGUE'=>'RTH Conference League','GW001_IMC_CLUB_WORLD_CUP'=>'RTH Club World Cup'];\n if($gw!=='GW001'||!isset($names[$key])||$season===null)throw new InvalidArgumentException('invalid_imc_competition');\n if(!in_array($mode,['results','schedule','standings'],true))throw new InvalidArgumentException('invalid_mode');\n $c=nexus_config();$core=nexus_db($c,'core');$db=nexus_db($c,nexus_target($c,$gw));\n require __DIR__.'/match-teams.php';\n $params=[$gw,$season,$key];\n $rs=nexus_enrich_match_teams($core,$gw,nexus_rows($db,'SELECT * FROM GW001_IMC_Results WHERE game_world_id=? AND imc_season=? AND competition_key=?',$params));\n $ss=nexus_enrich_match_teams($core,$gw,nexus_rows($db,'SELECT * FROM GW001_IMC_Schedule WHERE game_world_id=? AND imc_season=? AND competition_key=?',$params));\n $cup=['name'=>$names[$key],'format'=>str_contains($key,'WORLD_CUP')?'knockout':'league','teams'=>[],'matches'=>[]];$known=[];$fixtures=[];$details=[];\n foreach([[$rs,true],[$ss,false]] as [$rows,$finished])foreach($rows as $row){\n  if($finished&&($row['home_score']===null||$row['away_score']===null))continue;\n  $ids=[];foreach(['home','away'] as $side){$id=(string)($row[$side.'_sm_club_id']??$row[$side.'_sm_team_id']??'');if($id==='')$id='guest-'.nexus_team_name_key($row[$side.'_name']);$ids[$side]=$id;\n   if(!isset($known[$id])){$cup['teams'][]=['team_id'=>$id,'team_name'=>$row[$side.'_name']];$known[$id]=true;}\n   $details[$id]=['logo'=>$row[$side.'_logo_url']??null,'manager'=>$row[$side.'_imc_manager_name']??null];\n  }\n  $identity=implode('|',[$row['match_date'],$ids['home'],$ids['away']]);\n  if(isset($fixtures[$identity]))continue;$fixtures[$identity]=true;\n  $cup['matches'][]=['id'=>'IMC-'.hash('sha256',$key.'|'.$season.'|'.$identity),'date'=>$row['match_date'],'time'=>substr((string)($row['match_time']??'20:00'),0,5),'round'=>$row['competition_round'],'home_id'=>$ids['home'],'away_id'=>$ids['away'],'homeScore'=>$finished?(int)$row['home_score']:null,'awayScore'=>$finished?(int)$row['away_score']:null,'awarded'=>($row['result_status']??'')==='AWARDED'];\n }\n $assignments=nexus_rows($core,\"SELECT a.manager_id,a.team_id,a.start_date,a.end_date,m.full_name FROM `IMC Manager Assignment Global` a JOIN `IMC Manager Codex Global` m ON m.manager_id=a.manager_id WHERE a.game_world_id=? AND a.assignment_type='club' ORDER BY a.start_date DESC,a.id DESC\",[$gw]);\n $manager=function(string $id,string $date)use($assignments){$found=[];foreach($assignments as $a)if((string)$a['team_id']===$id&&(!$a['start_date']||$a['start_date']<=$date)&&(!$a['end_date']||$a['end_date']>=$date))$found[$a['manager_id']]=$a;return count($found)===1?array_values($found)[0]:null;};\n $logos=[];foreach(nexus_rows($core,'SELECT m.`SM World Club ID` world_id,c.image_url FROM `IMC Game World Club Mapping` m LEFT JOIN `IMC Club Codex Global` c ON c.id=m.`Club ID` WHERE m.`Game World`=?',[$gw]) as $t)$logos[(string)$t['world_id']]=$t['image_url'];\n foreach($details as $id=>$detail)if($detail['logo'])$logos[$id]=$detail['logo'];\n $today=(new DateTimeImmutable('now',new DateTimeZone('Europe/Rome')))->format('Y-m-d');$table=[];\n foreach($cup['teams'] as $t)$table[$t['team_id']]=['team_id'=>$t['team_id'],'team_name'=>$t['team_name'],'logo_url'=>$logos[$t['team_id']]??null,'manager_name'=>$t['team_id']==='guest-juventus'?'Guest':($manager($t['team_id'],$today)['full_name']??null),'points'=>0,'played'=>0,'won'=>0,'drawn'=>0,'lost'=>0,'gf'=>0,'ga'=>0,'gd'=>0];\n $results=[];$schedule=[];$seen=[];\n foreach($cup['matches'] as $m){\n  if(isset($seen[$m['id']]))throw new RuntimeException('duplicate_fixture');$seen[$m['id']]=true;\n  $played=is_int($m['homeScore'])&&is_int($m['awayScore'])&&$m['homeScore']>=0&&$m['awayScore']>=0;\n  $r=['sm_fixture_id'=>$m['id'],'match_date'=>$m['date'],'match_time'=>$m['time'],'competition_round'=>(string)$m['round'],'competition_stage'=>'','competition_group_name'=>'','sm_action'=>'league','home_score'=>$m['homeScore'],'away_score'=>$m['awayScore'],'competition_key'=>$key,'awarded'=>$m['awarded']];\n  foreach(['home','away'] as $side){$id=$m[$side.'_id'];if(!isset($table[$id]))throw new RuntimeException('unknown_team');$a=$id==='guest-juventus'?['full_name'=>'Guest']:$manager($id,$m['date']);$r[$side.'_name']=$table[$id]['team_name'];$r[$side.'_sm_club_id']=$id;$r[$side.'_sm_team_id']=$id;$r[$side.'_logo_url']=$logos[$id]??null;$r[$side.'_imc_manager_id']=$a['manager_id']??null;$r[$side.'_imc_manager_name']=$a['full_name']??null;}\n  if(!$played){$schedule[]=$r;continue;}$results[]=$r;\n  $h=&$table[$m['home_id']];$a=&$table[$m['away_id']];$hs=$m['homeScore'];$as=$m['awayScore'];$h['played']++;$a['played']++;$h['gf']+=$hs;$h['ga']+=$as;$a['gf']+=$as;$a['ga']+=$hs;\n  if($hs>$as){$h['won']++;$h['points']+=3;$a['lost']++;}elseif($hs<$as){$a['won']++;$a['points']+=3;$h['lost']++;}else{$h['drawn']++;$a['drawn']++;$h['points']++;$a['points']++;}unset($h,$a);\n }\n foreach($table as &$t)$t['gd']=$t['gf']-$t['ga'];unset($t);$table=array_values($table);\n usort($table,fn($a,$b)=>($b['points']<=>$a['points'])?:($b['gd']<=>$a['gd'])?:($b['gf']<=>$a['gf'])?:strcmp($a['team_name'],$b['team_name']));foreach($table as $i=>&$t)$t['position']=$i+1;unset($t);\n $rows=$mode==='standings'?($cup['format']==='league'?$table:[]):($mode==='results'?$results:$schedule);\n nexus_out(['ok'=>true,'game_world_id'=>$gw,'season'=>$season,'competition_key'=>$key,'rows'=>$rows,'groups'=>$mode==='standings'&&$cup['format']==='league'&&count($table)?[['group_name'=>$cup['name'],'rows'=>$table]]:[]]);\n}catch(InvalidArgumentException $e){nexus_out(['ok'=>false,'error'=>$e->getMessage()],422);}catch(Throwable $e){nexus_out(['ok'=>false,'error'=>'imc_competition_error'],500);}\n"
+          import subprocess,pathlib
+          pathlib.Path('/tmp/imc-api.php').write_text(api);subprocess.run(['php','-l','/tmp/imc-api.php'],check=True)
+          before=read('imc-cups.php')
+          f.storbinary('STOR imc-cups.php.backup-native-'+os.environ['GITHUB_SHA'][:12],io.BytesIO(before))
+          f.storbinary('STOR imc-cups.php.tmp',io.BytesIO(api.encode()));f.rename('imc-cups.php.tmp','imc-cups.php')
+          try:
+           for slug,count,points in [('EUROPA',28,77),('CONFERENCE',7,20)]:
+            base='https://www.italianmastersclub.it/nexus/competitions/imc-cups.php?world=GW001&season=2&competition=GW001_IMC_'+slug+'_LEAGUE'
+            def get(mode):return json.load(urllib.request.urlopen(base+'&mode='+mode,timeout=30))
+            r=get('results');s=get('schedule');t=get('standings')
+            assert r['ok'] and len(r['rows'])==count
+            assert s['ok'] and len(s['rows'])==7
+            assert t['ok'] and len(t['rows'])==14 and sum(x['points'] for x in t['rows'])==points
+            assert all(x['home_score'] is None for x in s['rows'])
+            assert len({x['sm_fixture_id'] for x in r['rows']})==count
+            print('PASS',slug,count,'results, 7 schedule, 14 standings; database only')
+          except:
+           f.storbinary('STOR imc-cups.php',io.BytesIO(before));raise
+          finally:f.quit()
+          PY
