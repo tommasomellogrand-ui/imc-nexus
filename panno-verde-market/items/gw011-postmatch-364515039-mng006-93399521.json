@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515039-mng006-93399521",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Pep Buitre · Il post partita di Chelsea",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nChelsea 2–4 Barcelona · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515039",
+    "manager_id": "MNG006",
+    "manager": "Pep Buitre",
+    "club_id": "93399521",
+    "club": "Chelsea",
+    "opponent": "Barcelona",
+    "match_date": "2026-10-29",
+    "result": "Chelsea 2–4 Barcelona",
+    "source_hash": "182a116d017db21f4e427944c31b36e4d8e0a8c951dc7a51db7d2a046a6ab5d9",
+    "home": "Chelsea",
+    "away": "Barcelona",
+    "home_score": "2",
+    "away_score": "4",
+    "home_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "away_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "division": "2",
+    "round": "2",
+    "competition_label": "DIVISIONE 2 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-4 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 50% di possesso e 9 tiri, contro 11 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "Il rosso a Hernández Rodri al minuto 83 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 83 abbiamo dovuto affrontare un’espulsione. È un passaggio importante del report, ma non deve diventare una spiegazione unica di tutto il risultato.",
+      "player": {
+        "id": "82178",
+        "name": "Hernández Rodri",
+        "image": {
+          "file": "postmatch-player-82178-e1cb739c9c3ee75a.png",
+          "alt": "Hernández Rodri"
+        }
+      }
+    },
+    {
+      "question": "F Wirtz ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "104514",
+        "name": "F Wirtz",
+        "image": {
+          "file": "postmatch-player-104514-3ccfb3e01966c084.png",
+          "alt": "F Wirtz"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 9, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 6 volte contro le nostre 4. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

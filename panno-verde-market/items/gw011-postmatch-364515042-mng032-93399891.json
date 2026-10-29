@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515042-mng032-93399891",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Vardan Minasyan · Il post partita di Bayern München",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nReal Madrid 4–2 Bayern München · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515042",
+    "manager_id": "MNG032",
+    "manager": "Vardan Minasyan",
+    "club_id": "93399891",
+    "club": "Bayern München",
+    "opponent": "Real Madrid",
+    "match_date": "2026-10-29",
+    "result": "Real Madrid 4–2 Bayern München",
+    "source_hash": "28b42570e441d5c9bef40020a86dc1c715bd779cdaca62af9367693806335fa4",
+    "home": "Real Madrid",
+    "away": "Bayern München",
+    "home_score": "4",
+    "away_score": "2",
+    "home_logo": "market-club-93399663-7ef177340849aadc.png",
+    "away_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "division": "2",
+    "round": "2",
+    "competition_label": "DIVISIONE 2 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-4 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 46% di possesso e 8 tiri, contro 11 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Bellingham al minuto 79 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 79 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "101902",
+        "name": "Bellingham",
+        "image": {
+          "file": "postmatch-player-101902-847457e6360e5be5.png",
+          "alt": "Bellingham"
+        }
+      }
+    },
+    {
+      "question": "J Musiala ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "104640",
+        "name": "J Musiala",
+        "image": {
+          "file": "postmatch-player-104640-c0380b146086bdc5.png",
+          "alt": "J Musiala"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 8, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo segnato 2 gol con 3 conclusioni nello specchio: oggi siamo stati efficaci. È un merito, ma per dare continuità ai risultati serve anche aumentare la produzione offensiva."
+    }
+  ]
+}

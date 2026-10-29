@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514949-mng014-93399580",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Giovanni Iodice · Il post partita di Tottenham Hotspur",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nSL Benfica 0–2 Tottenham Hotspur · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399580"
+  ],
+  "teams": [
+    {
+      "name": "Tottenham Hotspur",
+      "logo": "market-club-93399580-b520b61ef4469d37.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514949",
+    "manager_id": "MNG014",
+    "manager": "Giovanni Iodice",
+    "club_id": "93399580",
+    "club": "Tottenham Hotspur",
+    "opponent": "SL Benfica",
+    "match_date": "2026-10-29",
+    "result": "SL Benfica 0–2 Tottenham Hotspur",
+    "source_hash": "0afceea9444af515b41c56c5d43dc35f6db559e7d56e4bf63e8d335e142b3c35",
+    "home": "SL Benfica",
+    "away": "Tottenham Hotspur",
+    "home_score": "0",
+    "away_score": "2",
+    "home_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "away_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "division": "1",
+    "round": "2",
+    "competition_label": "DIVISIONE 1 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 2-0 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 55% di possesso e 19 tiri, contro 14 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "Il rosso a C Ronaldo al minuto 58 quanto pesa nella lettura della gara?",
+      "answer": "L’espulsione avversaria al minuto 58 è un dato importante. La vittoria va comunque letta su tutta la partita, distinguendo ciò che è accaduto prima e dopo il cartellino.",
+      "player": {
+        "id": "1131",
+        "name": "C Ronaldo",
+        "image": {
+          "file": "postmatch-player-1131-2ead0540f1d5c5c9.png",
+          "alt": "C Ronaldo"
+        }
+      }
+    },
+    {
+      "question": "J Pickford è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "55064",
+        "name": "J Pickford",
+        "image": {
+          "file": "postmatch-player-55064-0d4c0d67fee686a2.png",
+          "alt": "J Pickford"
+        }
+      }
+    },
+    {
+      "question": "10 tiri nello specchio su 19, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 10 volte e segnato 2 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

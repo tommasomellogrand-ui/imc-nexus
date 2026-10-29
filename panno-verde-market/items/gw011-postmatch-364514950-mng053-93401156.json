@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514950-mng053-93401156",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Chicco Belin · Il post partita di Como 1907",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBorussia Dortmund 2–3 Como 1907 · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514950",
+    "manager_id": "MNG053",
+    "manager": "Chicco Belin",
+    "club_id": "93401156",
+    "club": "Como 1907",
+    "opponent": "Borussia Dortmund",
+    "match_date": "2026-10-29",
+    "result": "Borussia Dortmund 2–3 Como 1907",
+    "source_hash": "f84013c6fb6e5c2e4ae7f6b2d306d53bd2af119aa5c3f80673ec58d0d8e107be",
+    "home": "Borussia Dortmund",
+    "away": "Como 1907",
+    "home_score": "2",
+    "away_score": "3",
+    "home_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "away_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "division": "1",
+    "round": "2",
+    "competition_label": "DIVISIONE 1 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 54% di possesso e 11 tiri, contro 12 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Milla al minuto 81 ha fissato il risultato. Come legge quel finale?",
+      "answer": "Quel gol al minuto 81 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "83451",
+        "name": "Milla",
+        "image": {
+          "file": "postmatch-player-83451-2f25698ffa1d3325.png",
+          "alt": "Milla"
+        }
+      }
+    },
+    {
+      "question": "Nicolas Jackson ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "106073",
+        "name": "Nicolas Jackson",
+        "image": {
+          "file": "postmatch-player-106073-4b05e9cd0db97618.png",
+          "alt": "Nicolas Jackson"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 11, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 5 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

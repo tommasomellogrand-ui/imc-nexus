@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514953-mng033-93399623",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Simone Campanella · Il post partita di AS Roma",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAS Roma 2–3 Juventus · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514953",
+    "manager_id": "MNG033",
+    "manager": "Simone Campanella",
+    "club_id": "93399623",
+    "club": "AS Roma",
+    "opponent": "Juventus",
+    "match_date": "2026-10-29",
+    "result": "AS Roma 2–3 Juventus",
+    "source_hash": "471019cb589f0ebbc01f8ffdeb770d8bb00321d7dac54305b0630d960dd73b2b",
+    "home": "AS Roma",
+    "away": "Juventus",
+    "home_score": "2",
+    "away_score": "3",
+    "home_logo": "market-club-93399623-4f2820912276f496.png",
+    "away_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "division": "1",
+    "round": "2",
+    "competition_label": "DIVISIONE 1 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 42% di possesso e 15 tiri, contro 23 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "Il rosso a Gleison Bremer al minuto 62 quanto pesa nella lettura della gara?",
+      "answer": "L’espulsione avversaria al minuto 62 è un dato importante. Non siamo riusciti a tradurla nel risultato che cercavamo: il vantaggio numerico non sostituisce la qualità delle conclusioni.",
+      "player": {
+        "id": "94633",
+        "name": "Gleison Bremer",
+        "image": {
+          "file": "postmatch-player-94633-79cdd0f6b96d4886.png",
+          "alt": "Gleison Bremer"
+        }
+      }
+    },
+    {
+      "question": "Cristian Romero ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "86903",
+        "name": "Cristian Romero",
+        "image": {
+          "file": "postmatch-player-86903-4e6bf6c6d49dd483.png",
+          "alt": "Cristian Romero"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 15, contro 10 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 10 volte contro le nostre 5. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

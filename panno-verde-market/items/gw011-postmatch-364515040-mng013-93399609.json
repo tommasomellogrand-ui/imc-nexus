@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515040-mng013-93399609",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Giovanni Cabrioli · Il post partita di Internazionale",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nInternazionale 2–2 Paris Saint-Germain · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515040",
+    "manager_id": "MNG013",
+    "manager": "Giovanni Cabrioli",
+    "club_id": "93399609",
+    "club": "Internazionale",
+    "opponent": "Paris Saint-Germain",
+    "match_date": "2026-10-29",
+    "result": "Internazionale 2–2 Paris Saint-Germain",
+    "source_hash": "5471f09613b22aea262b01764990183da84c427ffdff8d40170d57c38d04f6d1",
+    "home": "Internazionale",
+    "away": "Paris Saint-Germain",
+    "home_score": "2",
+    "away_score": "2",
+    "home_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "away_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "division": "2",
+    "round": "2",
+    "competition_label": "DIVISIONE 2 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 2-2 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 41% di possesso e 8 tiri, contro 10 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Barella al minuto 56 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 56 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "81621",
+        "name": "Barella",
+        "image": {
+          "file": "postmatch-player-81621-6f0fcca4a5b22faa.png",
+          "alt": "Barella"
+        }
+      }
+    },
+    {
+      "question": "N Barella ha segnato una doppietta: quanto conta il suo contributo?",
+      "answer": "Le sue reti sono un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "81621",
+        "name": "N Barella",
+        "image": {
+          "file": "postmatch-player-81621-6f0fcca4a5b22faa.png",
+          "alt": "N Barella"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 8, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 4 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

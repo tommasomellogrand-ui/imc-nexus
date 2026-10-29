@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515042-mng039-93399663",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Attilio Bonnici · Il post partita di Real Madrid",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nReal Madrid 4–2 Bayern München · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515042",
+    "manager_id": "MNG039",
+    "manager": "Attilio Bonnici",
+    "club_id": "93399663",
+    "club": "Real Madrid",
+    "opponent": "Bayern München",
+    "match_date": "2026-10-29",
+    "result": "Real Madrid 4–2 Bayern München",
+    "source_hash": "1977d79db7755712e59f06c96d10550bfdaf807a3a41f308bc39a091bb925c94",
+    "home": "Real Madrid",
+    "away": "Bayern München",
+    "home_score": "4",
+    "away_score": "2",
+    "home_logo": "market-club-93399663-7ef177340849aadc.png",
+    "away_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "division": "2",
+    "round": "2",
+    "competition_label": "DIVISIONE 2 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 4-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 54% di possesso e 11 tiri, contro 8 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Bellingham al minuto 79 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 79 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "101902",
+        "name": "Bellingham",
+        "image": {
+          "file": "postmatch-player-101902-847457e6360e5be5.png",
+          "alt": "Bellingham"
+        }
+      }
+    },
+    {
+      "question": "V Júnior è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "90068",
+        "name": "V Júnior",
+        "image": {
+          "file": "postmatch-player-90068-0c68f020ff599bc4.png",
+          "alt": "V Júnior"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 11, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 4 volte e segnato 4 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

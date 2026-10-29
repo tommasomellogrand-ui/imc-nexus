@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514951-mng016-93399615",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Saverio Cordiano · Il post partita di AC Milan",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtalanta BC 2–1 AC Milan · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514951",
+    "manager_id": "MNG016",
+    "manager": "Saverio Cordiano",
+    "club_id": "93399615",
+    "club": "AC Milan",
+    "opponent": "Atalanta BC",
+    "match_date": "2026-10-29",
+    "result": "Atalanta BC 2–1 AC Milan",
+    "source_hash": "5455cd5f8590cea28ac6e8e7e20cd2d10c8b8dc4d3295334eaa3f7c87d944d48",
+    "home": "Atalanta BC",
+    "away": "AC Milan",
+    "home_score": "2",
+    "away_score": "1",
+    "home_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "away_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "division": "1",
+    "round": "2",
+    "competition_label": "DIVISIONE 1 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 53% di possesso e 15 tiri, contro 13 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Krstović al minuto 85 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 85 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "91157",
+        "name": "Krstović",
+        "image": {
+          "file": "postmatch-player-91157-57fa420e10b6c7f8.png",
+          "alt": "Krstović"
+        }
+      }
+    },
+    {
+      "question": "Matteo Ruggeri è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "104420",
+        "name": "Matteo Ruggeri",
+        "image": {
+          "file": "postmatch-player-104420-1fd891948aa0f5e7.png",
+          "alt": "Matteo Ruggeri"
+        }
+      }
+    },
+    {
+      "question": "9 tiri nello specchio su 15, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Con 9 conclusioni nello specchio e 1 gol, il tema è convertire meglio quello che produciamo. Il dato non racconta da solo la difficoltà di ogni tiro, ma indica bene dove concentrare la nostra analisi."
+    }
+  ]
+}

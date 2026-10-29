@@ -1,0 +1,124 @@
+{
+  "id": "gw011-flash-s1-d2-2026-10-29-results",
+  "published_at": "2026-10-29T21:36:17+01:00",
+  "title": "Divisione 2 · Risultati della 2ª giornata",
+  "text": "Tutti i risultati della giornata.",
+  "category": "flash",
+  "club_ids": [
+    "93399501",
+    "93399521",
+    "93399544",
+    "93399547",
+    "93399549",
+    "93399609",
+    "93399640",
+    "93399663",
+    "93399838",
+    "93399891"
+  ],
+  "division_news": {
+    "world": "GW011",
+    "kind": "results",
+    "season": "1",
+    "division": "2",
+    "round": 2,
+    "date": "2026-10-29",
+    "fixtures": [
+      {
+        "fixture_id": "364515039",
+        "home": {
+          "id": "93399521",
+          "name": "Chelsea",
+          "logo": "market-club-93399521-6694aaf8610a7f9b.png",
+          "manager": "Pep Buitre",
+          "manager_id": "MNG006"
+        },
+        "away": {
+          "id": "93399640",
+          "name": "Barcelona",
+          "logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+          "manager": "Giuseppe Trovato",
+          "manager_id": "MNG048"
+        },
+        "home_score": 2,
+        "away_score": 4
+      },
+      {
+        "fixture_id": "364515040",
+        "home": {
+          "id": "93399609",
+          "name": "Internazionale",
+          "logo": "market-club-93399609-c1b721033d1fc95e.png",
+          "manager": "Giovanni Cabrioli",
+          "manager_id": "MNG013"
+        },
+        "away": {
+          "id": "93399838",
+          "name": "Paris Saint-Germain",
+          "logo": "market-club-93399838-3eef9082b1e66395.png",
+          "manager": "Luciano Catalano",
+          "manager_id": "MNG004"
+        },
+        "home_score": 2,
+        "away_score": 2
+      },
+      {
+        "fixture_id": "364515041",
+        "home": {
+          "id": "93399544",
+          "name": "Liverpool",
+          "logo": "market-club-93399544-56dfeac623d23b94.png",
+          "manager": "Carlo Ancelotti",
+          "manager_id": "MNG065"
+        },
+        "away": {
+          "id": "93399501",
+          "name": "Arsenal",
+          "logo": "market-club-93399501-33ef41943a141618.png",
+          "manager": "Luciano Tana",
+          "manager_id": "MNG051"
+        },
+        "home_score": 1,
+        "away_score": 4
+      },
+      {
+        "fixture_id": "364515042",
+        "home": {
+          "id": "93399663",
+          "name": "Real Madrid",
+          "logo": "market-club-93399663-7ef177340849aadc.png",
+          "manager": "Attilio Bonnici",
+          "manager_id": "MNG039"
+        },
+        "away": {
+          "id": "93399891",
+          "name": "Bayern München",
+          "logo": "market-club-93399891-8f08c13f795eef24.png",
+          "manager": "Vardan Minasyan",
+          "manager_id": "MNG032"
+        },
+        "home_score": 4,
+        "away_score": 2
+      },
+      {
+        "fixture_id": "364515043",
+        "home": {
+          "id": "93399549",
+          "name": "Manchester United",
+          "logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+          "manager": "Danilo FC 1908",
+          "manager_id": "MNG027"
+        },
+        "away": {
+          "id": "93399547",
+          "name": "Manchester City",
+          "logo": "market-club-93399547-198e9921b709c50d.png",
+          "manager": "Luca Nudo",
+          "manager_id": "MNG009"
+        },
+        "home_score": 2,
+        "away_score": 1
+      }
+    ]
+  }
+}

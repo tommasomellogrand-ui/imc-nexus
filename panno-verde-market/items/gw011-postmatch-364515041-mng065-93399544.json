@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515041-mng065-93399544",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Carlo Ancelotti · Il post partita di Liverpool",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nLiverpool 1–4 Arsenal · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515041",
+    "manager_id": "MNG065",
+    "manager": "Carlo Ancelotti",
+    "club_id": "93399544",
+    "club": "Liverpool",
+    "opponent": "Arsenal",
+    "match_date": "2026-10-29",
+    "result": "Liverpool 1–4 Arsenal",
+    "source_hash": "7db4ba5a12c4f27abf8c4558962a59d33cd3f88529647dd31c857b65ce9e1867",
+    "home": "Liverpool",
+    "away": "Arsenal",
+    "home_score": "1",
+    "away_score": "4",
+    "home_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "away_logo": "market-club-93399501-33ef41943a141618.png",
+    "division": "2",
+    "round": "2",
+    "competition_label": "DIVISIONE 2 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-4 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 57% di possesso e 12 tiri, contro 14 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Merino al minuto 76 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 76 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "76248",
+        "name": "Merino",
+        "image": {
+          "file": "postmatch-player-76248-ef18d5d1c8fa5a11.png",
+          "alt": "Merino"
+        }
+      }
+    },
+    {
+      "question": "Pablo Barrios ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "120600",
+        "name": "Pablo Barrios",
+        "image": {
+          "file": "postmatch-player-120600-991ad817b1bc5bd6.png",
+          "alt": "Pablo Barrios"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 12, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 5 volte e segnato 1 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

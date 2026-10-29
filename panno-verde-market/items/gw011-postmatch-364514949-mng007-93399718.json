@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514949-mng007-93399718",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Vincenzo Martorano · Il post partita di SL Benfica",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nSL Benfica 0–2 Tottenham Hotspur · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399718"
+  ],
+  "teams": [
+    {
+      "name": "SL Benfica",
+      "logo": "market-club-93399718-cd9bbf9dc40287fc.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514949",
+    "manager_id": "MNG007",
+    "manager": "Vincenzo Martorano",
+    "club_id": "93399718",
+    "club": "SL Benfica",
+    "opponent": "Tottenham Hotspur",
+    "match_date": "2026-10-29",
+    "result": "SL Benfica 0–2 Tottenham Hotspur",
+    "source_hash": "28d4a558f016cb3b600ecdee899c4df0f8e4258a2159153d008f8ef93828863d",
+    "home": "SL Benfica",
+    "away": "Tottenham Hotspur",
+    "home_score": "0",
+    "away_score": "2",
+    "home_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "away_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "division": "1",
+    "round": "2",
+    "competition_label": "DIVISIONE 1 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 45% di possesso e 14 tiri, contro 19 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "Il rosso a C Ronaldo al minuto 58 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 58 abbiamo dovuto affrontare un’espulsione. È un passaggio importante del report, ma non deve diventare una spiegazione unica di tutto il risultato.",
+      "player": {
+        "id": "1131",
+        "name": "C Ronaldo",
+        "image": {
+          "file": "postmatch-player-1131-2ead0540f1d5c5c9.png",
+          "alt": "C Ronaldo"
+        }
+      }
+    },
+    {
+      "question": "B Verbruggen ha ricevuto voto 8 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 8 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "104978",
+        "name": "B Verbruggen",
+        "image": {
+          "file": "postmatch-player-104978-783b88d7fb8c0194.png",
+          "alt": "B Verbruggen"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 14, contro 10 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 6 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

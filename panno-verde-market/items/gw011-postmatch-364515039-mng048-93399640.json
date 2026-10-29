@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515039-mng048-93399640",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Giuseppe Trovato · Il post partita di Barcelona",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nChelsea 2–4 Barcelona · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515039",
+    "manager_id": "MNG048",
+    "manager": "Giuseppe Trovato",
+    "club_id": "93399640",
+    "club": "Barcelona",
+    "opponent": "Chelsea",
+    "match_date": "2026-10-29",
+    "result": "Chelsea 2–4 Barcelona",
+    "source_hash": "7f0dd558b20c832184a531d13ae57f8db5e6896a2cec0ccec6e41d31ba807fb6",
+    "home": "Chelsea",
+    "away": "Barcelona",
+    "home_score": "2",
+    "away_score": "4",
+    "home_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "away_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "division": "2",
+    "round": "2",
+    "competition_label": "DIVISIONE 2 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 4-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 50% di possesso e 11 tiri, contro 9 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "Il rosso a Hernández Rodri al minuto 83 quanto pesa nella lettura della gara?",
+      "answer": "L’espulsione avversaria al minuto 83 è un dato importante. La vittoria va comunque letta su tutta la partita, distinguendo ciò che è accaduto prima e dopo il cartellino.",
+      "player": {
+        "id": "82178",
+        "name": "Hernández Rodri",
+        "image": {
+          "file": "postmatch-player-82178-e1cb739c9c3ee75a.png",
+          "alt": "Hernández Rodri"
+        }
+      }
+    },
+    {
+      "question": "M Salah è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "52690",
+        "name": "M Salah",
+        "image": {
+          "file": "postmatch-player-52690-8bcf8f62a5f88f60.png",
+          "alt": "M Salah"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 11, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 6 volte e segnato 4 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

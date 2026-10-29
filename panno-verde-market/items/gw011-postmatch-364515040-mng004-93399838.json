@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515040-mng004-93399838",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Luciano Catalano · Il post partita di Paris Saint-Germain",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nInternazionale 2–2 Paris Saint-Germain · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515040",
+    "manager_id": "MNG004",
+    "manager": "Luciano Catalano",
+    "club_id": "93399838",
+    "club": "Paris Saint-Germain",
+    "opponent": "Internazionale",
+    "match_date": "2026-10-29",
+    "result": "Internazionale 2–2 Paris Saint-Germain",
+    "source_hash": "5c93bde3de2cb705e83bad8674c71bd76f6921d5c76989d76753a9124f62984e",
+    "home": "Internazionale",
+    "away": "Paris Saint-Germain",
+    "home_score": "2",
+    "away_score": "2",
+    "home_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "away_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "division": "2",
+    "round": "2",
+    "competition_label": "DIVISIONE 2 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 2-2 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 59% di possesso e 10 tiri, contro 8 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Barella al minuto 56 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 56 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "81621",
+        "name": "Barella",
+        "image": {
+          "file": "postmatch-player-81621-6f0fcca4a5b22faa.png",
+          "alt": "Barella"
+        }
+      }
+    },
+    {
+      "question": "Ousmane Dembélé è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "84046",
+        "name": "Ousmane Dembélé",
+        "image": {
+          "file": "postmatch-player-84046-74ba5e40b413159c.png",
+          "alt": "Ousmane Dembélé"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 10, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 4 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

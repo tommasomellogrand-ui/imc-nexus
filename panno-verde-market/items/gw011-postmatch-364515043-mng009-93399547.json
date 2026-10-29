@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515043-mng009-93399547",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Luca Nudo · Il post partita di Manchester City",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester United 2–1 Manchester City · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515043",
+    "manager_id": "MNG009",
+    "manager": "Luca Nudo",
+    "club_id": "93399547",
+    "club": "Manchester City",
+    "opponent": "Manchester United",
+    "match_date": "2026-10-29",
+    "result": "Manchester United 2–1 Manchester City",
+    "source_hash": "e5ea7d4e3379f4eeddc16a3e7e0aee1d38224a15af4981763cf52672ca67242d",
+    "home": "Manchester United",
+    "away": "Manchester City",
+    "home_score": "2",
+    "away_score": "1",
+    "home_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "away_logo": "market-club-93399547-198e9921b709c50d.png",
+    "division": "2",
+    "round": "2",
+    "competition_label": "DIVISIONE 2 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 46% di possesso e 10 tiri, contro 14 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Félix al minuto 78 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 78 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "89761",
+        "name": "Félix",
+        "image": {
+          "file": "postmatch-player-89761-eb83a385aea06029.png",
+          "alt": "Félix"
+        }
+      }
+    },
+    {
+      "question": "J Félix ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "89761",
+        "name": "J Félix",
+        "image": {
+          "file": "postmatch-player-89761-eb83a385aea06029.png",
+          "alt": "J Félix"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 10, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 4 volte contro le nostre 3. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "gw011-postmatch-364514952-mng001-93399639",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Tommaso Mello · Il post partita di Atlético Madrid",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtlético Madrid 3–0 SSC Napoli · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514952",
+    "manager_id": "MNG001",
+    "manager": "Tommaso Mello",
+    "club_id": "93399639",
+    "club": "Atlético Madrid",
+    "opponent": "SSC Napoli",
+    "match_date": "2026-10-29",
+    "result": "Atlético Madrid 3–0 SSC Napoli",
+    "source_hash": "8b8c4fdba1f0aa0736dc813111547b168d3445cd01f2c1b703a55f53f33c60dc",
+    "home": "Atlético Madrid",
+    "away": "SSC Napoli",
+    "home_score": "3",
+    "away_score": "0",
+    "home_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "away_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "division": "1",
+    "round": "2",
+    "competition_label": "DIVISIONE 1 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "È una vittoria netta, 3-0, e il merito è aver dato continuità al risultato. Un margine così ampio premia quello che abbiamo prodotto, senza cancellare gli aspetti da rivedere."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 51% di possesso e 16 tiri, contro 10 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Mac Allister al minuto 38 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 38 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "95236",
+        "name": "Mac Allister",
+        "image": {
+          "file": "postmatch-player-95236-17b98a7e9d7ba7eb.png",
+          "alt": "Mac Allister"
+        }
+      }
+    },
+    {
+      "question": "Robert Lewandowski è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "34893",
+        "name": "Robert Lewandowski",
+        "image": {
+          "file": "postmatch-player-34893-f427033a3965299f.png",
+          "alt": "Robert Lewandowski"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 16, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 5 volte contro le nostre 4. Il risultato premia la nostra concretezza, ma concedere meno conclusioni pulite rimane importante."
+    }
+  ],
+  "image": {
+    "file": "news-person-56748ccd184cf532-1572c907792595a1.jpeg",
+    "alt": "Tommaso Mello"
+  }
+}

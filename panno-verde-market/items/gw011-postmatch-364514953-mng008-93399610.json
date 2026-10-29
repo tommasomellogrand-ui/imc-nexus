@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514953-mng008-93399610",
+  "published_at": "2026-10-29T21:35:58+01:00",
+  "title": "Giorgio Grugni · Il post partita di Juventus",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAS Roma 2–3 Juventus · 29/10/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514953",
+    "manager_id": "MNG008",
+    "manager": "Giorgio Grugni",
+    "club_id": "93399610",
+    "club": "Juventus",
+    "opponent": "AS Roma",
+    "match_date": "2026-10-29",
+    "result": "AS Roma 2–3 Juventus",
+    "source_hash": "8fc2eff0eab0f30685587d45bba759f121b148c53210b2116f77913ed120fb95",
+    "home": "AS Roma",
+    "away": "Juventus",
+    "home_score": "2",
+    "away_score": "3",
+    "home_logo": "market-club-93399623-4f2820912276f496.png",
+    "away_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "division": "1",
+    "round": "2",
+    "competition_label": "DIVISIONE 1 · GIORNATA 2"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 58% di possesso e 23 tiri, contro 15 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "Il rosso a Gleison Bremer al minuto 62 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 62 abbiamo dovuto affrontare un’espulsione. La vittoria resta un risultato importante anche per questo, ma il cartellino è un episodio da analizzare separatamente.",
+      "player": {
+        "id": "94633",
+        "name": "Gleison Bremer",
+        "image": {
+          "file": "postmatch-player-94633-79cdd0f6b96d4886.png",
+          "alt": "Gleison Bremer"
+        }
+      }
+    },
+    {
+      "question": "V Osimhen è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 2 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "84372",
+        "name": "V Osimhen",
+        "image": {
+          "file": "postmatch-player-84372-bf5cbfba7bd33766.png",
+          "alt": "V Osimhen"
+        }
+      }
+    },
+    {
+      "question": "10 tiri nello specchio su 23, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 10 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}
