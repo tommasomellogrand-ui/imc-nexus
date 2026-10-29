@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-5fb6b1bbf415060633b36a28",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Rosario Central: ufficiale l’arrivo di Gerónimo Rulli",
+  "text": "Rosario Central annuncia l’arrivo di Gerónimo Rulli. Il giocatore lascia Manchester City: operazione da 4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Rosario Central",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-283-a3b710f4ca9b2331.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-65263-99ebb7cd99437f05.png",
+    "alt": "Gerónimo Rulli"
+  }
+}

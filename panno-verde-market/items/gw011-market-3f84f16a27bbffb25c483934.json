@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-3f84f16a27bbffb25c483934",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Lincoln City: ufficiale l’arrivo di Owen Beck",
+  "text": "Lincoln City annuncia l’arrivo di Owen Beck. Il giocatore lascia Liverpool: operazione da 2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Lincoln City",
+    "formula": "Trasferimento definitivo",
+    "amount": "2 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-43-cc30b9ce3cc4a839.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-116425-f710f84fa063afa6.png",
+    "alt": "Owen Beck"
+  }
+}

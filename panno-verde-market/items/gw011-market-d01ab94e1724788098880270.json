@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d01ab94e1724788098880270",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "UD Socuéllamos: ufficiale l’arrivo di Dani Ávila",
+  "text": "UD Socuéllamos annuncia l’arrivo di Dani Ávila. Il giocatore lascia Barcelona: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "UD Socuéllamos",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-3336-315155ad61684f8d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-151622-9eec78c429c5e54c.png",
+    "alt": "Dani Ávila"
+  }
+}

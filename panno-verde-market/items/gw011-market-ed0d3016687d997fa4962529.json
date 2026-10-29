@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-ed0d3016687d997fa4962529",
+  "published_at": "2026-10-28T00:00:00+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di André Luiz",
+  "text": "Real Madrid annuncia l’arrivo di André Luiz. Il giocatore lascia Corinthians: operazione da 2,5 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Corinthians",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,5 milioni di euro",
+    "date": "2026-10-28",
+    "from_logo": "market-global-club-290-6344f5e1f75d6ee5.png",
+    "to_logo": "market-club-93399663-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-165497-b408db7a5f3e4ae8.png",
+    "alt": "André Luiz"
+  }
+}

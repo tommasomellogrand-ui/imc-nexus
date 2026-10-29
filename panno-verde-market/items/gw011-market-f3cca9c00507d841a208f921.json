@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f3cca9c00507d841a208f921",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "UD Vecindario: ufficiale l’arrivo di Nil Vicens",
+  "text": "UD Vecindario annuncia l’arrivo di Nil Vicens. Il giocatore lascia Barcelona: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "UD Vecindario",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-854-ee70b60c17883f1a.jpg"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-166200-a20c9f66b117c874.png",
+    "alt": "Nil Vicens"
+  }
+}

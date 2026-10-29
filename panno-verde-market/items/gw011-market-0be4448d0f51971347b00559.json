@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-0be4448d0f51971347b00559",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "AC Cuneo 1905: ufficiale l’arrivo di Christian Raggioli",
+  "text": "AC Cuneo 1905 annuncia l’arrivo di Christian Raggioli. Il giocatore lascia SSC Napoli: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Napoli",
+    "to": "AC Cuneo 1905",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "to_logo": "market-global-club-2251-46e016922a47a4e7.png"
+  },
+  "editorial_version": 3
+}

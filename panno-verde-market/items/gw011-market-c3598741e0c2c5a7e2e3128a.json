@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-c3598741e0c2c5a7e2e3128a",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Matlock Town: ufficiale l’arrivo di Kobe Barbour",
+  "text": "Matlock Town annuncia l’arrivo di Kobe Barbour. Il giocatore lascia Chelsea: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Matlock Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-4929-70310882d13d7dcd.png"
+  },
+  "editorial_version": 3
+}

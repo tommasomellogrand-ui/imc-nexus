@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a856b9b5b9a0e7fff2909d23",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "UD Melilla: ufficiale l’arrivo di Hugo De Llanos",
+  "text": "UD Melilla annuncia l’arrivo di Hugo De Llanos. Il giocatore lascia Real Madrid: operazione da 6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "UD Melilla",
+    "formula": "Trasferimento definitivo",
+    "amount": "6 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-1974-66cbe417cfbc785f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-140982-cdda138c1acb31bc.png",
+    "alt": "Hugo De Llanos"
+  }
+}

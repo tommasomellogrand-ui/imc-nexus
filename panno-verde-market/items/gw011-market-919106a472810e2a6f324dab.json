@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-919106a472810e2a6f324dab",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "CF Reus Deportiu: ufficiale l’arrivo di Max Bonfill",
+  "text": "CF Reus Deportiu annuncia l’arrivo di Max Bonfill. Il giocatore lascia Barcelona: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "CF Reus Deportiu",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-1973-739ee09224bf13a6.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-144499-8dc5beb5e2ebd4f3.png",
+    "alt": "Max Bonfill"
+  }
+}

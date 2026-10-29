@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-0a528132e258ef657330950c",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "UD Sanse de Los Reyes: ufficiale l’arrivo di Diego Aguado",
+  "text": "UD Sanse de Los Reyes annuncia l’arrivo di Diego Aguado. Il giocatore lascia Real Madrid: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "UD Sanse de Los Reyes",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-2087-d38604f99f003eac.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-153687-43fd4999324b9484.png",
+    "alt": "Diego Aguado"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-953043b49a36ffdb3a94a558",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "TSG 1899 Hoffenheim: ufficiale l’arrivo di Bryan Zaragoza",
+  "text": "TSG 1899 Hoffenheim annuncia l’arrivo di Bryan Zaragoza. Il giocatore lascia Bayern München: operazione da 8,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "TSG 1899 Hoffenheim",
+    "formula": "Trasferimento definitivo",
+    "amount": "8,4 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-793-97184e7db9281e9b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-129731-6cf9dce61d494ba4.png",
+    "alt": "Bryan Zaragoza"
+  }
+}

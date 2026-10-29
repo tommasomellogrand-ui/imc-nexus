@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-af02999d8d7cdbab3b551c17",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "AC Perugia: ufficiale l’arrivo di Jesper Lindstrom",
+  "text": "AC Perugia annuncia l’arrivo di Jesper Lindstrom. Il giocatore lascia SSC Napoli: operazione da 4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Napoli",
+    "to": "AC Perugia",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "to_logo": "market-global-club-119-0b6371774dc42cc8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-101771-154a2baee2876b2c.png",
+    "alt": "Jesper Lindstrom"
+  }
+}

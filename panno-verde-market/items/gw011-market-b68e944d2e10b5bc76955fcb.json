@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-b68e944d2e10b5bc76955fcb",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Ancona Calcio: ufficiale l’arrivo di Francesco Verde",
+  "text": "Ancona Calcio annuncia l’arrivo di Francesco Verde. Il giocatore lascia Juventus: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "Ancona Calcio",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-864-044b398fd0a8fb36.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149558-3eb3b7e87e4c5f00.png",
+    "alt": "Francesco Verde"
+  }
+}

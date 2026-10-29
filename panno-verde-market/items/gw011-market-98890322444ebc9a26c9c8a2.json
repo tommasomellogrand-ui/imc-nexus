@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-98890322444ebc9a26c9c8a2",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Crystal Palace: ufficiale l’arrivo di Mateo Kovačić",
+  "text": "Crystal Palace annuncia l’arrivo di Mateo Kovačić. Il giocatore lascia Manchester City: operazione da 5,7 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Crystal Palace",
+    "formula": "Trasferimento definitivo",
+    "amount": "5,7 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-27-600c1549f0634245.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-47427-08f767f5fc152eab.png",
+    "alt": "Mateo Kovačić"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-2eeef1fac7fb7c3d3fdcbd2d",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Gosport Borough: ufficiale l’arrivo di Albert Mills",
+  "text": "Gosport Borough annuncia l’arrivo di Albert Mills. Il giocatore lascia Manchester United: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester United",
+    "to": "Gosport Borough",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "to_logo": "market-global-club-3229-fa037990ea6b8bf4.png"
+  },
+  "editorial_version": 3
+}

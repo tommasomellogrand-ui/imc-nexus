@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-9e8102393790ece249f6fc19",
+  "published_at": "2026-10-28T00:00:00+01:00",
+  "title": "Paris Saint-Germain: ufficiale l’arrivo di Ignacio Fernández",
+  "text": "Paris Saint-Germain annuncia l’arrivo di Ignacio Fernández. Il giocatore lascia Boston River: operazione da 1,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "transfer": {
+    "from": "Boston River",
+    "to": "Paris Saint-Germain",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,3 milioni di euro",
+    "date": "2026-10-28",
+    "from_logo": "market-global-club-1852-d57990b824a2cdaf.png",
+    "to_logo": "market-club-93399838-3eef9082b1e66395.png"
+  },
+  "editorial_version": 3
+}

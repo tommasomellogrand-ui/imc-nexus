@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-b5448391b3fa2d46b449e49c",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Atlético Mancha Real: ufficiale l’arrivo di Diego Arroyo",
+  "text": "Atlético Mancha Real annuncia l’arrivo di Diego Arroyo. Il giocatore lascia Real Madrid: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Atlético Mancha Real",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-2674-7e2b7064bed3872f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155031-d3b77850dfce415e.png",
+    "alt": "Diego Arroyo"
+  }
+}

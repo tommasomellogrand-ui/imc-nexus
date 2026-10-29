@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d6549739e2c6d4222bb31cb9",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "UD Somozas: ufficiale l’arrivo di Álvaro González",
+  "text": "UD Somozas annuncia l’arrivo di Álvaro González. Il giocatore lascia Real Madrid: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "UD Somozas",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-3331-0b52f0a00eaf4dac.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-151650-b56fab9425407232.png",
+    "alt": "Álvaro González"
+  }
+}

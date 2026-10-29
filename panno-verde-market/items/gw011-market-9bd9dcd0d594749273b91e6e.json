@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-9bd9dcd0d594749273b91e6e",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "SSV Jeddeloh: ufficiale l’arrivo di Pharell Kegni",
+  "text": "SSV Jeddeloh annuncia l’arrivo di Pharell Kegni. Il giocatore lascia Borussia Dortmund: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Borussia Dortmund",
+    "to": "SSV Jeddeloh",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "to_logo": "market-global-club-5157-77ab4e979bd20df8.png"
+  },
+  "editorial_version": 3
+}

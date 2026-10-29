@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-416571aeb4983eb7ed3ee7b0",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Hornchurch: ufficiale l’arrivo di Ben Trueman",
+  "text": "Hornchurch annuncia l’arrivo di Ben Trueman. Il giocatore lascia Liverpool: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Hornchurch",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-4105-7565782b6ca630c9.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150057-bb9de42d444463cf.png",
+    "alt": "Ben Trueman"
+  }
+}

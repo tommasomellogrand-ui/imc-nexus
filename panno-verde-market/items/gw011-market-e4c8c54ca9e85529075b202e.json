@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e4c8c54ca9e85529075b202e",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "CD Arenteiro: ufficiale l’arrivo di Ilya Voloshyn",
+  "text": "CD Arenteiro annuncia l’arrivo di Ilya Voloshyn. Il giocatore lascia Real Madrid: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "CD Arenteiro",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-5721-5d73ea0b79864fff.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-145856-f5b04e426a1eb9b6.png",
+    "alt": "Ilya Voloshyn"
+  }
+}

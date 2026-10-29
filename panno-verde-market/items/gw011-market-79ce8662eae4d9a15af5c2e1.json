@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-79ce8662eae4d9a15af5c2e1",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "AS Saint-Etienne: ufficiale l’arrivo di Illan Meslier",
+  "text": "AS Saint-Etienne annuncia l’arrivo di Illan Meslier. Il giocatore lascia Arsenal: operazione da 4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "transfer": {
+    "from": "Arsenal",
+    "to": "AS Saint-Etienne",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399501-33ef41943a141618.png",
+    "to_logo": "market-global-club-341-9269c9246d38068e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-97843-3b8c33a87ab6542b.png",
+    "alt": "Illan Meslier"
+  }
+}

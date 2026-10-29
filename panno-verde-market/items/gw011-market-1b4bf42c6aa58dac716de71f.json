@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-1b4bf42c6aa58dac716de71f",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Gainsborough Trinity: ufficiale l’arrivo di Michael Laffey",
+  "text": "Gainsborough Trinity annuncia l’arrivo di Michael Laffey. Il giocatore lascia Liverpool: operazione da 2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Gainsborough Trinity",
+    "formula": "Trasferimento definitivo",
+    "amount": "2 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-3221-239b2502f9918e84.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150053-cbe39ce965316f0b.png",
+    "alt": "Michael Laffey"
+  }
+}

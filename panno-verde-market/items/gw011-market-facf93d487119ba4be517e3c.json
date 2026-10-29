@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-facf93d487119ba4be517e3c",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Arminia Bielefeld: ufficiale l’arrivo di Patrick Drewes",
+  "text": "Arminia Bielefeld annuncia l’arrivo di Patrick Drewes. Il giocatore lascia Borussia Dortmund: operazione da 785.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Borussia Dortmund",
+    "to": "Arminia Bielefeld",
+    "formula": "Trasferimento definitivo",
+    "amount": "785.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "to_logo": "market-global-club-389-89496a9fe7969e0f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-64163-3669ef14a68cbd10.png",
+    "alt": "Patrick Drewes"
+  }
+}

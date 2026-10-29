@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-58fd5ff2781a1abe82ae7611",
+  "published_at": "2026-10-28T00:00:00+01:00",
+  "title": "AS Gubbio 1910: ufficiale l’arrivo di Matteo Plaia",
+  "text": "AS Gubbio 1910 annuncia l’arrivo di Matteo Plaia. Il giocatore lascia Atalanta BC: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "AS Gubbio 1910",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-28",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-1644-339f294e88d969d7.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149171-0ad158a5c4009f14.png",
+    "alt": "Matteo Plaia"
+  }
+}

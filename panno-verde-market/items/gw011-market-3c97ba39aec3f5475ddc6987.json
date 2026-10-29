@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-3c97ba39aec3f5475ddc6987",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Greifswalder FC: ufficiale l’arrivo di Gibson Adu",
+  "text": "Greifswalder FC annuncia l’arrivo di Gibson Adu. Il giocatore lascia Bayern München: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "Greifswalder FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-5929-adb3040420a3681b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149116-68110713c82b574d.png",
+    "alt": "Gibson Adu"
+  }
+}

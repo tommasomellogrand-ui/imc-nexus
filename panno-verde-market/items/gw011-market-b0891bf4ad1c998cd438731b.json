@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-b0891bf4ad1c998cd438731b",
+  "published_at": "2026-10-28T00:00:00+01:00",
+  "title": "Internazionale: ufficiale l’arrivo di Álvaro Rodríguez",
+  "text": "Internazionale annuncia l’arrivo di Álvaro Rodríguez. Il giocatore lascia AFC Bournemouth: operazione da 13 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "AFC Bournemouth",
+    "to": "Internazionale",
+    "formula": "Trasferimento definitivo",
+    "amount": "13 milioni di euro",
+    "date": "2026-10-28",
+    "from_logo": "market-global-club-9-f7be2ed5fdd0e218.png",
+    "to_logo": "market-club-93399609-c1b721033d1fc95e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-120323-b7a54bf5222fe95f.png",
+    "alt": "Álvaro Rodríguez"
+  }
+}

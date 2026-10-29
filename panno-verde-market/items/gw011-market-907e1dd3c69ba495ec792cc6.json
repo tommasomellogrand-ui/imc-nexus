@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-907e1dd3c69ba495ec792cc6",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "CF Badalona Futur: ufficiale l’arrivo di Álvaro Leiva",
+  "text": "CF Badalona Futur annuncia l’arrivo di Álvaro Leiva. Il giocatore lascia Real Madrid: operazione da 12,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "CF Badalona Futur",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,6 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-2026-5b230b05dd811e4a.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-116971-00efffbbb4a59784.png",
+    "alt": "Álvaro Leiva"
+  }
+}

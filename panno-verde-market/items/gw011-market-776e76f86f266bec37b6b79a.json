@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-776e76f86f266bec37b6b79a",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "CD San Fernando: ufficiale l’arrivo di Guillem Víctor",
+  "text": "CD San Fernando annuncia l’arrivo di Guillem Víctor. Il giocatore lascia Barcelona: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "CD San Fernando",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-2166-c9d2334399f43229.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155053-1a85b433f9cb6a3e.png",
+    "alt": "Guillem Víctor"
+  }
+}

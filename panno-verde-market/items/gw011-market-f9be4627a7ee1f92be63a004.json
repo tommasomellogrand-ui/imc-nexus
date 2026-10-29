@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-f9be4627a7ee1f92be63a004",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "FC Schalke 04 II: ufficiale l’arrivo di Simon Zöls",
+  "text": "FC Schalke 04 II annuncia l’arrivo di Simon Zöls. Il giocatore lascia Bayern München: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "FC Schalke 04 II",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-2466-b9705757f7171244.jpg"
+  },
+  "editorial_version": 3
+}

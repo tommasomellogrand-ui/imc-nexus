@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-48edcf0bc96e4e1ea9417d01",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Linares Deportivo: ufficiale l’arrivo di Álex Pérez",
+  "text": "Linares Deportivo annuncia l’arrivo di Álex Pérez. Il giocatore lascia Real Madrid: operazione da 1,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Linares Deportivo",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,6 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-3948-1fb8aa94de469bc8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155048-1f26209656bf3f9c.png",
+    "alt": "Álex Pérez"
+  }
+}

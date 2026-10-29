@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-440e7a05b42eff63599989e6",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Óscar Mingueza",
+  "text": "Atlético Madrid annuncia l’arrivo di Óscar Mingueza. Il giocatore lascia Crystal Palace: operazione da 13,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Crystal Palace",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "13,1 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-global-club-27-600c1549f0634245.png",
+    "to_logo": "market-club-93399639-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-99179-749ea6ca3d77b9c5.png",
+    "alt": "Óscar Mingueza"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-84ded45f6f5c1038c263fcb8",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Caudal Deportivo: ufficiale l’arrivo di Álvaro Ginés",
+  "text": "Caudal Deportivo annuncia l’arrivo di Álvaro Ginés. Il giocatore lascia Real Madrid: operazione da 6,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Caudal Deportivo",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,1 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-1655-a14d0705a1661697.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137253-6a106a4b3d3ae5ed.png",
+    "alt": "Álvaro Ginés"
+  }
+}

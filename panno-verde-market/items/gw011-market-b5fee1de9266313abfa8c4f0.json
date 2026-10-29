@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-b5fee1de9266313abfa8c4f0",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Gimnástica Torrelavega: ufficiale l’arrivo di Miguel Cubo",
+  "text": "Gimnástica Torrelavega annuncia l’arrivo di Miguel Cubo. Il giocatore lascia Atlético Madrid: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Gimnástica Torrelavega",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-2090-72cc6494971c19e8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-166750-e5db453234ccb820.png",
+    "alt": "Miguel Cubo"
+  }
+}

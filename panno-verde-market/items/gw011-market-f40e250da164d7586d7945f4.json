@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f40e250da164d7586d7945f4",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "AC Prato: ufficiale l’arrivo di Luigi D'Avino",
+  "text": "AC Prato annuncia l’arrivo di Luigi D'Avino. Il giocatore lascia SSC Napoli: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Napoli",
+    "to": "AC Prato",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "to_logo": "market-global-club-1807-dafedb8fef077a8c.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137401-c2925f11b0e5d05d.png",
+    "alt": "Luigi D'Avino"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-08816f0f9a5681cde267f209",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "CF Villanovense: ufficiale l’arrivo di Ferrán Quetglas",
+  "text": "CF Villanovense annuncia l’arrivo di Ferrán Quetglas. Il giocatore lascia Real Madrid: operazione da 8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "CF Villanovense",
+    "formula": "Trasferimento definitivo",
+    "amount": "8 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-2105-d2d0478ef8bc2337.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137276-8a12c4a439cfc133.png",
+    "alt": "Ferrán Quetglas"
+  }
+}

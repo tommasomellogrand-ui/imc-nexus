@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-30492cdbe8e61ad0b478407d",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Sparta Praha: ufficiale l’arrivo di Vitezslav Jaros",
+  "text": "Sparta Praha annuncia l’arrivo di Vitezslav Jaros. Il giocatore lascia Liverpool: operazione da 2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Sparta Praha",
+    "formula": "Trasferimento definitivo",
+    "amount": "2 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-369-2e472900afbc2039.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-109271-c55b105f02581d4c.png",
+    "alt": "Vitezslav Jaros"
+  }
+}

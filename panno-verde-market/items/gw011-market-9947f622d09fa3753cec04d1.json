@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-9947f622d09fa3753cec04d1",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "UD Vecindario: ufficiale l’arrivo di Adam Argemí",
+  "text": "UD Vecindario annuncia l’arrivo di Adam Argemí. Il giocatore lascia Barcelona: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "UD Vecindario",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-854-ee70b60c17883f1a.jpg"
+  },
+  "editorial_version": 3
+}

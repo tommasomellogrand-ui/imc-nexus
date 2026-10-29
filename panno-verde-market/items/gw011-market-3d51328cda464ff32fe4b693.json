@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-3d51328cda464ff32fe4b693",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Eintracht Trier: ufficiale l’arrivo di Arne Wessels",
+  "text": "Eintracht Trier annuncia l’arrivo di Arne Wessels. Il giocatore lascia Borussia Dortmund: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Borussia Dortmund",
+    "to": "Eintracht Trier",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "to_logo": "market-global-club-1794-1db22c95f00e7041.jpg"
+  },
+  "editorial_version": 3
+}

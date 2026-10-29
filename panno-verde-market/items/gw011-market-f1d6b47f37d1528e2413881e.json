@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-f1d6b47f37d1528e2413881e",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "SGV Freiberg: ufficiale l’arrivo di Chivano Wijks",
+  "text": "SGV Freiberg annuncia l’arrivo di Chivano Wijks. Il giocatore lascia Bayern München: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "SGV Freiberg",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-6358-e19053140dc07169.png"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a2390775a1e2b24e6766b495",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Real Sociedad: ufficiale l’arrivo di Kang-In Lee",
+  "text": "Real Sociedad annuncia l’arrivo di Kang-In Lee. Il giocatore lascia Atlético Madrid: operazione da 16 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Real Sociedad",
+    "formula": "Trasferimento definitivo",
+    "amount": "16 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-165-2dcaa8ad5f0a7214.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-97582-e1cbeddb132dfe7f.png",
+    "alt": "Kang-In Lee"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d3c4f971146dc41be2c52f62",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "FC Schalke 04 II: ufficiale l’arrivo di Jannis Bärtl",
+  "text": "FC Schalke 04 II annuncia l’arrivo di Jannis Bärtl. Il giocatore lascia Bayern München: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "FC Schalke 04 II",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-2466-b9705757f7171244.jpg"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-164257-8b6d3bf231ffde76.png",
+    "alt": "Jannis Bärtl"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-7dd9c5f931f13e1b495f130c",
+  "published_at": "2026-10-28T00:00:00+01:00",
+  "title": "Guidonia Montecelio 1937: ufficiale l’arrivo di Alessio Guerini",
+  "text": "Guidonia Montecelio 1937 annuncia l’arrivo di Alessio Guerini. Il giocatore lascia Atalanta BC: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "Guidonia Montecelio 1937",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-28",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-6843-2cd44ad73dfc9bfd.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149187-16e3b52748ad804e.png",
+    "alt": "Alessio Guerini"
+  }
+}

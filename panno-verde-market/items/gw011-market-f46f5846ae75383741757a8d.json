@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f46f5846ae75383741757a8d",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "SD Leioa: ufficiale l’arrivo di Daniel Rubio",
+  "text": "SD Leioa annuncia l’arrivo di Daniel Rubio. Il giocatore lascia Atlético Madrid: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "SD Leioa",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-3338-72ff14db11a67595.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162672-75bb77c28502d924.png",
+    "alt": "Daniel Rubio"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a03f6eaaa4c233b1cd973460",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Harrogate Town: ufficiale l’arrivo di Jack Wint",
+  "text": "Harrogate Town annuncia l’arrivo di Jack Wint. Il giocatore lascia Manchester City: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Harrogate Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-2859-e1ea5fc0674ed0d4.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-166727-a855d51fc16a1463.png",
+    "alt": "Jack Wint"
+  }
+}

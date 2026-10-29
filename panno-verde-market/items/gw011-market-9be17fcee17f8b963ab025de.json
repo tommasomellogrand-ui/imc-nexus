@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-9be17fcee17f8b963ab025de",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Nuneaton Borough: ufficiale l’arrivo di Emilio Lawrence",
+  "text": "Nuneaton Borough annuncia l’arrivo di Emilio Lawrence. Il giocatore lascia Manchester City: operazione da 4,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Nuneaton Borough",
+    "formula": "Trasferimento definitivo",
+    "amount": "4,1 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-2038-f1130220f6cd9dff.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137211-fa9d8ffbab558bf8.png",
+    "alt": "Emilio Lawrence"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-c6653bf1c5e3c3f78f67b8da",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "FC Oberlausitz Neugersdorf: ufficiale l’arrivo di Oluwaseyi Wilson",
+  "text": "FC Oberlausitz Neugersdorf annuncia l’arrivo di Oluwaseyi Wilson. Il giocatore lascia Bayern München: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "FC Oberlausitz Neugersdorf",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-3968-d000c7168ea3fd01.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-162163-e63aa672fc53ff26.png",
+    "alt": "Oluwaseyi Wilson"
+  }
+}

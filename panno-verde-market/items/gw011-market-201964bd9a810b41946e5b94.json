@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-201964bd9a810b41946e5b94",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Maidstone United: ufficiale l’arrivo di Archie Stevens",
+  "text": "Maidstone United annuncia l’arrivo di Archie Stevens. Il giocatore lascia Arsenal: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "transfer": {
+    "from": "Arsenal",
+    "to": "Maidstone United",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399501-33ef41943a141618.png",
+    "to_logo": "market-global-club-3892-6b221e4ae13393a7.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-165861-2b6f1c0c69afc8bd.png",
+    "alt": "Archie Stevens"
+  }
+}

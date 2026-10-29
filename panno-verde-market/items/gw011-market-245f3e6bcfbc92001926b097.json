@@ -1,0 +1,25 @@
+{
+  "id": "gw011-market-245f3e6bcfbc92001926b097",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Güzide Gebze: ufficiale l’arrivo di Berkay Karaca",
+  "text": "Güzide Gebze annuncia l’arrivo di Berkay Karaca. Il giocatore lascia AC Milan: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "Güzide Gebze",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png"
+  },
+  "editorial_version": 3
+}

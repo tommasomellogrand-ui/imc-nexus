@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-69d432a237c12805b4e601e3",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "UD Somozas: ufficiale l’arrivo di Ibrahim Diarra",
+  "text": "UD Somozas annuncia l’arrivo di Ibrahim Diarra. Il giocatore lascia Barcelona: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "UD Somozas",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-3331-0b52f0a00eaf4dac.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-154655-fc3235f95301d813.png",
+    "alt": "Ibrahim Diarra"
+  }
+}

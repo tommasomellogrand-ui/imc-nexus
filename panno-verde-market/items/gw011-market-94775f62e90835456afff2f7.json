@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-94775f62e90835456afff2f7",
+  "published_at": "2026-10-27T00:00:00+01:00",
+  "title": "Scarborough Athletic: ufficiale l’arrivo di Spike Brits",
+  "text": "Scarborough Athletic annuncia l’arrivo di Spike Brits. Il giocatore lascia Manchester City: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Scarborough Athletic",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-4076-00df1b2d48813eee.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-157611-b1f7c7459fcc046b.png",
+    "alt": "Spike Brits"
+  }
+}
