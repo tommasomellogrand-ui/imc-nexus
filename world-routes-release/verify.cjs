@@ -20,7 +20,9 @@ const {chromium}=require('playwright');
  await page.locator('#sort').selectOption('value');
  await page.locator('#search').fill('zzzz-no-match');if(await page.locator('tbody tr').count())throw Error('Search filter failed');
  await page.locator('#search').fill('');await page.screenshot({path:'/tmp/world-routes-club-mobile.png',fullPage:true});
- console.log('PASS live roster, eligibility, sorting, search');
+ if(await page.locator('#nx-world-select').inputValue()!=='GW011')throw Error('Wrong Nexus world');
+ for(const width of [390,1280]){await page.setViewportSize({width,height:900});await page.screenshot({path:'/tmp/world-routes-roster-'+width+'.png',fullPage:true});const layout=await page.evaluate(()=>({columns:getComputedStyle(document.querySelector('tbody')).gridTemplateColumns.split(' ').length,overflow:document.documentElement.scrollWidth>innerWidth}));if(layout.columns!==(width===390?2:3)||layout.overflow)throw Error('Roster layout '+JSON.stringify(layout));}
+ console.log('PASS live roster, eligibility, sorting, search, Nexus shell and compact grids');
  if(errors.length)throw Error('JS errors: '+errors.join(';'));
  console.log('PASS legacy redirect, competition, desktop/mobile, JS');
  }finally{await browser.close()}})().catch(e=>{console.error(e);process.exit(1)});
