@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-9c6c2acda6195eb5041f885b",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "FSV Zwickau: ufficiale l’arrivo di Vincent Manuba",
+  "text": "FSV Zwickau annuncia l’arrivo di Vincent Manuba. Il giocatore lascia Bayern München: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "FSV Zwickau",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-3984-e4f84dcc847a5cb5.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-138652-461a2207afe5b5cc.png",
+    "alt": "Vincent Manuba"
+  }
+}

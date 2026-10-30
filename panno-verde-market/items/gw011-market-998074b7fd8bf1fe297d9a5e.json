@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-998074b7fd8bf1fe297d9a5e",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "CD Lugo: ufficiale l’arrivo di Alan Godoy",
+  "text": "CD Lugo annuncia l’arrivo di Alan Godoy. Il giocatore lascia Barcelona: operazione da 416.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "CD Lugo",
+    "formula": "Trasferimento definitivo",
+    "amount": "416.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-1681-d3f2c81a67707737.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-118058-2322eafd7faead28.png",
+    "alt": "Alan Godoy"
+  }
+}

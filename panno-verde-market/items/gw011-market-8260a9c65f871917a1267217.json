@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-8260a9c65f871917a1267217",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "FC Francavilla: ufficiale l’arrivo di Jacopo Simonetta",
+  "text": "FC Francavilla annuncia l’arrivo di Jacopo Simonetta. Il giocatore lascia Como 1907: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Como 1907",
+    "to": "FC Francavilla",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "to_logo": "market-global-club-4442-d1babfe5c8f65a02.png"
+  },
+  "editorial_version": 3
+}

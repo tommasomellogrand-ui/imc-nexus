@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-239c4fcfefa2f621e4f245da",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Palermo FC: ufficiale l’arrivo di Konstantinos Koulierakis",
+  "text": "Palermo FC annuncia l’arrivo di Konstantinos Koulierakis. Il giocatore lascia AS Roma: operazione da 12,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "Palermo FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,2 milioni di euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399623-4f2820912276f496.png",
+    "to_logo": "market-global-club-117-25823d0fe372f873.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-125240-4507b08fcefdb787.png",
+    "alt": "Konstantinos Koulierakis"
+  }
+}

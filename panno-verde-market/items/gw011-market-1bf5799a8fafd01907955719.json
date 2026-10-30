@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-1bf5799a8fafd01907955719",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "ASD Manfredonia: ufficiale l’arrivo di Henry Camara",
+  "text": "ASD Manfredonia annuncia l’arrivo di Henry Camara. Il giocatore lascia Atalanta BC: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "ASD Manfredonia",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-890-149a19978fd51ad3.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-151635-7192a0c970e92dd4.png",
+    "alt": "Henry Camara"
+  }
+}

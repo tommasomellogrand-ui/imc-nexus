@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a63dc5aaba1bf1fa62ab44f1",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "FC United of Manchester: ufficiale l’arrivo di Dujuan Richards",
+  "text": "FC United of Manchester annuncia l’arrivo di Dujuan Richards. Il giocatore lascia Chelsea: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "FC United of Manchester",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-3570-0db96a71c8af6a72.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-132415-0e3522c355680194.png",
+    "alt": "Dujuan Richards"
+  }
+}

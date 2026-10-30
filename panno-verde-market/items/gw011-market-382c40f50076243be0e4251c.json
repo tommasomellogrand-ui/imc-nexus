@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-382c40f50076243be0e4251c",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Barnet: ufficiale l’arrivo di Jack Moorhouse",
+  "text": "Barnet annuncia l’arrivo di Jack Moorhouse. Il giocatore lascia Manchester United: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester United",
+    "to": "Barnet",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "to_logo": "market-global-club-614-d5f2895d47d493bb.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150084-cfed60c993be57d0.png",
+    "alt": "Jack Moorhouse"
+  }
+}

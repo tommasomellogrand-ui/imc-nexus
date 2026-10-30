@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-27640e8aade188dfaa121620",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "ASD Chieri: ufficiale l’arrivo di Emanuele Zanaboni",
+  "text": "ASD Chieri annuncia l’arrivo di Emanuele Zanaboni. Il giocatore lascia Atalanta BC: operazione da 808.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "ASD Chieri",
+    "formula": "Trasferimento definitivo",
+    "amount": "808.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-3888-40f892bc6916b007.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-153039-e9d9c172dfddc2a7.png",
+    "alt": "Emanuele Zanaboni"
+  }
+}

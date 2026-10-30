@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-4b3a19d1bbb8dba60cac9b2c",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "US Massese 1919: ufficiale l’arrivo di Pietro Tornaghi",
+  "text": "US Massese 1919 annuncia l’arrivo di Pietro Tornaghi. Il giocatore lascia Atalanta BC: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "US Massese 1919",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-863-1498850cbc4993cb.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150464-0adefd8bd6c3b1c5.png",
+    "alt": "Pietro Tornaghi"
+  }
+}

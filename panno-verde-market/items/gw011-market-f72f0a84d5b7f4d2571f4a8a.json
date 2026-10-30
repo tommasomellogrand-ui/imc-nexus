@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-f72f0a84d5b7f4d2571f4a8a",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "UD Somozas: ufficiale l’arrivo di Álex González",
+  "text": "UD Somozas annuncia l’arrivo di Álex González. Il giocatore lascia Barcelona: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "UD Somozas",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-3331-0b52f0a00eaf4dac.png"
+  },
+  "editorial_version": 3
+}

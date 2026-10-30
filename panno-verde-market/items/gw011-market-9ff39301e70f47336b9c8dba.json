@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-9ff39301e70f47336b9c8dba",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "AC Trento: ufficiale l’arrivo di Iacopo Regonesi",
+  "text": "AC Trento annuncia l’arrivo di Iacopo Regonesi. Il giocatore lascia Atalanta BC: operazione da 333.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "AC Trento",
+    "formula": "Trasferimento definitivo",
+    "amount": "333.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-5234-e4355cac9805982f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-136827-f49bca48cecdaa46.png",
+    "alt": "Iacopo Regonesi"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-75c8661491fd5e5d165feace",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Linares Deportivo: ufficiale l’arrivo di Alber Castelau",
+  "text": "Linares Deportivo annuncia l’arrivo di Alber Castelau. Il giocatore lascia Real Madrid: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Linares Deportivo",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-3948-1fb8aa94de469bc8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-176480-23f2735570c564e7.png",
+    "alt": "Alber Castelau"
+  }
+}

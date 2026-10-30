@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-895c0bd50502a36998bd0516",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Virtus Francavilla: ufficiale l’arrivo di Nicolò Baldo",
+  "text": "Virtus Francavilla annuncia l’arrivo di Nicolò Baldo. Il giocatore lascia Atalanta BC: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "Virtus Francavilla",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-4538-6265492ea8ee0cd0.jpg"
+  },
+  "editorial_version": 3
+}

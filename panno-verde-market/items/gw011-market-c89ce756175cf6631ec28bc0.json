@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-c89ce756175cf6631ec28bc0",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "USD Sestri Levante: ufficiale l’arrivo di Marco Leandri",
+  "text": "USD Sestri Levante annuncia l’arrivo di Marco Leandri. Il giocatore lascia Atalanta BC: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "USD Sestri Levante",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-4737-4f2c337fde51ecfe.png"
+  },
+  "editorial_version": 3
+}

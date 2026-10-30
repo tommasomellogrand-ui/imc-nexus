@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-21b8f25d41ba7a385e62d6e8",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "CD Izarra: ufficiale l’arrivo di Alex Walton",
+  "text": "CD Izarra annuncia l’arrivo di Alex Walton. Il giocatore lascia Barcelona: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "CD Izarra",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-2155-13e595150510ac89.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155062-cdd2aada4aa9f20a.png",
+    "alt": "Alex Walton"
+  }
+}

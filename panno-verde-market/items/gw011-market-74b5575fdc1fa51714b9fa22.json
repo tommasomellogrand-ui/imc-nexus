@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-74b5575fdc1fa51714b9fa22",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Billericay Town: ufficiale l’arrivo di Harrison Parker",
+  "text": "Billericay Town annuncia l’arrivo di Harrison Parker. Il giocatore lascia Manchester City: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Billericay Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-4068-5bcd4bba459ab1a1.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150163-050cae401b8104b0.png",
+    "alt": "Harrison Parker"
+  }
+}

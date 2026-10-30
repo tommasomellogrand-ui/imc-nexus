@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-9bfa04fde6e2a3f698852acd",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Brindisi FC: ufficiale l’arrivo di Francesco Andrealli",
+  "text": "Brindisi FC annuncia l’arrivo di Francesco Andrealli. Il giocatore lascia Como 1907: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "Como 1907",
+    "to": "Brindisi FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "to_logo": "market-global-club-6186-03359107094a5ced.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-158367-1dc07ec0c79bf7d9.png",
+    "alt": "Francesco Andrealli"
+  }
+}

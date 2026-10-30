@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-fe47d97c71716c8f11fd947c",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "SSV Jeddeloh: ufficiale l’arrivo di Louis Richter",
+  "text": "SSV Jeddeloh annuncia l’arrivo di Louis Richter. Il giocatore lascia Bayern München: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "SSV Jeddeloh",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-5157-77ab4e979bd20df8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-141595-5e0e0d356d1315f1.png",
+    "alt": "Louis Richter"
+  }
+}

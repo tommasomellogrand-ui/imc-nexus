@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-8a199216e67fa5caaab1d664",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Leça FC: ufficiale l’arrivo di Ricardo Neto",
+  "text": "Leça FC annuncia l’arrivo di Ricardo Neto. Il giocatore lascia SL Benfica: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399718"
+  ],
+  "teams": [
+    {
+      "name": "SL Benfica",
+      "logo": "market-club-93399718-cd9bbf9dc40287fc.png"
+    }
+  ],
+  "transfer": {
+    "from": "SL Benfica",
+    "to": "Leça FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "to_logo": "market-global-club-5578-c00b11228b362a93.png"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-edfe69218e468a4850dd03a5",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "USD Sestri Levante: ufficiale l’arrivo di Luca Gobbo",
+  "text": "USD Sestri Levante annuncia l’arrivo di Luca Gobbo. Il giocatore lascia Atalanta BC: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "USD Sestri Levante",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-4737-4f2c337fde51ecfe.png"
+  },
+  "editorial_version": 3
+}
