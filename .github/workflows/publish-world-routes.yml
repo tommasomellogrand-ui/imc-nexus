@@ -1,0 +1,35 @@
+name: Publish Nexus world routes
+on:
+  push:
+    branches: [main]
+    paths: ['world-routes-release/**','.github/workflows/publish-world-routes.yml']
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate source
+        run: |
+          node --check world-routes-release/site/context.js
+          find world-routes-release/site -name '*.php' -exec php -l {} \;
+          python3 -m py_compile world-routes-release/deploy.py
+          npm install --prefix /tmp/sd-qa playwright@1.56.1
+      - name: Publish and verify with rollback
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+          NODE_PATH: /tmp/sd-qa/node_modules
+        run: CHROME_BIN="$(command -v google-chrome)" python3 world-routes-release/deploy.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: world-routes-layout
+          path: /tmp/world-routes-*.png
