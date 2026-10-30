@@ -1,0 +1,19 @@
+name: Verify Europa October 30 public data
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verify-europa-oct30.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import json,urllib.request,time
+          base='https://www.italianmastersclub.it/nexus/competitions/imc-cups.php?world=GW001&season=2&competition=GW001_IMC_EUROPA_LEAGUE'
+          for mode in ['results','schedule','standings']:
+              data=json.load(urllib.request.urlopen(base+'&mode='+mode+'&nocache='+str(time.time()),timeout=30))
+              print(mode,json.dumps(data,ensure_ascii=False))
+          PY
