@@ -12,6 +12,15 @@ const {chromium}=require('playwright');
  await page.locator('[data-rising-stars]').click();await page.waitForLoadState('networkidle');
  if(!page.url().includes('/gw011/risingstarsleague/'))throw Error('Competition link failed');
  for(const width of [1280,390]){await page.setViewportSize({width,height:900});await page.screenshot({path:'/tmp/world-routes-'+width+'.png',fullPage:true});const ok=await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&[...document.images].every(i=>i.complete&&i.naturalWidth>0));if(!ok)throw Error('Layout/image failed '+width)}
+ await page.goto(base+'gw011/risingstarsleague/club/',{waitUntil:'domcontentloaded'});
+ await page.waitForFunction(()=>document.querySelectorAll('.card').length===20,{},{timeout:120000});
+ const total=await page.locator('#summary').innerText();console.log('PASS live clubs: '+total.replace(/\n/g,' '));
+ await page.locator('.card').first().click();await page.waitForFunction(()=>document.querySelectorAll('tbody tr').length>0,{},{timeout:120000});
+ const dates=await page.locator('tbody tr').evaluateAll(rows=>rows.map(r=>r.cells[2].textContent.split('/').reverse().join('-')));if(dates.some(d=>d<'2004-10-15'))throw Error('Ineligible DOB rendered');
+ await page.locator('#sort').selectOption('value');
+ await page.locator('#search').fill('zzzz-no-match');if(await page.locator('tbody tr').count())throw Error('Search filter failed');
+ await page.locator('#search').fill('');await page.screenshot({path:'/tmp/world-routes-club-mobile.png',fullPage:true});
+ console.log('PASS live roster, eligibility, sorting, search');
  if(errors.length)throw Error('JS errors: '+errors.join(';'));
  console.log('PASS legacy redirect, competition, desktop/mobile, JS');
  }finally{await browser.close()}})().catch(e=>{console.error(e);process.exit(1)});
