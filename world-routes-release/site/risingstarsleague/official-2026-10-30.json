@@ -1,0 +1,4948 @@
+{
+  "official_date": "2026-10-30",
+  "captured_at": "2026-10-30T08:25:52.976Z",
+  "timezone": "Europe/Rome",
+  "world": "GW011",
+  "eligibility": "DOB >= 2004-10-15 inclusive; active rosters joined to current Codex by player ID",
+  "formula": "50 * mean_rating / max_mean_rating + 50 * mean_value / max_mean_value",
+  "max_mean_rating": 80.1025641025641,
+  "max_mean_value": 6299333.333333333,
+  "assignments_fixed": true,
+  "rows": [
+    {
+      "club_id": 93399838,
+      "name": "Paris Saint-Germain",
+      "manager": "Luciano Catalano",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/338.png",
+      "count": 30,
+      "rating": 79.7,
+      "value": 6299333.333333333,
+      "score": 99.74871959026888,
+      "players": [
+        {
+          "id": 123912,
+          "name": "Désiré DOUÉ",
+          "dob": "2005-06-03",
+          "rating": 93,
+          "value": 44000000
+        },
+        {
+          "id": 124293,
+          "name": "Mika GODTS",
+          "dob": "2005-06-07",
+          "rating": 87,
+          "value": 10000000
+        },
+        {
+          "id": 122857,
+          "name": "Yarek GASIOROWSKI",
+          "dob": "2005-01-12",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 124257,
+          "name": "Joaquin SEYS",
+          "dob": "2005-03-28",
+          "rating": 87,
+          "value": 7000000
+        },
+        {
+          "id": 124992,
+          "name": "Arthur VERMEEREN",
+          "dob": "2005-02-07",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 135182,
+          "name": "Ibrahim MAZA",
+          "dob": "2005-11-24",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 121204,
+          "name": "Warren ZAÏRE-EMERY",
+          "dob": "2006-03-08",
+          "rating": 92,
+          "value": 40000000
+        },
+        {
+          "id": 152908,
+          "name": "Abdelhamid AIT BOUDLAL",
+          "dob": "2006-04-16",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 166847,
+          "name": "Adam AYARI",
+          "dob": "2008-03-30",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 165700,
+          "name": "Aleksa DAMJANOVIĆ",
+          "dob": "2008-12-04",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 149452,
+          "name": "Alessandro LONGONI",
+          "dob": "2008-01-31",
+          "rating": 65,
+          "value": 180000
+        },
+        {
+          "id": 154627,
+          "name": "August DE WANNEMACKER",
+          "dob": "2008-12-25",
+          "rating": 75,
+          "value": 600000
+        },
+        {
+          "id": 174774,
+          "name": "Axel KOUKABA",
+          "dob": "2010-01-07",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 166758,
+          "name": "Carlos MACIÀ",
+          "dob": "2008-09-01",
+          "rating": 78,
+          "value": 1000000
+        },
+        {
+          "id": 167194,
+          "name": "David BOLY",
+          "dob": "2009-01-22",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 174777,
+          "name": "Edem GHALLEB",
+          "dob": "2008-07-23",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 165632,
+          "name": "Giovanni BARONI",
+          "dob": "2009-01-21",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 125072,
+          "name": "Givairo READ",
+          "dob": "2006-06-02",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 122900,
+          "name": "Guillaume RESTES",
+          "dob": "2005-03-11",
+          "rating": 87,
+          "value": 12000000
+        },
+        {
+          "id": 175910,
+          "name": "Iago MACHADO",
+          "dob": "2009-02-17",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 139925,
+          "name": "Ibrahima BA",
+          "dob": "2005-05-26",
+          "rating": 83,
+          "value": 2600000
+        },
+        {
+          "id": 172841,
+          "name": "Ignacio FERNÁNDEZ",
+          "dob": "2008-12-11",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 127511,
+          "name": "Luka VUŠKOVIĆ",
+          "dob": "2007-02-24",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 151673,
+          "name": "Massimo PESSINA",
+          "dob": "2007-12-25",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 133552,
+          "name": "Matias FERNANDEZ-PARDO",
+          "dob": "2005-02-03",
+          "rating": 87,
+          "value": 7000000
+        },
+        {
+          "id": 161869,
+          "name": "Moncef ZEKRI",
+          "dob": "2008-09-20",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 162168,
+          "name": "Quentin NDJANTOU",
+          "dob": "2007-07-23",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 143445,
+          "name": "Senny MAYULU",
+          "dob": "2006-05-17",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 161286,
+          "name": "Stephan ZAGADOU",
+          "dob": "2008-10-24",
+          "rating": 77,
+          "value": 800000
+        },
+        {
+          "id": 154028,
+          "name": "Vasilije NOVIČIĆ",
+          "dob": "2008-05-07",
+          "rating": 80,
+          "value": 1400000
+        }
+      ],
+      "rank": 1,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93399663,
+      "name": "Real Madrid",
+      "manager": "Attilio Bonnici",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/163.png",
+      "count": 39,
+      "rating": 80.1025641025641,
+      "value": 5247692.307692308,
+      "score": 91.65275934775353,
+      "players": [
+        {
+          "id": 129147,
+          "name": "Dean HUIJSEN",
+          "dob": "2005-04-14",
+          "rating": 91,
+          "value": 32000000
+        },
+        {
+          "id": 114505,
+          "name": "Arda GÜLER",
+          "dob": "2005-02-25",
+          "rating": 91,
+          "value": 36000000
+        },
+        {
+          "id": 161076,
+          "name": "Yan DIOMANDE",
+          "dob": "2006-11-14",
+          "rating": 90,
+          "value": 24000000
+        },
+        {
+          "id": 149881,
+          "name": "Aaron BOUWMAN",
+          "dob": "2007-08-28",
+          "rating": 80,
+          "value": 2400000
+        },
+        {
+          "id": 155041,
+          "name": "Aimar SANTIAGO",
+          "dob": "2006-06-08",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 176480,
+          "name": "Alber CASTELAU",
+          "dob": "2009-01-13",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 133499,
+          "name": "Álex JIMÉNEZ",
+          "dob": "2005-05-08",
+          "rating": 87,
+          "value": 7000000
+        },
+        {
+          "id": 158334,
+          "name": "Alexis CIRIA",
+          "dob": "2008-01-04",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 165497,
+          "name": "André LUIZ",
+          "dob": "2006-06-20",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 113618,
+          "name": "Antonio NUSA",
+          "dob": "2005-04-17",
+          "rating": 89,
+          "value": 16000000
+        },
+        {
+          "id": 146902,
+          "name": "Carlos ESPÍ",
+          "dob": "2005-07-24",
+          "rating": 85,
+          "value": 6000000
+        },
+        {
+          "id": 150468,
+          "name": "Cavan SULLIVAN",
+          "dob": "2009-09-28",
+          "rating": 80,
+          "value": 2400000
+        },
+        {
+          "id": 150291,
+          "name": "Chema ANDRÉS",
+          "dob": "2005-04-25",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 149623,
+          "name": "Daniel MESONERO",
+          "dob": "2005-09-03",
+          "rating": 76,
+          "value": 1200000
+        },
+        {
+          "id": 152098,
+          "name": "Dayann METHALIE",
+          "dob": "2006-02-15",
+          "rating": 85,
+          "value": 4000000
+        },
+        {
+          "id": 151720,
+          "name": "Edoardo MOTTA",
+          "dob": "2005-01-13",
+          "rating": 83,
+          "value": 2800000
+        },
+        {
+          "id": 169673,
+          "name": "Eduardo CONCEIÇÃO",
+          "dob": "2009-12-07",
+          "rating": 70,
+          "value": 600000
+        },
+        {
+          "id": 117462,
+          "name": "Felipe ENDRICK",
+          "dob": "2006-07-21",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 155027,
+          "name": "Flávio GONÇALVES",
+          "dob": "2007-05-30",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 155033,
+          "name": "Guille PONCE",
+          "dob": "2009-03-10",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 151474,
+          "name": "Ibrahim MBAYE",
+          "dob": "2008-01-24",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 140176,
+          "name": "Jon MARTÍN",
+          "dob": "2006-04-23",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 155928,
+          "name": "Jorge CESTERO",
+          "dob": "2006-03-24",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 154502,
+          "name": "Jorge SALINAS",
+          "dob": "2007-04-03",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 165538,
+          "name": "Leonel FLORES",
+          "dob": "2007-02-06",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 176474,
+          "name": "Marcos VIEGA",
+          "dob": "2007-01-12",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 155901,
+          "name": "Nazar DOMCHAK",
+          "dob": "2007-04-06",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 162213,
+          "name": "Noah FERNANDEZ",
+          "dob": "2008-01-09",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 155044,
+          "name": "Óscar MESA",
+          "dob": "2006-07-03",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 156226,
+          "name": "Otávio COSTA",
+          "dob": "2005-12-27",
+          "rating": 77,
+          "value": 500000
+        },
+        {
+          "id": 128224,
+          "name": "Paris BRUNNER",
+          "dob": "2006-02-15",
+          "rating": 80,
+          "value": 1600000
+        },
+        {
+          "id": 137028,
+          "name": "Rachad FETTAL",
+          "dob": "2005-01-16",
+          "rating": 75,
+          "value": 600000
+        },
+        {
+          "id": 155035,
+          "name": "Roberto MARTÍN",
+          "dob": "2006-08-12",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 137275,
+          "name": "Sergi DOMÍNGUEZ",
+          "dob": "2005-04-01",
+          "rating": 85,
+          "value": 3000000
+        },
+        {
+          "id": 165965,
+          "name": "Sergio MARTÍNEZ",
+          "dob": "2007-05-15",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 164465,
+          "name": "Thiago PITARCH",
+          "dob": "2007-08-03",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 164537,
+          "name": "Tylel TATI",
+          "dob": "2008-01-19",
+          "rating": 82,
+          "value": 2800000
+        },
+        {
+          "id": 155043,
+          "name": "Víctor VALDEPEÑAS",
+          "dob": "2006-10-20",
+          "rating": 80,
+          "value": 2400000
+        },
+        {
+          "id": 141747,
+          "name": "William GOMES",
+          "dob": "2006-03-15",
+          "rating": 86,
+          "value": 6000000
+        }
+      ],
+      "rank": 2,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93399640,
+      "name": "Barcelona",
+      "manager": "Giuseppe Trovato",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/140.png",
+      "count": 50,
+      "rating": 75.4,
+      "value": 4199200,
+      "score": 80.39517185662393,
+      "players": [
+        {
+          "id": 139751,
+          "name": "Pau CUBARSÍ",
+          "dob": "2007-01-22",
+          "rating": 92,
+          "value": 40000000
+        },
+        {
+          "id": 126898,
+          "name": "Lamine YAMAL",
+          "dob": "2007-07-13",
+          "rating": 95,
+          "value": 80000000
+        },
+        {
+          "id": 143879,
+          "name": "Pau NAVARRO",
+          "dob": "2005-04-25",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 137277,
+          "name": "Jacobo RAMÓN",
+          "dob": "2005-01-06",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 155063,
+          "name": "Jan VIRGILI",
+          "dob": "2006-07-26",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 152799,
+          "name": "João SIMÕES",
+          "dob": "2007-01-06",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 139611,
+          "name": "Marc BERNAL",
+          "dob": "2007-05-26",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 114874,
+          "name": "Matthieu EPOLO",
+          "dob": "2005-01-15",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 153540,
+          "name": "Jaydee CANVOT",
+          "dob": "2006-07-29",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 124757,
+          "name": "Malick FOFANA",
+          "dob": "2005-03-31",
+          "rating": 88,
+          "value": 10000000
+        },
+        {
+          "id": 155930,
+          "name": "Adri MEHMETI",
+          "dob": "2009-04-06",
+          "rating": 77,
+          "value": 800000
+        },
+        {
+          "id": 174722,
+          "name": "Adrián CUADRADO",
+          "dob": "2009-03-10",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 176458,
+          "name": "Álex GONZÁLEZ",
+          "dob": "2007-02-02",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 155062,
+          "name": "Alex WALTON",
+          "dob": "2006-04-12",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 174714,
+          "name": "Artem RYBAK",
+          "dob": "2010-04-17",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 152271,
+          "name": "Aziz ISSAH",
+          "dob": "2005-11-20",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 167465,
+          "name": "Believe MUNONGO",
+          "dob": "2009-11-23",
+          "rating": 78,
+          "value": 1000000
+        },
+        {
+          "id": 165003,
+          "name": "Cristiano JÚNIOR",
+          "dob": "2010-06-17",
+          "rating": 65,
+          "value": 180000
+        },
+        {
+          "id": 155055,
+          "name": "Dro FERNÁNDEZ",
+          "dob": "2008-01-12",
+          "rating": 82,
+          "value": 2800000
+        },
+        {
+          "id": 173560,
+          "name": "Ebenezer HARCOURT",
+          "dob": "2009-10-21",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 154516,
+          "name": "Elie MBAVU",
+          "dob": "2009-10-20",
+          "rating": 75,
+          "value": 380000
+        },
+        {
+          "id": 162209,
+          "name": "Fabian MERIÉN",
+          "dob": "2008-09-26",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 166596,
+          "name": "Gerard SALA",
+          "dob": "2008-01-25",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 162676,
+          "name": "Hafiz GARIBA",
+          "dob": "2007-01-09",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 171193,
+          "name": "Jorge DOMÍNGUEZ",
+          "dob": "2009-12-21",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 129408,
+          "name": "Jorrel HATO",
+          "dob": "2006-03-07",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 168138,
+          "name": "José NETO",
+          "dob": "2008-04-19",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 163799,
+          "name": "Kevin FILLING",
+          "dob": "2008-11-30",
+          "rating": 76,
+          "value": 400000
+        },
+        {
+          "id": 154487,
+          "name": "Kyllian ANTONIO",
+          "dob": "2008-01-04",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 123572,
+          "name": "Landry FARRÉ",
+          "dob": "2007-01-07",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 173265,
+          "name": "Linus GÜTHER",
+          "dob": "2010-04-08",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 167923,
+          "name": "Lorenzo OERTLI",
+          "dob": "2008-03-26",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 171074,
+          "name": "Louis LEMKE",
+          "dob": "2009-10-08",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 159542,
+          "name": "Luca WEINHANDL",
+          "dob": "2009-01-11",
+          "rating": 76,
+          "value": 400000
+        },
+        {
+          "id": 171395,
+          "name": "Lushendry MARTES",
+          "dob": "2008-05-06",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 171361,
+          "name": "Marko SOLDIĆ",
+          "dob": "2010-01-06",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 128494,
+          "name": "Mert KÖMÜR",
+          "dob": "2005-07-17",
+          "rating": 85,
+          "value": 3000000
+        },
+        {
+          "id": 174170,
+          "name": "Mezian MESLOUB",
+          "dob": "2009-11-08",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 173195,
+          "name": "Niko ILICEVIC",
+          "dob": "2010-10-30",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 172173,
+          "name": "Nuhu FOFANA",
+          "dob": "2008-07-28",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 152056,
+          "name": "Pedro RODRÍGUEZ",
+          "dob": "2008-01-20",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 167808,
+          "name": "Pedro VILLAR",
+          "dob": "2008-01-11",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 176393,
+          "name": "Reggie WATSON",
+          "dob": "2010-01-26",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 170377,
+          "name": "Rémi HIMBERT",
+          "dob": "2008-02-29",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 149883,
+          "name": "Sean STEUR",
+          "dob": "2008-01-11",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 149622,
+          "name": "Shane KLUIVERT",
+          "dob": "2007-09-24",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 148692,
+          "name": "Toni FERNÁNDEZ",
+          "dob": "2008-07-15",
+          "rating": 78,
+          "value": 2000000
+        },
+        {
+          "id": 177222,
+          "name": "Tornike KVARATSKHELIA",
+          "dob": "2010-02-07",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 149629,
+          "name": "Xavi ESPART",
+          "dob": "2007-05-21",
+          "rating": 80,
+          "value": 2000000
+        },
+        {
+          "id": 157746,
+          "name": "Zé LUCAS",
+          "dob": "2008-02-23",
+          "rating": 80,
+          "value": 2400000
+        }
+      ],
+      "rank": 3,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93399521,
+      "name": "Chelsea",
+      "manager": "Pep Buitre",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/21.png",
+      "count": 37,
+      "rating": 76.29729729729729,
+      "value": 3661621.621621622,
+      "score": 76.68831800457995,
+      "players": [
+        {
+          "id": 128031,
+          "name": "Robin RISSER",
+          "dob": "2004-12-02",
+          "rating": 88,
+          "value": 14000000
+        },
+        {
+          "id": 141463,
+          "name": "Victor FROHOLDT",
+          "dob": "2006-02-25",
+          "rating": 89,
+          "value": 16000000
+        },
+        {
+          "id": 128879,
+          "name": "Willian ESTÊVÃO",
+          "dob": "2007-04-24",
+          "rating": 90,
+          "value": 24000000
+        },
+        {
+          "id": 136897,
+          "name": "Aaron ANSELMINO",
+          "dob": "2005-04-29",
+          "rating": 82,
+          "value": 2600000
+        },
+        {
+          "id": 168747,
+          "name": "Calvin DIAKITE",
+          "dob": "2009-04-07",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 136465,
+          "name": "Can UZUN",
+          "dob": "2005-11-11",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 168754,
+          "name": "Charlie HOLLAND",
+          "dob": "2009-07-03",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 157653,
+          "name": "Dastan SATPAEV",
+          "dob": "2008-08-12",
+          "rating": 80,
+          "value": 2400000
+        },
+        {
+          "id": 132415,
+          "name": "Dujuan RICHARDS",
+          "dob": "2005-11-10",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 168746,
+          "name": "Freddy BERNAL",
+          "dob": "2008-10-21",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 141301,
+          "name": "Geovany QUENDA",
+          "dob": "2007-04-30",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 159042,
+          "name": "Hamza ABDELKARIM",
+          "dob": "2008-01-01",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 137328,
+          "name": "Harrison MURRAY-CAMPBELL",
+          "dob": "2006-08-04",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 163177,
+          "name": "Ibrahim RABBAJ",
+          "dob": "2009-01-03",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 175361,
+          "name": "Isaac BADU",
+          "dob": "2009-12-05",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 126074,
+          "name": "Jair CUNHA",
+          "dob": "2005-03-07",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 154005,
+          "name": "Jay ROBINSON",
+          "dob": "2007-03-15",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 138305,
+          "name": "Johan MANZAMBI",
+          "dob": "2005-10-14",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 137324,
+          "name": "Josh ACHEAMPONG",
+          "dob": "2006-05-05",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 130091,
+          "name": "Kees SMIT",
+          "dob": "2006-01-21",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 129562,
+          "name": "Kendry PÁEZ",
+          "dob": "2007-05-04",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 138138,
+          "name": "Kian BEST",
+          "dob": "2005-08-27",
+          "rating": 75,
+          "value": 500000
+        },
+        {
+          "id": 161248,
+          "name": "Landon EMENALO",
+          "dob": "2008-01-18",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 171164,
+          "name": "Mahdi NICOLL-JAZULI",
+          "dob": "2010-01-06",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 168752,
+          "name": "Mathis EBOUÉ",
+          "dob": "2009-02-27",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 137351,
+          "name": "Max MERRICK",
+          "dob": "2005-11-10",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 168749,
+          "name": "Olutayo SUBULOYE",
+          "dob": "2007-12-18",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 161249,
+          "name": "Reggie WALSH",
+          "dob": "2008-10-20",
+          "rating": 73,
+          "value": 1000000
+        },
+        {
+          "id": 163109,
+          "name": "Ryan KAVUMA-MCQUEEN",
+          "dob": "2009-01-01",
+          "rating": 65,
+          "value": 340000
+        },
+        {
+          "id": 153807,
+          "name": "Semm RENDERS",
+          "dob": "2007-12-17",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 150072,
+          "name": "Shaun WADE",
+          "dob": "2006-09-29",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 151758,
+          "name": "Shumaira MHEUKA",
+          "dob": "2007-10-20",
+          "rating": 75,
+          "value": 380000
+        },
+        {
+          "id": 152234,
+          "name": "Tiago GABRIEL",
+          "dob": "2004-12-26",
+          "rating": 86,
+          "value": 7000000
+        },
+        {
+          "id": 139575,
+          "name": "Tidiam GOMIS",
+          "dob": "2006-08-08",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 135556,
+          "name": "Vitor RAYAN",
+          "dob": "2006-08-03",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 145056,
+          "name": "Yassir ZABIRI",
+          "dob": "2005-02-23",
+          "rating": 82,
+          "value": 2600000
+        },
+        {
+          "id": 166492,
+          "name": "Yisa ALAO",
+          "dob": "2008-11-17",
+          "rating": 70,
+          "value": 240000
+        }
+      ],
+      "rank": 4,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93399639,
+      "name": "Atlético Madrid",
+      "manager": "Tommaso Mello",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/139.png",
+      "count": 35,
+      "rating": 79.54285714285714,
+      "value": 3337714.285714286,
+      "score": 76.14323042711769,
+      "players": [
+        {
+          "id": 174720,
+          "name": "Abdou Kemo BADJI",
+          "dob": "2009-03-05",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 168187,
+          "name": "Ale GOMES",
+          "dob": "2008-02-14",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 146171,
+          "name": "Aleksey BATRAKOV",
+          "dob": "2005-06-09",
+          "rating": 88,
+          "value": 10000000
+        },
+        {
+          "id": 164788,
+          "name": "Alexis VOSSAH",
+          "dob": "2008-03-11",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 159601,
+          "name": "Christian KOFANE",
+          "dob": "2006-07-26",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 128324,
+          "name": "Christian MAWISSA",
+          "dob": "2005-04-18",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 141908,
+          "name": "David MUÑOZ",
+          "dob": "2005-02-05",
+          "rating": 70,
+          "value": 360000
+        },
+        {
+          "id": 141389,
+          "name": "Deniz DÖNMEZER",
+          "dob": "2008-09-21",
+          "rating": 76,
+          "value": 400000
+        },
+        {
+          "id": 142001,
+          "name": "Edgar ALCAÑIZ",
+          "dob": "2005-03-18",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 159578,
+          "name": "Filip MATIJASEVIĆ",
+          "dob": "2008-03-04",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 152461,
+          "name": "Gilberto MORA",
+          "dob": "2008-10-14",
+          "rating": 82,
+          "value": 2800000
+        },
+        {
+          "id": 174719,
+          "name": "Ian MENCÍA",
+          "dob": "2009-03-26",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 168422,
+          "name": "Izan COULIBALY",
+          "dob": "2006-07-30",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 155175,
+          "name": "Jacob AMBAEK",
+          "dob": "2008-03-28",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 162666,
+          "name": "Jorge RAJADO",
+          "dob": "2006-05-16",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 164018,
+          "name": "Kennet EICHHORN",
+          "dob": "2009-07-27",
+          "rating": 80,
+          "value": 2400000
+        },
+        {
+          "id": 136259,
+          "name": "Kyrylo DIGTYAR",
+          "dob": "2007-11-25",
+          "rating": 73,
+          "value": 1000000
+        },
+        {
+          "id": 119258,
+          "name": "Martim FERNANDES",
+          "dob": "2006-01-18",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 151906,
+          "name": "Matteo PALMA",
+          "dob": "2008-03-13",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 139927,
+          "name": "Matvey KISLYAK",
+          "dob": "2005-07-26",
+          "rating": 87,
+          "value": 7000000
+        },
+        {
+          "id": 124280,
+          "name": "Mike PENDERS",
+          "dob": "2005-07-31",
+          "rating": 87,
+          "value": 10000000
+        },
+        {
+          "id": 143496,
+          "name": "Nathan DE CAT",
+          "dob": "2008-07-19",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 172604,
+          "name": "Nathan MBALA",
+          "dob": "2008-02-19",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 124273,
+          "name": "Noah SADIKI",
+          "dob": "2004-12-17",
+          "rating": 88,
+          "value": 10000000
+        },
+        {
+          "id": 117449,
+          "name": "Paul WANNER",
+          "dob": "2005-12-23",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 139911,
+          "name": "Pietro COMUZZO",
+          "dob": "2005-02-20",
+          "rating": 87,
+          "value": 7000000
+        },
+        {
+          "id": 141616,
+          "name": "Rodrigo MENDOZA",
+          "dob": "2005-03-15",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 161284,
+          "name": "Rudy MATONDO",
+          "dob": "2008-03-13",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 161313,
+          "name": "Ruud NIJSTAD",
+          "dob": "2008-01-17",
+          "rating": 78,
+          "value": 1000000
+        },
+        {
+          "id": 149748,
+          "name": "Saba KHAREBASHVILI",
+          "dob": "2008-09-03",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 122136,
+          "name": "Tom ROTHE",
+          "dob": "2004-10-29",
+          "rating": 85,
+          "value": 4000000
+        },
+        {
+          "id": 153799,
+          "name": "Virgilio OLAYA",
+          "dob": "2008-02-03",
+          "rating": 73,
+          "value": 1000000
+        },
+        {
+          "id": 117952,
+          "name": "Vitor ROQUE",
+          "dob": "2005-02-28",
+          "rating": 87,
+          "value": 10000000
+        },
+        {
+          "id": 144810,
+          "name": "Will LANKSHEAR",
+          "dob": "2005-04-20",
+          "rating": 82,
+          "value": 2400000
+        },
+        {
+          "id": 168540,
+          "name": "Xander DIERCKX",
+          "dob": "2009-02-27",
+          "rating": 80,
+          "value": 2400000
+        }
+      ],
+      "rank": 5,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93399547,
+      "name": "Manchester City",
+      "manager": "Luca Nudo",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/47.png",
+      "count": 32,
+      "rating": 75.96875,
+      "value": 3003750,
+      "score": 71.2614829527754,
+      "players": [
+        {
+          "id": 132296,
+          "name": "Claudio ECHEVERRI",
+          "dob": "2006-01-02",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 140577,
+          "name": "Ayyoub BOUADDI",
+          "dob": "2007-10-02",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 129563,
+          "name": "Chris RIGG",
+          "dob": "2007-06-18",
+          "rating": 83,
+          "value": 3000000
+        },
+        {
+          "id": 125479,
+          "name": "Christian MCFARLANE",
+          "dob": "2007-01-25",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 174304,
+          "name": "Darren MOTSI",
+          "dob": "2010-07-11",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 127000,
+          "name": "Divin MUBAMA",
+          "dob": "2004-10-25",
+          "rating": 80,
+          "value": 2200000
+        },
+        {
+          "id": 157612,
+          "name": "Divine MUKASA",
+          "dob": "2007-08-22",
+          "rating": 80,
+          "value": 1600000
+        },
+        {
+          "id": 163381,
+          "name": "Eirik GRANAAS",
+          "dob": "2010-03-24",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 166729,
+          "name": "Floyd SAMBA",
+          "dob": "2009-01-15",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 171364,
+          "name": "Gabriel RAJKOVIC",
+          "dob": "2011-02-23",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 150163,
+          "name": "Harrison PARKER",
+          "dob": "2006-09-22",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 132367,
+          "name": "Jack HINSHELWOOD",
+          "dob": "2005-04-11",
+          "rating": 88,
+          "value": 10000000
+        },
+        {
+          "id": 159544,
+          "name": "Jeremy MONGA",
+          "dob": "2009-07-10",
+          "rating": 80,
+          "value": 2400000
+        },
+        {
+          "id": 166721,
+          "name": "Joshua NGA KANA",
+          "dob": "2009-06-13",
+          "rating": 75,
+          "value": 380000
+        },
+        {
+          "id": 153539,
+          "name": "Juma BAH",
+          "dob": "2006-04-11",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 153536,
+          "name": "Kaden BRAITHWAITE",
+          "dob": "2008-03-25",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 176735,
+          "name": "Marc SANTOS",
+          "dob": "2010-11-01",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 142007,
+          "name": "Max ALLEYNE",
+          "dob": "2005-07-21",
+          "rating": 80,
+          "value": 2000000
+        },
+        {
+          "id": 155767,
+          "name": "Max HUDSON",
+          "dob": "2007-09-20",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 165804,
+          "name": "Mustafa DURU",
+          "dob": "2009-05-22",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 137513,
+          "name": "Nico O'REILLY",
+          "dob": "2005-03-21",
+          "rating": 90,
+          "value": 24000000
+        },
+        {
+          "id": 163825,
+          "name": "Oliver WHATMUFF",
+          "dob": "2007-11-06",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 150470,
+          "name": "Pierce CHARLES",
+          "dob": "2005-07-21",
+          "rating": 77,
+          "value": 1400000
+        },
+        {
+          "id": 125045,
+          "name": "Rico LEWIS",
+          "dob": "2004-11-21",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 156553,
+          "name": "Ryan MCAIDOO",
+          "dob": "2008-06-24",
+          "rating": 73,
+          "value": 1000000
+        },
+        {
+          "id": 158458,
+          "name": "Soriba DIAOUNE",
+          "dob": "2007-08-14",
+          "rating": 75,
+          "value": 340000
+        },
+        {
+          "id": 160790,
+          "name": "Stephen MFUNI",
+          "dob": "2008-02-12",
+          "rating": 75,
+          "value": 600000
+        },
+        {
+          "id": 121748,
+          "name": "Sverre NYPAN",
+          "dob": "2006-12-19",
+          "rating": 80,
+          "value": 2000000
+        },
+        {
+          "id": 175371,
+          "name": "Teddie LAMB",
+          "dob": "2009-07-02",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 171180,
+          "name": "Tyrone SAMBA",
+          "dob": "2007-12-31",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 141968,
+          "name": "Vitor REIS",
+          "dob": "2006-01-12",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 175212,
+          "name": "Xavier PARKER",
+          "dob": "2010-05-09",
+          "rating": 65,
+          "value": 180000
+        }
+      ],
+      "rank": 6,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93400234,
+      "name": "SSC Napoli",
+      "manager": "Marco Fioretti",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/746.png",
+      "count": 18,
+      "rating": 76.11111111111111,
+      "value": 2483333.3333333335,
+      "score": 67.21961660249713,
+      "players": [
+        {
+          "id": 132656,
+          "name": "Junior KROUPI",
+          "dob": "2006-06-23",
+          "rating": 89,
+          "value": 16000000
+        },
+        {
+          "id": 149708,
+          "name": "Oskar PIETUSZEWSKI",
+          "dob": "2008-05-20",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 149559,
+          "name": "Christian GAROFALO",
+          "dob": "2007-01-04",
+          "rating": 66,
+          "value": 160000
+        },
+        {
+          "id": 135806,
+          "name": "Christos MOUZAKITIS",
+          "dob": "2006-12-25",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 177272,
+          "name": "Claudio PUGLIESE",
+          "dob": "2008-04-15",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 139923,
+          "name": "Emanuele RAO",
+          "dob": "2006-03-28",
+          "rating": 80,
+          "value": 1200000
+        },
+        {
+          "id": 162603,
+          "name": "Emmanuele DE CHIARA",
+          "dob": "2006-02-21",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 169911,
+          "name": "Francisco BARIDÓ",
+          "dob": "2008-01-01",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 137256,
+          "name": "Héctor FORT",
+          "dob": "2006-08-02",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 162544,
+          "name": "Jean MAMBUKU",
+          "dob": "2008-07-08",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 164900,
+          "name": "Kacper POTULSKI",
+          "dob": "2007-10-19",
+          "rating": 82,
+          "value": 2800000
+        },
+        {
+          "id": 135575,
+          "name": "Lucas HOGSBERG",
+          "dob": "2006-06-23",
+          "rating": 85,
+          "value": 4000000
+        },
+        {
+          "id": 164581,
+          "name": "Mathias FERRANTE",
+          "dob": "2006-09-01",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 175429,
+          "name": "Mattia ESPOSITO",
+          "dob": "2008-06-10",
+          "rating": 68,
+          "value": 200000
+        },
+        {
+          "id": 169510,
+          "name": "Milton PEREYRA",
+          "dob": "2008-05-13",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 154504,
+          "name": "Nico GUILLÉN",
+          "dob": "2008-01-30",
+          "rating": 75,
+          "value": 340000
+        },
+        {
+          "id": 155660,
+          "name": "Vasilije KOSTOV",
+          "dob": "2008-05-11",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 162485,
+          "name": "Vincenzo PRISCO",
+          "dob": "2008-08-07",
+          "rating": 65,
+          "value": 140000
+        }
+      ],
+      "rank": 7,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93399609,
+      "name": "Internazionale",
+      "manager": "Giovanni Cabrioli",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/109.png",
+      "count": 19,
+      "rating": 76.78947368421052,
+      "value": 2275789.4736842103,
+      "score": 65.99570253511084,
+      "players": [
+        {
+          "id": 135977,
+          "name": "Pio ESPOSITO",
+          "dob": "2005-06-28",
+          "rating": 87,
+          "value": 10000000
+        },
+        {
+          "id": 128614,
+          "name": "Aleksandar STANKOVIĆ",
+          "dob": "2005-08-03",
+          "rating": 87,
+          "value": 7000000
+        },
+        {
+          "id": 169026,
+          "name": "Ali MAHDI MAGHLOUT",
+          "dob": "2009-05-03",
+          "rating": 63,
+          "value": 100000
+        },
+        {
+          "id": 129851,
+          "name": "Christos ALEXIOU",
+          "dob": "2005-06-30",
+          "rating": 78,
+          "value": 1400000
+        },
+        {
+          "id": 136645,
+          "name": "Ebenezer AKINSANMIRO",
+          "dob": "2004-11-25",
+          "rating": 83,
+          "value": 2600000
+        },
+        {
+          "id": 126349,
+          "name": "Eliesse BEN SEGHIR",
+          "dob": "2005-02-16",
+          "rating": 88,
+          "value": 10000000
+        },
+        {
+          "id": 149165,
+          "name": "Francesco STANTE",
+          "dob": "2005-01-19",
+          "rating": 78,
+          "value": 1200000
+        },
+        {
+          "id": 137606,
+          "name": "Gabriel MOSCARDO",
+          "dob": "2005-09-28",
+          "rating": 82,
+          "value": 3000000
+        },
+        {
+          "id": 141639,
+          "name": "Giacomo DE PIERI",
+          "dob": "2006-12-29",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 144963,
+          "name": "Giacomo STABILE",
+          "dob": "2005-04-12",
+          "rating": 78,
+          "value": 1200000
+        },
+        {
+          "id": 171255,
+          "name": "Lamine BALLO",
+          "dob": "2007-05-10",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 162545,
+          "name": "Leonardo BOVIO",
+          "dob": "2008-02-04",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 154397,
+          "name": "Leonardo BOVO",
+          "dob": "2005-05-07",
+          "rating": 75,
+          "value": 500000
+        },
+        {
+          "id": 141638,
+          "name": "Matteo COCCHI",
+          "dob": "2007-02-01",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 162600,
+          "name": "Matteo LAVELLI",
+          "dob": "2006-12-08",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 162643,
+          "name": "Mattia MARELLO",
+          "dob": "2008-03-13",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149166,
+          "name": "Mike AIDOO",
+          "dob": "2005-05-30",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 149453,
+          "name": "Thomas BERENBRUCH",
+          "dob": "2005-05-31",
+          "rating": 76,
+          "value": 800000
+        },
+        {
+          "id": 121098,
+          "name": "Valentín CARBONI",
+          "dob": "2005-03-05",
+          "rating": 83,
+          "value": 3000000
+        }
+      ],
+      "rank": 8,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93399891,
+      "name": "Bayern München",
+      "manager": "Vardan Minasyan",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/391.png",
+      "count": 34,
+      "rating": 75.11764705882354,
+      "value": 2142941.1764705884,
+      "score": 63.89768563507946,
+      "players": [
+        {
+          "id": 172743,
+          "name": "Aaron MAYOL",
+          "dob": "2008-03-03",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 164013,
+          "name": "Abdellah OUAZANE",
+          "dob": "2009-01-15",
+          "rating": 75,
+          "value": 600000
+        },
+        {
+          "id": 156401,
+          "name": "Allan OYIRWOTH",
+          "dob": "2007-01-23",
+          "rating": 70,
+          "value": 600000
+        },
+        {
+          "id": 118980,
+          "name": "Arijon IBRAHIMOVIC",
+          "dob": "2005-12-11",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 163992,
+          "name": "Artur DEGRAF",
+          "dob": "2006-07-22",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 128503,
+          "name": "Assan OUEDRAOGO",
+          "dob": "2006-05-09",
+          "rating": 85,
+          "value": 4000000
+        },
+        {
+          "id": 139952,
+          "name": "Bajung DARBOE",
+          "dob": "2006-11-07",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 170105,
+          "name": "Bara SAPOKO NDIAYE",
+          "dob": "2007-12-31",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 138651,
+          "name": "Benedikt WIMMER",
+          "dob": "2005-02-12",
+          "rating": 73,
+          "value": 500000
+        },
+        {
+          "id": 149595,
+          "name": "Cardoso VARELA",
+          "dob": "2008-10-29",
+          "rating": 75,
+          "value": 600000
+        },
+        {
+          "id": 163772,
+          "name": "Cassiano KIALA",
+          "dob": "2009-01-11",
+          "rating": 73,
+          "value": 400000
+        },
+        {
+          "id": 140174,
+          "name": "Elias BAUM",
+          "dob": "2005-10-26",
+          "rating": 82,
+          "value": 2400000
+        },
+        {
+          "id": 172304,
+          "name": "Erblin OSMANI",
+          "dob": "2009-05-19",
+          "rating": 73,
+          "value": 400000
+        },
+        {
+          "id": 172091,
+          "name": "Filip PAVIĆ",
+          "dob": "2010-01-19",
+          "rating": 73,
+          "value": 400000
+        },
+        {
+          "id": 139943,
+          "name": "Finn JELTSCH",
+          "dob": "2006-07-17",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 144959,
+          "name": "Francis ONYEKA",
+          "dob": "2007-04-29",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 149465,
+          "name": "Guido DELLA ROVERE",
+          "dob": "2007-06-04",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 141966,
+          "name": "Igor OYONO",
+          "dob": "2008-02-07",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 141594,
+          "name": "Javier FERNÁNDEZ",
+          "dob": "2006-11-28",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 161273,
+          "name": "Karim COULIBALY",
+          "dob": "2007-05-23",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 155171,
+          "name": "Lennart KARL",
+          "dob": "2008-02-22",
+          "rating": 88,
+          "value": 16000000
+        },
+        {
+          "id": 164260,
+          "name": "Leon KLANAC",
+          "dob": "2007-03-01",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 172034,
+          "name": "Leonard PRESCOTT",
+          "dob": "2009-09-23",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 141595,
+          "name": "Louis RICHTER",
+          "dob": "2006-02-25",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 172482,
+          "name": "Matthias KÖSTERS",
+          "dob": "2008-03-07",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 171222,
+          "name": "Maycon CARDOZO",
+          "dob": "2008-10-10",
+          "rating": 73,
+          "value": 400000
+        },
+        {
+          "id": 151730,
+          "name": "Michael SCOTT",
+          "dob": "2006-02-02",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 174748,
+          "name": "Raphael PAVLIC",
+          "dob": "2008-02-08",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149111,
+          "name": "Said EL MALA",
+          "dob": "2006-08-26",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 149448,
+          "name": "Simone LONTANI",
+          "dob": "2008-01-18",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 158342,
+          "name": "Tim BINDER",
+          "dob": "2007-01-30",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 114277,
+          "name": "Tom BISCHOF",
+          "dob": "2005-06-28",
+          "rating": 89,
+          "value": 16000000
+        },
+        {
+          "id": 141108,
+          "name": "Viktor DADASON",
+          "dob": "2008-06-30",
+          "rating": 78,
+          "value": 1000000
+        },
+        {
+          "id": 138652,
+          "name": "Vincent MANUBA",
+          "dob": "2005-07-01",
+          "rating": 72,
+          "value": 380000
+        }
+      ],
+      "rank": 9,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93399549,
+      "name": "Manchester United",
+      "manager": "Danilo FC 1908",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/49.png",
+      "count": 57,
+      "rating": 74.82456140350877,
+      "value": 2096842.105263158,
+      "score": 63.34883727954394,
+      "players": [
+        {
+          "id": 124372,
+          "name": "Leny YORO",
+          "dob": "2005-11-13",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 124453,
+          "name": "Kobbie MAINOO",
+          "dob": "2005-04-19",
+          "rating": 90,
+          "value": 28000000
+        },
+        {
+          "id": 142092,
+          "name": "Ayden HEAVEN",
+          "dob": "2006-09-22",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 163112,
+          "name": "Tyler FLETCHER",
+          "dob": "2007-03-19",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 175219,
+          "name": "Jacey CARRICK",
+          "dob": "2010-04-30",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 164645,
+          "name": "Cristian OROZCO",
+          "dob": "2008-07-13",
+          "rating": 65,
+          "value": 340000
+        },
+        {
+          "id": 150937,
+          "name": "Alysson EDWARD",
+          "dob": "2006-05-05",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 150168,
+          "name": "Amir IBRAGIMOV",
+          "dob": "2008-04-02",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 139676,
+          "name": "Andrija MAKSIMOVIĆ",
+          "dob": "2007-06-05",
+          "rating": 82,
+          "value": 2800000
+        },
+        {
+          "id": 152921,
+          "name": "Artem STEPANOV",
+          "dob": "2007-08-10",
+          "rating": 80,
+          "value": 2400000
+        },
+        {
+          "id": 154055,
+          "name": "Arthur DIAS",
+          "dob": "2007-04-10",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 150090,
+          "name": "Ashton MISSIN",
+          "dob": "2006-08-15",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 158662,
+          "name": "Bartosz MAZUREK",
+          "dob": "2007-01-03",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 175220,
+          "name": "Bassirou NKOTO",
+          "dob": "2010-09-27",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 144877,
+          "name": "Bazoumana TOURÉ",
+          "dob": "2006-03-02",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 150167,
+          "name": "Bendito MANTATO",
+          "dob": "2008-01-25",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 154026,
+          "name": "Caleb YIRENKYI",
+          "dob": "2006-01-15",
+          "rating": 85,
+          "value": 4000000
+        },
+        {
+          "id": 175208,
+          "name": "Cameron BYRNE-HUGHES",
+          "dob": "2007-11-02",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 133547,
+          "name": "Charalampos KOSTOULAS",
+          "dob": "2007-05-30",
+          "rating": 85,
+          "value": 4000000
+        },
+        {
+          "id": 152296,
+          "name": "Christ INAO OULAÏ",
+          "dob": "2006-04-06",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 163374,
+          "name": "Dan ARMER",
+          "dob": "2007-10-22",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 153803,
+          "name": "Diego LEÓN",
+          "dob": "2007-04-03",
+          "rating": 80,
+          "value": 1600000
+        },
+        {
+          "id": 175221,
+          "name": "Douka NKOTO",
+          "dob": "2010-09-27",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 161288,
+          "name": "Enzo KANA-BIYIK",
+          "dob": "2007-01-08",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 126053,
+          "name": "Ethan MBAPPÉ",
+          "dob": "2006-12-29",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 163311,
+          "name": "George HEMMINGS",
+          "dob": "2007-03-04",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 156527,
+          "name": "Godwill KUKONKI",
+          "dob": "2008-02-06",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 147070,
+          "name": "Harry AMASS",
+          "dob": "2007-03-16",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 166732,
+          "name": "J J GABRIEL",
+          "dob": "2010-10-06",
+          "rating": 70,
+          "value": 600000
+        },
+        {
+          "id": 150169,
+          "name": "Jack FLETCHER",
+          "dob": "2007-03-19",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 150084,
+          "name": "Jack MOORHOUSE",
+          "dob": "2005-11-29",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 175210,
+          "name": "Jacob WATSON",
+          "dob": "2009-05-16",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 161251,
+          "name": "Jaydan KAMASON",
+          "dob": "2006-12-08",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 175209,
+          "name": "Jayden NGWASHI",
+          "dob": "2008-09-21",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 125054,
+          "name": "Jean-Mattéo BAHOYA",
+          "dob": "2005-05-07",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 163376,
+          "name": "Jim THWAITES",
+          "dob": "2007-12-20",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 145886,
+          "name": "Jorthy MOKIO",
+          "dob": "2008-02-29",
+          "rating": 82,
+          "value": 2800000
+        },
+        {
+          "id": 163952,
+          "name": "Juan Cruz MEZA",
+          "dob": "2008-03-14",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 139860,
+          "name": "Julian HALL",
+          "dob": "2008-03-24",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 124275,
+          "name": "Julien DURANVILLE",
+          "dob": "2006-05-05",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 175213,
+          "name": "Kai ROONEY",
+          "dob": "2009-11-02",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 156568,
+          "name": "Love ARRHOV",
+          "dob": "2008-05-17",
+          "rating": 76,
+          "value": 400000
+        },
+        {
+          "id": 167716,
+          "name": "Malik JAKUPOVIC",
+          "dob": "2009-06-24",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 158576,
+          "name": "Mateus MANÉ",
+          "dob": "2007-09-16",
+          "rating": 83,
+          "value": 2600000
+        },
+        {
+          "id": 161281,
+          "name": "Mathys NIFLORE",
+          "dob": "2007-03-02",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 175217,
+          "name": "Nathaniel-Junior BROWN",
+          "dob": "2008-12-18",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 175222,
+          "name": "Noah AJAYI",
+          "dob": "2008-11-23",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 177344,
+          "name": "Owen EMEKA",
+          "dob": "2009-04-18",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 136289,
+          "name": "Patrick DORGU",
+          "dob": "2004-10-26",
+          "rating": 87,
+          "value": 10000000
+        },
+        {
+          "id": 139729,
+          "name": "Peyton MILLER",
+          "dob": "2007-11-08",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 163375,
+          "name": "Reece MUNRO",
+          "dob": "2006-12-16",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 160693,
+          "name": "Robinho JUNIOR",
+          "dob": "2007-12-17",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 137375,
+          "name": "Shea LACEY",
+          "dob": "2007-04-14",
+          "rating": 75,
+          "value": 500000
+        },
+        {
+          "id": 175372,
+          "name": "Solomon HONOR",
+          "dob": "2006-06-08",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 166731,
+          "name": "Tynan THOMPSON",
+          "dob": "2008-04-17",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 164466,
+          "name": "Wael MOHYA",
+          "dob": "2008-12-31",
+          "rating": 78,
+          "value": 1000000
+        },
+        {
+          "id": 171181,
+          "name": "Yuel HELAFU",
+          "dob": "2008-09-02",
+          "rating": 65,
+          "value": 140000
+        }
+      ],
+      "rank": 10,
+      "pool": "Premier Pool"
+    },
+    {
+      "club_id": 93399501,
+      "name": "Arsenal",
+      "manager": "Luciano Tana",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/1.png",
+      "count": 27,
+      "rating": 75.07407407407408,
+      "value": 1674814.8148148148,
+      "score": 60.15480561074849,
+      "players": [
+        {
+          "id": 163746,
+          "name": "Andria BARTISHVILI",
+          "dob": "2009-03-30",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 170729,
+          "name": "Brando BAILEY-JOSEPH",
+          "dob": "2008-10-02",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 171158,
+          "name": "Ceadach O'NEILL",
+          "dob": "2008-04-10",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 166726,
+          "name": "Demiane AGUSTIEN",
+          "dob": "2007-07-28",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 162172,
+          "name": "Djibril COULIBALY",
+          "dob": "2008-11-18",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 169887,
+          "name": "Edwin QUINTERO",
+          "dob": "2009-08-15",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 175353,
+          "name": "Emerson NWANERI",
+          "dob": "2010-08-18",
+          "rating": 65,
+          "value": 180000
+        },
+        {
+          "id": 125445,
+          "name": "Ethan NWANERI",
+          "dob": "2007-03-21",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 154535,
+          "name": "Evan MOONEY",
+          "dob": "2007-12-11",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 145946,
+          "name": "Gabriel MEC",
+          "dob": "2008-04-11",
+          "rating": 78,
+          "value": 1000000
+        },
+        {
+          "id": 144019,
+          "name": "Habeeb OGUNNEYE",
+          "dob": "2005-11-12",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 151779,
+          "name": "Harrison ARMSTRONG",
+          "dob": "2007-01-19",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 168665,
+          "name": "Hólger QUINTERO",
+          "dob": "2009-08-15",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 170378,
+          "name": "Ife IBRAHIM",
+          "dob": "2008-01-20",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 153551,
+          "name": "Jack PORTER",
+          "dob": "2008-07-15",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 149935,
+          "name": "Jaden DIXON",
+          "dob": "2007-05-07",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 142084,
+          "name": "Jahmai SIMPSON-PUSEY",
+          "dob": "2005-11-04",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 170396,
+          "name": "Lacine MEGNAN-PAVÉ",
+          "dob": "2010-03-07",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 136884,
+          "name": "Lewis MILEY",
+          "dob": "2006-05-01",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 165986,
+          "name": "Manoël VERHAEGHE",
+          "dob": "2008-03-25",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 163178,
+          "name": "Marli SALMON",
+          "dob": "2009-08-29",
+          "rating": 73,
+          "value": 1000000
+        },
+        {
+          "id": 157627,
+          "name": "Max DOWMAN",
+          "dob": "2009-12-31",
+          "rating": 80,
+          "value": 4000000
+        },
+        {
+          "id": 128651,
+          "name": "Myles LEWIS-SKELLY",
+          "dob": "2006-09-26",
+          "rating": 88,
+          "value": 12000000
+        },
+        {
+          "id": 155626,
+          "name": "Sascha BRITSCHGI",
+          "dob": "2006-08-27",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 135597,
+          "name": "Tommy SETFORD",
+          "dob": "2006-03-13",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 144483,
+          "name": "Tyler DIBLING",
+          "dob": "2006-02-17",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 159583,
+          "name": "Victor OZHIANVUNA",
+          "dob": "2009-01-10",
+          "rating": 73,
+          "value": 300000
+        }
+      ],
+      "rank": 11,
+      "pool": "Challenger Pool"
+    },
+    {
+      "club_id": 93399892,
+      "name": "Borussia Dortmund",
+      "manager": "Cosimo Lonoce",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/392.png",
+      "count": 36,
+      "rating": 75.66666666666667,
+      "value": 1515555.5555555555,
+      "score": 59.26060561343153,
+      "players": [
+        {
+          "id": 114316,
+          "name": "Jobe BELLINGHAM",
+          "dob": "2005-09-23",
+          "rating": 87,
+          "value": 14000000
+        },
+        {
+          "id": 102638,
+          "name": "Youssoufa MOUKOKO",
+          "dob": "2004-11-20",
+          "rating": 86,
+          "value": 7000000
+        },
+        {
+          "id": 124308,
+          "name": "Aaron ZEHNTER",
+          "dob": "2004-10-31",
+          "rating": 85,
+          "value": 3000000
+        },
+        {
+          "id": 144287,
+          "name": "Almugera KABAR",
+          "dob": "2006-06-06",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 162396,
+          "name": "Cajetan LENZ",
+          "dob": "2006-06-16",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 167977,
+          "name": "Dion HOFMEISTER",
+          "dob": "2009-07-11",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 167866,
+          "name": "Enzo DOS SANTOS",
+          "dob": "2009-01-28",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 117659,
+          "name": "Filippo MANÉ",
+          "dob": "2005-03-08",
+          "rating": 78,
+          "value": 1400000
+        },
+        {
+          "id": 164153,
+          "name": "Finn FUCHS",
+          "dob": "2006-02-17",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 177293,
+          "name": "Izak JEZIĆ",
+          "dob": "2010-03-23",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 131472,
+          "name": "Jens HJERTO-DAHL",
+          "dob": "2005-10-31",
+          "rating": 84,
+          "value": 2800000
+        },
+        {
+          "id": 144535,
+          "name": "Joane GADOU",
+          "dob": "2007-01-17",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 167480,
+          "name": "Johannes LILLEMETS",
+          "dob": "2008-11-20",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 176757,
+          "name": "John Davis MEYER",
+          "dob": "2009-07-29",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 147025,
+          "name": "Justin LERMA",
+          "dob": "2008-05-05",
+          "rating": 78,
+          "value": 2000000
+        },
+        {
+          "id": 162133,
+          "name": "Kauã PRATES",
+          "dob": "2008-08-12",
+          "rating": 75,
+          "value": 500000
+        },
+        {
+          "id": 142903,
+          "name": "Konstantin HEIDE",
+          "dob": "2006-01-27",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 149236,
+          "name": "Kurt RÜGER",
+          "dob": "2006-02-15",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 149331,
+          "name": "Louey BEN FARHAT",
+          "dob": "2006-07-19",
+          "rating": 82,
+          "value": 2000000
+        },
+        {
+          "id": 170803,
+          "name": "Luca REGGIANI",
+          "dob": "2008-01-09",
+          "rating": 76,
+          "value": 1600000
+        },
+        {
+          "id": 163868,
+          "name": "Luis FRAGOZO",
+          "dob": "2010-04-08",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 176861,
+          "name": "Marc KORNWACHS BARJUAN",
+          "dob": "2009-02-21",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 126108,
+          "name": "Mario PEJAZIC",
+          "dob": "2005-01-21",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 171225,
+          "name": "Marwan-Omir MIRZA",
+          "dob": "2009-09-01",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 158345,
+          "name": "Mathis ALBERT",
+          "dob": "2009-05-21",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 126441,
+          "name": "Maurice KRATTENMACHER",
+          "dob": "2005-08-11",
+          "rating": 80,
+          "value": 2000000
+        },
+        {
+          "id": 167975,
+          "name": "Mika WALLENTOWITZ",
+          "dob": "2007-12-28",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 124738,
+          "name": "Nelson WEIPER",
+          "dob": "2005-03-17",
+          "rating": 85,
+          "value": 3000000
+        },
+        {
+          "id": 174753,
+          "name": "Niklas KÖNIG",
+          "dob": "2008-02-28",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 150341,
+          "name": "Noahkai BANKS",
+          "dob": "2006-12-01",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 136200,
+          "name": "Noel ASÉKO",
+          "dob": "2005-11-22",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 149540,
+          "name": "Samuele INÁCIO",
+          "dob": "2008-04-02",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 158651,
+          "name": "Savo RADANOVIĆ",
+          "dob": "2009-02-28",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 163579,
+          "name": "Tobias PALISCAK",
+          "dob": "2007-10-25",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 172487,
+          "name": "Tom FAUST",
+          "dob": "2008-05-21",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 176481,
+          "name": "Xavier MANDZA",
+          "dob": "2009-04-06",
+          "rating": 75,
+          "value": 600000
+        }
+      ],
+      "rank": 12,
+      "pool": "Challenger Pool"
+    },
+    {
+      "club_id": 93399544,
+      "name": "Liverpool",
+      "manager": "Carlo Ancelotti",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/44.png",
+      "count": 29,
+      "rating": 72.89655172413794,
+      "value": 1395862.0689655172,
+      "score": 56.58145173514254,
+      "players": [
+        {
+          "id": 175831,
+          "name": "Alvin AYMAN",
+          "dob": "2007-09-12",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 145678,
+          "name": "Amara NALLO",
+          "dob": "2006-11-18",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 159771,
+          "name": "Brian MADJO",
+          "dob": "2009-01-12",
+          "rating": 76,
+          "value": 1200000
+        },
+        {
+          "id": 175829,
+          "name": "D J ESDAILLE",
+          "dob": "2007-12-01",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 156187,
+          "name": "Djylian N'GUESSAN",
+          "dob": "2008-08-30",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 150055,
+          "name": "Fola ONANUGA",
+          "dob": "2006-09-01",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 143334,
+          "name": "Gustavo VARELA",
+          "dob": "2005-01-30",
+          "rating": 80,
+          "value": 1600000
+        },
+        {
+          "id": 157608,
+          "name": "Harry HOWELL",
+          "dob": "2008-04-20",
+          "rating": 73,
+          "value": 1000000
+        },
+        {
+          "id": 164002,
+          "name": "Ifeanyi NDUKWE",
+          "dob": "2008-03-03",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 136421,
+          "name": "Ismaëlo GANIOU",
+          "dob": "2005-03-14",
+          "rating": 83,
+          "value": 2600000
+        },
+        {
+          "id": 136400,
+          "name": "Jérémy JACQUET",
+          "dob": "2005-07-13",
+          "rating": 87,
+          "value": 12000000
+        },
+        {
+          "id": 163108,
+          "name": "Joe BRADSHAW",
+          "dob": "2008-06-17",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 174228,
+          "name": "Joe UPTON",
+          "dob": "2008-02-16",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 146125,
+          "name": "Josh KING",
+          "dob": "2007-01-03",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 175211,
+          "name": "Joshua ABE",
+          "dob": "2010-07-17",
+          "rating": 65,
+          "value": 180000
+        },
+        {
+          "id": 168760,
+          "name": "Joshua SONNI-LAMBIE",
+          "dob": "2007-11-16",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 150058,
+          "name": "Kieran MORRISON",
+          "dob": "2006-11-09",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 163127,
+          "name": "Louis PAGE",
+          "dob": "2008-07-10",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 175223,
+          "name": "Luca EDEN",
+          "dob": "2011-03-11",
+          "rating": 65,
+          "value": 340000
+        },
+        {
+          "id": 150048,
+          "name": "Lucas PITT",
+          "dob": "2006-10-31",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 152847,
+          "name": "Lucca BRUGHMANS",
+          "dob": "2008-06-27",
+          "rating": 80,
+          "value": 2400000
+        },
+        {
+          "id": 175368,
+          "name": "Prince CISSÉ",
+          "dob": "2008-07-26",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 158467,
+          "name": "Raphaël LE GUEN",
+          "dob": "2006-09-01",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 155330,
+          "name": "Rio NGUMOHA",
+          "dob": "2008-08-29",
+          "rating": 83,
+          "value": 5000000
+        },
+        {
+          "id": 136883,
+          "name": "Samuel AMO-AMEYAW",
+          "dob": "2006-07-18",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 141340,
+          "name": "Trey NYONI",
+          "dob": "2007-06-30",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 137337,
+          "name": "Tyrique GEORGE",
+          "dob": "2006-02-04",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 150047,
+          "name": "Wellity LUCKY",
+          "dob": "2006-01-12",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 165698,
+          "name": "Will WRIGHT",
+          "dob": "2008-04-03",
+          "rating": 65,
+          "value": 140000
+        }
+      ],
+      "rank": 13,
+      "pool": "Challenger Pool"
+    },
+    {
+      "club_id": 93399610,
+      "name": "Juventus",
+      "manager": "Giorgio Grugni",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/110.png",
+      "count": 39,
+      "rating": 71.51282051282051,
+      "value": 1275384.6153846155,
+      "score": 54.76145560812468,
+      "players": [
+        {
+          "id": 123666,
+          "name": "Kenan YILDIZ",
+          "dob": "2005-05-04",
+          "rating": 91,
+          "value": 28000000
+        },
+        {
+          "id": 149145,
+          "name": "Adin LICINA",
+          "dob": "2007-01-06",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 154400,
+          "name": "Alessandro BASSINO",
+          "dob": "2006-02-12",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 144585,
+          "name": "Alessandro NUNZIANTE",
+          "dob": "2007-03-14",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 154401,
+          "name": "Alfonso MONTERO",
+          "dob": "2007-02-23",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 175478,
+          "name": "Arman DURMIŠI",
+          "dob": "2008-06-25",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 151765,
+          "name": "Augusto OWUSU",
+          "dob": "2005-01-28",
+          "rating": 77,
+          "value": 1000000
+        },
+        {
+          "id": 174856,
+          "name": "Bruno MARTINEZ",
+          "dob": "2006-06-19",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 176525,
+          "name": "Daniel OKOLO",
+          "dob": "2007-08-30",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149251,
+          "name": "Darryl BAKOLA",
+          "dob": "2007-11-30",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 162543,
+          "name": "Destiny ELIMOGHALE",
+          "dob": "2009-04-23",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 154402,
+          "name": "Diego PUGNO",
+          "dob": "2006-07-07",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 151627,
+          "name": "Diego RIPANI",
+          "dob": "2005-09-12",
+          "rating": 73,
+          "value": 380000
+        },
+        {
+          "id": 168188,
+          "name": "Edoardo ROCCHETTI",
+          "dob": "2009-07-21",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 151764,
+          "name": "Federico SAVIO",
+          "dob": "2005-06-23",
+          "rating": 73,
+          "value": 380000
+        },
+        {
+          "id": 171258,
+          "name": "Filippo BELLINO",
+          "dob": "2007-06-06",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149200,
+          "name": "Filippo PAGNUCCO",
+          "dob": "2006-02-09",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 164256,
+          "name": "Francesco CRAPISTO",
+          "dob": "2006-01-15",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 175476,
+          "name": "Francesco LEONE",
+          "dob": "2007-05-03",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 165037,
+          "name": "Gabriele FINOCCHIARO",
+          "dob": "2006-03-16",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 157594,
+          "name": "Grady MAKIOBO",
+          "dob": "2007-05-11",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 154390,
+          "name": "Ismaël KONATÉ",
+          "dob": "2006-03-29",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 138689,
+          "name": "Javier GIL",
+          "dob": "2006-05-03",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 175475,
+          "name": "Josue GRELAUD",
+          "dob": "2007-05-02",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 137523,
+          "name": "Justin OBOAVWODUO",
+          "dob": "2006-08-23",
+          "rating": 70,
+          "value": 340000
+        },
+        {
+          "id": 154960,
+          "name": "Kerim ALAJBEGOVIĆ",
+          "dob": "2007-09-21",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 138930,
+          "name": "Konstantinos KARETSAS",
+          "dob": "2007-11-19",
+          "rating": 85,
+          "value": 5000000
+        },
+        {
+          "id": 149463,
+          "name": "Lorenzo ANGHELÈ",
+          "dob": "2005-02-26",
+          "rating": 75,
+          "value": 600000
+        },
+        {
+          "id": 172769,
+          "name": "Louis REYNAUD",
+          "dob": "2008-04-12",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 150488,
+          "name": "Luca AMARADIO",
+          "dob": "2005-08-16",
+          "rating": 73,
+          "value": 400000
+        },
+        {
+          "id": 173582,
+          "name": "Marco TIOZZO",
+          "dob": "2008-10-07",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149199,
+          "name": "Matteo FUSCALDO",
+          "dob": "2005-02-25",
+          "rating": 65,
+          "value": 240000
+        },
+        {
+          "id": 162212,
+          "name": "Niccolò RIZZO",
+          "dob": "2007-07-19",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 172752,
+          "name": "Raffaele HULI",
+          "dob": "2008-07-30",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 158373,
+          "name": "Riccardo RADU",
+          "dob": "2007-08-07",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 170937,
+          "name": "Samuel WIAFE",
+          "dob": "2008-06-22",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 175477,
+          "name": "Stefano MEROLA",
+          "dob": "2007-01-05",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 151626,
+          "name": "Stefano TURCO",
+          "dob": "2005-01-24",
+          "rating": 73,
+          "value": 380000
+        },
+        {
+          "id": 138699,
+          "name": "Vasilije ADŽIĆ",
+          "dob": "2006-05-12",
+          "rating": 80,
+          "value": 1400000
+        }
+      ],
+      "rank": 14,
+      "pool": "Challenger Pool"
+    },
+    {
+      "club_id": 93399623,
+      "name": "AS Roma",
+      "manager": "Simone Campanella",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/123.png",
+      "count": 21,
+      "rating": 73.33333333333333,
+      "value": 1082857.142857143,
+      "score": 54.369661720987374,
+      "players": [
+        {
+          "id": 136240,
+          "name": "Marco PALESTRA",
+          "dob": "2005-03-03",
+          "rating": 88,
+          "value": 10000000
+        },
+        {
+          "id": 174135,
+          "name": "Alessandro DI NUNZIO",
+          "dob": "2007-04-21",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 158363,
+          "name": "Alessandro ROMANO",
+          "dob": "2006-06-17",
+          "rating": 77,
+          "value": 500000
+        },
+        {
+          "id": 162608,
+          "name": "Alessio CACCIAMANI",
+          "dob": "2007-06-29",
+          "rating": 80,
+          "value": 1200000
+        },
+        {
+          "id": 158362,
+          "name": "Alessio MARCACCINI",
+          "dob": "2008-10-01",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 162803,
+          "name": "Antonio ARENA",
+          "dob": "2009-02-10",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 149538,
+          "name": "Cristian CAMA",
+          "dob": "2007-06-05",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 172746,
+          "name": "Edoardo MORUCCI",
+          "dob": "2007-01-12",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 170107,
+          "name": "Emanuele LULLI",
+          "dob": "2007-08-17",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 117086,
+          "name": "Fabio CHIARODIA",
+          "dob": "2005-06-05",
+          "rating": 82,
+          "value": 2400000
+        },
+        {
+          "id": 175390,
+          "name": "Federico TERLIZZI",
+          "dob": "2007-04-11",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 165476,
+          "name": "Francesco FERRARA",
+          "dob": "2007-03-10",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 158361,
+          "name": "Giorgio DE MARZI",
+          "dob": "2007-04-18",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 149191,
+          "name": "Leonardo COLOMBO",
+          "dob": "2005-06-04",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 165446,
+          "name": "Lorenzo PARATICI",
+          "dob": "2008-10-21",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 154962,
+          "name": "Lorenzo TOSTO",
+          "dob": "2006-01-29",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 132378,
+          "name": "Luca LIPANI",
+          "dob": "2005-05-18",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 169891,
+          "name": "Muhammed BAH",
+          "dob": "2007-02-24",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 150829,
+          "name": "Riyad IDRISSI",
+          "dob": "2005-06-13",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 137332,
+          "name": "Sam RAK-SAKYI",
+          "dob": "2005-03-27",
+          "rating": 73,
+          "value": 500000
+        },
+        {
+          "id": 175391,
+          "name": "Valerio MACCARONI",
+          "dob": "2008-06-03",
+          "rating": 65,
+          "value": 140000
+        }
+      ],
+      "rank": 15,
+      "pool": "Challenger Pool"
+    },
+    {
+      "club_id": 93399580,
+      "name": "Tottenham Hotspur",
+      "manager": "Giovanni Iodice",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/80.png",
+      "count": 26,
+      "rating": 70.26923076923077,
+      "value": 1313076.923076923,
+      "score": 54.284384166719505,
+      "players": [
+        {
+          "id": 137393,
+          "name": "Alfie DORRINGTON",
+          "dob": "2005-04-20",
+          "rating": 76,
+          "value": 800000
+        },
+        {
+          "id": 117285,
+          "name": "Archie GRAY",
+          "dob": "2006-03-12",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 171190,
+          "name": "Armend MUSLIKA",
+          "dob": "2009-03-08",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 150116,
+          "name": "Callum OLUSESI",
+          "dob": "2007-03-11",
+          "rating": 75,
+          "value": 340000
+        },
+        {
+          "id": 150101,
+          "name": "Carey BLOEDORN",
+          "dob": "2005-09-17",
+          "rating": 63,
+          "value": 120000
+        },
+        {
+          "id": 163314,
+          "name": "Cole RAMSEY",
+          "dob": "2007-02-18",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 150141,
+          "name": "Elisha SOWUNMI",
+          "dob": "2007-06-01",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 150114,
+          "name": "Ellis LEHANE",
+          "dob": "2006-10-02",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 144480,
+          "name": "George FEENEY",
+          "dob": "2008-01-19",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 173574,
+          "name": "Harry BYRNE",
+          "dob": "2007-11-20",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 150106,
+          "name": "James ROWSWELL",
+          "dob": "2006-07-13",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 168759,
+          "name": "Joel PHILBERT",
+          "dob": "2009-01-18",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 163111,
+          "name": "Junai BYFIELD",
+          "dob": "2008-12-06",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 150050,
+          "name": "Luca FURNELL-GILL",
+          "dob": "2006-12-29",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 155342,
+          "name": "Lucá WILLIAMS-BARNETT",
+          "dob": "2008-10-01",
+          "rating": 65,
+          "value": 180000
+        },
+        {
+          "id": 129334,
+          "name": "Lucas BERGVALL",
+          "dob": "2006-02-02",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 150103,
+          "name": "Maeson KING",
+          "dob": "2005-09-09",
+          "rating": 70,
+          "value": 280000
+        },
+        {
+          "id": 155301,
+          "name": "Malachi HARDY",
+          "dob": "2008-03-10",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 114553,
+          "name": "Mathys TEL",
+          "dob": "2005-04-27",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 175379,
+          "name": "Max MCFADDEN",
+          "dob": "2005-10-02",
+          "rating": 65,
+          "value": 180000
+        },
+        {
+          "id": 173575,
+          "name": "Reiss ELLIOTT-PARRIS",
+          "dob": "2007-11-04",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 120595,
+          "name": "Rio KYEREMATEN",
+          "dob": "2005-06-09",
+          "rating": 70,
+          "value": 360000
+        },
+        {
+          "id": 150111,
+          "name": "Samual ARCHER",
+          "dob": "2007-01-20",
+          "rating": 63,
+          "value": 100000
+        },
+        {
+          "id": 172741,
+          "name": "Tye HALL",
+          "dob": "2007-10-01",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 143960,
+          "name": "Tyrese HALL",
+          "dob": "2005-09-04",
+          "rating": 73,
+          "value": 600000
+        },
+        {
+          "id": 124978,
+          "name": "Wilson ODOBERT",
+          "dob": "2004-11-28",
+          "rating": 85,
+          "value": 5000000
+        }
+      ],
+      "rank": 16,
+      "pool": "Challenger Pool"
+    },
+    {
+      "club_id": 93401156,
+      "name": "Como 1907",
+      "manager": "Chicco Belin",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/1671.png",
+      "count": 31,
+      "rating": 71.38709677419355,
+      "value": 950967.7419354839,
+      "score": 52.10796930401708,
+      "players": [
+        {
+          "id": 125039,
+          "name": "Joel ROCA",
+          "dob": "2005-06-07",
+          "rating": 85,
+          "value": 3000000
+        },
+        {
+          "id": 151629,
+          "name": "Jesús RODRÍGUEZ",
+          "dob": "2005-11-21",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 137652,
+          "name": "Assane DIAO",
+          "dob": "2005-09-07",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 150633,
+          "name": "Adrian LAHDO",
+          "dob": "2007-12-26",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 167994,
+          "name": "Alessio BARALLA",
+          "dob": "2008-02-05",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 166268,
+          "name": "Andréa LE BORGNE",
+          "dob": "2006-07-27",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 141111,
+          "name": "Andrés CUENCA",
+          "dob": "2007-06-11",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 161194,
+          "name": "Cristian MAZZARA",
+          "dob": "2007-01-19",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 165434,
+          "name": "Cristiano DE PAOLI",
+          "dob": "2008-01-27",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 165152,
+          "name": "Davide ZAMAGNI",
+          "dob": "2007-11-20",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 151790,
+          "name": "Diego MASCARDI",
+          "dob": "2006-09-26",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 160043,
+          "name": "Ebrima TUNKARA",
+          "dob": "2010-03-10",
+          "rating": 70,
+          "value": 600000
+        },
+        {
+          "id": 173925,
+          "name": "Ettore BROGGIAN",
+          "dob": "2008-10-15",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 143163,
+          "name": "Fabio RISPOLI",
+          "dob": "2006-09-28",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 145444,
+          "name": "Fellipe JACK",
+          "dob": "2006-01-12",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 158367,
+          "name": "Francesco ANDREALLI",
+          "dob": "2007-08-05",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 166835,
+          "name": "Jacopo SIMONETTA",
+          "dob": "2006-01-14",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 151114,
+          "name": "Levente BŐSZE",
+          "dob": "2009-02-18",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 166464,
+          "name": "Lorenzo BONSIGNORI",
+          "dob": "2007-03-28",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 162609,
+          "name": "Matteo PAPACCIOLI",
+          "dob": "2008-05-09",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 173926,
+          "name": "Mattia DAMIOLI",
+          "dob": "2008-04-22",
+          "rating": 66,
+          "value": 160000
+        },
+        {
+          "id": 136828,
+          "name": "Mattia LIBERALI",
+          "dob": "2007-04-06",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 149457,
+          "name": "Mattia MOSCONI",
+          "dob": "2007-03-26",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 163044,
+          "name": "Nicolò BENSI",
+          "dob": "2009-08-29",
+          "rating": 60,
+          "value": 60000
+        },
+        {
+          "id": 175470,
+          "name": "Riccardo CASSANO",
+          "dob": "2009-07-01",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 162641,
+          "name": "Roberto SCAGLIONE",
+          "dob": "2010-01-04",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 166484,
+          "name": "Roberto TOMÁS",
+          "dob": "2009-02-20",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 141298,
+          "name": "Robin THILAND-HERARD",
+          "dob": "2008-01-10",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 172749,
+          "name": "Samuele PISATI",
+          "dob": "2009-02-27",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 174721,
+          "name": "Sergi MAYANS",
+          "dob": "2009-01-30",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 172781,
+          "name": "Zebedee KENNEDY",
+          "dob": "2010-02-24",
+          "rating": 63,
+          "value": 100000
+        }
+      ],
+      "rank": 17,
+      "pool": "Challenger Pool"
+    },
+    {
+      "club_id": 93399615,
+      "name": "AC Milan",
+      "manager": "Saverio Cordiano",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/115.png",
+      "count": 33,
+      "rating": 71.27272727272727,
+      "value": 878787.8787878788,
+      "score": 51.46366320765877,
+      "players": [
+        {
+          "id": 121869,
+          "name": "Davide BARTESAGHI",
+          "dob": "2005-12-29",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 128540,
+          "name": "Kevin ZEROLI",
+          "dob": "2005-01-11",
+          "rating": 80,
+          "value": 2200000
+        },
+        {
+          "id": 154357,
+          "name": "Alessandro BONOMI",
+          "dob": "2006-04-09",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 167854,
+          "name": "Alex CASTIELLO",
+          "dob": "2007-02-13",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 132597,
+          "name": "Alphadjo CISSÈ",
+          "dob": "2006-10-22",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 171259,
+          "name": "Andrea CULLOTTA",
+          "dob": "2008-03-10",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149539,
+          "name": "Andrea NATALI",
+          "dob": "2008-01-28",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 149447,
+          "name": "Christian COMOTTO",
+          "dob": "2008-04-25",
+          "rating": 76,
+          "value": 700000
+        },
+        {
+          "id": 176522,
+          "name": "Edoardo TARTAGLIA",
+          "dob": "2008-05-13",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 167995,
+          "name": "Edoardo ZANAGA",
+          "dob": "2008-03-13",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 166821,
+          "name": "Emanuele BORSANI",
+          "dob": "2008-01-08",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149451,
+          "name": "Federico COLOMBO",
+          "dob": "2007-01-06",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 132445,
+          "name": "Francesco CAMARDA",
+          "dob": "2008-03-10",
+          "rating": 82,
+          "value": 2800000
+        },
+        {
+          "id": 166826,
+          "name": "Francesco DOMNITEI",
+          "dob": "2007-09-11",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 144639,
+          "name": "Giovanni LEONI",
+          "dob": "2006-12-21",
+          "rating": 83,
+          "value": 3000000
+        },
+        {
+          "id": 151633,
+          "name": "Jacopo SARDO",
+          "dob": "2005-03-08",
+          "rating": 75,
+          "value": 400000
+        },
+        {
+          "id": 151492,
+          "name": "Jeff EKHATOR",
+          "dob": "2006-11-11",
+          "rating": 83,
+          "value": 2400000
+        },
+        {
+          "id": 149446,
+          "name": "Lorenzo OSSOLA",
+          "dob": "2007-02-13",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149240,
+          "name": "Lorenzo TORRIANI",
+          "dob": "2005-01-31",
+          "rating": 75,
+          "value": 1400000
+        },
+        {
+          "id": 154393,
+          "name": "Lorenzo VENTURINO",
+          "dob": "2006-06-22",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 175320,
+          "name": "Luca MENON",
+          "dob": "2009-03-07",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 175387,
+          "name": "Luca NOLLI",
+          "dob": "2008-02-11",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 176523,
+          "name": "Maiga-Hamadoun CISSÉ",
+          "dob": "2008-03-27",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 166823,
+          "name": "Matteo GEROLI",
+          "dob": "2007-05-30",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 175386,
+          "name": "Matteo PAGLIEI",
+          "dob": "2007-05-13",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 154355,
+          "name": "Matteo PITTARELLA",
+          "dob": "2008-05-26",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149450,
+          "name": "Mattia CAPPELLETTI",
+          "dob": "2007-06-10",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 171260,
+          "name": "Mattia MERCOGLIANO",
+          "dob": "2009-01-31",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 165035,
+          "name": "Mattia PIERMARINI",
+          "dob": "2006-03-13",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 149449,
+          "name": "Nirash PERERA",
+          "dob": "2007-01-02",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 162287,
+          "name": "Simon LA MANTIA",
+          "dob": "2008-05-13",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 122939,
+          "name": "Simone PAFUNDI",
+          "dob": "2006-03-14",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 171261,
+          "name": "Tommaso MANCIOPPI",
+          "dob": "2006-02-21",
+          "rating": 65,
+          "value": 140000
+        }
+      ],
+      "rank": 18,
+      "pool": "Challenger Pool"
+    },
+    {
+      "club_id": 93399718,
+      "name": "SL Benfica",
+      "manager": "Vincenzo Martorano",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/218.png",
+      "count": 32,
+      "rating": 71.71875,
+      "value": 573750,
+      "score": 49.320878723100584,
+      "players": [
+        {
+          "id": 172770,
+          "name": "Afonso FERREIRINHA",
+          "dob": "2009-01-16",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 170940,
+          "name": "Alan SANTOS",
+          "dob": "2007-05-10",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 159635,
+          "name": "Anísio CABRAL",
+          "dob": "2008-02-15",
+          "rating": 75,
+          "value": 600000
+        },
+        {
+          "id": 165374,
+          "name": "Daniel BANJAQUI",
+          "dob": "2008-03-24",
+          "rating": 78,
+          "value": 1000000
+        },
+        {
+          "id": 161498,
+          "name": "Diego CASTEL-BRANCO",
+          "dob": "2008-06-23",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 170163,
+          "name": "Dinis TELEHOVSCHI",
+          "dob": "2007-04-25",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149126,
+          "name": "Diogo FERREIRA",
+          "dob": "2007-02-10",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 150348,
+          "name": "Duarte SOARES",
+          "dob": "2007-02-19",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 163522,
+          "name": "Dudu FERNANDES",
+          "dob": "2007-03-24",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 149541,
+          "name": "Federico COLETTA",
+          "dob": "2007-05-29",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 122846,
+          "name": "Gianluca PRESTIANNI",
+          "dob": "2006-01-31",
+          "rating": 86,
+          "value": 6000000
+        },
+        {
+          "id": 149592,
+          "name": "Gonçalo MOREIRA",
+          "dob": "2006-01-03",
+          "rating": 78,
+          "value": 600000
+        },
+        {
+          "id": 141102,
+          "name": "Jaden UMEH",
+          "dob": "2008-03-18",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 156346,
+          "name": "João CAPUCHO",
+          "dob": "2007-01-24",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 154973,
+          "name": "João CONÇEIÇÃO",
+          "dob": "2005-04-23",
+          "rating": 67,
+          "value": 200000
+        },
+        {
+          "id": 137864,
+          "name": "João RÊGO",
+          "dob": "2005-06-20",
+          "rating": 80,
+          "value": 1800000
+        },
+        {
+          "id": 134020,
+          "name": "João VELOSO",
+          "dob": "2005-06-26",
+          "rating": 77,
+          "value": 1200000
+        },
+        {
+          "id": 119930,
+          "name": "Joshua WYNDER",
+          "dob": "2005-05-02",
+          "rating": 77,
+          "value": 1000000
+        },
+        {
+          "id": 165786,
+          "name": "Kevin PINTO",
+          "dob": "2006-09-23",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 162201,
+          "name": "Martim FERREIRA",
+          "dob": "2006-01-26",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 165344,
+          "name": "Miguel FIGUEIREIDO",
+          "dob": "2008-08-02",
+          "rating": 75,
+          "value": 340000
+        },
+        {
+          "id": 170164,
+          "name": "Nilson SEMEDO",
+          "dob": "2008-10-12",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 137884,
+          "name": "Olivio TOMÉ",
+          "dob": "2006-01-27",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 157589,
+          "name": "Peter EDOKPOLOR",
+          "dob": "2006-12-24",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 163507,
+          "name": "Rafael QUINTAS",
+          "dob": "2008-03-08",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 174812,
+          "name": "Ricardo FERNANDES",
+          "dob": "2008-02-19",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 170160,
+          "name": "Ricardo NETO",
+          "dob": "2008-08-26",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 150350,
+          "name": "Rui SILVA",
+          "dob": "2007-03-18",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 170158,
+          "name": "Stevan MANUEL",
+          "dob": "2008-06-11",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 154974,
+          "name": "Tiago FREITAS",
+          "dob": "2006-08-17",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 141287,
+          "name": "Tiago PARENTE",
+          "dob": "2006-06-12",
+          "rating": 76,
+          "value": 360000
+        },
+        {
+          "id": 156348,
+          "name": "Tomás SOARES",
+          "dob": "2008-01-19",
+          "rating": 65,
+          "value": 140000
+        }
+      ],
+      "rank": 19,
+      "pool": "Challenger Pool"
+    },
+    {
+      "club_id": 93399596,
+      "name": "Atalanta BC",
+      "manager": "Carlo Colombo",
+      "logo": "https://cdn.soccerwiki.org/images/logos/clubs/96.png",
+      "count": 40,
+      "rating": 70.575,
+      "value": 489000,
+      "score": 47.93426003422376,
+      "players": [
+        {
+          "id": 175396,
+          "name": "Mattia ARRIGONI",
+          "dob": "2006-05-11",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 176566,
+          "name": "Lorenzo ZAFFALON",
+          "dob": "2007-02-23",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 141913,
+          "name": "Albert NAVARRO",
+          "dob": "2007-05-24",
+          "rating": 75,
+          "value": 600000
+        },
+        {
+          "id": 149241,
+          "name": "Alberto MANZONI",
+          "dob": "2005-06-25",
+          "rating": 78,
+          "value": 800000
+        },
+        {
+          "id": 175392,
+          "name": "Alessandro ANELLI",
+          "dob": "2008-12-16",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149189,
+          "name": "Andrea BONANOMI",
+          "dob": "2006-01-31",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 154006,
+          "name": "Andrea MICHIELETTO",
+          "dob": "2008-04-16",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 166828,
+          "name": "Davide BONO",
+          "dob": "2007-05-14",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 172771,
+          "name": "Diego PERILLO",
+          "dob": "2009-03-17",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 165771,
+          "name": "Digne Kaelas POUNGA",
+          "dob": "2006-05-15",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 171262,
+          "name": "Dion CAKOLLI",
+          "dob": "2007-06-07",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 137400,
+          "name": "Dominic VAVASSORI",
+          "dob": "2005-12-09",
+          "rating": 80,
+          "value": 1400000
+        },
+        {
+          "id": 164251,
+          "name": "Edoardo ZANCHI",
+          "dob": "2006-06-22",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 153039,
+          "name": "Emanuele ZANABONI",
+          "dob": "2005-02-05",
+          "rating": 70,
+          "value": 260000
+        },
+        {
+          "id": 158364,
+          "name": "Federico SIMONETTO",
+          "dob": "2006-06-14",
+          "rating": 73,
+          "value": 300000
+        },
+        {
+          "id": 154961,
+          "name": "Federico STEFFANONI",
+          "dob": "2008-09-04",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 158365,
+          "name": "Filippo MENCARAGLIA",
+          "dob": "2006-03-19",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 175395,
+          "name": "Francesco GASPARELLO",
+          "dob": "2009-01-02",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 164252,
+          "name": "Gabriel RAMAJ",
+          "dob": "2006-02-09",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 166832,
+          "name": "Gabriele BERTOLINI",
+          "dob": "2006-04-11",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 175394,
+          "name": "Gerard RUIZ",
+          "dob": "2007-02-11",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 155261,
+          "name": "Giulio MISITANO",
+          "dob": "2005-01-30",
+          "rating": 77,
+          "value": 600000
+        },
+        {
+          "id": 151635,
+          "name": "Henry CAMARA",
+          "dob": "2006-05-06",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 171263,
+          "name": "Jacopo MIRRA",
+          "dob": "2006-07-10",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 152053,
+          "name": "Javison IDELE",
+          "dob": "2007-01-23",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 164253,
+          "name": "Luca GOBBO",
+          "dob": "2006-04-05",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 175393,
+          "name": "Manuel MAFFESSOLI",
+          "dob": "2007-04-18",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 166827,
+          "name": "Marco LEANDRI",
+          "dob": "2007-01-31",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 154368,
+          "name": "Mattia TAVANTI",
+          "dob": "2005-05-19",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 154384,
+          "name": "Nicolò ARTESANI",
+          "dob": "2007-02-16",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 164254,
+          "name": "Nicolò BALDO",
+          "dob": "2006-10-20",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 128604,
+          "name": "Oleksandr DRAGAN",
+          "dob": "2007-02-27",
+          "rating": 65,
+          "value": 140000
+        },
+        {
+          "id": 149188,
+          "name": "Pietro COMI",
+          "dob": "2005-06-11",
+          "rating": 73,
+          "value": 340000
+        },
+        {
+          "id": 164250,
+          "name": "Pietro PARMIGGIANI",
+          "dob": "2006-02-04",
+          "rating": 67,
+          "value": 180000
+        },
+        {
+          "id": 150464,
+          "name": "Pietro TORNAGHI",
+          "dob": "2005-11-24",
+          "rating": 70,
+          "value": 240000
+        },
+        {
+          "id": 149186,
+          "name": "Piotr PARDEL",
+          "dob": "2005-01-31",
+          "rating": 73,
+          "value": 380000
+        },
+        {
+          "id": 154369,
+          "name": "Relja OBRIĆ",
+          "dob": "2006-04-11",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 130093,
+          "name": "Rodrigo MORA",
+          "dob": "2007-05-05",
+          "rating": 87,
+          "value": 8000000
+        },
+        {
+          "id": 136731,
+          "name": "Sergej LEVAK",
+          "dob": "2006-05-03",
+          "rating": 77,
+          "value": 400000
+        },
+        {
+          "id": 175132,
+          "name": "Thomas POMPEI",
+          "dob": "2006-07-04",
+          "rating": 72,
+          "value": 280000
+        }
+      ],
+      "rank": 20,
+      "pool": "Challenger Pool"
+    }
+  ]
+}
