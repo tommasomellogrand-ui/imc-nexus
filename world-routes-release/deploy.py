@@ -14,6 +14,7 @@ def read(n):
  return b.getvalue()
 def write(n,b):
  f.storbinary('STOR '+n,io.BytesIO(b));assert read(n)==b,n
+subprocess.run(['node',str(R/'model.test.cjs')],check=True)
 old=read('.htaccess')
 block=b'''# BEGIN NEXUS WORLD ROUTES
 RewriteEngine On
@@ -21,6 +22,7 @@ RewriteCond %{THE_REQUEST} \\s/+nexus/(?:index\\.html)?(?:\\?|\\s) [NC]
 RewriteCond %{QUERY_STRING} (?:^|&)world=GW(?:00[1-9]|01[01])(?:&|$) [NC]
 RewriteRule ^(?:index\\.html)?$ world-routes/legacy.php [END]
 RewriteRule ^(gw00[1-9]|gw01[01])/?$ world-routes/home.php?route_world=$1 [QSA,END,NC]
+RewriteRule ^gw011/risingstarsleague/club/?$ world-routes/risingstarsleague/club/index.html [END,NC]
 RewriteRule ^gw011/risingstarsleague/?$ world-routes/risingstarsleague/index.html [END,NC]
 # END NEXUS WORLD ROUTES
 '''
