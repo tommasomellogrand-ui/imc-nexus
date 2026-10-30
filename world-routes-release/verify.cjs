@@ -4,8 +4,8 @@ const {chromium}=require('playwright');
  const base='https://www.italianmastersclub.it/nexus/';
  for(let i=1;i<=11;i++){
   const gw='GW'+String(i).padStart(3,'0');const r=await page.goto(base+gw.toLowerCase()+'/',{waitUntil:'networkidle'});if(r.status()!==200)throw Error(gw+' HTTP '+r.status());
-  const actual=await page.evaluate(()=>({world:window.NexusWorldRoute?.world,url:location.pathname,query:location.search,text:document.body.innerText}));
-  if(actual.world!==gw||actual.query.includes('world=')||!actual.text.includes(gw))throw Error('World context failed '+JSON.stringify(actual));
+  const actual=await page.evaluate(()=>({world:window.NexusWorldRoute?.world,url:location.pathname,query:location.search,selected:document.querySelector('#world')?.value}));
+  if(actual.world!==gw||actual.query.includes('world=')||actual.selected!==gw)throw Error('World context failed '+JSON.stringify(actual));
   console.log('PASS '+gw);
  }
  await page.goto(base+'?world=GW011&season=1',{waitUntil:'networkidle'});if(!page.url().includes('/gw011/'))throw Error('Legacy redirect failed');
