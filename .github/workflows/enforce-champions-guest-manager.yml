@@ -1,0 +1,79 @@
+name: Apply Champions guest rules
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/enforce-champions-guest-manager.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Count database objects without changing data
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,json,secrets,hashlib,time,urllib.request
+          from ftplib import FTP_TLS,error_perm
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root)
+          import pathlib,subprocess
+          path='competitions/match-teams.php'
+          b=io.BytesIO();f.retrbinary('RETR '+path,b.write);before=b.getvalue();src=before.decode()
+          anchor="  return ['logo_url'=>$logo?:null,'imc_manager_id'=>$manager['manager_id']??null,'imc_manager_name'=>$manager['full_name']??null];"
+          assert src.count(anchor)==1
+          override="""  // RTH Champions guests never inherit the club's ordinary manager assignment.
+            if(($row['competition_key']??'')==='GW001_IMC_CHAMPIONS_LEAGUE'
+              && in_array(nexus_team_name_key((string)($row[$side.'_name']??'')),['fcporto','porto','newcastleunited','newcastle'],true)){
+              $manager=['full_name'=>'Guest'];
+            }
+          """
+          src=src.replace(anchor,override+anchor)
+          pathlib.Path('/tmp/match-teams.php').write_text(src)
+          subprocess.run(['php','-l','/tmp/match-teams.php'],check=True)
+          test="""<?php
+          require '/tmp/match-teams.php';
+          $teams=['club'=>['world'=>[],'name'=>[],'id'=>[]]];
+          foreach(['FC Porto','Newcastle United'] as $name){
+            $row=['competition_key'=>'GW001_IMC_CHAMPIONS_LEAGUE','home_name'=>$name,'home_sm_manager_id'=>1];
+            $r=nexus_match_team_details($row,'home',$teams,[1=>['manager_id'=>'MNG001','full_name'=>'Tommaso Mello']],[]);
+            assert($r['imc_manager_name']==='Guest' && $r['imc_manager_id']===null);
+            $row['competition_key']='DOMESTIC';
+            $r=nexus_match_team_details($row,'home',$teams,[1=>['manager_id'=>'MNG001','full_name'=>'Tommaso Mello']],[]);
+            assert($r['imc_manager_name']==='Tommaso Mello');
+          }
+          echo "PASS guest override scoped to RTH Champions\\n";
+          """
+          pathlib.Path('/tmp/test.php').write_text(test)
+          subprocess.run(['php','-d','zend.assertions=1','-d','assert.exception=1','/tmp/test.php'],check=True)
+          f.storbinary('STOR '+path+'.backup-'+os.environ['GITHUB_SHA'][:12],io.BytesIO(before))
+          f.storbinary('STOR '+path,io.BytesIO(src.encode()))
+          try:
+              base='https://www.italianmastersclub.it/nexus/competitions/imc-cups.php?world=GW001&season=2&competition=GW001_IMC_CHAMPIONS_LEAGUE'
+              r=json.load(urllib.request.urlopen(base+'&mode=results',timeout=30))['rows']
+              count=0
+              for row in r:
+                  for side,other in [('home','away'),('away','home')]:
+                      if row[side+'_name'] in ['FC Porto','Newcastle United']:
+                          assert row[side+'_score']==0 and row[other+'_score']==3
+                          assert row[side+'_imc_manager_name']=='Guest' and row[side+'_imc_manager_id'] is None
+                          count+=1
+              assert count>=8
+              t=json.load(urllib.request.urlopen(base+'&mode=standings',timeout=30))['rows']
+              guests=[x for x in t if x['team_name'] in ['FC Porto','Newcastle United']]
+              assert len(guests)==2
+              assert all(x['manager_name']=='Guest' and x['points']==0 and x['ga']==3*x['played'] and x['gf']==0 for x in guests)
+              print('PASS',count,'guest results awarded 3-0, Guest managers and standings')
+          except:
+              f.storbinary('STOR '+path,io.BytesIO(before));raise
+          finally:f.quit()
+          PY
