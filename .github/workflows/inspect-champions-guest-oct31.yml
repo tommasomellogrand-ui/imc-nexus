@@ -1,0 +1,40 @@
+name: Apply Champions guest rules
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/inspect-champions-guest-oct31.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Count database objects without changing data
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: |
+          python3 - <<'PY'
+          import os,ssl,io,json,secrets,hashlib,time,urllib.request
+          from ftplib import FTP_TLS,error_perm
+          host=os.environ['ARUBA_FTP_HOST'].replace('ftp://','').replace('ftps://','')
+          raw=os.environ['ARUBA_FTP_REMOTE_DIR'].rstrip('/')
+          domain=host[4:] if host.startswith('ftp.') else host
+          root=raw if raw.startswith('/www.') else f'/www.{domain}{raw}'
+          ctx=ssl.create_default_context();ctx.check_hostname=False
+          f=FTP_TLS(context=ctx);f.connect(host,21,timeout=30);f.login(os.environ['ARUBA_FTP_USERNAME'],os.environ['ARUBA_FTP_PASSWORD']);f.prot_p();f.cwd(root)
+          for path in ['competitions/imc-cups.php','competitions/match-teams.php','home/data.php']:
+              b=io.BytesIO();f.retrbinary('RETR '+path,b.write);s=b.getvalue().decode()
+              print('SOURCE',path)
+              if path.endswith('match-teams.php'): print(s)
+              else:
+                  for line in s.splitlines():
+                      if any(k in line.lower() for k in ['guest','imc-cups','imc_results','porto','newcastle']):print(line)
+          for mode in ['results','schedule','standings']:
+              u='https://www.italianmastersclub.it/nexus/competitions/imc-cups.php?world=GW001&season=2&competition=GW001_IMC_CHAMPIONS_LEAGUE&mode='+mode
+              d=json.load(urllib.request.urlopen(u,timeout=30));print(mode,json.dumps(d,ensure_ascii=False))
+          f.quit()
+          PY
