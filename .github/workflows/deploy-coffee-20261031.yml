@@ -1,0 +1,35 @@
+name: Publish Coffee Time 31 October
+on:
+  push:
+    branches: [main]
+    paths: ['coffee-20261031/**', '.github/workflows/deploy-coffee-20261031.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nexus-production-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify mobile and desktop preview
+        run: |
+          npm install --prefix /tmp/coffee-qa playwright@1.56.1
+          NODE_PATH=/tmp/coffee-qa/node_modules PREVIEW=1 CHROME_BIN="$(command -v google-chrome)" node coffee-20261031/verify.cjs
+      - name: Publish Coffee Time day after
+        env:
+          ARUBA_FTP_HOST: ${{ secrets.ARUBA_FTP_HOST }}
+          ARUBA_FTP_USERNAME: ${{ secrets.ARUBA_FTP_USERNAME }}
+          ARUBA_FTP_PASSWORD: ${{ secrets.ARUBA_FTP_PASSWORD }}
+          ARUBA_FTP_REMOTE_DIR: ${{ secrets.ARUBA_FTP_REMOTE_DIR }}
+        run: python3 coffee-20261031/deploy.py
+      - name: Verify public edition
+        run: NODE_PATH=/tmp/coffee-qa/node_modules CHROME_BIN="$(command -v google-chrome)" node coffee-20261031/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coffee-20261031-review
+          path: /tmp/coffee-20261031-*.png
