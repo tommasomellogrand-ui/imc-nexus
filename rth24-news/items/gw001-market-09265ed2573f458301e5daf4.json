@@ -1,0 +1,29 @@
+{
+  "id": "gw001-market-09265ed2573f458301e5daf4",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Hertha BSC: ufficiale l’arrivo di Kyrylo Digtyar",
+  "text": "Hertha BSC annuncia l’arrivo di Kyrylo Digtyar. Il giocatore lascia Metalist Kharkiv: operazione da 1,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Metalist Kharkiv",
+    "to": "Hertha BSC",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,6 milioni di euro",
+    "date": "2026-10-28",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-136259-0ccb34feaf98cfff.png",
+    "alt": "Kyrylo Digtyar"
+  }
+}

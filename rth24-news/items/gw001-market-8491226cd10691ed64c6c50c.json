@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-8491226cd10691ed64c6c50c",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di Ferrán Quetglas",
+  "text": "Real Madrid annuncia l’arrivo di Ferrán Quetglas. Il giocatore lascia FC Schalke 04: operazione da 8,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Schalke 04",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "8,4 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94079165-d56cd8525522ab1e.png",
+    "to_logo": "market-global-club-163-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137276-8a12c4a439cfc133.png",
+    "alt": "Ferrán Quetglas"
+  }
+}

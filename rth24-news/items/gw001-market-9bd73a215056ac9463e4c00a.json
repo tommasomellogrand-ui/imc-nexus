@@ -1,0 +1,25 @@
+{
+  "id": "gw001-market-9bd73a215056ac9463e4c00a",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Shakhtar Donetsk: ufficiale l’arrivo di Fadi Zarqelain",
+  "text": "Shakhtar Donetsk annuncia l’arrivo di Fadi Zarqelain, proveniente dalla lista degli svincolati. Operazione da 105.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079115"
+  ],
+  "teams": [
+    {
+      "name": "Shakhtar Donetsk",
+      "logo": "market-club-94079115-3315b78fc3ccd970.png"
+    }
+  ],
+  "transfer": {
+    "from": "Svincolato",
+    "to": "Shakhtar Donetsk",
+    "formula": "Trasferimento definitivo",
+    "amount": "105.000 euro",
+    "date": "2026-10-27",
+    "to_logo": "market-club-94079115-3315b78fc3ccd970.png"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-771d623ab32dabe1cd50059a",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Chacaritas FC: ufficiale l’arrivo di Justin Lerma",
+  "text": "Chacaritas FC annuncia l’arrivo di Justin Lerma. Il giocatore lascia Fenerbahçe SK: operazione da 12,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079117"
+  ],
+  "teams": [
+    {
+      "name": "Fenerbahçe",
+      "logo": "market-club-94079117-5538c7612289db66.png"
+    }
+  ],
+  "transfer": {
+    "from": "Fenerbahçe SK",
+    "to": "Chacaritas FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,4 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94079117-5538c7612289db66.png",
+    "to_logo": "market-global-club-5628-6a8450bfebf71400.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-147025-1f6acae884a1a957.png",
+    "alt": "Justin Lerma"
+  }
+}

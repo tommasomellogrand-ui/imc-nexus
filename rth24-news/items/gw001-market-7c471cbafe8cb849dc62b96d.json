@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-7c471cbafe8cb849dc62b96d",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Real Murcia: ufficiale l’arrivo di Diego Piñeiro",
+  "text": "Real Murcia annuncia l’arrivo di Diego Piñeiro. Il giocatore lascia Celtic: operazione da 6,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079188"
+  ],
+  "teams": [
+    {
+      "name": "Celtic",
+      "logo": "market-club-94079188-5d487794c122a9b8.png"
+    }
+  ],
+  "transfer": {
+    "from": "Celtic",
+    "to": "Real Murcia",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,1 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94079188-5d487794c122a9b8.png",
+    "to_logo": "market-global-club-164-86a4052194552279.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-123497-e34e1e8ca0896115.png",
+    "alt": "Diego Piñeiro"
+  }
+}

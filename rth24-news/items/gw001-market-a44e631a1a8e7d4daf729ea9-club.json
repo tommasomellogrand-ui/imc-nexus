@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-a44e631a1a8e7d4daf729ea9-club",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Tijjani Reijnders: il punto con Anna Billò e Vincenzo Martorano",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nFenerbahçe SK annuncia l’arrivo di Tijjani Reijnders. Il giocatore lascia Manchester City: operazione da 15,5 milioni di euro.\n\nAnna Billò · Inviato Fenerbahçe\n«L’accordo per Tijjani Reijnders è da 15,5 milioni di euro. Un giocatore con rating 91. Mister, come accompagnerà il suo ingresso nel gruppo?»\n\nVincenzo Martorano · Manager Fenerbahçe\n«Con Tijjani Reijnders cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»",
+  "category": "club",
+  "club_ids": [
+    "94079117"
+  ],
+  "teams": [
+    {
+      "name": "Fenerbahçe",
+      "logo": "market-club-94079117-5538c7612289db66.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Fenerbahçe SK",
+    "formula": "Trasferimento definitivo",
+    "amount": "15,5 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-global-club-47-198e9921b709c50d.png",
+    "to_logo": "market-club-94079117-5538c7612289db66.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-92649-b501dd241598522d.png",
+    "alt": "Tijjani Reijnders"
+  },
+  "coverage": [
+    {
+      "club": "Fenerbahçe",
+      "reporter": "Anna Billò",
+      "manager": "Vincenzo Martorano",
+      "question": "L’accordo per Tijjani Reijnders è da 15,5 milioni di euro. Un giocatore con rating 91. Mister, come accompagnerà il suo ingresso nel gruppo?",
+      "answer": "Con Tijjani Reijnders cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.",
+      "reporter_image": {
+        "file": "news-person-daa4793989602cc1-99daa48ea8e4d2a3.webp",
+        "alt": "Anna Billò"
+      }
+    }
+  ]
+}

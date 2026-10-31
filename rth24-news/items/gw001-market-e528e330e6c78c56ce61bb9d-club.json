@@ -1,0 +1,63 @@
+{
+  "id": "gw001-market-e528e330e6c78c56ce61bb9d-club",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Frank Anguissa: il punto dai due club",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nHertha BSC e Bologna FC chiudono l’accordo per Frank Anguissa. Operazione da N.WOLTEMADE, con Nick Woltemade nel percorso inverso verso Bologna FC.\n\nGiorgia Cenni · Inviato Hertha Berlino\n«Per Hertha Berlino arrivano Frank Anguissa e partono Nick Woltemade. Mister, come accompagniamo questo cambiamento?»\n\nTommaso Mello · Manager Hertha Berlino\n«Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.»\n\nFrancesco Cosatti · Inviato Bologna\n«Per Bologna arrivano Nick Woltemade e partono Frank Anguissa. Mister, come accompagniamo questo cambiamento?»\n\nCarlo Colombo · Manager Bologna\n«Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.»",
+  "category": "club",
+  "club_ids": [
+    "94079171",
+    "94078865"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    },
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "Hertha BSC",
+    "formula": "Scambio con contropartite",
+    "amount": "N.WOLTEMADE + Nick Woltemade",
+    "date": "2026-10-29",
+    "from_logo": "market-club-94078865-1c269c6755cb7fdb.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-82677-99323201255d4058.png",
+    "alt": "Frank Anguissa"
+  },
+  "coverage": [
+    {
+      "club": "Hertha Berlino",
+      "reporter": "Giorgia Cenni",
+      "manager": "Tommaso Mello",
+      "question": "Per Hertha Berlino arrivano Frank Anguissa e partono Nick Woltemade. Mister, come accompagniamo questo cambiamento?",
+      "answer": "Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.",
+      "reporter_image": {
+        "file": "news-person-4137ea9a27b84df3-245eb515441d2502.webp",
+        "alt": "Giorgia Cenni"
+      },
+      "manager_image": {
+        "file": "news-person-56748ccd184cf532-1572c907792595a1.jpeg",
+        "alt": "Tommaso Mello"
+      }
+    },
+    {
+      "club": "Bologna",
+      "reporter": "Francesco Cosatti",
+      "manager": "Carlo Colombo",
+      "question": "Per Bologna arrivano Nick Woltemade e partono Frank Anguissa. Mister, come accompagniamo questo cambiamento?",
+      "answer": "Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.",
+      "reporter_image": {
+        "file": "news-person-8df1ce5f22260665-23a19a3865263e09.jpg",
+        "alt": "Francesco Cosatti"
+      }
+    }
+  ]
+}

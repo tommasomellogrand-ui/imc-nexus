@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-771d623ab32dabe1cd50059a-club",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Justin Lerma: il punto con Anna Billò e Vincenzo Martorano",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nChacaritas FC annuncia l’arrivo di Justin Lerma. Il giocatore lascia Fenerbahçe SK: operazione da 12,4 milioni di euro.\n\nAnna Billò · Inviato Fenerbahçe\n«Justin Lerma proseguirà con Chacaritas FC. Un giocatore con rating 78. Mister, come affrontate il lavoro dopo questa partenza?»\n\nVincenzo Martorano · Manager Fenerbahçe\n«Salutiamo Justin Lerma e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94079117"
+  ],
+  "teams": [
+    {
+      "name": "Fenerbahçe",
+      "logo": "market-club-94079117-5538c7612289db66.png"
+    }
+  ],
+  "transfer": {
+    "from": "Fenerbahçe SK",
+    "to": "Chacaritas FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,4 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94079117-5538c7612289db66.png",
+    "to_logo": "market-global-club-5628-6a8450bfebf71400.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-147025-1f6acae884a1a957.png",
+    "alt": "Justin Lerma"
+  },
+  "coverage": [
+    {
+      "club": "Fenerbahçe",
+      "reporter": "Anna Billò",
+      "manager": "Vincenzo Martorano",
+      "question": "Justin Lerma proseguirà con Chacaritas FC. Un giocatore con rating 78. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Justin Lerma e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-daa4793989602cc1-99daa48ea8e4d2a3.webp",
+        "alt": "Anna Billò"
+      }
+    }
+  ]
+}

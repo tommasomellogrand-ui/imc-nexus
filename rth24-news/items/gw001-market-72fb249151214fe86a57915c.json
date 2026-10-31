@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-72fb249151214fe86a57915c",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "US Thionville Lusitanos: ufficiale l’arrivo di Adam El Boughlamy",
+  "text": "US Thionville Lusitanos annuncia l’arrivo di Adam El Boughlamy. Il giocatore lascia Guangzhou FC: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94080273"
+  ],
+  "teams": [
+    {
+      "name": "Guangzhou",
+      "logo": "market-club-94080273-6b8a372c9d81d3cc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Guangzhou FC",
+    "to": "US Thionville Lusitanos",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94080273-6b8a372c9d81d3cc.png",
+    "to_logo": "market-global-club-6796-2e5fbf3c4a48f882.png"
+  },
+  "editorial_version": 3
+}

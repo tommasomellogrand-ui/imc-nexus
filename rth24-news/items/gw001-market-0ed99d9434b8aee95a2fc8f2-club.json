@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-0ed99d9434b8aee95a2fc8f2-club",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Sergi Cardona: il punto con Matteo Petrucci e Alessandro Berardi",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nSS Lazio annuncia l’arrivo di Sergi Cardona. Il giocatore lascia Villarreal CF: operazione da 11,9 milioni di euro.\n\nMatteo Petrucci · Inviato Lazio\n«L’accordo per Sergi Cardona è da 11,9 milioni di euro. Un giocatore con rating 90. Mister, come accompagnerà il suo ingresso nel gruppo?»\n\nAlessandro Berardi · Manager Lazio\n«Con Sergi Cardona cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»",
+  "category": "club",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "Villarreal CF",
+    "to": "SS Lazio",
+    "formula": "Trasferimento definitivo",
+    "amount": "11,9 milioni di euro",
+    "date": "2026-10-28",
+    "from_logo": "market-global-club-174-9ae90fcbe3960fb8.png",
+    "to_logo": "market-club-94078878-b054346a661b8b49.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-120046-1414b86484d8c077.png",
+    "alt": "Sergi Cardona"
+  },
+  "coverage": [
+    {
+      "club": "Lazio",
+      "reporter": "Matteo Petrucci",
+      "manager": "Alessandro Berardi",
+      "question": "L’accordo per Sergi Cardona è da 11,9 milioni di euro. Un giocatore con rating 90. Mister, come accompagnerà il suo ingresso nel gruppo?",
+      "answer": "Con Sergi Cardona cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.",
+      "reporter_image": {
+        "file": "news-person-7fcf51a6cb89dc4f-de3de5e15673523b.jpg",
+        "alt": "Matteo Petrucci"
+      }
+    }
+  ]
+}

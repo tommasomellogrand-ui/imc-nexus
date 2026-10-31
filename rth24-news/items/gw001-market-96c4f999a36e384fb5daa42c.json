@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-96c4f999a36e384fb5daa42c",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Olympique Marseille: ufficiale l’arrivo di B.Song",
+  "text": "Olympique Marseille annuncia l’arrivo di B.Song. Il giocatore lascia FC Metz: operazione da 275.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079097"
+  ],
+  "teams": [
+    {
+      "name": "Olympique Marseille",
+      "logo": "market-club-94079097-2737b793931e2804.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Metz",
+    "to": "Olympique Marseille",
+    "formula": "Trasferimento definitivo",
+    "amount": "275.000 euro",
+    "date": "2026-10-27",
+    "from_logo": "market-global-club-331-3011318a971ab3ff.png",
+    "to_logo": "market-club-94079097-2737b793931e2804.png"
+  },
+  "editorial_version": 3
+}

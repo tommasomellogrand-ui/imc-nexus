@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-5f8dec75c6f3705b3a1bcbe8",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Hertha BSC: ufficiale l’arrivo di Alessandro Calligaris",
+  "text": "Hertha BSC annuncia l’arrivo di Alessandro Calligaris. Il giocatore lascia Internazionale: operazione da 1,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Internazionale",
+    "to": "Hertha BSC",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,6 milioni di euro",
+    "date": "2026-10-28",
+    "from_logo": "market-global-club-109-c1b721033d1fc95e.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-141620-249480f58020250b.png",
+    "alt": "Alessandro Calligaris"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-a23215262c00eff0adc2d237",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Campobasso Calcio: ufficiale l’arrivo di Gianluca Okon",
+  "text": "Campobasso Calcio annuncia l’arrivo di Gianluca Okon. Il giocatore lascia Club Brugge KV: operazione da 275.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94082591"
+  ],
+  "teams": [
+    {
+      "name": "Campobasso",
+      "logo": "market-club-94082591-b2f2c10c6d3b1b6c.png"
+    }
+  ],
+  "transfer": {
+    "from": "Club Brugge KV",
+    "to": "Campobasso Calcio",
+    "formula": "Trasferimento definitivo",
+    "amount": "275.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-global-club-354-752d7eac2967d7d4.png",
+    "to_logo": "market-club-94082591-b2f2c10c6d3b1b6c.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-156902-2fdfa3dc7994a7e2.png",
+    "alt": "Gianluca Okon"
+  }
+}

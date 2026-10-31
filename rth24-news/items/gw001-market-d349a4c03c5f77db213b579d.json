@@ -1,0 +1,35 @@
+{
+  "id": "gw001-market-d349a4c03c5f77db213b579d",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Bologna FC: ufficiale l’arrivo di Pierre Kalulu",
+  "text": "Bologna FC e Celtic chiudono l’accordo per Pierre Kalulu. Operazione da R.DIAS, con Rúben Dias nel percorso inverso verso Celtic.",
+  "category": "market",
+  "club_ids": [
+    "94078865",
+    "94079188"
+  ],
+  "teams": [
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    },
+    {
+      "name": "Celtic",
+      "logo": "market-club-94079188-5d487794c122a9b8.png"
+    }
+  ],
+  "transfer": {
+    "from": "Celtic",
+    "to": "Bologna FC",
+    "formula": "Scambio con contropartite",
+    "amount": "R.DIAS + Rúben Dias",
+    "date": "2026-10-30",
+    "from_logo": "market-club-94079188-5d487794c122a9b8.png",
+    "to_logo": "market-club-94078865-1c269c6755cb7fdb.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104458-0312e61fbac37daf.png",
+    "alt": "Pierre Kalulu"
+  }
+}

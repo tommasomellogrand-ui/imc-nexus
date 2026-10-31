@@ -1,0 +1,35 @@
+{
+  "id": "gw001-market-e528e330e6c78c56ce61bb9d",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Hertha BSC: ufficiale l’arrivo di Frank Anguissa",
+  "text": "Hertha BSC e Bologna FC chiudono l’accordo per Frank Anguissa. Operazione da N.WOLTEMADE, con Nick Woltemade nel percorso inverso verso Bologna FC.",
+  "category": "market",
+  "club_ids": [
+    "94079171",
+    "94078865"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    },
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "Hertha BSC",
+    "formula": "Scambio con contropartite",
+    "amount": "N.WOLTEMADE + Nick Woltemade",
+    "date": "2026-10-29",
+    "from_logo": "market-club-94078865-1c269c6755cb7fdb.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-82677-99323201255d4058.png",
+    "alt": "Frank Anguissa"
+  }
+}

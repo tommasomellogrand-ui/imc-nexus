@@ -1,0 +1,29 @@
+{
+  "id": "gw001-market-20f0ea86915eac6900b0dc14",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "SS Lazio: ufficiale l’arrivo di Tijjani Noslin",
+  "text": "SS Lazio annuncia l’arrivo di Tijjani Noslin, proveniente dalla lista degli svincolati. Operazione da 2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "Svincolato",
+    "to": "SS Lazio",
+    "formula": "Trasferimento definitivo",
+    "amount": "2 milioni di euro",
+    "date": "2026-10-30",
+    "to_logo": "market-club-94078878-b054346a661b8b49.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-114906-2ec2fa843d3366ac.png",
+    "alt": "Tijjani Noslin"
+  }
+}

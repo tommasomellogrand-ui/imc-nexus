@@ -1,0 +1,59 @@
+{
+  "id": "gw001-market-d349a4c03c5f77db213b579d-club",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Pierre Kalulu: il punto dai due club",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nBologna FC e Celtic chiudono l’accordo per Pierre Kalulu. Operazione da R.DIAS, con Rúben Dias nel percorso inverso verso Celtic.\n\nFrancesco Cosatti · Inviato Bologna\n«Per Bologna arrivano Pierre Kalulu e partono Rúben Dias. Mister, come accompagniamo questo cambiamento?»\n\nCarlo Colombo · Manager Bologna\n«Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.»\n\nNicola Roggero · Inviato Celtic\n«Per Celtic arrivano Rúben Dias e partono Pierre Kalulu. Mister, come accompagniamo questo cambiamento?»\n\nSir Simone · Manager Celtic\n«Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.»",
+  "category": "club",
+  "club_ids": [
+    "94078865",
+    "94079188"
+  ],
+  "teams": [
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    },
+    {
+      "name": "Celtic",
+      "logo": "market-club-94079188-5d487794c122a9b8.png"
+    }
+  ],
+  "transfer": {
+    "from": "Celtic",
+    "to": "Bologna FC",
+    "formula": "Scambio con contropartite",
+    "amount": "R.DIAS + Rúben Dias",
+    "date": "2026-10-30",
+    "from_logo": "market-club-94079188-5d487794c122a9b8.png",
+    "to_logo": "market-club-94078865-1c269c6755cb7fdb.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104458-0312e61fbac37daf.png",
+    "alt": "Pierre Kalulu"
+  },
+  "coverage": [
+    {
+      "club": "Bologna",
+      "reporter": "Francesco Cosatti",
+      "manager": "Carlo Colombo",
+      "question": "Per Bologna arrivano Pierre Kalulu e partono Rúben Dias. Mister, come accompagniamo questo cambiamento?",
+      "answer": "Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.",
+      "reporter_image": {
+        "file": "news-person-8df1ce5f22260665-23a19a3865263e09.jpg",
+        "alt": "Francesco Cosatti"
+      }
+    },
+    {
+      "club": "Celtic",
+      "reporter": "Nicola Roggero",
+      "manager": "Sir Simone",
+      "question": "Per Celtic arrivano Rúben Dias e partono Pierre Kalulu. Mister, come accompagniamo questo cambiamento?",
+      "answer": "Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.",
+      "reporter_image": {
+        "file": "news-person-83970829ba48412a-fca43569786f8c40.webp",
+        "alt": "Nicola Roggero"
+      }
+    }
+  ]
+}

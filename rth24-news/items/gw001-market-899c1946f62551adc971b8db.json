@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-899c1946f62551adc971b8db",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Celtic: ufficiale l’arrivo di Harry Gray",
+  "text": "Celtic annuncia l’arrivo di Harry Gray. Il giocatore lascia Leeds United: operazione da 3,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079188"
+  ],
+  "teams": [
+    {
+      "name": "Celtic",
+      "logo": "market-club-94079188-5d487794c122a9b8.png"
+    }
+  ],
+  "transfer": {
+    "from": "Leeds United",
+    "to": "Celtic",
+    "formula": "Trasferimento definitivo",
+    "amount": "3,1 milioni di euro",
+    "date": "2026-10-29",
+    "from_logo": "market-global-club-40-0aff0f56b89a02fe.png",
+    "to_logo": "market-club-94079188-5d487794c122a9b8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-153303-92751f734afb957d.png",
+    "alt": "Harry Gray"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-0028d7e2c122b146863714b1",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Nueva Chicago: ufficiale l’arrivo di Agustín Ruberto",
+  "text": "Nueva Chicago annuncia l’arrivo di Agustín Ruberto. Il giocatore lascia Hertha BSC: operazione da 12,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Hertha BSC",
+    "to": "Nueva Chicago",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,2 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94079171-73a89d10e84d6dcf.png",
+    "to_logo": "market-global-club-927-78ef9c5aa6113937.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-141117-6f8a9544bc540d8a.png",
+    "alt": "Agustín Ruberto"
+  }
+}

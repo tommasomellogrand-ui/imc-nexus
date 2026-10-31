@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-9518a2202b5eb788fa541474",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Fenerbahçe SK: ufficiale l’arrivo di Marcus Reed",
+  "text": "Fenerbahçe SK annuncia l’arrivo di Marcus Reed. Il giocatore lascia Aalesunds FK: operazione da 374.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079117"
+  ],
+  "teams": [
+    {
+      "name": "Fenerbahçe",
+      "logo": "market-club-94079117-5538c7612289db66.png"
+    }
+  ],
+  "transfer": {
+    "from": "Aalesunds FK",
+    "to": "Fenerbahçe SK",
+    "formula": "Trasferimento definitivo",
+    "amount": "374.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-global-club-1148-47d726abcee0c133.png",
+    "to_logo": "market-club-94079117-5538c7612289db66.png"
+  },
+  "editorial_version": 3
+}

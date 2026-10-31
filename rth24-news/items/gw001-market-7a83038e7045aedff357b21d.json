@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-7a83038e7045aedff357b21d",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Hertha BSC: ufficiale l’arrivo di Jens Hjerto-Dahl",
+  "text": "Hertha BSC annuncia l’arrivo di Jens Hjerto-Dahl. Il giocatore lascia Tromsø IL: operazione da 2,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Tromsø IL",
+    "to": "Hertha BSC",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,9 milioni di euro",
+    "date": "2026-10-28",
+    "from_logo": "market-global-club-698-de5772d68cd00552.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-131472-c936bc75da8bcf46.png",
+    "alt": "Jens Hjerto-Dahl"
+  }
+}

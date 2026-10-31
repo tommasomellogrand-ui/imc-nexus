@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-c320130dafa2d8e76ca0a7d1",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Celtic: ufficiale l’arrivo di Alysson Edward",
+  "text": "Celtic annuncia l’arrivo di Alysson Edward. Il giocatore lascia Aston Villa: operazione da 2,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079188"
+  ],
+  "teams": [
+    {
+      "name": "Celtic",
+      "logo": "market-club-94079188-5d487794c122a9b8.png"
+    }
+  ],
+  "transfer": {
+    "from": "Aston Villa",
+    "to": "Celtic",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,1 milioni di euro",
+    "date": "2026-10-28",
+    "from_logo": "market-global-club-2-ae543f86d2922165.png",
+    "to_logo": "market-club-94079188-5d487794c122a9b8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150937-52a42ece46c76326.png",
+    "alt": "Alysson Edward"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "gw001-market-0d895fbf820dcb5bac62b379",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Shakhtar Donetsk: ufficiale l’arrivo di Alaettin Ekici",
+  "text": "Shakhtar Donetsk annuncia l’arrivo di Alaettin Ekici, proveniente dalla lista degli svincolati. Operazione da 180.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079115"
+  ],
+  "teams": [
+    {
+      "name": "Shakhtar Donetsk",
+      "logo": "market-club-94079115-3315b78fc3ccd970.png"
+    }
+  ],
+  "transfer": {
+    "from": "Svincolato",
+    "to": "Shakhtar Donetsk",
+    "formula": "Trasferimento definitivo",
+    "amount": "180.000 euro",
+    "date": "2026-10-27",
+    "to_logo": "market-club-94079115-3315b78fc3ccd970.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-172607-40cbfe3331d5766f.png",
+    "alt": "Alaettin Ekici"
+  }
+}

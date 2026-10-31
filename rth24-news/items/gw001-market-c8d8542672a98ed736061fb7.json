@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-c8d8542672a98ed736061fb7",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Cruzeiro EC: ufficiale l’arrivo di Zé Lucas",
+  "text": "Cruzeiro EC annuncia l’arrivo di Zé Lucas. Il giocatore lascia SS Lazio: operazione da 12,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "SS Lazio",
+    "to": "Cruzeiro EC",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,6 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94078878-b054346a661b8b49.png",
+    "to_logo": "market-global-club-292-b81b3a5502b43e1c.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-157746-fc3941dfdab8586f.png",
+    "alt": "Zé Lucas"
+  }
+}

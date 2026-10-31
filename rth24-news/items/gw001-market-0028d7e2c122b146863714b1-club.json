@@ -1,0 +1,47 @@
+{
+  "id": "gw001-market-0028d7e2c122b146863714b1-club",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Agustín Ruberto: il punto con Giorgia Cenni e Tommaso Mello",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nNueva Chicago annuncia l’arrivo di Agustín Ruberto. Il giocatore lascia Hertha BSC: operazione da 12,2 milioni di euro.\n\nGiorgia Cenni · Inviato Hertha Berlino\n«Agustín Ruberto proseguirà con Nueva Chicago. Un attaccante centrale con rating 76. Mister, come affrontate il lavoro dopo questa partenza?»\n\nTommaso Mello · Manager Hertha Berlino\n«Salutiamo Agustín Ruberto e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Hertha BSC",
+    "to": "Nueva Chicago",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,2 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94079171-73a89d10e84d6dcf.png",
+    "to_logo": "market-global-club-927-78ef9c5aa6113937.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-141117-6f8a9544bc540d8a.png",
+    "alt": "Agustín Ruberto"
+  },
+  "coverage": [
+    {
+      "club": "Hertha Berlino",
+      "reporter": "Giorgia Cenni",
+      "manager": "Tommaso Mello",
+      "question": "Agustín Ruberto proseguirà con Nueva Chicago. Un attaccante centrale con rating 76. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Agustín Ruberto e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-4137ea9a27b84df3-245eb515441d2502.webp",
+        "alt": "Giorgia Cenni"
+      },
+      "manager_image": {
+        "file": "news-person-56748ccd184cf532-1572c907792595a1.jpeg",
+        "alt": "Tommaso Mello"
+      }
+    }
+  ]
+}

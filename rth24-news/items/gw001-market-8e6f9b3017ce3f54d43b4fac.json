@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-8e6f9b3017ce3f54d43b4fac",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "1. FC Kaiserslautern: ufficiale l’arrivo di Lorenzo Torriani",
+  "text": "1. FC Kaiserslautern annuncia l’arrivo di Lorenzo Torriani. Il giocatore lascia AC Milan: operazione da 1,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079172"
+  ],
+  "teams": [
+    {
+      "name": "Kaiserslautern",
+      "logo": "market-club-94079172-bb34b981104b73b7.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "1. FC Kaiserslautern",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,9 milioni di euro",
+    "date": "2026-10-29",
+    "from_logo": "market-global-club-115-cf09cc84369c6535.png",
+    "to_logo": "market-club-94079172-bb34b981104b73b7.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149240-761480fbd39b99b0.png",
+    "alt": "Lorenzo Torriani"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-223d4d72bb67d3e81cec05a6",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "SS Lazio: ufficiale l’arrivo di Kendry Páez",
+  "text": "SS Lazio annuncia l’arrivo di Kendry Páez. Il giocatore lascia Chelsea: operazione da 5,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "SS Lazio",
+    "formula": "Trasferimento definitivo",
+    "amount": "5,8 milioni di euro",
+    "date": "2026-10-29",
+    "from_logo": "market-global-club-21-6694aaf8610a7f9b.png",
+    "to_logo": "market-club-94078878-b054346a661b8b49.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-129562-cbf0d241328068e7.png",
+    "alt": "Kendry Páez"
+  }
+}

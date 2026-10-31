@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-d233ebd78fc401a1543d18c2",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Fortaleza EC: ufficiale l’arrivo di Luca Meirelles",
+  "text": "Fortaleza EC annuncia l’arrivo di Luca Meirelles. Il giocatore lascia Fenerbahçe SK: operazione da 2,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079117"
+  ],
+  "teams": [
+    {
+      "name": "Fenerbahçe",
+      "logo": "market-club-94079117-5538c7612289db66.png"
+    }
+  ],
+  "transfer": {
+    "from": "Fenerbahçe SK",
+    "to": "Fortaleza EC",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,9 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94079117-5538c7612289db66.png",
+    "to_logo": "market-global-club-296-6fbbe78622a8c8f4.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-157518-946371b00ef858dc.png",
+    "alt": "Luca Meirelles"
+  }
+}

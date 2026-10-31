@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-c8d8542672a98ed736061fb7-club",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Zé Lucas: il punto con Matteo Petrucci e Alessandro Berardi",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nCruzeiro EC annuncia l’arrivo di Zé Lucas. Il giocatore lascia SS Lazio: operazione da 12,6 milioni di euro.\n\nMatteo Petrucci · Inviato Lazio\n«Zé Lucas proseguirà con Cruzeiro EC. Un centrocampista difensivo e centrale con rating 80. Mister, come affrontate il lavoro dopo questa partenza?»\n\nAlessandro Berardi · Manager Lazio\n«Salutiamo Zé Lucas e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "SS Lazio",
+    "to": "Cruzeiro EC",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,6 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94078878-b054346a661b8b49.png",
+    "to_logo": "market-global-club-292-b81b3a5502b43e1c.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-157746-fc3941dfdab8586f.png",
+    "alt": "Zé Lucas"
+  },
+  "coverage": [
+    {
+      "club": "Lazio",
+      "reporter": "Matteo Petrucci",
+      "manager": "Alessandro Berardi",
+      "question": "Zé Lucas proseguirà con Cruzeiro EC. Un centrocampista difensivo e centrale con rating 80. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Zé Lucas e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-7fcf51a6cb89dc4f-de3de5e15673523b.jpg",
+        "alt": "Matteo Petrucci"
+      }
+    }
+  ]
+}

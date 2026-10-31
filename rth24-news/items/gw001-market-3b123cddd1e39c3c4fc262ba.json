@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-3b123cddd1e39c3c4fc262ba",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "AC Milan: ufficiale l’arrivo di Ché Adams",
+  "text": "AC Milan annuncia l’arrivo di Ché Adams. Il giocatore lascia AEK Athens: operazione da 5,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079139"
+  ],
+  "teams": [
+    {
+      "name": "AEK Athens",
+      "logo": "market-club-94079139-c60b6f18d7725d04.png"
+    }
+  ],
+  "transfer": {
+    "from": "AEK Athens",
+    "to": "AC Milan",
+    "formula": "Trasferimento definitivo",
+    "amount": "5,1 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94079139-c60b6f18d7725d04.png",
+    "to_logo": "market-global-club-115-cf09cc84369c6535.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-79506-af54cded1fa5954b.png",
+    "alt": "Ché Adams"
+  }
+}

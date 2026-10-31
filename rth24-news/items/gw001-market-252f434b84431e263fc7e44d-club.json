@@ -1,0 +1,59 @@
+{
+  "id": "gw001-market-252f434b84431e263fc7e44d-club",
+  "published_at": "2026-10-31T11:59:51+01:00",
+  "title": "Amad Diallo: il punto dai due club",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nAtlético Madrid annuncia l’arrivo di Amad Diallo. Il giocatore lascia Campobasso Calcio: operazione da 27 milioni di euro.\n\nGiancarlo Marocchi · Inviato Atlético Madrid\n«L’accordo per Amad Diallo è da 27 milioni di euro. Un giocatore con rating 90. Mister, come accompagnerà il suo ingresso nel gruppo?»\n\nGiuseppe Trovato · Manager Atlético Madrid\n«Con Amad Diallo cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»\n\nValentina Ciarlante · Inviato Campobasso\n«Amad Diallo proseguirà con Atlético Madrid. Un giocatore con rating 90. Mister, come affrontate il lavoro dopo questa partenza?»\n\nSimone Campanella · Manager Campobasso\n«Salutiamo Amad Diallo e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94078906",
+    "94082591"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    },
+    {
+      "name": "Campobasso",
+      "logo": "market-club-94082591-b2f2c10c6d3b1b6c.png"
+    }
+  ],
+  "transfer": {
+    "from": "Campobasso Calcio",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "27 milioni di euro",
+    "date": "2026-10-27",
+    "from_logo": "market-club-94082591-b2f2c10c6d3b1b6c.png",
+    "to_logo": "market-club-94078906-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-103252-9948d9232a7480b3.png",
+    "alt": "Amad Diallo"
+  },
+  "coverage": [
+    {
+      "club": "Atlético Madrid",
+      "reporter": "Giancarlo Marocchi",
+      "manager": "Giuseppe Trovato",
+      "question": "L’accordo per Amad Diallo è da 27 milioni di euro. Un giocatore con rating 90. Mister, come accompagnerà il suo ingresso nel gruppo?",
+      "answer": "Con Amad Diallo cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.",
+      "reporter_image": {
+        "file": "news-person-cb68488fa8fc5eec-38107fd15eb6866e.jpg",
+        "alt": "Giancarlo Marocchi"
+      }
+    },
+    {
+      "club": "Campobasso",
+      "reporter": "Valentina Ciarlante",
+      "manager": "Simone Campanella",
+      "question": "Amad Diallo proseguirà con Atlético Madrid. Un giocatore con rating 90. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Amad Diallo e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-4c4f5dd539d3398b-773652eb4cb94acd.jpg",
+        "alt": "Valentina Ciarlante"
+      }
+    }
+  ]
+}
