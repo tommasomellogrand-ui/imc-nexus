@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-955f20d9d9da7a1e974cd9e0",
+  "published_at": "2026-10-30T00:00:00+01:00",
+  "title": "Enfield Town: ufficiale l’arrivo di Prince Cissé",
+  "text": "Enfield Town annuncia l’arrivo di Prince Cissé. Il giocatore lascia Liverpool: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Enfield Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-10-30",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-4124-f2a01c36a0edb0f2.png"
+  },
+  "editorial_version": 3
+}

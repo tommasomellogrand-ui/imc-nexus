@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-cd11b8e4e85f0b411e355437",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Virtus Entella: ufficiale l’arrivo di Nosa Edward Obaretin",
+  "text": "Virtus Entella annuncia l’arrivo di Nosa Edward Obaretin. Il giocatore lascia SSC Napoli: operazione da 2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Napoli",
+    "to": "Virtus Entella",
+    "formula": "Trasferimento definitivo",
+    "amount": "2 milioni di euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "to_logo": "market-global-club-2189-0b493a9576b19cdc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-121864-9263490fab6c50bf.png",
+    "alt": "Nosa Edward Obaretin"
+  }
+}

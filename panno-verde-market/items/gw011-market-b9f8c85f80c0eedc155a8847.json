@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-b9f8c85f80c0eedc155a8847",
+  "published_at": "2026-10-30T00:00:00+01:00",
+  "title": "SSC Napoli: ufficiale l’arrivo di N.Nacif",
+  "text": "SSC Napoli annuncia l’arrivo di N.Nacif. Il giocatore lascia Oriente Petrolero: operazione da 344.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "Oriente Petrolero",
+    "to": "SSC Napoli",
+    "formula": "Trasferimento definitivo",
+    "amount": "344.000 euro",
+    "date": "2026-10-30",
+    "from_logo": "market-global-club-1407-7c8c2ce09487fa96.png",
+    "to_logo": "market-club-93400234-082aae3f75dc21ec.png"
+  },
+  "editorial_version": 3
+}

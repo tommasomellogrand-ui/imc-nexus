@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-94549346153ccec6b7b34531",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Rimini FC: ufficiale l’arrivo di Federico Macca",
+  "text": "Rimini FC annuncia l’arrivo di Federico Macca. Il giocatore lascia Juventus: operazione da 294.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "Rimini FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "294.000 euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-476-7eb8b99a5af9a9dd.png"
+  },
+  "editorial_version": 3
+}

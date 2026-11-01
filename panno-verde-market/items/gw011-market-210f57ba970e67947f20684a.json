@@ -1,0 +1,22 @@
+{
+  "id": "gw011-market-210f57ba970e67947f20684a",
+  "published_at": "2026-10-31T00:00:00+01:00",
+  "title": "Utebo FC: ufficiale l’arrivo di Diego Royo",
+  "text": "Utebo FC annuncia l’arrivo di Diego Royo, proveniente dalla lista degli svincolati. Operazione da 100.000 euro.",
+  "category": "market",
+  "club_ids": [],
+  "teams": [],
+  "transfer": {
+    "from": "Svincolato",
+    "to": "Utebo FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "100.000 euro",
+    "date": "2026-10-31",
+    "to_logo": "market-global-club-6203-54904767aa520705.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-64274-0f153455dd8950c6.png",
+    "alt": "Diego Royo"
+  }
+}

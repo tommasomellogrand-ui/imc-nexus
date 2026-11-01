@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-74bd6994139a51335f4ce487",
+  "published_at": "2026-10-29T00:00:00+01:00",
+  "title": "Celta Vigo: ufficiale l’arrivo di Horațiu Moldovan",
+  "text": "Celta Vigo annuncia l’arrivo di Horațiu Moldovan. Il giocatore lascia Atlético Madrid: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Celta Vigo",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-29",
+    "from_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-141-b3a470d5fa7d1aa3.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-93754-8079085783308515.png",
+    "alt": "Horațiu Moldovan"
+  }
+}

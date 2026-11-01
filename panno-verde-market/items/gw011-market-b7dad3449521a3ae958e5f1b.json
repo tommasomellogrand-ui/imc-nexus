@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-b7dad3449521a3ae958e5f1b",
+  "published_at": "2026-10-30T00:00:00+01:00",
+  "title": "Gelbison Vallo: ufficiale l’arrivo di Jacopo Mirra",
+  "text": "Gelbison Vallo annuncia l’arrivo di Jacopo Mirra. Il giocatore lascia Atalanta BC: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "Gelbison Vallo",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-10-30",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-5241-8ed6e4517c476866.png"
+  },
+  "editorial_version": 3
+}

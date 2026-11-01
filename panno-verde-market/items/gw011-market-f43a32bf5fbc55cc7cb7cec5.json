@@ -1,0 +1,25 @@
+{
+  "id": "gw011-market-f43a32bf5fbc55cc7cb7cec5",
+  "published_at": "2026-10-30T00:00:00+01:00",
+  "title": "Rushden & Diamonds: ufficiale l’arrivo di D J Esdaille",
+  "text": "Rushden & Diamonds annuncia l’arrivo di D J Esdaille. Il giocatore lascia Liverpool: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Rushden & Diamonds",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-10-30",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png"
+  },
+  "editorial_version": 3
+}

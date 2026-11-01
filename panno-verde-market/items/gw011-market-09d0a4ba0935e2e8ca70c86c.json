@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-09d0a4ba0935e2e8ca70c86c",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "Como 1907: ufficiale l’arrivo di Matej Deket",
+  "text": "Como 1907 e FK Borac Banja Luka chiudono l’accordo per Matej Deket. Operazione da 300.000 euro, con Nicolò Bensi nel percorso inverso verso FK Borac Banja Luka.",
+  "category": "market",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "transfer": {
+    "from": "FK Borac Banja Luka",
+    "to": "Como 1907",
+    "formula": "Scambio con contropartite",
+    "amount": "300.000 euro + Nicolò Bensi",
+    "date": "2026-11-01",
+    "from_logo": "market-global-club-1549-cbbaf8ebb7e8a8ea.png",
+    "to_logo": "market-club-93401156-3677d3c02dbbefef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-171118-521f480db631ed54.png",
+    "alt": "Matej Deket"
+  }
+}

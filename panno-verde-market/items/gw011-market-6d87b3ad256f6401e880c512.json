@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-6d87b3ad256f6401e880c512",
+  "published_at": "2026-10-31T00:00:00+01:00",
+  "title": "Juventus: ufficiale l’arrivo di Daniel Muñoz",
+  "text": "Juventus annuncia l’arrivo di Daniel Muñoz. Il giocatore lascia Nottingham Forest: operazione da 16,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Nottingham Forest",
+    "to": "Juventus",
+    "formula": "Trasferimento definitivo",
+    "amount": "16,1 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-global-club-55-0ab1079036a19b79.png",
+    "to_logo": "market-club-93399610-324c3f0e48728abe.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-95517-025ad4490c9901db.png",
+    "alt": "Daniel Muñoz"
+  }
+}

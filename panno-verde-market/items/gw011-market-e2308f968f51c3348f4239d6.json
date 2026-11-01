@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e2308f968f51c3348f4239d6",
+  "published_at": "2026-10-30T00:00:00+01:00",
+  "title": "US Pianese: ufficiale l’arrivo di Andrea Bonanomi",
+  "text": "US Pianese annuncia l’arrivo di Andrea Bonanomi. Il giocatore lascia Atalanta BC: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "US Pianese",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-30",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-4456-3a9393be33e3e535.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149189-544a1a6e6eff8842.png",
+    "alt": "Andrea Bonanomi"
+  }
+}
