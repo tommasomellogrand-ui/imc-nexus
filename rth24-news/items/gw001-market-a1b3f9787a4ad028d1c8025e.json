@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-a1b3f9787a4ad028d1c8025e",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "SSC Bari: ufficiale l’arrivo di Leonardo Mendicino",
+  "text": "SSC Bari annuncia l’arrivo di Leonardo Mendicino. Il giocatore lascia AS Reggina 1914: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078889"
+  ],
+  "teams": [
+    {
+      "name": "Reggina",
+      "logo": "market-club-94078889-faf4c23dafd22c30.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Reggina 1914",
+    "to": "SSC Bari",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94078889-faf4c23dafd22c30.png",
+    "to_logo": "market-global-club-97-1f891ab215bd8875.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-140582-61b421e61b766c20.png",
+    "alt": "Leonardo Mendicino"
+  }
+}

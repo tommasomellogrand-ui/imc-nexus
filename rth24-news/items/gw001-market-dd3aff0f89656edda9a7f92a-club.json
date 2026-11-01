@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-dd3aff0f89656edda9a7f92a-club",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Ryan Kavuma-Mcqueen: il punto con Sarah Castellana e Francesco Rossi",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nChelsea annuncia l’arrivo di Ryan Kavuma-Mcqueen. Il giocatore lascia FC Schalke 04: operazione da 12,3 milioni di euro.\n\nSarah Castellana · Inviato Schalke 04\n«Ryan Kavuma-Mcqueen proseguirà con Chelsea. Un giocatore con rating 65. Mister, come affrontate il lavoro dopo questa partenza?»\n\nFrancesco Rossi · Manager Schalke 04\n«Salutiamo Ryan Kavuma-Mcqueen e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Schalke 04",
+    "to": "Chelsea",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94079165-d56cd8525522ab1e.png",
+    "to_logo": "market-global-club-21-6694aaf8610a7f9b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-163109-96b0128420be7dd8.png",
+    "alt": "Ryan Kavuma-Mcqueen"
+  },
+  "coverage": [
+    {
+      "club": "Schalke 04",
+      "reporter": "Sarah Castellana",
+      "manager": "Francesco Rossi",
+      "question": "Ryan Kavuma-Mcqueen proseguirà con Chelsea. Un giocatore con rating 65. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Ryan Kavuma-Mcqueen e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-c89305ceb4bba238-c754f5683ed23f1c.jpg",
+        "alt": "Sarah Castellana"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-faa5c57acff206145f2caa20",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "SS Arezzo: ufficiale l’arrivo di Sebastiano Desplanches",
+  "text": "SS Arezzo annuncia l’arrivo di Sebastiano Desplanches. Il giocatore lascia AS Reggina 1914: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078889"
+  ],
+  "teams": [
+    {
+      "name": "Reggina",
+      "logo": "market-club-94078889-faf4c23dafd22c30.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Reggina 1914",
+    "to": "SS Arezzo",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94078889-faf4c23dafd22c30.png",
+    "to_logo": "market-global-club-94-0fa0c750a55403fc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-123586-c76c211b1043abcd.png",
+    "alt": "Sebastiano Desplanches"
+  }
+}

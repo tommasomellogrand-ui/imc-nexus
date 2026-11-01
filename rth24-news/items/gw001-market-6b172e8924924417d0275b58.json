@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-6b172e8924924417d0275b58",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Chelsea: ufficiale l’arrivo di Jamie Gittens",
+  "text": "Chelsea annuncia l’arrivo di Jamie Gittens. Il giocatore lascia Atlético Madrid: operazione da 24 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078906"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Chelsea",
+    "formula": "Trasferimento definitivo",
+    "amount": "24 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94078906-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-21-6694aaf8610a7f9b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-105625-4e73686fefe8b59b.png",
+    "alt": "Jamie Gittens"
+  }
+}

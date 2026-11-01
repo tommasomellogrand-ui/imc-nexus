@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-8a43dc6ca58fb4248556e7ac",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Fulham: ufficiale l’arrivo di Hugo Larsson",
+  "text": "Fulham annuncia l’arrivo di Hugo Larsson. Il giocatore lascia Hertha BSC: operazione da 16 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Hertha BSC",
+    "to": "Fulham",
+    "formula": "Trasferimento definitivo",
+    "amount": "16 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94079171-73a89d10e84d6dcf.png",
+    "to_logo": "market-global-club-32-9710e42266ed0392.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-120840-dc553cbb16c60398.png",
+    "alt": "Hugo Larsson"
+  }
+}

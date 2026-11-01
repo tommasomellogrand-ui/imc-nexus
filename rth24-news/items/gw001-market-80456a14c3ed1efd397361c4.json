@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-80456a14c3ed1efd397361c4",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "FC Schalke 04: ufficiale l’arrivo di C.Afanou",
+  "text": "FC Schalke 04 annuncia l’arrivo di C.Afanou. Il giocatore lascia Bayern München: operazione da 200.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "FC Schalke 04",
+    "formula": "Trasferimento definitivo",
+    "amount": "200.000 euro",
+    "date": "2026-10-31",
+    "from_logo": "market-global-club-391-8f08c13f795eef24.png",
+    "to_logo": "market-club-94079165-d56cd8525522ab1e.png"
+  },
+  "editorial_version": 3
+}

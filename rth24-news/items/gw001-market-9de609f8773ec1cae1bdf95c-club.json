@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-9de609f8773ec1cae1bdf95c-club",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Álvaro Leiva: il punto con Matteo Petrucci e Alessandro Berardi",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nReal Madrid annuncia l’arrivo di Álvaro Leiva. Il giocatore lascia SS Lazio: operazione da 12,2 milioni di euro.\n\nMatteo Petrucci · Inviato Lazio\n«Álvaro Leiva proseguirà con Real Madrid. Un giocatore con rating 75. Mister, come affrontate il lavoro dopo questa partenza?»\n\nAlessandro Berardi · Manager Lazio\n«Salutiamo Álvaro Leiva e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "SS Lazio",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,2 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078878-b054346a661b8b49.png",
+    "to_logo": "market-global-club-163-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-116971-00efffbbb4a59784.png",
+    "alt": "Álvaro Leiva"
+  },
+  "coverage": [
+    {
+      "club": "Lazio",
+      "reporter": "Matteo Petrucci",
+      "manager": "Alessandro Berardi",
+      "question": "Álvaro Leiva proseguirà con Real Madrid. Un giocatore con rating 75. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Álvaro Leiva e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-7fcf51a6cb89dc4f-de3de5e15673523b.jpg",
+        "alt": "Matteo Petrucci"
+      }
+    }
+  ]
+}

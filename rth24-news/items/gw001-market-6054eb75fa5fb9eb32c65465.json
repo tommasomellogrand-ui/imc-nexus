@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-6054eb75fa5fb9eb32c65465",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Liverpool: ufficiale l’arrivo di Kaide Gordon",
+  "text": "Liverpool annuncia l’arrivo di Kaide Gordon. Il giocatore lascia FC Schalke 04: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Schalke 04",
+    "to": "Liverpool",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94079165-d56cd8525522ab1e.png",
+    "to_logo": "market-global-club-44-56dfeac623d23b94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-108470-3e45902942310b3b.png",
+    "alt": "Kaide Gordon"
+  }
+}

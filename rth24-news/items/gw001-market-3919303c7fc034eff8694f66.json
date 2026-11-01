@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-3919303c7fc034eff8694f66",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "New England Revolution: ufficiale l’arrivo di Allan Oyirwoth",
+  "text": "New England Revolution annuncia l’arrivo di Allan Oyirwoth. Il giocatore lascia 1. FC Kaiserslautern: operazione da 12,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079172"
+  ],
+  "teams": [
+    {
+      "name": "Kaiserslautern",
+      "logo": "market-club-94079172-bb34b981104b73b7.png"
+    }
+  ],
+  "transfer": {
+    "from": "1. FC Kaiserslautern",
+    "to": "New England Revolution",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94079172-bb34b981104b73b7.png",
+    "to_logo": "market-global-club-463-560592a9d8fa19fc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-156401-6d500bd19b4ba564.png",
+    "alt": "Allan Oyirwoth"
+  }
+}

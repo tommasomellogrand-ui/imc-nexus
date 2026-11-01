@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-c97119554b62074d5c7b1874-club",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Abdukodir Khusanov: il punto con Giancarlo Marocchi e Giuseppe Trovato",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nManchester City annuncia l’arrivo di Abdukodir Khusanov. Il giocatore lascia Atlético Madrid: operazione da 33,2 milioni di euro.\n\nGiancarlo Marocchi · Inviato Atlético Madrid\n«Abdukodir Khusanov proseguirà con Manchester City. Un giocatore con rating 88. Mister, come affrontate il lavoro dopo questa partenza?»\n\nGiuseppe Trovato · Manager Atlético Madrid\n«Salutiamo Abdukodir Khusanov e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94078906"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "33,2 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94078906-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-47-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-129988-1a581d513f140703.png",
+    "alt": "Abdukodir Khusanov"
+  },
+  "coverage": [
+    {
+      "club": "Atlético Madrid",
+      "reporter": "Giancarlo Marocchi",
+      "manager": "Giuseppe Trovato",
+      "question": "Abdukodir Khusanov proseguirà con Manchester City. Un giocatore con rating 88. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Abdukodir Khusanov e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-cb68488fa8fc5eec-38107fd15eb6866e.jpg",
+        "alt": "Giancarlo Marocchi"
+      }
+    }
+  ]
+}

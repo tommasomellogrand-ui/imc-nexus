@@ -1,0 +1,47 @@
+{
+  "id": "gw001-market-8a43dc6ca58fb4248556e7ac-club",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Hugo Larsson: il punto con Giorgia Cenni e Tommaso Mello",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nFulham annuncia l’arrivo di Hugo Larsson. Il giocatore lascia Hertha BSC: operazione da 16 milioni di euro.\n\nGiorgia Cenni · Inviato Hertha Berlino\n«Hugo Larsson proseguirà con Fulham. Un centrocampista difensivo e centrale con rating 88. Mister, come affrontate il lavoro dopo questa partenza?»\n\nTommaso Mello · Manager Hertha Berlino\n«Salutiamo Hugo Larsson e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Hertha BSC",
+    "to": "Fulham",
+    "formula": "Trasferimento definitivo",
+    "amount": "16 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94079171-73a89d10e84d6dcf.png",
+    "to_logo": "market-global-club-32-9710e42266ed0392.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-120840-dc553cbb16c60398.png",
+    "alt": "Hugo Larsson"
+  },
+  "coverage": [
+    {
+      "club": "Hertha Berlino",
+      "reporter": "Giorgia Cenni",
+      "manager": "Tommaso Mello",
+      "question": "Hugo Larsson proseguirà con Fulham. Un centrocampista difensivo e centrale con rating 88. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Hugo Larsson e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-4137ea9a27b84df3-245eb515441d2502.webp",
+        "alt": "Giorgia Cenni"
+      },
+      "manager_image": {
+        "file": "news-person-56748ccd184cf532-1572c907792595a1.jpeg",
+        "alt": "Tommaso Mello"
+      }
+    }
+  ]
+}

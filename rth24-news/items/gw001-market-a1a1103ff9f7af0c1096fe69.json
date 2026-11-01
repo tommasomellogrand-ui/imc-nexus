@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-a1a1103ff9f7af0c1096fe69",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "US Sassuolo: ufficiale l’arrivo di Simone Cinquegrano",
+  "text": "US Sassuolo annuncia l’arrivo di Simone Cinquegrano. Il giocatore lascia Sampdoria: operazione da 4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078892"
+  ],
+  "teams": [
+    {
+      "name": "Sampdoria",
+      "logo": "market-club-94078892-f5bfd12f94cf0bcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Sampdoria",
+    "to": "US Sassuolo",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94078892-f5bfd12f94cf0bcf.png",
+    "to_logo": "market-global-club-862-4ec7c75112d6c7c8.png"
+  },
+  "editorial_version": 3
+}

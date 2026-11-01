@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-7fc8a22f1fd06b61cdcf8e81",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "AEK Athens: ufficiale l’arrivo di Tommaso Baldanzi",
+  "text": "AEK Athens annuncia l’arrivo di Tommaso Baldanzi. Il giocatore lascia SSC Bari: operazione da 2,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079139"
+  ],
+  "teams": [
+    {
+      "name": "AEK Athens",
+      "logo": "market-club-94079139-c60b6f18d7725d04.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Bari",
+    "to": "AEK Athens",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,8 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-global-club-97-1f891ab215bd8875.png",
+    "to_logo": "market-club-94079139-c60b6f18d7725d04.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-113738-8e87114c2761f98f.png",
+    "alt": "Tommaso Baldanzi"
+  }
+}

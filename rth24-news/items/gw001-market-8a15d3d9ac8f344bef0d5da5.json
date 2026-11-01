@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-8a15d3d9ac8f344bef0d5da5",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Palermo FC: ufficiale l’arrivo di E.Biondini",
+  "text": "Palermo FC annuncia l’arrivo di E.Biondini. Il giocatore lascia Empoli: operazione da 325.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078884"
+  ],
+  "teams": [
+    {
+      "name": "Palermo",
+      "logo": "market-club-94078884-25823d0fe372f873.png"
+    }
+  ],
+  "transfer": {
+    "from": "Empoli",
+    "to": "Palermo FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "325.000 euro",
+    "date": "2026-10-31",
+    "from_logo": "market-global-club-106-11abd06d2e825ff9.png",
+    "to_logo": "market-club-94078884-25823d0fe372f873.png"
+  },
+  "editorial_version": 3
+}

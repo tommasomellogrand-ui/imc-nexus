@@ -1,0 +1,25 @@
+{
+  "id": "gw001-market-e14b8e216c95b42b6b97f9aa",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "FC Schalke 04: ufficiale l’arrivo di B.Gardarsson",
+  "text": "FC Schalke 04 annuncia l’arrivo di B.Gardarsson, proveniente dalla lista degli svincolati. Operazione da 200.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Svincolato",
+    "to": "FC Schalke 04",
+    "formula": "Trasferimento definitivo",
+    "amount": "200.000 euro",
+    "date": "2026-10-31",
+    "to_logo": "market-club-94079165-d56cd8525522ab1e.png"
+  },
+  "editorial_version": 3
+}

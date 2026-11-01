@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-3919303c7fc034eff8694f66-club",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Allan Oyirwoth: il punto con Giorgia Rossi e Vardan Minasyan",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nNew England Revolution annuncia l’arrivo di Allan Oyirwoth. Il giocatore lascia 1. FC Kaiserslautern: operazione da 12,3 milioni di euro.\n\nGiorgia Rossi · Inviato Kaiserslautern\n«Allan Oyirwoth proseguirà con New England Revolution. Un giocatore con rating 70. Mister, come affrontate il lavoro dopo questa partenza?»\n\nVardan Minasyan · Manager Kaiserslautern\n«Salutiamo Allan Oyirwoth e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94079172"
+  ],
+  "teams": [
+    {
+      "name": "Kaiserslautern",
+      "logo": "market-club-94079172-bb34b981104b73b7.png"
+    }
+  ],
+  "transfer": {
+    "from": "1. FC Kaiserslautern",
+    "to": "New England Revolution",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94079172-bb34b981104b73b7.png",
+    "to_logo": "market-global-club-463-560592a9d8fa19fc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-156401-6d500bd19b4ba564.png",
+    "alt": "Allan Oyirwoth"
+  },
+  "coverage": [
+    {
+      "club": "Kaiserslautern",
+      "reporter": "Giorgia Rossi",
+      "manager": "Vardan Minasyan",
+      "question": "Allan Oyirwoth proseguirà con New England Revolution. Un giocatore con rating 70. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Allan Oyirwoth e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-18196099e9ca9ee1-9ecf0cc8065494a3.jpg",
+        "alt": "Giorgia Rossi"
+      }
+    }
+  ]
+}

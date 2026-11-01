@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-7d295b2aad5ad3851752829e",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Banfield: ufficiale l’arrivo di Lautaro Rivero",
+  "text": "Banfield annuncia l’arrivo di Lautaro Rivero. Il giocatore lascia Dynamo Dresden: operazione da 8,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "transfer": {
+    "from": "Dynamo Dresden",
+    "to": "Banfield",
+    "formula": "Trasferimento definitivo",
+    "amount": "8,4 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94079161-2215dbdfe461abd9.png",
+    "to_logo": "market-global-club-269-724087498f1e5827.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-151392-620d24632fe43ff9.png",
+    "alt": "Lautaro Rivero"
+  }
+}

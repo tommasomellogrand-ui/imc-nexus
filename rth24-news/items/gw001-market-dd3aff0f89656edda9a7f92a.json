@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-dd3aff0f89656edda9a7f92a",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "Chelsea: ufficiale l’arrivo di Ryan Kavuma-Mcqueen",
+  "text": "Chelsea annuncia l’arrivo di Ryan Kavuma-Mcqueen. Il giocatore lascia FC Schalke 04: operazione da 12,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Schalke 04",
+    "to": "Chelsea",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94079165-d56cd8525522ab1e.png",
+    "to_logo": "market-global-club-21-6694aaf8610a7f9b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-163109-96b0128420be7dd8.png",
+    "alt": "Ryan Kavuma-Mcqueen"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-09854efabc0c102b75fa5638",
+  "published_at": "2026-11-01T20:26:37+01:00",
+  "title": "VfB Stuttgart: ufficiale l’arrivo di Mirza Catović",
+  "text": "VfB Stuttgart annuncia l’arrivo di Mirza Catović. Il giocatore lascia Atlético Madrid: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078906"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "VfB Stuttgart",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-10-31",
+    "from_logo": "market-club-94078906-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-417-5e411e18cc3b9f69.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-156633-9a70cc409ce3ec7a.png",
+    "alt": "Mirza Catović"
+  }
+}
