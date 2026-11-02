@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514954-mng007-93399718",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Vincenzo Martorano · Il post partita di SL Benfica",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBorussia Dortmund 3–1 SL Benfica · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399718"
+  ],
+  "teams": [
+    {
+      "name": "SL Benfica",
+      "logo": "market-club-93399718-cd9bbf9dc40287fc.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514954",
+    "manager_id": "MNG007",
+    "manager": "Vincenzo Martorano",
+    "club_id": "93399718",
+    "club": "SL Benfica",
+    "opponent": "Borussia Dortmund",
+    "match_date": "2026-11-01",
+    "result": "Borussia Dortmund 3–1 SL Benfica",
+    "source_hash": "2e3a3dc443f4b2e73583ca23c8e410742b71fb421bbcebebcef2361e716e837d",
+    "home": "Borussia Dortmund",
+    "away": "SL Benfica",
+    "home_score": "3",
+    "away_score": "1",
+    "home_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "away_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "division": "1",
+    "round": "3",
+    "competition_label": "DIVISIONE 1 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 43% di possesso e 16 tiri, contro 17 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Nmecha al minuto 59 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 59 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "99830",
+        "name": "Nmecha",
+        "image": {
+          "file": "postmatch-player-99830-18050c9ba8c327ad.png",
+          "alt": "Nmecha"
+        }
+      }
+    },
+    {
+      "question": "Angelo Stiller ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "107694",
+        "name": "Angelo Stiller",
+        "image": {
+          "file": "postmatch-player-107694-3fbf0445a4ae7d28.png",
+          "alt": "Angelo Stiller"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 16, contro 8 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 8 volte contro le nostre 3. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

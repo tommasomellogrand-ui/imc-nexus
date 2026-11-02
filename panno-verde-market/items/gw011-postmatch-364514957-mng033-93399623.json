@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514957-mng033-93399623",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Simone Campanella · Il post partita di AS Roma",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAS Roma 2–0 AC Milan · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514957",
+    "manager_id": "MNG033",
+    "manager": "Simone Campanella",
+    "club_id": "93399623",
+    "club": "AS Roma",
+    "opponent": "AC Milan",
+    "match_date": "2026-11-01",
+    "result": "AS Roma 2–0 AC Milan",
+    "source_hash": "a6731a313ed78b6b8f4560ea5454ae35c9b0ff8091357200ee85567ee4f2d0a4",
+    "home": "AS Roma",
+    "away": "AC Milan",
+    "home_score": "2",
+    "away_score": "0",
+    "home_logo": "market-club-93399623-4f2820912276f496.png",
+    "away_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "division": "1",
+    "round": "3",
+    "competition_label": "DIVISIONE 1 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 2-0 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 60% di possesso e 16 tiri, contro 10 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di De Ketelaere al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "103835",
+        "name": "De Ketelaere",
+        "image": {
+          "file": "postmatch-player-103835-99cf70163bee6484.png",
+          "alt": "De Ketelaere"
+        }
+      }
+    },
+    {
+      "question": "J David è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "98250",
+        "name": "J David",
+        "image": {
+          "file": "postmatch-player-98250-c8f960b3ac0dadcf.png",
+          "alt": "J David"
+        }
+      }
+    },
+    {
+      "question": "7 tiri nello specchio su 16, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 7 volte e segnato 2 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

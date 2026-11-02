@@ -1,0 +1,79 @@
+{
+  "id": "gw011-postmatch-364514956-mng001-93399639",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Tommaso Mello · Il post partita di Atlético Madrid",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtlético Madrid 3–2 Como 1907 · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514956",
+    "manager_id": "MNG001",
+    "manager": "Tommaso Mello",
+    "club_id": "93399639",
+    "club": "Atlético Madrid",
+    "opponent": "Como 1907",
+    "match_date": "2026-11-01",
+    "result": "Atlético Madrid 3–2 Como 1907",
+    "source_hash": "8337647fc0d52e78fd5cdb85a8e894525c92153622dc970f176253a298f96019",
+    "home": "Atlético Madrid",
+    "away": "Como 1907",
+    "home_score": "3",
+    "away_score": "2",
+    "home_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "away_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "division": "1",
+    "round": "3",
+    "competition_label": "DIVISIONE 1 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 51% di possesso e 15 tiri, contro 13 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Jackson al minuto 75 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 75 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "106073",
+        "name": "Jackson",
+        "image": {
+          "file": "postmatch-player-106073-4b05e9cd0db97618.png",
+          "alt": "Jackson"
+        }
+      }
+    },
+    {
+      "question": "Robert Lewandowski è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "34893",
+        "name": "Robert Lewandowski",
+        "image": {
+          "file": "postmatch-player-34893-f427033a3965299f.png",
+          "alt": "Robert Lewandowski"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 15, contro 2 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 6 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ],
+  "image": {
+    "file": "news-person-56748ccd184cf532-1572c907792595a1.jpeg",
+    "alt": "Tommaso Mello"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515046-mng004-93399838",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Luciano Catalano · Il post partita di Paris Saint-Germain",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nReal Madrid 3–1 Paris Saint-Germain · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515046",
+    "manager_id": "MNG004",
+    "manager": "Luciano Catalano",
+    "club_id": "93399838",
+    "club": "Paris Saint-Germain",
+    "opponent": "Real Madrid",
+    "match_date": "2026-11-01",
+    "result": "Real Madrid 3–1 Paris Saint-Germain",
+    "source_hash": "99a6ea11f306554907303a3981f908fa7f0c1370f0b0cbc2f625ef02feffc8d7",
+    "home": "Real Madrid",
+    "away": "Paris Saint-Germain",
+    "home_score": "3",
+    "away_score": "1",
+    "home_logo": "market-club-93399663-7ef177340849aadc.png",
+    "away_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "division": "2",
+    "round": "3",
+    "competition_label": "DIVISIONE 2 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 53% di possesso e 11 tiri, contro 14 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Bellingham al minuto 83 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 83 ha cambiato il punteggio nel finale. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "101902",
+        "name": "Bellingham",
+        "image": {
+          "file": "postmatch-player-101902-847457e6360e5be5.png",
+          "alt": "Bellingham"
+        }
+      }
+    },
+    {
+      "question": "Khvicha Kvaratskhelia ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "95199",
+        "name": "Khvicha Kvaratskhelia",
+        "image": {
+          "file": "postmatch-player-95199-8bbc7e4aae39e1bd.png",
+          "alt": "Khvicha Kvaratskhelia"
+        }
+      }
+    },
+    {
+      "question": "2 tiri nello specchio su 11, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 5 volte contro le nostre 2. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

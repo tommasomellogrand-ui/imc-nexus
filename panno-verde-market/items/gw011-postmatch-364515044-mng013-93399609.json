@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515044-mng013-93399609",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Giovanni Cabrioli · Il post partita di Internazionale",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nInternazionale 3–4 Chelsea · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515044",
+    "manager_id": "MNG013",
+    "manager": "Giovanni Cabrioli",
+    "club_id": "93399609",
+    "club": "Internazionale",
+    "opponent": "Chelsea",
+    "match_date": "2026-11-01",
+    "result": "Internazionale 3–4 Chelsea",
+    "source_hash": "2fd21467af4e0878fa8740937216928a3f46451f8ad72612ff5855004375257c",
+    "home": "Internazionale",
+    "away": "Chelsea",
+    "home_score": "3",
+    "away_score": "4",
+    "home_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "away_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "division": "2",
+    "round": "3",
+    "competition_label": "DIVISIONE 2 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 3-4 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 44% di possesso e 12 tiri, contro 20 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Wirtz al minuto 69 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 69 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "104514",
+        "name": "Wirtz",
+        "image": {
+          "file": "postmatch-player-104514-3ccfb3e01966c084.png",
+          "alt": "Wirtz"
+        }
+      }
+    },
+    {
+      "question": "L Martínez è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 2 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "82491",
+        "name": "L Martínez",
+        "image": {
+          "file": "postmatch-player-82491-87e10c730510796f.png",
+          "alt": "L Martínez"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 12, contro 9 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 9 volte contro le nostre 4. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

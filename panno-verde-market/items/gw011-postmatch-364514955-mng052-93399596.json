@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514955-mng052-93399596",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Carlo Colombo · Il post partita di Atalanta BC",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtalanta BC 0–4 Tottenham Hotspur · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514955",
+    "manager_id": "MNG052",
+    "manager": "Carlo Colombo",
+    "club_id": "93399596",
+    "club": "Atalanta BC",
+    "opponent": "Tottenham Hotspur",
+    "match_date": "2026-11-01",
+    "result": "Atalanta BC 0–4 Tottenham Hotspur",
+    "source_hash": "5fd29133126c028ca5f11dd02e3937ee16d4fd26ee1882bf614943783c1f4467",
+    "home": "Atalanta BC",
+    "away": "Tottenham Hotspur",
+    "home_score": "0",
+    "away_score": "4",
+    "home_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "away_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "division": "1",
+    "round": "3",
+    "competition_label": "DIVISIONE 1 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-4 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 39% di possesso e 7 tiri, contro 18 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Vlahović al minuto 80 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 80 ha cambiato il punteggio nel finale. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "84966",
+        "name": "Vlahović",
+        "image": {
+          "file": "postmatch-player-84966-f549178506d5169d.png",
+          "alt": "Vlahović"
+        }
+      }
+    },
+    {
+      "question": "M Carnesecchi ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "102272",
+        "name": "M Carnesecchi",
+        "image": {
+          "file": "postmatch-player-102272-151c7c0ff01f7e04.png",
+          "alt": "M Carnesecchi"
+        }
+      }
+    },
+    {
+      "question": "0 tiri nello specchio su 7, contro 12 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 0 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

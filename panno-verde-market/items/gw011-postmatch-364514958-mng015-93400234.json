@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514958-mng015-93400234",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Marco Fioretti · Il post partita di SSC Napoli",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nSSC Napoli 1–4 Juventus · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514958",
+    "manager_id": "MNG015",
+    "manager": "Marco Fioretti",
+    "club_id": "93400234",
+    "club": "SSC Napoli",
+    "opponent": "Juventus",
+    "match_date": "2026-11-01",
+    "result": "SSC Napoli 1–4 Juventus",
+    "source_hash": "b0d5ddc4ab70a394dd8794207c679082c2e18f79bcc8588a92905f0f22de0657",
+    "home": "SSC Napoli",
+    "away": "Juventus",
+    "home_score": "1",
+    "away_score": "4",
+    "home_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "away_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "division": "1",
+    "round": "3",
+    "competition_label": "DIVISIONE 1 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-4 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 43% di possesso e 10 tiri, contro 23 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Díaz al minuto 76 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 76 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "95525",
+        "name": "Díaz",
+        "image": {
+          "file": "postmatch-player-95525-2ac0f56cafe8e093.png",
+          "alt": "Díaz"
+        }
+      }
+    },
+    {
+      "question": "Carlos Romero ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "130178",
+        "name": "Carlos Romero",
+        "image": {
+          "file": "postmatch-player-130178-9cb1b5ad38400cb6.png",
+          "alt": "Carlos Romero"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 10, contro 11 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 11 volte contro le nostre 3. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

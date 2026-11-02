@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515048-mng009-93399547",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Luca Nudo · Il post partita di Manchester City",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBayern München 3–1 Manchester City · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515048",
+    "manager_id": "MNG009",
+    "manager": "Luca Nudo",
+    "club_id": "93399547",
+    "club": "Manchester City",
+    "opponent": "Bayern München",
+    "match_date": "2026-11-01",
+    "result": "Bayern München 3–1 Manchester City",
+    "source_hash": "fe54c28aad6ad84a37e50df118b55893c93c3c9389eeea5baff0ca4daa8ffbac",
+    "home": "Bayern München",
+    "away": "Manchester City",
+    "home_score": "3",
+    "away_score": "1",
+    "home_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "away_logo": "market-club-93399547-198e9921b709c50d.png",
+    "division": "2",
+    "round": "3",
+    "competition_label": "DIVISIONE 2 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 42% di possesso e 13 tiri, contro 18 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Kane al minuto 72 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 72 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "49590",
+        "name": "Kane",
+        "image": {
+          "file": "postmatch-player-49590-054cc3a44c1de611.png",
+          "alt": "Kane"
+        }
+      }
+    },
+    {
+      "question": "J Félix ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "89761",
+        "name": "J Félix",
+        "image": {
+          "file": "postmatch-player-89761-eb83a385aea06029.png",
+          "alt": "J Félix"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 13, contro 10 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 10 volte contro le nostre 3. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

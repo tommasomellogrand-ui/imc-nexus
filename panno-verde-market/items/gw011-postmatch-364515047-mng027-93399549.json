@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515047-mng027-93399549",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Danilo FC 1908 · Il post partita di Manchester United",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester United 1–2 Arsenal · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515047",
+    "manager_id": "MNG027",
+    "manager": "Danilo FC 1908",
+    "club_id": "93399549",
+    "club": "Manchester United",
+    "opponent": "Arsenal",
+    "match_date": "2026-11-01",
+    "result": "Manchester United 1–2 Arsenal",
+    "source_hash": "6fb39ed0cef136edb6c70b334434ad5f1647e82748cffc14ac76de8e9b5f423b",
+    "home": "Manchester United",
+    "away": "Arsenal",
+    "home_score": "1",
+    "away_score": "2",
+    "home_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "away_logo": "market-club-93399501-33ef41943a141618.png",
+    "division": "2",
+    "round": "3",
+    "competition_label": "DIVISIONE 2 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 46% di possesso e 12 tiri, contro 12 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Odegaard al minuto 89 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 89 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "73424",
+        "name": "Odegaard",
+        "image": {
+          "file": "postmatch-player-73424-08b89bfa9fe62071.png",
+          "alt": "Odegaard"
+        }
+      }
+    },
+    {
+      "question": "João Pedro è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "99631",
+        "name": "João Pedro",
+        "image": {
+          "file": "postmatch-player-99631-b703066e4b560205.png",
+          "alt": "João Pedro"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 12, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 5 volte contro le nostre 4. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

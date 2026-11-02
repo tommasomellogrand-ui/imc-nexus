@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514957-mng016-93399615",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Saverio Cordiano · Il post partita di AC Milan",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAS Roma 2–0 AC Milan · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514957",
+    "manager_id": "MNG016",
+    "manager": "Saverio Cordiano",
+    "club_id": "93399615",
+    "club": "AC Milan",
+    "opponent": "AS Roma",
+    "match_date": "2026-11-01",
+    "result": "AS Roma 2–0 AC Milan",
+    "source_hash": "d5130627d707e0b6237047a59e755be570949539ad326d4681e48a428406f728",
+    "home": "AS Roma",
+    "away": "AC Milan",
+    "home_score": "2",
+    "away_score": "0",
+    "home_logo": "market-club-93399623-4f2820912276f496.png",
+    "away_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "division": "1",
+    "round": "3",
+    "competition_label": "DIVISIONE 1 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 40% di possesso e 10 tiri, contro 16 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di De Ketelaere al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "103835",
+        "name": "De Ketelaere",
+        "image": {
+          "file": "postmatch-player-103835-99cf70163bee6484.png",
+          "alt": "De Ketelaere"
+        }
+      }
+    },
+    {
+      "question": "M Maignan ha ricevuto voto 8 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 8 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "68131",
+        "name": "M Maignan",
+        "image": {
+          "file": "postmatch-player-68131-9611fd3af4da83f2.png",
+          "alt": "M Maignan"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 10, contro 7 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 3 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

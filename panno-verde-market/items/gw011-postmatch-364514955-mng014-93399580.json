@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514955-mng014-93399580",
+  "published_at": "2026-11-02T11:02:40+01:00",
+  "title": "Giovanni Iodice · Il post partita di Tottenham Hotspur",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtalanta BC 0–4 Tottenham Hotspur · 01/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399580"
+  ],
+  "teams": [
+    {
+      "name": "Tottenham Hotspur",
+      "logo": "market-club-93399580-b520b61ef4469d37.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514955",
+    "manager_id": "MNG014",
+    "manager": "Giovanni Iodice",
+    "club_id": "93399580",
+    "club": "Tottenham Hotspur",
+    "opponent": "Atalanta BC",
+    "match_date": "2026-11-01",
+    "result": "Atalanta BC 0–4 Tottenham Hotspur",
+    "source_hash": "6619209ab2ab166e65ef79c28f05f8ad2e53f8ec084bfbe96ee00e54232a527b",
+    "home": "Atalanta BC",
+    "away": "Tottenham Hotspur",
+    "home_score": "0",
+    "away_score": "4",
+    "home_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "away_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "division": "1",
+    "round": "3",
+    "competition_label": "DIVISIONE 1 · GIORNATA 3"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "È una vittoria netta, 4-0, e il merito è aver dato continuità al risultato. Un margine così ampio premia quello che abbiamo prodotto, senza cancellare gli aspetti da rivedere."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 61% di possesso e 18 tiri, contro 7 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Vlahović al minuto 80 ha fissato il risultato. Come legge quel finale?",
+      "answer": "Quel gol al minuto 80 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "84966",
+        "name": "Vlahović",
+        "image": {
+          "file": "postmatch-player-84966-f549178506d5169d.png",
+          "alt": "Vlahović"
+        }
+      }
+    },
+    {
+      "question": "D Vlahović è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 4 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "84966",
+        "name": "D Vlahović",
+        "image": {
+          "file": "postmatch-player-84966-f549178506d5169d.png",
+          "alt": "D Vlahović"
+        }
+      }
+    },
+    {
+      "question": "12 tiri nello specchio su 18, contro 0 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 12 volte e segnato 4 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}
