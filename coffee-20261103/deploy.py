@@ -17,7 +17,6 @@ except Exception:
  ftp.cwd('coffee-time/2026-11-03');ftp.cwd(remote)
 files={'coffee-20261103.css':(p/'coffee-20261103.css').read_bytes(),'coffee-20261103.js':(p/'coffee-20261103.js').read_bytes(),'coffee-time/2026-11-03/index.html':(p/'edition.html').read_bytes()}
 
-files['2026-11-03-coffee.json']=(p/'2026-11-03-coffee.json').read_bytes()
 for n,b in files.items():
  if n=='coffee-time/2026-11-03/index.html':
   try: prior=read(n)
@@ -34,9 +33,11 @@ ftp.quit()
 for n,b in files.items():
  req=urllib.request.Request('https://www.italianmastersclub.it/nexus/alltoplayfor/'+n+'?verify='+os.environ['GITHUB_SHA'],headers={'Cache-Control':'no-cache'})
  assert urllib.request.urlopen(req,timeout=40).read()==b,'Public verification: '+n
-print('PASS Coffee Time 3 November semifinals published and verified')
+print('PASS Coffee Time 3 November semifinals and day after published and verified')
 
-source=json.load(urllib.request.urlopen("https://www.italianmastersclub.it/nexus/alltoplayfor/coffee-source.php?date=2026-11-03&verify="+os.environ["GITHUB_SHA"],timeout=40))["edition"]
-expected=json.loads((p/"2026-11-03-coffee.json").read_text())
-assert source["title"]==expected["title"] and source["divisions"]==expected["divisions"]
-print("PASS Final Whistle source: 2 semifinals")
+source=json.load(urllib.request.urlopen('https://www.italianmastersclub.it/nexus/alltoplayfor/coffee-source.php?date=2026-11-03&verify='+os.environ['GITHUB_SHA'],timeout=40))['edition']
+assert source['title']=='Il caffè delle finaliste'
+fixtures=[f for d in source['divisions'] for f in d['fixtures']]
+assert sorted(str(f['id']) for f in fixtures)==['369419397','369419398']
+assert all(f['match_date']=='2026-11-03' and len(f['reporters'])==2 for f in fixtures)
+print('PASS Final Whistle reads the two semifinals from the Coffee HTML')
