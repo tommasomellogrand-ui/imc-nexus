@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364515139-mng016-93399615",
+  "published_at": "2026-11-03T23:22:47+01:00",
+  "title": "Saverio Cordiano · Il post partita di AC Milan",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtalanta BC 0–0 AC Milan · 03/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515139",
+    "manager_id": "MNG016",
+    "manager": "Saverio Cordiano",
+    "club_id": "93399615",
+    "club": "AC Milan",
+    "opponent": "Atalanta BC",
+    "match_date": "2026-11-03",
+    "result": "Atalanta BC 0–0 AC Milan",
+    "source_hash": "3a0d802ca2ffeb2d9d529e90b11be44a29ee46b01f4cecc4e594b5d5b1ff1898",
+    "home": "Atalanta BC",
+    "away": "AC Milan",
+    "home_score": "0",
+    "away_score": "0",
+    "home_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "away_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 0-0 è il risultato della gara. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara. Ai rigori abbiamo chiuso 4-5: anche questo esito va distinto dall’analisi della prestazione."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 55% di possesso e 14 tiri, contro 8 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "Il rosso a A Pinamonti al minuto 86 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 86 abbiamo dovuto affrontare un’espulsione. È un passaggio importante del report, ma non deve diventare una spiegazione unica di tutto il risultato.",
+      "player": {
+        "id": "88924",
+        "name": "A Pinamonti",
+        "image": {
+          "file": "postmatch-player-88924-bfdbb979f6ec5631.png",
+          "alt": "A Pinamonti"
+        }
+      }
+    },
+    {
+      "question": "Matteo Ruggeri ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Mi interessa valorizzare il suo contributo senza attribuire a un solo giocatore tutto il merito.",
+      "player": {
+        "id": "104420",
+        "name": "Matteo Ruggeri",
+        "image": {
+          "file": "postmatch-player-104420-1fd891948aa0f5e7.png",
+          "alt": "Matteo Ruggeri"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 14, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 4 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

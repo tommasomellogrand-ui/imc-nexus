@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364515137-mng014-93399580",
+  "published_at": "2026-11-03T23:22:47+01:00",
+  "title": "Giovanni Iodice · Il post partita di Tottenham Hotspur",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nTottenham Hotspur 3–2 SL Benfica · 03/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399580"
+  ],
+  "teams": [
+    {
+      "name": "Tottenham Hotspur",
+      "logo": "market-club-93399580-b520b61ef4469d37.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515137",
+    "manager_id": "MNG014",
+    "manager": "Giovanni Iodice",
+    "club_id": "93399580",
+    "club": "Tottenham Hotspur",
+    "opponent": "SL Benfica",
+    "match_date": "2026-11-03",
+    "result": "Tottenham Hotspur 3–2 SL Benfica",
+    "source_hash": "f26327f74c7b089c02fb7d24baa3149b58dc4ba61074dcbb6806fd8dbf851fad",
+    "home": "Tottenham Hotspur",
+    "away": "SL Benfica",
+    "home_score": "3",
+    "away_score": "2",
+    "home_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "away_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 61% di possesso e 14 tiri, contro 8 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Jesus al minuto 71 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 71 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "80266",
+        "name": "Jesus",
+        "image": {
+          "file": "postmatch-player-80266-298b8a9df1942dc3.png",
+          "alt": "Jesus"
+        }
+      }
+    },
+    {
+      "question": "D Kulusevski è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "100914",
+        "name": "D Kulusevski",
+        "image": {
+          "file": "postmatch-player-100914-6924396c83d08428.png",
+          "alt": "D Kulusevski"
+        }
+      }
+    },
+    {
+      "question": "11 tiri nello specchio su 14, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 11 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364515136-mng065-93399544",
+  "published_at": "2026-11-03T23:22:47+01:00",
+  "title": "Carlo Ancelotti · Il post partita di Liverpool",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBayern München 3–0 Liverpool · 03/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515136",
+    "manager_id": "MNG065",
+    "manager": "Carlo Ancelotti",
+    "club_id": "93399544",
+    "club": "Liverpool",
+    "opponent": "Bayern München",
+    "match_date": "2026-11-03",
+    "result": "Bayern München 3–0 Liverpool",
+    "source_hash": "34af740ce57d88eab04f5f6820f377929b922a03aa0e63f7d7a5a84b50921bd1",
+    "home": "Bayern München",
+    "away": "Liverpool",
+    "home_score": "3",
+    "away_score": "0",
+    "home_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "away_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-3 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 44% di possesso e 9 tiri, contro 12 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Tah al minuto 78 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 78 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "68027",
+        "name": "Tah",
+        "image": {
+          "file": "postmatch-player-68027-d6dd48e3ca6805d7.png",
+          "alt": "Tah"
+        }
+      }
+    },
+    {
+      "question": "Morgan Rogers ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "100000",
+        "name": "Morgan Rogers",
+        "image": {
+          "file": "postmatch-player-100000-5953dee9952faa8c.png",
+          "alt": "Morgan Rogers"
+        }
+      }
+    },
+    {
+      "question": "1 tiri nello specchio su 9, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 1 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

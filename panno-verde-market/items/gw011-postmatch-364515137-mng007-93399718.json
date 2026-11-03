@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364515137-mng007-93399718",
+  "published_at": "2026-11-03T23:22:47+01:00",
+  "title": "Vincenzo Martorano · Il post partita di SL Benfica",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nTottenham Hotspur 3–2 SL Benfica · 03/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399718"
+  ],
+  "teams": [
+    {
+      "name": "SL Benfica",
+      "logo": "market-club-93399718-cd9bbf9dc40287fc.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515137",
+    "manager_id": "MNG007",
+    "manager": "Vincenzo Martorano",
+    "club_id": "93399718",
+    "club": "SL Benfica",
+    "opponent": "Tottenham Hotspur",
+    "match_date": "2026-11-03",
+    "result": "Tottenham Hotspur 3–2 SL Benfica",
+    "source_hash": "7c84e0975a0c0f9723622e8dfe57ae77342980e48ef390846ec03fa7f9771af7",
+    "home": "Tottenham Hotspur",
+    "away": "SL Benfica",
+    "home_score": "3",
+    "away_score": "2",
+    "home_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "away_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 39% di possesso e 8 tiri, contro 14 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Jesus al minuto 71 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 71 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "80266",
+        "name": "Jesus",
+        "image": {
+          "file": "postmatch-player-80266-298b8a9df1942dc3.png",
+          "alt": "Jesus"
+        }
+      }
+    },
+    {
+      "question": "I Thiago ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "104195",
+        "name": "I Thiago",
+        "image": {
+          "file": "postmatch-player-104195-346d29d6477a5528.png",
+          "alt": "I Thiago"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 8, contro 11 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo segnato 2 gol con 3 conclusioni nello specchio: oggi siamo stati efficaci. È un merito, ma per dare continuità ai risultati serve anche aumentare la produzione offensiva."
+    }
+  ]
+}

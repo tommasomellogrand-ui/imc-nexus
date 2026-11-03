@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364515136-mng032-93399891",
+  "published_at": "2026-11-03T23:22:47+01:00",
+  "title": "Vardan Minasyan · Il post partita di Bayern München",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBayern München 3–0 Liverpool · 03/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515136",
+    "manager_id": "MNG032",
+    "manager": "Vardan Minasyan",
+    "club_id": "93399891",
+    "club": "Bayern München",
+    "opponent": "Liverpool",
+    "match_date": "2026-11-03",
+    "result": "Bayern München 3–0 Liverpool",
+    "source_hash": "8b57a6841225b8ad6ab51d7210f5a11bc0b2c8b17e30dce1e7bd83c186169a80",
+    "home": "Bayern München",
+    "away": "Liverpool",
+    "home_score": "3",
+    "away_score": "0",
+    "home_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "away_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "È una vittoria netta, 3-0, e il merito è aver dato continuità al risultato. Un margine così ampio premia quello che abbiamo prodotto, senza cancellare gli aspetti da rivedere."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 56% di possesso e 12 tiri, contro 9 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Tah al minuto 78 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 78 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "68027",
+        "name": "Tah",
+        "image": {
+          "file": "postmatch-player-68027-d6dd48e3ca6805d7.png",
+          "alt": "Tah"
+        }
+      }
+    },
+    {
+      "question": "Aleksandar Pavlovic è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "135567",
+        "name": "Aleksandar Pavlovic",
+        "image": {
+          "file": "postmatch-player-135567-4c28f48da3841874.png",
+          "alt": "Aleksandar Pavlovic"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 12, contro 1 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 5 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}
