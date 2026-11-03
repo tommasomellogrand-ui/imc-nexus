@@ -1,0 +1,219 @@
+{
+  "world": "GW001",
+  "season": 2,
+  "date": "2026-11-03",
+  "day": null,
+  "title": "Il caffè delle finaliste",
+  "mode": "automatic",
+  "label": "3 NOVEMBRE 2026 · SEMIFINALI DI COPPA",
+  "reporter_portraits": {
+    "Federica Zille": {
+      "image": "assets/coffee-zille.webp"
+    },
+    "Andrea Stramaccioni": {
+      "image": "assets/coffee-stramaccioni.webp"
+    },
+    "Alessandro Florenzi": {
+      "image": "assets/coffee-florenzi.webp"
+    },
+    "Anna Billò": {
+      "image": "assets/reporter-anna-billo.webp"
+    },
+    "Veronica Brunati": {
+      "image": "assets/reporter-veronica-brunati.webp"
+    },
+    "Federica Lodi": {
+      "image": "assets/reporter-federica-lodi.webp"
+    },
+    "Antonio Nucera": {
+      "image": "assets/reporter-antonio-nucera.webp"
+    },
+    "Massimo Marianella": {
+      "image": "assets/reporter-massimo-marianella.webp"
+    },
+    "Stefania Pinna": {
+      "image": "assets/reporter-stefania-pinna.webp"
+    },
+    "Stefano Borghi": {
+      "image": "assets/reporter-stefano-borghi.webp"
+    },
+    "Eleonora Incardona": {
+      "image": "assets/reporter-eleonora-incardona.webp"
+    },
+    "Bruno Palermo": {
+      "image": "assets/reporter-bruno-palermo.webp"
+    },
+    "Marina Presello": {
+      "image": "assets/reporter-marina-presello.webp"
+    },
+    "Marco Nosotti": {
+      "image": "assets/reporter-marco-nosotti.webp"
+    },
+    "Paolo Assogna": {
+      "image": "assets/reporter-paolo-assogna.webp"
+    },
+    "Francesco Repice": {
+      "image": "assets/reporter-francesco-repice.webp"
+    },
+    "Giorgia Cenni": {
+      "image": "assets/reporter-giorgia-cenni.webp"
+    },
+    "Maurizio Compagnoni": {
+      "image": "assets/reporter-maurizio-compagnoni.webp"
+    },
+    "Nicola Roggero": {
+      "image": "assets/reporter-nicola-roggero.webp"
+    },
+    "Dario Massara": {
+      "image": "assets/reporter-dario-massara.webp"
+    },
+    "Paolo Aghemo": {
+      "image": "assets/reporter-paolo-aghemo.webp"
+    },
+    "Riccardo Gentile": {
+      "image": "assets/reporter-riccardo-gentile.webp"
+    },
+    "Marco Bovicelli": {
+      "image": "assets/reporter-marco-bovicelli.webp"
+    },
+    "Massimo Nebuloni": {
+      "image": "assets/dayafter-massimo-nebuloni.jpg"
+    },
+    "Riccardo Re": {
+      "image": "assets/dayafter-riccardo-re.jpg"
+    },
+    "Pietro Nicolodi": {
+      "image": "assets/dayafter-pietro-nicolodi.jpg"
+    },
+    "Gianluigi Bagnulo": {
+      "image": "assets/dayafter-gianluigi-bagnulo.jpg"
+    },
+    "Gianluca Di Marzio": {
+      "image": "assets/dayafter-gianluca-di-marzio.jpg"
+    },
+    "Francesco Cosatti": {
+      "image": "assets/dayafter-francesco-cosatti.jpg"
+    },
+    "Vanessa Leonardi": {
+      "image": "assets/dayafter-vanessa-leonardi.jpg"
+    },
+    "Giorgia Rossi": {
+      "image": "assets/dayafter-giorgia-rossi.jpg"
+    },
+    "Giovanni Guardalà": {
+      "image": "assets/dayafter-giovanni-guardala.jpg"
+    },
+    "Matteo Barzaghi": {
+      "image": "assets/dayafter-matteo-barzaghi.jpg"
+    },
+    "Alessandro Sugoni": {
+      "image": "assets/dayafter-alessandro-sugoni.jpg"
+    },
+    "Valentina Caruso": {
+      "image": "assets/dayafter-valentina-caruso.jpg"
+    },
+    "Luca Cilli": {
+      "image": "assets/dayafter-luca-cilli.jpg"
+    },
+    "Giancarlo Marocchi": {
+      "image": "assets/dayafter-giancarlo-marocchi.jpg"
+    },
+    "Valentina Mariani": {
+      "image": "assets/dayafter-valentina-mariani.jpg"
+    },
+    "Filippo Benincampi": {
+      "image": "assets/dayafter-filippo-benincampi.jpg"
+    },
+    "Sarah Castellana": {
+      "image": "assets/dayafter-sarah-castellana.jpg"
+    },
+    "Peppe Di Stefano": {
+      "image": "assets/dayafter-peppe-di-stefano.jpg"
+    },
+    "Valentina Ciarlante": {
+      "image": "assets/dayafter-valentina-ciarlante.jpg"
+    },
+    "Matteo Petrucci": {
+      "image": "assets/dayafter-matteo-petrucci.jpg"
+    }
+  },
+  "divisions": [
+    {
+      "name": "Semifinali di coppa",
+      "fixtures": [
+        {
+          "id": 369419397,
+          "match_date": "2026-11-03",
+          "date": "2026-11-03",
+          "competition_key": "GW001|DOMESTIC|leaguecup",
+          "sm_action": "leaguecup",
+          "time": "20:00",
+          "reporters": [
+            {
+              "name": "Giorgia Cenni",
+              "side": "home",
+              "club": "Hertha Berlin",
+              "club_id": 94079171,
+              "label": "Inviato"
+            },
+            {
+              "name": "Nicola Roggero",
+              "side": "away",
+              "club": "Celtic",
+              "club_id": 94079188,
+              "label": "Inviato"
+            }
+          ],
+          "home": "Hertha Berlin",
+          "home_table": {
+            "id": 94079171
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/404.png",
+          "home_manager": "Tommaso Mello",
+          "away": "Celtic",
+          "away_table": {
+            "id": 94079188
+          },
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/421.png",
+          "away_manager": "Sir Simone"
+        },
+        {
+          "id": 369419398,
+          "match_date": "2026-11-03",
+          "date": "2026-11-03",
+          "competition_key": "GW001|DOMESTIC|leaguecup",
+          "sm_action": "leaguecup",
+          "time": "20:00",
+          "reporters": [
+            {
+              "name": "Massimo Marianella",
+              "side": "home",
+              "club": "Tottenham",
+              "club_id": 94078847,
+              "label": "Inviato"
+            },
+            {
+              "name": "Giorgia Rossi",
+              "side": "away",
+              "club": "Kaiserslautern",
+              "club_id": 94079172,
+              "label": "Inviato"
+            }
+          ],
+          "home": "Tottenham",
+          "home_table": {
+            "id": 94078847
+          },
+          "home_logo": "https://cdn.soccerwiki.org/images/logos/clubs/80.png",
+          "home_manager": "Max Zanoni",
+          "away": "Kaiserslautern",
+          "away_table": {
+            "id": 94079172
+          },
+          "away_logo": "https://cdn.soccerwiki.org/images/logos/clubs/405.png",
+          "away_manager": "Vardan Minasyan"
+        }
+      ]
+    }
+  ]
+}
