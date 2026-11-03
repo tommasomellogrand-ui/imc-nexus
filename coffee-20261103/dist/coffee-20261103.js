@@ -1,5 +1,17 @@
-(()=>{'use strict';const main=document.querySelector('.coffee-main-tabs');if(!main)return;
-const height=()=>document.documentElement.style.setProperty('--coffee-nav-height',main.getBoundingClientRect().height+'px');height();new ResizeObserver(height).observe(main);
-function tabs(nav,panels,nested=false){const bs=[...nav.querySelectorAll('button')];function select(i){bs.forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1});panels.forEach((p,j)=>p.hidden=j!==i);height();requestAnimationFrame(()=>{const h=panels[i].querySelector('h2');let offset=main.getBoundingClientRect().height+16;if(nested)offset+=nav.getBoundingClientRect().height;window.scrollTo({top:Math.max(0,h.getBoundingClientRect().top+scrollY-offset),behavior:'instant'});bs[i].scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'})})}bs.forEach((b,i)=>b.addEventListener('click',()=>select(i)));nav.addEventListener('keydown',ev=>{let i=bs.findIndex(b=>b.getAttribute('aria-selected')==='true');if(ev.key==='ArrowRight')i=(i+1)%bs.length;else if(ev.key==='ArrowLeft')i=(i+bs.length-1)%bs.length;else if(ev.key==='Home')i=0;else if(ev.key==='End')i=bs.length-1;else return;ev.preventDefault();select(i);bs[i].focus({preventScroll:true})})}
-tabs(main,[...document.querySelectorAll('.coffee-main-panel')]);tabs(document.querySelector('.coffee-group-tabs'),[...document.querySelectorAll('.coffee-group-panel')],true);
+(()=>{
+ const nav=document.querySelector('.cn-tabs');
+ const buttons=[...document.querySelectorAll('.cn-tabs button')];
+ const groups=[...document.querySelectorAll('.cn-group')];
+ function choose(i){
+  buttons.forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));
+  groups.forEach((g,j)=>g.hidden=i!==j);
+  const heading=groups[i]?.querySelector('h2');
+  if(!heading)return;
+  requestAnimationFrame(()=>{
+   const topInset=Math.max(0,parseFloat(getComputedStyle(nav).top)||0);
+   const target=heading.getBoundingClientRect().top+window.scrollY-nav.getBoundingClientRect().height-topInset-16;
+   window.scrollTo({top:Math.max(0,target),behavior:'instant'});
+  });
+ }
+ buttons.forEach((b,i)=>b.addEventListener('click',()=>choose(i)));
 })();
