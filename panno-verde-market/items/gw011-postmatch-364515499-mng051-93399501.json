@@ -1,0 +1,72 @@
+{
+  "id": "gw011-postmatch-364515499-mng051-93399501",
+  "published_at": "2026-11-04T10:40:26+01:00",
+  "title": "Luciano Tana · Il post partita di Arsenal",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nOlympique Marseille 0–1 Arsenal · 02/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515499",
+    "manager_id": "MNG051",
+    "manager": "Luciano Tana",
+    "club_id": "93399501",
+    "club": "Arsenal",
+    "opponent": "Olympique Marseille",
+    "match_date": "2026-11-02",
+    "result": "Olympique Marseille 0–1 Arsenal",
+    "source_hash": "8f86ef7ebd801b5db57250139c47dc77b69273e56b2f4c88f7fcec27465e2d21",
+    "home": "Olympique Marseille",
+    "away": "Arsenal",
+    "home_score": "0",
+    "away_score": "1",
+    "away_logo": "market-club-93399501-33ef41943a141618.png",
+    "competition_label": "GIRONE C"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 1-0 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 58% di possesso e 16 tiri, contro 8 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Saka al minuto 3 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 3 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "99607",
+        "name": "Saka",
+        "image": {
+          "file": "postmatch-player-99607-7b8db6b70e598952.png",
+          "alt": "Saka"
+        }
+      }
+    },
+    {
+      "question": "Bukayo Saka ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "99607",
+        "name": "Bukayo Saka",
+        "image": {
+          "file": "postmatch-player-99607-7b8db6b70e598952.png",
+          "alt": "Bukayo Saka"
+        }
+      }
+    },
+    {
+      "question": "10 tiri nello specchio su 16, contro 2 degli avversari: cosa le dice questo dato?",
+      "answer": "Con 10 conclusioni nello specchio e 1 gol, il tema è convertire meglio quello che produciamo. Il dato non racconta da solo la difficoltà di ogni tiro, ma indica bene dove concentrare la nostra analisi."
+    }
+  ]
+}

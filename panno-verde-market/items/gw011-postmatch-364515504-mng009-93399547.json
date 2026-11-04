@@ -1,0 +1,72 @@
+{
+  "id": "gw011-postmatch-364515504-mng009-93399547",
+  "published_at": "2026-11-04T10:40:26+01:00",
+  "title": "Luca Nudo · Il post partita di Manchester City",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester City 1–0 PSV · 02/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515504",
+    "manager_id": "MNG009",
+    "manager": "Luca Nudo",
+    "club_id": "93399547",
+    "club": "Manchester City",
+    "opponent": "PSV",
+    "match_date": "2026-11-02",
+    "result": "Manchester City 1–0 PSV",
+    "source_hash": "cfc8eef75f18f38e0a73fa541ba625d55f05ea8cd4ff8e05072273c2d6b94491",
+    "home": "Manchester City",
+    "away": "PSV",
+    "home_score": "1",
+    "away_score": "0",
+    "home_logo": "market-club-93399547-198e9921b709c50d.png",
+    "competition_label": "GIRONE D"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 1-0 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 54% di possesso e 15 tiri, contro 11 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Bowen al minuto 63 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 63 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "73249",
+        "name": "Bowen",
+        "image": {
+          "file": "postmatch-player-73249-502c85294687dfa1.png",
+          "alt": "Bowen"
+        }
+      }
+    },
+    {
+      "question": "Erling Haaland è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "88100",
+        "name": "Erling Haaland",
+        "image": {
+          "file": "postmatch-player-88100-3ef5b9e918b23382.png",
+          "alt": "Erling Haaland"
+        }
+      }
+    },
+    {
+      "question": "8 tiri nello specchio su 15, contro 2 degli avversari: cosa le dice questo dato?",
+      "answer": "Con 8 conclusioni nello specchio e 1 gol, il tema è convertire meglio quello che produciamo. Il dato non racconta da solo la difficoltà di ogni tiro, ma indica bene dove concentrare la nostra analisi."
+    }
+  ]
+}

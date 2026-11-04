@@ -1,0 +1,72 @@
+{
+  "id": "gw011-postmatch-364515492-mng048-93399640",
+  "published_at": "2026-11-04T10:40:26+01:00",
+  "title": "Giuseppe Trovato · Il post partita di Barcelona",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBarcelona 2–2 AS Monaco · 02/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515492",
+    "manager_id": "MNG048",
+    "manager": "Giuseppe Trovato",
+    "club_id": "93399640",
+    "club": "Barcelona",
+    "opponent": "AS Monaco",
+    "match_date": "2026-11-02",
+    "result": "Barcelona 2–2 AS Monaco",
+    "source_hash": "ba891a5c8de4831cb586f753eafea4207c5b31a12d37ac1bea0b73775dc38a98",
+    "home": "Barcelona",
+    "away": "AS Monaco",
+    "home_score": "2",
+    "away_score": "2",
+    "home_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "competition_label": "GIRONE B"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 2-2 è il risultato della gara. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 60% di possesso e 17 tiri, contro 9 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Zakaria al minuto 83 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 83 ci ha tolto la vittoria. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "83294",
+        "name": "Zakaria",
+        "image": {
+          "file": "postmatch-player-83294-5f0b3866d656d999.png",
+          "alt": "Zakaria"
+        }
+      }
+    },
+    {
+      "question": "S Aghehowa è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "138866",
+        "name": "S Aghehowa",
+        "image": {
+          "file": "postmatch-player-138866-63b69cbf66d93327.png",
+          "alt": "S Aghehowa"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 17, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 6 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}
