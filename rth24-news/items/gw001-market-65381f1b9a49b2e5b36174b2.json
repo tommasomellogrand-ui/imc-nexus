@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-65381f1b9a49b2e5b36174b2",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "FC Schalke 04: ufficiale l’arrivo di Andrija Maksimović",
+  "text": "FC Schalke 04 annuncia l’arrivo di Andrija Maksimović. Il giocatore lascia RB Leipzig: operazione da 3,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "RB Leipzig",
+    "to": "FC Schalke 04",
+    "formula": "Trasferimento definitivo",
+    "amount": "3,2 milioni di euro",
+    "date": "2026-11-02",
+    "from_logo": "market-global-club-1657-182bc6d99b8abdaa.png",
+    "to_logo": "market-club-94079165-d56cd8525522ab1e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-139676-77afb981b4a59f40.png",
+    "alt": "Andrija Maksimović"
+  }
+}

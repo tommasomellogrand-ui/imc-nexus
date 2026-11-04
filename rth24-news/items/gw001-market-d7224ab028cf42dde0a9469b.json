@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-d7224ab028cf42dde0a9469b",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Real Betis: ufficiale l’arrivo di Cristo Muñoz",
+  "text": "Real Betis annuncia l’arrivo di Cristo Muñoz. Il giocatore lascia Palermo FC: operazione da 2,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078884"
+  ],
+  "teams": [
+    {
+      "name": "Palermo",
+      "logo": "market-club-94078884-25823d0fe372f873.png"
+    }
+  ],
+  "transfer": {
+    "from": "Palermo FC",
+    "to": "Real Betis",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,8 milioni di euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94078884-25823d0fe372f873.png",
+    "to_logo": "market-global-club-162-506f86df89621802.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-130162-27c2202a86d9a25a.png",
+    "alt": "Cristo Muñoz"
+  }
+}

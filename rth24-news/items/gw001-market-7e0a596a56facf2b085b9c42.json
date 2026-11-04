@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-7e0a596a56facf2b085b9c42",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Celtic: ufficiale l’arrivo di Iker Gil",
+  "text": "Celtic annuncia l’arrivo di Iker Gil. Il giocatore lascia Real Madrid: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079188"
+  ],
+  "teams": [
+    {
+      "name": "Celtic",
+      "logo": "market-club-94079188-5d487794c122a9b8.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Celtic",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-global-club-163-7ef177340849aadc.png",
+    "to_logo": "market-club-94079188-5d487794c122a9b8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149510-3676c33a38c4c313.png",
+    "alt": "Iker Gil"
+  }
+}

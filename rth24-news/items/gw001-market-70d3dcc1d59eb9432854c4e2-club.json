@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-70d3dcc1d59eb9432854c4e2-club",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Lazar Samardzic: il punto con Stefano Borghi e Marco Catalozzo",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nAC Monza annuncia l’arrivo di Lazar Samardzic. Il giocatore lascia River Plate: operazione da 12,2 milioni di euro.\n\nStefano Borghi · Inviato River Plate\n«Lazar Samardzic proseguirà con AC Monza. Un giocatore con rating 88. Mister, come affrontate il lavoro dopo questa partenza?»\n\nMarco Catalozzo · Manager River Plate\n«Salutiamo Lazar Samardzic e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94079049"
+  ],
+  "teams": [
+    {
+      "name": "River Plate",
+      "logo": "market-club-94079049-94608faa47bdcc94.png"
+    }
+  ],
+  "transfer": {
+    "from": "River Plate",
+    "to": "AC Monza",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,2 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94079049-94608faa47bdcc94.png",
+    "to_logo": "market-global-club-867-e1074dd68cc7931a.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104582-8245708ee21d10ef.png",
+    "alt": "Lazar Samardzic"
+  },
+  "coverage": [
+    {
+      "club": "River Plate",
+      "reporter": "Stefano Borghi",
+      "manager": "Marco Catalozzo",
+      "question": "Lazar Samardzic proseguirà con AC Monza. Un giocatore con rating 88. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Lazar Samardzic e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-a9a4c60f8a9c0f27-6da5c1c39d7644df.webp",
+        "alt": "Stefano Borghi"
+      }
+    }
+  ]
+}

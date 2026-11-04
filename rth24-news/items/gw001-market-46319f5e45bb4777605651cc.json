@@ -1,0 +1,35 @@
+{
+  "id": "gw001-market-46319f5e45bb4777605651cc",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Hertha BSC: ufficiale l’arrivo di Cole Palmer",
+  "text": "Hertha BSC e Bologna FC chiudono l’accordo per Cole Palmer. Operazione da 30 milioni di euro, con Gleison Bremer nel percorso inverso verso Bologna FC.",
+  "category": "market",
+  "club_ids": [
+    "94079171",
+    "94078865"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    },
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "Hertha BSC",
+    "formula": "Scambio con contropartite",
+    "amount": "30 milioni di euro + Gleison Bremer",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078865-1c269c6755cb7fdb.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-105942-20f15040568e54ee.png",
+    "alt": "Cole Palmer"
+  }
+}

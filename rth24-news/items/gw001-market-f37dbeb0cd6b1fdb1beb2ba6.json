@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-f37dbeb0cd6b1fdb1beb2ba6",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "FC Pro Vercelli: ufficiale l’arrivo di Asane Sow",
+  "text": "FC Pro Vercelli annuncia l’arrivo di Asane Sow. Il giocatore lascia AS Roma: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078890"
+  ],
+  "teams": [
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "FC Pro Vercelli",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078890-4f2820912276f496.png",
+    "to_logo": "market-global-club-1874-ea48ae3d46272e90.png"
+  },
+  "editorial_version": 3
+}

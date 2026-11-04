@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-0dab53f50f073b5154a14434",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Olbia Calcio 1905: ufficiale l’arrivo di Chec Bebel Doumbia",
+  "text": "Olbia Calcio 1905 annuncia l’arrivo di Chec Bebel Doumbia. Il giocatore lascia Shakhtar Donetsk: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079115"
+  ],
+  "teams": [
+    {
+      "name": "Shakhtar Donetsk",
+      "logo": "market-club-94079115-3315b78fc3ccd970.png"
+    }
+  ],
+  "transfer": {
+    "from": "Shakhtar Donetsk",
+    "to": "Olbia Calcio 1905",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94079115-3315b78fc3ccd970.png",
+    "to_logo": "market-global-club-4552-67435e40c2d729fc.png"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,29 @@
+{
+  "id": "gw001-market-19ec0cfee2b3747ea787be27",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "AS Reggina 1914: ufficiale l’arrivo di Lilian Brassier",
+  "text": "AS Reggina 1914 annuncia l’arrivo di Lilian Brassier, proveniente dalla lista degli svincolati. Operazione da 3,7 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078889"
+  ],
+  "teams": [
+    {
+      "name": "Reggina",
+      "logo": "market-club-94078889-faf4c23dafd22c30.png"
+    }
+  ],
+  "transfer": {
+    "from": "Svincolato",
+    "to": "AS Reggina 1914",
+    "formula": "Trasferimento definitivo",
+    "amount": "3,7 milioni di euro",
+    "date": "2026-11-03",
+    "to_logo": "market-club-94078889-faf4c23dafd22c30.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-101395-0be5c23e93a6f358.png",
+    "alt": "Lilian Brassier"
+  }
+}

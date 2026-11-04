@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-4c702ab7359ff55962e72e5f",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Sampdoria: ufficiale l’arrivo di Hugo Cuenca",
+  "text": "Sampdoria annuncia l’arrivo di Hugo Cuenca. Il giocatore lascia FC Treviso: operazione da 1,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078892"
+  ],
+  "teams": [
+    {
+      "name": "Sampdoria",
+      "logo": "market-club-94078892-f5bfd12f94cf0bcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "FC Treviso",
+    "to": "Sampdoria",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,4 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-129-f8b578cb1eb3a020.png",
+    "to_logo": "market-club-94078892-f5bfd12f94cf0bcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-114318-5a5e21450c9041ed.png",
+    "alt": "Hugo Cuenca"
+  }
+}

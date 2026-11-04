@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-70d3dcc1d59eb9432854c4e2",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "AC Monza: ufficiale l’arrivo di Lazar Samardzic",
+  "text": "AC Monza annuncia l’arrivo di Lazar Samardzic. Il giocatore lascia River Plate: operazione da 12,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079049"
+  ],
+  "teams": [
+    {
+      "name": "River Plate",
+      "logo": "market-club-94079049-94608faa47bdcc94.png"
+    }
+  ],
+  "transfer": {
+    "from": "River Plate",
+    "to": "AC Monza",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,2 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94079049-94608faa47bdcc94.png",
+    "to_logo": "market-global-club-867-e1074dd68cc7931a.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104582-8245708ee21d10ef.png",
+    "alt": "Lazar Samardzic"
+  }
+}

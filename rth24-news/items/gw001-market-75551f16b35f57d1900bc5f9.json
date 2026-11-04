@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-75551f16b35f57d1900bc5f9",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Hertha BSC: ufficiale l’arrivo di Pol Fortuny",
+  "text": "Hertha BSC annuncia l’arrivo di Pol Fortuny. Il giocatore lascia Real Madrid: operazione da 1,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Hertha BSC",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,9 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-163-7ef177340849aadc.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137257-b96978ed54f87a9d.png",
+    "alt": "Pol Fortuny"
+  }
+}

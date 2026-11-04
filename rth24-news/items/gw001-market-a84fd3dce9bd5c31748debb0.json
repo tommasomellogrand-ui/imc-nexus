@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-a84fd3dce9bd5c31748debb0",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "1. FC Kaiserslautern: ufficiale l’arrivo di Facundo Medina",
+  "text": "1. FC Kaiserslautern annuncia l’arrivo di Facundo Medina. Il giocatore lascia OGC Nice: operazione da 7,9 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079172"
+  ],
+  "teams": [
+    {
+      "name": "Kaiserslautern",
+      "logo": "market-club-94079172-bb34b981104b73b7.png"
+    }
+  ],
+  "transfer": {
+    "from": "OGC Nice",
+    "to": "1. FC Kaiserslautern",
+    "formula": "Trasferimento definitivo",
+    "amount": "7,9 milioni di euro",
+    "date": "2026-11-02",
+    "from_logo": "market-global-club-336-88ae89c5d09ebaa4.png",
+    "to_logo": "market-club-94079172-bb34b981104b73b7.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-90291-19687d35f12d636b.png",
+    "alt": "Facundo Medina"
+  }
+}

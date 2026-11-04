@@ -1,0 +1,35 @@
+{
+  "id": "gw001-market-6c20a78968e45694b38d247d",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Valentín Barco",
+  "text": "Atlético Madrid annuncia l’arrivo di Valentín Barco. Il giocatore lascia AS Roma: operazione da 23 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078906",
+    "94078890"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    },
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "23 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078890-4f2820912276f496.png",
+    "to_logo": "market-club-94078906-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-113845-1e46057eaa860220.png",
+    "alt": "Valentín Barco"
+  }
+}

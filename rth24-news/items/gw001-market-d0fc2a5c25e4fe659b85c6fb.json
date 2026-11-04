@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-d0fc2a5c25e4fe659b85c6fb",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Bayern München: ufficiale l’arrivo di Erblin Osmani",
+  "text": "Bayern München annuncia l’arrivo di Erblin Osmani. Il giocatore lascia Atlético Madrid: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078906"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "Bayern München",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078906-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-391-8f08c13f795eef24.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-172304-c4d7618a23455bdb.png",
+    "alt": "Erblin Osmani"
+  }
+}

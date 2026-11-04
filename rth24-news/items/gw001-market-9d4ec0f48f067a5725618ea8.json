@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-9d4ec0f48f067a5725618ea8",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "River Plate: ufficiale l’arrivo di Sergio Camello",
+  "text": "River Plate annuncia l’arrivo di Sergio Camello. Il giocatore lascia Rayo Vallecano: operazione da 3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079049"
+  ],
+  "teams": [
+    {
+      "name": "River Plate",
+      "logo": "market-club-94079049-94608faa47bdcc94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Rayo Vallecano",
+    "to": "River Plate",
+    "formula": "Trasferimento definitivo",
+    "amount": "3 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-1298-7d42cfa5dddf1d3a.png",
+    "to_logo": "market-club-94079049-94608faa47bdcc94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-100280-f1f522815c9bdf35.png",
+    "alt": "Sergio Camello"
+  }
+}

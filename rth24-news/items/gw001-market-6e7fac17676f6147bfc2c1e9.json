@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-6e7fac17676f6147bfc2c1e9",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "River Plate: ufficiale l’arrivo di Ilies Belmokhtar",
+  "text": "River Plate annuncia l’arrivo di Ilies Belmokhtar. Il giocatore lascia AS Monaco: operazione da 193.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079049"
+  ],
+  "teams": [
+    {
+      "name": "River Plate",
+      "logo": "market-club-94079049-94608faa47bdcc94.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Monaco",
+    "to": "River Plate",
+    "formula": "Trasferimento definitivo",
+    "amount": "193.000 euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-332-b5d98a0d961b0afb.png",
+    "to_logo": "market-club-94079049-94608faa47bdcc94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-161190-de4600d6c9ec14b0.png",
+    "alt": "Ilies Belmokhtar"
+  }
+}

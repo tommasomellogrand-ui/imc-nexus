@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-9e0eb380a942ed607992630a",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Rayo Vallecano: ufficiale l’arrivo di Rayane Belaid",
+  "text": "Rayo Vallecano annuncia l’arrivo di Rayane Belaid. Il giocatore lascia Dynamo Dresden: operazione da 2,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079161"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Dresden",
+      "logo": "market-club-94079161-2215dbdfe461abd9.png"
+    }
+  ],
+  "transfer": {
+    "from": "Dynamo Dresden",
+    "to": "Rayo Vallecano",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,8 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94079161-2215dbdfe461abd9.png",
+    "to_logo": "market-global-club-1298-7d42cfa5dddf1d3a.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-141963-f8ee29cee7c582a1.png",
+    "alt": "Rayane Belaid"
+  }
+}

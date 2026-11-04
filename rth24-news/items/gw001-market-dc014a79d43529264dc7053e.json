@@ -1,0 +1,35 @@
+{
+  "id": "gw001-market-dc014a79d43529264dc7053e",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Federico Valverde",
+  "text": "AS Roma e Bologna FC chiudono l’accordo per Federico Valverde. Operazione da 18,7 milioni di euro, con Fabián Ruiz nel percorso inverso verso Bologna FC.",
+  "category": "market",
+  "club_ids": [
+    "94078890",
+    "94078865"
+  ],
+  "teams": [
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    },
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "AS Roma",
+    "formula": "Scambio con contropartite",
+    "amount": "18,7 milioni di euro + Fabián Ruiz",
+    "date": "2026-11-03",
+    "from_logo": "market-club-94078865-1c269c6755cb7fdb.png",
+    "to_logo": "market-club-94078890-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-81249-5478c3eca95d458a.png",
+    "alt": "Federico Valverde"
+  }
+}

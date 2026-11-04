@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-c87165a3eb6a24bd12028d8e",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Liverpool: ufficiale l’arrivo di Isaac Mabaya",
+  "text": "Liverpool annuncia l’arrivo di Isaac Mabaya. Il giocatore lascia Palermo FC: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078884"
+  ],
+  "teams": [
+    {
+      "name": "Palermo",
+      "logo": "market-club-94078884-25823d0fe372f873.png"
+    }
+  ],
+  "transfer": {
+    "from": "Palermo FC",
+    "to": "Liverpool",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94078884-25823d0fe372f873.png",
+    "to_logo": "market-global-club-44-56dfeac623d23b94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-124278-a37d713c9e4964c9.png",
+    "alt": "Isaac Mabaya"
+  }
+}

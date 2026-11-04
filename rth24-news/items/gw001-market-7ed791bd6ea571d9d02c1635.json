@@ -1,0 +1,35 @@
+{
+  "id": "gw001-market-7ed791bd6ea571d9d02c1635",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Gabriel Magalhães",
+  "text": "AS Roma e Bologna FC chiudono l’accordo per Gabriel Magalhães. Operazione da 16 milioni di euro, con Min-Jae Kim nel percorso inverso verso Bologna FC.",
+  "category": "market",
+  "club_ids": [
+    "94078890",
+    "94078865"
+  ],
+  "teams": [
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    },
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "AS Roma",
+    "formula": "Scambio con contropartite",
+    "amount": "16 milioni di euro + Min-Jae Kim",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94078865-1c269c6755cb7fdb.png",
+    "to_logo": "market-club-94078890-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-89344-d0e6b38bcaa6f72e.png",
+    "alt": "Gabriel Magalhães"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "gw001-market-dc014a79d43529264dc7053e-club",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Federico Valverde: il punto dai due club",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nAS Roma e Bologna FC chiudono l’accordo per Federico Valverde. Operazione da 18,7 milioni di euro, con Fabián Ruiz nel percorso inverso verso Bologna FC.\n\nPaolo Assogna · Inviato Roma\n«Per Roma arrivano Federico Valverde e partono Fabián Ruiz. Mister, come accompagniamo questo cambiamento?»\n\nPep Buitre · Manager Roma\n«Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.»\n\nFrancesco Cosatti · Inviato Bologna\n«Per Bologna arrivano Fabián Ruiz e partono Federico Valverde. Mister, come accompagniamo questo cambiamento?»\n\nCarlo Colombo · Manager Bologna\n«Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.»",
+  "category": "club",
+  "club_ids": [
+    "94078890",
+    "94078865"
+  ],
+  "teams": [
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    },
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "AS Roma",
+    "formula": "Scambio con contropartite",
+    "amount": "18,7 milioni di euro + Fabián Ruiz",
+    "date": "2026-11-03",
+    "from_logo": "market-club-94078865-1c269c6755cb7fdb.png",
+    "to_logo": "market-club-94078890-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-81249-5478c3eca95d458a.png",
+    "alt": "Federico Valverde"
+  },
+  "coverage": [
+    {
+      "club": "Roma",
+      "reporter": "Paolo Assogna",
+      "manager": "Pep Buitre",
+      "question": "Per Roma arrivano Federico Valverde e partono Fabián Ruiz. Mister, come accompagniamo questo cambiamento?",
+      "answer": "Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.",
+      "reporter_image": {
+        "file": "news-person-54c9688ee51d0a54-0ae24562ee4b09c5.webp",
+        "alt": "Paolo Assogna"
+      }
+    },
+    {
+      "club": "Bologna",
+      "reporter": "Francesco Cosatti",
+      "manager": "Carlo Colombo",
+      "question": "Per Bologna arrivano Fabián Ruiz e partono Federico Valverde. Mister, come accompagniamo questo cambiamento?",
+      "answer": "Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.",
+      "reporter_image": {
+        "file": "news-person-8df1ce5f22260665-23a19a3865263e09.jpg",
+        "alt": "Francesco Cosatti"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-4911976818bb735ab03a867d",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Hertha BSC: ufficiale l’arrivo di Isaac Babadi",
+  "text": "Hertha BSC annuncia l’arrivo di Isaac Babadi. Il giocatore lascia PSV: operazione da 2,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "PSV",
+    "to": "Hertha BSC",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,2 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-201-491f05363869d3f7.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-116606-f1aaf2475d48448b.png",
+    "alt": "Isaac Babadi"
+  }
+}

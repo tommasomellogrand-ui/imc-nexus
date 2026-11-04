@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-2b726f6cf0ba64cfc1a702f7",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "SV Babelsberg 03: ufficiale l’arrivo di Niklas Hildebrandt",
+  "text": "SV Babelsberg 03 annuncia l’arrivo di Niklas Hildebrandt. Il giocatore lascia Shakhtar Donetsk: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079115"
+  ],
+  "teams": [
+    {
+      "name": "Shakhtar Donetsk",
+      "logo": "market-club-94079115-3315b78fc3ccd970.png"
+    }
+  ],
+  "transfer": {
+    "from": "Shakhtar Donetsk",
+    "to": "SV Babelsberg 03",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94079115-3315b78fc3ccd970.png",
+    "to_logo": "market-global-club-1626-06ee755c07bd0c6c.png"
+  },
+  "editorial_version": 3
+}

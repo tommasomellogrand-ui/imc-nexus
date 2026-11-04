@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-d35683426014e4d24a926606",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "FC Porto: ufficiale l’arrivo di Oskar Pietuszewski",
+  "text": "FC Porto annuncia l’arrivo di Oskar Pietuszewski. Il giocatore lascia Atlético Madrid: operazione da 12,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078906"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "FC Porto",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94078906-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-224-2b9ad4a869c0dbef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149708-a410c83b5848de8a.png",
+    "alt": "Oskar Pietuszewski"
+  }
+}

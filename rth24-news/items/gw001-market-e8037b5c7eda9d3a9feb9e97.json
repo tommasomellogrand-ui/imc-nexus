@@ -1,0 +1,29 @@
+{
+  "id": "gw001-market-e8037b5c7eda9d3a9feb9e97",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Shakhtar Donetsk: ufficiale l’arrivo di Pablo López",
+  "text": "Shakhtar Donetsk annuncia l’arrivo di Pablo López, proveniente dalla lista degli svincolati. Operazione da 225.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079115"
+  ],
+  "teams": [
+    {
+      "name": "Shakhtar Donetsk",
+      "logo": "market-club-94079115-3315b78fc3ccd970.png"
+    }
+  ],
+  "transfer": {
+    "from": "Svincolato",
+    "to": "Shakhtar Donetsk",
+    "formula": "Trasferimento definitivo",
+    "amount": "225.000 euro",
+    "date": "2026-11-04",
+    "to_logo": "market-club-94079115-3315b78fc3ccd970.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-158338-3722b8cfa5895da5.png",
+    "alt": "Pablo López"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-1a63c3546db5ba343c8e4b5c",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Atlético Saguntino: ufficiale l’arrivo di Rubén Gómez",
+  "text": "Atlético Saguntino annuncia l’arrivo di Rubén Gómez. Il giocatore lascia Dynamo Kyiv: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079114"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Kyiv",
+      "logo": "market-club-94079114-2ca9b141413086ab.png"
+    }
+  ],
+  "transfer": {
+    "from": "Dynamo Kyiv",
+    "to": "Atlético Saguntino",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94079114-2ca9b141413086ab.png",
+    "to_logo": "market-global-club-4531-7e37631f8b453828.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-167611-4f018844696fd7f9.png",
+    "alt": "Rubén Gómez"
+  }
+}

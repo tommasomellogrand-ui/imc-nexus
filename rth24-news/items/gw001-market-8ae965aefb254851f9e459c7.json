@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-8ae965aefb254851f9e459c7",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "AS Reggina 1914: ufficiale l’arrivo di Samuele Ricci",
+  "text": "AS Reggina 1914 annuncia l’arrivo di Samuele Ricci. Il giocatore lascia AC Milan: operazione da 10,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078889"
+  ],
+  "teams": [
+    {
+      "name": "Reggina",
+      "logo": "market-club-94078889-faf4c23dafd22c30.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "AS Reggina 1914",
+    "formula": "Trasferimento definitivo",
+    "amount": "10,3 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-115-cf09cc84369c6535.png",
+    "to_logo": "market-club-94078889-faf4c23dafd22c30.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104880-fb6a177b063fdc5d.png",
+    "alt": "Samuele Ricci"
+  }
+}

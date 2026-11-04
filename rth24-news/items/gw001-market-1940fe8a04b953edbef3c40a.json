@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-1940fe8a04b953edbef3c40a",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Ipswich Town: ufficiale l’arrivo di Correia Emersonn",
+  "text": "Ipswich Town annuncia l’arrivo di Correia Emersonn. Il giocatore lascia Fenerbahçe SK: operazione da 6,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079117"
+  ],
+  "teams": [
+    {
+      "name": "Fenerbahçe",
+      "logo": "market-club-94079117-5538c7612289db66.png"
+    }
+  ],
+  "transfer": {
+    "from": "Fenerbahçe SK",
+    "to": "Ipswich Town",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,1 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94079117-5538c7612289db66.png",
+    "to_logo": "market-global-club-38-f62ba13db8daca5d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-118897-7eb9f90143acd8d0.png",
+    "alt": "Correia Emersonn"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-47e6836f67cc87dc9edc4ece",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Celta Vigo: ufficiale l’arrivo di Iago Aspas",
+  "text": "Celta Vigo annuncia l’arrivo di Iago Aspas. Il giocatore lascia Bologna FC: operazione da 244.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078865"
+  ],
+  "teams": [
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "Celta Vigo",
+    "formula": "Trasferimento definitivo",
+    "amount": "244.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078865-1c269c6755cb7fdb.png",
+    "to_logo": "market-global-club-141-b3a470d5fa7d1aa3.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-42073-b87ae5f46d6884aa.png",
+    "alt": "Iago Aspas"
+  }
+}

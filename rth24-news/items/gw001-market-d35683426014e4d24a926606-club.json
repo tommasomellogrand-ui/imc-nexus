@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-d35683426014e4d24a926606-club",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Oskar Pietuszewski: il punto con Giancarlo Marocchi e Giuseppe Trovato",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nFC Porto annuncia l’arrivo di Oskar Pietuszewski. Il giocatore lascia Atlético Madrid: operazione da 12,3 milioni di euro.\n\nGiancarlo Marocchi · Inviato Atlético Madrid\n«Oskar Pietuszewski proseguirà con FC Porto. Un giocatore con rating 85. Mister, come affrontate il lavoro dopo questa partenza?»\n\nGiuseppe Trovato · Manager Atlético Madrid\n«Salutiamo Oskar Pietuszewski e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94078906"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atlético Madrid",
+    "to": "FC Porto",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94078906-e209a6007dbb920b.png",
+    "to_logo": "market-global-club-224-2b9ad4a869c0dbef.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149708-a410c83b5848de8a.png",
+    "alt": "Oskar Pietuszewski"
+  },
+  "coverage": [
+    {
+      "club": "Atlético Madrid",
+      "reporter": "Giancarlo Marocchi",
+      "manager": "Giuseppe Trovato",
+      "question": "Oskar Pietuszewski proseguirà con FC Porto. Un giocatore con rating 85. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Oskar Pietuszewski e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-cb68488fa8fc5eec-38107fd15eb6866e.jpg",
+        "alt": "Giancarlo Marocchi"
+      }
+    }
+  ]
+}

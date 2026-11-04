@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-a96b6f7eb7c917775f0bcc22-club",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Virgilio Olaya: il punto con Matteo Petrucci e Alessandro Berardi",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nLos Angeles FC annuncia l’arrivo di Virgilio Olaya. Il giocatore lascia SS Lazio: operazione da 12,3 milioni di euro.\n\nMatteo Petrucci · Inviato Lazio\n«Virgilio Olaya proseguirà con Los Angeles FC. Un difensore centrale con rating 73. Mister, come affrontate il lavoro dopo questa partenza?»\n\nAlessandro Berardi · Manager Lazio\n«Salutiamo Virgilio Olaya e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "SS Lazio",
+    "to": "Los Angeles FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078878-b054346a661b8b49.png",
+    "to_logo": "market-global-club-4260-7b20f63230692cf1.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-153799-a3a9f27337284d80.png",
+    "alt": "Virgilio Olaya"
+  },
+  "coverage": [
+    {
+      "club": "Lazio",
+      "reporter": "Matteo Petrucci",
+      "manager": "Alessandro Berardi",
+      "question": "Virgilio Olaya proseguirà con Los Angeles FC. Un difensore centrale con rating 73. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Virgilio Olaya e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-7fcf51a6cb89dc4f-de3de5e15673523b.jpg",
+        "alt": "Matteo Petrucci"
+      }
+    }
+  ]
+}

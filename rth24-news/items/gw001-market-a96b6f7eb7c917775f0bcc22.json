@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-a96b6f7eb7c917775f0bcc22",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Los Angeles FC: ufficiale l’arrivo di Virgilio Olaya",
+  "text": "Los Angeles FC annuncia l’arrivo di Virgilio Olaya. Il giocatore lascia SS Lazio: operazione da 12,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "SS Lazio",
+    "to": "Los Angeles FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,3 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078878-b054346a661b8b49.png",
+    "to_logo": "market-global-club-4260-7b20f63230692cf1.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-153799-a3a9f27337284d80.png",
+    "alt": "Virgilio Olaya"
+  }
+}

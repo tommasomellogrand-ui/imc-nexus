@@ -1,0 +1,35 @@
+{
+  "id": "gw001-market-5d80a6487e71856b93413778",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Atlético Madrid: ufficiale l’arrivo di Jorrel Hato",
+  "text": "Atlético Madrid e AS Roma chiudono l’accordo per Jorrel Hato. Operazione da 12 milioni di euro, con Álex Valle nel percorso inverso verso AS Roma.",
+  "category": "market",
+  "club_ids": [
+    "94078906",
+    "94078890"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    },
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "Atlético Madrid",
+    "formula": "Scambio con contropartite",
+    "amount": "12 milioni di euro + Álex Valle",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078890-4f2820912276f496.png",
+    "to_logo": "market-club-94078906-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-129408-a8a2637dee98f0c7.png",
+    "alt": "Jorrel Hato"
+  }
+}

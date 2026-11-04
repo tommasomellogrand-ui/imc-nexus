@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-cb8c7e3140c3658644125bab",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Hertha BSC: ufficiale l’arrivo di Plamen Andreev",
+  "text": "Hertha BSC annuncia l’arrivo di Plamen Andreev. Il giocatore lascia Debreceni VSC: operazione da 2,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Debreceni VSC",
+    "to": "Hertha BSC",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,2 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-933-a18eb4e519346488.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-117021-5771ae49297f9def.png",
+    "alt": "Plamen Andreev"
+  }
+}

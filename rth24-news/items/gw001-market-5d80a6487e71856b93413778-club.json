@@ -1,0 +1,59 @@
+{
+  "id": "gw001-market-5d80a6487e71856b93413778-club",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Jorrel Hato: il punto dai due club",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nAtlético Madrid e AS Roma chiudono l’accordo per Jorrel Hato. Operazione da 12 milioni di euro, con Álex Valle nel percorso inverso verso AS Roma.\n\nGiancarlo Marocchi · Inviato Atlético Madrid\n«Per Atlético Madrid arrivano Jorrel Hato e partono Álex Valle. Mister, come accompagniamo questo cambiamento?»\n\nGiuseppe Trovato · Manager Atlético Madrid\n«Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.»\n\nPaolo Assogna · Inviato Roma\n«Per Roma arrivano Álex Valle e partono Jorrel Hato. Mister, come accompagniamo questo cambiamento?»\n\nPep Buitre · Manager Roma\n«Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.»",
+  "category": "club",
+  "club_ids": [
+    "94078906",
+    "94078890"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    },
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "Atlético Madrid",
+    "formula": "Scambio con contropartite",
+    "amount": "12 milioni di euro + Álex Valle",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078890-4f2820912276f496.png",
+    "to_logo": "market-club-94078906-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-129408-a8a2637dee98f0c7.png",
+    "alt": "Jorrel Hato"
+  },
+  "coverage": [
+    {
+      "club": "Atlético Madrid",
+      "reporter": "Giancarlo Marocchi",
+      "manager": "Giuseppe Trovato",
+      "question": "Per Atlético Madrid arrivano Jorrel Hato e partono Álex Valle. Mister, come accompagniamo questo cambiamento?",
+      "answer": "Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.",
+      "reporter_image": {
+        "file": "news-person-cb68488fa8fc5eec-38107fd15eb6866e.jpg",
+        "alt": "Giancarlo Marocchi"
+      }
+    },
+    {
+      "club": "Roma",
+      "reporter": "Paolo Assogna",
+      "manager": "Pep Buitre",
+      "question": "Per Roma arrivano Álex Valle e partono Jorrel Hato. Mister, come accompagniamo questo cambiamento?",
+      "answer": "Il lavoro comprende entrambe le direzioni: inserire chi arriva e riorganizzarci dopo le partenze. Le scelte sul campo andranno valutate con il gruppo.",
+      "reporter_image": {
+        "file": "news-person-54c9688ee51d0a54-0ae24562ee4b09c5.webp",
+        "alt": "Paolo Assogna"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-2b22cc1b5e09fca06e95680b",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Watford: ufficiale l’arrivo di Federico Ravaglia",
+  "text": "Watford annuncia l’arrivo di Federico Ravaglia. Il giocatore lascia AS Reggina 1914: operazione da 2,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078889"
+  ],
+  "teams": [
+    {
+      "name": "Reggina",
+      "logo": "market-club-94078889-faf4c23dafd22c30.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Reggina 1914",
+    "to": "Watford",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,8 milioni di euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94078889-faf4c23dafd22c30.png",
+    "to_logo": "market-global-club-83-e010dd974c038c90.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-88922-44dfc8323fca32d8.png",
+    "alt": "Federico Ravaglia"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-53b340f6b00020d05052d9c0",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "River Plate: ufficiale l’arrivo di Samuel Dahl",
+  "text": "River Plate annuncia l’arrivo di Samuel Dahl. Il giocatore lascia SL Benfica: operazione da 6,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079049"
+  ],
+  "teams": [
+    {
+      "name": "River Plate",
+      "logo": "market-club-94079049-94608faa47bdcc94.png"
+    }
+  ],
+  "transfer": {
+    "from": "SL Benfica",
+    "to": "River Plate",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,3 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-218-cd9bbf9dc40287fc.png",
+    "to_logo": "market-club-94079049-94608faa47bdcc94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-132368-9444a17a33b1151f.png",
+    "alt": "Samuel Dahl"
+  }
+}

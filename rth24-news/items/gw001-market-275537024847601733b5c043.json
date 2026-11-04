@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-275537024847601733b5c043",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Tavriya Simferopol: ufficiale l’arrivo di Taras Mykhavko",
+  "text": "Tavriya Simferopol annuncia l’arrivo di Taras Mykhavko. Il giocatore lascia Fenerbahçe SK: operazione da 6,3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079117"
+  ],
+  "teams": [
+    {
+      "name": "Fenerbahçe",
+      "logo": "market-club-94079117-5538c7612289db66.png"
+    }
+  ],
+  "transfer": {
+    "from": "Fenerbahçe SK",
+    "to": "Tavriya Simferopol",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,3 milioni di euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94079117-5538c7612289db66.png",
+    "to_logo": "market-global-club-1030-e0d80365cd7aa5ed.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-144211-520837ee6bce1753.png",
+    "alt": "Taras Mykhavko"
+  }
+}

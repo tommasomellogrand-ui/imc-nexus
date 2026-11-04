@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-243ceda2ca1c6a34f8441bd5",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Hertha BSC: ufficiale l’arrivo di Álvaro Cortés",
+  "text": "Hertha BSC annuncia l’arrivo di Álvaro Cortés. Il giocatore lascia SD Compostela: operazione da 2,5 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "SD Compostela",
+    "to": "Hertha BSC",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,5 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-2600-33b4a756c9c8eb28.png",
+    "to_logo": "market-club-94079171-73a89d10e84d6dcf.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-139752-8d7b20aa57548dd2.png",
+    "alt": "Álvaro Cortés"
+  }
+}

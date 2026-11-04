@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-fe0eec452837510b78852582",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Real Madrid: ufficiale l’arrivo di Sergio Mestre",
+  "text": "Real Madrid annuncia l’arrivo di Sergio Mestre. Il giocatore lascia Celtic: operazione da 8,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079188"
+  ],
+  "teams": [
+    {
+      "name": "Celtic",
+      "logo": "market-club-94079188-5d487794c122a9b8.png"
+    }
+  ],
+  "transfer": {
+    "from": "Celtic",
+    "to": "Real Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "8,2 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94079188-5d487794c122a9b8.png",
+    "to_logo": "market-global-club-163-7ef177340849aadc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-134027-31c822a92e8d34e6.png",
+    "alt": "Sergio Mestre"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-04704c732cd305065ee5747e",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Manchester City: ufficiale l’arrivo di Pierce Charles",
+  "text": "Manchester City annuncia l’arrivo di Pierce Charles. Il giocatore lascia Hertha BSC: operazione da 6,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079171"
+  ],
+  "teams": [
+    {
+      "name": "Hertha Berlino",
+      "logo": "market-club-94079171-73a89d10e84d6dcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Hertha BSC",
+    "to": "Manchester City",
+    "formula": "Trasferimento definitivo",
+    "amount": "6,1 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94079171-73a89d10e84d6dcf.png",
+    "to_logo": "market-global-club-47-198e9921b709c50d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150470-227ecafaf77e94ea.png",
+    "alt": "Pierce Charles"
+  }
+}

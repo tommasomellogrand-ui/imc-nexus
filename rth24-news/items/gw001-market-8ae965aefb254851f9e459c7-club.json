@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-8ae965aefb254851f9e459c7-club",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Samuele Ricci: il punto con Eleonora Incardona e Saverio Cordiano",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nAS Reggina 1914 annuncia l’arrivo di Samuele Ricci. Il giocatore lascia AC Milan: operazione da 10,3 milioni di euro.\n\nEleonora Incardona · Inviato Reggina\n«L’accordo per Samuele Ricci è da 10,3 milioni di euro. Un centrocampista difensivo e centrale con rating 89. Mister, come accompagnerà il suo ingresso nel gruppo?»\n\nSaverio Cordiano · Manager Reggina\n«Con Samuele Ricci cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»",
+  "category": "club",
+  "club_ids": [
+    "94078889"
+  ],
+  "teams": [
+    {
+      "name": "Reggina",
+      "logo": "market-club-94078889-faf4c23dafd22c30.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "AS Reggina 1914",
+    "formula": "Trasferimento definitivo",
+    "amount": "10,3 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-global-club-115-cf09cc84369c6535.png",
+    "to_logo": "market-club-94078889-faf4c23dafd22c30.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104880-fb6a177b063fdc5d.png",
+    "alt": "Samuele Ricci"
+  },
+  "coverage": [
+    {
+      "club": "Reggina",
+      "reporter": "Eleonora Incardona",
+      "manager": "Saverio Cordiano",
+      "question": "L’accordo per Samuele Ricci è da 10,3 milioni di euro. Un centrocampista difensivo e centrale con rating 89. Mister, come accompagnerà il suo ingresso nel gruppo?",
+      "answer": "Con Samuele Ricci cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.",
+      "reporter_image": {
+        "file": "news-person-bf6818ed0ff20750-8f88f739251599c2.webp",
+        "alt": "Eleonora Incardona"
+      }
+    }
+  ]
+}

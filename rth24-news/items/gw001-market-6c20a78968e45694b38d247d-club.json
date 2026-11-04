@@ -1,0 +1,59 @@
+{
+  "id": "gw001-market-6c20a78968e45694b38d247d-club",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Valentín Barco: il punto dai due club",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nAtlético Madrid annuncia l’arrivo di Valentín Barco. Il giocatore lascia AS Roma: operazione da 23 milioni di euro.\n\nGiancarlo Marocchi · Inviato Atlético Madrid\n«L’accordo per Valentín Barco è da 23 milioni di euro. Un giocatore con rating 88. Mister, come accompagnerà il suo ingresso nel gruppo?»\n\nGiuseppe Trovato · Manager Atlético Madrid\n«Con Valentín Barco cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»\n\nPaolo Assogna · Inviato Roma\n«Valentín Barco proseguirà con Atlético Madrid. Un giocatore con rating 88. Mister, come affrontate il lavoro dopo questa partenza?»\n\nPep Buitre · Manager Roma\n«Salutiamo Valentín Barco e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94078906",
+    "94078890"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-94078906-e209a6007dbb920b.png"
+    },
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "Atlético Madrid",
+    "formula": "Trasferimento definitivo",
+    "amount": "23 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078890-4f2820912276f496.png",
+    "to_logo": "market-club-94078906-e209a6007dbb920b.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-113845-1e46057eaa860220.png",
+    "alt": "Valentín Barco"
+  },
+  "coverage": [
+    {
+      "club": "Atlético Madrid",
+      "reporter": "Giancarlo Marocchi",
+      "manager": "Giuseppe Trovato",
+      "question": "L’accordo per Valentín Barco è da 23 milioni di euro. Un giocatore con rating 88. Mister, come accompagnerà il suo ingresso nel gruppo?",
+      "answer": "Con Valentín Barco cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.",
+      "reporter_image": {
+        "file": "news-person-cb68488fa8fc5eec-38107fd15eb6866e.jpg",
+        "alt": "Giancarlo Marocchi"
+      }
+    },
+    {
+      "club": "Roma",
+      "reporter": "Paolo Assogna",
+      "manager": "Pep Buitre",
+      "question": "Valentín Barco proseguirà con Atlético Madrid. Un giocatore con rating 88. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Valentín Barco e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-54c9688ee51d0a54-0ae24562ee4b09c5.webp",
+        "alt": "Paolo Assogna"
+      }
+    }
+  ]
+}

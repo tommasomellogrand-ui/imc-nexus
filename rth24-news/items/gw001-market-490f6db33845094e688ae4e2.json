@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-490f6db33845094e688ae4e2",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Defensa y Justicia: ufficiale l’arrivo di Éver Banega",
+  "text": "Defensa y Justicia annuncia l’arrivo di Éver Banega. Il giocatore lascia Bologna FC: operazione da 171.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078865"
+  ],
+  "teams": [
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bologna FC",
+    "to": "Defensa y Justicia",
+    "formula": "Trasferimento definitivo",
+    "amount": "171.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-94078865-1c269c6755cb7fdb.png",
+    "to_logo": "market-global-club-1573-f4a8ea77a788f455.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-20652-4cbd3c22168f0e30.png",
+    "alt": "Éver Banega"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-7458ba1aa5f042e9be38f5cf",
+  "published_at": "2026-11-04T22:53:47+01:00",
+  "title": "Lorca Deportiva: ufficiale l’arrivo di Jaume Durá",
+  "text": "Lorca Deportiva annuncia l’arrivo di Jaume Durá. Il giocatore lascia Shakhtar Donetsk: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079115"
+  ],
+  "teams": [
+    {
+      "name": "Shakhtar Donetsk",
+      "logo": "market-club-94079115-3315b78fc3ccd970.png"
+    }
+  ],
+  "transfer": {
+    "from": "Shakhtar Donetsk",
+    "to": "Lorca Deportiva",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-94079115-3315b78fc3ccd970.png",
+    "to_logo": "market-global-club-4623-8d7989d9b91191a0.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-166371-cf21a06c4becb707.png",
+    "alt": "Jaume Durá"
+  }
+}
