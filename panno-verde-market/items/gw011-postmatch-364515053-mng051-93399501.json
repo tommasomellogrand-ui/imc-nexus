@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515053-mng051-93399501",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Luciano Tana · Il post partita di Arsenal",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nArsenal 2–3 Bayern München · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515053",
+    "manager_id": "MNG051",
+    "manager": "Luciano Tana",
+    "club_id": "93399501",
+    "club": "Arsenal",
+    "opponent": "Bayern München",
+    "match_date": "2026-11-05",
+    "result": "Arsenal 2–3 Bayern München",
+    "source_hash": "a58a67329e3299234a17d5a4a0144615e61e3beabc5a635e1032c2de74fb20b4",
+    "home": "Arsenal",
+    "away": "Bayern München",
+    "home_score": "2",
+    "away_score": "3",
+    "home_logo": "market-club-93399501-33ef41943a141618.png",
+    "away_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "division": "2",
+    "round": "4",
+    "competition_label": "DIVISIONE 2 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 49% di possesso e 13 tiri, contro 11 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Gnabry al minuto 86 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 86 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "61101",
+        "name": "Gnabry",
+        "image": {
+          "file": "postmatch-player-61101-05bf7b9da284e977.png",
+          "alt": "Gnabry"
+        }
+      }
+    },
+    {
+      "question": "Declan Rice ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "90916",
+        "name": "Declan Rice",
+        "image": {
+          "file": "postmatch-player-90916-950538c64807364a.png",
+          "alt": "Declan Rice"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 13, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 6 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

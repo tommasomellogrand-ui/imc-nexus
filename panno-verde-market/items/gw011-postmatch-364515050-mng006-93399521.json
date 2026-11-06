@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515050-mng006-93399521",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Pep Buitre · Il post partita di Chelsea",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nChelsea 0–1 Liverpool · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515050",
+    "manager_id": "MNG006",
+    "manager": "Pep Buitre",
+    "club_id": "93399521",
+    "club": "Chelsea",
+    "opponent": "Liverpool",
+    "match_date": "2026-11-05",
+    "result": "Chelsea 0–1 Liverpool",
+    "source_hash": "122acac1c1f7fe7193b82d174395c94a277828ca12100ed58650c7282702fc3d",
+    "home": "Chelsea",
+    "away": "Liverpool",
+    "home_score": "0",
+    "away_score": "1",
+    "home_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "away_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "division": "2",
+    "round": "4",
+    "competition_label": "DIVISIONE 2 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-1 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 57% di possesso e 11 tiri, contro 11 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "Il rosso a P Barrios al minuto 52 quanto pesa nella lettura della gara?",
+      "answer": "L’espulsione avversaria al minuto 52 è un dato importante. Non siamo riusciti a tradurla nel risultato che cercavamo: il vantaggio numerico non sostituisce la qualità delle conclusioni.",
+      "player": {
+        "id": "120600",
+        "name": "P Barrios",
+        "image": {
+          "file": "postmatch-player-120600-991ad817b1bc5bd6.png",
+          "alt": "P Barrios"
+        }
+      }
+    },
+    {
+      "question": "F Wirtz ha ricevuto voto 8 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 8 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "104514",
+        "name": "F Wirtz",
+        "image": {
+          "file": "postmatch-player-104514-3ccfb3e01966c084.png",
+          "alt": "F Wirtz"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 11, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 4 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

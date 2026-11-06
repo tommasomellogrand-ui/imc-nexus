@@ -1,0 +1,79 @@
+{
+  "id": "gw011-postmatch-364514961-mng001-93399639",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Tommaso Mello · Il post partita di Atlético Madrid",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nTottenham Hotspur 3–3 Atlético Madrid · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514961",
+    "manager_id": "MNG001",
+    "manager": "Tommaso Mello",
+    "club_id": "93399639",
+    "club": "Atlético Madrid",
+    "opponent": "Tottenham Hotspur",
+    "match_date": "2026-11-05",
+    "result": "Tottenham Hotspur 3–3 Atlético Madrid",
+    "source_hash": "6ef2b5c4bec7540ef72d17511a83e346babea3207d7059c0685d166d147ac770",
+    "home": "Tottenham Hotspur",
+    "away": "Atlético Madrid",
+    "home_score": "3",
+    "away_score": "3",
+    "home_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "away_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "division": "1",
+    "round": "4",
+    "competition_label": "DIVISIONE 1 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 3-3 ci lascia un punto. Con 6 gol complessivi ci sono cose buone davanti e altre da correggere nella protezione della porta."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 46% di possesso e 13 tiri, contro 12 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Pino al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "106765",
+        "name": "Pino",
+        "image": {
+          "file": "postmatch-player-106765-451acb3faac5a951.png",
+          "alt": "Pino"
+        }
+      }
+    },
+    {
+      "question": "A Lookman è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "84738",
+        "name": "A Lookman",
+        "image": {
+          "file": "postmatch-player-84738-f327c4ca45a01ebc.png",
+          "alt": "A Lookman"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 13, contro 7 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 7 volte contro le nostre 5. Il risultato premia la nostra concretezza, ma concedere meno conclusioni pulite rimane importante."
+    }
+  ],
+  "image": {
+    "file": "news-person-56748ccd184cf532-1572c907792595a1.jpeg",
+    "alt": "Tommaso Mello"
+  }
+}

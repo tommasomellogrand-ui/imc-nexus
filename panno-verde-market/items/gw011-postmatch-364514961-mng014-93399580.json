@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514961-mng014-93399580",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Giovanni Iodice · Il post partita di Tottenham Hotspur",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nTottenham Hotspur 3–3 Atlético Madrid · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399580"
+  ],
+  "teams": [
+    {
+      "name": "Tottenham Hotspur",
+      "logo": "market-club-93399580-b520b61ef4469d37.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514961",
+    "manager_id": "MNG014",
+    "manager": "Giovanni Iodice",
+    "club_id": "93399580",
+    "club": "Tottenham Hotspur",
+    "opponent": "Atlético Madrid",
+    "match_date": "2026-11-05",
+    "result": "Tottenham Hotspur 3–3 Atlético Madrid",
+    "source_hash": "dc5985be19ab52afda0326821b7f4073a474f628a09849e17ae4819dd272ebf3",
+    "home": "Tottenham Hotspur",
+    "away": "Atlético Madrid",
+    "home_score": "3",
+    "away_score": "3",
+    "home_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "away_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "division": "1",
+    "round": "4",
+    "competition_label": "DIVISIONE 1 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 3-3 ci lascia un punto. Con 6 gol complessivi ci sono cose buone davanti e altre da correggere nella protezione della porta."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 54% di possesso e 12 tiri, contro 13 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Pino al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "106765",
+        "name": "Pino",
+        "image": {
+          "file": "postmatch-player-106765-451acb3faac5a951.png",
+          "alt": "Pino"
+        }
+      }
+    },
+    {
+      "question": "Rodrigo Bentancur ha segnato una doppietta: quanto conta il suo contributo?",
+      "answer": "Le sue reti sono un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "81732",
+        "name": "Rodrigo Bentancur",
+        "image": {
+          "file": "postmatch-player-81732-d335db803c191959.png",
+          "alt": "Rodrigo Bentancur"
+        }
+      }
+    },
+    {
+      "question": "7 tiri nello specchio su 12, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 7 volte e segnato 3 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

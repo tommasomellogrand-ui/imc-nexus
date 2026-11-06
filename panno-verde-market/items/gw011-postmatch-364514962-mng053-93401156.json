@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514962-mng053-93401156",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Chicco Belin · Il post partita di Como 1907",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nComo 1907 1–1 AS Roma · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514962",
+    "manager_id": "MNG053",
+    "manager": "Chicco Belin",
+    "club_id": "93401156",
+    "club": "Como 1907",
+    "opponent": "AS Roma",
+    "match_date": "2026-11-05",
+    "result": "Como 1907 1–1 AS Roma",
+    "source_hash": "8dd2a56947725ed6149c337f90b35db5f745097776c5c9b4268b7e4376631d45",
+    "home": "Como 1907",
+    "away": "AS Roma",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "away_logo": "market-club-93399623-4f2820912276f496.png",
+    "division": "1",
+    "round": "4",
+    "competition_label": "DIVISIONE 1 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 42% di possesso e 13 tiri, contro 17 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Moleiro al minuto 8 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 8 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "113352",
+        "name": "Moleiro",
+        "image": {
+          "file": "postmatch-player-113352-0faee9eb8feca2f6.png",
+          "alt": "Moleiro"
+        }
+      }
+    },
+    {
+      "question": "A Moleiro ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "113352",
+        "name": "A Moleiro",
+        "image": {
+          "file": "postmatch-player-113352-0faee9eb8feca2f6.png",
+          "alt": "A Moleiro"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 13, contro 8 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 8 volte contro le nostre 4. Il risultato premia la nostra concretezza, ma concedere meno conclusioni pulite rimane importante."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515052-mng027-93399549",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Danilo FC 1908 · Il post partita di Manchester United",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nParis Saint-Germain 2–0 Manchester United · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515052",
+    "manager_id": "MNG027",
+    "manager": "Danilo FC 1908",
+    "club_id": "93399549",
+    "club": "Manchester United",
+    "opponent": "Paris Saint-Germain",
+    "match_date": "2026-11-05",
+    "result": "Paris Saint-Germain 2–0 Manchester United",
+    "source_hash": "a9524a28a190c92e6db7158ffb3ab605753f6a8b28e3daa3a51651fab1f461f6",
+    "home": "Paris Saint-Germain",
+    "away": "Manchester United",
+    "home_score": "2",
+    "away_score": "0",
+    "home_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "away_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "division": "2",
+    "round": "4",
+    "competition_label": "DIVISIONE 2 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 39% di possesso e 7 tiri, contro 15 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "Il rosso a C Baleba al minuto 67 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 67 abbiamo dovuto affrontare un’espulsione. È un passaggio importante del report, ma non deve diventare una spiegazione unica di tutto il risultato.",
+      "player": {
+        "id": "124780",
+        "name": "C Baleba",
+        "image": {
+          "file": "postmatch-player-124780-f58b3927bb4205c9.png",
+          "alt": "C Baleba"
+        }
+      }
+    },
+    {
+      "question": "S Lammens è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "105973",
+        "name": "S Lammens",
+        "image": {
+          "file": "postmatch-player-105973-6ff9f9c2b07d0e4e.png",
+          "alt": "S Lammens"
+        }
+      }
+    },
+    {
+      "question": "0 tiri nello specchio su 7, contro 10 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 0 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514963-mng016-93399615",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Saverio Cordiano · Il post partita di AC Milan",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAC Milan 1–4 SSC Napoli · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514963",
+    "manager_id": "MNG016",
+    "manager": "Saverio Cordiano",
+    "club_id": "93399615",
+    "club": "AC Milan",
+    "opponent": "SSC Napoli",
+    "match_date": "2026-11-05",
+    "result": "AC Milan 1–4 SSC Napoli",
+    "source_hash": "61088fefd4794350b39e7d394cfb4b169cf6431c8aa5d0357fc01d72228aab0f",
+    "home": "AC Milan",
+    "away": "SSC Napoli",
+    "home_score": "1",
+    "away_score": "4",
+    "home_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "away_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "division": "1",
+    "round": "4",
+    "competition_label": "DIVISIONE 1 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-4 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 45% di possesso e 12 tiri, contro 17 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Olivera al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "85794",
+        "name": "Olivera",
+        "image": {
+          "file": "postmatch-player-85794-40bece87c4ab422e.png",
+          "alt": "Olivera"
+        }
+      }
+    },
+    {
+      "question": "Sebastiano Esposito ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "100471",
+        "name": "Sebastiano Esposito",
+        "image": {
+          "file": "postmatch-player-100471-64a8969ea04f2b17.png",
+          "alt": "Sebastiano Esposito"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 12, contro 8 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 8 volte contro le nostre 4. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

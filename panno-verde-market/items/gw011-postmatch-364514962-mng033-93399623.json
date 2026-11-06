@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514962-mng033-93399623",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Simone Campanella · Il post partita di AS Roma",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nComo 1907 1–1 AS Roma · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514962",
+    "manager_id": "MNG033",
+    "manager": "Simone Campanella",
+    "club_id": "93399623",
+    "club": "AS Roma",
+    "opponent": "Como 1907",
+    "match_date": "2026-11-05",
+    "result": "Como 1907 1–1 AS Roma",
+    "source_hash": "a602e966fee08d7ba78fec32b4ef39536e49c567067ec2833c665f7370f29d36",
+    "home": "Como 1907",
+    "away": "AS Roma",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "away_logo": "market-club-93399623-4f2820912276f496.png",
+    "division": "1",
+    "round": "4",
+    "competition_label": "DIVISIONE 1 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 58% di possesso e 17 tiri, contro 13 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Moleiro al minuto 8 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 8 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "113352",
+        "name": "Moleiro",
+        "image": {
+          "file": "postmatch-player-113352-0faee9eb8feca2f6.png",
+          "alt": "Moleiro"
+        }
+      }
+    },
+    {
+      "question": "Jonathan David è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "98250",
+        "name": "Jonathan David",
+        "image": {
+          "file": "postmatch-player-98250-c8f960b3ac0dadcf.png",
+          "alt": "Jonathan David"
+        }
+      }
+    },
+    {
+      "question": "8 tiri nello specchio su 17, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Con 8 conclusioni nello specchio e 1 gol, il tema è convertire meglio quello che produciamo. Il dato non racconta da solo la difficoltà di ogni tiro, ma indica bene dove concentrare la nostra analisi."
+    }
+  ]
+}

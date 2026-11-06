@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514963-mng015-93400234",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Marco Fioretti · Il post partita di SSC Napoli",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAC Milan 1–4 SSC Napoli · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514963",
+    "manager_id": "MNG015",
+    "manager": "Marco Fioretti",
+    "club_id": "93400234",
+    "club": "SSC Napoli",
+    "opponent": "AC Milan",
+    "match_date": "2026-11-05",
+    "result": "AC Milan 1–4 SSC Napoli",
+    "source_hash": "7f489f2c3bc0f5371aac6b3c2132ef6531c936e8a23a65f5b567acc872aba84d",
+    "home": "AC Milan",
+    "away": "SSC Napoli",
+    "home_score": "1",
+    "away_score": "4",
+    "home_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "away_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "division": "1",
+    "round": "4",
+    "competition_label": "DIVISIONE 1 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "È una vittoria netta, 4-1, e il merito è aver dato continuità al risultato. Un margine così ampio premia quello che abbiamo prodotto, senza cancellare gli aspetti da rivedere."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 55% di possesso e 17 tiri, contro 12 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Olivera al minuto 77 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 77 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "85794",
+        "name": "Olivera",
+        "image": {
+          "file": "postmatch-player-85794-40bece87c4ab422e.png",
+          "alt": "Olivera"
+        }
+      }
+    },
+    {
+      "question": "Rasmus Hojlund è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "111917",
+        "name": "Rasmus Hojlund",
+        "image": {
+          "file": "postmatch-player-111917-ff4e81cd025d0708.png",
+          "alt": "Rasmus Hojlund"
+        }
+      }
+    },
+    {
+      "question": "8 tiri nello specchio su 17, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 8 volte e segnato 4 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

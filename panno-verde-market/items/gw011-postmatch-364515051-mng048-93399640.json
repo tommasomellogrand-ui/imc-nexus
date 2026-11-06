@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515051-mng048-93399640",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Giuseppe Trovato · Il post partita di Barcelona",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBarcelona 1–3 Real Madrid · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515051",
+    "manager_id": "MNG048",
+    "manager": "Giuseppe Trovato",
+    "club_id": "93399640",
+    "club": "Barcelona",
+    "opponent": "Real Madrid",
+    "match_date": "2026-11-05",
+    "result": "Barcelona 1–3 Real Madrid",
+    "source_hash": "0b06f92ce9ab4a2dbed61234141293dcc28258a7984eb44e6150b78674eaa4a3",
+    "home": "Barcelona",
+    "away": "Real Madrid",
+    "home_score": "1",
+    "away_score": "3",
+    "home_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "away_logo": "market-club-93399663-7ef177340849aadc.png",
+    "division": "2",
+    "round": "4",
+    "competition_label": "DIVISIONE 2 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 50% di possesso e 7 tiri, contro 12 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Mbappé al minuto 78 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 78 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "85260",
+        "name": "Mbappé",
+        "image": {
+          "file": "postmatch-player-85260-024a30a8f25ad02c.png",
+          "alt": "Mbappé"
+        }
+      }
+    },
+    {
+      "question": "Mohamed Salah ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "52690",
+        "name": "Mohamed Salah",
+        "image": {
+          "file": "postmatch-player-52690-8bcf8f62a5f88f60.png",
+          "alt": "Mohamed Salah"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 7, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 6 volte contro le nostre 3. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

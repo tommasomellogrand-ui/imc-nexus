@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514960-mng052-93399596",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Carlo Colombo · Il post partita di Atalanta BC",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nSL Benfica 1–0 Atalanta BC · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514960",
+    "manager_id": "MNG052",
+    "manager": "Carlo Colombo",
+    "club_id": "93399596",
+    "club": "Atalanta BC",
+    "opponent": "SL Benfica",
+    "match_date": "2026-11-05",
+    "result": "SL Benfica 1–0 Atalanta BC",
+    "source_hash": "07b784c26919dcfca6f424fe336831b1fa601291aa6e2f297fbc1a438b509026",
+    "home": "SL Benfica",
+    "away": "Atalanta BC",
+    "home_score": "1",
+    "away_score": "0",
+    "home_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "away_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "division": "1",
+    "round": "4",
+    "competition_label": "DIVISIONE 1 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-1 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 45% di possesso e 10 tiri, contro 15 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Ronaldo al minuto 82 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 82 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "1131",
+        "name": "Ronaldo",
+        "image": {
+          "file": "postmatch-player-1131-2ead0540f1d5c5c9.png",
+          "alt": "Ronaldo"
+        }
+      }
+    },
+    {
+      "question": "G Scamacca ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "85330",
+        "name": "G Scamacca",
+        "image": {
+          "file": "postmatch-player-85330-11ef16b994df0683.png",
+          "alt": "G Scamacca"
+        }
+      }
+    },
+    {
+      "question": "2 tiri nello specchio su 10, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 2 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

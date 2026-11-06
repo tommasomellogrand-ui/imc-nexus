@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515050-mng065-93399544",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Carlo Ancelotti · Il post partita di Liverpool",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nChelsea 0–1 Liverpool · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515050",
+    "manager_id": "MNG065",
+    "manager": "Carlo Ancelotti",
+    "club_id": "93399544",
+    "club": "Liverpool",
+    "opponent": "Chelsea",
+    "match_date": "2026-11-05",
+    "result": "Chelsea 0–1 Liverpool",
+    "source_hash": "085b3f84ab3a550d4f6040a4ba4cffb8d60a0073509718f229395388e6bd5a82",
+    "home": "Chelsea",
+    "away": "Liverpool",
+    "home_score": "0",
+    "away_score": "1",
+    "home_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "away_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "division": "2",
+    "round": "4",
+    "competition_label": "DIVISIONE 2 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 1-0 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 43% di possesso e 11 tiri, contro 11 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "Il rosso a P Barrios al minuto 52 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 52 abbiamo dovuto affrontare un’espulsione. La vittoria resta un risultato importante anche per questo, ma il cartellino è un episodio da analizzare separatamente.",
+      "player": {
+        "id": "120600",
+        "name": "P Barrios",
+        "image": {
+          "file": "postmatch-player-120600-991ad817b1bc5bd6.png",
+          "alt": "P Barrios"
+        }
+      }
+    },
+    {
+      "question": "A Isak è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "83844",
+        "name": "A Isak",
+        "image": {
+          "file": "postmatch-player-83844-20ffe4f4f62ead06.png",
+          "alt": "A Isak"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 11, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 4 volte e segnato 1 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

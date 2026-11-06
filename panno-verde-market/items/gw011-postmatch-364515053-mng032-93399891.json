@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515053-mng032-93399891",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Vardan Minasyan · Il post partita di Bayern München",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nArsenal 2–3 Bayern München · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515053",
+    "manager_id": "MNG032",
+    "manager": "Vardan Minasyan",
+    "club_id": "93399891",
+    "club": "Bayern München",
+    "opponent": "Arsenal",
+    "match_date": "2026-11-05",
+    "result": "Arsenal 2–3 Bayern München",
+    "source_hash": "2da664bef68e97f59c62abdcd138bada40ae06300a1f3f0686df260a674cf846",
+    "home": "Arsenal",
+    "away": "Bayern München",
+    "home_score": "2",
+    "away_score": "3",
+    "home_logo": "market-club-93399501-33ef41943a141618.png",
+    "away_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "division": "2",
+    "round": "4",
+    "competition_label": "DIVISIONE 2 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 51% di possesso e 11 tiri, contro 13 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Gnabry al minuto 86 ha fissato il risultato. Come legge quel finale?",
+      "answer": "Quel gol al minuto 86 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "61101",
+        "name": "Gnabry",
+        "image": {
+          "file": "postmatch-player-61101-05bf7b9da284e977.png",
+          "alt": "Gnabry"
+        }
+      }
+    },
+    {
+      "question": "Michael Olise è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "101780",
+        "name": "Michael Olise",
+        "image": {
+          "file": "postmatch-player-101780-ddab7b161e6d9071.png",
+          "alt": "Michael Olise"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 11, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 6 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

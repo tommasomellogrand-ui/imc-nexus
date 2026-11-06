@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514959-mng008-93399610",
+  "published_at": "2026-11-06T11:08:34+01:00",
+  "title": "Giorgio Grugni · Il post partita di Juventus",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nJuventus 2–2 Borussia Dortmund · 05/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514959",
+    "manager_id": "MNG008",
+    "manager": "Giorgio Grugni",
+    "club_id": "93399610",
+    "club": "Juventus",
+    "opponent": "Borussia Dortmund",
+    "match_date": "2026-11-05",
+    "result": "Juventus 2–2 Borussia Dortmund",
+    "source_hash": "3851c753228751a6e4c59680651ac4a03fafd7a72bfebf2cdefdd48a5f16b03c",
+    "home": "Juventus",
+    "away": "Borussia Dortmund",
+    "home_score": "2",
+    "away_score": "2",
+    "home_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "away_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "division": "1",
+    "round": "4",
+    "competition_label": "DIVISIONE 1 · GIORNATA 4"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 2-2 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 53% di possesso e 14 tiri, contro 10 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Beier al minuto 79 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 79 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "103773",
+        "name": "Beier",
+        "image": {
+          "file": "postmatch-player-103773-7b5a70d24649ea2b.png",
+          "alt": "Beier"
+        }
+      }
+    },
+    {
+      "question": "V Osimhen è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "84372",
+        "name": "V Osimhen",
+        "image": {
+          "file": "postmatch-player-84372-bf5cbfba7bd33766.png",
+          "alt": "V Osimhen"
+        }
+      }
+    },
+    {
+      "question": "8 tiri nello specchio su 14, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 8 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}
