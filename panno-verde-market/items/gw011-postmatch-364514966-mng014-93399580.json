@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514966-mng014-93399580",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Giovanni Iodice · Il post partita di Tottenham Hotspur",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAS Roma 3–2 Tottenham Hotspur · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399580"
+  ],
+  "teams": [
+    {
+      "name": "Tottenham Hotspur",
+      "logo": "market-club-93399580-b520b61ef4469d37.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514966",
+    "manager_id": "MNG014",
+    "manager": "Giovanni Iodice",
+    "club_id": "93399580",
+    "club": "Tottenham Hotspur",
+    "opponent": "AS Roma",
+    "match_date": "2026-11-08",
+    "result": "AS Roma 3–2 Tottenham Hotspur",
+    "source_hash": "1d30456ff90e1f728fe1fe06dbfc51adc6def9e8f6b5a4701d49a429a3b26b6e",
+    "home": "AS Roma",
+    "away": "Tottenham Hotspur",
+    "home_score": "3",
+    "away_score": "2",
+    "home_logo": "market-club-93399623-4f2820912276f496.png",
+    "away_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "division": "1",
+    "round": "5",
+    "competition_label": "DIVISIONE 1 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 47% di possesso e 12 tiri, contro 15 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Oyarzabal al minuto 66 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 66 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "84791",
+        "name": "Oyarzabal",
+        "image": {
+          "file": "postmatch-player-84791-226f3f8e3e54c5d0.png",
+          "alt": "Oyarzabal"
+        }
+      }
+    },
+    {
+      "question": "D Vlahović è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "84966",
+        "name": "D Vlahović",
+        "image": {
+          "file": "postmatch-player-84966-f549178506d5169d.png",
+          "alt": "D Vlahović"
+        }
+      }
+    },
+    {
+      "question": "7 tiri nello specchio su 12, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 7 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

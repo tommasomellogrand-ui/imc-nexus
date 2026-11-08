@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515057-mng032-93399891",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Vardan Minasyan · Il post partita di Bayern München",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBayern München 2–2 Paris Saint-Germain · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515057",
+    "manager_id": "MNG032",
+    "manager": "Vardan Minasyan",
+    "club_id": "93399891",
+    "club": "Bayern München",
+    "opponent": "Paris Saint-Germain",
+    "match_date": "2026-11-08",
+    "result": "Bayern München 2–2 Paris Saint-Germain",
+    "source_hash": "d2cd8cd36dffe015fa9cd3e98ddb771f2f935c1d679b61bb7478c075e0deafd7",
+    "home": "Bayern München",
+    "away": "Paris Saint-Germain",
+    "home_score": "2",
+    "away_score": "2",
+    "home_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "away_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "division": "2",
+    "round": "5",
+    "competition_label": "DIVISIONE 2 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 2-2 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 55% di possesso e 15 tiri, contro 7 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Musiala al minuto 54 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 54 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "104640",
+        "name": "Musiala",
+        "image": {
+          "file": "postmatch-player-104640-c0380b146086bdc5.png",
+          "alt": "Musiala"
+        }
+      }
+    },
+    {
+      "question": "Aleksandar Pavlovic è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "135567",
+        "name": "Aleksandar Pavlovic",
+        "image": {
+          "file": "postmatch-player-135567-4c28f48da3841874.png",
+          "alt": "Aleksandar Pavlovic"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 15, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 5 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

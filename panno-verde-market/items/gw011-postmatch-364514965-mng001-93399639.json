@@ -1,0 +1,79 @@
+{
+  "id": "gw011-postmatch-364514965-mng001-93399639",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Tommaso Mello · Il post partita di Atlético Madrid",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtlético Madrid 1–3 SL Benfica · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514965",
+    "manager_id": "MNG001",
+    "manager": "Tommaso Mello",
+    "club_id": "93399639",
+    "club": "Atlético Madrid",
+    "opponent": "SL Benfica",
+    "match_date": "2026-11-08",
+    "result": "Atlético Madrid 1–3 SL Benfica",
+    "source_hash": "c677291de61c98d1704d26d652f1f13ff98d6e63ac390860f729499108e3930a",
+    "home": "Atlético Madrid",
+    "away": "SL Benfica",
+    "home_score": "1",
+    "away_score": "3",
+    "home_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "away_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "division": "1",
+    "round": "5",
+    "competition_label": "DIVISIONE 1 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 56% di possesso e 19 tiri, contro 13 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Lewandowski al minuto 71 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 71 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "34893",
+        "name": "Lewandowski",
+        "image": {
+          "file": "postmatch-player-34893-f427033a3965299f.png",
+          "alt": "Lewandowski"
+        }
+      }
+    },
+    {
+      "question": "Robert Lewandowski ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "34893",
+        "name": "Robert Lewandowski",
+        "image": {
+          "file": "postmatch-player-34893-f427033a3965299f.png",
+          "alt": "Robert Lewandowski"
+        }
+      }
+    },
+    {
+      "question": "7 tiri nello specchio su 19, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Con 7 conclusioni nello specchio e 1 gol, il tema è convertire meglio quello che produciamo. Il dato non racconta da solo la difficoltà di ogni tiro, ma indica bene dove concentrare la nostra analisi."
+    }
+  ],
+  "image": {
+    "file": "news-person-56748ccd184cf532-1572c907792595a1.jpeg",
+    "alt": "Tommaso Mello"
+  }
+}

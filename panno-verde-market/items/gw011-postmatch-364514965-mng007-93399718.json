@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514965-mng007-93399718",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Vincenzo Martorano · Il post partita di SL Benfica",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtlético Madrid 1–3 SL Benfica · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399718"
+  ],
+  "teams": [
+    {
+      "name": "SL Benfica",
+      "logo": "market-club-93399718-cd9bbf9dc40287fc.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514965",
+    "manager_id": "MNG007",
+    "manager": "Vincenzo Martorano",
+    "club_id": "93399718",
+    "club": "SL Benfica",
+    "opponent": "Atlético Madrid",
+    "match_date": "2026-11-08",
+    "result": "Atlético Madrid 1–3 SL Benfica",
+    "source_hash": "db3428cfbbe381f8af28c9563c5d798dca1d32f56cd4fc3224046beb4b303fec",
+    "home": "Atlético Madrid",
+    "away": "SL Benfica",
+    "home_score": "1",
+    "away_score": "3",
+    "home_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "away_logo": "market-club-93399718-cd9bbf9dc40287fc.png",
+    "division": "1",
+    "round": "5",
+    "competition_label": "DIVISIONE 1 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-1 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 44% di possesso e 13 tiri, contro 19 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Lewandowski al minuto 71 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 71 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "34893",
+        "name": "Lewandowski",
+        "image": {
+          "file": "postmatch-player-34893-f427033a3965299f.png",
+          "alt": "Lewandowski"
+        }
+      }
+    },
+    {
+      "question": "C Ronaldo è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 3 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "1131",
+        "name": "C Ronaldo",
+        "image": {
+          "file": "postmatch-player-1131-2ead0540f1d5c5c9.png",
+          "alt": "C Ronaldo"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 13, contro 7 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 7 volte contro le nostre 6. Il risultato premia la nostra concretezza, ma concedere meno conclusioni pulite rimane importante."
+    }
+  ]
+}

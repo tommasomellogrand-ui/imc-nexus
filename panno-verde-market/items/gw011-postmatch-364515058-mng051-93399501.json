@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515058-mng051-93399501",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Luciano Tana · Il post partita di Arsenal",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nArsenal 1–1 Manchester City · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515058",
+    "manager_id": "MNG051",
+    "manager": "Luciano Tana",
+    "club_id": "93399501",
+    "club": "Arsenal",
+    "opponent": "Manchester City",
+    "match_date": "2026-11-08",
+    "result": "Arsenal 1–1 Manchester City",
+    "source_hash": "e271b0a9b649f75a7b2e6239466e164490acfbc2a409a6cd8be0829544ec6426",
+    "home": "Arsenal",
+    "away": "Manchester City",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93399501-33ef41943a141618.png",
+    "away_logo": "market-club-93399547-198e9921b709c50d.png",
+    "division": "2",
+    "round": "5",
+    "competition_label": "DIVISIONE 2 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 57% di possesso e 16 tiri, contro 10 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Odegaard al minuto 50 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 50 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "73424",
+        "name": "Odegaard",
+        "image": {
+          "file": "postmatch-player-73424-08b89bfa9fe62071.png",
+          "alt": "Odegaard"
+        }
+      }
+    },
+    {
+      "question": "Martin Odegaard è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "73424",
+        "name": "Martin Odegaard",
+        "image": {
+          "file": "postmatch-player-73424-08b89bfa9fe62071.png",
+          "alt": "Martin Odegaard"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 16, contro 1 degli avversari: cosa le dice questo dato?",
+      "answer": "Con 6 conclusioni nello specchio e 1 gol, il tema è convertire meglio quello che produciamo. Il dato non racconta da solo la difficoltà di ogni tiro, ma indica bene dove concentrare la nostra analisi."
+    }
+  ]
+}

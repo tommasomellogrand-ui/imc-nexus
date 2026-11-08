@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514968-mng008-93399610",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Giorgio Grugni · Il post partita di Juventus",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAC Milan 2–0 Juventus · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514968",
+    "manager_id": "MNG008",
+    "manager": "Giorgio Grugni",
+    "club_id": "93399610",
+    "club": "Juventus",
+    "opponent": "AC Milan",
+    "match_date": "2026-11-08",
+    "result": "AC Milan 2–0 Juventus",
+    "source_hash": "fd0a684ef108cc6d8e2a3570c989d564874bb7d78bd1995259a0e248b3fb2c6c",
+    "home": "AC Milan",
+    "away": "Juventus",
+    "home_score": "2",
+    "away_score": "0",
+    "home_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "away_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "division": "1",
+    "round": "5",
+    "competition_label": "DIVISIONE 1 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 53% di possesso e 9 tiri, contro 8 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "Il rosso a C Pulisic al minuto 49 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 49 abbiamo dovuto affrontare un’espulsione. È un passaggio importante del report, ma non deve diventare una spiegazione unica di tutto il risultato.",
+      "player": {
+        "id": "85046",
+        "name": "C Pulisic",
+        "image": {
+          "file": "postmatch-player-85046-baa48f3fc306c741.png",
+          "alt": "C Pulisic"
+        }
+      }
+    },
+    {
+      "question": "P Schick è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "75765",
+        "name": "P Schick",
+        "image": {
+          "file": "postmatch-player-75765-27144b0af60125ea.png",
+          "alt": "P Schick"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 9, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 4 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

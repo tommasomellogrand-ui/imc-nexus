@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515056-mng027-93399549",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Danilo FC 1908 · Il post partita di Manchester United",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester United 1–3 Barcelona · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515056",
+    "manager_id": "MNG027",
+    "manager": "Danilo FC 1908",
+    "club_id": "93399549",
+    "club": "Manchester United",
+    "opponent": "Barcelona",
+    "match_date": "2026-11-08",
+    "result": "Manchester United 1–3 Barcelona",
+    "source_hash": "fe07f952a6c1aa0590c744d5a9c7143da167c3fd1278a7a0ff8458e1b3794350",
+    "home": "Manchester United",
+    "away": "Barcelona",
+    "home_score": "1",
+    "away_score": "3",
+    "home_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "away_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "division": "2",
+    "round": "5",
+    "competition_label": "DIVISIONE 2 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 46% di possesso e 9 tiri, contro 15 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "Il rosso a N Mazraoui al minuto 88 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 88 abbiamo dovuto affrontare un’espulsione. È un passaggio importante del report, ma non deve diventare una spiegazione unica di tutto il risultato.",
+      "player": {
+        "id": "91038",
+        "name": "N Mazraoui",
+        "image": {
+          "file": "postmatch-player-91038-ee2cdba66647a10e.png",
+          "alt": "N Mazraoui"
+        }
+      }
+    },
+    {
+      "question": "K Mainoo ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "124453",
+        "name": "K Mainoo",
+        "image": {
+          "file": "postmatch-player-124453-4f97f3eaecdce6af.png",
+          "alt": "K Mainoo"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 9, contro 8 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 8 volte contro le nostre 4. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

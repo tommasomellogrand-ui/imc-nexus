@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515056-mng048-93399640",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Giuseppe Trovato · Il post partita di Barcelona",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester United 1–3 Barcelona · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515056",
+    "manager_id": "MNG048",
+    "manager": "Giuseppe Trovato",
+    "club_id": "93399640",
+    "club": "Barcelona",
+    "opponent": "Manchester United",
+    "match_date": "2026-11-08",
+    "result": "Manchester United 1–3 Barcelona",
+    "source_hash": "d3fc82b7407a222cbf26aba3460a9cc62ac6007d4a8ac043e1ca72d62e623091",
+    "home": "Manchester United",
+    "away": "Barcelona",
+    "home_score": "1",
+    "away_score": "3",
+    "home_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "away_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "division": "2",
+    "round": "5",
+    "competition_label": "DIVISIONE 2 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-1 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 54% di possesso e 15 tiri, contro 9 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "Il rosso a N Mazraoui al minuto 88 quanto pesa nella lettura della gara?",
+      "answer": "L’espulsione avversaria al minuto 88 è un dato importante. La vittoria va comunque letta su tutta la partita, distinguendo ciò che è accaduto prima e dopo il cartellino.",
+      "player": {
+        "id": "91038",
+        "name": "N Mazraoui",
+        "image": {
+          "file": "postmatch-player-91038-ee2cdba66647a10e.png",
+          "alt": "N Mazraoui"
+        }
+      }
+    },
+    {
+      "question": "Lionel Messi è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 3 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "2772",
+        "name": "Lionel Messi",
+        "image": {
+          "file": "postmatch-player-2772-3b9b190e3a3340a4.png",
+          "alt": "Lionel Messi"
+        }
+      }
+    },
+    {
+      "question": "8 tiri nello specchio su 15, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 8 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

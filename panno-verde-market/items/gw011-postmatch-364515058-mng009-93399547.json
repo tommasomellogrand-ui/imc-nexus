@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515058-mng009-93399547",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Luca Nudo · Il post partita di Manchester City",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nArsenal 1–1 Manchester City · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515058",
+    "manager_id": "MNG009",
+    "manager": "Luca Nudo",
+    "club_id": "93399547",
+    "club": "Manchester City",
+    "opponent": "Arsenal",
+    "match_date": "2026-11-08",
+    "result": "Arsenal 1–1 Manchester City",
+    "source_hash": "16099df2ca80cda887082503ff1f3bb3ac4b2ef634f8c952cc66311594db316e",
+    "home": "Arsenal",
+    "away": "Manchester City",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93399501-33ef41943a141618.png",
+    "away_logo": "market-club-93399547-198e9921b709c50d.png",
+    "division": "2",
+    "round": "5",
+    "competition_label": "DIVISIONE 2 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 43% di possesso e 10 tiri, contro 16 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Odegaard al minuto 50 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 50 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "73424",
+        "name": "Odegaard",
+        "image": {
+          "file": "postmatch-player-73424-08b89bfa9fe62071.png",
+          "alt": "Odegaard"
+        }
+      }
+    },
+    {
+      "question": "Mason Greenwood ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "99639",
+        "name": "Mason Greenwood",
+        "image": {
+          "file": "postmatch-player-99639-0f514039511eeedd.png",
+          "alt": "Mason Greenwood"
+        }
+      }
+    },
+    {
+      "question": "1 tiri nello specchio su 10, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 6 volte contro le nostre 1. Il risultato premia la nostra concretezza, ma concedere meno conclusioni pulite rimane importante."
+    }
+  ]
+}

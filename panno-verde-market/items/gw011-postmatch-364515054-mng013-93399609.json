@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515054-mng013-93399609",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Giovanni Cabrioli · Il post partita di Internazionale",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nLiverpool 1–3 Internazionale · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515054",
+    "manager_id": "MNG013",
+    "manager": "Giovanni Cabrioli",
+    "club_id": "93399609",
+    "club": "Internazionale",
+    "opponent": "Liverpool",
+    "match_date": "2026-11-08",
+    "result": "Liverpool 1–3 Internazionale",
+    "source_hash": "92c10adca74ac3fe278bc1b4c1a52dc634074153d626df683aca7316e000ab40",
+    "home": "Liverpool",
+    "away": "Internazionale",
+    "home_score": "1",
+    "away_score": "3",
+    "home_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "away_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "division": "2",
+    "round": "5",
+    "competition_label": "DIVISIONE 2 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-1 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 41% di possesso e 9 tiri, contro 15 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Martínez al minuto 72 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 72 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "82491",
+        "name": "Martínez",
+        "image": {
+          "file": "postmatch-player-82491-87e10c730510796f.png",
+          "alt": "Martínez"
+        }
+      }
+    },
+    {
+      "question": "L Martínez è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "82491",
+        "name": "L Martínez",
+        "image": {
+          "file": "postmatch-player-82491-87e10c730510796f.png",
+          "alt": "L Martínez"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 9, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 4 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

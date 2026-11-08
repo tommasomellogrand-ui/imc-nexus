@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514964-mng052-93399596",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Carlo Colombo · Il post partita di Atalanta BC",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtalanta BC 2–4 Borussia Dortmund · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514964",
+    "manager_id": "MNG052",
+    "manager": "Carlo Colombo",
+    "club_id": "93399596",
+    "club": "Atalanta BC",
+    "opponent": "Borussia Dortmund",
+    "match_date": "2026-11-08",
+    "result": "Atalanta BC 2–4 Borussia Dortmund",
+    "source_hash": "eb62575a0ec0bb00e1e99d6bf81a11ea2517430e126f26bb3f0a49761c62d440",
+    "home": "Atalanta BC",
+    "away": "Borussia Dortmund",
+    "home_score": "2",
+    "away_score": "4",
+    "home_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "away_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "division": "1",
+    "round": "5",
+    "competition_label": "DIVISIONE 1 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-4 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 40% di possesso e 12 tiri, contro 21 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Bellingham al minuto 82 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 82 ha cambiato il punteggio nel finale. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "114316",
+        "name": "Bellingham",
+        "image": {
+          "file": "postmatch-player-114316-fea74587bf1e3309.png",
+          "alt": "Bellingham"
+        }
+      }
+    },
+    {
+      "question": "L Samardzic ha segnato una doppietta: quanto conta il suo contributo?",
+      "answer": "Le sue reti sono un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "104582",
+        "name": "L Samardzic",
+        "image": {
+          "file": "postmatch-player-104582-8245708ee21d10ef.png",
+          "alt": "L Samardzic"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 12, contro 10 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 10 volte contro le nostre 4. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

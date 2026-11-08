@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514968-mng016-93399615",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Saverio Cordiano · Il post partita di AC Milan",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAC Milan 2–0 Juventus · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514968",
+    "manager_id": "MNG016",
+    "manager": "Saverio Cordiano",
+    "club_id": "93399615",
+    "club": "AC Milan",
+    "opponent": "Juventus",
+    "match_date": "2026-11-08",
+    "result": "AC Milan 2–0 Juventus",
+    "source_hash": "00baa4bc4c883824235fb5d69e8d5c78986a100f226ab78d739f4b98d29f3b2d",
+    "home": "AC Milan",
+    "away": "Juventus",
+    "home_score": "2",
+    "away_score": "0",
+    "home_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "away_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "division": "1",
+    "round": "5",
+    "competition_label": "DIVISIONE 1 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 2-0 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 47% di possesso e 8 tiri, contro 9 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "Il rosso a C Pulisic al minuto 49 quanto pesa nella lettura della gara?",
+      "answer": "L’espulsione avversaria al minuto 49 è un dato importante. La vittoria va comunque letta su tutta la partita, distinguendo ciò che è accaduto prima e dopo il cartellino.",
+      "player": {
+        "id": "85046",
+        "name": "C Pulisic",
+        "image": {
+          "file": "postmatch-player-85046-baa48f3fc306c741.png",
+          "alt": "C Pulisic"
+        }
+      }
+    },
+    {
+      "question": "S Ricci ha segnato una doppietta: quanto conta il suo contributo?",
+      "answer": "Le sue reti sono un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "104880",
+        "name": "S Ricci",
+        "image": {
+          "file": "postmatch-player-104880-fb6a177b063fdc5d.png",
+          "alt": "S Ricci"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 8, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 5 volte e segnato 2 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

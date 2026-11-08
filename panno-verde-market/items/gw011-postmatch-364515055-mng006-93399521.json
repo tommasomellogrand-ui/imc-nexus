@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515055-mng006-93399521",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Pep Buitre · Il post partita di Chelsea",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nReal Madrid 1–2 Chelsea · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515055",
+    "manager_id": "MNG006",
+    "manager": "Pep Buitre",
+    "club_id": "93399521",
+    "club": "Chelsea",
+    "opponent": "Real Madrid",
+    "match_date": "2026-11-08",
+    "result": "Real Madrid 1–2 Chelsea",
+    "source_hash": "18e47cc3e59cdf812a5297ba60dfd6dce6d8fe6597e11d306bddc4d86e0dbb19",
+    "home": "Real Madrid",
+    "away": "Chelsea",
+    "home_score": "1",
+    "away_score": "2",
+    "home_logo": "market-club-93399663-7ef177340849aadc.png",
+    "away_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "division": "2",
+    "round": "5",
+    "competition_label": "DIVISIONE 2 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 2-1 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 48% di possesso e 11 tiri, contro 12 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Júnior al minuto 80 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 80 ha cambiato il punteggio nel finale. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "90068",
+        "name": "Júnior",
+        "image": {
+          "file": "postmatch-player-90068-0c68f020ff599bc4.png",
+          "alt": "Júnior"
+        }
+      }
+    },
+    {
+      "question": "Pedro Neto ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "91278",
+        "name": "Pedro Neto",
+        "image": {
+          "file": "postmatch-player-91278-5eb099768c550c9c.png",
+          "alt": "Pedro Neto"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 11, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 4 volte e segnato 2 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514967-mng053-93401156",
+  "published_at": "2026-11-08T23:53:50+01:00",
+  "title": "Chicco Belin · Il post partita di Como 1907",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nSSC Napoli 3–2 Como 1907 · 08/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514967",
+    "manager_id": "MNG053",
+    "manager": "Chicco Belin",
+    "club_id": "93401156",
+    "club": "Como 1907",
+    "opponent": "SSC Napoli",
+    "match_date": "2026-11-08",
+    "result": "SSC Napoli 3–2 Como 1907",
+    "source_hash": "c826da2d12d1f04dea255cef357d2f621bf64ab62e45e56509f244b85a667832",
+    "home": "SSC Napoli",
+    "away": "Como 1907",
+    "home_score": "3",
+    "away_score": "2",
+    "home_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "away_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "division": "1",
+    "round": "5",
+    "competition_label": "DIVISIONE 1 · GIORNATA 5"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 42% di possesso e 14 tiri, contro 12 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Guerra al minuto 86 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 86 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "134702",
+        "name": "Guerra",
+        "image": {
+          "file": "postmatch-player-134702-b8007e8db9afd4b9.png",
+          "alt": "Guerra"
+        }
+      }
+    },
+    {
+      "question": "A Gordon ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "94350",
+        "name": "A Gordon",
+        "image": {
+          "file": "postmatch-player-94350-305008efd13832ca.png",
+          "alt": "A Gordon"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 14, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo segnato 2 gol con 3 conclusioni nello specchio: oggi siamo stati efficaci. È un merito, ma per dare continuità ai risultati serve anche aumentare la produzione offensiva."
+    }
+  ]
+}
