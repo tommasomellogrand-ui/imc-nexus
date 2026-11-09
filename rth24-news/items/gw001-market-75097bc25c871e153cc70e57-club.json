@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-75097bc25c871e153cc70e57-club",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Anthony Elanga: il punto con Matteo Petrucci e Alessandro Berardi",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nSS Lazio annuncia l’arrivo di Anthony Elanga. Il giocatore lascia Newcastle United: operazione da 12,7 milioni di euro.\n\nMatteo Petrucci · Inviato Lazio\n«L’accordo per Anthony Elanga è da 12,7 milioni di euro. Un giocatore con rating 89. Mister, come accompagnerà il suo ingresso nel gruppo?»\n\nAlessandro Berardi · Manager Lazio\n«Con Anthony Elanga cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.»",
+  "category": "club",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "Newcastle United",
+    "to": "SS Lazio",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,7 milioni di euro",
+    "date": "2026-11-05",
+    "from_logo": "market-global-club-52-a525c0dcf1a414c0.png",
+    "to_logo": "market-club-94078878-b054346a661b8b49.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-110602-08148a900e1e1fca.png",
+    "alt": "Anthony Elanga"
+  },
+  "coverage": [
+    {
+      "club": "Lazio",
+      "reporter": "Matteo Petrucci",
+      "manager": "Alessandro Berardi",
+      "question": "L’accordo per Anthony Elanga è da 12,7 milioni di euro. Un giocatore con rating 89. Mister, come accompagnerà il suo ingresso nel gruppo?",
+      "answer": "Con Anthony Elanga cominciamo dal lavoro quotidiano: conoscenza dei compagni e dei nostri meccanismi. Sarà il campo a indicarci come inserirlo; oggi non assegniamo una maglia da titolare.",
+      "reporter_image": {
+        "file": "news-person-7fcf51a6cb89dc4f-de3de5e15673523b.jpg",
+        "alt": "Matteo Petrucci"
+      }
+    }
+  ]
+}

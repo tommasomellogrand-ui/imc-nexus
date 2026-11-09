@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-fa682a250b2030a322bdac1d",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "RC Strasbourg Alsace: ufficiale l’arrivo di Jacobo Ortega",
+  "text": "RC Strasbourg Alsace annuncia l’arrivo di Jacobo Ortega. Il giocatore lascia 1. FC Kaiserslautern: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079172"
+  ],
+  "teams": [
+    {
+      "name": "Kaiserslautern",
+      "logo": "market-club-94079172-bb34b981104b73b7.png"
+    }
+  ],
+  "transfer": {
+    "from": "1. FC Kaiserslautern",
+    "to": "RC Strasbourg Alsace",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-11-06",
+    "from_logo": "market-club-94079172-bb34b981104b73b7.png",
+    "to_logo": "market-global-club-344-a12e6b429912aa20.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155039-6e316be9944a8e26.png",
+    "alt": "Jacobo Ortega"
+  }
+}

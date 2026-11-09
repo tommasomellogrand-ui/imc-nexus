@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-49dc3694eee9b48adddb806a",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "SS Lazio: ufficiale l’arrivo di Kacper Potulski",
+  "text": "SS Lazio annuncia l’arrivo di Kacper Potulski. Il giocatore lascia 1. FSV Mainz 05: operazione da 3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "1. FSV Mainz 05",
+    "to": "SS Lazio",
+    "formula": "Trasferimento definitivo",
+    "amount": "3 milioni di euro",
+    "date": "2026-11-04",
+    "from_logo": "market-global-club-399-e5d52d03a1a36147.png",
+    "to_logo": "market-club-94078878-b054346a661b8b49.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-164900-427453d8aa923f71.png",
+    "alt": "Kacper Potulski"
+  }
+}

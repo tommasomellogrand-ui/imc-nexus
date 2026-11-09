@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-a739e49af4e3997bf65e20a3",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Borussia Mönchengladbach: ufficiale l’arrivo di Mathieu Nguefack",
+  "text": "Borussia Mönchengladbach annuncia l’arrivo di Mathieu Nguefack. Il giocatore lascia AS Roma: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078890"
+  ],
+  "teams": [
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "Borussia Mönchengladbach",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-11-06",
+    "from_logo": "market-club-94078890-4f2820912276f496.png",
+    "to_logo": "market-global-club-393-767cbb7658a1a1db.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-164467-b07bcad0d4c5aafd.png",
+    "alt": "Mathieu Nguefack"
+  }
+}

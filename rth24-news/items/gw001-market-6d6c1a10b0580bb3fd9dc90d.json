@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-6d6c1a10b0580bb3fd9dc90d",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Dynamo Kyiv: ufficiale l’arrivo di Antoine Hainaut",
+  "text": "Dynamo Kyiv annuncia l’arrivo di Antoine Hainaut. Il giocatore lascia Venezia FC: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079114"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Kyiv",
+      "logo": "market-club-94079114-2ca9b141413086ab.png"
+    }
+  ],
+  "transfer": {
+    "from": "Venezia FC",
+    "to": "Dynamo Kyiv",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-11-08",
+    "from_logo": "market-global-club-132-35ea004acabfff2b.png",
+    "to_logo": "market-club-94079114-2ca9b141413086ab.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-125332-11c7cb9493adac6f.png",
+    "alt": "Antoine Hainaut"
+  }
+}

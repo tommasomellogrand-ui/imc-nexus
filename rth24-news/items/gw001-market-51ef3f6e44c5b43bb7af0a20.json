@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-51ef3f6e44c5b43bb7af0a20",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Sporting CP: ufficiale l’arrivo di Georgios Vagiannidis",
+  "text": "Sporting CP annuncia l’arrivo di Georgios Vagiannidis. Il giocatore lascia Dynamo Kyiv: operazione da 4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079114"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Kyiv",
+      "logo": "market-club-94079114-2ca9b141413086ab.png"
+    }
+  ],
+  "transfer": {
+    "from": "Dynamo Kyiv",
+    "to": "Sporting CP",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-11-07",
+    "from_logo": "market-club-94079114-2ca9b141413086ab.png",
+    "to_logo": "market-global-club-246-69379aab49a3507e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104111-ba69ab7b640bd881.png",
+    "alt": "Georgios Vagiannidis"
+  }
+}

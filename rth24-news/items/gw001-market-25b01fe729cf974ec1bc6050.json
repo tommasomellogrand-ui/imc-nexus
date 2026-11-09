@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-25b01fe729cf974ec1bc6050",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Dynamo Kyiv: ufficiale l’arrivo di Relja Obrić",
+  "text": "Dynamo Kyiv annuncia l’arrivo di Relja Obrić. Il giocatore lascia SS Nola: operazione da 400.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079114"
+  ],
+  "teams": [
+    {
+      "name": "Dynamo Kyiv",
+      "logo": "market-club-94079114-2ca9b141413086ab.png"
+    }
+  ],
+  "transfer": {
+    "from": "SS Nola",
+    "to": "Dynamo Kyiv",
+    "formula": "Trasferimento definitivo",
+    "amount": "400.000 euro",
+    "date": "2026-11-08",
+    "from_logo": "market-global-club-5239-f89e9612df1d1fd5.png",
+    "to_logo": "market-club-94079114-2ca9b141413086ab.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-154369-d25fd357a3de0a98.png",
+    "alt": "Relja Obrić"
+  }
+}

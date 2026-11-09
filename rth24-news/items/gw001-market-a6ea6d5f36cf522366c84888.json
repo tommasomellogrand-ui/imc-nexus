@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-a6ea6d5f36cf522366c84888",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Palermo FC: ufficiale l’arrivo di Ferrán Quetglas",
+  "text": "Palermo FC annuncia l’arrivo di Ferrán Quetglas. Il giocatore lascia Real Madrid: operazione da 566.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078884"
+  ],
+  "teams": [
+    {
+      "name": "Palermo",
+      "logo": "market-club-94078884-25823d0fe372f873.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Palermo FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "566.000 euro",
+    "date": "2026-11-05",
+    "from_logo": "market-global-club-163-7ef177340849aadc.png",
+    "to_logo": "market-club-94078884-25823d0fe372f873.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-137276-8a12c4a439cfc133.png",
+    "alt": "Ferrán Quetglas"
+  }
+}

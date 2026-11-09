@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-e30685a236e6d675f1fa8c15",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "FC Schalke 04: ufficiale l’arrivo di Matteo Papaccioli",
+  "text": "FC Schalke 04 annuncia l’arrivo di Matteo Papaccioli. Il giocatore lascia Como 1907: operazione da 193.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Como 1907",
+    "to": "FC Schalke 04",
+    "formula": "Trasferimento definitivo",
+    "amount": "193.000 euro",
+    "date": "2026-11-07",
+    "from_logo": "market-global-club-1671-3677d3c02dbbefef.png",
+    "to_logo": "market-club-94079165-d56cd8525522ab1e.png"
+  },
+  "editorial_version": 3
+}

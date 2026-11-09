@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-dc45d6dc56c2c4dd9a483e03",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "FC Schalke 04: ufficiale l’arrivo di Zé Lucas",
+  "text": "FC Schalke 04 annuncia l’arrivo di Zé Lucas. Il giocatore lascia Cruzeiro EC: operazione da 2,7 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Cruzeiro EC",
+    "to": "FC Schalke 04",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,7 milioni di euro",
+    "date": "2026-11-05",
+    "from_logo": "market-global-club-292-b81b3a5502b43e1c.png",
+    "to_logo": "market-club-94079165-d56cd8525522ab1e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-157746-fc3941dfdab8586f.png",
+    "alt": "Zé Lucas"
+  }
+}

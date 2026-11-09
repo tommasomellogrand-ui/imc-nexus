@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-38eb149961e7ffb834e6627e",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Al Hilal SFC: ufficiale l’arrivo di Kader Meïté",
+  "text": "Al Hilal SFC annuncia l’arrivo di Kader Meïté. Il giocatore lascia Palermo FC: operazione da 12,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078884"
+  ],
+  "teams": [
+    {
+      "name": "Palermo",
+      "logo": "market-club-94078884-25823d0fe372f873.png"
+    }
+  ],
+  "transfer": {
+    "from": "Palermo FC",
+    "to": "Al Hilal SFC",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,4 milioni di euro",
+    "date": "2026-11-08",
+    "from_logo": "market-club-94078884-25823d0fe372f873.png",
+    "to_logo": "market-global-club-625-29c8178d4d3cb23f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-154967-adcdc1d29f2f3545.png",
+    "alt": "Kader Meïté"
+  }
+}

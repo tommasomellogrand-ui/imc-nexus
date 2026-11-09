@@ -1,0 +1,26 @@
+{
+  "id": "gw001-market-5fd69b8eab8a834610667ab8",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "SS Lazio: ufficiale l’arrivo di Darren Motsi",
+  "text": "SS Lazio annuncia l’arrivo di Darren Motsi. Il giocatore lascia Manchester City: operazione da 193.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "SS Lazio",
+    "formula": "Trasferimento definitivo",
+    "amount": "193.000 euro",
+    "date": "2026-11-08",
+    "from_logo": "market-global-club-47-198e9921b709c50d.png",
+    "to_logo": "market-club-94078878-b054346a661b8b49.png"
+  },
+  "editorial_version": 3
+}

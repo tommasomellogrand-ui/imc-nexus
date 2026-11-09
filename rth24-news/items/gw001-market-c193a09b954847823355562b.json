@@ -1,0 +1,29 @@
+{
+  "id": "gw001-market-c193a09b954847823355562b",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "AS Reggina 1914: ufficiale l’arrivo di Olivier Boscagli",
+  "text": "AS Reggina 1914 annuncia l’arrivo di Olivier Boscagli. Il giocatore lascia Brighton & Hove Albion: operazione da 7,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078889"
+  ],
+  "teams": [
+    {
+      "name": "Reggina",
+      "logo": "market-club-94078889-faf4c23dafd22c30.png"
+    }
+  ],
+  "transfer": {
+    "from": "Brighton & Hove Albion",
+    "to": "AS Reggina 1914",
+    "formula": "Trasferimento definitivo",
+    "amount": "7,6 milioni di euro",
+    "date": "2026-11-08",
+    "to_logo": "market-club-94078889-faf4c23dafd22c30.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-81480-5b49dcc53241307d.png",
+    "alt": "Olivier Boscagli"
+  }
+}

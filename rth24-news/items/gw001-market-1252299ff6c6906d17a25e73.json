@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-1252299ff6c6906d17a25e73",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Benevento Calcio: ufficiale l’arrivo di Hans Nicolussi Caviglia",
+  "text": "Benevento Calcio annuncia l’arrivo di Hans Nicolussi Caviglia. Il giocatore lascia AS Reggina 1914: operazione da 4,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078889"
+  ],
+  "teams": [
+    {
+      "name": "Reggina",
+      "logo": "market-club-94078889-faf4c23dafd22c30.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Reggina 1914",
+    "to": "Benevento Calcio",
+    "formula": "Trasferimento definitivo",
+    "amount": "4,2 milioni di euro",
+    "date": "2026-11-06",
+    "from_logo": "market-club-94078889-faf4c23dafd22c30.png",
+    "to_logo": "market-global-club-1465-ddbea93a2cab5976.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-100836-7072e72efd7b4077.png",
+    "alt": "Hans Nicolussi Caviglia"
+  }
+}

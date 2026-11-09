@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-be08f0ddac070d6fb10f24b0",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Burnley: ufficiale l’arrivo di Ugo Raghouber",
+  "text": "Burnley annuncia l’arrivo di Ugo Raghouber. Il giocatore lascia Guangzhou FC: operazione da 2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94080273"
+  ],
+  "teams": [
+    {
+      "name": "Guangzhou",
+      "logo": "market-club-94080273-6b8a372c9d81d3cc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Guangzhou FC",
+    "to": "Burnley",
+    "formula": "Trasferimento definitivo",
+    "amount": "2 milioni di euro",
+    "date": "2026-11-08",
+    "from_logo": "market-club-94080273-6b8a372c9d81d3cc.png",
+    "to_logo": "market-global-club-15-dc7b86b57b38d786.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-128176-999be9a69f37b5a2.png",
+    "alt": "Ugo Raghouber"
+  }
+}

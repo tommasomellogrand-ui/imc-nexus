@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-a54a73994d5fe8b0e3e21f6e",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "1. FC Kaiserslautern: ufficiale l’arrivo di Thierno Barry",
+  "text": "1. FC Kaiserslautern e Everton chiudono l’accordo per Thierno Barry. Operazione da 5 milioni di euro, con Arthur Atta nel percorso inverso verso Everton.",
+  "category": "market",
+  "club_ids": [
+    "94079172"
+  ],
+  "teams": [
+    {
+      "name": "Kaiserslautern",
+      "logo": "market-club-94079172-bb34b981104b73b7.png"
+    }
+  ],
+  "transfer": {
+    "from": "Everton",
+    "to": "1. FC Kaiserslautern",
+    "formula": "Scambio con contropartite",
+    "amount": "5 milioni di euro + Arthur Atta",
+    "date": "2026-11-08",
+    "from_logo": "market-global-club-31-fe258fc7debc69ac.png",
+    "to_logo": "market-club-94079172-bb34b981104b73b7.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-128716-7842750b8b6c48f3.png",
+    "alt": "Thierno Barry"
+  }
+}

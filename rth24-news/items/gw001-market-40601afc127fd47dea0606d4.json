@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-40601afc127fd47dea0606d4",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "SL Benfica: ufficiale l’arrivo di Franjo Ivanović",
+  "text": "SL Benfica annuncia l’arrivo di Franjo Ivanović. Il giocatore lascia Sampdoria: operazione da 4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078892"
+  ],
+  "teams": [
+    {
+      "name": "Sampdoria",
+      "logo": "market-club-94078892-f5bfd12f94cf0bcf.png"
+    }
+  ],
+  "transfer": {
+    "from": "Sampdoria",
+    "to": "SL Benfica",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-11-07",
+    "from_logo": "market-club-94078892-f5bfd12f94cf0bcf.png",
+    "to_logo": "market-global-club-218-cd9bbf9dc40287fc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-118136-89dc4766241c566a.png",
+    "alt": "Franjo Ivanović"
+  }
+}

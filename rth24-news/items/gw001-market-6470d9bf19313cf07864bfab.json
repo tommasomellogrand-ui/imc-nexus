@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-6470d9bf19313cf07864bfab",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "SS Lazio: ufficiale l’arrivo di Justin Lerma",
+  "text": "SS Lazio annuncia l’arrivo di Justin Lerma. Il giocatore lascia Chacaritas FC: operazione da 4,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chacaritas FC",
+    "to": "SS Lazio",
+    "formula": "Trasferimento definitivo",
+    "amount": "4,4 milioni di euro",
+    "date": "2026-11-05",
+    "from_logo": "market-global-club-5628-6a8450bfebf71400.png",
+    "to_logo": "market-club-94078878-b054346a661b8b49.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-147025-1f6acae884a1a957.png",
+    "alt": "Justin Lerma"
+  }
+}

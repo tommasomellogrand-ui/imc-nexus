@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-9b07ed2b8f4e6f0c65e30346",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Diego Piñeiro",
+  "text": "AS Roma annuncia l’arrivo di Diego Piñeiro. Il giocatore lascia Real Murcia: operazione da 965.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078890"
+  ],
+  "teams": [
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Murcia",
+    "to": "AS Roma",
+    "formula": "Trasferimento definitivo",
+    "amount": "965.000 euro",
+    "date": "2026-11-05",
+    "from_logo": "market-global-club-164-86a4052194552279.png",
+    "to_logo": "market-club-94078890-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-123497-e34e1e8ca0896115.png",
+    "alt": "Diego Piñeiro"
+  }
+}

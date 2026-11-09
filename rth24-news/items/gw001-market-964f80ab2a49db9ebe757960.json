@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-964f80ab2a49db9ebe757960",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "FC Schalke 04: ufficiale l’arrivo di Youssef Enríquez",
+  "text": "FC Schalke 04 annuncia l’arrivo di Youssef Enríquez. Il giocatore lascia Deportivo Alavés: operazione da 3 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079165"
+  ],
+  "teams": [
+    {
+      "name": "Schalke 04",
+      "logo": "market-club-94079165-d56cd8525522ab1e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Deportivo Alavés",
+    "to": "FC Schalke 04",
+    "formula": "Trasferimento definitivo",
+    "amount": "3 milioni di euro",
+    "date": "2026-11-05",
+    "from_logo": "market-global-club-135-d93689d5fdce0e92.png",
+    "to_logo": "market-club-94079165-d56cd8525522ab1e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-119378-3ab5da49bfbcd9a1.png",
+    "alt": "Youssef Enríquez"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-12fb28d1820b4cf9b6b54bd2",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Bologna FC: ufficiale l’arrivo di Diogo Ferreira",
+  "text": "Bologna FC annuncia l’arrivo di Diogo Ferreira. Il giocatore lascia SL Benfica: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078865"
+  ],
+  "teams": [
+    {
+      "name": "Bologna",
+      "logo": "market-club-94078865-1c269c6755cb7fdb.png"
+    }
+  ],
+  "transfer": {
+    "from": "SL Benfica",
+    "to": "Bologna FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-11-06",
+    "from_logo": "market-global-club-218-cd9bbf9dc40287fc.png",
+    "to_logo": "market-club-94078865-1c269c6755cb7fdb.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149126-9309ffed5250144e.png",
+    "alt": "Diogo Ferreira"
+  }
+}

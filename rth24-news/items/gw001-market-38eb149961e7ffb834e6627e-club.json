@@ -1,0 +1,43 @@
+{
+  "id": "gw001-market-38eb149961e7ffb834e6627e-club",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Kader Meïté: il punto con Bruno Palermo e Al Zubeidi",
+  "text": "Ricostruzione narrativa: i dialoghi non sono dichiarazioni reali.\n\nAl Hilal SFC annuncia l’arrivo di Kader Meïté. Il giocatore lascia Palermo FC: operazione da 12,4 milioni di euro.\n\nBruno Palermo · Inviato Palermo\n«Kader Meïté proseguirà con Al Hilal SFC. Un attaccante centrale con rating 80. Mister, come affrontate il lavoro dopo questa partenza?»\n\nAl Zubeidi · Manager Palermo\n«Salutiamo Kader Meïté e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.»",
+  "category": "club",
+  "club_ids": [
+    "94078884"
+  ],
+  "teams": [
+    {
+      "name": "Palermo",
+      "logo": "market-club-94078884-25823d0fe372f873.png"
+    }
+  ],
+  "transfer": {
+    "from": "Palermo FC",
+    "to": "Al Hilal SFC",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,4 milioni di euro",
+    "date": "2026-11-08",
+    "from_logo": "market-club-94078884-25823d0fe372f873.png",
+    "to_logo": "market-global-club-625-29c8178d4d3cb23f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-154967-adcdc1d29f2f3545.png",
+    "alt": "Kader Meïté"
+  },
+  "coverage": [
+    {
+      "club": "Palermo",
+      "reporter": "Bruno Palermo",
+      "manager": "Al Zubeidi",
+      "question": "Kader Meïté proseguirà con Al Hilal SFC. Un attaccante centrale con rating 80. Mister, come affrontate il lavoro dopo questa partenza?",
+      "answer": "Salutiamo Kader Meïté e torniamo a concentrarci sul gruppo. Le soluzioni per le prossime partite vanno costruite in allenamento, valutando i giocatori a disposizione.",
+      "reporter_image": {
+        "file": "news-person-100b73b1b4c31718-986996f1e36a68cd.webp",
+        "alt": "Bruno Palermo"
+      }
+    }
+  ]
+}

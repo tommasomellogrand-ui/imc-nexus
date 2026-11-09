@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-c876b28c554f358b46079889",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Gaziantepspor: ufficiale l’arrivo di Mertcan Ayhan",
+  "text": "Gaziantepspor annuncia l’arrivo di Mertcan Ayhan. Il giocatore lascia River Plate: operazione da 2,8 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94079049"
+  ],
+  "teams": [
+    {
+      "name": "River Plate",
+      "logo": "market-club-94079049-94608faa47bdcc94.png"
+    }
+  ],
+  "transfer": {
+    "from": "River Plate",
+    "to": "Gaziantepspor",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,8 milioni di euro",
+    "date": "2026-11-06",
+    "from_logo": "market-club-94079049-94608faa47bdcc94.png",
+    "to_logo": "market-global-club-796-b5485edb040ec886.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-164442-cda5a899266ddb6e.png",
+    "alt": "Mertcan Ayhan"
+  }
+}

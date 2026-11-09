@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-be19c5ed34d37e7a3285a9c1",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "SL Benfica: ufficiale l’arrivo di Daniel Banjaqui",
+  "text": "SL Benfica annuncia l’arrivo di Daniel Banjaqui. Il giocatore lascia AS Roma: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "94078890"
+  ],
+  "teams": [
+    {
+      "name": "Roma",
+      "logo": "market-club-94078890-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "AS Roma",
+    "to": "SL Benfica",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-11-04",
+    "from_logo": "market-club-94078890-4f2820912276f496.png",
+    "to_logo": "market-global-club-218-cd9bbf9dc40287fc.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-165374-597a71b258c34ca2.png",
+    "alt": "Daniel Banjaqui"
+  }
+}

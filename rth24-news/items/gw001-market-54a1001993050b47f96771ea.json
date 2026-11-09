@@ -1,0 +1,30 @@
+{
+  "id": "gw001-market-54a1001993050b47f96771ea",
+  "published_at": "2026-11-09T21:38:55+01:00",
+  "title": "Palencia CF: ufficiale l’arrivo di Ismail El Aoud",
+  "text": "Palencia CF annuncia l’arrivo di Ismail El Aoud. Il giocatore lascia SS Lazio: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "94078878"
+  ],
+  "teams": [
+    {
+      "name": "Lazio",
+      "logo": "market-club-94078878-b054346a661b8b49.png"
+    }
+  ],
+  "transfer": {
+    "from": "SS Lazio",
+    "to": "Palencia CF",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-11-06",
+    "from_logo": "market-club-94078878-b054346a661b8b49.png",
+    "to_logo": "market-global-club-4469-e49840ebf06e9037.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-168571-c59bb50092c26714.png",
+    "alt": "Ismail El Aoud"
+  }
+}
