@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717037-mng060-93399892",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Cosimo Lonoce · Il post partita di Borussia Dortmund",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBorussia Dortmund 1–2 Chelsea · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717037",
+    "manager_id": "MNG060",
+    "manager": "Cosimo Lonoce",
+    "club_id": "93399892",
+    "club": "Borussia Dortmund",
+    "opponent": "Chelsea",
+    "match_date": "2026-11-10",
+    "result": "Borussia Dortmund 1–2 Chelsea",
+    "source_hash": "b4b2de7c5f61a4045d12e6ac6b8a985a12537ff9dfa2fbe7be1dfaf9839b8af8",
+    "home": "Borussia Dortmund",
+    "away": "Chelsea",
+    "home_score": "1",
+    "away_score": "2",
+    "home_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "away_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 49% di possesso e 12 tiri, contro 13 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Henderson al minuto 86 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 86 ha deciso la sconfitta. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "36211",
+        "name": "Henderson",
+        "image": {
+          "file": "postmatch-player-36211-21c27e6b85ca5e3f.png",
+          "alt": "Henderson"
+        }
+      }
+    },
+    {
+      "question": "Marcel Sabitzer ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "50648",
+        "name": "Marcel Sabitzer",
+        "image": {
+          "file": "postmatch-player-50648-172712dd0df2ae80.png",
+          "alt": "Marcel Sabitzer"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 12, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 5 volte contro le nostre 3. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

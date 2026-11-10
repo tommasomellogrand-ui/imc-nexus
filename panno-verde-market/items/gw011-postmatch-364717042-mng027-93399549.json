@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717042-mng027-93399549",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Danilo FC 1908 · Il post partita di Manchester United",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester United 0–2 AS Roma · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717042",
+    "manager_id": "MNG027",
+    "manager": "Danilo FC 1908",
+    "club_id": "93399549",
+    "club": "Manchester United",
+    "opponent": "AS Roma",
+    "match_date": "2026-11-10",
+    "result": "Manchester United 0–2 AS Roma",
+    "source_hash": "1836d61e4c8c8855a4ee713243fc8268edcc0376defbc1d67ffd43c3fec8406b",
+    "home": "Manchester United",
+    "away": "AS Roma",
+    "home_score": "0",
+    "away_score": "2",
+    "home_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "away_logo": "market-club-93399623-4f2820912276f496.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-2 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 47% di possesso e 13 tiri, contro 16 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "Il rosso a Andrey Santos al minuto 43 quanto pesa nella lettura della gara?",
+      "answer": "Dal minuto 43 abbiamo dovuto affrontare un’espulsione. È un passaggio importante del report, ma non deve diventare una spiegazione unica di tutto il risultato.",
+      "player": {
+        "id": "119825",
+        "name": "Andrey Santos",
+        "image": {
+          "file": "postmatch-player-119825-227160106eaff90a.png",
+          "alt": "Andrey Santos"
+        }
+      }
+    },
+    {
+      "question": "B Mbeumo ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "97651",
+        "name": "B Mbeumo",
+        "image": {
+          "file": "postmatch-player-97651-ac97513c6dc4da9c.png",
+          "alt": "B Mbeumo"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 13, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 6 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

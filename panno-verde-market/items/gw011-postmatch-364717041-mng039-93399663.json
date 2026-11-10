@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717041-mng039-93399663",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Attilio Bonnici · Il post partita di Real Madrid",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nComo 1907 2–5 Real Madrid · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717041",
+    "manager_id": "MNG039",
+    "manager": "Attilio Bonnici",
+    "club_id": "93399663",
+    "club": "Real Madrid",
+    "opponent": "Como 1907",
+    "match_date": "2026-11-10",
+    "result": "Como 1907 2–5 Real Madrid",
+    "source_hash": "ea7d87dac8036286798e7cf8d58afc3ab02f9e97ec4542c933cc874593060c0e",
+    "home": "Como 1907",
+    "away": "Real Madrid",
+    "home_score": "2",
+    "away_score": "5",
+    "home_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "away_logo": "market-club-93399663-7ef177340849aadc.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "È una vittoria netta, 5-2, e il merito è aver dato continuità al risultato. Un margine così ampio premia quello che abbiamo prodotto, senza cancellare gli aspetti da rivedere."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 55% di possesso e 15 tiri, contro 9 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Mbappé al minuto 87 ha fissato il risultato. Come legge quel finale?",
+      "answer": "Quel gol al minuto 87 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "85260",
+        "name": "Mbappé",
+        "image": {
+          "file": "postmatch-player-85260-024a30a8f25ad02c.png",
+          "alt": "Mbappé"
+        }
+      }
+    },
+    {
+      "question": "F Valverde è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 3 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "81249",
+        "name": "F Valverde",
+        "image": {
+          "file": "postmatch-player-81249-5478c3eca95d458a.png",
+          "alt": "F Valverde"
+        }
+      }
+    },
+    {
+      "question": "8 tiri nello specchio su 15, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 8 volte e segnato 5 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

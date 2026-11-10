@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717038-mng052-93399596",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Carlo Colombo · Il post partita di Atalanta BC",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtalanta BC 0–5 Bayern München · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717038",
+    "manager_id": "MNG052",
+    "manager": "Carlo Colombo",
+    "club_id": "93399596",
+    "club": "Atalanta BC",
+    "opponent": "Bayern München",
+    "match_date": "2026-11-10",
+    "result": "Atalanta BC 0–5 Bayern München",
+    "source_hash": "249db77055bee9792692207eee999b6df8796807f4030074c9c647b0b89b71dc",
+    "home": "Atalanta BC",
+    "away": "Bayern München",
+    "home_score": "0",
+    "away_score": "5",
+    "home_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "away_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-5 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 34% di possesso e 5 tiri, contro 26 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Sanè al minuto 84 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 84 ha cambiato il punteggio nel finale. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "73265",
+        "name": "Sanè",
+        "image": {
+          "file": "postmatch-player-73265-d1399ca509ce94f1.png",
+          "alt": "Sanè"
+        }
+      }
+    },
+    {
+      "question": "M Carnesecchi ha ricevuto voto 8 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 8 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "102272",
+        "name": "M Carnesecchi",
+        "image": {
+          "file": "postmatch-player-102272-151c7c0ff01f7e04.png",
+          "alt": "M Carnesecchi"
+        }
+      }
+    },
+    {
+      "question": "0 tiri nello specchio su 5, contro 15 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 0 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

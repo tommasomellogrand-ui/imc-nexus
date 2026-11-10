@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717043-mng004-93399838",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Luciano Catalano · Il post partita di Paris Saint-Germain",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtlético Madrid 1–3 Paris Saint-Germain · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717043",
+    "manager_id": "MNG004",
+    "manager": "Luciano Catalano",
+    "club_id": "93399838",
+    "club": "Paris Saint-Germain",
+    "opponent": "Atlético Madrid",
+    "match_date": "2026-11-10",
+    "result": "Atlético Madrid 1–3 Paris Saint-Germain",
+    "source_hash": "a2e31d7d6677368634c1ceceeb05d0b5b2584c3a01e20889dc2b09365eae6274",
+    "home": "Atlético Madrid",
+    "away": "Paris Saint-Germain",
+    "home_score": "1",
+    "away_score": "3",
+    "home_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "away_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-1 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 52% di possesso e 11 tiri, contro 9 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Zaïre-Emery al minuto 73 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 73 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "121204",
+        "name": "Zaïre-Emery",
+        "image": {
+          "file": "postmatch-player-121204-041ec1c919f2b42e.png",
+          "alt": "Zaïre-Emery"
+        }
+      }
+    },
+    {
+      "question": "W Zaïre-Emery ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Il report gli assegna anche 1 assist. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "121204",
+        "name": "W Zaïre-Emery",
+        "image": {
+          "file": "postmatch-player-121204-041ec1c919f2b42e.png",
+          "alt": "W Zaïre-Emery"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 11, contro 1 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 4 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

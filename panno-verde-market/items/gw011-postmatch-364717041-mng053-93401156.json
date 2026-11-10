@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717041-mng053-93401156",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Chicco Belin · Il post partita di Como 1907",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nComo 1907 2–5 Real Madrid · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717041",
+    "manager_id": "MNG053",
+    "manager": "Chicco Belin",
+    "club_id": "93401156",
+    "club": "Como 1907",
+    "opponent": "Real Madrid",
+    "match_date": "2026-11-10",
+    "result": "Como 1907 2–5 Real Madrid",
+    "source_hash": "763a90ff9901c644aade4292d7f63fb3dc1073b4f37ad919faefcdf45f9708b7",
+    "home": "Como 1907",
+    "away": "Real Madrid",
+    "home_score": "2",
+    "away_score": "5",
+    "home_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "away_logo": "market-club-93399663-7ef177340849aadc.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-5 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 45% di possesso e 9 tiri, contro 15 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Mbappé al minuto 87 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 87 ha cambiato il punteggio nel finale. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "85260",
+        "name": "Mbappé",
+        "image": {
+          "file": "postmatch-player-85260-024a30a8f25ad02c.png",
+          "alt": "Mbappé"
+        }
+      }
+    },
+    {
+      "question": "Assane Diao ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Il report gli assegna anche 1 assist. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "137652",
+        "name": "Assane Diao",
+        "image": {
+          "file": "postmatch-player-137652-9321dba36ef45067.png",
+          "alt": "Assane Diao"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 9, contro 8 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo segnato 2 gol con 3 conclusioni nello specchio: oggi siamo stati efficaci. È un merito, ma per dare continuità ai risultati serve anche aumentare la produzione offensiva."
+    }
+  ]
+}

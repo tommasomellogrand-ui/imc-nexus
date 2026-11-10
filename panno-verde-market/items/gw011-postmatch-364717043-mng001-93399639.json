@@ -1,0 +1,77 @@
+{
+  "id": "gw011-postmatch-364717043-mng001-93399639",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Tommaso Mello · Il post partita di Atlético Madrid",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nAtlético Madrid 1–3 Paris Saint-Germain · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717043",
+    "manager_id": "MNG001",
+    "manager": "Tommaso Mello",
+    "club_id": "93399639",
+    "club": "Atlético Madrid",
+    "opponent": "Paris Saint-Germain",
+    "match_date": "2026-11-10",
+    "result": "Atlético Madrid 1–3 Paris Saint-Germain",
+    "source_hash": "b96ecf11e921b275fd492d43dddcd3e39af16d95891a8ab5dab64f1a7f8672d2",
+    "home": "Atlético Madrid",
+    "away": "Paris Saint-Germain",
+    "home_score": "1",
+    "away_score": "3",
+    "home_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "away_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 48% di possesso e 9 tiri, contro 11 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Zaïre-Emery al minuto 73 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 73 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "121204",
+        "name": "Zaïre-Emery",
+        "image": {
+          "file": "postmatch-player-121204-041ec1c919f2b42e.png",
+          "alt": "Zaïre-Emery"
+        }
+      }
+    },
+    {
+      "question": "Yéremy Pino è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "106765",
+        "name": "Yéremy Pino",
+        "image": {
+          "file": "postmatch-player-106765-451acb3faac5a951.png",
+          "alt": "Yéremy Pino"
+        }
+      }
+    },
+    {
+      "question": "1 tiri nello specchio su 9, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 4 volte contro le nostre 1. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ],
+  "image": {
+    "file": "news-person-56748ccd184cf532-1572c907792595a1.jpeg",
+    "alt": "Tommaso Mello"
+  }
+}

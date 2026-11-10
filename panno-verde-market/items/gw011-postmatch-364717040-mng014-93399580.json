@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717040-mng014-93399580",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Giovanni Iodice · Il post partita di Tottenham Hotspur",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nInternazionale 2–2 Tottenham Hotspur · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399580"
+  ],
+  "teams": [
+    {
+      "name": "Tottenham Hotspur",
+      "logo": "market-club-93399580-b520b61ef4469d37.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717040",
+    "manager_id": "MNG014",
+    "manager": "Giovanni Iodice",
+    "club_id": "93399580",
+    "club": "Tottenham Hotspur",
+    "opponent": "Internazionale",
+    "match_date": "2026-11-10",
+    "result": "Internazionale 2–2 Tottenham Hotspur",
+    "source_hash": "96b04107bb7c24c1b269659c4fa6eb8ea96f79a2b394a0a3402e3c237a3672a4",
+    "home": "Internazionale",
+    "away": "Tottenham Hotspur",
+    "home_score": "2",
+    "away_score": "2",
+    "home_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "away_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 2-2 è il risultato della gara. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara. Ai rigori abbiamo chiuso 4-3: anche questo esito va distinto dall’analisi della prestazione."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 57% di possesso e 15 tiri, contro 12 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Maddison al minuto 78 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 78 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "76578",
+        "name": "Maddison",
+        "image": {
+          "file": "postmatch-player-76578-d30892abbeeef8fd.png",
+          "alt": "Maddison"
+        }
+      }
+    },
+    {
+      "question": "A Richarlison ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Il report gli assegna anche 1 assist. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "81994",
+        "name": "A Richarlison",
+        "image": {
+          "file": "postmatch-player-81994-198d9f6d77e6d6ef.png",
+          "alt": "A Richarlison"
+        }
+      }
+    },
+    {
+      "question": "9 tiri nello specchio su 15, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 9 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

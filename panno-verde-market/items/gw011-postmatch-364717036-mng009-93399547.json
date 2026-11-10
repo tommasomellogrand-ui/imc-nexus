@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717036-mng009-93399547",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Luca Nudo · Il post partita di Manchester City",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester City 2–3 SSC Napoli · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717036",
+    "manager_id": "MNG009",
+    "manager": "Luca Nudo",
+    "club_id": "93399547",
+    "club": "Manchester City",
+    "opponent": "SSC Napoli",
+    "match_date": "2026-11-10",
+    "result": "Manchester City 2–3 SSC Napoli",
+    "source_hash": "251c4e91b1d741d66378d84b8d3cacbddd6870df61fa657c2f8a827462ecde77",
+    "home": "Manchester City",
+    "away": "SSC Napoli",
+    "home_score": "2",
+    "away_score": "3",
+    "home_logo": "market-club-93399547-198e9921b709c50d.png",
+    "away_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 50% di possesso e 21 tiri, contro 18 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Lang al minuto 76 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 76 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "97282",
+        "name": "Lang",
+        "image": {
+          "file": "postmatch-player-97282-5b5a39b207bcbc15.png",
+          "alt": "Lang"
+        }
+      }
+    },
+    {
+      "question": "Moise Kean è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "88229",
+        "name": "Moise Kean",
+        "image": {
+          "file": "postmatch-player-88229-bed0182e8ef80878.png",
+          "alt": "Moise Kean"
+        }
+      }
+    },
+    {
+      "question": "8 tiri nello specchio su 21, contro 7 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 8 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

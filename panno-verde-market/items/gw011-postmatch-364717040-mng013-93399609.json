@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717040-mng013-93399609",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Giovanni Cabrioli · Il post partita di Internazionale",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nInternazionale 2–2 Tottenham Hotspur · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717040",
+    "manager_id": "MNG013",
+    "manager": "Giovanni Cabrioli",
+    "club_id": "93399609",
+    "club": "Internazionale",
+    "opponent": "Tottenham Hotspur",
+    "match_date": "2026-11-10",
+    "result": "Internazionale 2–2 Tottenham Hotspur",
+    "source_hash": "ec00d60c4433870f01bb87482ba886af9a60445767863271d84a4b3015fce8a7",
+    "home": "Internazionale",
+    "away": "Tottenham Hotspur",
+    "home_score": "2",
+    "away_score": "2",
+    "home_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "away_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 2-2 è il risultato della gara. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara. Ai rigori abbiamo chiuso 3-4: anche questo esito va distinto dall’analisi della prestazione."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 43% di possesso e 12 tiri, contro 15 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Maddison al minuto 78 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 78 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "76578",
+        "name": "Maddison",
+        "image": {
+          "file": "postmatch-player-76578-d30892abbeeef8fd.png",
+          "alt": "Maddison"
+        }
+      }
+    },
+    {
+      "question": "A Bonny è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "112747",
+        "name": "A Bonny",
+        "image": {
+          "file": "postmatch-player-112747-ac90706500cea5ff.png",
+          "alt": "A Bonny"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 12, contro 9 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 9 volte contro le nostre 5. Il risultato premia la nostra concretezza, ma concedere meno conclusioni pulite rimane importante."
+    }
+  ]
+}

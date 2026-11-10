@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717039-mng048-93399640",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Giuseppe Trovato · Il post partita di Barcelona",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBarcelona 2–2 Juventus · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717039",
+    "manager_id": "MNG048",
+    "manager": "Giuseppe Trovato",
+    "club_id": "93399640",
+    "club": "Barcelona",
+    "opponent": "Juventus",
+    "match_date": "2026-11-10",
+    "result": "Barcelona 2–2 Juventus",
+    "source_hash": "abb0111daf104b05efb6f00395003dd717e5a8f22f48efa1b44465793929a7aa",
+    "home": "Barcelona",
+    "away": "Juventus",
+    "home_score": "2",
+    "away_score": "2",
+    "home_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "away_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 2-2 è il risultato della gara. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara. Ai rigori abbiamo chiuso 3-4: anche questo esito va distinto dall’analisi della prestazione."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 57% di possesso e 13 tiri, contro 15 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Salah al minuto 78 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 78 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "52690",
+        "name": "Salah",
+        "image": {
+          "file": "postmatch-player-52690-8bcf8f62a5f88f60.png",
+          "alt": "Salah"
+        }
+      }
+    },
+    {
+      "question": "L Messi è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "2772",
+        "name": "L Messi",
+        "image": {
+          "file": "postmatch-player-2772-3b9b190e3a3340a4.png",
+          "alt": "L Messi"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 13, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 5 volte e segnato 2 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

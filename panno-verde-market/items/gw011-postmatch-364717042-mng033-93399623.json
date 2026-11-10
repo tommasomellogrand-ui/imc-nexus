@@ -1,0 +1,73 @@
+{
+  "id": "gw011-postmatch-364717042-mng033-93399623",
+  "published_at": "2026-11-10T23:51:02+01:00",
+  "title": "Simone Campanella · Il post partita di AS Roma",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester United 0–2 AS Roma · 10/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364717042",
+    "manager_id": "MNG033",
+    "manager": "Simone Campanella",
+    "club_id": "93399623",
+    "club": "AS Roma",
+    "opponent": "Manchester United",
+    "match_date": "2026-11-10",
+    "result": "Manchester United 0–2 AS Roma",
+    "source_hash": "3b8272b90c220d6baa8d263dea16abfd691d90b31d9b11242585d6423eed4325",
+    "home": "Manchester United",
+    "away": "AS Roma",
+    "home_score": "0",
+    "away_score": "2",
+    "home_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "away_logo": "market-club-93399623-4f2820912276f496.png",
+    "competition_label": "LEAGUECUP"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 2-0 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 53% di possesso e 16 tiri, contro 13 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "Il rosso a Andrey Santos al minuto 43 quanto pesa nella lettura della gara?",
+      "answer": "L’espulsione avversaria al minuto 43 è un dato importante. La vittoria va comunque letta su tutta la partita, distinguendo ciò che è accaduto prima e dopo il cartellino.",
+      "player": {
+        "id": "119825",
+        "name": "Andrey Santos",
+        "image": {
+          "file": "postmatch-player-119825-227160106eaff90a.png",
+          "alt": "Andrey Santos"
+        }
+      }
+    },
+    {
+      "question": "M Svilar è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "88064",
+        "name": "M Svilar",
+        "image": {
+          "file": "postmatch-player-88064-f4f80d11e6f5a692.png",
+          "alt": "M Svilar"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 16, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 6 volte e segnato 2 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}
