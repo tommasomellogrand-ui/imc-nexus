@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-c3c04b2d223a69065092b1bd",
+  "published_at": "2026-11-09T00:00:00+01:00",
+  "title": "Ontinyent CF: ufficiale l’arrivo di Melvin Ukpeigbe",
+  "text": "Ontinyent CF annuncia l’arrivo di Melvin Ukpeigbe. Il giocatore lascia Real Madrid: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Ontinyent CF",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-11-09",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-1775-ddd6e7d0ea8a8b8f.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155040-7d21af21fc41d452.png",
+    "alt": "Melvin Ukpeigbe"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-ec06278f4bbc6b045d34b324",
+  "published_at": "2026-11-02T00:00:00+01:00",
+  "title": "Brindisi FC: ufficiale l’arrivo di Dion Cakolli",
+  "text": "Brindisi FC annuncia l’arrivo di Dion Cakolli. Il giocatore lascia Atalanta BC: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "Brindisi FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-6186-03359107094a5ced.png"
+  },
+  "editorial_version": 3
+}

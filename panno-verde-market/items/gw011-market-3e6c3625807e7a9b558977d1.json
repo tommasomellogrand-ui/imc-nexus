@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-3e6c3625807e7a9b558977d1",
+  "published_at": "2026-11-05T00:00:00+01:00",
+  "title": "CP Cacereño: ufficiale l’arrivo di Jesús Fortea",
+  "text": "CP Cacereño annuncia l’arrivo di Jesús Fortea. Il giocatore lascia Real Madrid: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "CP Cacereño",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-11-05",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-2106-1ba14bd1a8e772fa.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149628-ac876345e42908fd.png",
+    "alt": "Jesús Fortea"
+  }
+}

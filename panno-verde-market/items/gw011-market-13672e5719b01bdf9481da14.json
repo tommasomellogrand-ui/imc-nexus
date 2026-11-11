@@ -1,0 +1,35 @@
+{
+  "id": "gw011-market-13672e5719b01bdf9481da14",
+  "published_at": "2026-11-03T00:00:00+01:00",
+  "title": "Bayern München: ufficiale l’arrivo di Denzel Dumfries",
+  "text": "Bayern München annuncia l’arrivo di Denzel Dumfries. Il giocatore lascia Real Madrid: operazione da 20,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891",
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    },
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Bayern München",
+    "formula": "Trasferimento definitivo",
+    "amount": "20,4 milioni di euro",
+    "date": "2026-11-03",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-club-93399891-8f08c13f795eef24.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-79951-8e59b28a1fad25db.png",
+    "alt": "Denzel Dumfries"
+  }
+}

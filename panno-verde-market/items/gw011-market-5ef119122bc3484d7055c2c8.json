@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-5ef119122bc3484d7055c2c8",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "AS Melfi: ufficiale l’arrivo di Tommaso Mancini",
+  "text": "AS Melfi annuncia l’arrivo di Tommaso Mancini. Il giocatore lascia Juventus: operazione da 1,6 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "AS Melfi",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,6 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-2470-06aacdc13e58a1e9.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-113328-8e8b1b3dc82ce4b0.png",
+    "alt": "Tommaso Mancini"
+  }
+}

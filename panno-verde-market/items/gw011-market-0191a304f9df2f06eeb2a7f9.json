@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-0191a304f9df2f06eeb2a7f9",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "Bradford Park Avenue: ufficiale l’arrivo di Ashton Missin",
+  "text": "Bradford Park Avenue annuncia l’arrivo di Ashton Missin. Il giocatore lascia Manchester United: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399549"
+  ],
+  "teams": [
+    {
+      "name": "Manchester United",
+      "logo": "market-club-93399549-b4f80a2c76cdcb52.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester United",
+    "to": "Bradford Park Avenue",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93399549-b4f80a2c76cdcb52.png",
+    "to_logo": "market-global-club-2977-510d3532527c5a6d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-150090-d4b2efe45a0ad9fa.png",
+    "alt": "Ashton Missin"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-bd075e9854486fdf3a529fa9",
+  "published_at": "2026-11-02T00:00:00+01:00",
+  "title": "Ostia Mare Lido: ufficiale l’arrivo di Endri Muhameti",
+  "text": "Ostia Mare Lido annuncia l’arrivo di Endri Muhameti. Il giocatore lascia Atalanta BC: operazione da 420.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "Ostia Mare Lido",
+    "formula": "Trasferimento definitivo",
+    "amount": "420.000 euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-5022-7677bdd3042f69f3.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-128609-891203e2a4dd4fd1.png",
+    "alt": "Endri Muhameti"
+  }
+}

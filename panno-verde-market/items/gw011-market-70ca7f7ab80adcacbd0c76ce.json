@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-70ca7f7ab80adcacbd0c76ce",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "VfB Oldenburg: ufficiale l’arrivo di Bara Sapoko Ndiaye",
+  "text": "VfB Oldenburg annuncia l’arrivo di Bara Sapoko Ndiaye. Il giocatore lascia Bayern München: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "transfer": {
+    "from": "Bayern München",
+    "to": "VfB Oldenburg",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "to_logo": "market-global-club-2142-35179daf26caf17b.png"
+  },
+  "editorial_version": 3
+}

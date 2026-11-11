@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-cb46dd4b18f24994dd763e94",
+  "published_at": "2026-11-05T00:00:00+01:00",
+  "title": "UD Socuéllamos: ufficiale l’arrivo di Javi Bailón",
+  "text": "UD Socuéllamos annuncia l’arrivo di Javi Bailón. Il giocatore lascia Real Madrid: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "UD Socuéllamos",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-11-05",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-3336-315155ad61684f8d.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-168426-1e0b4ceeb27288bf.png",
+    "alt": "Javi Bailón"
+  }
+}

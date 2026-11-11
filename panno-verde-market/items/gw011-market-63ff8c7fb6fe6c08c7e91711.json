@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-63ff8c7fb6fe6c08c7e91711",
+  "published_at": "2026-11-05T00:00:00+01:00",
+  "title": "Tonbridge Angels: ufficiale l’arrivo di Charlie Holland",
+  "text": "Tonbridge Angels annuncia l’arrivo di Charlie Holland. Il giocatore lascia Chelsea: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399521"
+  ],
+  "teams": [
+    {
+      "name": "Chelsea",
+      "logo": "market-club-93399521-6694aaf8610a7f9b.png"
+    }
+  ],
+  "transfer": {
+    "from": "Chelsea",
+    "to": "Tonbridge Angels",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-11-05",
+    "from_logo": "market-club-93399521-6694aaf8610a7f9b.png",
+    "to_logo": "market-global-club-2862-7ccb966c75ddb24e.png"
+  },
+  "editorial_version": 3
+}

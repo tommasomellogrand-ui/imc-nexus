@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-b5ce9c4f8b8353718c73170d",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "Ramsgate FC: ufficiale l’arrivo di Alvin Ayman",
+  "text": "Ramsgate FC annuncia l’arrivo di Alvin Ayman. Il giocatore lascia Liverpool: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "Liverpool",
+    "to": "Ramsgate FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "to_logo": "market-global-club-4907-da6e04cf8a33eb5b.png"
+  },
+  "editorial_version": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-ab2c3e6a6555261a55b3e713",
+  "published_at": "2026-11-09T00:00:00+01:00",
+  "title": "CD Puerta Bonita: ufficiale l’arrivo di Gabri Valero",
+  "text": "CD Puerta Bonita annuncia l’arrivo di Gabri Valero. Il giocatore lascia Real Madrid: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "CD Puerta Bonita",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-11-09",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-3026-194146bf5d0c5d0c.jpg"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-167615-40340060e248ead9.png",
+    "alt": "Gabri Valero"
+  }
+}

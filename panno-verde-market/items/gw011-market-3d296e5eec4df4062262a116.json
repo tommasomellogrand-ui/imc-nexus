@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-3d296e5eec4df4062262a116",
+  "published_at": "2026-11-02T00:00:00+01:00",
+  "title": "FC Francavilla: ufficiale l’arrivo di Gabriel Ramaj",
+  "text": "FC Francavilla annuncia l’arrivo di Gabriel Ramaj. Il giocatore lascia Atalanta BC: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "FC Francavilla",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-4442-d1babfe5c8f65a02.png"
+  },
+  "editorial_version": 3
+}

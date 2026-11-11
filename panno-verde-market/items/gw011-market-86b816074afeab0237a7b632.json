@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-86b816074afeab0237a7b632",
+  "published_at": "2026-11-02T00:00:00+01:00",
+  "title": "FC Legnago Salus: ufficiale l’arrivo di Edoardo Zanchi",
+  "text": "FC Legnago Salus annuncia l’arrivo di Edoardo Zanchi. Il giocatore lascia Atalanta BC: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "FC Legnago Salus",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-5564-b02b32f19d276e2b.png"
+  },
+  "editorial_version": 3
+}

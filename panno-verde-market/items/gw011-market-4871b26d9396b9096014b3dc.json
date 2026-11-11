@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-4871b26d9396b9096014b3dc",
+  "published_at": "2026-11-09T00:00:00+01:00",
+  "title": "Buxton FC: ufficiale l’arrivo di Tyrone Samba",
+  "text": "Buxton FC annuncia l’arrivo di Tyrone Samba. Il giocatore lascia Manchester City: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Buxton FC",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-11-09",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-4062-484d7420d68260b0.png"
+  },
+  "editorial_version": 3
+}

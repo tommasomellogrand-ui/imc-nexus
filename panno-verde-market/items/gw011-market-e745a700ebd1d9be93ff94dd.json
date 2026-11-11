@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-e745a700ebd1d9be93ff94dd",
+  "published_at": "2026-11-08T00:00:00+01:00",
+  "title": "Liverpool: ufficiale l’arrivo di Tobías Andrada",
+  "text": "Liverpool annuncia l’arrivo di Tobías Andrada. Il giocatore lascia River Plate: operazione da 4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "transfer": {
+    "from": "River Plate",
+    "to": "Liverpool",
+    "formula": "Trasferimento definitivo",
+    "amount": "4 milioni di euro",
+    "date": "2026-11-08",
+    "from_logo": "market-global-club-282-94608faa47bdcc94.png",
+    "to_logo": "market-club-93399544-56dfeac623d23b94.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-164773-471abe1d0a63549c.png",
+    "alt": "Tobías Andrada"
+  }
+}

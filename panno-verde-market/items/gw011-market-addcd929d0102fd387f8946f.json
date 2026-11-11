@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-addcd929d0102fd387f8946f",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "Colwyn Bay: ufficiale l’arrivo di Max Hudson",
+  "text": "Colwyn Bay annuncia l’arrivo di Max Hudson. Il giocatore lascia Manchester City: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "transfer": {
+    "from": "Manchester City",
+    "to": "Colwyn Bay",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93399547-198e9921b709c50d.png",
+    "to_logo": "market-global-club-3199-86ed34e8f717e29a.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155767-56893acb3c43503a.png",
+    "alt": "Max Hudson"
+  }
+}

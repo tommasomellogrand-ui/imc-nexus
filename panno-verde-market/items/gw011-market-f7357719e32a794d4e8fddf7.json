@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-f7357719e32a794d4e8fddf7",
+  "published_at": "2026-11-05T00:00:00+01:00",
+  "title": "Lorca Deportiva: ufficiale l’arrivo di Pol Durán",
+  "text": "Lorca Deportiva annuncia l’arrivo di Pol Durán. Il giocatore lascia Real Madrid: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Lorca Deportiva",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-11-05",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-4623-8d7989d9b91191a0.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149125-3c60e20ea27b483b.png",
+    "alt": "Pol Durán"
+  }
+}

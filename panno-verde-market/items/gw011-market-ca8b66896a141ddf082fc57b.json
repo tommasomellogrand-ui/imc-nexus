@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-ca8b66896a141ddf082fc57b",
+  "published_at": "2026-11-06T00:00:00+01:00",
+  "title": "Real Salt Lake: ufficiale l’arrivo di Yunus Musah",
+  "text": "Real Salt Lake annuncia l’arrivo di Yunus Musah. Il giocatore lascia AC Milan: operazione da 12,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "transfer": {
+    "from": "AC Milan",
+    "to": "Real Salt Lake",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,4 milioni di euro",
+    "date": "2026-11-06",
+    "from_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "to_logo": "market-global-club-465-eb0370fab13dc37a.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-104692-59b8e06bb52fd1da.png",
+    "alt": "Yunus Musah"
+  }
+}

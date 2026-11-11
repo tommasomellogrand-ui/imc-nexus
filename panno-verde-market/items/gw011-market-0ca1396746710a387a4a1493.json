@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-0ca1396746710a387a4a1493",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "Helsingborgs IF: ufficiale l’arrivo di Jens Cajuste",
+  "text": "Helsingborgs IF annuncia l’arrivo di Jens Cajuste. Il giocatore lascia SSC Napoli: operazione da 2,5 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Napoli",
+    "to": "Helsingborgs IF",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,5 milioni di euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "to_logo": "market-global-club-670-a3c9c1af0174c5aa.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-97866-7bbb2f9696245cc1.png",
+    "alt": "Jens Cajuste"
+  }
+}

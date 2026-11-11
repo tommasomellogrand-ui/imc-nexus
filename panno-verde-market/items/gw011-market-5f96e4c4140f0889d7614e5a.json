@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-5f96e4c4140f0889d7614e5a",
+  "published_at": "2026-11-05T00:00:00+01:00",
+  "title": "US Lecce: ufficiale l’arrivo di Brando Moruzzi",
+  "text": "US Lecce annuncia l’arrivo di Brando Moruzzi. Il giocatore lascia Juventus: operazione da 2,5 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "US Lecce",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,5 milioni di euro",
+    "date": "2026-11-05",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-112-2012a93b46530160.png"
+  },
+  "editorial_version": 3
+}

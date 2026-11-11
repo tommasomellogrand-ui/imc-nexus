@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-346d353e799f10056a945ff3",
+  "published_at": "2026-11-05T00:00:00+01:00",
+  "title": "Linares Deportivo: ufficiale l’arrivo di Rubén López",
+  "text": "Linares Deportivo annuncia l’arrivo di Rubén López. Il giocatore lascia Real Madrid: operazione da 624.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Linares Deportivo",
+    "formula": "Trasferimento definitivo",
+    "amount": "624.000 euro",
+    "date": "2026-11-05",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-3948-1fb8aa94de469bc8.png"
+  },
+  "editorial_version": 3
+}

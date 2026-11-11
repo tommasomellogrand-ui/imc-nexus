@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-999d301aacc8a25a6240bf68",
+  "published_at": "2026-11-05T00:00:00+01:00",
+  "title": "CD San Roque de Lepe: ufficiale l’arrivo di Shane Kluivert",
+  "text": "CD San Roque de Lepe annuncia l’arrivo di Shane Kluivert. Il giocatore lascia Barcelona: operazione da 1,2 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "transfer": {
+    "from": "Barcelona",
+    "to": "CD San Roque de Lepe",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,2 milioni di euro",
+    "date": "2026-11-05",
+    "from_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "to_logo": "market-global-club-1682-c0a2e6d807e4b373.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149622-d5a19def7e864d1d.png",
+    "alt": "Shane Kluivert"
+  }
+}

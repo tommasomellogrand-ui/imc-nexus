@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-61d7283824747ece60657a92",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "US Pontedera: ufficiale l’arrivo di Emmanuele De Chiara",
+  "text": "US Pontedera annuncia l’arrivo di Emmanuele De Chiara. Il giocatore lascia SSC Napoli: operazione da 630.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "SSC Napoli",
+    "to": "US Pontedera",
+    "formula": "Trasferimento definitivo",
+    "amount": "630.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "to_logo": "market-global-club-2447-75021c7438167b92.png"
+  },
+  "editorial_version": 3
+}

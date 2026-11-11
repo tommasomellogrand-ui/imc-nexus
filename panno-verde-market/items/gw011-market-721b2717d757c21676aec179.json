@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-721b2717d757c21676aec179",
+  "published_at": "2026-11-02T00:00:00+01:00",
+  "title": "Aurora Pro Patria: ufficiale l’arrivo di Ibrahim Sulemana",
+  "text": "Aurora Pro Patria annuncia l’arrivo di Ibrahim Sulemana. Il giocatore lascia Atalanta BC: operazione da 2,4 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "Aurora Pro Patria",
+    "formula": "Trasferimento definitivo",
+    "amount": "2,4 milioni di euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-874-50c15361a8de7de8.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-126427-359032d44c9d1189.png",
+    "alt": "Ibrahim Sulemana"
+  }
+}

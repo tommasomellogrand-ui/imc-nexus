@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-eda4744824479873015df78a",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "Türkgücü München: ufficiale l’arrivo di Marwan-Omir Mirza",
+  "text": "Türkgücü München annuncia l’arrivo di Marwan-Omir Mirza. Il giocatore lascia Borussia Dortmund: operazione da 600.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "transfer": {
+    "from": "Borussia Dortmund",
+    "to": "Türkgücü München",
+    "formula": "Trasferimento definitivo",
+    "amount": "600.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "to_logo": "market-global-club-5397-11dc73a65ccf368e.png"
+  },
+  "editorial_version": 3
+}

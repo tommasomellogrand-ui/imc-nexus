@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-2f5c250ab46245df01beebe3",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "USD Sestri Levante: ufficiale l’arrivo di Bruno Martinez",
+  "text": "USD Sestri Levante annuncia l’arrivo di Bruno Martinez. Il giocatore lascia Juventus: operazione da 606.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "USD Sestri Levante",
+    "formula": "Trasferimento definitivo",
+    "amount": "606.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-4737-4f2c337fde51ecfe.png"
+  },
+  "editorial_version": 3
+}

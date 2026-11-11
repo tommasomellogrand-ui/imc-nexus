@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-d78f950a79b9fa4393575486",
+  "published_at": "2026-11-05T00:00:00+01:00",
+  "title": "SD Leioa: ufficiale l’arrivo di Aimar García",
+  "text": "SD Leioa annuncia l’arrivo di Aimar García. Il giocatore lascia Real Madrid: operazione da 618.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "SD Leioa",
+    "formula": "Trasferimento definitivo",
+    "amount": "618.000 euro",
+    "date": "2026-11-05",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-3338-72ff14db11a67595.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-168432-ef7fb42cbf0d772a.png",
+    "alt": "Aimar García"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-619ff00972ea63420b8bed8f",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "Algeciras CF: ufficiale l’arrivo di Roberto Martín",
+  "text": "Algeciras CF annuncia l’arrivo di Roberto Martín. Il giocatore lascia Real Madrid: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399663"
+  ],
+  "teams": [
+    {
+      "name": "Real Madrid",
+      "logo": "market-club-93399663-7ef177340849aadc.png"
+    }
+  ],
+  "transfer": {
+    "from": "Real Madrid",
+    "to": "Algeciras CF",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93399663-7ef177340849aadc.png",
+    "to_logo": "market-global-club-2901-d4f74c82e88ef49e.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-155035-e21676290e635dd8.png",
+    "alt": "Roberto Martín"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-cc29deb1b29ae211ba40fe5a",
+  "published_at": "2026-11-05T00:00:00+01:00",
+  "title": "Central Córdoba de Rosario: ufficiale l’arrivo di Valentín Carboni",
+  "text": "Central Córdoba de Rosario annuncia l’arrivo di Valentín Carboni. Il giocatore lascia Internazionale: operazione da 12,1 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "transfer": {
+    "from": "Internazionale",
+    "to": "Central Córdoba de Rosario",
+    "formula": "Trasferimento definitivo",
+    "amount": "12,1 milioni di euro",
+    "date": "2026-11-05",
+    "from_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "to_logo": "market-global-club-2334-19353ecdbb7b0fb7.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-121098-3cd0f72f3ecd05f1.png",
+    "alt": "Valentín Carboni"
+  }
+}

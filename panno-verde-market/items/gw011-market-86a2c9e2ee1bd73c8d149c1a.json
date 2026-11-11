@@ -1,0 +1,26 @@
+{
+  "id": "gw011-market-86a2c9e2ee1bd73c8d149c1a",
+  "published_at": "2026-11-01T00:00:00+01:00",
+  "title": "ACR Messina: ufficiale l’arrivo di Alessandro Pietrelli",
+  "text": "ACR Messina annuncia l’arrivo di Alessandro Pietrelli. Il giocatore lascia Juventus: operazione da 360.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399610"
+  ],
+  "teams": [
+    {
+      "name": "Juventus",
+      "logo": "market-club-93399610-324c3f0e48728abe.png"
+    }
+  ],
+  "transfer": {
+    "from": "Juventus",
+    "to": "ACR Messina",
+    "formula": "Trasferimento definitivo",
+    "amount": "360.000 euro",
+    "date": "2026-11-01",
+    "from_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "to_logo": "market-global-club-114-bdab671b8f73094f.png"
+  },
+  "editorial_version": 3
+}

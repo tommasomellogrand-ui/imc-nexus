@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-87efeee811ca9e9b0e5cebcd",
+  "published_at": "2026-11-02T00:00:00+01:00",
+  "title": "Sangiuliano City: ufficiale l’arrivo di Filippo Mencaraglia",
+  "text": "Sangiuliano City annuncia l’arrivo di Filippo Mencaraglia. Il giocatore lascia Atalanta BC: operazione da 612.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "transfer": {
+    "from": "Atalanta BC",
+    "to": "Sangiuliano City",
+    "formula": "Trasferimento definitivo",
+    "amount": "612.000 euro",
+    "date": "2026-11-02",
+    "from_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "to_logo": "market-global-club-5882-1d52f345024c5984.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-158365-9b53d6474a9b416e.png",
+    "alt": "Filippo Mencaraglia"
+  }
+}
