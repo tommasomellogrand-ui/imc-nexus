@@ -1,0 +1,72 @@
+{
+  "id": "gw011-postmatch-364515507-mng009-93399547",
+  "published_at": "2026-11-12T13:33:10+01:00",
+  "title": "Luca Nudo · Il post partita di Manchester City",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nEverton 2–3 Manchester City · 09/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515507",
+    "manager_id": "MNG009",
+    "manager": "Luca Nudo",
+    "club_id": "93399547",
+    "club": "Manchester City",
+    "opponent": "Everton",
+    "match_date": "2026-11-09",
+    "result": "Everton 2–3 Manchester City",
+    "source_hash": "b4e4299c60263d9848b077e2669edf8f1bc2b1556f9062c41795b628508d6b52",
+    "home": "Everton",
+    "away": "Manchester City",
+    "home_score": "2",
+    "away_score": "3",
+    "away_logo": "market-club-93399547-198e9921b709c50d.png",
+    "competition_label": "GIRONE D"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 52% di possesso e 20 tiri, contro 13 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Haaland al minuto 87 ha fissato il risultato. Come legge quel finale?",
+      "answer": "Quel gol al minuto 87 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "88100",
+        "name": "Haaland",
+        "image": {
+          "file": "postmatch-player-88100-3ef5b9e918b23382.png",
+          "alt": "Haaland"
+        }
+      }
+    },
+    {
+      "question": "Erling Haaland è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 2 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "88100",
+        "name": "Erling Haaland",
+        "image": {
+          "file": "postmatch-player-88100-3ef5b9e918b23382.png",
+          "alt": "Erling Haaland"
+        }
+      }
+    },
+    {
+      "question": "9 tiri nello specchio su 20, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 9 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}
