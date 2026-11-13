@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515063-mng004-93399838",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Luciano Catalano · Il post partita di Paris Saint-Germain",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nParis Saint-Germain 1–0 Arsenal · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399838"
+  ],
+  "teams": [
+    {
+      "name": "Paris Saint-Germain",
+      "logo": "market-club-93399838-3eef9082b1e66395.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515063",
+    "manager_id": "MNG004",
+    "manager": "Luciano Catalano",
+    "club_id": "93399838",
+    "club": "Paris Saint-Germain",
+    "opponent": "Arsenal",
+    "match_date": "2026-11-12",
+    "result": "Paris Saint-Germain 1–0 Arsenal",
+    "source_hash": "50a63251050c3864cc5422b5995ea9c084e077387dcda62262c9bcf3f07f3f6d",
+    "home": "Paris Saint-Germain",
+    "away": "Arsenal",
+    "home_score": "1",
+    "away_score": "0",
+    "home_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "away_logo": "market-club-93399501-33ef41943a141618.png",
+    "division": "2",
+    "round": "6",
+    "competition_label": "DIVISIONE 2 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 1-0 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 52% di possesso e 11 tiri, contro 13 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Doué al minuto 47 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 47 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "123912",
+        "name": "Doué",
+        "image": {
+          "file": "postmatch-player-123912-8984005753af08f9.png",
+          "alt": "Doué"
+        }
+      }
+    },
+    {
+      "question": "D Doué è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "123912",
+        "name": "D Doué",
+        "image": {
+          "file": "postmatch-player-123912-8984005753af08f9.png",
+          "alt": "D Doué"
+        }
+      }
+    },
+    {
+      "question": "2 tiri nello specchio su 11, contro 1 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 2 volte e segnato 1 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

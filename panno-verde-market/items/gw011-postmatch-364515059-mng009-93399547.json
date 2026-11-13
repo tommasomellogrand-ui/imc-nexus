@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515059-mng009-93399547",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Luca Nudo · Il post partita di Manchester City",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester City 3–4 Liverpool · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399547"
+  ],
+  "teams": [
+    {
+      "name": "Manchester City",
+      "logo": "market-club-93399547-198e9921b709c50d.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515059",
+    "manager_id": "MNG009",
+    "manager": "Luca Nudo",
+    "club_id": "93399547",
+    "club": "Manchester City",
+    "opponent": "Liverpool",
+    "match_date": "2026-11-12",
+    "result": "Manchester City 3–4 Liverpool",
+    "source_hash": "10094761e383fe2f1962617b4fd6b0cfa5d4fa4ce0500cba1bb5152e2148f90b",
+    "home": "Manchester City",
+    "away": "Liverpool",
+    "home_score": "3",
+    "away_score": "4",
+    "home_logo": "market-club-93399547-198e9921b709c50d.png",
+    "away_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "division": "2",
+    "round": "6",
+    "competition_label": "DIVISIONE 2 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 3-4 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 45% di possesso e 8 tiri, contro 22 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Anderson al minuto 80 ha fissato il risultato. Come legge quel finale?",
+      "answer": "Quel gol al minuto 80 ha avuto un peso concreto: ha ridotto lo svantaggio, senza però cambiare l’esito della gara. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "107890",
+        "name": "Anderson",
+        "image": {
+          "file": "postmatch-player-107890-2b11c9a7d5ae4c89.png",
+          "alt": "Anderson"
+        }
+      }
+    },
+    {
+      "question": "Mason Greenwood ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Il report gli assegna anche 1 assist. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "99639",
+        "name": "Mason Greenwood",
+        "image": {
+          "file": "postmatch-player-99639-0f514039511eeedd.png",
+          "alt": "Mason Greenwood"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 8, contro 14 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 14 volte contro le nostre 4. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

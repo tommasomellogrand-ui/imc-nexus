@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515062-mng048-93399640",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Giuseppe Trovato · Il post partita di Barcelona",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBarcelona 3–2 Bayern München · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399640"
+  ],
+  "teams": [
+    {
+      "name": "Barcelona",
+      "logo": "market-club-93399640-7f65e8cb26dcfe65.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515062",
+    "manager_id": "MNG048",
+    "manager": "Giuseppe Trovato",
+    "club_id": "93399640",
+    "club": "Barcelona",
+    "opponent": "Bayern München",
+    "match_date": "2026-11-12",
+    "result": "Barcelona 3–2 Bayern München",
+    "source_hash": "77d2f4bfdcadb5eb2577c082870eb736596a2877aba6005f78531f9bd4ed5dc3",
+    "home": "Barcelona",
+    "away": "Bayern München",
+    "home_score": "3",
+    "away_score": "2",
+    "home_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "away_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "division": "2",
+    "round": "6",
+    "competition_label": "DIVISIONE 2 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 3-2 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 47% di possesso e 11 tiri, contro 14 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Olise al minuto 78 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 78 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "101780",
+        "name": "Olise",
+        "image": {
+          "file": "postmatch-player-101780-ddab7b161e6d9071.png",
+          "alt": "Olise"
+        }
+      }
+    },
+    {
+      "question": "João Neves ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "126148",
+        "name": "João Neves",
+        "image": {
+          "file": "postmatch-player-126148-1c70f6f3403f579a.png",
+          "alt": "João Neves"
+        }
+      }
+    },
+    {
+      "question": "7 tiri nello specchio su 11, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 7 volte e segnato 3 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

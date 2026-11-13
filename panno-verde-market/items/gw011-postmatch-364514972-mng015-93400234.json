@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514972-mng015-93400234",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Marco Fioretti · Il post partita di SSC Napoli",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nTottenham Hotspur 5–1 SSC Napoli · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514972",
+    "manager_id": "MNG015",
+    "manager": "Marco Fioretti",
+    "club_id": "93400234",
+    "club": "SSC Napoli",
+    "opponent": "Tottenham Hotspur",
+    "match_date": "2026-11-12",
+    "result": "Tottenham Hotspur 5–1 SSC Napoli",
+    "source_hash": "9bc667064ffa61a388d6ed90875e0aa55c8eff71d79cb5a1877bf72efa9d4bbf",
+    "home": "Tottenham Hotspur",
+    "away": "SSC Napoli",
+    "home_score": "5",
+    "away_score": "1",
+    "home_logo": "market-club-93399580-b520b61ef4469d37.png",
+    "away_logo": "market-club-93400234-082aae3f75dc21ec.png",
+    "division": "1",
+    "round": "6",
+    "competition_label": "DIVISIONE 1 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-5 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 37% di possesso e 11 tiri, contro 25 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Oyarzabal al minuto 82 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 82 ha cambiato il punteggio nel finale. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "84791",
+        "name": "Oyarzabal",
+        "image": {
+          "file": "postmatch-player-84791-226f3f8e3e54c5d0.png",
+          "alt": "Oyarzabal"
+        }
+      }
+    },
+    {
+      "question": "T Hume ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "111609",
+        "name": "T Hume",
+        "image": {
+          "file": "postmatch-player-111609-6e1ce8b29b881a71.png",
+          "alt": "T Hume"
+        }
+      }
+    },
+    {
+      "question": "2 tiri nello specchio su 11, contro 9 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 9 volte contro le nostre 2. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

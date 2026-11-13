@@ -1,0 +1,79 @@
+{
+  "id": "gw011-postmatch-364514970-mng001-93399639",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Tommaso Mello · Il post partita di Atlético Madrid",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBorussia Dortmund 1–4 Atlético Madrid · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399639"
+  ],
+  "teams": [
+    {
+      "name": "Atlético Madrid",
+      "logo": "market-club-93399639-e209a6007dbb920b.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514970",
+    "manager_id": "MNG001",
+    "manager": "Tommaso Mello",
+    "club_id": "93399639",
+    "club": "Atlético Madrid",
+    "opponent": "Borussia Dortmund",
+    "match_date": "2026-11-12",
+    "result": "Borussia Dortmund 1–4 Atlético Madrid",
+    "source_hash": "61c1a283f70e387194f5d896cb7e8abefdd23bde6b27740698ec175ac44fbb7f",
+    "home": "Borussia Dortmund",
+    "away": "Atlético Madrid",
+    "home_score": "1",
+    "away_score": "4",
+    "home_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "away_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "division": "1",
+    "round": "6",
+    "competition_label": "DIVISIONE 1 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "È una vittoria netta, 4-1, e il merito è aver dato continuità al risultato. Un margine così ampio premia quello che abbiamo prodotto, senza cancellare gli aspetti da rivedere."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 59% di possesso e 18 tiri, contro 11 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Gravenberch al minuto 81 ha fissato il risultato. Come legge quel finale?",
+      "answer": "Quel gol al minuto 81 ha avuto un peso concreto: ci ha dato la vittoria. È il momento da cui partire per raccontare il finale, senza dimenticare quanto era successo prima.",
+      "player": {
+        "id": "98514",
+        "name": "Gravenberch",
+        "image": {
+          "file": "postmatch-player-98514-9895df544224b6ac.png",
+          "alt": "Gravenberch"
+        }
+      }
+    },
+    {
+      "question": "Robert Lewandowski è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 2 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "34893",
+        "name": "Robert Lewandowski",
+        "image": {
+          "file": "postmatch-player-34893-f427033a3965299f.png",
+          "alt": "Robert Lewandowski"
+        }
+      }
+    },
+    {
+      "question": "13 tiri nello specchio su 18, contro 5 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 13 volte e segnato 4 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ],
+  "image": {
+    "file": "news-person-56748ccd184cf532-1572c907792595a1.jpeg",
+    "alt": "Tommaso Mello"
+  }
+}

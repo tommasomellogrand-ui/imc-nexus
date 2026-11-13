@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514969-mng052-93399596",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Carlo Colombo · Il post partita di Atalanta BC",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nJuventus 3–0 Atalanta BC · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399596"
+  ],
+  "teams": [
+    {
+      "name": "Atalanta BC",
+      "logo": "market-club-93399596-85e2afd4c411f080.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514969",
+    "manager_id": "MNG052",
+    "manager": "Carlo Colombo",
+    "club_id": "93399596",
+    "club": "Atalanta BC",
+    "opponent": "Juventus",
+    "match_date": "2026-11-12",
+    "result": "Juventus 3–0 Atalanta BC",
+    "source_hash": "3b07eb0a705016b904fcaaa172f1dfc88989d0b2b17f2b791bd9bf63de60698d",
+    "home": "Juventus",
+    "away": "Atalanta BC",
+    "home_score": "3",
+    "away_score": "0",
+    "home_logo": "market-club-93399610-324c3f0e48728abe.png",
+    "away_logo": "market-club-93399596-85e2afd4c411f080.png",
+    "division": "1",
+    "round": "6",
+    "competition_label": "DIVISIONE 1 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-3 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 36% di possesso e 3 tiri, contro 22 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "Il rosso a Gleison Bremer al minuto 87 quanto pesa nella lettura della gara?",
+      "answer": "L’espulsione avversaria al minuto 87 è un dato importante. Non siamo riusciti a tradurla nel risultato che cercavamo: il vantaggio numerico non sostituisce la qualità delle conclusioni.",
+      "player": {
+        "id": "94633",
+        "name": "Gleison Bremer",
+        "image": {
+          "file": "postmatch-player-94633-79cdd0f6b96d4886.png",
+          "alt": "Gleison Bremer"
+        }
+      }
+    },
+    {
+      "question": "M Carnesecchi ha ricevuto voto 8 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 8 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "102272",
+        "name": "M Carnesecchi",
+        "image": {
+          "file": "postmatch-player-102272-151c7c0ff01f7e04.png",
+          "alt": "M Carnesecchi"
+        }
+      }
+    },
+    {
+      "question": "2 tiri nello specchio su 3, contro 9 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 2 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

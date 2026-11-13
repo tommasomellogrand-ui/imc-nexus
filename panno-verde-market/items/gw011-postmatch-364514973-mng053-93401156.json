@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514973-mng053-93401156",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Chicco Belin · Il post partita di Como 1907",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nComo 1907 1–1 AC Milan · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93401156"
+  ],
+  "teams": [
+    {
+      "name": "Como 1907",
+      "logo": "market-club-93401156-3677d3c02dbbefef.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514973",
+    "manager_id": "MNG053",
+    "manager": "Chicco Belin",
+    "club_id": "93401156",
+    "club": "Como 1907",
+    "opponent": "AC Milan",
+    "match_date": "2026-11-12",
+    "result": "Como 1907 1–1 AC Milan",
+    "source_hash": "41e7925f14c19affe21de2b62adfc4504afd30f1c92eb9928e6f14dc4bdcb72d",
+    "home": "Como 1907",
+    "away": "AC Milan",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "away_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "division": "1",
+    "round": "6",
+    "competition_label": "DIVISIONE 1 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 58% di possesso e 13 tiri, contro 9 degli avversari. Abbiamo avuto più pallone, ma quel dato da solo non basta: dobbiamo trasformare la nostra presenza nella partita in un vantaggio concreto."
+    },
+    {
+      "question": "La rete di Gordon al minuto 29 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 29 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "94350",
+        "name": "Gordon",
+        "image": {
+          "file": "postmatch-player-94350-305008efd13832ca.png",
+          "alt": "Gordon"
+        }
+      }
+    },
+    {
+      "question": "Anthony Gordon è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 8 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "94350",
+        "name": "Anthony Gordon",
+        "image": {
+          "file": "postmatch-player-94350-305008efd13832ca.png",
+          "alt": "Anthony Gordon"
+        }
+      }
+    },
+    {
+      "question": "3 tiri nello specchio su 13, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 4 volte contro le nostre 3. Il risultato premia la nostra concretezza, ma concedere meno conclusioni pulite rimane importante."
+    }
+  ]
+}

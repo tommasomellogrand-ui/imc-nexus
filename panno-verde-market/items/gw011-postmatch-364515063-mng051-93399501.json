@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515063-mng051-93399501",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Luciano Tana · Il post partita di Arsenal",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nParis Saint-Germain 1–0 Arsenal · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399501"
+  ],
+  "teams": [
+    {
+      "name": "Arsenal",
+      "logo": "market-club-93399501-33ef41943a141618.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515063",
+    "manager_id": "MNG051",
+    "manager": "Luciano Tana",
+    "club_id": "93399501",
+    "club": "Arsenal",
+    "opponent": "Paris Saint-Germain",
+    "match_date": "2026-11-12",
+    "result": "Paris Saint-Germain 1–0 Arsenal",
+    "source_hash": "dbbbb7efac5aa86930d3e00877c0384ac7f40301985e1bc8ea17ae1ad06d1216",
+    "home": "Paris Saint-Germain",
+    "away": "Arsenal",
+    "home_score": "1",
+    "away_score": "0",
+    "home_logo": "market-club-93399838-3eef9082b1e66395.png",
+    "away_logo": "market-club-93399501-33ef41943a141618.png",
+    "division": "2",
+    "round": "6",
+    "competition_label": "DIVISIONE 2 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 0-1 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 48% di possesso e 13 tiri, contro 11 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Doué al minuto 47 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 47 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "123912",
+        "name": "Doué",
+        "image": {
+          "file": "postmatch-player-123912-8984005753af08f9.png",
+          "alt": "Doué"
+        }
+      }
+    },
+    {
+      "question": "J Timber ha ricevuto voto 7 nel report: come inserisce la sua prova nel giudizio collettivo?",
+      "answer": "Il voto 7 è un elemento della lettura, non una spiegazione completa della partita. Non voglio usare i voti per distribuire colpe individuali: dobbiamo capire come migliorare la risposta della squadra.",
+      "player": {
+        "id": "100881",
+        "name": "J Timber",
+        "image": {
+          "file": "postmatch-player-100881-b0e12c6394e7c9f0.png",
+          "alt": "J Timber"
+        }
+      }
+    },
+    {
+      "question": "1 tiri nello specchio su 13, contro 2 degli avversari: cosa le dice questo dato?",
+      "answer": "Non abbiamo segnato pur arrivando nello specchio 1 volte. È il limite più concreto della nostra fase offensiva oggi: il volume va accompagnato da conclusioni più difficili da neutralizzare."
+    }
+  ]
+}

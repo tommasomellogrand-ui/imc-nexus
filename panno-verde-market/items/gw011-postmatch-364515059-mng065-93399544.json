@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515059-mng065-93399544",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Carlo Ancelotti · Il post partita di Liverpool",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nManchester City 3–4 Liverpool · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399544"
+  ],
+  "teams": [
+    {
+      "name": "Liverpool",
+      "logo": "market-club-93399544-56dfeac623d23b94.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515059",
+    "manager_id": "MNG065",
+    "manager": "Carlo Ancelotti",
+    "club_id": "93399544",
+    "club": "Liverpool",
+    "opponent": "Manchester City",
+    "match_date": "2026-11-12",
+    "result": "Manchester City 3–4 Liverpool",
+    "source_hash": "639e7d20cb26451041904632078ff35aa463f51b85d9e31b23379ff6330ebf39",
+    "home": "Manchester City",
+    "away": "Liverpool",
+    "home_score": "3",
+    "away_score": "4",
+    "home_logo": "market-club-93399547-198e9921b709c50d.png",
+    "away_logo": "market-club-93399544-56dfeac623d23b94.png",
+    "division": "2",
+    "round": "6",
+    "competition_label": "DIVISIONE 2 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Vincere 4-3 conta molto. Con un margine così ridotto ogni episodio pesa: mi tengo il risultato, ma non considero automaticamente perfetta la partita."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 55% di possesso e 22 tiri, contro 8 degli avversari. Il risultato dà valore alla prestazione. Guardo soprattutto al rapporto tra quello che produciamo e quello che lasciamo agli avversari, senza fermarmi al solo possesso."
+    },
+    {
+      "question": "La rete di Anderson al minuto 80 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 80 ha cambiato il punteggio nel finale. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "107890",
+        "name": "Anderson",
+        "image": {
+          "file": "postmatch-player-107890-2b11c9a7d5ae4c89.png",
+          "alt": "Anderson"
+        }
+      }
+    },
+    {
+      "question": "A Isak è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 10 danno rilievo alla sua prestazione. Ha contribuito con 2 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "83844",
+        "name": "A Isak",
+        "image": {
+          "file": "postmatch-player-83844-20ffe4f4f62ead06.png",
+          "alt": "A Isak"
+        }
+      }
+    },
+    {
+      "question": "14 tiri nello specchio su 22, contro 4 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 14 volte e segnato 4 gol. È una base positiva da cui partire, mantenendo attenzione anche alle conclusioni concesse."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514970-mng060-93399892",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Cosimo Lonoce · Il post partita di Borussia Dortmund",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBorussia Dortmund 1–4 Atlético Madrid · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399892"
+  ],
+  "teams": [
+    {
+      "name": "Borussia Dortmund",
+      "logo": "market-club-93399892-d15d77a60b17db2f.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514970",
+    "manager_id": "MNG060",
+    "manager": "Cosimo Lonoce",
+    "club_id": "93399892",
+    "club": "Borussia Dortmund",
+    "opponent": "Atlético Madrid",
+    "match_date": "2026-11-12",
+    "result": "Borussia Dortmund 1–4 Atlético Madrid",
+    "source_hash": "7da12206702124574599332502858148f48fb35fdb6327c2e317aeb11ed09bb2",
+    "home": "Borussia Dortmund",
+    "away": "Atlético Madrid",
+    "home_score": "1",
+    "away_score": "4",
+    "home_logo": "market-club-93399892-d15d77a60b17db2f.png",
+    "away_logo": "market-club-93399639-e209a6007dbb920b.png",
+    "division": "1",
+    "round": "6",
+    "competition_label": "DIVISIONE 1 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 1-4 lascia amarezza. Il divario è ampio e va affrontato con lucidità, senza cercare un singolo colpevole."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 41% di possesso e 11 tiri, contro 18 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Gravenberch al minuto 81 ha fissato il risultato. Come legge quel finale?",
+      "answer": "La rete al minuto 81 ha cambiato il punteggio nel finale. È un episodio da rivedere con attenzione: la valutazione deve riguardare l’intera azione, non soltanto chi si trova vicino al pallone.",
+      "player": {
+        "id": "98514",
+        "name": "Gravenberch",
+        "image": {
+          "file": "postmatch-player-98514-9895df544224b6ac.png",
+          "alt": "Gravenberch"
+        }
+      }
+    },
+    {
+      "question": "F Conceição ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Non è bastato a evitare la sconfitta, ma resta un contributo importante a ciò che abbiamo prodotto.",
+      "player": {
+        "id": "103017",
+        "name": "F Conceição",
+        "image": {
+          "file": "postmatch-player-103017-4be5a67538ba7087.png",
+          "alt": "F Conceição"
+        }
+      }
+    },
+    {
+      "question": "5 tiri nello specchio su 11, contro 13 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 13 volte contro le nostre 5. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

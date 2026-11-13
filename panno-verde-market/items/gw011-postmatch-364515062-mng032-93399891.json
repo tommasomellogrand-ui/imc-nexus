@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515062-mng032-93399891",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Vardan Minasyan · Il post partita di Bayern München",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nBarcelona 3–2 Bayern München · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399891"
+  ],
+  "teams": [
+    {
+      "name": "Bayern München",
+      "logo": "market-club-93399891-8f08c13f795eef24.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515062",
+    "manager_id": "MNG032",
+    "manager": "Vardan Minasyan",
+    "club_id": "93399891",
+    "club": "Bayern München",
+    "opponent": "Barcelona",
+    "match_date": "2026-11-12",
+    "result": "Barcelona 3–2 Bayern München",
+    "source_hash": "5dca00445f67b77aa004f0bf1cb87f7a76675b5776b1778dd28f21ae06a52e9c",
+    "home": "Barcelona",
+    "away": "Bayern München",
+    "home_score": "3",
+    "away_score": "2",
+    "home_logo": "market-club-93399640-7f65e8cb26dcfe65.png",
+    "away_logo": "market-club-93399891-8f08c13f795eef24.png",
+    "division": "2",
+    "round": "6",
+    "competition_label": "DIVISIONE 2 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 53% di possesso e 14 tiri, contro 11 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Olise al minuto 78 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 78 il punteggio non è più cambiato. Quella rete è rimasta determinante per il nostro risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "101780",
+        "name": "Olise",
+        "image": {
+          "file": "postmatch-player-101780-ddab7b161e6d9071.png",
+          "alt": "Olise"
+        }
+      }
+    },
+    {
+      "question": "Harry Kane è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "49590",
+        "name": "Harry Kane",
+        "image": {
+          "file": "postmatch-player-49590-054cc3a44c1de611.png",
+          "alt": "Harry Kane"
+        }
+      }
+    },
+    {
+      "question": "6 tiri nello specchio su 14, contro 7 degli avversari: cosa le dice questo dato?",
+      "answer": "Gli avversari hanno centrato la porta 7 volte contro le nostre 6. Dobbiamo migliorare sia l’efficacia delle nostre conclusioni sia la protezione della porta."
+    }
+  ]
+}

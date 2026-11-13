@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364514973-mng016-93399615",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Saverio Cordiano · Il post partita di AC Milan",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nComo 1907 1–1 AC Milan · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399615"
+  ],
+  "teams": [
+    {
+      "name": "AC Milan",
+      "logo": "market-club-93399615-cf09cc84369c6535.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364514973",
+    "manager_id": "MNG016",
+    "manager": "Saverio Cordiano",
+    "club_id": "93399615",
+    "club": "AC Milan",
+    "opponent": "Como 1907",
+    "match_date": "2026-11-12",
+    "result": "Como 1907 1–1 AC Milan",
+    "source_hash": "22edb679ba78c8bce295896d043648156989b4b28449303aa5c67514f628cfe8",
+    "home": "Como 1907",
+    "away": "AC Milan",
+    "home_score": "1",
+    "away_score": "1",
+    "home_logo": "market-club-93401156-3677d3c02dbbefef.png",
+    "away_logo": "market-club-93399615-cf09cc84369c6535.png",
+    "division": "1",
+    "round": "6",
+    "competition_label": "DIVISIONE 1 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Il 1-1 ci lascia un punto. Non mi basta chiamarlo un risultato giusto o ingiusto: va letto insieme alle occasioni e ai momenti della gara."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 42% di possesso e 9 tiri, contro 13 degli avversari. Il risultato è positivo rispetto al numero di conclusioni affrontate. Voglio però distinguere la capacità di portare a casa il risultato dalla necessità di concedere meno."
+    },
+    {
+      "question": "La rete di Gordon al minuto 29 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 29 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "94350",
+        "name": "Gordon",
+        "image": {
+          "file": "postmatch-player-94350-305008efd13832ca.png",
+          "alt": "Gordon"
+        }
+      }
+    },
+    {
+      "question": "A Pinamonti ha segnato un gol: quanto conta il suo contributo?",
+      "answer": "Il suo gol è un fatto concreto della nostra partita. Un contributo importante al risultato positivo.",
+      "player": {
+        "id": "88924",
+        "name": "A Pinamonti",
+        "image": {
+          "file": "postmatch-player-88924-bfdbb979f6ec5631.png",
+          "alt": "A Pinamonti"
+        }
+      }
+    },
+    {
+      "question": "4 tiri nello specchio su 9, contro 3 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo trovato lo specchio 4 volte e segnato 1 gol. La differenza tra arrivare al tiro e trasformarlo in gol è una parte centrale della valutazione di oggi."
+    }
+  ]
+}

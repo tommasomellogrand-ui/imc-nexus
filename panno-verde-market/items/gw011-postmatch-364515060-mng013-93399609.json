@@ -1,0 +1,75 @@
+{
+  "id": "gw011-postmatch-364515060-mng013-93399609",
+  "published_at": "2026-11-13T08:54:57+01:00",
+  "title": "Giovanni Cabrioli · Il post partita di Internazionale",
+  "text": "Intervista simulata sulla base del match report: non dichiarazioni reali del manager.\n\nInternazionale 2–3 Real Madrid · 12/11/2026",
+  "category": "post-match",
+  "club_ids": [
+    "93399609"
+  ],
+  "teams": [
+    {
+      "name": "Internazionale",
+      "logo": "market-club-93399609-c1b721033d1fc95e.png"
+    }
+  ],
+  "post_match": {
+    "world": "GW011",
+    "fixture_id": "364515060",
+    "manager_id": "MNG013",
+    "manager": "Giovanni Cabrioli",
+    "club_id": "93399609",
+    "club": "Internazionale",
+    "opponent": "Real Madrid",
+    "match_date": "2026-11-12",
+    "result": "Internazionale 2–3 Real Madrid",
+    "source_hash": "8aaf6aaed3708900ff986ededf192d9e83c1ce5fe4e7a9145f3b8b29bea8a800",
+    "home": "Internazionale",
+    "away": "Real Madrid",
+    "home_score": "2",
+    "away_score": "3",
+    "home_logo": "market-club-93399609-c1b721033d1fc95e.png",
+    "away_logo": "market-club-93399663-7ef177340849aadc.png",
+    "division": "2",
+    "round": "6",
+    "competition_label": "DIVISIONE 2 · GIORNATA 6"
+  },
+  "interview": [
+    {
+      "question": "Mister, come giudica il risultato di oggi?",
+      "answer": "Perdere 2-3 lascia amarezza. La partita si è decisa su un margine che ci obbliga a guardare con attenzione sia ciò che abbiamo creato sia ciò che abbiamo concesso."
+    },
+    {
+      "question": "Al di là del risultato, come valuta la prestazione della squadra?",
+      "answer": "Abbiamo chiuso con il 46% di possesso e 9 tiri, contro 10 degli avversari. Sono numeri da leggere insieme: avere il pallone e arrivare al tiro non significa sempre creare una conclusione davvero efficace."
+    },
+    {
+      "question": "La rete di Woltemade al minuto 72 ha fissato il risultato. Quanto ha inciso questo episodio?",
+      "answer": "Dopo il gol al minuto 72 il punteggio non è più cambiato. Non siamo riusciti a modificare ulteriormente il risultato. Anche i minuti successivi fanno parte della valutazione della partita.",
+      "player": {
+        "id": "104807",
+        "name": "Woltemade",
+        "image": {
+          "file": "postmatch-player-104807-4dfe73437c7fd0e6.png",
+          "alt": "Woltemade"
+        }
+      }
+    },
+    {
+      "question": "L Martínez è il migliore in campo del report: cosa sottolinea della sua prova?",
+      "answer": "Il riconoscimento e il voto 9 danno rilievo alla sua prestazione. Ha contribuito con 1 gol. È un contributo che va riconosciuto, tenendolo dentro il lavoro complessivo della squadra.",
+      "player": {
+        "id": "82491",
+        "name": "L Martínez",
+        "image": {
+          "file": "postmatch-player-82491-87e10c730510796f.png",
+          "alt": "L Martínez"
+        }
+      }
+    },
+    {
+      "question": "2 tiri nello specchio su 9, contro 6 degli avversari: cosa le dice questo dato?",
+      "answer": "Abbiamo segnato 2 gol con 2 conclusioni nello specchio: oggi siamo stati efficaci. È un merito, ma per dare continuità ai risultati serve anche aumentare la produzione offensiva."
+    }
+  ]
+}
