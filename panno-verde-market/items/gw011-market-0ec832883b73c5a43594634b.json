@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-0ec832883b73c5a43594634b",
+  "published_at": "2026-11-11T00:00:00+01:00",
+  "title": "SSC Napoli: ufficiale l’arrivo di Aimar Blázquez",
+  "text": "SSC Napoli e Valencia CF chiudono l’accordo per Aimar Blázquez. Operazione da 240.000 euro, con Cyril Ngonge nel percorso inverso verso Valencia CF.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "Valencia CF",
+    "to": "SSC Napoli",
+    "formula": "Scambio con contropartite",
+    "amount": "240.000 euro + Cyril Ngonge",
+    "date": "2026-11-11",
+    "from_logo": "market-global-club-172-bb3f984dc4a91759.png",
+    "to_logo": "market-club-93400234-082aae3f75dc21ec.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-165369-cfba4efbdf070109.png",
+    "alt": "Aimar Blázquez"
+  }
+}

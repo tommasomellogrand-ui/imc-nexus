@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-a7435a3b8ed3ba7133286699",
+  "published_at": "2026-11-11T00:00:00+01:00",
+  "title": "AS Roma: ufficiale l’arrivo di Tommaso Rubino",
+  "text": "AS Roma annuncia l’arrivo di Tommaso Rubino. Il giocatore lascia ACF Fiorentina: operazione da 1,5 milioni di euro.",
+  "category": "market",
+  "club_ids": [
+    "93399623"
+  ],
+  "teams": [
+    {
+      "name": "AS Roma",
+      "logo": "market-club-93399623-4f2820912276f496.png"
+    }
+  ],
+  "transfer": {
+    "from": "ACF Fiorentina",
+    "to": "AS Roma",
+    "formula": "Trasferimento definitivo",
+    "amount": "1,5 milioni di euro",
+    "date": "2026-11-11",
+    "from_logo": "market-global-club-107-4c877773bc6839c8.png",
+    "to_logo": "market-club-93399623-4f2820912276f496.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-149179-e5e226e5fce0e560.png",
+    "alt": "Tommaso Rubino"
+  }
+}

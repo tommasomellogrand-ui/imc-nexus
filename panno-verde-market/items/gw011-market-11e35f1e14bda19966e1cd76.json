@@ -1,0 +1,30 @@
+{
+  "id": "gw011-market-11e35f1e14bda19966e1cd76",
+  "published_at": "2026-11-11T00:00:00+01:00",
+  "title": "SSC Napoli: ufficiale l’arrivo di Jakub Zieliński",
+  "text": "SSC Napoli annuncia l’arrivo di Jakub Zieliński. Il giocatore lascia VfL Wolfsburg: operazione da 372.000 euro.",
+  "category": "market",
+  "club_ids": [
+    "93400234"
+  ],
+  "teams": [
+    {
+      "name": "SSC Napoli",
+      "logo": "market-club-93400234-082aae3f75dc21ec.png"
+    }
+  ],
+  "transfer": {
+    "from": "VfL Wolfsburg",
+    "to": "SSC Napoli",
+    "formula": "Trasferimento definitivo",
+    "amount": "372.000 euro",
+    "date": "2026-11-11",
+    "from_logo": "market-global-club-419-ce68850ea2677849.png",
+    "to_logo": "market-club-93400234-082aae3f75dc21ec.png"
+  },
+  "editorial_version": 3,
+  "image": {
+    "file": "market-player-143926-a1202b4a95de9fb9.png",
+    "alt": "Jakub Zieliński"
+  }
+}
